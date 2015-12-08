@@ -1,0 +1,25 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+  <div class="col w  dk b-r bg-auto second_nav_gray">
+    <div class="panel no_border" draggable="true">
+        <div data-ng-include=" 'tpl/app/third.html' " class="list-group" ng-if="true"></div>
+       
+        <div class="list-group"  ng-if="true">
+          <li ng-repeat="class in classes" class="list-group-item second_nav_body" ui-sref="app.course.teacher-class({name:'{{class.course.name}}',number:'{{class.number}}'})">
+              <div class="clear">
+                <div><a class="text-info">{{class.course.name}}xxxx</a></div>
+                <small class="text-muted">{{class.number}}</small>
+              </div>
+            </li>
+            <!-- <li class="list-group-item second_nav_body" ui-sref="app.course.teacher-class({name:'材料力学B(嘉定)',number:'45017005'})">
+                <div class="clear">
+                  <div><a class="text-info">材料力学B(嘉定)(老师)</a></div>
+                  <small class="text-muted">45017005</small>
+                </div>
+              </li> -->
+        </div>
+      </div>
+  </div>
+  <div class="col">
+    <div ui-view ></div>
+  </div>
+</div>

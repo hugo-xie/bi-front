@@ -1,0 +1,53 @@
+
+<div class="calendar-page" >
+
+  <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="clearfix text-center m-t">
+            <div class="inline">
+              <div ui-jq="easyPieChart" ui-options="{
+                    percent: 75,
+                    lineWidth: 5,
+                    trackColor: '#e8eff0',
+                    barColor: '#23b7e5',
+                    scaleColor: false,
+                    color: '#3a3f51',
+                    size: 134,
+                    lineCap: 'butt',
+                    rotate: -90,
+                    animate: 1000
+                  }" class="easyPieChart" style="width: 134px; height: 134px; line-height: 134px;">
+                <div class="thumb-xl">
+                  <img src="img/a8.jpg" class="img-circle" alt="...">
+                </div>
+              <canvas width="134" height="134"></canvas></div>
+              <div class="h4 m-t m-b-xs">John.Smith</div>
+              <small class="text-muted m-b">Art director</small>
+            </div>
+          </div>
+        </div>
+        <footer class="panel-footer bg-info text-center no-padder">
+          <div class="row no-gutter">
+            <div class="col-xs-4">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">245</span>
+                <small class="text-muted">Followers</small>
+              </div>
+            </div>
+            <div class="col-xs-4 dk">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">55</span>
+                <small class="text-muted">Following</small>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">2,035</span>
+                <small class="text-muted">Tweets</small>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+</div>
+<div data-ng-include="'tpl/portal/block/simple-footer.html'"></div>
