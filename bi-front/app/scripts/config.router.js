@@ -86,10 +86,12 @@ angular.module('nevermore')
               }]
             }
           })
+
+          //economy  
           .state('app.index', {
             abstract: true,
             url: '^/app/index',
-            templateUrl: 'tpl/app/index.html',
+            templateUrl: 'tpl/app/economy-index.html',
             controller: 'AppIndexController',
             resolve: {
               controller: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -99,6 +101,69 @@ angular.module('nevermore')
               }]
             }
           })
+          .state('app.index.economy', {
+            abstract: true,
+            url: '^/app/index/economy',
+            templateUrl: 'tpl/app/economy/economy.html',
+            controller: 'AppEconomyCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/economy/app-economy.js',
+                ]);
+              }]
+            }
+          })
+          .state('app.index.economy.gdp', {
+            url: '^/app/index/economy/gdp/:title',
+            templateUrl: 'tpl/app/economy/economy-gdp.html',
+            controller: 'EconomyGdpCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/economy/economy-gdp.js',
+                ]);
+              }]
+            }
+          })
+          .state('app.index.economy.tax', {
+            url: '^/app/index/economy/tax/:title',
+            templateUrl: 'tpl/app/economy/economy-tax.html',
+            controller: 'EconomyTaxCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/economy/economy-tax.js',
+                ]);
+              }]
+            }
+          })
+          .state('app.index.economy.keqiang', {
+            url: '^/app/index/economy/keqiang/:title',
+            templateUrl: 'tpl/app/economy/economy-keqiang.html',
+            controller: 'EconomyKeqiangCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/economy/economy-keqiang.js',
+                ]);
+              }]
+            }
+          })
+          .state('app.index.economy.powerconsumption', {
+            url: '^/app/index/economy/powerconsumption/:title',
+            templateUrl: 'tpl/app/economy/economy-powerconsumption.html',
+            controller: 'EconomyPowerConsumptionCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/economy/economy-powerconsumption.js',
+                ]);
+              }]
+            }
+          })
+          //economy end
+
           .state('app.index.teacher-reservation', {
             url: '^/app/index/reservation/teacher/:title',
             templateUrl: 'tpl/app/teacher-reservation.html',

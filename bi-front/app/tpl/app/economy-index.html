@@ -1,0 +1,28 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+  <div class="col w  dk b-r bg-auto second_nav_gray">
+    <div class="panel no_border" draggable="true">
+        
+        <div class="list-group" ng-if="true">
+          <li ui-sref="app.index.economy.gdp({title:'GDP'})" class="list-group-item second_nav_body">
+            <a>GDP分析预测</a>
+          </li>
+          <li ui-sref="app.index.economy.tax({title:'tax'})" class="list-group-item second_nav_body">
+            <a>税收分析预测</a>
+          </li>
+        </div>
+        <div class="list-group" ng-if="true">
+          <li ui-sref="app.index.economy.keqiang({title:'keqiang'})" class="list-group-item second_nav_body">
+            <a>克强指数</a>
+          </li>
+          <li ui-sref="app.index.economy.powerconsumption({title:'company'})" class="list-group-item second_nav_body">
+            <a>企业用电量与经济增长关联分析</a>
+          </li>
+          
+        </div>
+      </div>
+  </div>
+  <div class="col">
+    <div ui-view ></div>
+  </div>
+</div>
