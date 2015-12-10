@@ -1,30 +1,36 @@
 <div class="vbox">
+	<!--topbar-->
     <div class="wrapper lter b-b bg-white">
 		<a href="" class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">用电量关联分析</a>
    		<div class="subview3_title">{{title}}</div>
  	</div>
+
+ 	<!--企业用电量与经济增长关联分析-->
 	<div class="wrapper bg-white container space-top">
 	    <div class="row">
+	      <!--标题-->
 	      <div class="col-md-12 topbar">
 	      	<h4 class="title">企业用电量与经济增长关联分析</h4>
 	      </div>
+	      <!--highchart-->
 	      <div class="col-md-8 chartshow">
-	        <highchart   id="chart1" config="PowerChart" ></highchart>
+	        <highchart   id="charttotal" config="TotalPowerGDPChart" ></highchart>
 	      </div>
+	      <!--Menu side-->
 	      <div class="col-md-4 menustructer">
 	      	<div>
 		      	<div class="col-md-12 ">
 	            	<div class="block panel padder-v bg-lightgreen item marginaround1em">
-		                <span class="text-white font-thin h1 block">7.56%</span>
-		                <span class="text-xs">2016年工业用电量增长率预测值</span>
+		                <span class="text-white font-thin h1 block">{{totaldata.powergrowthrate}}</span>
+		                <span class="text-xs">{{totaldata.year}}年工业用电量增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
 		                </span>
 	              	</div>
 	            </div>
 	            <div class="col-md-12 ">
 	            	<div class="block panel padder-v bg-lightyellow item marginaround1em">
-		                <span class="text-white font-thin h1 block">6.33%</span>
-		                <span class="text-xs">2016年GDP增长率预测值</span>
+		                <span class="text-white font-thin h1 block">{{totaldata.gdpgrowthrate}}</span>
+		                <span class="text-xs">{{totaldata.year}}年GDP增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
 		                </span>
 	              	</div>
@@ -39,7 +45,7 @@
 			            </div>
 			            <div class="media-body">
 			              <span class="h4">一句话解读</span>
-			              <small class="block m-t-xs">根据后台计算生成一句话解读.根据后台计算生成一句话解读.根据后台计算生成一句话解读.根据后台计算生成一句话解读.根据后台计算生成一句话解读.</small>
+			              <small class="block m-t-xs">{{totaldata.oneword}}</small>
 			            </div>
           			</article>
 	      		</div>
@@ -48,15 +54,15 @@
 				    <div class="btn-group dropdown marginleft1em">
 			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
 			          	<ul class="dropdown-menu">
-			            <li><a ng-click="changeChart('line')">折线图</a></li>
+			            <li><a ng-click="changeTotalChart('line')">折线图</a></li>
 			            <li class="divider"></li>
-			            <li><a ng-click="changeChart('column')">柱状图</a></li>
-			            <li><a ng-click="changeChart('area')">区域图</a></li>
+			            <li><a ng-click="changeTotalChart('column')">柱状图</a></li>
+			            <li><a ng-click="changeTotalChart('area')">区域图</a></li>
 			          </ul>
 			        </div>
 	      		</div>
 	      		<div class="col-md-12">
-	      			<button ng-click="showTable()" class="btn m-b-xs btn-primary marginleft1em">详细数据列表</button>
+	      			<button ng-click="showTotalTable()" class="btn m-b-xs btn-primary marginleft1em">详细数据列表</button>
 	      		</div>
 	      	</div>
 	      </div>
@@ -67,15 +73,52 @@
 	    	<div class="panel-heading">数据详情</div>  
 		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="year in tabledata">{{year.yearvalue}}</td>
+			        <td ng-repeat="year in totaldata.tabledata">{{year.yearvalue}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="gdp in tabledata">{{gdp.gdprate}}</td>
+			        <td ng-repeat="gdp in totaldata.tabledata">{{gdp.gdprate}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="power in tabledata">{{power.powerrate}}</td>
+			        <td ng-repeat="power in totaldata.tabledata">{{power.powerrate}}</td>
 			      </tr>
 		    </table>
   		</div>
     </div>
+
+    <!--用电量增长率与行业产值增长率分析预测-->
+    <div class="wrapper bg-white container space-top">
+	    <div class="row">
+	      <!--标题-->
+	      <div class="col-md-12 topbar">
+	      	<h4 class="title">用电量增长率与行业产值增长率分析预测</h4>
+	      </div>
+	      <!--highchart图表-->
+	      <div class="col-md-8 chartshow" >
+	        <highchart   id="chartvocation" config='VocationChart' ng-if="vocationdata.isshowchart"></highchart>
+	        <highchart   id="chartvocation" config='SingleVocationChart'ng-if="!vocationdata.isshowchart"></highchart>
+	      </div>
+	      <!---->
+	      <div class="col-md-4 menustructer">
+	      	<div>
+		      	
+
+	      		<div class="col-md-12 marginbotom1em">
+				    <div class="btn-group dropdown marginleft1em">
+			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
+			          	<ul class="dropdown-menu">
+			            <li><a ng-click="changeTotalChart('line')">折线图</a></li>
+			            <li class="divider"></li>
+			            <li><a ng-click="changeTotalChart('column')">柱状图</a></li>
+			            <li><a ng-click="changeTotalChart('area')">区域图</a></li>
+			          </ul>
+			        </div>
+	      		</div>
+	      		<div class="col-md-12">
+	      			<button ng-click="changeVocationChart('')" class="btn m-b-xs btn-primary marginleft1em">详细数据列表</button>
+	      		</div>
+	      	</div>
+	      </div>
+	    </div>
+    </div>
+
 </div>
