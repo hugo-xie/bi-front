@@ -11,6 +11,7 @@ angular
         'ui.validate',
         'ui.router',
         'ui.bootstrap',
+        'ui.slider',
         'oc.lazyLoad',
         'oitozero.ngSweetAlert',
         'toaster',
