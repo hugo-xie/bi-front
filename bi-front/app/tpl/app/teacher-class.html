@@ -3,5 +3,23 @@
     <div class="wrapper lter b-b bg-white">
 
       <div class="subview3_title">空气质量BI</div>
+<div class="row">
+                  <div class="col-md-5">
+                    <p class="handler-title">货运量</p>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="progress-box" ng-app>
+                      <div class="percentage-cur" ng-init="selectedRange3=0">
+                        <span class="num">{{ selectedRange3 }}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider">
+                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange3" disabled="true">
+                        <div class="inner" ng-style="{ width: (selectedRange3/2 +50) + '%' || '50%' }"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+      
   </div>
     </div>

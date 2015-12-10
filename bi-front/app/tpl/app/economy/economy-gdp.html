@@ -4,12 +4,321 @@
  		<div class="subview3_title">{{title}}</div>
 	</div>
 
-<div class="wrapper bg-white container">
-      <div class="row">
-        <div class="col-md-8">
-          <highchart   id="chart1" config="yearGDPChart" ></highchart>
+
+	<div class="wrapper bg-white container"  >
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+          年度GDP预测分析
         </div>
-        <div class="col-md-4">hello</div>
+      
+    </div>
+  <div class="row">
+    <div class="col-md-8" style="border-right:1px solid">
+      <highchart   id="chart1" config="yearGDPChart" ></highchart>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
+          <strong>2016年预测值</br>
+          7.9亿元
+          </strong>
+        </span>
+      </button>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
+        <span class="glyphicon glyphicon-send" aria-hidden="true">
+         <strong> 预测误差控制范围</br>
+          3.0%</strong>
+        </span>
+      </button>
+      <button class="btn btn-primary" style="margin-top:40px">一句话解读</button>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>2016年的GDP增速较往年的经济增速有所放缓</strong>
+        </span>
+      </button>
+      <div class="btn-group-vertical" role="group" aria-label="Left Align ">
+      <div class="btn-group" style="margin-top:40px">
+         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           切换图表视图 <span class="caret"></span>
+         </button>
+          <ul class="dropdown-menu">
+             <li><a ng-click="exchange('spline')">曲线图</a></li>
+             <li><a ng-click="exchange('column')">柱状图</a></li>
+             <li><a ng-click="exchange('line')">折线图</a></li>
+             <li><a ng-click="exchange('area')">区域图</a></li>
+          </ul>
+     </div>
+      <button class="btn btn-primary" style="margin-top:40px" ng-click="checkdeviation()">查看预测误差记录</button>
+      <button class="btn btn-primary" style="margin-top:40px" ng-click="checkforecast()">查看预测详情</button>
       </div>
     </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="forecast">
+      <table class="table table-condensed" >
+        <tr>
+          <th class="active">年份</th>
+          <th class="active">2006</th>
+          <th class="active">2007</th>
+          <th class="active">2008</th>
+          <th class="active">2009</th>
+          <th class="active">2010</th>
+          <th class="active">2011</th>
+          <th class="active">2012</th>
+          <th class="active">2013</th>
+          <th class="active">2014</th>
+          <th class="active">2015</th>
+          <th class="active">2016</th>
+          <th class="active">2017</th>
+        </tr>
+        <tr>
+          <td class="success">GDP(亿元)</td>
+          <td class="success">5200</td>
+          <td class="success">6700</td>
+          <td class="success">6800</td>
+          <td class="success">6900</td>
+          <td class="success">7100</td>
+          <td class="success">7200</td>
+          <td class="success">7300</td>
+          <td class="success">7421</td>
+          <td class="success">7322</td>
+          <td class="success">7456</td>
+          <td class="success">7435</td>
+          <td class="success">7443</td>
+        </tr>
+
+      </table>
+    </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="deviation">
+    <table class="table table-condensed" >
+        <tr>
+          <th class="active">年份</th>
+          <th class="active">2006</th>
+          <th class="active">2007</th>
+          <th class="active">2008</th>
+          <th class="active">2009</th>
+          <th class="active">2010</th>
+          <th class="active">2011</th>
+          <th class="active">2012</th>
+          <th class="active">2013</th>
+          <th class="active">2014</th>
+          <th class="active">2015</th>
+          <th class="active">2016</th>
+          <th class="active">2017</th>
+        </tr>
+        <tr>
+          <td class="success">GDP预测数据</td>
+          <td class="success">5200</td>
+          <td class="success">6700</td>
+          <td class="success">6800</td>
+          <td class="success">6900</td>
+          <td class="success">7100</td>
+          <td class="success">7200</td>
+          <td class="success">7300</td>
+          <td class="success">7421</td>
+          <td class="success">7322</td>
+          <td class="success">7456</td>
+          <td class="success">7435</td>
+          <td class="success">7443</td>
+        </tr>
+
+      </table>
+      
+    </div>
+  </div>
+ </div>
+ <div class="panel panel-primary" style="margin-top:30px">
+    <div class="panel-heading">
+        <div class="panel-title">
+          按季度GDP预测分析
+        </div>
+      
+    </div>
+  <div class="row">
+    <div class="col-md-8" style="border-right:1px solid">
+      <highchart   id="chart1" config="monthGDPChart" ></highchart>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
+          <strong>第四季度预测值</br>
+          7.9亿元
+          </strong>
+        </span>
+      </button>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
+        <span class="glyphicon glyphicon-send" aria-hidden="true">
+         <strong> 预测误差控制范围</br>
+          2.5%</strong>
+        </span>
+      </button>
+      <button class="btn btn-primary" style="margin-top:40px">一句话解读</button>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>第四季度经济增速较前三季度增速有所放缓</strong>
+        </span>
+      </button>
+      <div class="btn-group-vertical" role="group" aria-label="Left Align ">
+     <div class="btn-group" style="margin-top:40px">
+         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           切换图表视图 <span class="caret"></span>
+         </button>
+          <ul class="dropdown-menu">
+             <li><a ng-click="monthexchange('spline')">曲线图</a></li>
+             <li><a ng-click="monthexchange('column')">柱状图</a></li>
+             <li><a ng-click="monthexchange('line')">折线图</a></li>
+             <li><a ng-click="monthexchange('area')">区域图</a></li>
+          </ul>
+     </div>
+      <button class="btn btn-primary" style="margin-top:40px" ng-click="monthcheckdeviation()">查看预测误差记录</button>
+      <button class="btn btn-primary" style="margin-top:40px" ng-click="monthcheckforecast()">查看预测详情</button>
+      </div>
+    </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="monthforecast">
+      <table class="table table-condensed" >
+        <tr>
+          <th class="active">季度</th>
+          <th class="active">第一季度</th>
+          <th class="active">第二季度</th>
+          <th class="active">第三季度</th>
+          <th class="active">第四季度</th>
+        </tr>
+        <tr>
+          <td class="success">GDP(亿元)</td>
+          <td class="success">5200</td>
+          <td class="success">6700</td>
+          <td class="success">6800</td>
+          <td class="success">6900</td>
+        </tr>
+
+      </table>
+    </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="monthdeviation">
+    <table class="table table-condensed" >
+        <tr>
+          <th class="active">季度</th>
+          <th class="active">第一季度</th>
+          <th class="active">第二季度</th>
+          <th class="active">第三季度</th>
+          <th class="active">第四季度</th>
+        </tr>
+        <tr>
+          <td class="success">GDP预测数据</td>
+          <td class="success">7322</td>
+          <td class="success">7456</td>
+          <td class="success">7435</td>
+          <td class="success">7443</td>
+        </tr>
+
+      </table>
+      
+    </div>
+  </div>
+ </div>
+ <div class="panel panel-primary" style="margin-top:30px">
+    <div class="panel-heading">
+        <div class="panel-title">
+          分产业GDP预测分析
+        </div>
+      
+    </div>
+  <div class="row">
+    <div class="col-md-8" style="border-right:1px solid">
+      <highchart   id="chart1" config="industryyearGDPChart" ></highchart>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
+          <strong>全行业预测值</br>
+          8.2亿元
+          </strong>
+        </span>
+      </button>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
+        <span class="glyphicon glyphicon-send" aria-hidden="true">
+         <strong> 预测误差控制范围</br>
+          2.7%</strong>
+        </span>
+      </button>
+      <button class="btn btn-primary" style="margin-top:40px">一句话解读</button>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>全行业经济增速较往年增速有所放缓</strong>
+        </span>
+      </button>
+      <div class="btn-group-vertical" role="group" aria-label="Left Align " style="margin-top:40px">
+      <div class="btn-group">
+         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           切换图表视图 <span class="caret"></span>
+         </button>
+          <ul class="dropdown-menu">
+             <li><a ng-click="industryexchange('spline')">曲线图</a></li>
+             <li><a ng-click="industryexchange('column')">柱状图</a></li>
+             <li><a ng-click="industryexchange('line')">折线图</a></li>
+             <li><a ng-click="industryexchange('area')">区域图</a></li>
+          </ul>
+     </div>
+      <button class="btn btn-primary" style="margin-top:40px" ng-click="industrycheckdetail()">查看本年度各产业详细分析</button>
+     
+    </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="industryforecast">
+      <table class="table table-condensed" >
+        <tr>
+          <th class="active">季度</th>
+          <th class="active">第一季度</th>
+          <th class="active">第二季度</th>
+          <th class="active">第三季度</th>
+          <th class="active">第四季度</th>
+        </tr>
+        <tr>
+          <td class="success">GDP(亿元)</td>
+          <td class="success">5200</td>
+          <td class="success">6700</td>
+          <td class="success">6800</td>
+          <td class="success">6900</td>
+        </tr>
+
+      </table>
+    </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="industrydeviation">
+    <table class="table table-condensed" >
+        <tr>
+          <th class="active">季度</th>
+          <th class="active">第一季度</th>
+          <th class="active">第二季度</th>
+          <th class="active">第三季度</th>
+          <th class="active">第四季度</th>
+        </tr>
+        <tr>
+          <td class="success">GDP预测数据</td>
+          <td class="success">7322</td>
+          <td class="success">7456</td>
+          <td class="success">7435</td>
+          <td class="success">7443</td>
+        </tr>
+
+      </table>
+      
+    </div>
+  </div>
+ </div> 
+ </div>
+ <div class="panel panel-primary" style="margin-top:30px" ng-if="industrydetail">
+   <div class="panel-heading">
+        <div class="panel-title">
+          本年度各产业分析预测
+        </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-4" style="border-right:1px solid">
+         <highchart    config="primaryGDPChart" ></highchart>
+      </div>
+      <div class="col-md-4" style="border-right:1px solid">
+         <highchart    config="secondGDPChart" ></highchart>
+      </div>
+      <div class="col-md-4">
+         <highchart    config="thirdGDPChart" ></highchart>
+      </div>
+    </div>
+</div>
 </div>
