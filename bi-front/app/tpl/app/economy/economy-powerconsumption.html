@@ -3,8 +3,79 @@
 		<a href="" class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">用电量关联分析</a>
    		<div class="subview3_title">{{title}}</div>
  	</div>
+	<div class="wrapper bg-white container space-top">
+	    <div class="row">
+	      <div class="col-md-12 topbar">
+	      	<h4 class="title">企业用电量与经济增长关联分析</h4>
+	      </div>
+	      <div class="col-md-8 chartshow">
+	        <highchart   id="chart1" config="PowerChart" ></highchart>
+	      </div>
+	      <div class="col-md-4 menustructer">
+	      	<div>
+		      	<div class="col-md-12 ">
+	            	<div class="block panel padder-v bg-lightgreen item marginaround1em">
+		                <span class="text-white font-thin h1 block">7.56%</span>
+		                <span class="text-xs">2016年工业用电量增长率预测值</span>
+		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
+		                </span>
+	              	</div>
+	            </div>
+	            <div class="col-md-12 ">
+	            	<div class="block panel padder-v bg-lightyellow item marginaround1em">
+		                <span class="text-white font-thin h1 block">6.33%</span>
+		                <span class="text-xs">2016年GDP增长率预测值</span>
+		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
+		                </span>
+	              	</div>
+	            </div>
+	      		<div class="col-md-12 margintopbotom1em">
+					<article class="media">
+			            <div class="pull-left">
+			              <span class="fa-stack fa-lg">
+			                <i class="fa fa-circle fa-stack-2x text-info"></i>
+			                <i class="fa fa-file-o fa-stack-1x text-white"></i>
+			              </span>
+			            </div>
+			            <div class="media-body">
+			              <span class="h4">一句话解读</span>
+			              <small class="block m-t-xs">根据后台计算生成一句话解读.根据后台计算生成一句话解读.根据后台计算生成一句话解读.根据后台计算生成一句话解读.根据后台计算生成一句话解读.</small>
+			            </div>
+          			</article>
+	      		</div>
 
-	<div class="wrapper bg-white">
-
-	</div>
+	      		<div class="col-md-12 marginbotom1em">
+				    <div class="btn-group dropdown marginleft1em">
+			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
+			          	<ul class="dropdown-menu">
+			            <li><a ng-click="changeChart('line')">折线图</a></li>
+			            <li class="divider"></li>
+			            <li><a ng-click="changeChart('column')">柱状图</a></li>
+			            <li><a ng-click="changeChart('area')">区域图</a></li>
+			          </ul>
+			        </div>
+	      		</div>
+	      		<div class="col-md-12">
+	      			<button ng-click="showTable()" class="btn m-b-xs btn-primary marginleft1em">详细数据列表</button>
+	      		</div>
+	      	</div>
+	      </div>
+	    </div>
+    </div>
+    <div class="bg-white container padding0em" ng-if="show">
+    	<div class="panel panel-default paddingmargin0em">
+	    	<div class="panel-heading">数据详情</div>  
+		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="year in tabledata">{{year.yearvalue}}</td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="gdp in tabledata">{{gdp.gdprate}}</td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="power in tabledata">{{power.powerrate}}</td>
+			      </tr>
+		    </table>
+  		</div>
+    </div>
 </div>

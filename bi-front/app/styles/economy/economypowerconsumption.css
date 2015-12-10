@@ -1,0 +1,54 @@
+.vbox >.space-top{
+	margin-top: 3em;
+	border:2px solid rgb(40,190,220);
+	padding-top: 0px;
+	padding-bottom:0px;
+}
+.topbar{
+	margin: 0px;
+	background-color: rgb(40,190,220);
+	padding: 0.5em 1em;
+}
+.chartshow{
+	padding: 2em;
+}
+.menustructer{
+	border-left: 2px solid rgb(40,190,220);
+	height: 35em;
+}
+.title{
+	color: black;
+	font-size: 1.5em;
+}
+.bg-lightyellow{
+	margin: 1em 0em 1em 0em;
+	text-align: center;
+	background-color: rgb(260,214,40);
+}
+.bg-lightgreen{
+	margin: 1em 0em 1em 0em;
+	text-align: center;
+	background-color: rgb(100,214,40);
+}
+.margintopbotom1em{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.marginbotom1em{
+	margin-bottom: 1em;
+}
+.marginaround1em{
+	margin: 1em;
+}
+.marginleft1em{
+	margin-left: 1em;
+}
+.paddingmargin0em{
+	margin: 0;
+	padding: 0;
+}
+.padding0em{
+	padding: 0;
+	border:2px solid lightblue;
+}
+
