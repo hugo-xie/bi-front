@@ -193,7 +193,7 @@ angular.module('nevermore')
           .state('app.emenu.watertitle', {
           url: '^/app/environment/emenu/watertitle',
           templateUrl: 'tpl/app/environment/watertitle.html',
-          controller: 'StudentClassCtrl',
+          controller: 'WaterCtrl',
           resolve: {
           controller: ['$ocLazyLoad', function($ocLazyLoad) {
           return $ocLazyLoad.load([

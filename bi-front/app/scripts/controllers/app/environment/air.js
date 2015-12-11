@@ -1365,13 +1365,20 @@ $scope.aqilinechart={
     var map = new AMap.Map('map_canvas',{
         zoom: 10,
         center: [121.106661, 31.579533]
+
+
     });
+
 
 
  
 
 
-               
+   
+
+
+
+
 
 }]);
 	//气象 highcharts options

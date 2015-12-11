@@ -1,13 +1,15 @@
 'use strict';
 
-app.controller('WaterCtrl',  function($scope, $http, kpiDetailService, $timeout, dateService,biFactory,qService) {
+app.controller('WaterCtrl', ['$scope', function($scope) {
 
-  $scope.title = $stateParams.title;
-    /**
-     * 变量区
-     *
-     */
-    //水质监测点和废水排放点关系图(暂时写死)
+    //高德地图初始化
+    var map = new AMap.Map('map_wMap',{
+        zoom: 10,
+        center: [121.106661, 31.579533]
+
+
+    });
+
     var waterQualityPredict = [4004,4003,4034]
     var relationMonitorId = [{
         waterQuality: 4003,
@@ -747,30 +749,30 @@ app.controller('WaterCtrl',  function($scope, $http, kpiDetailService, $timeout,
     };
     $scope.button_recommend = function() {
         var dataTemp = {
-		  waterQuality: transferWaterQuality($scope.waterQualityAnalysisMarker),
-		  waterPollutions: transferWaterPollutions($scope.wasteModelList)
-		};
+          waterQuality: transferWaterQuality($scope.waterQualityAnalysisMarker),
+          waterPollutions: transferWaterPollutions($scope.wasteModelList)
+        };
     
-		$.isLoading();
-		$timeout(function() {
-		  $.isLoading('hide');
-		  for (var i = 0; i < $scope.wasteModelList.length; i++) {
-		      $scope.wasteModelList[i].dischargeChange = parseInt(90 + Math.random()*10);
-		      $scope.wasteModelList[i].codChange = parseInt(70 + Math.random()*30);
-		      $scope.wasteModelList[i].nh4nChange = parseInt(50 + Math.random()*50);
-		      $scope.wasteModelList[i].pChange = parseInt(90 + Math.random()*10);
-		    }
-		  // $http.post("/waterEnvironmentAnalysis/reverse_predict",dataTemp).success(function(data){
-		  //   for (var i = 0; i < $scope.wasteModelList.length; i++) {
-		  //     $scope.wasteModelList[i].dischargeChange = parseInt(data[i].index_discharge/$scope.wasteModelList[i].dischargeValue*100>100?100:data[i].index_discharge/$scope.wasteModelList[i].dischargeValue*100);
-		  //     $scope.wasteModelList[i].codChange = parseInt(data[i].index_cod/$scope.wasteModelList[i].codValue*100>100?100:data[i].index_cod/$scope.wasteModelList[i].codValue*100);
-		  //     $scope.wasteModelList[i].nh4nChange = parseInt(data[i].index_nh4n/$scope.wasteModelList[i].nh4nValue*100>100?100:data[i].index_nh4n/$scope.wasteModelList[i].nh4nValue*100);
-		  //     $scope.wasteModelList[i].pChange = parseInt(data[i].index_p/$scope.wasteModelList[i].pValue*100>100?100:data[i].index_p/$scope.wasteModelList[i].pValue*100);
-		  //   }
-		  // }
-		  // )
-		 
-		}, 1000);
+        $.isLoading();
+        $timeout(function() {
+          $.isLoading('hide');
+          for (var i = 0; i < $scope.wasteModelList.length; i++) {
+              $scope.wasteModelList[i].dischargeChange = parseInt(90 + Math.random()*10);
+              $scope.wasteModelList[i].codChange = parseInt(70 + Math.random()*30);
+              $scope.wasteModelList[i].nh4nChange = parseInt(50 + Math.random()*50);
+              $scope.wasteModelList[i].pChange = parseInt(90 + Math.random()*10);
+            }
+          // $http.post("/waterEnvironmentAnalysis/reverse_predict",dataTemp).success(function(data){
+          //   for (var i = 0; i < $scope.wasteModelList.length; i++) {
+          //     $scope.wasteModelList[i].dischargeChange = parseInt(data[i].index_discharge/$scope.wasteModelList[i].dischargeValue*100>100?100:data[i].index_discharge/$scope.wasteModelList[i].dischargeValue*100);
+          //     $scope.wasteModelList[i].codChange = parseInt(data[i].index_cod/$scope.wasteModelList[i].codValue*100>100?100:data[i].index_cod/$scope.wasteModelList[i].codValue*100);
+          //     $scope.wasteModelList[i].nh4nChange = parseInt(data[i].index_nh4n/$scope.wasteModelList[i].nh4nValue*100>100?100:data[i].index_nh4n/$scope.wasteModelList[i].nh4nValue*100);
+          //     $scope.wasteModelList[i].pChange = parseInt(data[i].index_p/$scope.wasteModelList[i].pValue*100>100?100:data[i].index_p/$scope.wasteModelList[i].pValue*100);
+          //   }
+          // }
+          // )
+         
+        }, 1000);
     };
 
     $scope.source_predict = function() {
@@ -785,7 +787,7 @@ app.controller('WaterCtrl',  function($scope, $http, kpiDetailService, $timeout,
 
 
    //          var promiseWaterBI = qService.tokenHttpPost(biFactory.waterBiPredict, null,dataTemp)
-				$scope.predict_waterquality = predictProcess(dataTemp.waterQuality);
+                $scope.predict_waterquality = predictProcess(dataTemp.waterQuality);
                 console.log($scope.predict_waterquality);
 
                 //溶解氧                 
@@ -1212,7 +1214,7 @@ app.controller('WaterCtrl',  function($scope, $http, kpiDetailService, $timeout,
                     }
                 });
                 $('#Modal_Predict').modal();
-			// });
+            // });
 
 
             // $http.post("/waterEnvironmentAnalysis/predict", dataTemp).success(function(data) {
@@ -1528,4 +1530,6 @@ app.controller('WaterCtrl',  function($scope, $http, kpiDetailService, $timeout,
         };
         $scope.wasteWaterCurrentDateTime = waterQualityLastDate;
     });
-});
+
+
+}]);
