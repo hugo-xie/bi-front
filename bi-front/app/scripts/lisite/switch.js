@@ -1,6 +1,6 @@
 function msg1()
 {
-	document.getElementById("switch").innerHTML="<table border='1' style='margin-left:30px;color:black;font-size:120%;background-color:white'>"+
+	document.getElementById("switch").innerHTML="<center><table border='1' style='margin-left:30px;color:black;font-size:120%;background-color:white'>"+
 			"<tr><th></th>"+
 			"<td>溶解氧(mg/L)</td>"+
 			"<td>高锰酸钾浓度(mg/L)</td>"+
