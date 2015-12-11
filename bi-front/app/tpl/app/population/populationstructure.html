@@ -45,7 +45,7 @@
                 <div class="row">
                 <div class=" col-md-12">
                 <div class="col-md-6 chart-panel">
-             <highchart id="population_prediction_year" config="population_prediction_year" style="width:480px;height:400px"></highchart>
+             <highchart id="population_year" config="population_year" style="width:480px;height:400px"></highchart>
             </div>
             <div class="col-md-6">
             <highchart id="population_prediction_year" config="population_prediction_year" style="width:480px;height:400px"></highchart>
@@ -71,7 +71,7 @@
                   <div class="panel-body">
       
                   <div class="row">
-                  <button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
+                  <button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
                       <div class="col-md-8 chart-panel">
 
                    <highchart id="sumpopulation" config="sumpopulation" style="width:500px,height: 500px"></highchart>
