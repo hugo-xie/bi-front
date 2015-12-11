@@ -1,5 +1,4 @@
-$(function () {
-		
+$(function () {	
 	    $('#container1').highcharts({
 			credits:{
 		    	enabled:false

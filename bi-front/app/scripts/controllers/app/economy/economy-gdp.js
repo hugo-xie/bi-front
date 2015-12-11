@@ -448,4 +448,5 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         }]
   
   };
+   
 }]);

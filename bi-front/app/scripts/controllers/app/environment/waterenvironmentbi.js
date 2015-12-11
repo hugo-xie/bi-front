@@ -2,6 +2,7 @@
 
 app.controller('WaterCtrl', ['$scope', function($scope) {
 
+     
     //高德地图初始化
     var map = new AMap.Map('map_wMap',{
         zoom: 10,
@@ -1531,5 +1532,5 @@ app.controller('WaterCtrl', ['$scope', function($scope) {
         $scope.wasteWaterCurrentDateTime = waterQualityLastDate;
     });
 
-
+    
 }]);
