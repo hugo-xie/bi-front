@@ -415,15 +415,6 @@
 
 
 <!-- 李思特代码 -->
-<!-- highchart各种js引用 -->
-<!-- <script type="text/javascript" src="scripts/lisite/lisite-jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="scripts/lisite/lisite-highcharts.js"></script>
-<script type="text/javascript" src="scripts/lisite/lisite-highcharts-more.js"></script>
-<script type="text/javascript" src="scripts/lisite/lisite-exporting.js"></script> -->
-<!-- 引用仪表图js -->
-<!-- <script type="text/javascript" src="scripts/lisite/speedmeter.js"></script> -->
-<!-- 引用柱状折线图js -->
-<!-- <script type="text/javascript" src="scripts/lisite/line.js"></script> -->
 <!-- 切换表格js -->
 <script type="text/javascript" src="scripts/lisite/switch.js"></script>
 <!-- 自定义高德地图js -->
@@ -431,40 +422,13 @@
 
 <div class="vbox">
   <div class="wrapper lter b-b bg-white">
-    <div class="subview3_title">水环境质量预测</div>
+    <div class="subview3_title">水环境质量指标</div>
   </div>
-  <!-- <center style="color:black;font-size:200%">太仓市未来24小时水质量指标预测</center>
-  <div class="col-md-12">
-    <div class="col-md-4">
-      <div id="container1" style="min-width:500px;height:250px"></div>
-    </div>
-    <div class="col-md-4">
-      <div id="container2" style="min-width:500px;height:250px"></div>
-    </div>
-    <div class="col-md-4">
-      <div id="container3" style="min-width:500px;height:250px"></div>
-    </div>
-  </div>
-  <div class="col-md-12">
-    <div class="col-md-4">
-      <div id="container4" style="min-width:500px;height:250px"></div>
-    </div>
-    <div class="col-md-4">
-      <div id="container5" style="min-width:500px;height:250px"></div>
-    </div>
-    <div class="col-md-4">
-      <div id="container6" style="min-width:500px;height:250px"></div>
-    </div>
-  </div>
-  <div class="col-md-12" style="margin-left:15px">
-    <div id="line" style="min-width:450px;height:500px"></div>
-  </div> -->
   <!-- 表格 -->
   <br><br>
   <div id="switch">
-    <center style="color:black;font-size:200%">未来24小时水质量指标数值表</center>
     <center>
-    <table border="1" style="margin-left:30px;color:black;font-size:150%">
+    <table border="1" style="margin-left:30px;color:black;font-size:120%;background-color:white">
         <tr>
           <td></td>
           <td>溶解氧(mg/L)</td>
@@ -475,7 +439,7 @@
           <td>农业污水量(m³)</td>
         </tr>
         <tr>
-          <td>实时空气质量指数</td>
+          <td>水环境质量指数</td>
           <td>118</td>
           <td>0</td>
           <td>89</td>
@@ -484,29 +448,11 @@
           <td>2</td>
         </tr>
         <tr>
-          <td>空气质量</td>
+          <td>水环境质量</td>
           <td>轻度污染</td>
           <td>优</td>
           <td>轻度污染</td>
           <td>轻度污染</td>
-          <td>优</td>
-          <td>优</td>
-        </tr>
-        <tr>
-          <td>未来24小时空气指数</td>
-          <td>151</td>
-          <td>120</td>
-          <td>107</td>
-          <td>95</td>
-          <td>3</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>空气质量</td>
-          <td>中度污染</td>
-          <td>轻度污染</td>
-          <td>轻度污染</td>
-          <td>良</td>
           <td>优</td>
           <td>优</td>
         </tr>
@@ -515,46 +461,45 @@
   </div>
   <br><br>
   <!-- 按钮 -->
-  <input type="button" value="查看过去24小时数据" onclick="msg1()" style="margin-left:180px;background-color:grey;color:black;font-size:150%;">
-  <input type="button" value="查看实时24小时数据" onclick="msg2()" style="margin-left:180px;background-color:grey;color:black;font-size:150%;">
-  <input type="button" value="查看未来24小时数据" onclick="msg3()" style="margin-left:180px;background-color:grey;color:black;font-size:150%;">
+  <input type="button" value="查看过去24小时数据" onclick="msg1()" style="margin-left:180px;background-color:#1190FF;color:white;font-size:150%;">
+  <input type="button" value="查看实时24小时数据" onclick="msg2()" style="margin-left:180px;background-color:#1190FF;color:white;font-size:150%;">
+  <input type="button" value="查看未来24小时数据" onclick="msg3()" style="margin-left:180px;background-color:#1190FF;color:white;font-size:150%;">
   <br><br>
   <!-- 高德地图 -->
   <div class="col-md-12" style="margin-left:15px">
     <div class="col-md-8" id="lisiteMap" style="width:800px;height:400px;"></div>
-    <div class="col-md-4" style="margin-left:20px">
-      <center style="font-size:150%;font-weight:bold;color:black">水质量预测</center>
+    <div class="col-md-4" style="margin-left:20px;">
+      <center style="font-size:150%;color:black">水质量预测</center>
       <center style="color:black">(预测时间: 2015-12-11 9时)</center>
       
       <br><br>
-      <center style="font-size:150%;">第三水厂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问题<a href="#" style="font-size:200%;text-decoration:underline">分析</a></center>
+      <center style="font-size:150%;">第三水厂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;问题 <input type="button" value="分析" style="font-size:150%;background-color:#90EE90;color:white"></center>
       <br><br>
-
       <center>
-      <table width="120%">
+      <table width="120%" style="color:black">
         <tr style="font-size:120%">
           <td>监测点</td>
-          <th>溶解氧</th>
-          <th>高锰酸钾</th>
-          <th>氨氮</th>
-          <th>总磷</th>
+          <td>溶解氧</td>
+          <td>高锰酸钾</td>
+          <td>氨氮</td>
+          <td>总磷</td>
         </tr>
         <tr style="font-size:120%">
-          <th>协鑫码头</th>
+          <td>协鑫码头</td>
           <td>6.58</td>
           <td>4.90</td>
           <td>0.19</td>
           <td>0.19</td>
         </tr>
         <tr style="font-size:120%">
-          <th>第二水厂</th>
+          <td>第二水厂</td>
           <td>8.38</td>
           <td>2.10</td>
           <td>0.35</td>
           <td>0.09</td>
         </tr>
         <tr style="font-size:120%">
-          <th>第三水厂</th>
+          <td>第三水厂</td>
           <td>8.14</td>
           <td>1.75</td>
           <td>2.30</td>
@@ -562,7 +507,6 @@
         </tr>
       </table>
       </center>
-
     </div>
   </div>
 </div>

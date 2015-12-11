@@ -1,6 +1,6 @@
 function msg1()
 {
-	document.getElementById("switch").innerHTML="<center style='color:black;font-size:200%;'>过去24小时水环境质量指标数值表</center><center><table border='1' style='margin-left:30px;color:black;font-size:150%'>"+
+	document.getElementById("switch").innerHTML="<table border='1' style='margin-left:30px;color:black;font-size:120%;background-color:white'>"+
 			"<tr><th></th>"+
 			"<td>溶解氧(mg/L)</td>"+
 			"<td>高锰酸钾浓度(mg/L)</td>"+
@@ -26,7 +26,7 @@ function msg1()
 }
 function msg2()
 {
-	document.getElementById("switch").innerHTML="<center style='color:black;font-size:200%;'>实时水环境质量指标数值表</center><center><table border='1' style='margin-left:30px;color:black;font-size:150%'>"+
+	document.getElementById("switch").innerHTML="<center><table border='1' style='margin-left:30px;color:black;font-size:120%;background-color:white'>"+
 			"<tr><td></td>"+
 			"<td>溶解氧(mg/L)</td>"+
 			"<td>高锰酸钾浓度(mg/L)</td>"+
@@ -41,7 +41,7 @@ function msg2()
 		    "<td>48</td>"+
 		    "<td>32</td>"+
 		    "<td>160</td></tr>"+
-		    "<tr><td>空气质量</td>"+
+		    "<tr><td>水环境质量</td>"+
 			"<td>优</td>"+
 			"<td>良</td>"+
 		    "<td>良</td>"+
@@ -52,7 +52,7 @@ function msg2()
 }
 function msg3()
 {
-	document.getElementById("switch").innerHTML="<center style='color:black;font-size:200%'>未来24小时水环境质量指标数值表</center><center><table border='1' style='margin-left:30px;color:black;font-size:150%'>"+
+	document.getElementById("switch").innerHTML="<center><table border='1' style='margin-left:30px;color:black;font-size:120%;background-color:white'>"+
 			"<tr><th></th>"+
 			"<td>溶解氧(mg/L)</td>"+
 			"<td>高锰酸钾浓度(mg/L)</td>"+
