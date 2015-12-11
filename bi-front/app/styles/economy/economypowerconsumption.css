@@ -51,4 +51,25 @@
 	padding: 0;
 	border:2px solid lightblue;
 }
-
+.cgq_fixedwidth{
+	width:10em;
+}
+.cgq_botomline{
+	border-bottom: 1px solid lightblue;
+	padding-bottom: 0.5em;
+	margin-bottom: 0.2em;
+}
+.cgq_menustructer{
+	padding: 0.6em 0;
+	border:1px solid lightblue;
+	margin-bottom: 0em;
+	height: 33em;
+}
+.cgq_paddingtop1em{
+	padding-top: 1em;
+}
+.cgq_botomdashed{
+	border-bottom: 1px dashed lightblue;
+	padding-bottom: 0.5em;
+	margin-bottom: 0.2em;	
+}

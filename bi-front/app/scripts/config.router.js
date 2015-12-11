@@ -164,6 +164,46 @@ angular.module('nevermore')
           })
           //economy end
 
+          //environment start
+          .state('app.emenu', {
+            abstract: true,
+            url: '^/app/emenu',
+            templateUrl: 'tpl/app/environment/emenu.html',
+            controller: 'AirCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/environment/air.js',
+               ]);
+              }]
+            }
+          })
+          .state('app.emenu.airtitle', {
+            url: '^/app/environment/emenu/airtitle',
+            templateUrl: 'tpl/app/environment/airtitle.html',
+            controller: 'AirCtrl',
+            resolve: {
+            controller: ['$ocLazyLoad', function($ocLazyLoad) {
+            return $ocLazyLoad.load([
+            'scripts/controllers/app/environment/air.js',
+              ]);
+              }]
+            }
+          })
+          .state('app.emenu.watertitle', {
+          url: '^/app/environment/emenu/watertitle',
+          templateUrl: 'tpl/app/environment/watertitle.html',
+          controller: 'StudentClassCtrl',
+          resolve: {
+          controller: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load([
+          'scripts/controllers/app/environment/waterenvironmentbi.js',
+                 ]);
+              }]
+            }
+          })
+          //environment end 
+          
           .state('app.index.teacher-reservation', {
             url: '^/app/index/reservation/teacher/:title',
             templateUrl: 'tpl/app/teacher-reservation.html',

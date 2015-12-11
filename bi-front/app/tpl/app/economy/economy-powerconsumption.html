@@ -5,7 +5,7 @@
    		<div class="subview3_title">{{title}}</div>
  	</div>
 
- 	<!--企业用电量与经济增长关联分析-->
+ 	<!--企业用电量与经济增长关联分析————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
 	<div class="wrapper bg-white container space-top">
 	    <div class="row">
 	      <!--标题-->
@@ -85,40 +85,91 @@
   		</div>
     </div>
 
-    <!--用电量增长率与行业产值增长率分析预测-->
+    <!--用电量增长率与行业产值增长率分析预测————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
     <div class="wrapper bg-white container space-top">
 	    <div class="row">
 	      <!--标题-->
 	      <div class="col-md-12 topbar">
-	      	<h4 class="title">用电量增长率与行业产值增长率分析预测</h4>
+	      	<h4 class="title">用电量增长率与行业产值增长率关联分析</h4>
 	      </div>
 	      <!--highchart图表-->
-	      <div class="col-md-8 chartshow" >
-	        <highchart   id="chartvocation" config='VocationChart' ng-if="vocationdata.isshowchart"></highchart>
-	        <highchart   id="chartvocation" config='SingleVocationChart'ng-if="!vocationdata.isshowchart"></highchart>
+	      <div class="col-md-8 chartshow"  ng-if="vocationdata.isshowchartvocation">
+	        <highchart   id="chartvocation" config='VocationChart'></highchart>
+	      </div>
+	      <div class="col-md-8 chartshow" ng-if="vocationdata.isshowsinglechartvocation">
+	        <highchart  id="singlechartvocation" config='SingleVocationChart'></highchart>
+	      </div>
+	      <div class="col-md-8 chartshow" ng-if="vocationdata.isshowsinglechartvocationbyyear">
+	        <highchart  id="singlechartvocationbyyear" config='SingleVocationChartByYear'></highchart>
 	      </div>
 	      <!---->
-	      <div class="col-md-4 menustructer">
-	      	<div>
-		      	
+	      <div class="col-md-4 cgq_menustructer">
 
-	      		<div class="col-md-12 marginbotom1em">
-				    <div class="btn-group dropdown marginleft1em">
-			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
+		      		
+
+	      	<div class="col-md-12 cgq_botomline">
+	      		<p><span class="glyphicon glyphicon-th-list"> 总体视图</span></p>
+	      		<div class="col-md-6">
+	      			<div class="btn-group dropdown">
+			        	<button class="btn btn-success cgq_fixedwidth" data-toggle="dropdown" aria-expanded="false">选择年份<span class="caret"></span></button>
+			        	<!--ng-repeat选择年份-->
 			          	<ul class="dropdown-menu">
-			            <li><a ng-click="changeTotalChart('line')">折线图</a></li>
-			            <li class="divider"></li>
-			            <li><a ng-click="changeTotalChart('column')">柱状图</a></li>
-			            <li><a ng-click="changeTotalChart('area')">区域图</a></li>
-			          </ul>
-			        </div>
-	      		</div>
-	      		<div class="col-md-12">
-	      			<button ng-click="changeVocationChart('')" class="btn m-b-xs btn-primary marginleft1em">详细数据列表</button>
+				            <li ng-repeat="element in vocationdata.total.years">
+				            	<a ng-click="changeToVocationChart(element.year)">{{element.year}}</a>
+				            </li>
+			            </ul>
+			    	</div>		
 	      		</div>
 	      	</div>
+	      	<div class="col-md-12 cgq_botomdashed">
+	      		<p><span class="glyphicon glyphicon-th-list"> 行业视图</span></p>
+	      		<div class="col-md-6">
+	      			<h5>按年份显示</h5>
+	      			<button ng-click="changeToSingleVocationChartByyear()" class="btn m-b-xs btn-primary cgq_fixedwidth">年份视图</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<h5>按季度显示</h5>
+	      			<div class="btn-group dropdown">
+			        	<button class="btn btn-success cgq_fixedwidth" data-toggle="dropdown" aria-expanded="false">选择年份<span class="caret"></span></button>
+			        	<ul class="dropdown-menu">  
+				            <li ng-repeat="element in vocationdata.yearrange"><a ng-click="changeVocationYear(element.year)">{{element.year}}</a></li>
+			            </ul>
+			    	</div>		
+	      		</div>
+	      	</div>
+	      	<div class="col-md-12 cgq_botomline">
+	      		<p><span class="glyphicon glyphicon-th"> 选择行业</span></p>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(1)" class="btn m-b-xs btn-primary  cgq_fixedwidth">农林牧渔</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(2)" class="btn m-b-xs btn-primary  cgq_fixedwidth">工业</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(3)" class="btn m-b-xs btn-primary  cgq_fixedwidth">建筑业</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(4)" class="btn m-b-xs btn-primary  cgq_fixedwidth">交运仓储邮政</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(5)" class="btn m-b-xs btn-primary  cgq_fixedwidth">信息计算机软件</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(6)" class="btn m-b-xs btn-primary  cgq_fixedwidth">批发零售住宿餐饮</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(7)" class="btn m-b-xs btn-primary  cgq_fixedwidth">金融房地产商务</button>
+	      		</div>
+	      		<div class="col-md-6">
+	      			<button ng-click="changeVocationType(8)" class="btn m-b-xs btn-primary  cgq_fixedwidth">公共事业</button>
+	      		</div>
+	      	</div>
+	      	<div class="col-md-6 cgq_paddingtop1em">
+      			<button ng-click="" class="btn m-b-xs btn-primary marginleft1em cgq_fixedwidth">详细数据列表</button>
+      		</div>
+
 	      </div>
 	    </div>
     </div>
-
+    <!--End of Vocation-->
 </div>
