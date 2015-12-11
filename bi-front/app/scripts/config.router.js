@@ -203,7 +203,48 @@ angular.module('nevermore')
             }
           })
           //environment end 
-          
+
+          //population start
+           .state('app.pmenu', {
+            abstract: true,
+            url: '^/app/pmenu',
+            templateUrl: 'tpl/app/population/pmenu.html',
+            controller: 'AppPopulationController',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/population/app-population.js',
+                ]);
+              }]
+            }
+          })
+
+            .state('app.pmenu.populationstructure', {
+            url: '^/app/pmenu/populationstructure',
+            templateUrl: 'tpl/app/population/populationstructure.html',
+            controller: 'PopulationStructureCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/population/populationstructure.js',
+                ]);
+              }]
+            }
+          })
+           .state('app.pmenu.prelation', {
+            url: '^/app/pmenu/prelation',
+            templateUrl: 'tpl/app/population/prelation.html',
+            controller: 'PrelationCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/population/prelation.js',
+                ]);
+              }]
+            }
+          })
+           //population end
+
           .state('app.index.teacher-reservation', {
             url: '^/app/index/reservation/teacher/:title',
             templateUrl: 'tpl/app/teacher-reservation.html',
