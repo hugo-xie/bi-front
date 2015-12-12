@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('PopulationStructureCtrl', function($scope) {
-  var columnColors = new Array( '#F26200', '#FB9705', '#195489', '#1FC22B');
+  var columnColors = new Array( '#3CB371','#000000','#87CEFA', '#0787C8');
   var pieColors = new Array('#0787C8', '#1FC22B');
   var lineColors = new Array('#0787C8', '#1FC22B');
   //var compareColors = new Array('#3795BC', '#FB9705', '#195489', '#F26200')

@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('PrelationCtrl', ['$scope', function($scope) {
-
+var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
     $scope.buttonMap2 = [{
         name: 2024,
         label: 2024 + "年分析预测",
@@ -28,6 +28,225 @@ app.controller('PrelationCtrl', ['$scope', function($scope) {
         label: 15 + "年分析预测",
         radio: "Right"
       }];
+
+$scope.btn_click=function(btn){
+   $scope.change(btn);
+};
+$scope.change=function(btn){
+   if(btn.name===2024){
+    $scope.predictChart.series=[{
+            name: '人口(万人)',
+            color: '#4572A7',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
+         148.5, 216.4, 194.1],
+            tooltip: {
+                valueSuffix: '万人'
+            }
+
+        }, {
+            name: '关联度',
+            type: 'spline',
+            color: '#AA4643',
+            yAxis: 2,
+            data: [0.895, 0.842, 0.7524,0.7891, 0.8512, 0.7125, 0.7951, 0.8125, 0.7415, 0.7956],
+            marker: {
+                enabled: false
+            },
+            dashStyle: 'shortdot',
+            tooltip: {
+                valueSuffix: ''
+            }
+
+        }, {
+            name: 'GDP(亿元)',
+            color: '#89A54E',
+            type: 'spline',
+            data: gdp,
+            tooltip: {
+                valueSuffix: '亿元'
+            }
+        }];
+   }
+   if(btn.name===2034){
+    $scope.predictChart.series=[{
+            name: '人口(万人)',
+            color: '#4572A7',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
+         148.5, 216.4, 194.1],
+            tooltip: {
+                valueSuffix: '万人'
+            }
+
+        }, {
+            name: '关联度',
+            type: 'spline',
+            color: '#AA4643',
+            yAxis: 2,
+            data: [0.895, 0.842, 0.7524,0.7891, 0.8512, 0.7135, 0.7951, 0.8125, 0.7415, 0.7956],
+            marker: {
+                enabled: false
+            },
+            dashStyle: 'shortdot',
+            tooltip: {
+                valueSuffix: ''
+            }
+
+        }, {
+            name: 'GDP(亿元)',
+            color: '#89A54E',
+            type: 'spline',
+            data: gdp,
+            tooltip: {
+                valueSuffix: '亿元'
+            }
+        }];
+   }
+   if(btn.name===2044){
+    $scope.predictChart.series=[{
+            name: '人口(万人)',
+            color: '#4572A7',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
+         148.5, 216.4, 194.1],
+            tooltip: {
+                valueSuffix: '万人'
+            }
+
+        }, {
+            name: '关联度',
+            type: 'spline',
+            color: '#AA4643',
+            yAxis: 2,
+            data: [0.895, 0.842, 0.8524,0.7891, 0.8512, 0.7125, 0.7951, 0.8125, 0.7415, 0.7956],
+            marker: {
+                enabled: false
+            },
+            dashStyle: 'shortdot',
+            tooltip: {
+                valueSuffix: ''
+            }
+
+        }, {
+            name: 'GDP(亿元)',
+            color: '#89A54E',
+            type: 'spline',
+            data: gdp,
+            tooltip: {
+                valueSuffix: '亿元'
+            }
+        }];
+   }
+};
+$scope.btn_click1=function(btn){
+   $scope.change1(btn);
+};
+$scope.change1=function(btn){
+   if(btn.name===5){
+    $scope.populationPie.series=[{
+            type: 'pie',
+            data: [
+                ['第一产业人口',37],
+                ['第二产业人口',30],
+                ['第三产业人口',33]
+                ]
+        }];
+    $scope.industryPie.series=[{
+            type: 'pie',
+            name: '',
+            data: [
+               ['第一产业产值',8],
+                ['第二产业产值',44],
+                ['第三产业产值',48]
+            ]
+        }];
+   }
+   if(btn.name===10){
+    $scope.populationPie.series=[{
+            type: 'pie',
+            data: [
+                ['第一产业人口',27],
+                ['第二产业人口',35],
+                ['第三产业人口',38]
+                ]
+        }];
+    $scope.industryPie.series=[{
+            type: 'pie',
+            name: '',
+            data: [
+               ['第一产业产值',6],
+                ['第二产业产值',34],
+                ['第三产业产值',60]
+            ]
+        }];
+   }
+   if(btn.name===15){
+    $scope.populationPie.series=[{
+            type: 'pie',
+            data: [
+                ['第一产业人口',17],
+                ['第二产业人口',40],
+                ['第三产业人口',43]
+                ]
+        }];
+    $scope.industryPie.series=[{
+            type: 'pie',
+            name: '',
+            data: [
+               ['第一产业产值',4],
+                ['第二产业产值',30],
+                ['第三产业产值',66]
+            ]
+        }];
+   }
+};
+$scope.btn_click2=function(btn){
+   $scope.change2(btn);
+};
+$scope.change2=function(btn){
+   if(btn.name===5){
+    $scope.sumpopulation.series=[{
+            name: '第一产业GDP',
+            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152]
+        }, {
+            name: '第二产业GDP',
+            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845]
+        }, {
+            name: '第三产业GDP',
+            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682]
+        }];
+   }
+   if(btn.name===10){
+    $scope.sumpopulation.series=[{
+            name: '第一产业GDP',
+            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152]
+        }, {
+            name: '第二产业GDP',
+            data: [0.7952,0.8412, 0.7984,0.8842,0.8125,0.7965, 0.6845]
+        }, {
+            name: '第三产业GDP',
+            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682]
+        }];
+   }
+   if(btn.name===15){
+    $scope.sumpopulation.series=[{
+            name: '第一产业GDP',
+            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152]
+        }, {
+            name: '第二产业GDP',
+            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845]
+        }, {
+            name: '第三产业GDP',
+            data: [0.8452, 0.8412, 0.8112,0.8952, 0.8123, 0.7584,0.7682]
+        }];
+   }
+};
+
+
 $scope.selectedRange=0;
 $scope.selectedRange1=0;
 $scope.r=function(){
@@ -132,7 +351,7 @@ $scope.$watch($scope.rr,hh);
         series: [{
             name: '人口(万人)',
             color: '#4572A7',
-            type: 'spline',
+            type: 'column',
             yAxis: 1,
             data: popData,
             tooltip: {
@@ -224,6 +443,7 @@ $scope.populationChart ={
 	
 	$scope.sumpopulation ={
    options:{
+    colors:splinecolors,
     chart:{
        type: 'spline'
     },
@@ -336,9 +556,9 @@ chart: {
             type: 'pie',
             name: '',
             data: [
-               ['第一产业人口',8],
-                ['第二产业人口',44],
-                ['第三产业人口',48]
+               ['第一产业产值',8],
+                ['第二产业产值',44],
+                ['第三产业产值',48]
             ]
         }]
 
