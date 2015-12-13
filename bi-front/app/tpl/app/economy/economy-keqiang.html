@@ -31,15 +31,15 @@
       </button>
       <button class="btn btn-primary" style="margin-top:40px">指标含义</button>
       <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
-        <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-          <strong>"克强指数"的由来，源于李克强总理</br>2007年任职辽宁省省委书记时，喜欢通过耗电量,铁</br>路货运量和贷款发放量三</br>个指标分析当时辽宁省经济状况,英国</br>《经济学人》自2010年底正式推出这一</br>
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="width:100%">
+          <strong>"克强指数"的由来，源于李克强总理</br>2007年任职辽宁省省委书记时，喜欢通过耗</br>电量,铁路货运量和贷款发放量三个指标分析</br>当时辽宁省经济状况,英国</br>《经济学人》自2010年底正式推出这一</br>
           指数后,受到花旗银行在内的</br>众多国际机构认可</strong>
         </span>
       </button>
-      <button class="btn btn-primary" style="margin-top:40px">一句话解读</button>
+      <button class="btn btn-primary" style="margin-top:15px">一句话解读</button>
       <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-          <strong>本月克强指数较上个月有所提高，实体经济增速</br>
+          <strong>本月克强指数较上个月有所提高，实体</br>经济增速
           有所加快</strong>
         </span>
       </button>
@@ -57,14 +57,14 @@
         <highchart config="keqiangChart"></highchart>
       </div>
       <div class="col-md-4" >
-        <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
         <span class="glyphicon glyphicon-tasks" aria-hidden="true">
           <strong>年末GDP模拟</br>
           1107.4亿元
           </strong>
         </span>
       </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
         <span class="glyphicon glyphicon-send" aria-hidden="true">
          <strong>年末税收值模拟</br>
           91.4(亿元)</strong>
@@ -96,7 +96,7 @@
                   <div class="col-md-7">
                     <div class="progress-box" ng-app>
                       <div class="percentage-cur" ng-init="selectedRange2=0">
-                        <span class="num">{{ selectedRange2 }}%</span>
+                        <span class="num">{{ selectedRange2 }}.00%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider">
                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2"  >
@@ -113,10 +113,10 @@
                   <div class="col-md-7">
                     <div class="progress-box" ng-app>
                       <div class="percentage-cur" ng-init="selectedRange3=0">
-                        <span class="num">{{ selectedRange3 }}%</span>
+                        <span class="num">{{ selectedRange3 }}.00%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider">
-                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange3" >
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3" >
                         <div class="inner" ng-style="{ width: (selectedRange3/2 +50) + '%' }"></div>
                       </div>
                     </div>

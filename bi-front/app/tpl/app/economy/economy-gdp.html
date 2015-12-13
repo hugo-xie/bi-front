@@ -16,24 +16,24 @@
     <div class="col-md-8" style="border-right:1px solid">
       <highchart   id="chart1" config="yearGDPChart" ></highchart>
     </div>
-    <div class="col-md-4">
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+    <div class="col-md-4" >
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:6px;width:45%">
         <span class="glyphicon glyphicon-tasks" aria-hidden="true">
           <strong>2016年预测值</br>
           7.9亿元
           </strong>
         </span>
       </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
-        <span class="glyphicon glyphicon-send" aria-hidden="true">
-         <strong> 预测误差控制范围</br>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
+        <span class="glyphicon glyphicon-send" aria-hidden="true" style="width:100%">
+         <strong> 预测误差控</br>制范围
           3.0%</strong>
         </span>
       </button>
-      <button class="btn btn-primary" style="margin-top:40px">一句话解读</button>
+      <button class="btn btn-primary" style="margin-top:30px">一句话解读</button>
       <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-          <strong>2016年的GDP增速较往年的经济增速有所放缓</strong>
+          <strong>本年GDP增速较往年的经济增速有所放缓</strong>
         </span>
       </button>
       <div class="btn-group-vertical" role="group" aria-label="Left Align ">
@@ -49,7 +49,7 @@
           </ul>
      </div>
       <button class="btn btn-primary" style="margin-top:40px" ng-click="checkdeviation()">查看预测误差记录</button>
-      <button class="btn btn-primary" style="margin-top:40px" ng-click="checkforecast()">查看预测详情</button>
+      <button class="btn btn-primary" style="margin-top:30px" ng-click="checkforecast()">查看预测详情</button>
       </div>
     </div>
     <div class="col-md-12" style="margin-top:10px" ng-if="forecast">
@@ -137,16 +137,16 @@
       <highchart   id="chart1" config="monthGDPChart" ></highchart>
     </div>
     <div class="col-md-4">
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
         <span class="glyphicon glyphicon-tasks" aria-hidden="true">
           <strong>第四季度预测值</br>
           7.9亿元
           </strong>
         </span>
       </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
         <span class="glyphicon glyphicon-send" aria-hidden="true">
-         <strong> 预测误差控制范围</br>
+         <strong> 预测误差控制</br>范围
           2.5%</strong>
         </span>
       </button>
@@ -168,8 +168,8 @@
              <li><a ng-click="monthexchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-primary" style="margin-top:40px" ng-click="monthcheckdeviation()">查看预测误差记录</button>
-      <button class="btn btn-primary" style="margin-top:40px" ng-click="monthcheckforecast()">查看预测详情</button>
+      <button class="btn btn-primary" style="margin-top:30px" ng-click="monthcheckdeviation()">查看预测误差记录</button>
+      <button class="btn btn-primary" style="margin-top:30px" ng-click="monthcheckforecast()">查看预测详情</button>
       </div>
     </div>
     <div class="col-md-12" style="margin-top:10px" ng-if="monthforecast">
@@ -225,21 +225,21 @@
       <highchart   id="chart1" config="industryyearGDPChart" ></highchart>
     </div>
     <div class="col-md-4">
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
         <span class="glyphicon glyphicon-tasks" aria-hidden="true">
           <strong>全行业预测值</br>
           8.2亿元
           </strong>
         </span>
       </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:8px;width:45%">
         <span class="glyphicon glyphicon-send" aria-hidden="true">
-         <strong> 预测误差控制范围</br>
+         <strong> 预测误差控制</br>范围
           2.7%</strong>
         </span>
       </button>
       <button class="btn btn-primary" style="margin-top:40px">一句话解读</button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:8px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
           <strong>全行业经济增速较往年增速有所放缓</strong>
         </span>
@@ -259,7 +259,7 @@
       <button class="btn btn-primary" style="margin-top:40px" ng-click="industrycheckdetail()">查看本年度各产业详细分析</button>
      
     </div>
-    <div class="col-md-12" style="margin-top:10px" ng-if="industryforecast">
+    <div class="col-md-12" style="margin-top:8px" ng-if="industryforecast">
       <table class="table table-condensed" >
         <tr>
           <th class="active">季度</th>
