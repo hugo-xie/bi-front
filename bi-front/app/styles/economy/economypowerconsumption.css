@@ -3,6 +3,7 @@
 	border:2px solid rgb(40,190,220);
 	padding-top: 0px;
 	padding-bottom:0px;
+	margin-bottom: 1em;
 }
 .topbar{
 	margin: 0px;
@@ -14,19 +15,19 @@
 }
 .menustructer{
 	border-left: 2px solid rgb(40,190,220);
-	height: 30em;
+	height: 300%;
+	padding-left: 0;
+	padding-right: 0;
 }
-.title{
+.cgq_title{
 	color: black;
 	font-size: 1.5em;
 }
-.bg-lightyellow{
-	margin: 1em 0em 1em 0em;
+.cgq_bg-lightyellow{
 	text-align: center;
 	background-color: rgb(260,214,40);
 }
-.bg-lightgreen{
-	margin: 1em 0em 1em 0em;
+.cgq_bg-lightgreen{
 	text-align: center;
 	background-color: rgb(100,214,40);
 }
@@ -37,11 +38,11 @@
 .marginbotom1em{
 	margin-bottom: 1em;
 }
-.marginaround1em{
-	margin: 1em;
+.cgq_marginaround1em{
+	margin: 4%;
 }
 .marginleft1em{
-	margin-left:1em;
+	margin-left:5%;
 }
 .marginleft1-5em{
 	margin-left:1.3em;
@@ -55,27 +56,33 @@
 	border:2px solid lightblue;
 }
 .cgq_fixedwidth{
-	width:10em;
+	width:110%;
 }
 .cgq_botomline{
 	border-bottom: 1px solid lightblue;
-	padding-bottom: 0.5em;
-	margin-bottom: 0.2em;
+	padding-bottom: 0.6em;
+	margin-bottom: 0.3em;
 }
 .cgq_menustructer{
 	padding: 0.6em 0;
 	border:1px solid lightblue;
 	margin-bottom: 0em;
-	height: 28em;
+	height: 100%;
 }
 .cgq_paddingtop1em{
-	padding-top: 1em;
+	padding-top: 0.7em;
 }
 .cgq_botomdashed{
 	border-bottom: 1px dashed lightblue;
-	padding-bottom: 0.5em;
-	margin-bottom: 0.2em;	
+	padding-bottom: 0.6em;
+	margin-bottom: 0.3em;	
 }
 .cgq_relativeposition{
 	position: relative;
+}
+.cgq_fontsize{
+	font-size: 90%;
+}
+.cgq_contentwidth{
+	width:95%;
 }
