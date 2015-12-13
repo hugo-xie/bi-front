@@ -21,7 +21,49 @@ app.controller('PopulationStructureCtrl', function($scope) {
   //  to-do : year should be set
 
 var map = new AMap.Map('conMap');
+map.setZoom(11);
+map.setCenter([121.10, 31.45]);
+ 
+var heatmap;
+var points =[
+    {"lng":121.10,"lat":31.45,"count":100}
+  //  {"lng":121.15255,"lat":31.61736,"count":11},
+   // {"lng":121.09379,"lat":31.47528,"count":12},
+   // {"lng":121.0849,"lat":31.50502,"count":13}
+   // {"lng":116.410588,"lat":39.880172,"count":14},
+  // {"lng":116.394816,"lat":39.91181,"count":15},
+   // {"lng":116.416002,"lat":39.952917,"count":16}
+];
+ map.plugin(["AMap.Heatmap"], function() {
+        //初始化heatmap对象
+        heatmap = new AMap.Heatmap(map, {
+            radius: 25, //给定半径
+            opacity: [0, 0.8]
+            /*,gradient:{
+             0.5: 'blue',
+             0.65: 'rgb(117,211,248)',
+             0.7: 'rgb(0, 255, 0)',
+             0.9: '#ffea00',
+             1.0: 'red'
+             }*/
+        });
+        //设置数据集：该数据为北京部分“公园”数据
+        heatmap.setDataSet({
+            data: points,
+            max: 100
+        });
+    });
+    //判断浏览区是否支持canvas
+    function isSupportCanvas() {
+        var elem = document.createElement('canvas');
+        return !!(elem.getContext && elem.getContext('2d'));
+    }
 
+
+
+
+
+ 
   $scope.buttonMap = [{
         name: 2024,
         label: 2024 + "年人口结构预测",
