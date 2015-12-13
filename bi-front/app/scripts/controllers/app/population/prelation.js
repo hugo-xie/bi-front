@@ -34,6 +34,7 @@ $scope.btn_click=function(btn){
 };
 $scope.change=function(btn){
    if(btn.name===2024){
+    $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
     $scope.predictChart.series=[{
             name: '人口(万人)',
             color: '#4572A7',
@@ -52,7 +53,8 @@ $scope.change=function(btn){
             yAxis: 2,
             data: [0.895, 0.842, 0.7524,0.7891, 0.8512, 0.7125, 0.7951, 0.8125, 0.7415, 0.7956],
             marker: {
-                enabled: false
+                enabled: true,
+                symbol:"circle"
             },
             dashStyle: 'shortdot',
             tooltip: {
@@ -64,6 +66,9 @@ $scope.change=function(btn){
             color: '#89A54E',
             type: 'spline',
             data: gdp,
+            marker:{
+               symbol:"square" 
+           },
             tooltip: {
                 valueSuffix: '亿元'
             }
@@ -88,7 +93,8 @@ $scope.change=function(btn){
             yAxis: 2,
             data: [0.895, 0.842, 0.7524,0.7891, 0.8512, 0.7135, 0.7951, 0.8125, 0.7415, 0.7956],
             marker: {
-                enabled: false
+                enabled: true,
+                symbol:"circle"
             },
             dashStyle: 'shortdot',
             tooltip: {
@@ -100,6 +106,9 @@ $scope.change=function(btn){
             color: '#89A54E',
             type: 'spline',
             data: gdp,
+            marker:{
+               symbol:"square" 
+           },
             tooltip: {
                 valueSuffix: '亿元'
             }
@@ -124,7 +133,8 @@ $scope.change=function(btn){
             yAxis: 2,
             data: [0.895, 0.842, 0.8524,0.7891, 0.8512, 0.7125, 0.7951, 0.8125, 0.7415, 0.7956],
             marker: {
-                enabled: false
+                enabled: true,
+                symbol:"circle"
             },
             dashStyle: 'shortdot',
             tooltip: {
@@ -136,6 +146,9 @@ $scope.change=function(btn){
             color: '#89A54E',
             type: 'spline',
             data: gdp,
+            marker:{
+                symbol:"square"
+            },
             tooltip: {
                 valueSuffix: '亿元'
             }
@@ -211,37 +224,64 @@ $scope.change2=function(btn){
    if(btn.name===5){
     $scope.sumpopulation.series=[{
             name: '第一产业GDP',
-            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152]
+            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152],
+             marker: {
+                symbol:"diamond"
+            }
         }, {
             name: '第二产业GDP',
-            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845]
+            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845],
+             marker: {
+                symbol:"circle"
+            }
         }, {
             name: '第三产业GDP',
-            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682]
+            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682],
+             marker: {
+                symbol:"square"
+            }
         }];
    }
    if(btn.name===10){
     $scope.sumpopulation.series=[{
             name: '第一产业GDP',
-            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152]
+            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152],
+             marker: {
+                symbol:"diamond"
+            }
         }, {
             name: '第二产业GDP',
-            data: [0.7952,0.8412, 0.7984,0.8842,0.8125,0.7965, 0.6845]
+            data: [0.7952,0.8412, 0.7984,0.8842,0.8125,0.7965, 0.6845],
+             marker: {
+                symbol:"circle"
+            }
         }, {
             name: '第三产业GDP',
-            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682]
+            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682],
+             marker: {
+                symbol:"square"
+            }
         }];
    }
    if(btn.name===15){
     $scope.sumpopulation.series=[{
             name: '第一产业GDP',
-            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152]
+            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152],
+            marker: {
+                symbol:"diamond"
+            }
         }, {
             name: '第二产业GDP',
-            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845]
+            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845],
+            marker: {
+                symbol:"circle"
+            }
         }, {
             name: '第三产业GDP',
-            data: [0.8452, 0.8412, 0.8112,0.8952, 0.8123, 0.7584,0.7682]
+            data: [0.8452, 0.8412, 0.8112,0.8952, 0.8123, 0.7584,0.7682],
+            marker: {
+                symbol:"square"
+            }
         }];
    }
 };
@@ -255,6 +295,7 @@ $scope.r=function(){
 function h(newValue,oldValue,scope){
 	console.log(newValue);
 	popData[9]=(newValue*0.03)*50+194.1;
+    console.log(popData[9]);
     gdp[9]=(newValue*0.03)*50+18.3;
 }
 $scope.$watch($scope.r,h);
@@ -316,7 +357,8 @@ $scope.$watch($scope.rr,hh);
                 style: {
                     color: '#4572A7'
                 }
-            }
+            },
+            tickPositions:[0,50,100,150,200,250,300,350,400]
 
         }, { // Tertiary yAxis
             gridLineWidth: 0,
@@ -365,7 +407,8 @@ $scope.$watch($scope.rr,hh);
             yAxis: 2,
             data: [0.895, 0.842, 0.7524,0.7891, 0.8512, 0.7125, 0.7951, 0.8125, 0.7415, 0.7956],
             marker: {
-                enabled: false
+                enabled: true,
+                symbol:"circle"
             },
             dashStyle: 'shortdot',
             tooltip: {
@@ -377,6 +420,9 @@ $scope.$watch($scope.rr,hh);
             color: '#89A54E',
             type: 'spline',
             data: gdp,
+            marker:{
+                symbol:"square"
+            },
             tooltip: {
                 valueSuffix: '亿元'
             }
@@ -474,7 +520,7 @@ $scope.populationChart ={
             }]
         },
         tooltip: {
-            valueSuffix: '°C'
+            valueSuffix: ''
         },
         legend: {
             layout: 'vertical',
@@ -485,13 +531,22 @@ $scope.populationChart ={
     },
         series: [{
             name: '第一产业GDP',
-            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152]
+            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152],
+             marker: {
+                symbol:"diamond"
+            }
         }, {
             name: '第二产业GDP',
-            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845]
+            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845],
+             marker: {
+                symbol:"circle"
+            }
         }, {
             name: '第三产业GDP',
-            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682]
+            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682],
+             marker: {
+                symbol:"square"
+            }
         }]
 };
 $scope.populationPie={

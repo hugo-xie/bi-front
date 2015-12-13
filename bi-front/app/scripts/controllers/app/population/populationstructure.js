@@ -169,6 +169,9 @@ var map = new AMap.Map('conMap');
             name: '人口增长率',
             type: 'spline',
             data: [6.0, 6.1, 6.0, 6.1, 6.2, 6.1, 6.0, 6.1, 6.0, 6.0],
+            marker:{
+                symbol:"circle"
+            },
             tooltip: {
                 valueSuffix: '%'
             }
@@ -189,6 +192,9 @@ var map = new AMap.Map('conMap');
             name: '人口增长率',
             type: 'spline',
             data: [6.0, 6.1, 6.0, 6.1, 6.2, 6.1, 6.0, 6.1, 6.0, 6.0],
+            marker:{
+                symbol:"circle"
+            },
             tooltip: {
                 valueSuffix: '%'
             }
@@ -209,6 +215,9 @@ var map = new AMap.Map('conMap');
             name: '人口增长率',
             type: 'spline',
             data: [6.0, 6.1, 6.0, 6.1, 6.2, 6.1, 6.0, 6.1, 6.0, 6.0],
+            marker:{
+                symbol:"circle"
+            },
             tooltip: {
                 valueSuffix: '%'
             }
