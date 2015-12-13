@@ -77,7 +77,7 @@ $scope.aqilinechart={
             text: '空气质量AQI'
         },
         xAxis: {
-            categories: ['12月11', '12月12', '12月13', '12月14', '12月15']
+            categories: ['12月11', '12月12', '12月13', '12月14', '12月15','12月16','12月17']
         },
         labels: {
             items: [{
@@ -92,11 +92,11 @@ $scope.aqilinechart={
         series: [{
             type: 'column',
             name: '实际AQI值',
-            data: [50, 60, 70, 80, 90]
+            data: [50, 60, 70, 80, 90,100,130]
         },  {
             type: 'spline',
             name: '预测AQI值',
-            data: [52, 64, 73, 83, 90],
+            data: [52, 64, 73, 83, 90,100,143],
             
             dataLabels: {
                 enabled: false
@@ -1365,9 +1365,12 @@ $scope.aqilinechart={
     var map = new AMap.Map('map_canvas',{
         zoom: 10,
         center: [121.106661, 31.579533]
+ 
+
 
 
     });
+
 
 
 
@@ -1375,11 +1378,6 @@ $scope.aqilinechart={
 
 
    
-
-
-
-
-
 }]);
 	//气象 highcharts options
 	/*$scope.airConditionOptions = {

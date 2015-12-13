@@ -379,15 +379,17 @@
                                         <div  style="overflow: auto; overflow-x:hidden;height:450px"  id="scroll-container" >
                                             <p id="airQualityAnchorTop"></p>
                                             <div class="col-md-12">
-                                                <div class="col-md-3" id="airQualityAnchor1">
+                                                <a name="airQualityAnchor1">
+                                                <div class="col-md-3" >
                                                     <highchart config="airQualityOptions.aqiOption"></highchart>
                                                 </div>
+                                                </a>
                                                 <div class="col-md-9" style="left:10px">
                                                     <highchart config="airQualityOptions.currentAqiLineOption"></highchart>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="col-md-3" id="airQualityAnchor2">
+                                                <div class="col-md-3" name="airQualityAnchor2">
                                                     <highchart config="airQualityOptions.pm25Option"></highchart>
                                                 </div>
                                                 <div class="col-md-9" style="left:10px">
