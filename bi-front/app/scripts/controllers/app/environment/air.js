@@ -6,7 +6,13 @@ app.controller('AirCtrl', ['$scope','$stateParams', function($scope, $stateParam
   $scope.title = $stateParams.title;
     var map = new AMap.Map('map_canvas');
     
-
+     //高德地图初始化
+    var map = new AMap.Map('map_canvas',{
+        zoom: 10,
+        center: [121.106661, 31.579533]
+     });
+    
+ 
 	//变色范围 
 	var airQualityAQIScan = {
         scan: [100,300],
@@ -1361,15 +1367,11 @@ $scope.aqilinechart={
 
 
     };
-    //高德地图初始化
-    var map = new AMap.Map('map_canvas',{
-        zoom: 10,
-        center: [121.106661, 31.579533]
  
 
 
 
-    });
+   
 
 
 

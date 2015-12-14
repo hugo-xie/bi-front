@@ -23,7 +23,12 @@ app.controller('PopulationStructureCtrl', function($scope) {
 var map = new AMap.Map('conMap');
 map.setZoom(11);
 map.setCenter([121.10, 31.45]);
- 
+
+ var marker = new AMap.Marker({
+        position: [121.10, 31.45],
+        map:map
+    });
+
 var heatmap;
 var points =[
     {"lng":121.10,"lat":31.45,"count":100}
