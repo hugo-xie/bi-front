@@ -8,8 +8,8 @@ angular.module('nevermore')
 
       // config
       $scope.app = {
-        name: 'Angulr',
-        version: '1.3.3',
+        name: 'Administrator',
+        version: '1.0.0',
         // for chart colors
         color: {
           primary: '#7266ba',

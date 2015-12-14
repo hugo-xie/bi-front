@@ -79,47 +79,47 @@ $scope.range = function() {
         return $scope.monthselectedRange4;
       };
 var changedetail=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue/500);
-  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue/500);
-  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue/500);
-  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue/500);
-  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue/500);
+  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
+  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue-oldValue)/200;
+  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue-oldValue)/200;
 };
 var changedetail2=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue/500);
-  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue/500);
-  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue/500);
-  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue/500);
-  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue/500);
+  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
+  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue-oldValue)/200;
+  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue-oldValue)/200;
 };
 var changedetail3=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue/500);
-  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue/500);
-  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue/500);
-  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue/500);
-  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue/500);
+  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
+  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue-oldValue)/200;
+  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue-oldValue)/200;
 };
 var changedetail4=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue/500);
-  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue/500);
-  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue/500);
-  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue/500);
-  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue/500);
+  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
+  $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+  $scope.date[13]=$scope.date[13]+$scope.date[13]*(newValue-oldValue)/200;
+  $scope.date[14]=$scope.date[14]+$scope.date[14]*(newValue-oldValue)/200;
 };
 var changemonthdetail=function(newValue,oldValue,scope){
-  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue/500);
+  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
   
 };
 var changemonthdetail2=function(newValue,oldValue,scope){
-  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue/500);
+  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
   
 };
 var changemonthdetail3=function(newValue,oldValue,scope){
-  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue/500);
+  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
   
 };
 var changemonthdetail4=function(newValue,oldValue,scope){
-  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue/500);
+  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
   
 };
 $scope.$watch($scope.range,changedetail);

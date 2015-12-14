@@ -18,22 +18,22 @@ $scope.range2=function(){
     return $scope.selectedRange3;
   };
   var changeloandata=function(newValue,oldValue,scope){
-       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue/1000);
-       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue/5000);
-       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue/2500);
-       $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue/8000);
+       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue-oldValue)/100;
+       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue-oldValue)/500;
+       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue-oldValue)/250;
+       $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue-oldValue)/800;
   };
   var changeloandata2=function(newValue,oldValue,scope){
-       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue/5000);
-       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue/1000);
-       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue/2500);
-       $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue/8000);
+       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue-oldValue)/500;
+       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue-oldValue)/100;
+       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue-oldValue)/250;
+       $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue-oldValue)/800;
   };
   var changeloandata3=function(newValue,oldValue,scope){
-       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue/5000);
-       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue/2500);
-       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue/1000);
-       $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue/8000);
+       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue-oldValue)/500;
+       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue-oldValue)/250;
+       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue-oldValue)/100;
+       $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue-oldValue)/800;
 
   };
   $scope.$watch($scope.range,changeloandata);

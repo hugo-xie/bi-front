@@ -164,9 +164,11 @@
                           </table>
                       </div>
                       <div class="col-md-12 row">
+                      <!--<highchart  id="waterrelation" config="waterrelation" style="width:400px;heigh:300px"></highchart>-->
+
                       <div class="col-md-9" style="margin-top:10px">
                           <div id="relation_chart" style="width:400px;height: 300px"></div>
-                        </div>
+                      </div>
                     <!-- <div class="col-md-3" style="border:1px solid grey;font-size:13px;line-height:30px;margin-top:80px">
                         <div class="radio" ng-repeat="radioPredictionOne in radioPredictionList">
                         <label>
@@ -198,7 +200,7 @@
                                   <div class="form-group col-md-12">
                                       <label class="col-sm-12" style="left:5px">太仓市城区污水处理厂</label>
                                   </div>
-                                  <div class="form-group col-md-12">
+                                  <!--<div class="form-group col-md-12">
                                       <label class="col-sm-2 control-label">流量</label>
                                       <div class="col-sm-6">
                         <div class="input-group sliderExample" style="margin-top:11px">
@@ -211,7 +213,30 @@
                                       <div class="col-sm-2" style="padding:0">
                                           <h5>35916吨</h5>
                                       </div>
-                                  </div>
+                                  </div>-->
+
+
+                        <div class="row">
+                  <div class="col-md-5">
+                    <p class="handler-title">GDP</p>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="progress-box">
+                      <div class="percentage-cur">
+                        <span class="num">{{ selectedRange}}.00%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
+                        <div class="inner" ng-style="{ width: (selectedRange1/2 +50) + '%' || '50%' }" ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                      </div>
+
+
+
                                   <!-- <div class="form-group col-md-12">
                                       <label class="col-sm-2 control-label">COD</label>
                                       <div class="col-sm-6">
@@ -266,10 +291,10 @@
                         <button class="btn btn-sm btn-primary btn-block" ng-click="button_reset()">复位</button>
                       </div>
                       
-                        </div>
-                        <div class="col-md-12">
-                      <hr>
                     </div>
+                        <div class="col-md-12">
+                          <hr>
+                        </div>
                     <div class="col-md-12">
                       <h4>污水处理费预估(根据废水排放方案确定)：</h4>
                           <div class="col-md-3" style="margin-top: 15px">

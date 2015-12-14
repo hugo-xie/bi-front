@@ -11,7 +11,7 @@
                     <div class="panel pane-default login-panel">
                         <div class="panel-body">
                             <div class="clearfix">
-                                <h4 class="pull-left">欢迎来到xxxxx</h4>
+                                <h4 class="pull-left" style="font-size:0.9em;">欢迎登陆</h4>
                                 <!-- <a class="pull-right text-red register-link" href="#/register">立即注册&nbsp;<i class="fa fa-angle-right"></i></a> -->
                             </div>
                             <form class="login-form form-validation" name="loginForm" novalidate>
@@ -19,7 +19,7 @@
                                     <span class="input-group-addon">
                                       <i class="fa fa-user"></i>
                                     </span>
-                                    <input type="text" class="form-control" ng-model="login_name" placeholder="请输入学号或者工号" required/>
+                                    <input type="text" class="form-control" ng-model="login_name" placeholder="请输入账号" required/>
                                 </div>
                                 <div class="input-group m-t-md">
                                     <span class="input-group-addon">
@@ -28,17 +28,17 @@
                                     <input type="password" class="form-control" ng-model="login_password" placeholder="请输入密码" required/>
                                 </div>
                                 <div class="clearfix m-t-sm">
-                                    <label class="i-checks i-checks-sm pull-left">
+                                    <label class="i-checks i-checks-sm pull-left" style="font-size:0.7em;">
                                         <input type="checkbox" ng-model="autoLogin">
                                         <i></i>&nbsp;自动登录
                                     </label>
-                                    <a class="pull-right forgotpwd-link" ng-click="forgotPassword()">忘记密码?</a>
+                                    <a class="pull-right forgotpwd-link" ng-click="forgotPassword()" style="font-size:0.7em;">忘记密码?</a>
                                 </div>
                                 <div class="clearfix m-t-sm">
                                     <span class="text-danger">{{errorMsg}}</span>
                                 </div>
                                 <!-- <button class="btn btn-primary w-full m-t-sm" ng-click="login()">登录</button> -->
-                                <button class="btn btn-primary w-full m-t-sm" ui-sref="app.index.economy.gdp">登录</button>
+                                <button class="btn btn-primary w-full m-t-sm" ui-sref="app.index.economy.gdp" style="margin-top:0;">登录</button>
                             </form>
                         </div>
                     </div>
