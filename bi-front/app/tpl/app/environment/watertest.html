@@ -1,0 +1,208 @@
+<div class="wrapper lter b-b bg-white">
+    <div class="subview3_title">水环境质量预测分析</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				水环境质量(WQI)预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig0" style="width:500px,height: 500px"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测结果解读</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				溶解氧浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig1" style="width:500px,height: 500px"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测结果解读</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				高锰酸钾浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig2"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测结果解读</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				氨氮浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig3"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测结果解读</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				总磷浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig4"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测结果解读</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				工农业排污量预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig5"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测结果解读</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				工农业排污量预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<button ng-repeat="bttn in buttonMap1" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
+					<div class="col-md-8 chart-panel">
+						<div class="col-md-8" id="lisiteMap" style="width:800px;height:400px;"></div>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测结果解读</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="scripts/lisite/map.js"></script>

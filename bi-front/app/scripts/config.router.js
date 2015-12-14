@@ -178,15 +178,15 @@ angular.module('nevermore')
               }]
             }
           })
-          .state('app.emenu.airtitle', {
-            url: '^/app/environment/emenu/airtitle',
-            templateUrl: 'tpl/app/environment/airtitle.html',
-            controller: 'AirCtrl',
-            resolve: {
-            controller: ['$ocLazyLoad', function($ocLazyLoad) {
-            return $ocLazyLoad.load([
-            'scripts/controllers/app/environment/air.js',
-              ]);
+          .state('app.emenu.watertest', {
+          url: '^/app/environment/emenu/watertest',
+          templateUrl: 'tpl/app/environment/watertest.html',
+          controller: 'WaterTestCtrl',
+          resolve: {
+          controller: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load([
+          'scripts/controllers/app/environment/watertest.js',
+                 ]);
               }]
             }
           })
@@ -199,6 +199,18 @@ angular.module('nevermore')
           return $ocLazyLoad.load([
           'scripts/controllers/app/environment/waterenvironmentbi.js',
                  ]);
+              }]
+            }
+          })
+          .state('app.emenu.airtitle', {
+            url: '^/app/environment/emenu/airtitle',
+            templateUrl: 'tpl/app/environment/airtitle.html',
+            controller: 'AirCtrl',
+            resolve: {
+            controller: ['$ocLazyLoad', function($ocLazyLoad) {
+            return $ocLazyLoad.load([
+            'scripts/controllers/app/environment/air.js',
+              ]);
               }]
             }
           })
