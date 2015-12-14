@@ -36,7 +36,7 @@ app.controller('LoginController', function($scope,$localStorage,$http,
   };
 
   $scope.forgotPassword = function(){
-    ToasterTool.info('请联系管理员','联系电话: 021-65982267 力学实验中心');
+    ToasterTool.info('请联系管理员','联系电话: --');
   };
 
 });
