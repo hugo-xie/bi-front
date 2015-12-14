@@ -1,9 +1,9 @@
 
 <div class="hbox hbox-auto-xs hbox-auto-sm">
   <div class="col w  dk b-r bg-auto second_nav_gray">
-    <div class="panel no_border" draggable="true">
+    <div class="panel no_border" draggable="true" style="position:fixed;width:195px;">
         
-        <div class="list-group" ng-if="true">
+        <div class="list-group" ng-if="true" style="font-size:0.9em;">
           <li ui-sref="app.index.economy.gdp({title:'GDP'})" class="list-group-item second_nav_body">
             <a>GDP分析预测</a>
           </li>
@@ -11,14 +11,13 @@
             <a>税收分析预测</a>
           </li>
         </div>
-        <div class="list-group" ng-if="true">
+        <div class="list-group" ng-if="true" style="font-size:0.9em;">
           <li ui-sref="app.index.economy.keqiang({title:'keqiang'})" class="list-group-item second_nav_body">
             <a>克强指数</a>
           </li>
           <li ui-sref="app.index.economy.powerconsumption({title:'company'})" class="list-group-item second_nav_body">
             <a>企业用电量与经济增长关联分析</a>
-          </li>
-          
+          </li>    
         </div>
       </div>
   </div>
