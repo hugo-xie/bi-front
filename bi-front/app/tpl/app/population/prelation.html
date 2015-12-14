@@ -104,10 +104,10 @@
       
                   <div class="row">
                   <button ng-repeat="bttn in buttonMap3" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click2(bttn)">{{bttn.label}}</button>
-                      <div class="col-md-8 chart-panel">
-                   <highchart id="sumpopulation" config="sumpopulation" style="height: 500px"></highchart>
+                      <div class="col-md-9 chart-panel">
+                   <div id="main"  style="height: 500px"></div>
                   </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       
                         <p class="fill-margin"></p>
                         <div class="ioc-panel-desc">
