@@ -26,7 +26,7 @@ map.setCenter([121.10, 31.45]);
  
 var heatmap;
 var points =[
-    {"lng":121.10,"lat":31.45,"count":100}
+    {"lng":121.10,"lat":31.45,"count":280}
   //  {"lng":121.15255,"lat":31.61736,"count":11},
    // {"lng":121.09379,"lat":31.47528,"count":12},
    // {"lng":121.0849,"lat":31.50502,"count":13}
@@ -37,7 +37,7 @@ var points =[
  map.plugin(["AMap.Heatmap"], function() {
         //初始化heatmap对象
         heatmap = new AMap.Heatmap(map, {
-            radius: 25, //给定半径
+            radius: 40, //给定半径
             opacity: [0, 0.8]
             /*,gradient:{
              0.5: 'blue',
