@@ -7,8 +7,10 @@ app.controller('WaterCtrl', ['$scope', function($scope) {
     var map = new AMap.Map('map_wMap',{
         zoom: 10,
         center: [121.106661, 31.579533]
-
-
+    });
+     var marker = new AMap.Marker({
+        position: [121.106661,  31.579533],
+        map:map
     });
 
     var waterQualityPredict = [4004,4003,4034]
