@@ -4,7 +4,7 @@
     <div class="subview3_title">{{title}}</div>
   </div>
 
-  <div class="wrapper bg-white container" >
+  <div class="wrapper  container"  style="padding:0px;margin-top:1em;margin-bottom:2em">
     <div class="panel panel-primary">
       <div class="panel-heading">
         <div class="panel-title">
@@ -12,32 +12,32 @@
         </div>
       </div>
     <div class="row">
-      <div class="col-md-8" style="border-right:1px solid">
+      <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
         <highchart config="keqiangindex"></highchart>
       </div>
       <div class="col-md-4" >
-        <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
         <span class="glyphicon glyphicon-tasks" aria-hidden="true">
           <strong>本月克强指数</br>
           97.19
           </strong>
         </span>
       </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
         <span class="glyphicon glyphicon-send" aria-hidden="true">
          <strong> 本月可强指数</br>
           127.3</strong>
         </span>
       </button>
       <button class="btn btn-primary" style="margin-top:40px">指标含义</button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:90%;display:block">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="width:100%">
           <strong>"克强指数"的由来，源于李克强总理</br>2007年任职辽宁省省委书记时，喜欢通过耗</br>电量,铁路货运量和贷款发放量三个指标分析</br>当时辽宁省经济状况,英国</br>《经济学人》自2010年底正式推出这一</br>
           指数后,受到花旗银行在内的</br>众多国际机构认可</strong>
         </span>
       </button>
       <button class="btn btn-primary" style="margin-top:15px">一句话解读</button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:90%">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
           <strong>本月克强指数较上个月有所提高，实体</br>经济增速
           有所加快</strong>
@@ -53,7 +53,7 @@
         </div>
       </div>
     <div class="row">
-      <div class="col-md-8" style="border-right:1px solid">
+      <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
         <highchart config="keqiangChart"></highchart>
       </div>
       <div class="col-md-4" >
@@ -70,10 +70,10 @@
           91.4(亿元)</strong>
         </span>
       </button>
-      <button class="btn btn-primary" style="margin-top:120px">手动调节</button>
+      <button class="btn btn-primary" style="margin-top:20%">手动调节</button>
                 <div class="handler">
                 <div class="row">
-                  <div class="col-md-5">
+                  <div class="col-md-5" style="margin-top:4%">
                     <p class="handler-title"><strong>中长期贷款</strong></p>
                   </div>
                   <div class="col-md-7">
@@ -81,7 +81,7 @@
                       <div class="percentage-cur">
                         <span class="num">{{ selectedRange }}.00%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider">
+                      <div class="progress-bar progress-bar-slider" style="width:90%">
                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
                         <div class="inner" ng-style="{ width: (selectedRange/2 +50) + '%' || '50%' }" ></div>
                       </div>
@@ -90,15 +90,15 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5">
+                  <div class="col-md-5"  style="margin-top:4%">
                     <p class="handler-title"><strong>工业用电量</strong></p>
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-7" >
                     <div class="progress-box" ng-app>
                       <div class="percentage-cur" ng-init="selectedRange2=0">
                         <span class="num">{{ selectedRange2 }}.00%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider">
+                      <div class="progress-bar progress-bar-slider" style="width:90%" >
                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2"  >
                         <div class="inner" ng-style="{ width: (selectedRange2/2 +50) + '%' || '50%' }"></div>
                       </div>
@@ -107,7 +107,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5">
+                  <div class="col-md-5"  style="margin-top:4%">
                     <p class="handler-title"><strong>货运量</strong></p>
                   </div>
                   <div class="col-md-7">
@@ -115,7 +115,7 @@
                       <div class="percentage-cur" ng-init="selectedRange3=0">
                         <span class="num">{{ selectedRange3 }}.00%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider">
+                      <div class="progress-bar progress-bar-slider" style="width:90%">
                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3" >
                         <div class="inner" ng-style="{ width: (selectedRange3/2 +50) + '%' }"></div>
                       </div>
@@ -128,6 +128,7 @@
       </div>
         
         </div>
+        <div style="height:1%;width:80%;border-bottom:1px solid;margin-left:10%;margin-top:1%"></div>
      <div class="panel-body">
               <div class="row">
                 <div class="col-md-4">
