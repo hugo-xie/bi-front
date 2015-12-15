@@ -93,69 +93,57 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
 
 	$scope.chartConfig2 = {	 
 		chart: {
-            type: 'area'
+            type: 'areaspline'
         },
         title: {
             text: '高锰酸钾浓度预测图'
         },
-        subtitle: {
-            text: '来源: 太仓市水文监测站'
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 150,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: '#FFFFFF'
         },
         xAxis: {
-            labels: {
-                formatter: function() {
-                    return this.value; // clean, unformatted number for year
-                }
-            }
+            categories: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday'
+            ]
         },
         yAxis: {
             title: {
-                text: '高锰酸钾浓度(μg/L)'
-            },
-            labels: {
-                formatter: function() {
-                    return this.value / 1000 +'k';
-                }
+                text: '高锰酸钾浓度(mg/L)'
             }
         },
         tooltip: {
-            pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+            shared: true,
+            valueSuffix: ''
+        },
+        credits: {
+            enabled: false
         },
         plotOptions: {
-            area: {
-                pointStart: 1940,
-                marker: {
-                    enabled: false,
-                    symbol: 'circle',
-                    radius: 2,
-                    states: {
-                        hover: {
-                            enabled: true
-                        }
-                    }
-                }
+            areaspline: {
+                fillOpacity: 0.5
             }
         },
         series: [{
-            type: 'area',
+            type: 'areaspline', 
             name: '实际值',
-            data: [null, null, null, null, null, 6 , 11, 32, 110, 235, 369, 640,1005, 1436,
-            		2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,27387, 29459, 31056, 31982,
-            		32040, 31233, 29224, 27342, 26662,26956, 27912, 28999, 28965, 27826, 25579,
-            		25722, 24826, 24605,24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344,
-            		23586,22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-                10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104 
-            ]
+            data: [43, 54, 33, 45, 64, 50, 52]
         }, {
-        	type: 'area',
+            type: 'areaspline',
             name: '预测值',
-            data: [null, null, null, null, null, null, null , null , null ,null,5, 25, 50,
-            	120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,4238, 5221, 6129,
-            	7089, 8339, 9399, 10538, 11643, 13092, 14478,15915, 17385, 19055, 21205,
-            	23044, 25393, 27935, 30062, 32049,33952, 35804, 37431, 39197, 45000, 43000,
-            	41000, 39000, 37000,35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000,
-            	22000,21000, 20000, 19000, 18000, 18000, 17000, 16000
-            ]
+            data: [50, 39, 48, 53, 63, 45, 64]
         }]
 	};
 
@@ -253,15 +241,15 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
             series: [{
             type: 'bar',
             name: '过去24小时',
-            data: [5, 3, 4, 7, 2]
+            data: [45, 33, 24, 47, 52]
         }, {
         	type: 'bar',
             name: '实时',
-            data: [2, 2, 3, 2, 1]
+            data: [32, 42, 33, 62, 41]
         }, {
         	type: 'bar',
             name: '未来24小时',
-            data: [3, 4, 4, 2, 5]
+            data: [73, 40, 54, 42, 45]
         }]
 	};
 
@@ -293,16 +281,16 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
             type: 'pie',
             name: '所占比率',
             data: [
-                ['溶解氧',   45.0],
-                ['高锰酸钾',       26.8],
+                ['钢铁业污水',   45.0],
+                ['造纸业污水',       26.8],
                 {
-                    name: '氨氮',
+                    name: '农业污水',
                     y: 12.8,
                     sliced: true,
                     selected: true
                 },
-                ['总磷',    8.5],
-                ['固体污染物',     6.2],
+                ['纺织业污水',    8.5],
+                ['化工业污水',     6.2],
                 ['其它',   0.7]
             ]
         }]
