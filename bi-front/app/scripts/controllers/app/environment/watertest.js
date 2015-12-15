@@ -1,75 +1,46 @@
-app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stateParams, $http) {
 	
+    //获取表格数据
+    // $http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php").success(function (response) {$scope.names = response.records;});
+
+    // highchart图
 	$scope.chartConfig0 = {	 
-		chart: {
-            zoomType: 'xy'
+		title: {
+            text: '太仓市水环境质量(WQI)分析预测图'
         },
-        title: {
-            text: '太仓市水环境质量(WQI)预测图'
+        xAxis: {
+            categories: ['1day', '2day', '3day', '4day', '5day']
         },
-        subtitle: {
-            text: '来源: 太仓市水文监测站'
-        },
-        xAxis: [{
-            categories: ['1day', '2day', '3day', '4day', '5day', '6day',
-                '7day', '8day', '9day', '10day', '11day', '12day'],
-            crosshair: true
-        }],
-        yAxis: [{ // Primary yAxis
-            labels: {
-                format: '{value}',
+        labels: {
+            items: [{
+                html: 'Total fruit consumption',
                 style: {
-                    color: Highcharts.getOptions().colors[1]
+                    left: '50px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
                 }
-            },
-            title: {
-                text: '水环境质量指数(WQI)',
-                style: {
-                    color: Highcharts.getOptions().colors[1]
-                }
-            }
-        }, { // Secondary yAxis
-            title: {
-                text: '',
-                style: {
-                    color: Highcharts.getOptions().colors[0]
-                }
-            },
-            labels: {
-                format: '{value}',
-                style: {
-                    color: Highcharts.getOptions().colors[0]
-                }
-            },
-            opposite: true
-        }],
-        tooltip: {
-            shared: true
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'left',
-            x: 100,
-            verticalAlign: 'top',
-            y: 100,
-            floating: true,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            }]
         },
         series: [{
-            name: '实际值',
             type: 'column',
-            yAxis: 1,
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 180.4, 194.1, 95.6, 54.4],
-            tooltip: {
-                valueSuffix: ''
-            }
-
+            name: '工业污水',
+            data: [30, 20, 10, 30, 40]
         }, {
-        	type: 'spline',
-            name: '预测值',
-            data: [60.9, 66.5, 102.4, 139.2, 151.0, 186.0, 111.6, 132.5, 180.4, 170.1, 92.6, 51.4],
-            tooltip: {
-                valueSuffix: ''
+            type: 'column',
+            name: '农业污水',
+            data: [62, 53, 65, 74, 68]
+        }, {
+            type: 'column',
+            name: '生活污水',
+            data: [84, 73, 63, 69, 50]
+        }, {
+            type: 'spline',
+            name: 'WQI',
+            data: [83, 62.67, 53, 86.33, 73.33],
+            marker: {
+                lineWidth: 2,
+                lineColor: Highcharts.getOptions().colors[3],
+                fillColor: 'white'
             }
         }]
 	};

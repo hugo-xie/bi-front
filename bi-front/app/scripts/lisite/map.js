@@ -19,7 +19,7 @@ var marker3 = new AMap.Marker({
 marker3.setMap(map);
 //显示信息窗体(可单击位置显示隐藏的信息窗体)
 var infowindow1 = new AMap.InfoWindow({
-     content: '<h3>第二水厂</h3>',
+     content: '<h4>第二水厂</h4>',
      offset: new AMap.Pixel(0, -30),
      size:new AMap.Size(150,0)
 })
@@ -28,7 +28,7 @@ var clickHandle1 = AMap.event.addListener(marker1, 'click', function() {
 })
 
 var infowindow2 = new AMap.InfoWindow({
-     content: '<h3>协鑫码头</h3>',
+    content: "<h4>协鑫码头</h4><div style='color:red'>123</div>",
      offset: new AMap.Pixel(0, -30),
      size:new AMap.Size(150,0)
 })
@@ -38,7 +38,7 @@ var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
 })
 
 var infowindow3 = new AMap.InfoWindow({
-     content: '<h3>第三水厂</h3>',
+     content: '<h4>第三水厂</h4>',
      offset: new AMap.Pixel(0, -30),
      size:new AMap.Size(150,0)
 })
