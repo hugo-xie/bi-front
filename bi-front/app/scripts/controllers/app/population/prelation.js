@@ -84,24 +84,24 @@ app.controller('PrelationCtrl', ['$scope', function($scope) {
                
             ],
             links: [
-                {source: '第一产业人口', target: '地方生产总值', weight: 0.9,name:'关联0.9'},
-                {source: '第一产业人口', target: '第一产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第一产业人口', target: '第二产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第一产业人口', target: '第三产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第一产业人口', target: '人均GDP', weight: 0.9,name:'关联0.9'},
-                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.9,name:'关联0.9'},
-                {source: '第二产业人口', target: '地方生产总值', weight: 0.9,name:'关联0.9'},
-                {source: '第二产业人口', target: '第一产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第二产业人口', target: '第二产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第二产业人口', target: '第三产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第二产业人口', target: '人均GDP', weight: 0.9,name:'关联0.9'},
-                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.9,name:'关联0.9'},
-                {source: '第三产业人口', target: '地方生产总值', weight: 0.9,name:'关联0.9'},
-                {source: '第三产业人口', target: '第一产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第三产业人口', target: '第二产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第三产业人口', target: '第三产业产值', weight: 0.9,name:'关联0.9'},
-                {source: '第三产业人口', target: '人均GDP', weight: 0.9,name:'关联0.9'},
-                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.9,name:'关联0.9'},
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.9,name:'0.9关联'},
 
                 // Ribbon Type 的和弦图每一对节点之间必须是双向边
                 {target: '第一产业人口', source: '地方生产总值', weight: 0.9},
@@ -166,18 +166,17 @@ $scope.btn_click=function(btn){
 };
 $scope.change=function(btn){
    if(btn.name===2024){
-    $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
+  //  $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
     $scope.predictChart.series=[{
             name: '人口(万人)',
             color: '#4572A7',
             type: 'column',
             yAxis: 1,
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-         148.5, 216.4, 194.1],
+            data: popData,
             tooltip: {
                 valueSuffix: '万人'
-            }
-
+            },
+            tickPositions:[0,50,100,150,200,250]
         }, {
             name: '关联度',
             type: 'spline',
@@ -212,8 +211,7 @@ $scope.change=function(btn){
             color: '#4572A7',
             type: 'column',
             yAxis: 1,
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-         148.5, 216.4, 194.1],
+            data: popData,
             tooltip: {
                 valueSuffix: '万人'
             }
@@ -252,8 +250,7 @@ $scope.change=function(btn){
             color: '#4572A7',
             type: 'column',
             yAxis: 1,
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-         148.5, 216.4, 194.1],
+            data: popData,
             tooltip: {
                 valueSuffix: '万人'
             }
@@ -354,67 +351,371 @@ $scope.btn_click2=function(btn){
 };
 $scope.change2=function(btn){
    if(btn.name===5){
-    $scope.sumpopulation.series=[{
-            name: '第一产业GDP',
-            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152],
-             marker: {
-                symbol:"diamond"
+    alert("111");
+    require(
+            [
+                'echarts',
+                'echarts/chart/chord',
+                'echarts/chart/force' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+    title : {
+        text: '劳动力人口与GDP关联度分析预测',
+        x:'right',
+        y:'bottom'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: function (params) {
+            if (params.indicator2) {    // is edge
+                return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
+            } else {    // is node
+                return params.name
             }
-        }, {
-            name: '第二产业GDP',
-            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845],
-             marker: {
-                symbol:"circle"
+        }
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {show: true, type: ['force', 'chord']},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        x: 'left',
+        data:['第一产业人口', '第二产业人口', '第三产业人口']
+    },
+    series : [
+        {
+            type:'chord',
+            sort : 'ascending',
+            sortSub : 'descending',
+            showScale : false,
+            itemStyle : {
+                normal : {
+                    label : {
+                        rotate : true
+                    }
+                }
+            },
+            // 使用 nodes links 表达和弦图
+            nodes: [
+                {name:'总人口'},
+                {name:'人口密度'},
+                {name:'人口出生率'},
+                {name:'人口自然增长率'},
+                {name:'人口死亡率'},
+                {name:'第一产业人口'},
+                {name:'第二产业人口'},
+                {name:'第三产业人口'},
+                {name:'城镇人口'},
+                {name:'乡村人口'},
+                {name:'地方生产总值'},
+                {name:'第一产业产值'},
+                {name:'第二产业产值'},
+                {name:'第三产业产值'},
+                {name:'人均GDP'},
+                {name:'社会消费品零售总额'}
+               
+            ],
+            links: [
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.9,name:'0.9关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.9,name:'0.9关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.9,name:'0.9关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.9,name:'0.9关联'},
+
+                // Ribbon Type 的和弦图每一对节点之间必须是双向边
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.9},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.9},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.9},
+                {target: '第一产业人口', source: '第三产业产值', weight: 0.9},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.9},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.9},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.9},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.9},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.9},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.9},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.9},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.9},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.9},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.9},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.9},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.9},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.9},
+                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.9}
+            ]
+        }
+    ]
+};
+                    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
             }
-        }, {
-            name: '第三产业GDP',
-            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682],
-             marker: {
-                symbol:"square"
-            }
-        }];
+        );
    }
    if(btn.name===10){
-    $scope.sumpopulation.series=[{
-            name: '第一产业GDP',
-            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152],
-             marker: {
-                symbol:"diamond"
+    require(
+            [
+                'echarts',
+                'echarts/chart/chord',
+                'echarts/chart/force' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+    title : {
+        text: '劳动力人口与GDP关联度分析预测',
+        x:'right',
+        y:'bottom'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: function (params) {
+            if (params.indicator2) {    // is edge
+                return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
+            } else {    // is node
+                return params.name
             }
-        }, {
-            name: '第二产业GDP',
-            data: [0.7952,0.8412, 0.7984,0.8842,0.8125,0.7965, 0.6845],
-             marker: {
-                symbol:"circle"
+        }
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {show: true, type: ['force', 'chord']},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        x: 'left',
+        data:['第一产业人口', '第二产业人口', '第三产业人口']
+    },
+    series : [
+        {
+            type:'chord',
+            sort : 'ascending',
+            sortSub : 'descending',
+            showScale : false,
+            itemStyle : {
+                normal : {
+                    label : {
+                        rotate : true
+                    }
+                }
+            },
+            // 使用 nodes links 表达和弦图
+            nodes: [
+                {name:'总人口'},
+                {name:'人口密度'},
+                {name:'人口出生率'},
+                {name:'人口自然增长率'},
+                {name:'人口死亡率'},
+                {name:'第一产业人口'},
+                {name:'第二产业人口'},
+                {name:'第三产业人口'},
+                {name:'城镇人口'},
+                {name:'乡村人口'},
+                {name:'地方生产总值'},
+                {name:'第一产业产值'},
+                {name:'第二产业产值'},
+                {name:'第三产业产值'},
+                {name:'人均GDP'},
+                {name:'社会消费品零售总额'}
+               
+            ],
+            links: [
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.7,name:'0.7关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.7,name:'0.7关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.9,name:'0.7关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.7,name:'0.7关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.7,name:'0.7关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.7,name:'0.7关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.7,name:'0.7关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.7,name:'0.7关联'},
+                {source: '第三产业人口', target: '人均GDP', weight:0.7,name:'0.7关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.7,name:'0.7关联'},
+
+                // Ribbon Type 的和弦图每一对节点之间必须是双向边
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.7},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.7},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.7},
+                {target: '第一产业人口', source: '第三产业产值', weight:0.7},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.7},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.7},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.7},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.7},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.7},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.7},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.7},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.7},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.7},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.7},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.7},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.7},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.7},
+                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.7}
+            ]
+        }
+    ]
+};
+                    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
             }
-        }, {
-            name: '第三产业GDP',
-            data: [0.8452, 0.8412, 0.8112,0.7952, 0.8123, 0.7584,0.7682],
-             marker: {
-                symbol:"square"
-            }
-        }];
+        );
    }
    if(btn.name===15){
-    $scope.sumpopulation.series=[{
-            name: '第一产业GDP',
-            data: [0.7421, 0.6998,0.7845, 0.7412, 0.7861, 0.8165,0.8152],
-            marker: {
-                symbol:"diamond"
+    require(
+            [
+                'echarts',
+                'echarts/chart/chord',
+                'echarts/chart/force' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+    title : {
+        text: '劳动力人口与GDP关联度分析预测',
+        x:'right',
+        y:'bottom'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: function (params) {
+            if (params.indicator2) {    // is edge
+                return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
+            } else {    // is node
+                return params.name
             }
-        }, {
-            name: '第二产业GDP',
-            data: [0.7952,0.8412, 0.7984,0.7842,0.8125,0.7965, 0.6845],
-            marker: {
-                symbol:"circle"
+        }
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {show: true, type: ['force', 'chord']},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        x: 'left',
+        data:['第一产业人口', '第二产业人口', '第三产业人口']
+    },
+    series : [
+        {
+            type:'chord',
+            sort : 'ascending',
+            sortSub : 'descending',
+            showScale : false,
+            itemStyle : {
+                normal : {
+                    label : {
+                        rotate : true
+                    }
+                }
+            },
+            // 使用 nodes links 表达和弦图
+            nodes: [
+                {name:'总人口'},
+                {name:'人口密度'},
+                {name:'人口出生率'},
+                {name:'人口自然增长率'},
+                {name:'人口死亡率'},
+                {name:'第一产业人口'},
+                {name:'第二产业人口'},
+                {name:'第三产业人口'},
+                {name:'城镇人口'},
+                {name:'乡村人口'},
+                {name:'地方生产总值'},
+                {name:'第一产业产值'},
+                {name:'第二产业产值'},
+                {name:'第三产业产值'},
+                {name:'人均GDP'},
+                {name:'社会消费品零售总额'}
+               
+            ],
+            links: [
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.8,name:'0.8关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.8,name:'0.8关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.8,name:'0.8关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.8,name:'0.8关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.8,name:'0.8关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.8,name:'0.8关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.8,name:'0.8关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.8,name:'0.8关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.8,name:'0.8关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.8,name:'0.8关联'},
+
+                // Ribbon Type 的和弦图每一对节点之间必须是双向边
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.8},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.8},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.8},
+                {target: '第一产业人口', source: '第三产业产值', weight: 0.8},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.8},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.8},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.8},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.8},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.8},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.8},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.8},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.8},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.8},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.8},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.8},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.8},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.8},
+                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.8}
+            ]
+        }
+    ]
+};
+                    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
             }
-        }, {
-            name: '第三产业GDP',
-            data: [0.8452, 0.8412, 0.8112,0.8952, 0.8123, 0.7584,0.7682],
-            marker: {
-                symbol:"square"
-            }
-        }];
+        );
    }
 };
 
@@ -472,7 +773,8 @@ $scope.$watch($scope.rr,hh);
                     color: '#89A54E'
                 }
             },
-            opposite: true
+            opposite: true,
+          tickPositions:[5,10,15,20,25,30,35,40]
 
         }, { // Secondary yAxis
             gridLineWidth: 0,
@@ -490,7 +792,7 @@ $scope.$watch($scope.rr,hh);
                     color: '#4572A7'
                 }
             },
-            tickPositions:[0,50,100,150,200,250,300,350,400]
+             tickPositions:[0,50,100,150,200,250,300,350]
 
         }, { // Tertiary yAxis
             gridLineWidth: 0,
@@ -508,7 +810,8 @@ $scope.$watch($scope.rr,hh);
                     color: '#AA4643'
                 }
             },
-            opposite: true
+            opposite: true,
+            tickPositions:[0.7,0.75,0.8,0.85,0.9]
         }],
         tooltip: {
             shared: true
