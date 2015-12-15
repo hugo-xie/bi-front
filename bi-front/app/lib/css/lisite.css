@@ -1,0 +1,11 @@
+.lst-table, .lst-th , .lst-td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.lst-table tr:nth-child(odd)	{
+  background-color: #E0E0E0;
+}
+.lst-table tr:nth-child(even) {
+  background-color: #ffffff;
+}

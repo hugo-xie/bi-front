@@ -1,4 +1,4 @@
-<div class="vbox cgq_fontsize">
+<div class="vbox cgq_fontsize" style="margin-bottom:5em">
 	<!--topbar-->
     <div class="wrapper lter b-b bg-white">
 		<a href="" class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">用电量关联分析</a>
@@ -6,11 +6,11 @@
  	</div>
 
  	<!--企业用电量与经济增长关联分析————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
-	<div class="wrapper bg-white container space-top">
+	<div class="wrapper bg-white container space-top" style="margin-bottom:0;">
 	    <div class="row">
 	      <!--标题-->
 	      <div class="col-md-12 topbar">
-	      	<h4 class="cgq_title">企业用电量与经济增长关联分析</h4>
+	      	<h4 class="cgq_title">工业用电量与GDP增长率关联分析</h4>
 	      </div>
 	      <!--highchart-->
 	      <div class="col-md-8 chartshow">
@@ -54,6 +54,7 @@
 			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
 			          	<ul class="dropdown-menu">
 			            <li><a ng-click="changeTotalChart('line')">折线图</a></li>
+			            <li><a ng-click="changeTotalChart('spline')">曲线图</a></li>
 			            <li class="divider"></li>
 			            <li><a ng-click="changeTotalChart('column')">柱状图</a></li>
 			            <li><a ng-click="changeTotalChart('area')">区域图</a></li>
@@ -63,11 +64,12 @@
 	      		<div class="col-md-12 cgq_marginaround1em">
 	      			<button ng-click="showTotalTable()" class="btn m-b-xs btn-primary">详细数据列表</button>
 	      		</div>
+	      		
 	      	</div>
 	      </div>
 	    </div>
     </div>
-    <div class="bg-white container padding0em" ng-if="show">
+    <div class="bg-white container padding0em" ng-if="totalshow">
     	<div class="panel panel-default paddingmargin0em">
 	    	<div class="panel-heading">数据详情</div>  
 		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
@@ -89,7 +91,7 @@
 	    <div class="row">
 	      <!--标题-->
 	      <div class="col-md-12 topbar">
-	      	<h4 class="cgq_title">用电量增长率与行业产值增长率关联分析</h4>
+	      	<h4 class="cgq_title">行业用电量增长率与产值增长率关联分析</h4>
 	      </div>
 	      <!--highchart图表-->
 	      <div class="col-md-8 chartshow"  ng-if="vocationdata.isshowchartvocation">
@@ -169,4 +171,100 @@
 	    </div>
     </div>
     <!--End of Vocation-->
+
+    <!--规模以上企业用电量增长率与产值增长率分析预测————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
+    <div class="wrapper bg-white container space-top" style="margin-bottom:0em;">
+	    <div class="row">
+	      <!--标题-->
+	      <div class="col-md-12 topbar">
+	      	<h4 class="cgq_title">规模以上企业用电量与企业产值增长率关联分析</h4>
+	      </div>
+	      <!--highchart-->
+	      <div class="col-md-8 chartshow">
+	        <highchart   id="chartenterprise" config="AverageEnterpriseChartByYear" ></highchart>
+	      </div>
+	      <!--Menu side-->
+	      <div class="col-md-4 menustructer">
+	      	<div>
+		      	<div class="col-md-12 ">
+	            	<div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
+		                <span class="text-white font-thin h1 block">{{averageenterprisedata.powergrowthrate}}</span>
+		                <span class="text-xs">{{averageenterprisedata.year}}年企业用电量增长率预测值</span>
+		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>                                                                                                              
+		            </div>
+	            </div>
+	            <div class="col-md-12 ">
+	            	<div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth">
+		                <span class="text-white font-thin h1 block">{{averageenterprisedata.gdpgrowthrate}}</span>
+		                <span class="text-xs">{{averageenterprisedata.year}}年产值增长率预测值</span>
+		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
+		                </span>
+	              	</div>
+	            </div>
+	      		<div class="col-md-12 cgq_marginaround1em">
+					<article class="media cgq_contentwidth">
+			            <div class="pull-left">
+			              <span class="fa-stack fa-lg">
+			                <i class="fa fa-circle fa-stack-2x text-info"></i>
+			                <i class="fa fa-file-o fa-stack-1x text-white"></i>
+			              </span>
+			            </div>
+			            <div class="media-body">
+			              <span class="h4">一句话解读</span>
+			              <small class="block m-t-xs">{{averageenterprisedata.oneword}}</small>
+			            </div>
+          			</article>
+	      		</div>
+
+	      		<div class="col-md-12 cgq_marginaround1em">
+				    <div class="btn-group dropdown">
+			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
+			          	<ul class="dropdown-menu">
+			            <li><a ng-click="changeAverageEnterpriseChart('line')">折线图</a></li>
+			            <li><a ng-click="changeAverageEnterpriseChart('spline')">曲线图</a></li>
+			            <li class="divider"></li>
+			            <li><a ng-click="changeAverageEnterpriseChart('column')">柱状图</a></li>
+			            <li><a ng-click="changeAverageEnterpriseChart('area')">区域图</a></li>
+			          </ul>
+			        </div>
+	      		</div>
+	      		<div class="col-md-12 cgq_marginaround1em">
+	      			<button ng-click="showAverageEnterpriseTable()" class="btn m-b-xs btn-primary cgq_fixedwidth12">详细数据列表</button>
+	      		</div>
+	      		<div class="col-md-12 ">
+	      			<button ng-click="showAverageEnterpriseTable()" class="btn m-b-xs btn-primary cgq_fixedwidth12 CGQ_marginleft1_5em">查看各企业详情</button>
+	      		</div>
+	      	</div>
+	      </div>
+	    </div>
+    </div>
+    <div class="bg-white container padding0em" ng-if="averageenterprisetableshow" style="margin-bottom:2em;">
+    	<div class="panel panel-default" style="margin-bottom:0em;">
+	    	<div class="panel-heading">数据详情</div>  
+		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="year in averageenterprisedata.tabledata">{{year.yearvalue}}</td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="gdp in totaldata.tabledata">{{gdp.gdprate}}</td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="power in totaldata.tabledata">{{power.powerrate}}</td>
+			      </tr>
+		    </table>
+  		</div>
+    </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+

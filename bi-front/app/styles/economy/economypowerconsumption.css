@@ -52,6 +52,7 @@
 	padding: 0;
 }
 .padding0em{
+	margin-top: 0;
 	padding: 0;
 	border:2px solid lightblue;
 }
@@ -85,4 +86,10 @@
 }
 .cgq_contentwidth{
 	width:95%;
+}
+.cgq_fixedwidth12{
+	width: 33.5%
+}
+.CGQ_marginleft1_5em{
+	margin-left: 1.2em;
 }

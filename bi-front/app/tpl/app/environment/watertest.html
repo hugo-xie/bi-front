@@ -1,0 +1,445 @@
+<script type="text/javascript" src="scripts/lisite/map.js"></script>
+<script type="text/javascript" src="scripts/lisite/switch.js"></script>
+
+
+<div class="wrapper lter b-b bg-white">
+	<div class="subview3_title">水环境质量预测分析</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				水环境质量(WQI)预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig0" style="width:500px,height: 500px"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>水环境质量(WQI)预测值与实际值比较</h4>
+							<button class="btn btn-success" style="font-size:85%" ng-click="isShow0=!isShow0">
+								<span class="glyphicon glyphicon glyphicon-search"></span>
+								查看详细数据
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div></div>
+				<table class="lst-table" ng-show="isShow0" style="margin-left:250px">
+					<tr class="lst-tr">
+						<th class="lst-th">水环境质量指数(WQI)</th>
+						<th class="lst-th">监测点1</th>
+						<th class="lst-th">监测点2</th>
+						<th class="lst-th">监测点3</th>
+						<th class="lst-th">监测点4</th>
+					</tr>
+					<tr class="lst-tr">
+						<th class="lst-th">第一天</th>
+						<td class="lst-td">65</td>
+						<td class="lst-td">77</td>
+						<td class="lst-td">89</td>
+						<td class="lst-td">56</td>
+					</tr>
+					<tr class="lst-tr">
+						<th class="lst-th">第二天</th>
+						<td class="lst-td">75</td>
+						<td class="lst-td">87</td>
+						<td class="lst-td">69</td>
+						<td class="lst-td">76</td>
+					</tr>
+					<tr class="lst-tr">
+						<th class="lst-th">第三天</th>
+						<td class="lst-td">56</td>
+						<td class="lst-td">87</td>
+						<td class="lst-td">99</td>
+						<td class="lst-td">36</td>
+					</tr>
+				</table>
+				<!-- <table>
+					<tr ng-repeat="x in names">
+						<td>{{ x.Name }}</td>
+						<td>{{ x.Country }}</td>
+					</tr>
+				</table> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				溶解氧浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig1" style="width:500px,height: 500px"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>各水文监测点溶解氧浓度预测比较</h4>
+							<button class="btn btn-success" style="font-size:85%" ng-click="isShow1=!isShow1">
+								<span class="glyphicon glyphicon glyphicon-search"></span>
+								查看详细数据
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+			<table class="lst-table" ng-show="isShow1" style="margin-left:250px">
+				<tr class="lst-tr">
+					<th class="lst-th">溶解氧浓度</th>
+					<th class="lst-th">监测点1</th>
+					<th class="lst-th">监测点2</th>
+					<th class="lst-th">监测点3</th>
+					<th class="lst-th">监测点4</th>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">0h</th>
+					<td class="lst-td">65</td>
+					<td class="lst-td">77</td>
+					<td class="lst-td">89</td>
+					<td class="lst-td">56</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">12h</th>
+					<td class="lst-td">75</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">69</td>
+					<td class="lst-td">76</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">24h</th>
+					<td class="lst-td">56</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">99</td>
+					<td class="lst-td">36</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				高锰酸钾浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig2"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>分时比较高锰酸钾浓度的预测值与实际值</h4>
+							<button class="btn btn-success" style="font-size:85%" ng-click="isShow2=!isShow2">
+								<span class="glyphicon glyphicon glyphicon-search"></span>
+								查看详细数据
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+			<table class="lst-table" ng-show="isShow2" style="margin-left:250px">
+				<tr class="lst-tr">
+					<th class="lst-th">高锰酸钾浓度</th>
+					<th class="lst-th">监测点1</th>
+					<th class="lst-th">监测点2</th>
+					<th class="lst-th">监测点3</th>
+					<th class="lst-th">监测点4</th>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">0h</th>
+					<td class="lst-td">65</td>
+					<td class="lst-td">77</td>
+					<td class="lst-td">89</td>
+					<td class="lst-td">56</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">12h</th>
+					<td class="lst-td">75</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">69</td>
+					<td class="lst-td">76</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">24h</th>
+					<td class="lst-td">56</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">99</td>
+					<td class="lst-td">36</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				氨氮浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig3"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>各水文监测点氨氮浓度实际值与预测值比较</h4>
+							<button class="btn btn-success" style="font-size:85%" ng-click="isShow3=!isShow3">
+								<span class="glyphicon glyphicon glyphicon-search"></span>
+								查看详细数据
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+			<table class="lst-table" ng-show="isShow3" style="margin-left:250px">
+				<tr class="lst-tr">
+					<th class="lst-th">氨氮浓度</th>
+					<th class="lst-th">监测点1</th>
+					<th class="lst-th">监测点2</th>
+					<th class="lst-th">监测点3</th>
+					<th class="lst-th">监测点4</th>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">0h</th>
+					<td class="lst-td">65</td>
+					<td class="lst-td">77</td>
+					<td class="lst-td">89</td>
+					<td class="lst-td">56</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">12h</th>
+					<td class="lst-td">75</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">69</td>
+					<td class="lst-td">76</td>
+				</tr><tr class="lst-tr">
+					<th class="lst-th">24h</th>
+					<td class="lst-td">56</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">99</td>
+					<td class="lst-td">36</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				总磷浓度预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig4"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>分析并比较各时间段内各监测点的总磷浓度</h4>
+							<button class="btn btn-success" style="font-size:85%" ng-click="isShow4=!isShow4">
+								<span class="glyphicon glyphicon glyphicon-search"></span>
+								查看详细数据
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+			<table class="lst-table" ng-show="isShow4" style="margin-left:250px">
+				<tr class="lst-tr">
+					<th class="lst-th">总磷浓度</th>
+					<th class="lst-th">监测点1</th>
+					<th class="lst-th">监测点2</th>
+					<th class="lst-th">监测点3</th>
+					<th class="lst-th">监测点4</th>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">0h</th>
+					<td class="lst-td">65</td>
+					<td class="lst-td">77</td>
+					<td class="lst-td">89</td>
+					<td class="lst-td">56</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">12h</th>
+					<td class="lst-td">75</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">69</td>
+					<td class="lst-td">76</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">24h</th>
+					<td class="lst-td">56</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">99</td>
+					<td class="lst-td">36</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				工农业排污量预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8 chart-panel">
+						<highchart config="chartConfig5"></highchart>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>预测工农业排放的污水中各污染指标所占的比例</h4>
+							<button class="btn btn-success" style="font-size:85%" ng-click="isShow5=!isShow5">
+								<span class="glyphicon glyphicon glyphicon-search"></span>
+								查看详细数据
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+			<table class="lst-table" ng-show="isShow5" style="margin-left:250px">
+				<tr class="lst-tr">
+					<th class="lst-th">工农业排污量预测</th>
+					<th class="lst-th">监测点1</th>
+					<th class="lst-th">监测点2</th>
+					<th class="lst-th">监测点3</th>
+					<th class="lst-th">监测点4</th>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">0h</th>
+					<td class="lst-td">65</td>
+					<td class="lst-td">77</td>
+					<td class="lst-td">89</td>
+					<td class="lst-td">56</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">12h</th>
+					<td class="lst-td">75</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">69</td>
+					<td class="lst-td">76</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">24h</th>
+					<td class="lst-td">56</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">99</td>
+					<td class="lst-td">36</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
+		<div class="panel panel-primary" style="margin-top: 20px;">
+			<div class="panel-heading">
+				污水处理厂排污量预测分析
+				<span class="glyphicon glyphicon-question-sign pull-right"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-8 chart-panel">
+						<div class="col-md-8" id="lisiteMap" style="width:900px;height:400px;"></div>
+					</div>
+					<div class="col-md-4">
+						<p class="fill-margin"></p>
+						<div class="ioc-panel-desc">
+							<p class="ioc-panel-desc-title">
+								<img src="/images/common/data_details.png"/>
+							</p>
+							<h4>分析并显示各太仓市各污水处理厂的水污染指标</h4>
+							<button class="btn btn-success" style="font-size:85%" ng-click="isShow6=!isShow6">
+								<span class="glyphicon glyphicon glyphicon-search"></span>
+								查看详细数据
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div></div>
+			<table class="lst-table" ng-show="isShow6" style="margin-left:250px">
+				<tr class="lst-tr">
+					<th class="lst-th">污水处理厂排污量预测</th>
+					<th class="lst-th">第二水厂</th>
+					<th class="lst-th">协鑫码头</th>
+					<th class="lst-th">第三水厂</th>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">0h</th>
+					<td class="lst-td">65</td>
+					<td class="lst-td">77</td>
+					<td class="lst-td">89</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">12h</th>
+					<td class="lst-td">75</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">69</td>
+				</tr>
+				<tr class="lst-tr">
+					<th class="lst-th">24h</th>
+					<td class="lst-td">56</td>
+					<td class="lst-td">87</td>
+					<td class="lst-td">99</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+

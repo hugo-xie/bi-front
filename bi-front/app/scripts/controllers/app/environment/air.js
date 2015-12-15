@@ -1,16 +1,25 @@
 'use strict';
 
 
-app.controller('AirCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope, $stateParams, $timeout) {
 
   $scope.title = $stateParams.title;
-    var map = new AMap.Map('map_canvas');
+    /*var map = new AMap.Map('map_canvas');*/
+
     
-     //高德地图初始化
+    //高德地图初始化
     var map = new AMap.Map('map_canvas',{
-        zoom: 10,
-        center: [121.106661, 31.579533]
-     });
+        zoom: 11,
+        center: [121.136398,31.465001]
+
+
+    });
+    $timeout(function () {
+    	var marker = new AMap.Marker({
+	        position: [121.136398,31.465001],
+	        map:map
+	    });
+    }, 0);
     
  
 	//变色范围 
