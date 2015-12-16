@@ -657,7 +657,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
             },
          },
          title: {
-            text: '行业用电量与经济增长关联分析',
+            text: '农、林、牧、渔业',
             x: -20 //center
         },
         subtitle: {
