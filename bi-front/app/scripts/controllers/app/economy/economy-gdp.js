@@ -98,7 +98,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         }, {
             type: 'column',
             name: '预测数据',
-            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 39.7, 46.7, 53.2, 47.7]
+            data: [328.24, 453.61, 547.18, 602.58, 758.69, 890.37, 991.74, 1025.56, 1098.33, 1152.67, 1218.98, 1298.03]
 
         },
         {   
@@ -161,19 +161,19 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         series: [{
             type: 'column',
             name: '真实数据',
-            data: [ 59.0, 59.6, 52.4, null ]
+            data: [ 225.51, 555.72, 849.66, null ]
 
         }, {
             type: 'column',
             name: '预测数据',
-            data: [42.4, 33.2, 34.5,39.7 ]
+            data: [248.77, 541.86, 867.74,1152.67]
 
         },
         {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: [6.4, 7.2, 7.5, 6.7]
+            data: [6.1, 6.2, 6.4, 6.7]
         }]
   };
   $scope.industryyearGDPChart={
@@ -228,17 +228,17 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         series: [{
             
             name: '第一产业',
-            data: [48.9, 38.8, 60.9, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, null, null, null]
+            data: [15.63,16.80,23.03,24.66,26.98,30.88,33.61,33.56,35.24, null, null, null]
 
         }, {
           
             name: '第二产业',
-            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 39.7, null,null,null]
+            data: [223.05,265.51,310.19,355.35,418.96,485.72,520.36,532.46,556.65, null,null,null]
 
         },
         {   
             name: '第三产业',
-            data: [62.4, 73.2, 74.5, 69.7, 72.6, 75.5, 77.4, 70.4, 59.7,  null,null,null]
+            data: [127.95,157.96,194.80,232.00,284.38,350.93,401.15,436.26,473.44,null,null,null]
         }]
   };
   $scope.primaryGDPChart={
@@ -294,12 +294,12 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         series: [{
             type: 'column',
             name: '真实数据',
-            data: [ 34.0, 38.6, 39.4, null ]
+            data: [ 4.48, 13.32, 23.57, null ]
 
         }, {
             type: 'column',
             name: '预测数据',
-            data: [36.4, 37.2, 38.5,39.7 ]
+            data: [4.85, 12.64, 22.78,36.77 ]
 
         },
         {   
@@ -363,19 +363,19 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         series: [{
             type: 'column',
             name: '真实数据',
-            data: [ 31.0, 30.6, 36.4, null ]
+            data: [ 120.46, 293.99, 444.01, null ]
 
         }, {
             type: 'column',
             name: '预测数据',
-            data: [33.4, 31.2, 34.5,39.7 ]
+            data: [117.68, 303.45, 468.21,586.45]
 
         },
         {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: [5.4, 6.2, 6.5, 6.7]
+            data: [6.0, 5.7, 6.0, 6.7]
         }]
   
   };
@@ -432,19 +432,19 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         series: [{
             type: 'column',
             name: '真实数据',
-            data: [ 32.0, 40.6, 41.4, null ]
+            data: [ 100.57, 248.41, 382.08, null ]
 
         }, {
             type: 'column',
             name: '预测数据',
-            data: [33.4, 36.2, 39.5,42.7 ]
+            data: [107.87, 269.68, 404.18,507.54 ]
 
         },
         {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: [5.4, 6.2, 7.5, 6.3]
+            data: [6.4, 7.0, 7.1, 7.3]
         }]
   
   };
