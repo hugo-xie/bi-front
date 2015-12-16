@@ -2,7 +2,7 @@
 
 app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
 	$scope.title = $stateParams.title;
-	$scope.zoom = 12;
+	$scope.zoom = 14;
 	var map ;
 	map = new AMap.Map('consumptionbyenterprise',{
         zoom: $scope.zoom,
@@ -15,7 +15,19 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
 	    map.addControl(toolBar);
 	    map.addControl(scale);
 	})
-
+	var marker = new AMap.Marker({
+        position: [121.14,31.464511],
+        map:map
+    });
+    var marker = new AMap.Marker({
+        position: [121.122455,31.464511],
+        map:map
+    });
+    var marker = new AMap.Marker({
+        position: [121.122455,31.47],
+         title: 'hahaha',
+        map:map
+    });
     $scope.EnterpriseChart={
          options:{
             chart: {
