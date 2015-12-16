@@ -351,7 +351,6 @@ $scope.btn_click2=function(btn){
 };
 $scope.change2=function(btn){
    if(btn.name===5){
-    alert("111");
     require(
             [
                 'echarts',
@@ -1000,9 +999,7 @@ options: {
                                     text: "产业就业人口比重分析预测"
                                 },
                                 tooltip: {
-                                    pointFormat: ' <b>产业人口</b>
-:{point.y:1.f}(万人)</b> 
-'
+                                    pointFormat: ' <b>产业人口</b>:{point.y:1.f}(万人)</b> '
                                 },
                                 plotOptions: {
                                     pie: {
@@ -1012,8 +1009,7 @@ options: {
                                             enabled: true,
                                             color: '#000000',
                                             connectorColor: '#000000',
-                                            format: ' <b>{point.name}</b>
-:{point.percentage:.1f} %'
+                                            format: ' <b>{point.name}</b>:{point.percentage:.1f} %'
                                         },
                                         showInLegend: true
                                     }
@@ -1047,10 +1043,7 @@ options: {
                                     text: "产业产值比重分析预测"
                                 },
                                 tooltip: {
-                                    pointFormat: '
-<b>产业产值</b>
-:{point.y:1.f}(亿元)</b> 
-'
+                                    pointFormat: '<b>产业产值</b>:{point.y:1.f}(亿元)</b> '
                                 },
                                 plotOptions: {
                                     pie: {
@@ -1060,9 +1053,7 @@ options: {
                                             enabled: true,
                                             color: '#000000',
                                             connectorColor: '#000000',
-                                            format: '
-<b>{point.name}</b>
-:{point.percentage:.1f} %'
+                                            format: '<b>{point.name}</b>:{point.percentage:.1f} %'
                                         },
                                         showInLegend: true
                                     }
