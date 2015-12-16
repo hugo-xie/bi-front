@@ -93,7 +93,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         series: [{
             type: 'column',
             name: '真实数据',
-            data: [48.9, 38.8, 60.9, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, null, null, null]
+            data: [366.63, 440.27, 528.02, 612.01, 730.32, 867.53, 955.12, 1002.28, 1065.33, null, null, null]
 
         }, {
             type: 'column',
