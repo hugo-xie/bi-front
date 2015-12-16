@@ -723,31 +723,32 @@ $scope.change2=function(btn){
 $scope.selectedRange=0;
 $scope.selectedRange1=0;
 $scope.r=function(){
-	return $scope.selectedRange;
+    return $scope.selectedRange;
 };
 function h(newValue,oldValue,scope){
-	console.log(newValue);
-	popData[9]=(newValue*0.03)*50+194.1;
+    console.log(newValue);
+    popData[9]=(newValue*0.03)*50+194.1;
     console.log(popData[9]);
     gdp[9]=(newValue*0.03)*50+18.3;
 }
 $scope.$watch($scope.r,h);
 
 $scope.rr=function(){
-	return $scope.selectedRange1;
+
+    return $scope.selectedRange1;
 };
 function hh(newValue,oldValue,scope){
-	console.log(newValue);
+    console.log(newValue);
     popData[9]=(newValue*0.03)*50+194.1;
     gdp[9]=(newValue*0.03)*50+18.3;
 }
 $scope.$watch($scope.rr,hh);
 
-	var popData=[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-		 148.5, 216.4, 194.1];
+    var popData=[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
+         148.5, 216.4, 194.1];
     var gdp=[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3];
 
-		 $scope.predictChart ={
+         $scope.predictChart ={
  chart: {
             zoomType: 'xy'
         },
@@ -863,66 +864,66 @@ $scope.$watch($scope.rr,hh);
             }
         }]
 
-};	
+};  
 $scope.populationChart ={
       options: {
-					chart: {
-						type: 'column'
-					}
-				},
-				series: [{
-					name: '劳动力总人口',
-					data: popData
-				}],
-				title: {
-					text: '劳动力总人口'
-				},
-				xAxis: {
-					categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-					title:{
-						text:"年"
-					}
-				},
-				yAxis: {
-					min: 0,
-					title: {
-						text: '万人'
-					}
-				},
-				loading: false,
+                    chart: {
+                        type: 'column'
+                    }
+                },
+                series: [{
+                    name: '劳动力总人口',
+                    data: popData
+                }],
+                title: {
+                    text: '劳动力总人口'
+                },
+                xAxis: {
+                    categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+                    title:{
+                        text:"年"
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '万人'
+                    }
+                },
+                loading: false,
 
 
-	};	
-	$scope.GDPChart ={
+    };  
+    $scope.GDPChart ={
      options: {
-					chart: {
-						type: 'column'
-					}
-				},
-				series: [{
-					name: 'GDP总量',
-					data: gdp
-				}],
-				title: {
-					text: 'GDP总量'
-				},
-				xAxis: {
-					categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-					title:{
-						text:"年"
-					}
-				},
-				yAxis: {
-					min: 0,
-					title: {
-						text: '亿元'
-					}
-				},
-				loading: false,
+                    chart: {
+                        type: 'column'
+                    }
+                },
+                series: [{
+                    name: 'GDP总量',
+                    data: gdp
+                }],
+                title: {
+                    text: 'GDP总量'
+                },
+                xAxis: {
+                    categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+                    title:{
+                        text:"年"
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '亿元'
+                    }
+                },
+                loading: false,
 
-	};	
-	
-	$scope.sumpopulation ={
+    };  
+    
+    $scope.sumpopulation ={
    options:{
     colors:splinecolors,
     chart:{
@@ -985,72 +986,100 @@ $scope.populationChart ={
         }]
 };
 $scope.populationPie={
-chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false
-        },
-        title: {
-            text: '产业就业人口比重分析预测'
-        },
-        tooltip: {
-    	    pointFormat: ' <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    color: '#000000',
-                    connectorColor: '#000000',
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                }
-            }
-        },
-        series: [{
-            type: 'pie',
-            data: [
-                ['第一产业人口',37],
-                ['第二产业人口',30],
-                ['第三产业人口',33]
-                ]
-        }]
-
+options: {
+                              
+                                chart: {
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                credits:{
+                                    enabled:false
+                                    },
+                                title: {
+                                    text: "产业就业人口比重分析预测"
+                                },
+                                tooltip: {
+                                    pointFormat: ' <b>产业人口</b>
+:{point.y:1.f}(万人)</b> 
+'
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true,
+                                            color: '#000000',
+                                            connectorColor: '#000000',
+                                            format: ' <b>{point.name}</b>
+:{point.percentage:.1f} %'
+                                        },
+                                        showInLegend: true
+                                    }
+                                
+                                
+                            }
+                        },
+                            series: [{
+                                type: 'pie',
+                                name: '',
+                                data:[
+               ['第一产业人口',18],
+                ['第二产业人口',44],
+                ['第三产业人口',48]
+            ]
+                            }]
+                                            
 };
 $scope.industryPie={
-chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false
-        },
-        title: {
-            text: '产业产值比重分析预测'
-        },
-        tooltip: {
-    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    color: '#000000',
-                    connectorColor: '#000000',
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                }
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: '',
-            data: [
-               ['第一产业产值',8],
+options: {
+                              
+                                chart: {
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                credits:{
+                                    enabled:false
+                                    },
+                                title: {
+                                    text: "产业产值比重分析预测"
+                                },
+                                tooltip: {
+                                    pointFormat: '
+<b>产业产值</b>
+:{point.y:1.f}(亿元)</b> 
+'
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true,
+                                            color: '#000000',
+                                            connectorColor: '#000000',
+                                            format: '
+<b>{point.name}</b>
+:{point.percentage:.1f} %'
+                                        },
+                                        showInLegend: true
+                                    }
+                                
+                                
+                            }
+                        },
+                            series: [{
+                                type: 'pie',
+                                name: '',
+                                data:[
+               ['第一产业产值',18],
                 ['第二产业产值',44],
                 ['第三产业产值',48]
             ]
-        }]
+                            }]
+                                         
 
-};              	
+};                  
 }]);

@@ -305,8 +305,12 @@ var points =[
 
         tooltip: {
             formatter: function() {
-                return '<b>'+ this.x +'</b><br/>'+
-                    this.series.name +': '+ this.y +'%'+'<br/>'+
+                return ' <b>'+ this.x +'</b>
+<br/>
+'+
+                    this.series.name +': '+ this.y +'%'+'
+<br/>
+'+
                     'Total: '+ this.point.stackTotal+'%';
             }
         },
@@ -387,7 +391,9 @@ $scope.population_year={
 
             tooltip: {
                 formatter: function () {
-                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                    return ' <b>' + this.series.name + ', age ' + this.point.category + '</b>
+<br/>
+' +
                         'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
                 }
             }
@@ -450,7 +456,10 @@ $scope.population_year={
 
             tooltip: {
                 formatter: function () {
-                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                    return '
+<b>' + this.series.name + ', age ' + this.point.category + '</b>
+<br/>
+' +
                         'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
                 }
             }

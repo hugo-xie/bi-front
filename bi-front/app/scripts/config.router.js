@@ -223,6 +223,7 @@ angular.module('nevermore')
             controller: ['$ocLazyLoad', function($ocLazyLoad) {
             return $ocLazyLoad.load([
             'scripts/controllers/app/environment/air.js',
+            'scripts/controllers/app/environment/echarts.js',
               ]);
               }]
             }
