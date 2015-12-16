@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('WaterCtrl', ['$scope', function($scope) {
+app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
 
 
     //高德地图初始化
@@ -1353,11 +1353,88 @@ $scope.$watch($scope.r1,h1);
 
         };
 
+$timeout(function () {
+    // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar',// 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/line' 
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('discharge')); 
+                
+                var option = {
+            title : {
+                text: '太仓地区污水处理厂污水排放量',
+                subtext: ''
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['排放量']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['1时','2时','3时','4时','5时','6时','7时','8时','9时','10时','11时','12时']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+          
+                {
+                    name:'废水排放量',
+                    type:'bar',
+                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                    markPoint : {
+                        data : [
+                            {name : '过去12小时最高值', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
+                            {name : '过去12小时最低值', value : 2.3, xAxis: 11, yAxis: 3}
+                        ]
+                    },
+                    markLine : {
+                        data : [
+                            {type : 'average', name : '平均值'}
+                        ]
+                    }
+                }
+            ]
+        };
+                
+                        // 为echarts对象加载数据 
+                        myChart.setOption(option); 
+                    }
+                );  
+        },0);
 
 
 
 
 
-
-  
-}]);
+          
+        }]);
