@@ -4,25 +4,17 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
 	$scope.title = $stateParams.title;
 	$scope.zoom = 12;
 	var map ;
-	$scope.zoomlager = function(){
-		$scope.zoom = $scope.zoom*1.02;
-		map = new AMap.Map('consumptionbyenterprise',{
-        zoom: $scope.zoom,
-        center: [121.122455,31.464511]
-    });
-	};
-	$scope.zoomsmaller = function(){
-		$scope.zoom = $scope.zoom/1.02;
-		map = new AMap.Map('consumptionbyenterprise',{
-        zoom: $scope.zoom,
-        center: [121.122455,31.464511]
-    });
-	};
 	map = new AMap.Map('consumptionbyenterprise',{
         zoom: $scope.zoom,
         center: [121.122455,31.464511],
         resizeEnable: true,
     });
+	AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
+	    var toolBar = new AMap.ToolBar();
+	    var scale = new AMap.Scale();
+	    map.addControl(toolBar);
+	    map.addControl(scale);
+	})
 
     $scope.EnterpriseChart={
          options:{
@@ -31,7 +23,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
             },
          },
          title: {
-            text: '太仓市xx企业',
+            text: '太仓市某规模以上企业',
             x: -20 //center
         },
         subtitle: {
