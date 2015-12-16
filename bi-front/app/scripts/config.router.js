@@ -162,6 +162,19 @@ angular.module('nevermore')
               }]
             }
           })
+          .state('app.index.economy.powerconsumptionofenterprises', {
+            url: '^/app/index/economy/powerconsumption/enterprises/:title',
+            templateUrl: 'tpl/app/economy/economy-powerconsumption-enterprises.html',
+            controller: 'EconomyPowerConsumptionOfEnterprisesCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/economy/economy-powerconsumption-enterprises.js',
+                ]);
+              }]
+            }
+          })
+
           //economy end
 
           //environment start
