@@ -4,6 +4,109 @@
 		<a ui-sref="app.index.economy.powerconsumption({title:'工业用电量与经济增长关联分析模块'})" class="pull-right btn btn-sm btn-info m-t-n-xs" >返回</a>
    		<div class="subview3_title">{{title}}</div>
  	</div>
+ 	<div class="col-md-4 cgq_margintop2em">
+      <div class="panel b-a">
+        <div class="panel-heading no-border bg-primary">          
+          <span class="text-lt">太仓市地图-选择企业</span>
+        </div>
+        <div class="item m-l-n-xxs m-r-n-xxs">
+          <div id="consumptionbyenterprise"></div>
+        </div>
+        <div class="hbox text-center b-b b-light text-sm">          
+          <a ng-click="zoomlager()" class="col padder-v text-muted b-r b-light">
+            <i class="glyphicon glyphicon-plus block m-b-xs fa-2x"></i>
+          </a>
+          <a ng-click="zoomsmaller()" class="col padder-v text-muted b-r b-light">
+            <i class="glyphicon glyphicon-minus block m-b-xs fa-2x"></i>  
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 cgq_margintop2em">
+    	<div class="panel b-a">
+	        <div class="panel-heading no-border bg-primary">          
+	          <span class="text-lt">企业数据详情</span>
+	        </div>
+	        <div class="item m-l-n-xxs m-r-n-xxs">
+
+	          <highchart   id="enterprisechart" config="EnterpriseChart" ></highchart>
+
+	        </div>
+	        
+
+
+		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="year in totaldata1.tabledata">{{year.yearvalue}}</td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="gdp in totaldata1.tabledata">{{gdp.gdprate}}</td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			        <td ng-repeat="power in totaldata1.tabledata">{{power.powerrate}}</td>
+			      </tr>
+		    </table>
+
+   		 	
+
+        <div class="hbox text-center b-b b-light text-sm">          
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>返回年份</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>1月</span>
+          </a>
+          <a href="" class="col padder-v text-muted">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>2月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>3月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>4月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>5月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>6月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>7月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>8月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>9月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>10月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>11月</span>
+          </a>
+          <a href="" class="col padder-v text-muted b-r b-light">
+            <i class="block m-b-xs fa-2x"></i>
+            <span>12月</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+
  	
  	
 </div>
