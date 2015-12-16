@@ -1,20 +1,20 @@
 .vbox >.space-top{
 	margin-top: 3em;
-	border:2px solid rgb(40,190,220);
+	border:2px solid #428bca;
 	padding-top: 0px;
 	padding-bottom:0px;
 	margin-bottom: 2em;
 }
 .topbar{
 	margin: 0px;
-	background-color: rgb(40,190,220);
+	background-color: #428bca;
 	padding: 0.5em 1em;
 }
 .chartshow{
 	padding: 2em;
 }
 .menustructer{
-	border-left: 2px solid rgb(40,190,220);
+	border-left: 2px solid #428bca;
 	height: 300%;
 	padding-left: 0;
 	padding-right: 0;
@@ -54,19 +54,19 @@
 .padding0em{
 	margin-top: 0;
 	padding: 0;
-	border:2px solid lightblue;
+	border:2px solid #428bca;
 }
 .cgq_fixedwidth{
 	width:110%;
 }
 .cgq_botomline{
-	border-bottom: 1px solid lightblue;
+	border-bottom: 1px solid #428bca;
 	padding-bottom: 0.6em;
 	margin-bottom: 0.3em;
 }
 .cgq_menustructer{
 	padding: 0.6em 0;
-	border-left:1px solid lightblue;
+	border-left:1px solid #428bca;
 	margin-bottom: 0em;
 	height: 100%;
 }
@@ -74,7 +74,7 @@
 	padding-top: 0.7em;
 }
 .cgq_botomdashed{
-	border-bottom: 1px dashed lightblue;
+	border-bottom: 1px dashed #428bca;
 	padding-bottom: 0.6em;
 	margin-bottom: 0.3em;	
 }
