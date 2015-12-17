@@ -12,18 +12,18 @@
           </div>
           <div class="row" >
             <div class="col-md-7">
-                <div class="panel panel-primary"style="height:700px;">
-                    <div class="panel-body" style="padding:0;width:100%;height:100%;">
+                <div style="height:700px;" class="chart-panel">
+                    <div  style="padding:15px;width:100%;height:100%;">
                       <div id="map_wMap"></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-5">
-              <div class="panel panel-primary" style="width:100%;height: 700px;">
-                <div class="panel-body">
+              <div  style="width:100%;height: 700px;">
+                <div >
                     <h4>水质量分析</h4>
                     <div>
-                      <h5 style="padding-top: 0px">(更新时间:&nbsp 2015年12月11日6时</h5>
+                      <h5 style="padding-top:0px;">(更新时间:&nbsp 2015年12月11日6时)</h5>
                     </div>
                     <div>
                       <button class="btn btn-warning" ng-click="btn_waterEnvironmentAnalysisAllList()">
@@ -31,12 +31,36 @@
                         <span class="badge"></span>
                       </button>
                     </div>
-
+                    <br />
+                    <div>
+                     <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()">
+                     <span class="glyphicon glyphicon-hand-right"></span>
+                       &nbsp城区空气质量预测
+                   </button>
+                    </div>
                     <hr>
+    <div ng-show="mapTableStatus.airCondition">
+    <h5 align="right" style="padding-top: 0px;padding-right:10px">
+        (更新时间:&nbsp 2015年12月11日6时)
+    </h5>
+    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+        <tr>
+            <th style="width:20%">监测点</th>
+            <th style="width:20%">气温(℃)</th>
+            <th style="width:30%">相对湿度(%)</th>
+            <th style="width:15%">风级</th>
+            <th style="width:15%">风向</th>
+        </tr>
+    </table>
+</div>
+<br />
+<br />
+<br />
+<br />
 
-                    <div  style="font-size:16px">
-                      <div class="panel panel-primary">
-                        <div class="panel-body" id="source_analysis">
+                    <div  style="font-size:16px" ng-show="mapTableStatus.airQuality">
+                      <div >
+                        <div id="source_analysis">
                           <h4>附近污染源</h4>
                           <hr>
                           <div>
@@ -143,87 +167,7 @@
                     </div>
 
                     <div class="col-md-12">
-                      <table class="table table-bordered">
-                        <tr>
-                          <th></th>
-                          <th colspan="2">溶解氧(mg/L)</th>
-                          <th colspan="2">高锰酸钾(mg/L)</th>
-                          <th colspan="2">氨氮(mg/L)</th>
-                          <th colspan="2">总磷(mg/L)</th>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>原值</td>
-                          <td>预测未来值</td>
-                          <td>原值</td>
-                          <td>预测未来值</td>
-                          <td>原值</td>
-                          <td>预测未来值</td>
-                          <td>原值</td>
-                          <td>预测未来值</td>
-                        </tr>
-
-                        <tr>
-                          <td>值</td>
-                          <td>5</td>
-                          <td>
-                            {{(selectedRange*0.03*0.05+1+selectedRange1*0.003+selectedRange2*0.002).toFixed(2)}}
-                          </td>
-                          <td>12</td>
-                          <td>{{(selectedRange*0.03*0.5+8).toFixed(2)}}</td>
-                          <td>2.5</td>
-                          <td>
-                            {{(selectedRange*0.03*0.05+0.6+selectedRange1*0.005+selectedRange2*0.002).toFixed(2)}}
-                          </td>
-                          <td>0.4</td>
-                          <td>
-                            {{(selectedRange*0.0003*0.05+0.12+selectedRange1*0.0005+selectedRange2*0.0002).toFixed(2)}}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>状态</td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">
-                              {{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}
-                            </span>
-                          </td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">
-                              {{getChineseStatusView(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}
-                            </span>
-                          </td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">
-                              {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}
-                            </span>
-                          </td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">
-                              {{getChineseStatusView(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}
-                            </span>
-                          </td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">
-                              {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}
-                            </span>
-                          </td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">
-                              {{getChineseStatusView(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}
-                            </span>
-                          </td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)">
-                              {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)}}
-                            </span>
-                          </td>
-                          <td>
-                            <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)">
-                              {{getChineseStatusView(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)}}
-                            </span>
-                          </td>
-                        </tr>
-                      </table>
+                    <highchart config="lala"></highchart>
                     </div>
                   </div>
                 </div>
@@ -297,9 +241,10 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
-            </div>
+          
 
             <!--第三水厂排放情况-->
             <div ng-show="tableStatus.allWater2">
@@ -322,86 +267,7 @@
                     <highchart style="height:400px;" config="chart24"></highchart>
                   </div>
                   <div class="col-md-12">
-                    <table class="table table-bordered">
-                      <tr>
-                        <th></th>
-                        <th colspan="2">溶解氧(mg/L)</th>
-                        <th colspan="2">高锰酸钾(mg/L)</th>
-                        <th colspan="2">氨氮(mg/L)</th>
-                        <th colspan="2">总磷(mg/L)</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                      </tr>
-                      <tr>
-                        <td>值</td>
-                        <td>6</td>
-                        <td>
-                          {{(selectedRange4*0.03*0.5+1+selectedRange3*0.05).toFixed(2)}}
-                        </td>
-                        <td>16</td>
-                        <td>{{(selectedRange3*0.03*0.5+11).toFixed(2)}}</td>
-                        <td>1.5</td>
-                        <td>
-                          {{(selectedRange4*0.03*0.5+1.3+selectedRange3*0.05).toFixed(2)}}
-                        </td>
-                        <td>0.6</td>
-                        <td>
-                          {{(selectedRange4*0.03*0.5+0.3+selectedRange3*0.05).toFixed(2)}}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>状态</td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">
-                            {{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">
-                            {{getChineseStatusView(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">
-                            {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">
-                            {{getChineseStatusView(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">
-                            {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">
-                            {{getChineseStatusView(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)">
-                            {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)">
-                            {{getChineseStatusView(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)}}
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
+                    <highchart config="bb"></highchart>
                   </div>
                 </div>
               </div>
@@ -483,80 +349,7 @@
                   </div>
 
                   <div class="col-md-12">
-                    <table class="table table-bordered">
-                      <tr>
-                        <th></th>
-                        <th colspan="2">溶解氧(mg/L)</th>
-                        <th colspan="2">高锰酸钾(mg/L)</th>
-                        <th colspan="2">氨氮(mg/L)</th>
-                        <th colspan="2">总磷(mg/L)</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                        <td>原值</td>
-                        <td>预测未来值</td>
-                      </tr>
-                      <tr>
-                        <td>值</td>
-                        <td>2</td>
-                        <td>{{(selectedRange5*0.03*0.5+3).toFixed(2)}}</td>
-                        <td>{{waterQualityAnalysisMarker.index_kmno4}}</td>
-                        <td>{{(selectedRange5*0.03*0.5+8).toFixed(2)}}</td>
-                        <td>{{waterQualityAnalysisMarker.index_nh4n}}</td>
-                        <td>{{(selectedRange5*0.03*0.5+0.8).toFixed(2)}}</td>
-                        <td>{{waterQualityAnalysisMarker.index_p}}</td>
-                        <td>{{(selectedRange5*0.03*0.5+0.3).toFixed(2)}}</td>
-                      </tr>
-                      <tr>
-                        <td>状态</td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">
-                            {{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">
-                            {{getChineseStatusView(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">
-                            {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">
-                            {{getChineseStatusView(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">
-                            {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">
-                            {{getChineseStatusView(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)">
-                            {{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)}}
-                          </span>
-                        </td>
-                        <td>
-                          <span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)">
-                            {{getChineseStatusView(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)}}
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
+                    <highchart config="cc"></highchart>
                   </div>
                 </div>
               </div>
@@ -599,9 +392,8 @@
                 </div>
               </div>
             </div>
+           </div>
 
-            <p class="fill-margin"></p>
-            <p class="fill-margin bordered"></p>
           </div>
         </div>
       </div>

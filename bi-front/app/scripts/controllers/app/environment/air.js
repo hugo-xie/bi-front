@@ -5,7 +5,23 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 
   $scope.title = $stateParams.title;
     /*var map = new AMap.Map('map_canvas');*/
-    
+     $scope.showTotalTable = function(){
+  	$scope.totalshow= !$scope.totalshow;
+  };
+  $scope.totaldata = {
+  
+  	tabledata:
+  	[
+	  {yearvalue:'时间', evaporation:'蒸发量',water:'降水量',avetep:'平均温度'},
+	  {yearvalue:'12月11号', evaporation:'2',water:'2.6',avetep:'2'},
+	  {yearvalue:'12月12号', evaporation:'4.9',water:'5.9',avetep:'2.2'},
+	  {yearvalue:'12月13号', evaporation:'7',water:'9',avetep:'3.3'},
+	  {yearvalue:'12月14号', evaporation:'23.2',water:'26.4',avetep:'4.5'},
+	  {yearvalue:'12月15号', evaporation:'25.6',water:'28.7',avetep:'6.3'},
+	  {yearvalue:'12月16号', evaporation:'76.7',water:'70.7',avetep:'10.2'},
+	  {yearvalue:'12月17号', evaporation:'135.6',water:'175.6',avetep:'20.3'}
+  	]
+  };
  $timeout(function () {
     // 路径配置
         require.config({
@@ -115,29 +131,56 @@ var marker3 = new AMap.Marker({
 });
 marker3.setMap(map);
 //显示信息窗体(可单击位置显示隐藏的信息窗体)
+var info1=[];
+   info1.push("<h4><strong>太仓监测站</strong></h4>");
+    info1.push("<table class='table table-bordered table-striped'>");
+    info1.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info1.push("</table>");
 var infowindow1 = new AMap.InfoWindow({
-     content: '<h3>太仓市监测站</h3>',
+     content: info1.join(''),
      offset: new AMap.Pixel(0, -30),
-     size:new AMap.Size(150,0)
+     size:new AMap.Size(250,0)
 })
 var clickHandle1 = AMap.event.addListener(marker1, 'click', function() {
     infowindow1.open(map, marker1.getPosition())
 })
 
+var info=[];
+   info.push("<h4><strong>科教新城监测站</strong></h4>");
+    info.push("<table class='table table-bordered table-striped'>");
+    info.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info.push("</table>");
 var infowindow2 = new AMap.InfoWindow({
-     content: '<h3>科教新城监测站</h3>',
-     offset: new AMap.Pixel(0, -30),
-     size:new AMap.Size(150,0)
+
+     content:  info.join(''),
+     //offset: new AMap.Pixel(0,0),
+     size:new AMap.Size(250,0)
 })
 infowindow2.open(map, marker2.getPosition());
 var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
     infowindow2.open(map, marker2.getPosition())
 })
-
+var info2=[];
+   info2.push("<h4><strong>第三水厂</strong></h4>");
+    info2.push("<table class='table table-bordered table-striped'>");
+    info2.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info2.push("</table>");
 var infowindow3 = new AMap.InfoWindow({
-     content: '<h3>第三水厂</h3>',
+     content: info2.join(''),
      offset: new AMap.Pixel(0, -30),
-     size:new AMap.Size(150,0)
+     size:new AMap.Size(250,0)
 })
 var clickHandle3 = AMap.event.addListener(marker3, 'click', function() {
     infowindow3.open(map, marker3.getPosition())

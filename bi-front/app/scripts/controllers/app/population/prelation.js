@@ -135,29 +135,29 @@ app.controller('PrelationCtrl', ['$scope', function($scope) {
 
 var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
     $scope.buttonMap2 = [{
-        name: 2024,
-        label: 2024 + "年分析预测",
+        name: 2025,
+        label: 2025 + "年分析预测",
         radio: "Left"
       }, {
-        name: 2034,
-        label: 2034 + "年分析预测",
+        name: 2035,
+        label: 2035 + "年分析预测",
         radio: "Middle"
       }, {
-        name: 2044,
-        label: 2044 + "年分析预测",
+        name: 2045,
+        label: 2045 + "年分析预测",
         radio: "Right"
       }];
        $scope.buttonMap3 = [{
-        name: 5,
-        label: 5 + "年分析预测",
+        name: 2025,
+        label: 2025 + "年分析预测",
         radio: "Left"
       }, {
-        name: 10,
-        label: 10 + "年分析预测",
+        name: 2035,
+        label: 2035 + "年分析预测",
         radio: "Middle"
       }, {
-        name: 15,
-        label: 15 + "年分析预测",
+        name: 2045,
+        label: 2045 + "年分析预测",
         radio: "Right"
       }];
 
@@ -165,7 +165,7 @@ $scope.btn_click=function(btn){
    $scope.change(btn);
 };
 $scope.change=function(btn){
-   if(btn.name===2024){
+   if(btn.name===2025){
   //  $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
     $scope.predictChart.series=[{
             name: '人口(万人)',
@@ -205,7 +205,7 @@ $scope.change=function(btn){
             }
         }];
    }
-   if(btn.name===2034){
+   if(btn.name===2035){
     $scope.predictChart.series=[{
             name: '人口(万人)',
             color: '#4572A7',
@@ -244,7 +244,7 @@ $scope.change=function(btn){
             }
         }];
    }
-   if(btn.name===2044){
+   if(btn.name===2045){
     $scope.predictChart.series=[{
             name: '人口(万人)',
             color: '#4572A7',
@@ -288,7 +288,7 @@ $scope.btn_click1=function(btn){
    $scope.change1(btn);
 };
 $scope.change1=function(btn){
-   if(btn.name===5){
+   if(btn.name===2025){
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
@@ -307,7 +307,7 @@ $scope.change1=function(btn){
             ]
         }];
    }
-   if(btn.name===10){
+   if(btn.name===2035){
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
@@ -326,7 +326,7 @@ $scope.change1=function(btn){
             ]
         }];
    }
-   if(btn.name===15){
+   if(btn.name===2045){
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
@@ -350,7 +350,7 @@ $scope.btn_click2=function(btn){
    $scope.change2(btn);
 };
 $scope.change2=function(btn){
-   if(btn.name===5){
+   if(btn.name===2025){
     require(
             [
                 'echarts',
@@ -472,7 +472,7 @@ $scope.change2=function(btn){
             }
         );
    }
-   if(btn.name===10){
+   if(btn.name===2035){
     require(
             [
                 'echarts',
@@ -594,7 +594,7 @@ $scope.change2=function(btn){
             }
         );
    }
-   if(btn.name===15){
+   if(btn.name===2045){
     require(
             [
                 'echarts',

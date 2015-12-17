@@ -31,26 +31,26 @@ map.setCenter([121.10, 31.45]);
 
 var heatmap;
 var points =[
-    {"lng":121.10,"lat":31.45,"count":280}
-  //  {"lng":121.15255,"lat":31.61736,"count":11},
-   // {"lng":121.09379,"lat":31.47528,"count":12},
-   // {"lng":121.0849,"lat":31.50502,"count":13}
-   // {"lng":116.410588,"lat":39.880172,"count":14},
-  // {"lng":116.394816,"lat":39.91181,"count":15},
-   // {"lng":116.416002,"lat":39.952917,"count":16}
+    {"lng":121.10,"lat":31.45,"count":100},
+    {"lng":121.046329,"lat":31.471813,"count":50},
+    {"lng":121.135737,"lat":31.491485,"count":12},
+    {"lng":121.134911,"lat":31.491627,"count":60},
+    {"lng":121.276413,"lat":31.515122,"count":14},
+    {"lng":121.106514,"lat":31.649675,"count":15},
+    {"lng":121.070907,"lat":31.556999,"count":16},
+    {"lng":121.118541,"lat":31.592205,"count":16},
+    {"lng":121.190549,"lat":31.467665,"count":16}
 ];
  map.plugin(["AMap.Heatmap"], function() {
         //初始化heatmap对象
         heatmap = new AMap.Heatmap(map, {
             radius: 40, //给定半径
-            opacity: [0, 0.8]
-            /*,gradient:{
-             0.5: 'blue',
-             0.65: 'rgb(117,211,248)',
-             0.7: 'rgb(0, 255, 0)',
-             0.9: '#ffea00',
+            opacity: [0, 0.8],
+            gradient:{
+             0.5: 'rgb(0, 255, 0)',
+
              1.0: 'red'
-             }*/
+             }
         });
         //设置数据集：该数据为北京部分“公园”数据
         heatmap.setDataSet({
@@ -70,30 +70,30 @@ var points =[
 
  
   $scope.buttonMap = [{
-        name: 2024,
-        label: 2024 + "年人口结构预测",
+        name: 2025,
+        label: 2025 + "年人口结构预测",
         radio: "Left"
       }, {
-        name: 2034,
-        label: 2034 + "年人口结构预测",
+        name: 2035,
+        label: 2035 + "年人口结构预测",
         radio: "Middle"
       }, {
-        name: 2044,
-        label: 2044 + "年人口结构预测",
+        name: 2045,
+        label: 2045 + "年人口结构预测",
         radio: "Right"
       }];
 
     $scope.buttonMap1 = [{
-        name: 2024,
-        label: 2024 + "年人口总量预测",
+        name: 2025,
+        label: 2025 + "年人口总量预测",
         radio: "Left"
       }, {
-        name: 2034,
-        label: 2034 + "年人口总量预测",
+        name: 2035,
+        label: 2035 + "年人口总量预测",
         radio: "Middle"
       }, {
-        name: 2044,
-        label: 2044 + "年人口总量预测",
+        name: 2045,
+        label: 2045 + "年人口总量预测",
         radio: "Right"
       }];
   $scope.btn_click=function(btn){
@@ -101,7 +101,7 @@ var points =[
   };
   $scope.change=function(btn){
   //  var columnColors = new Array('#7CADDF', '#327EBD', '#195489', '#1FC22B', '#FB9705', '#F26200');
-    if(btn.name===2024){
+    if(btn.name===2025){
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.series=[{
             name: '当前男性比例',
@@ -132,7 +132,7 @@ var points =[
                     1447162, 1005011, 330870, 130632, 21208]
             }]
      }
-     if(btn.name===2034){
+     if(btn.name===2035){
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.series=[{
             name: '当前男性比例',
@@ -151,7 +151,7 @@ var points =[
             data: [3, 0, 4, 4, 3,33, 0, 4, 4, 3,3],
             stack: 'female'
         }];
-         $scope.population_prediction_year.options.title.text="2034年人口结构图";
+         $scope.population_prediction_year.options.title.text="2035年人口结构图";
         $scope.population_prediction_year.series=[{
                 name: 'Male',
                 data: [-1008000, -1884428, -2089758, -2222362, -2537431, -2507081, -2443179,
@@ -164,7 +164,7 @@ var points =[
                     1447162, 1005011, 330870, 130632, 21208]
             }]
      }
-     if(btn.name===2044){
+     if(btn.name===2045){
         $scope.age_ration.options.colors=columnColors;
        // $scope.age_ration.options.title.text="lalalallalal";
         $scope.age_ration.series=[{
@@ -184,7 +184,7 @@ var points =[
             data: [3, 0, 4, 4, 3,33, 0, 4, 4, 3,3],
             stack: 'female'
         }];
-        $scope.population_prediction_year.options.title.text="2044年人口结构图";
+        $scope.population_prediction_year.options.title.text="2045年人口结构图";
         $scope.population_prediction_year.series=[{
                 name: 'Male',
                 data: [-1008000, -1884428, -2089758, -2222362, -2537431, -2507081, -2443179,
@@ -202,7 +202,8 @@ var points =[
     $scope.change1(btn);
   };
   $scope.change1=function(btn){
-    if(btn.name===2024){
+    if(btn.name===2025){
+    $scope.sumpopulation.options.xAxis[0].categories=['2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
     $scope.sumpopulation.series=[{
             name: '人口总量',
             type: 'column',
@@ -224,8 +225,9 @@ var points =[
             }
         }];
      }
-     if(btn.name===2034){
-        $scope.sumpopulation.options.title.text="太仓市2026年到2034年常住人口人口总量预测趋势图";
+     if(btn.name===2035){
+        $scope.sumpopulation.options.xAxis[0].categories=['2026','2027','2028','2029','2030','2031','2032','2033','2034','2035'];
+        $scope.sumpopulation.options.title.text="太仓市2026年到2035年常住人口人口总量预测趋势图";
     $scope.sumpopulation.series=[{
             name: '人口总量',
             type: 'column',
@@ -247,8 +249,9 @@ var points =[
             }
         }];
      }
-     if(btn.name===2044){
-        $scope.sumpopulation.options.title.text="太仓市2036年到2044年常住人口人口总量预测趋势图";
+     if(btn.name===2045){
+     $scope.sumpopulation.options.xAxis[0].categories=['2036','2037','2038','2039','2040','2041','2042','2043','2044','2045'];
+        $scope.sumpopulation.options.title.text="太仓市2036年到2045年常住人口人口总量预测趋势图";
     $scope.sumpopulation.series=[{
             name: '人口总量',
             type: 'column',
@@ -349,7 +352,7 @@ $scope.population_year={
                 type: 'bar'
             },
             title: {
-                text: '2014年人口结构图'
+                text: '2015年人口结构图'
             },
             xAxis: [{
                 categories: categories,
@@ -412,7 +415,7 @@ $scope.population_year={
                 type: 'bar'
             },
             title: {
-                text: '2024年人口结构图'
+                text: '2025年人口结构图'
             },
             xAxis: [{
                 categories: categories,
@@ -475,7 +478,7 @@ $scope.sumpopulation={
             zoomType: 'xy'
         },
         title: {
-            text: '太仓市2016年到2024年常住人口人口总量预测趋势图'
+            text: '太仓市2016年到2025年常住人口人口总量预测趋势图'
         },
         xAxis: [{
             categories: ['2016', '2017', '2018', '2019', '2020',
