@@ -73,55 +73,64 @@
       <button class="btn btn-primary" style="margin-top:20%">手动调节</button>
                 <div class="handler">
                 <div class="row">
-                  <div class="col-md-5" style="margin-top:4%">
+                  <div class="col-md-4" style="margin-top:4%">
                     <p class="handler-title"><strong>中长期贷款</strong></p>
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-5">
                     <div class="progress-box" ng-app>
                       <div class="percentage-cur">
-                        <span class="num">{{ selectedRange }}.00%</span>
+                        <span class="num">{{ selectedRange }}%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider" style="width:90%">
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
                         <div class="inner" ng-style="{ width: (selectedRange/2 +50) + '%' || '50%' }" ></div>
                       </div>
                     </div>
 
                   </div>
+                   <div class="col-md-3" style="margin-top:4.5%;">
+                  <input type="number" ng-model="selectedRange" style="width:100%">
                 </div>
+                </div>
+               
                 <div class="row">
-                  <div class="col-md-5"  style="margin-top:4%">
+                  <div class="col-md-4"  style="margin-top:4%">
                     <p class="handler-title"><strong>工业用电量</strong></p>
                   </div>
-                  <div class="col-md-7" >
+                  <div class="col-md-5" >
                     <div class="progress-box" ng-app>
                       <div class="percentage-cur" ng-init="selectedRange2=0">
-                        <span class="num">{{ selectedRange2 }}.00%</span>
+                        <span class="num">{{ selectedRange2 }}%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider" style="width:90%" >
+                      <div class="progress-bar progress-bar-slider" style="width:100%" >
                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2"  >
                         <div class="inner" ng-style="{ width: (selectedRange2/2 +50) + '%' || '50%' }"></div>
                       </div>
                     </div>
 
                   </div>
+                   <div class="col-md-3" style="margin-top:4.5%">
+                  <input type="number" ng-model="selectedRange2" style="width:100%">
+                </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5"  style="margin-top:4%">
+                  <div class="col-md-4"  style="margin-top:4%">
                     <p class="handler-title"><strong>货运量</strong></p>
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-5">
                     <div class="progress-box" ng-app>
                       <div class="percentage-cur" ng-init="selectedRange3=0">
-                        <span class="num">{{ selectedRange3 }}.00%</span>
+                        <span class="num">{{ selectedRange3 }}%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider" style="width:90%">
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3" >
                         <div class="inner" ng-style="{ width: (selectedRange3/2 +50) + '%' }"></div>
                       </div>
                     </div>
-
                   </div>
+                   <div class="col-md-3" style="margin-top:4.5%">
+                  <input type="number" ng-model="selectedRange3" style="width:100%">
+                </div>
                 </div>
               </div>
             
