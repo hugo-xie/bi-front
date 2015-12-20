@@ -124,6 +124,7 @@
                                     <img src="/images/common/data_details.png"/>
                                 </p>
                                 <h4>预测结果解读</h4>
+                  
                             </div>
                         </div>
                     </div>
@@ -133,8 +134,6 @@
         </div>
     </div>
     
-
-
     <div class="wrapper ">
       <div class="details-content">
         <div class="panel panel-primary" style="margin-top: 10px;">
@@ -151,7 +150,7 @@
                 <div class="col-md-8 chart-panel">
                   <div class="row">
                     <div class="col-md-3">
-                      <highchart  config="chart11"></highchart>
+                      <highchart style="height:400px;" config="chart11"></highchart>
                     </div>
 
                     <div class="col-md-3">
@@ -198,6 +197,7 @@
                     <div class="col-md-7">
                       <div class="progress-box">
                         <div class="percentage-cur">
+                          <input type="number" class="form-control" ng-model="selectedRange" min="0" max="100" placeholder="输入数字调节" style="width:250px">
                           <span class="num">{{selectedRange}}.00%</span>
                         </div>
                         <div class="progress-bar progress-bar-slider">
@@ -215,6 +215,7 @@
                     <div class="col-md-7">
                       <div class="progress-box">
                         <div class="percentage-cur">
+                        <input type="number" class="form-control" ng-model="selectedRange1" min="0" max="100" placeholder="输入数字调节" style="width:250px">
                           <span class="num">{{ selectedRange1}}.00%</span>
                         </div>
                         <div class="progress-bar progress-bar-slider">
@@ -232,6 +233,7 @@
                     <div class="col-md-7">
                       <div class="progress-box">
                         <div class="percentage-cur">
+                        <input type="number" class="form-control" ng-model="selectedRange2" min="0" max="100" placeholder="输入数字调节" style="width:250px">
                           <span class="num">{{ selectedRange2}}.00%</span>
                         </div>
                         <div class="progress-bar progress-bar-slider">
@@ -252,7 +254,7 @@
                 <div class="row">
 
                   <div class="col-md-3">
-                    <highchart  config="chart21"></highchart>
+                    <highchart style="height:400px;" config="chart21"></highchart>
                   </div>
 
                   <div class="col-md-3">
@@ -298,6 +300,7 @@
                   <div class="col-md-7">
                     <div class="progress-box">
                       <div class="percentage-cur">
+                      <input type="number" class="form-control" ng-model="selectedRange4" min="0" max="100" placeholder="输入数字调节" style="width:250px">
                         <span class="num">{{selectedRange4}}.00%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider">
@@ -315,6 +318,7 @@
                   <div class="col-md-7">
                     <div class="progress-box">
                       <div class="percentage-cur">
+                      <input type="number" class="form-control" ng-model="selectedRange3" min="0" max="100" placeholder="输入数字调节" style="width:250px">
                         <span class="num">{{ selectedRange3}}.00%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider">
@@ -380,6 +384,7 @@
                   <div class="col-md-7">
                     <div class="progress-box">
                       <div class="percentage-cur">
+                      <input type="number" class="form-control" ng-model="selectedRange5" min="0" max="100" placeholder="输入数字调节" style="width:250px">
                         <span class="num">{{selectedRange5}}.00%</span>
                         <span></span>
                       </div>

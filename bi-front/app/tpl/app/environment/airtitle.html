@@ -20,9 +20,7 @@
                                 <img src="/images/common/data_details.png"/>
                             </p>
                             <h4>预测结果解读</h4>
-                            <div>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                                XXXXXXXXXXXX</div>
+                            <div>根据太仓最近连续降雨情况可分析出太仓未来24小时空气质量状况良好</div>
 
 
                     <button ng-click="showTotalTable()" class="btn m-b-xs btn-primary">详细数据列表</button>
@@ -355,6 +353,45 @@
 
 <div ng-show="mapTableStatus.airCondition">
     <h5 align="right" style="padding-top: 0px">
+        (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
+                                            + airQualityCurrentDateTime.month + '-'
+                                            + airQualityCurrentDateTime.day + ' '
+                                            + airQualityCurrentDateTime.hour + '时'}})
+    </h5>
+    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+        <tr>
+            <th style="width:30%">气象局</th>
+            <th style="width:14%">气温(℃)</th>
+            <th style="width:14%">相对湿度(%)</th>
+            <th style="width:14%">风级</th>
+            <th style="width:14%">风向</th>
+        </tr>
+    </table>
+
+</div>
+<div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airCondition">
+    <table class="table table-hover table-responsive" style="font-size:14px">
+        <tr ng-repeat="airConditionOne in airConditionMarkerList">
+            <td style="width:30%">{{airConditionOne.monitor}}</td>
+            <td style="width:14%">
+                <span>{{airConditionOne.monitor}}</span>
+            </td>
+            <td style="width:14%">
+                <span>{{airConditionOne.index_humidity}}</span>
+            </td>
+            <td style="width:14%">
+                <span>{{airConditionOne.index_windLevel}}</span>
+            </td>
+            <td style="width:14%">
+                <span>{{airConditionOne.index_windDire}}</span>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<!--<div ng-show="mapTableStatus.airCondition">
+    <h5 align="right" style="padding-top: 0px">
         (更新时间:&nbsp{{airConditionCurrentDateTime.year + '-'
                                         + airConditionCurrentDateTime.month + '-'
                                         + airConditionCurrentDateTime.day + ' '
@@ -388,7 +425,7 @@
             </td>
         </tr>
     </table>
-</div>
+</div>-->
 
 <div ng-show="mapTableStatus.wasteAir">
     <h5 align="right" style="padding-top: 0px">

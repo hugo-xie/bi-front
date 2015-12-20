@@ -148,7 +148,7 @@ $scope.lala={
             type: 'column'
         },
         title: {
-            text: 'Column chart with negative values'
+            text: ''
         },
         xAxis: {
             categories: ['溶解氧', '高锰酸钾', '氨氮', '总磷(/10)']
@@ -173,7 +173,7 @@ $scope.bb={
             type: 'column'
         },
         title: {
-            text: 'Column chart with negative values'
+            text: ''
         },
         xAxis: {
             categories: ['溶解氧', '高锰酸钾', '氨氮', '总磷(/10)']
@@ -198,7 +198,7 @@ $scope.cc={
             type: 'column'
         },
         title: {
-            text: 'Column chart with negative values'
+            text: ''
         },
         xAxis: {
             categories: ['溶解氧', '高锰酸钾', '氨氮', '总磷(/10)']
@@ -1523,11 +1523,11 @@ $timeout(function () {
                 {
                     name:'废水排放量',
                     type:'bar',
-                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                    data:[41316.379, 41739.668, 40126.664, 39762.43, 41144.68, 39966.195, 39523.172, 40884.328, 41141.418, 37959.043, 37114.941, 38395.945],
                     markPoint : {
                         data : [
-                            {name : '过去12小时最高值', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
-                            {name : '过去12小时最低值', value : 2.3, xAxis: 11, yAxis: 3}
+                            {name : '过去12小时最高值', value : 41739.668, xAxis: 1, yAxis: 41739.668, symbolSize:30},
+                            {name : '过去12小时最低值', value : 37114.941, xAxis: 10, yAxis: 37114.941,symbolSize:30}
                         ]
                     },
                     markLine : {
