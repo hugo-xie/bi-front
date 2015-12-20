@@ -1,13 +1,27 @@
 'use strict';
 
-app.controller('LoginController', function($scope,$localStorage,$http,
+app.controller('LoginController', function($scope,$localStorage,$http,$location,
     sessionService, tokenFactory, qService, Semester, ToasterTool) {
 
   $scope.accountCharacter = 'TEACHER';
   $scope.login_name = "";
   $scope.login_password = "";
-
+  $scope.sref = "";
+  $scope.login = function() {
+    $scope.message = "";
+    var _n = $scope.login_name;
+    var _p = $scope.login_password;
+    if (_n == undefined || _n == "" || _p == undefined || _p == "") {
+      $scope.errorMsg = '用户名/密码不能为空!';
+      return;
+    }else if(_n == "system" && _p == "1234"){
+      $location.path("/app/index/economy/gdp/GDP");
+    }else{
+      $scope.errorMsg = '用户名/密码错误!';
+    }
+  }
   //登录方法
+  /*
   $scope.login = function() {
     $scope.message = "";
     var _n = $scope.login_name;
@@ -38,5 +52,5 @@ app.controller('LoginController', function($scope,$localStorage,$http,
   $scope.forgotPassword = function(){
     ToasterTool.info('请联系管理员','联系电话: --');
   };
-
+  */
 });
