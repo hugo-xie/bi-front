@@ -21,14 +21,156 @@ app.controller('PopulationStructureCtrl', function($scope) {
   //  to-do : year should be set
 
 var map = new AMap.Map('conMap');
-map.setZoom(11);
+map.setZoom(12);
 map.setCenter([121.10, 31.45]);
 
- var marker = new AMap.Marker({
-        position: [121.10, 31.45],
+//
+ 
+
+
+
+
+
+ var marker1 = new AMap.Marker({
+        position: [121.046329, 31.471813],   //新湖镇
         map:map
     });
+ var marker5 = new AMap.Marker({
+        position: [121.070907, 31.556999],   //沙溪镇
+        map:map
+    });
+ var marker4 = new AMap.Marker({            //板桥镇
+        position: [121.134911, 31.491627],
+        map:map
+    });
+  var marker2 = new AMap.Marker({
+        position: [121.276413, 31.515122], //浏河镇
+        map:map
+    });
+   var marker3 = new AMap.Marker({
+        position: [121.10, 31.45],  //太仓市
+        map:map
+    });
+   var marker6 = new AMap.Marker({
+        position: [121.190549, 31.467665],  //陆渡镇
+        map:map
+    });
+   var marker7 = new AMap.Marker({
+        position: [121.106514, 31.649675],  //璜泾镇
+        map:map
+    });
+//显示信息窗体(可单击位置显示隐藏的信息窗体)
+var info1=[];
+   info1.push("<h4><strong>新湖镇人口自然增长率</strong></h4>");
+    info1.push("<table class='table table-bordered table-striped'>");
+    info1.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>死亡率</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>人口自然增长率</td><td></td></tr>");
+    info1.push("</table>");
+var infowindow1 = new AMap.InfoWindow({
+     content: info1.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+})
+var clickHandle1 = AMap.event.addListener(marker1, 'click', function() {
+    infowindow1.open(map, marker1.getPosition())
+})
 
+var info2=[];
+   info2.push("<h4><strong>浏河镇人口自然增长率</strong></h4>");
+    info2.push("<table class='table table-bordered table-striped'>");
+    info2.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>死亡率</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>人口自然增长率</td><td></td></tr>");
+    info2.push("</table>");
+var infowindow2 = new AMap.InfoWindow({
+     content: info2.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+})
+var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
+    infowindow2.open(map, marker2.getPosition())
+})
+
+var info3=[];
+   info3.push("<h4><strong>太仓市人口自然增长率</strong></h4>");
+    info3.push("<table class='table table-bordered table-striped'>");
+    info3.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td></td></tr>");
+    info3.push("<tr><td style='font-size:15px'>死亡率</td><td></td></tr>");
+    info3.push("<tr><td style='font-size:15px'>人口自然增长率</td><td></td></tr>");
+    info3.push("</table>");
+var infowindow3 = new AMap.InfoWindow({
+     content: info3.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+})
+infowindow3.open(map, marker3.getPosition());
+var clickHandle3 = AMap.event.addListener(marker3, 'click', function() {
+    infowindow3.open(map, marker3.getPosition())
+})
+
+var info4=[];
+   info4.push("<h4><strong>板桥镇人口自然增长率</strong></h4>");
+    info4.push("<table class='table table-bordered table-striped'>");
+    info4.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px'>死亡率</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px'>人口自然增长率</td><td></td></tr>");
+    info4.push("</table>");
+var infowindow4 = new AMap.InfoWindow({
+     content: info4.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+})
+var clickHandle4 = AMap.event.addListener(marker4, 'click', function() {
+    infowindow4.open(map, marker4.getPosition())
+})
+
+var info5=[];
+   info5.push("<h4><strong>沙溪镇人口自然增长率</strong></h4>");
+    info5.push("<table class='table table-bordered table-striped'>");
+    info5.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px'>死亡率</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px'>人口自然增长率</td><td></td></tr>");
+    info5.push("</table>");
+var infowindow5 = new AMap.InfoWindow({
+     content: info5.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+})
+var clickHandle5 = AMap.event.addListener(marker5, 'click', function() {
+    infowindow5.open(map, marker5.getPosition())
+})
+
+var info6=[];
+   info6.push("<h4><strong>陆渡镇人口自然增长率</strong></h4>");
+    info6.push("<table class='table table-bordered table-striped'>");
+    info6.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px'>死亡率</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px'>人口自然增长率</td><td></td></tr>");
+    info6.push("</table>");
+var infowindow6 = new AMap.InfoWindow({
+     content: info6.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+})
+var clickHandle6 = AMap.event.addListener(marker6, 'click', function() {
+    infowindow6.open(map, marker6.getPosition())
+})
+var info7=[];
+   info7.push("<h4><strong>璜泾镇人口自然增长率</strong></h4>");
+    info7.push("<table class='table table-bordered table-striped'>");
+    info7.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px'>死亡率</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px'>人口自然增长率</td><td></td></tr>");
+    info7.push("</table>");
+var infowindow7 = new AMap.InfoWindow({
+     content: info7.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+})
+var clickHandle7 = AMap.event.addListener(marker7, 'click', function() {
+    infowindow7.open(map, marker7.getPosition())
+})
 var heatmap;
 var points =[
     {"lng":121.10,"lat":31.45,"count":100},
@@ -38,7 +180,7 @@ var points =[
     {"lng":121.276413,"lat":31.515122,"count":14},
     {"lng":121.106514,"lat":31.649675,"count":15},
     {"lng":121.070907,"lat":31.556999,"count":16},
-    {"lng":121.118541,"lat":31.592205,"count":16},
+   // {"lng":121.118541,"lat":31.592205,"count":16},  //金浪镇
     {"lng":121.190549,"lat":31.467665,"count":16}
 ];
  map.plugin(["AMap.Heatmap"], function() {
@@ -64,7 +206,7 @@ var points =[
         return !!(elem.getContext && elem.getContext('2d'));
     }
 
-
+ 
 
 
 
