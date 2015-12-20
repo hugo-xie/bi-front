@@ -45,7 +45,7 @@
                      <p class="handler-title">劳动力人口</p>
                    </div>
                    <div class="col-md-7">
-                    <input type="number" class="form-control" ng-model="selectedRange" min="-100" max="100" placeholder="输入数字调节" style="width:170px">
+                    <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:170px" >
                      <div class="progress-box">
                        <div class="percentage-cur">
                          <span class="num">{{selectedRange}}.00%</span>
@@ -62,7 +62,7 @@
                      <p class="handler-title">GDP</p>
                    </div>
                    <div class="col-md-7">
-                    <input type="number" class="form-control" ng-model="selectedRange1" min="-100" max="100" placeholder="输入数字调节" style="width:170px">
+                    <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" placeholder="输入数字调节" style="width:170px">
                      <div class="progress-box">
                        <div class="percentage-cur">
                          <span class="num">{{ selectedRange1}}.00%</span>

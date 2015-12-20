@@ -2,8 +2,7 @@
 
 app.controller('PrelationCtrl', ['$scope', function($scope) {
 
-
-
+ 
         // 路径配置
         require.config({
             paths: {
