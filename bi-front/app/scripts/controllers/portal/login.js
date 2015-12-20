@@ -16,8 +16,11 @@ app.controller('LoginController', function($scope,$localStorage,$http,$location,
       return;
     }else if(_n == "system" && _p == "1234"){
       $location.path("/app/index/economy/gdp/GDP");
+    }else if (_n=='system') 
+    {
+      $scope.errorMsg='密码错误'
     }else{
-      $scope.errorMsg = '用户名/密码错误!';
+      $scope.errorMsg = '用户名错误!';
     }
   }
   //登录方法
