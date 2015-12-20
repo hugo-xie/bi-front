@@ -27,7 +27,10 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
     $scope.forecast=!$scope.forecast;
   }
   $scope.adjustParameter=function(){
-    alert('month')
+    $scope.monthselectedRange=0;
+    $scope.monthselectedRange2=0;
+    $scope.monthselectedRange3=0;
+    $scope.monthselectedRange4=0;
   }
 
   $scope.deviationYear=false;
@@ -49,7 +52,10 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
     $scope.forecastYear=!$scope.forecastYear;
   };
   $scope.adjustParameterYear=function(){
-          
+          $scope.selectedRange=0;
+          $scope.selectedRange2=0;
+          $scope.selectedRange3=0;
+          $scope.selectedRange4=0;
   };
   $scope.selectedRange=0;
   $scope.date=[19.32,29.50,39.65,51.64,62.21,72.14,88.83,94.34,103.34,110.24,117.52,122.25,130.95,137.45,143.02];

@@ -14,20 +14,23 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
 	    var scale = new AMap.Scale();
 	    map.addControl(toolBar);
 	    map.addControl(scale);
-	})
+	});
+
 	var marker = new AMap.Marker({
-        position: [121.14,31.464511],
+		icon : 'http://vdata.amap.com/icons/b18/1/2.png',
+        position: [121.14,31.464511],   
         map:map
     });
+
     var marker = new AMap.Marker({
         position: [121.122455,31.464511],
         map:map
     });
     var marker = new AMap.Marker({
         position: [121.122455,31.47],
-         title: 'hahaha',
         map:map
     });
+
     $scope.EnterpriseChart={
          options:{
             chart: {

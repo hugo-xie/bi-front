@@ -35,10 +35,13 @@
                                     <a class="pull-right forgotpwd-link" ng-click="forgotPassword()" style="font-size:0.7em;">忘记密码?</a>
                                 </div>
                                 <div class="clearfix m-t-sm">
-                                    <span class="text-danger">{{errorMsg}}</span>
+                                    <span class="text-danger" style="font-size:70%">{{errorMsg}}</span>
                                 </div>
                                 <!-- <button class="btn btn-primary w-full m-t-sm" ng-click="login()">登录</button> -->
-                                <button class="btn btn-primary w-full m-t-sm" ui-sref="app.index.economy.gdp({title:'GDP'})" style="margin-top:0;">登录</button>
+
+                                <button class="btn btn-primary w-full m-t-sm" ui-sref="{{sref}}" style="margin-top:0;" ng-click="login()">登录</button>
+
+
                             </form>
                         </div>
                     </div>
