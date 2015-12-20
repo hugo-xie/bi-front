@@ -36,6 +36,11 @@ $scope.range2=function(){
        $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue-oldValue)/800;
 
   };
+  $scope.reset=function(){
+    $scope.selectedRange=0;
+    $scope.selectedRange2=0;
+    $scope.selectedRange3=0;
+  }
   $scope.$watch($scope.range,changeloandata);
   $scope.$watch($scope.range2,changeloandata2);
   $scope.$watch($scope.range3,changeloandata3);
