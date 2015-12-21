@@ -484,14 +484,15 @@ $scope.r1=function(){
 };
 function h1(newValue,oldValue,scope){
    // console.log(newValue);
-    o2Data1[0]=Math.round((o2Data1[0]+(newValue-oldValue)/200)*100)/100;
-    kmno4Data1[0]=Math.round((kmno4Data1[0]+(newValue-oldValue)/200)*100)/100;
-    nh4nData1[0]=Math.round((nh4nData1[0]+(newValue-oldValue)/200)*100)/100;
-    pData1[0]=Math.round((pData1[0]+(newValue-oldValue)/200)*100)/100;
-    ccData[0]=Math.round((ccData[0]+(newValue-oldValue)/200)*100)/100;
-    ccData[1]=Math.round((ccData[1]+(newValue-oldValue)/200)*100)/100;
-    ccData[2]=Math.round((ccData[2]+(newValue-oldValue)/200)*100)/100;
-    ccData[3]=Math.round((ccData[3]+(newValue-oldValue)/200)*100)/100;
+    o2Data1[0]=Math.round((o2Data1[0]+(newValue-oldValue)/60)*100)/100;
+    kmno4Data1[0]=Math.round((kmno4Data1[0]+(newValue-oldValue)/15)*100)/100;
+    nh4nData1[0]=Math.round((nh4nData1[0]+(newValue-oldValue)/40)*100)/100;
+    pData1[0]=Math.round((pData1[0]+(newValue-oldValue)/25)*100)/100;
+
+    ccData[0]=Math.round((ccData[0]+(newValue-oldValue)/60)*100)/100;
+    ccData[1]=Math.round((ccData[1]+(newValue-oldValue)/15)*100)/100;
+    ccData[2]=Math.round((ccData[2]+(newValue-oldValue)/40)*100)/100;
+    ccData[3]=Math.round((ccData[3]+(newValue-oldValue)/25)*100)/100;
     //console.log(o2Data[0]);
    // gdp[9]=(newValue*0.03)*50+18.3;
 }
@@ -860,7 +861,7 @@ $scope.$watch($scope.r1,h1);
                 // the value axis
                 yAxis: {
                     min: 0,
-                    max: 0.6,
+                    max: 6,
                     
                     minorTickInterval: 'auto',
                     minorTickWidth: 1,
@@ -882,15 +883,15 @@ $scope.$watch($scope.r1,h1);
                     },
                     plotBands: [{
                         from: 0,
-                        to: 0.3,
+                        to: 3,
                         color: '#55BF3B' // green
                     }, {
-                        from: 0.3,
-                        to: 0.4,
+                        from: 3,
+                        to: 4,
                         color: '#DDDF0D' // yellow
                     }, {
-                        from: 0.4,
-                        to: 0.6,
+                        from: 4,
+                        to: 6,
                         color: '#DF5353' // red
                     }]        
                 }
@@ -1248,7 +1249,7 @@ $scope.$watch($scope.r1,h1);
                 // the value axis
                 yAxis: {
                     min: 0,
-                    max: 0.6,
+                    max: 6,
                     
                     minorTickInterval: 'auto',
                     minorTickWidth: 1,
@@ -1266,19 +1267,19 @@ $scope.$watch($scope.r1,h1);
                         rotation: 'auto'
                     },
                     title: {
-                        text: 'km/h'
+                        text: 'mg/L'
                     },
                     plotBands: [{
                         from: 0,
-                        to: 0.3,
+                        to: 3,
                         color: '#55BF3B' // green
                     }, {
-                        from: 0.3,
-                        to: 0.4,
+                        from: 3,
+                        to: 4,
                         color: '#DDDF0D' // yellow
                     }, {
-                        from: 0.4,
-                        to: 0.6,
+                        from: 4,
+                        to: 6,
                         color: '#DF5353' // red
                     }]        
                 }
@@ -1636,7 +1637,7 @@ $scope.$watch($scope.r1,h1);
                 // the value axis
                 yAxis: {
                     min: 0,
-                    max: 0.6,
+                    max: 6,
                     
                     minorTickInterval: 'auto',
                     minorTickWidth: 1,
@@ -1654,19 +1655,19 @@ $scope.$watch($scope.r1,h1);
                         rotation: 'auto'
                     },
                     title: {
-                        text: 'km/h'
+                        text: 'mg/L'
                     },
                     plotBands: [{
                         from: 0,
-                        to: 0.3,
+                        to: 3,
                         color: '#55BF3B' // green
                     }, {
-                        from: 0.3,
-                        to: 0.4,
+                        from: 3,
+                        to: 4,
                         color: '#DDDF0D' // yellow
                     }, {
-                        from: 0.4,
-                        to: 0.6,
+                        from: 4,
+                        to: 6,
                         color: '#DF5353' // red
                     }]        
                 }

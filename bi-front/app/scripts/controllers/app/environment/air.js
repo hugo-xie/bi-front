@@ -149,13 +149,19 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 		position: [121.256718,31.582652],
 	});
 	marker7.setMap(map);
+
+
+
+
+
+ 
 //显示信息窗体(可单击位置显示隐藏的信息窗体)
 var info1=[];
    info1.push("<h4><strong>太仓监测站</strong></h4>");
     info1.push("<table class='table table-bordered table-striped'>");
-    info1.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td></td></tr>");
-    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td></td></tr>");
-    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>130</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td>PM2.5</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td>54</td></tr>");
     info1.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td></td></tr>");
     info1.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
     info1.push("</table>");
@@ -386,6 +392,7 @@ $scope.aqilinechart={
 
 //废气排放Button点击事件
 	$scope.wasteAirBtn = function() {
+		map.setZoomAndCenter(12, [121.20924,31.623129]);
 		$scope.mapTableStatus = {
 			airQuality: false,
 			airCondition: false,
@@ -403,6 +410,7 @@ $scope.aqilinechart={
 	};
 	//空气质量 Button点击事件
 	$scope.airQualityBtn = function() {
+		map.setZoomAndCenter(15, [121.116757,31.448875]);
 		$scope.mapTableStatus = {
 			airQuality: true,
 			airCondition: false,
@@ -416,6 +424,7 @@ $scope.aqilinechart={
 
     //气象 Button点击事件
 	 $scope.airConditionBtn = function() {
+	 	map.setZoomAndCenter(15, [121.106626,31.464448]);
 	 	$scope.mapTableStatus = {
 	 		airQuality: false,
 	 		airCondition: true,
@@ -534,10 +543,6 @@ $scope.aqilinechart={
 					valueSuffix: ''
 				}
 			}],
-			size:{
-                width: 200,
-                height: 250
-            }
     	},
 
     //pm2.5
@@ -646,10 +651,6 @@ $scope.aqilinechart={
 					valueSuffix: 'μg/m³'
 				}
 			}],
-			size:{
-                width: 200,
-                height: 250
-            }
     	},
 
     	//pm10
@@ -759,10 +760,6 @@ $scope.aqilinechart={
 					valueSuffix: 'μg/m³'
 				}
 			}],
-			size:{
-                width: 200,
-                height: 250
-            }
     	},
 
     	//so2
@@ -872,10 +869,6 @@ $scope.aqilinechart={
 					valueSuffix: 'μg/m³'
 				}
 			}],
-			size:{
-                width: 200,
-                height: 250
-            }
     	},
 
     	//NO2
@@ -985,10 +978,6 @@ $scope.aqilinechart={
 					valueSuffix: 'μg/m³'
 				}
 			}],
-			size:{
-                width: 200,
-                height: 250
-            }
     	},
 
         //CO
@@ -1098,10 +1087,6 @@ $scope.aqilinechart={
 					valueSuffix: 'mg/m³'
 				}
 			}],
-			size:{
-                width: 200,
-                height: 250
-            }
     	},
 
     	//O3 
@@ -1211,10 +1196,6 @@ $scope.aqilinechart={
 					valueSuffix: 'μg/m³'
 				}
 			}],
-			size:{
-                width: 200,
-                height: 250
-            }
     	},
 
     	//上面仪表盘加折线图结束
@@ -1330,10 +1311,6 @@ $scope.aqilinechart={
                 name: 'PM2.5',
                 data: [52,56,65,58,52,55,40,55,60,49,57,64]
             }],
-            size:{
-                width: 500,
-                height: 250
-            }
         },
 
         //PM10折线图
@@ -1390,10 +1367,6 @@ $scope.aqilinechart={
                 name: 'PM10',
                 data: [106,102,95,105,115,116,95,83,71,83,78,70]
             }],
-            size:{
-                width: 500,
-                height: 250
-            }
         },
 
         //SO2折线图
@@ -1450,10 +1423,6 @@ $scope.aqilinechart={
                 name: '二氧化硫',
                 data: [109,119,93,81,80,78,69,51,47,49,28,54]
             }],
-            size:{
-                width: 500,
-                height: 250
-            }
         },
 
         //NO2折线图
@@ -1510,10 +1479,6 @@ $scope.aqilinechart={
                 name: '二氧化氮',
                 data: [43,52,55,58,51,43,35,28,23,20,33,44]
             }],
-            size:{
-                width: 500,
-                height: 250
-            }
         },
 
         //CO折线图
@@ -1570,10 +1535,6 @@ $scope.aqilinechart={
                 name: '一氧化碳',
                 data: [1,2,1,1,2,2,2,1,1,1,1,1]
             }],
-            size:{
-                width: 500,
-                height: 250
-            }
         },
 
         //O3折线图
@@ -1630,10 +1591,7 @@ $scope.aqilinechart={
                 name: '臭氧',
                 data: [3,8,19,23,8,6,12,13,15,11,9,7]
             }],
-            size:{
-                width: 500,
-                height: 250
-            }
+
         }
 
 

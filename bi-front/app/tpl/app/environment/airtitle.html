@@ -283,7 +283,7 @@
         <span class="glyphicon glyphicon-hand-right"></span>
         &nbsp城区空气质量预测
     </button>
-    存在2个监测点空气质量有轻微问题
+    存在1个监测点空气质量有轻微问题
 </div>
 <hr/>
 
@@ -319,9 +319,8 @@
         <tr>
             <th style="width:30%">监测点</th>
             <th style="width:14%">AQI</th>
+            <th style="width:14%">主要污染物</th>
             <th style="width:14%">PM2.5</th>
-            <th style="width:14%">PM10</th>
-            <th style="width:14%">NO2</th>
             <th style="width:14%">SO2</th>
         </tr>
     </table>
@@ -329,27 +328,40 @@
 </div>
 <div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airQuality">
     <table class="table table-hover table-responsive" style="font-size:14px">
-        <tr ng-repeat="airQualityOne in airQualityMarkerList">
+        <tr >
             <td style="width:30%">太仓市监测站</td>
             <td style="width:14%">
-                <span>{{airQualityOne.index_aqi}}</span>
+                <span>118</span>
             </td>
             <td style="width:14%">
-                <span>{{airQualityOne.index_pm25}}</span>
+                <span>pm2.5</span>
             </td>
             <td style="width:14%">
-                <span>{{airQualityOne.index_pm10}}</span>
+                <span>64</span>
             </td>
             <td style="width:14%">
-                <span>{{airQualityOne.index_no2}}</span>
+                <span>54</span>
+            </td>
+        </tr>
+        <tr >
+            <td style="width:30%">科教新城监测站</td>
+            <td style="width:14%">
+                <span>145</span>
             </td>
             <td style="width:14%">
-                <span>{{airQualityOne.index_so2}}</span>
+                <span>pm2.5</span>
+            </td>
+            <td style="width:14%">
+                <span>83</span>
+            </td>
+            <td style="width:14%">
+                <span>54</span>
             </td>
         </tr>
     </table>
 
 </div>
+
 
 <div ng-show="mapTableStatus.airCondition">
     <h5 align="right" style="padding-top: 0px">
@@ -372,8 +384,8 @@
 </div>
 <div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airCondition">
     <table class="table table-hover table-responsive" style="font-size:14px">
-        <tr ng-repeat="airConditionOne in airConditionMarkerList">
-            <td style="width:30%">{{airConditionOne.monitor}}</td>
+        <tr >
+            <td style="width:30%">太仓市气象局</td>
             <td style="width:14%">
                 <span>{{airConditionOne.monitor}}</span>
             </td>
@@ -500,59 +512,59 @@
 <div  class="col-md-12">
     <a name="airQualityAnchor1">
         <div class="col-md-3">
-            <highchart style="width:30%;height:50%" config="airQualityOptions.aqiOption"></highchart>
+            <highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>
         </div>
     </a>
-    <div class="col-md-9" style="left:30px;">
-        <highchart style="width:100%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
+    <div class="col-md-9" style="left:10px;">
+        <highchart style="width:70%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
     <div class="col-md-3" name="airQualityAnchor2">
-        <highchart config="airQualityOptions.pm25Option"></highchart>
+        <highchart style="width:100%;height:250px" config="airQualityOptions.pm25Option"></highchart>
     </div>
-    <div class="col-md-9" style="left:30px">
-        <highchart config="airQualityOptions.currentPm25LineOption"></highchart>
+    <div class="col-md-9" style="left:10px">
+        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm25LineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
     <div class="col-md-3" id="airQualityAnchor3">
-        <highchart config="airQualityOptions.pm10Option"></highchart>
+        <highchart style="width:100%;height:250px" config="airQualityOptions.pm10Option"></highchart>
     </div>
     <div class="col-md-9" style="left:10px">
-        <highchart config="airQualityOptions.currentPm10LineOption"></highchart>
+        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm10LineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
     <div class="col-md-3" id="airQualityAnchor4">
-        <highchart config="airQualityOptions.so2Option">SO2</highchart>
+        <highchart style="width:100%;height:250px" config="airQualityOptions.so2Option">SO2</highchart>
     </div>
     <div class="col-md-9" style="left:10px">
-        <highchart config="airQualityOptions.currentSo2LineOption"></highchart>
+        <highchart style="width:70%;height:250px" config="airQualityOptions.currentSo2LineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
     <div class="col-md-3" id="airQualityAnchor5">
-        <highchart config="airQualityOptions.no2Option"></highchart>
+        <highchart style="width:100%;height:250px" config="airQualityOptions.no2Option"></highchart>
     </div>
     <div class="col-md-9" style="left:10px">
-        <highchart config="airQualityOptions.currentNo2LineOption"></highchart>
+        <highchart style="width:70%;height:250px" config="airQualityOptions.currentNo2LineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
     <div class="col-md-3" id="airQualityAnchor6">
-        <highchart config="airQualityOptions.coOption"></highchart>
+        <highchart style="width:100%;height:250px" config="airQualityOptions.coOption"></highchart>
     </div>
     <div class="col-md-9" style="left:10px">
-        <highchart config="airQualityOptions.currentCoLineOption"></highchart>
+        <highchart style="width:70%;height:250px" config="airQualityOptions.currentCoLineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
     <div class="col-md-3" id="airQualityAnchor7">
-        <highchart config="airQualityOptions.o3Option"></highchart>
+        <highchart style="width:100%;height:250px" config="airQualityOptions.o3Option"></highchart>
     </div>
     <div class="col-md-9" style="left:10px">
-        <highchart config="airQualityOptions.currentO3LineOption"></highchart>
+        <highchart style="width:70%;height:250px" config="airQualityOptions.currentO3LineOption"></highchart>
     </div>
 </div>
 </div>
