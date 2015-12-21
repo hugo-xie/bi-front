@@ -1,6 +1,6 @@
 <div class="vbox">
     <div class="wrapper lter b-b bg-white">
-      <div class="subview3_title">xxxxxxx</div>
+      <div class="subview3_title">当前用户</div>
 </div>
 <div class="wrapper bg-white">
   <form name="form-contact" class="form-validation ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-url">
@@ -17,7 +17,7 @@
                   </div>
                 </div>
                 <div class="col v-middle h1 font-thin">
-                  <div ng-hide="item.editing" class="ng-binding" aria-hidden="false">ABC Swaine</div>
+                  <div ng-hide="item.editing" class="ng-binding" aria-hidden="false">Administrator</div>
                   <div ng-show="item.editing" aria-hidden="true" class="ng-hide">
                     <input type="text" placeholder="First" class="form-control w-auto input-lg m-b-n-xxs font-bold ng-pristine ng-untouched ng-valid" ng-model="item.first" aria-invalid="false">
                     <input type="text" placeholder="Last" class="form-control w-auto input-lg font-bold ng-pristine ng-untouched ng-valid" ng-model="item.last" aria-invalid="false">
@@ -28,7 +28,7 @@
             <p class="text-muted">以下资料可以修改</p>
               <div class="form-group pull-in clearfix">
                 <div class="col-sm-6">
-                  <label>Your name</label>
+                  <label>您的名字</label>
                   <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Name" ng-model="contact.name" required="" aria-required="true" aria-invalid="true">
                 </div>
                 <div class="col-sm-6">
@@ -37,11 +37,11 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Your website</label>
+                <label>您的个人网站</label>
                 <input type="url" class="form-control ng-pristine ng-untouched ng-valid-url ng-invalid ng-invalid-required" placeholder="http://" ng-model="contact.url" required="" aria-required="true" aria-invalid="true">
               </div>
               <div class="form-group">
-                <label>Message</label>
+                <label>说明</label>
                 <textarea class="form-control" rows="6" placeholder="Type your message"></textarea>
               </div>
           </div>
