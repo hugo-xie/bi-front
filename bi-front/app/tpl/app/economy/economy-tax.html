@@ -1,17 +1,15 @@
 <div class="vbox">
-    <div class="wrapper lter b-b bg-white">
+  <div class="wrapper lter b-b bg-white">
     <a href="" class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">税收收入预测</a>
-      <div class="subview3_title">{{title}}</div>
+    <div class="subview3_title">{{title}}</div>
   </div>
 
   <div class="wrapper  container" style="padding:0px;margin-top:1em;margin-bottom:2em">
-
+  
     <div class="panel panel-primary">
-      
+
       <div class="panel-heading">
-          <div class="panel-title">
-            年度税收收入分析预测
-          </div>
+        <div class="panel-title">年度税收收入分析预测</div>
       </div>
 
       <div class="row">
@@ -22,334 +20,331 @@
         <div class="col-md-4">
 
           <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
-          <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-            <strong>下个月预测值</br>96.52亿元</strong>
+            <span class="glyphicon glyphicon-tasks" aria-hidden="true"> <strong>下个月预测值</br>
+              96.52亿元</strong> 
           </span>
-          </button>
+        </button>
 
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
-          <span class="glyphicon glyphicon-send" aria-hidden="true">
-            <strong> 预测误差范围</br>3.0%</strong>
-          </span>
-          </button>
+        <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
+          <span class="glyphicon glyphicon-send" aria-hidden="true"> <strong>预测误差范围</br>
+            3.0%</strong> 
+        </span>
+      </button>
 
-          <button class="btn btn-primary" style="margin-top:40px;width:38%">一句话解读</button>
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
-            <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-              <strong>本年的税收增速较往年的增速有所放缓</strong>
-            </span>
-          </button>
+      <button class="btn btn-primary" style="margin-top:40px;width:38%">一句话解读</button>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>本年的税收增速较往年的增速有所放缓</strong>
+        </span>
+      </button>
 
-          <div class="btn-group-vertical" role="group" aria-label="Left Align ">
-            <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViewsYear()">切换图标视图</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="checkdeviationYear()">查看预测误差记录</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="checkforecastYear()">查看预测详情</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="adjustParameterYear()">重置调节</button>
-          </div>
-        </div>
-        <div class="col-md-12" style="margin-top:10px" ng-if="forecastYear">
-          <table class="table table-condensed" >
-            <tr>
-              <th class="active" style="text-align: center;">年  份</th>
-              <th ng-repeat="item in items" class="active">{{item}}</th>
-            </tr>
-            <tr>
-              <td class="active" style="text-align: center;">真实值（亿元）</td>
-              <td ng-repeat="realValue in realValues" class="active">{{realValue}}</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-            </tr>
-            <tr>
-              <td class="active" style="text-align: center;">预测值（亿元）</td>
-              <td ng-repeat="predictionValue in predictionValues" class="active">{{predictionValue}}</td>
-            </tr>
-          </table>
-        </div>
-        <div class="col-md-12" style="margin-top:10px" ng-if="deviationYear">
-          <table class="table table-condensed" >
-            <tr>
-              <th class="active" style="text-align: center;">年  份</th>
-              <th ng-repeat="item in items" class="active">{{item}}</th>
-            </tr>
-            <tr>
-              <td class="active" style="text-align: center;">误  差</td>
-              <td class="active">2.8%</td>
-              <td class="active">3.3%</td>
-              <td class="active">3.2%</td>
-              <td class="active">2.0%</td>
-              <td class="active">1.7%</td>
-              <td class="active">4.4%</td>
-              <td class="active">3.1%</td>
-              <td class="active">2.7%</td>
-              <td class="active">2.6%</td>
-              <td class="active">2.8%</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-              <td class="active">-</td>
-            </tr>
-          </table>
-        </div>
-        
-       </div>
- <div >
-          <div class="row" >
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">固定资产投资</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="selectedRange=0">
-                        <span class="num">{{ selectedRange}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
-                        <div class="inner" ng-style="{ width: (selectedRange/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">财政支出</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="selectedRange2=0">
-                        <span class="num">{{ selectedRange2}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2">
-                        <div class="inner" ng-style="{ width: (selectedRange2/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-                 </div>
-           </div>
-           <div class="row">
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">外贸进出口总额</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="selectedRange3=0">
-                        <span class="num">{{ selectedRange3}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3">
-                        <div class="inner" ng-style="{ width: (selectedRange3/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">GDP</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="selectedRange4=0">
-                        <span class="num">{{ selectedRange4}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange4">
-                        <div class="inner" ng-style="{ width: (selectedRange4/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-                 </div>
-           </div>
-  </div>
+      <div class="btn-group-vertical" role="group" aria-label="Left Align ">
+        <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViewsYear()">切换图标视图</button>
+        <button class="btn btn-primary" style="margin-top:10px" ng-click="checkdeviationYear()">查看预测误差记录</button>
+        <button class="btn btn-primary" style="margin-top:10px" ng-click="checkforecastYear()">查看预测详情</button>
+        <button class="btn btn-primary" style="margin-top:10px" ng-click="adjustParameterYear()">重置调节</button>
+      </div>
+    </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="forecastYear">
+      <table class="table table-condensed" >
+        <tr>
+          <th class="active" style="text-align: center;">年  份</th>
+          <th ng-repeat="item in items" class="active">{{item}}</th>
+        </tr>
+        <tr>
+          <td class="active" style="text-align: center;">真实值（亿元）</td>
+          <td ng-repeat="realValue in realValues" class="active">{{realValue}}</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+        </tr>
+        <tr>
+          <td class="active" style="text-align: center;">预测值（亿元）</td>
+          <td ng-repeat="predictionValue in predictionValues" class="active">{{predictionValue}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-12" style="margin-top:10px" ng-if="deviationYear">
+      <table class="table table-condensed" >
+        <tr>
+          <th class="active" style="text-align: center;">年  份</th>
+          <th ng-repeat="item in items" class="active">{{item}}</th>
+        </tr>
+        <tr>
+          <td class="active" style="text-align: center;">误  差</td>
+          <td class="active">2.8%</td>
+          <td class="active">3.3%</td>
+          <td class="active">3.2%</td>
+          <td class="active">2.0%</td>
+          <td class="active">1.7%</td>
+          <td class="active">4.4%</td>
+          <td class="active">3.1%</td>
+          <td class="active">2.7%</td>
+          <td class="active">2.6%</td>
+          <td class="active">2.8%</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+          <td class="active">-</td>
+        </tr>
+      </table>
     </div>
 
-
-
- 
-
-    <div class="panel panel-primary">
-      
-      <div class="panel-heading">
-          <div class="panel-title">
-            月度税收收入分析预测
-          </div>
+  </div>
+  <div >
+    <div class="row" >
+      <div class="col-md-1">
+        <p class="handler-title" style="margin-top:15px">固定资产投资</p>
       </div>
-
-      <div class="row">
-
-        <div class="col-md-8" style="border-right:1px solid">
-          <highchart id="monthTaxChart"  config="monthTaxChart" />
-        </div>
-        <div class="col-md-4">
-
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
-          <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-            <strong>下个月预测值</br>96.52亿元</strong>
-          </span>
-          </button>
-
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
-          <span class="glyphicon glyphicon-send" aria-hidden="true">
-            <strong> 预测误差范围</br>3.0%</strong>
-          </span>
-          </button>
-
-          <button class="btn btn-primary" style="margin-top:40px;width:38%">一句话解读</button>
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
-            <span class="glyphicon glyphicon-list-alt" aria-hidden="true" >
-              <strong>本年的税收增速较往年的增速有所放缓</strong>
-            </span>
-          </button>
-
-          <div class="btn-group-vertical" role="group" aria-label="Left Align ">
-            <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViews()">切换图标视图</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="checkdeviation()">查看预测误差记录</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="checkforecast()">查看预测详情</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="adjustParameter()">重置调节</button>
+      <div class="col-md-5">
+        <div class="progress-box" >
+          <div class="percentage-cur" ng-init="selectedRange=0">
+            <span class="num">{{ selectedRange}}%</span>
           </div>
-        </div>
-        <div class="col-md-12" style="margin-top:10px" ng-if="forecast">
-          <table class="table table-condensed" >
-            <tr>
-              <th class="active">月份</th>
-              <th class="active">2月</th>
-              <th class="active">3月</th>
-              <th class="active">4月</th>
-              <th class="active">5月</th>
-              <th class="active">6月</th>
-              <th class="active">7月</th>
-              <th class="active">8月</th>
-              <th class="active">9月</th>
-              <th class="active">10月</th>
-              <th class="active">11月</th>
-              <th class="active">12月</th>
-            </tr>
-            <tr>
-              <td class="success">真实值</td>
-              <td class="success">181216</td>
-              <td class="success">233015</td>
-              <td class="success">333858</td>
-              <td class="success">404789</td>
-              <td class="success">490992</td>
-              <td class="success">601972</td>
-              <td class="success">651118</td>
-              <td class="success">710585</td>
-              <td class="success">818419</td>
-              <td class="success">888181</td>
-              <td class="success"></td>
-            </tr>
-            <tr>
-              <td class="success">预测值</td>
-              <td class="success">193214</td>
-              <td class="success">230005</td>
-              <td class="success">336584</td>
-              <td class="success">416214</td>
-              <td class="success">523621</td>
-              <td class="success">625314</td>
-              <td class="success">688743</td>
-              <td class="success">743214</td>
-              <td class="success">813564</td>
-              <td class="success">892314</td>
-              <td class="success">965248</td>
-            </tr>
-          </table>
-        </div>
-        <div class="col-md-12" style="margin-top:10px" ng-if="deviation">
-          <table class="table table-condensed" >
-            <tr>
-              <th class="active">月份</th>
-              <th class="active">2月</th>
-              <th class="active">3月</th>
-              <th class="active">4月</th>
-              <th class="active">5月</th>
-              <th class="active">6月</th>
-              <th class="active">7月</th>
-              <th class="active">8月</th>
-              <th class="active">9月</th>
-              <th class="active">10月</th>
-              <th class="active">11月</th>
-              <th class="active">12月</th>
-            </tr>
-            <tr>
-              <td class="success">误差</td>
-              <td class="success">2.8%</td>
-              <td class="success">3.3%</td>
-              <td class="success">3.2%</td>
-              <td class="success">2.0%</td>
-              <td class="success">1.7%</td>
-              <td class="success">4.4%</td>
-              <td class="success">3.1%</td>
-              <td class="success">2.7%</td>
-              <td class="success">2.6%</td>
-              <td class="success">2.8%</td>
-              <td class="success"></td>
-            </tr>
-          </table>
+          <div class="progress-bar progress-bar-slider" style="width:60%">
+            <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
+            <div class="inner" ng-style="{ width: (selectedRange/2+50) + '%'}"></div>
+          </div>
         </div>
 
       </div>
+      <div class="col-md-1">
+        <p class="handler-title" style="margin-top:15px">财政支出</p>
+      </div>
+      <div class="col-md-5">
+        <div class="progress-box" >
+          <div class="percentage-cur" ng-init="selectedRange2=0">
+            <span class="num">{{ selectedRange2}}%</span>
+          </div>
+          <div class="progress-bar progress-bar-slider" style="width:60%">
+            <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2">
+            <div class="inner" ng-style="{ width: (selectedRange2/2+50) + '%'}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <p class="handler-title" style="margin-top:15px">外贸进出口总额</p>
+      </div>
+      <div class="col-md-5">
+        <div class="progress-box" >
+          <div class="percentage-cur" ng-init="selectedRange3=0">
+            <span class="num">{{ selectedRange3}}%</span>
+          </div>
+          <div class="progress-bar progress-bar-slider" style="width:60%">
+            <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3">
+            <div class="inner" ng-style="{ width: (selectedRange3/2+50) + '%'}"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-1">
+        <p class="handler-title" style="margin-top:15px">GDP</p>
+      </div>
+      <div class="col-md-5">
+        <div class="progress-box" >
+          <div class="percentage-cur" ng-init="selectedRange4=0">
+            <span class="num">{{ selectedRange4}}%</span>
+          </div>
+          <div class="progress-bar progress-bar-slider" style="width:60%">
+            <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange4">
+            <div class="inner" ng-style="{ width: (selectedRange4/2+50) + '%'}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <div class="panel-title">月度税收收入分析预测</div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-8" style="border-right:1px solid">
+      <highchart id="monthTaxChart"  config="monthTaxChart" />
+    </div>
+    <div class="col-md-4">
+
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
+        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
+          <strong>下个月预测值</br>
+          96.52亿元
+        </strong>
+      </span>
+    </button>
+
+    <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
+      <span class="glyphicon glyphicon-send" aria-hidden="true">
+        <strong>预测误差范围</br>
+        3.0%
+      </strong>
+    </span>
+  </button>
+
+  <button class="btn btn-primary" style="margin-top:40px;width:38%">一句话解读</button>
+  <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+    <span class="glyphicon glyphicon-list-alt" aria-hidden="true" >
+      <strong>本年的税收增速较往年的增速有所放缓</strong>
+    </span>
+  </button>
+
+  <div class="btn-group-vertical" role="group" aria-label="Left Align ">
+    <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViews()">切换图标视图</button>
+    <button class="btn btn-primary" style="margin-top:10px" ng-click="checkdeviation()">查看预测误差记录</button>
+    <button class="btn btn-primary" style="margin-top:10px" ng-click="checkforecast()">查看预测详情</button>
+    <button class="btn btn-primary" style="margin-top:10px" ng-click="adjustParameter()">重置调节</button>
+  </div>
+</div>
+<div class="col-md-12" style="margin-top:10px" ng-if="forecast">
+  <table class="table table-condensed" >
+    <tr>
+      <th class="active">月份</th>
+      <th class="active">2月</th>
+      <th class="active">3月</th>
+      <th class="active">4月</th>
+      <th class="active">5月</th>
+      <th class="active">6月</th>
+      <th class="active">7月</th>
+      <th class="active">8月</th>
+      <th class="active">9月</th>
+      <th class="active">10月</th>
+      <th class="active">11月</th>
+      <th class="active">12月</th>
+    </tr>
+    <tr>
+      <td class="success">真实值</td>
+      <td class="success">181216</td>
+      <td class="success">233015</td>
+      <td class="success">333858</td>
+      <td class="success">404789</td>
+      <td class="success">490992</td>
+      <td class="success">601972</td>
+      <td class="success">651118</td>
+      <td class="success">710585</td>
+      <td class="success">818419</td>
+      <td class="success">888181</td>
+      <td class="success"></td>
+    </tr>
+    <tr>
+      <td class="success">预测值</td>
+      <td class="success">193214</td>
+      <td class="success">230005</td>
+      <td class="success">336584</td>
+      <td class="success">416214</td>
+      <td class="success">523621</td>
+      <td class="success">625314</td>
+      <td class="success">688743</td>
+      <td class="success">743214</td>
+      <td class="success">813564</td>
+      <td class="success">892314</td>
+      <td class="success">965248</td>
+    </tr>
+  </table>
+</div>
+<div class="col-md-12" style="margin-top:10px" ng-if="deviation">
+  <table class="table table-condensed" >
+    <tr>
+      <th class="active">月份</th>
+      <th class="active">2月</th>
+      <th class="active">3月</th>
+      <th class="active">4月</th>
+      <th class="active">5月</th>
+      <th class="active">6月</th>
+      <th class="active">7月</th>
+      <th class="active">8月</th>
+      <th class="active">9月</th>
+      <th class="active">10月</th>
+      <th class="active">11月</th>
+      <th class="active">12月</th>
+    </tr>
+    <tr>
+      <td class="success">误差</td>
+      <td class="success">2.8%</td>
+      <td class="success">3.3%</td>
+      <td class="success">3.2%</td>
+      <td class="success">2.0%</td>
+      <td class="success">1.7%</td>
+      <td class="success">4.4%</td>
+      <td class="success">3.1%</td>
+      <td class="success">2.7%</td>
+      <td class="success">2.6%</td>
+      <td class="success">2.8%</td>
+      <td class="success"></td>
+    </tr>
+  </table>
+</div>
+
+</div>
 <div >
-          <div class="row" >
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">固定资产投资</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="monthselectedRange=0">
-                        <span class="num">{{ monthselectedRange}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange">
-                        <div class="inner" ng-style="{ width: (monthselectedRange/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">财政支出</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="monthselectedRange2=0">
-                        <span class="num">{{ monthselectedRange2}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange2">
-                        <div class="inner" ng-style="{ width: (monthselectedRange2/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-                 </div>
-           </div>
-           <div class="row">
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">外贸进出口总额</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="monthselectedRange3=0">
-                        <span class="num">{{ monthselectedRange3}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange3">
-                        <div class="inner" ng-style="{ width: (monthselectedRange3/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-md-1">
-                    <p class="handler-title" style="margin-top:15px">GDP</p>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="monthselectedRange4=0">
-                        <span class="num">{{ monthselectedRange4}}%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider" style="width:60%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange4">
-                        <div class="inner" ng-style="{ width: (monthselectedRange4/2+50) + '%'}"></div>
-                      </div>
-                    </div>
-                 </div>
-           </div>
+<div class="row" >
+  <div class="col-md-1">
+    <p class="handler-title" style="margin-top:15px">固定资产投资</p>
   </div>
+  <div class="col-md-5">
+    <div class="progress-box" >
+      <div class="percentage-cur" ng-init="monthselectedRange=0">
+        <span class="num">{{ monthselectedRange}}%</span>
+      </div>
+      <div class="progress-bar progress-bar-slider" style="width:60%">
+        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange">
+        <div class="inner" ng-style="{ width: (monthselectedRange/2+50) + '%'}"></div>
+      </div>
     </div>
 
+  </div>
+  <div class="col-md-1">
+    <p class="handler-title" style="margin-top:15px">财政支出</p>
+  </div>
+  <div class="col-md-5">
+    <div class="progress-box" >
+      <div class="percentage-cur" ng-init="monthselectedRange2=0">
+        <span class="num">{{ monthselectedRange2}}%</span>
+      </div>
+      <div class="progress-bar progress-bar-slider" style="width:60%">
+        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange2">
+        <div class="inner" ng-style="{ width: (monthselectedRange2/2+50) + '%'}"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1">
+    <p class="handler-title" style="margin-top:15px">外贸进出口总额</p>
+  </div>
+  <div class="col-md-5">
+    <div class="progress-box" >
+      <div class="percentage-cur" ng-init="monthselectedRange3=0">
+        <span class="num">{{ monthselectedRange3}}%</span>
+      </div>
+      <div class="progress-bar progress-bar-slider" style="width:60%">
+        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange3">
+        <div class="inner" ng-style="{ width: (monthselectedRange3/2+50) + '%'}"></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-1">
+    <p class="handler-title" style="margin-top:15px">GDP</p>
+  </div>
+  <div class="col-md-5">
+    <div class="progress-box" >
+      <div class="percentage-cur" ng-init="monthselectedRange4=0">
+        <span class="num">{{ monthselectedRange4}}%</span>
+      </div>
+      <div class="progress-bar progress-bar-slider" style="width:60%">
+        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange4">
+        <div class="inner" ng-style="{ width: (monthselectedRange4/2+50) + '%'}"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

@@ -25,10 +25,46 @@
 								<img src="/images/common/data_details.png"/>
 							</p>
 							<h4>水环境质量(WQI)预测值与实际值比较</h4>
+							<button class="btn btn-info" style="font-size:85%" ng-click="changeView()">
+								<span class="glyphicon glyphicon-retweet"></span>
+								切换图表视图
+							</button>
+							<br><br>
 							<button class="btn btn-success" style="font-size:85%" ng-click="isShow0=!isShow0">
-								<span class="glyphicon glyphicon glyphicon-search"></span>
+								<span class="glyphicon glyphicon-search"></span>
 								查看详细数据
 							</button>
+							<br><br>
+							<button class="btn btn-warning" style="font-size:85%">
+								<span class="glyphicon glyphicon-check"></span>
+								污水调节分析
+							</button>
+							<br>
+							<div class="progress-box">
+					        	<div class="percentage-cur" ng-init="selectedRange1=0">
+					        		<span class="num">工业污水:{{selectedRange1}}%</span>
+					        	</div>
+					        	<div class="progress-bar progress-bar-slider" style="width:60%">
+						        	<input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange1">
+						        	<div class="inner" ng-style="{ width: (selectedRange1/2+50) + '%'}"></div>
+					        	</div>
+					        	<br>
+					        	<div class="percentage-cur" ng-init="selectedRange2=0">
+					        		<span class="num">农业污水:{{selectedRange2}}%</span>
+					        	</div>
+					        	<div class="progress-bar progress-bar-slider" style="width:60%">
+						        	<input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2">
+						        	<div class="inner" ng-style="{ width: (selectedRange2/2+50) + '%'}"></div>
+					        	</div>
+					        	<br>
+					        	<div class="percentage-cur" ng-init="selectedRange3=0">
+					        		<span class="num">生活污水:{{selectedRange3}}%</span>
+					        	</div>
+					        	<div class="progress-bar progress-bar-slider" style="width:60%">
+						        	<input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3">
+						        	<div class="inner" ng-style="{ width: (selectedRange3/2+50) + '%'}"></div>
+					        	</div>
+					        </div>
 						</div>
 					</div>
 				</div>
