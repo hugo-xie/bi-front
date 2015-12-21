@@ -11,10 +11,226 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
         center: [121.106661, 31.579533]
 
     });
-     var marker = new AMap.Marker({
-        position: [121.106661,  31.579533],
-        map:map
 
+     var marker = new AMap.Marker({
+        position: [121.187,31.6539],
+        map:map
+    });
+
+    var marker1 = new AMap.Marker({
+        position: [121.268,31.585],
+        map:map
+    });
+
+    var marker2 = new AMap.Marker({
+        position: [121.295,31.5368],
+        map:map
+    });
+
+     var marker3 = new AMap.Marker({
+        position: [121.228022,31.611651],
+        map:map
+    });
+
+    var marker4 = new AMap.Marker({
+        position: [121.092563,31.659607],
+        map:map
+    });
+
+    var marker5 = new AMap.Marker({
+        position: [121.227000,31.597000],
+        map:map
+    });
+
+    var marker6 = new AMap.Marker({
+        position: [121.244154,31.592104],
+        map:map
+    });
+
+    var marker7 = new AMap.Marker({
+        position: [121.247737,31.580187],
+        map:map
+    });
+
+    var marker8 = new AMap.Marker({
+        position: [121.278300,31.559400],
+        map:map
+    });
+     $scope.waterlist=function(){
+        map.setZoomAndCenter(15, [121.268,31.585]);
+     };
+     $scope.alllist=function(){
+        map.setZoomAndCenter(10, [121.227000,31.597000]);
+     }
+    var info=[];
+    info.push("<h4><strong>第二水厂</strong></h4>");
+    info.push("<table class='table table-bordered table-striped'>");
+    info.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info.push("</table>");
+    var infowindow = new AMap.InfoWindow({
+     content: info.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle = AMap.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker.getPosition())
+    })
+
+    var info1=[];
+    info1.push("<h4><strong>协鑫码头</strong></h4>");
+    info1.push("<table class='table table-bordered table-striped'>");
+    info1.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info1.push("</table>");
+    var infowindow1 = new AMap.InfoWindow({
+     content: info1.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle1 = AMap.event.addListener(marker1, 'click', function() {
+    infowindow1.open(map, marker1.getPosition())
+    })
+
+    var info2=[];
+    info2.push("<h4><strong>第三水厂</strong></h4>");
+    info2.push("<table class='table table-bordered table-striped'>");
+    info2.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info2.push("</table>");
+    var infowindow2 = new AMap.InfoWindow({
+     content: info2.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
+    infowindow2.open(map, marker2.getPosition())
+    })
+
+    var info3=[];
+    info3.push("<h4><strong>岳王污水处理厂</strong></h4>");
+    info3.push("<table class='table table-bordered table-striped'>");
+    info3.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
+    info3.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
+    info3.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info3.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info3.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info3.push("</table>");
+    var infowindow3 = new AMap.InfoWindow({
+     content: info3.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle3 = AMap.event.addListener(marker3, 'click', function() {
+    infowindow3.open(map, marker3.getPosition())
+    })
+
+    var info4=[];
+    info4.push("<h4><strong>璜泾镇污水处理厂</strong></h4>");
+    info4.push("<table class='table table-bordered table-striped'>");
+    info4.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info4.push("</table>");
+    var infowindow4 = new AMap.InfoWindow({
+     content: info4.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle4 = AMap.event.addListener(marker4, 'click', function() {
+    infowindow4.open(map, marker4.getPosition())
+    })
+
+    var info5=[];
+    info5.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
+    info5.push("<table class='table table-bordered table-striped'>");
+    info5.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info5.push("</table>");
+    var infowindow5 = new AMap.InfoWindow({
+     content: info5.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle5 = AMap.event.addListener(marker5, 'click', function() {
+    infowindow5.open(map, marker5.getPosition())
+    })
+
+    var info6=[];
+    info6.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
+    info6.push("<table class='table table-bordered table-striped'>");
+    info6.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info6.push("</table>");
+    var infowindow6 = new AMap.InfoWindow({
+     content: info6.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle6 = AMap.event.addListener(marker6, 'click', function() {
+    infowindow6.open(map, marker6.getPosition())
+    })
+
+    var info7=[];
+    info7.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
+    info7.push("<table class='table table-bordered table-striped'>");
+    info7.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info7.push("</table>");
+    var infowindow7 = new AMap.InfoWindow({
+     content: info7.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle7 = AMap.event.addListener(marker7, 'click', function() {
+    infowindow7.open(map, marker7.getPosition())
+    })
+
+    var info8=[];
+    info8.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
+    info8.push("<table class='table table-bordered table-striped'>");
+    info8.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
+    info8.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
+    info8.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
+    info8.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
+    info8.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info8.push("</table>");
+    var infowindow8 = new AMap.InfoWindow({
+     content: info8.join(''),
+     offset: new AMap.Pixel(0, -30),
+     size:new AMap.Size(250,0)
+     })
+    var clickHandle8 = AMap.event.addListener(marker8, 'click', function() {
+    infowindow8.open(map, marker8.getPosition())
+    })
+
+     // 添加工具条和比例尺
+    AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
+    //TODO  创建控件并添加
+    var toolBar = new AMap.ToolBar();
+    var scale = new AMap.Scale();
+    map.addControl(toolBar);
+    map.addControl(scale);
     });
 
      $scope.tableStatus = {

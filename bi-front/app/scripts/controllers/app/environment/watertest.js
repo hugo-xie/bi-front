@@ -1,11 +1,66 @@
 app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stateParams, $http) {
 	
-    //获取表格数据
-    // $http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php").success(function (response) {$scope.names = response.records;});
+    //变换图表视图
+    $scope.changeView=function(){
+        if( $scope.chartConfig0.series[0].type == 'column'){
+            $scope.chartConfig0.series[0].type = 'spline';
+        }else{
+            $scope.chartConfig0.series[0].type = 'column';
+        }
+        if( $scope.chartConfig0.series[1].type == 'column'){
+            $scope.chartConfig0.series[1].type = 'spline';
+        }else{
+            $scope.chartConfig0.series[1].type = 'column';
+        }
+        if( $scope.chartConfig0.series[2].type == 'column'){
+            $scope.chartConfig0.series[2].type = 'spline';
+        }else{
+            $scope.chartConfig0.series[2].type = 'column';
+        }
+    };
+
+    //拖动滑动条使图表变化
+    $scope.industry=[75, 56, 70, 60, 50];
+    $scope.agriculture=[62, 53, 65, 74, 68];
+    $scope.life=[84, 73, 63, 69, 50];
+    $scope.WQI=[83, 60, 53, 70.33, 63.33];
+    $scope.range1 = function() {
+        return $scope.selectedRange1;
+    };
+    $scope.range2 = function() {
+        return $scope.selectedRange2;
+    };
+    $scope.range3 = function() {
+        return $scope.selectedRange3;
+    };
+    var changedetail1=function(newValue,oldValue,scope){
+        $scope.industry[0]=$scope.industry[0]+$scope.industry[0]*(newValue-oldValue)/200;
+        $scope.industry[1]=$scope.industry[1]+$scope.industry[1]*(newValue-oldValue)/150;
+        $scope.industry[2]=$scope.industry[2]+$scope.industry[2]*(newValue-oldValue)/200;
+        $scope.industry[3]=$scope.industry[3]+$scope.industry[3]*(newValue-oldValue)/150;
+        $scope.industry[4]=$scope.industry[4]+$scope.industry[4]*(newValue-oldValue)/200;
+    };
+    var changedetail2=function(newValue,oldValue,scope){
+        $scope.agriculture[0]=$scope.agriculture[0]+$scope.agriculture[0]*(newValue-oldValue)/300;
+        $scope.agriculture[1]=$scope.agriculture[1]+$scope.agriculture[1]*(newValue-oldValue)/300;
+        $scope.agriculture[2]=$scope.agriculture[2]+$scope.agriculture[2]*(newValue-oldValue)/200;
+        $scope.agriculture[3]=$scope.agriculture[3]+$scope.agriculture[3]*(newValue-oldValue)/200;
+        $scope.agriculture[4]=$scope.agriculture[4]+$scope.agriculture[4]*(newValue-oldValue)/200;
+    };
+    var changedetail3=function(newValue,oldValue,scope){
+        $scope.life[0]=$scope.life[0]+$scope.life[0]*(newValue-oldValue)/200;
+        $scope.life[1]=$scope.life[1]+$scope.life[1]*(newValue-oldValue)/100;
+        $scope.life[2]=$scope.life[2]+$scope.life[2]*(newValue-oldValue)/200;
+        $scope.life[3]=$scope.life[3]+$scope.life[3]*(newValue-oldValue)/100;
+        $scope.life[4]=$scope.life[4]+$scope.life[4]*(newValue-oldValue)/200;
+    };
+    $scope.$watch($scope.range1, changedetail1);
+    $scope.$watch($scope.range2, changedetail2);
+    $scope.$watch($scope.range3, changedetail3);
 
     // highchart图
-	$scope.chartConfig0 = {	 
-		title: {
+	$scope.chartConfig0 = {
+        title: {
             text: '太仓市水环境质量(WQI)分析预测图'
         },
         xAxis: {
@@ -24,19 +79,19 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
         series: [{
             type: 'column',
             name: '工业污水',
-            data: [30, 20, 10, 30, 40]
+            data: $scope.industry,
         }, {
             type: 'column',
             name: '农业污水',
-            data: [62, 53, 65, 74, 68]
+            data: $scope.agriculture,
         }, {
             type: 'column',
             name: '生活污水',
-            data: [84, 73, 63, 69, 50]
+            data: $scope.life,
         }, {
             type: 'spline',
             name: 'WQI',
-            data: [83, 62.67, 53, 86.33, 73.33],
+            data: $scope.WQI,
             marker: {
                 lineWidth: 2,
                 lineColor: Highcharts.getOptions().colors[3],
@@ -91,9 +146,11 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
         }]
 	};
 
-	$scope.chartConfig2 = {	 
-		chart: {
-            type: 'areaspline'
+	$scope.chartConfig2 = {
+        options: {
+            chart: {
+                type: 'areaspline'
+            },
         },
         title: {
             text: '高锰酸钾浓度预测图'
@@ -137,11 +194,9 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
             }
         },
         series: [{
-            type: 'areaspline', 
             name: '实际值',
             data: [43, 54, 33, 45, 64, 50, 52]
         }, {
-            type: 'areaspline',
             name: '预测值',
             data: [50, 39, 48, 53, 63, 45, 64]
         }]
@@ -214,7 +269,12 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
 	};
 
 	$scope.chartConfig4 = {	 
-		chart: {
+		options: {
+            chart: {
+                type: 'bar'
+            },
+        },
+        chart: {
             type: 'bar'
         },
         title: {
@@ -238,18 +298,15 @@ app.controller('WaterTestCtrl', ['$scope','$stateParams', function($scope, $stat
                 stacking: 'normal'
             }
         },
-            series: [{
-            type: 'bar',
-            name: '过去24小时',
-            data: [45, 33, 24, 47, 52]
-        }, {
-        	type: 'bar',
-            name: '实时',
-            data: [32, 42, 33, 62, 41]
-        }, {
-        	type: 'bar',
-            name: '未来24小时',
-            data: [73, 40, 54, 42, 45]
+        series: [{
+                name: '过去24小时',
+                data: [45, 33, 24, 47, 52]
+            }, {
+                name: '实时',
+                data: [32, 42, 33, 62, 41]
+            }, {
+                name: '未来24小时',
+                data: [73, 40, 54, 42, 45]
         }]
 	};
 

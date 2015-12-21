@@ -13,13 +13,13 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
   	tabledata:
   	[
 	  {yearvalue:'时间', evaporation:'蒸发量',water:'降水量',avetep:'平均温度'},
-	  {yearvalue:'12月11号', evaporation:'2',water:'2.6',avetep:'2'},
-	  {yearvalue:'12月12号', evaporation:'4.9',water:'5.9',avetep:'2.2'},
-	  {yearvalue:'12月13号', evaporation:'7',water:'9',avetep:'3.3'},
-	  {yearvalue:'12月14号', evaporation:'23.2',water:'26.4',avetep:'4.5'},
-	  {yearvalue:'12月15号', evaporation:'25.6',water:'28.7',avetep:'6.3'},
-	  {yearvalue:'12月16号', evaporation:'76.7',water:'70.7',avetep:'10.2'},
-	  {yearvalue:'12月17号', evaporation:'135.6',water:'175.6',avetep:'20.3'}
+	  {yearvalue:'12月19号', evaporation:'2',water:'2.6',avetep:'2'},
+	  {yearvalue:'12月20号', evaporation:'4.9',water:'5.9',avetep:'2.2'},
+	  {yearvalue:'12月21号', evaporation:'7',water:'9',avetep:'3.3'},
+	  {yearvalue:'12月22号', evaporation:'23.2',water:'26.4',avetep:'4.5'},
+	  {yearvalue:'12月23号', evaporation:'25.6',water:'28.7',avetep:'6.3'},
+	  {yearvalue:'12月24号', evaporation:'76.7',water:'70.7',avetep:'10.2'},
+	  {yearvalue:'12月25号', evaporation:'135.6',water:'175.6',avetep:'11.3'}
   	]
   };
  $timeout(function () {
@@ -62,7 +62,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                     xAxis : [
                         {
                             type : 'category',
-                            data : ['12月11号','12月12号','12月13号','12月14号','12月15号','12月16号','12月17号']
+                            data : ['12月19号','12月20号','12月21号','12月22号','12月23号','12月24号','12月25号']
                         }
                     ],
                     yAxis : [
@@ -97,7 +97,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                             name:'平均温度',
                             type:'line',
                             yAxisIndex: 1,
-                            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3]
+                            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 11.3]
                         }
                     ]
                 };
@@ -113,8 +113,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
         zoom: 12,
         center: [121.130619,31.461029]
 
-
-    });
+     });
     $timeout(function () {
    var marker1 = new AMap.Marker({
     position: [121.11414, 31.45605],
@@ -357,7 +356,7 @@ $scope.aqilinechart={
             text: '空气质量AQI'
         },
         xAxis: {
-            categories: ['12月11', '12月12', '12月13', '12月14', '12月15','12月16','12月17']
+            categories: ['12月19', '12月20', '12月21', '12月22', '12月23','12月24','12月25']
         },
         labels: {
             items: [{
@@ -530,7 +529,7 @@ $scope.aqilinechart={
 			},
 			series: [{
 				name: 'AQI',
-				data: [0],
+				data: [118],
 				tooltip: {
 					valueSuffix: ''
 				}
@@ -642,7 +641,7 @@ $scope.aqilinechart={
 			},
 			series: [{
 				name: 'PM2.5',
-				data: [0],
+				data: [64],
 				tooltip: {
 					valueSuffix: 'μg/m³'
 				}
@@ -755,7 +754,7 @@ $scope.aqilinechart={
 			},
 			series: [{
 				name: 'PM10',
-				data: [0],
+				data: [70],
 				tooltip: {
 					valueSuffix: 'μg/m³'
 				}
@@ -868,7 +867,7 @@ $scope.aqilinechart={
 			},
 			series: [{
 				name: '二氧化硫',
-				data: [0],
+				data: [54],
 				tooltip: {
 					valueSuffix: 'μg/m³'
 				}
@@ -980,8 +979,8 @@ $scope.aqilinechart={
 				}
 			},
 			series: [{
-				name: '二氧化碳',
-				data: [0],
+				name: '二氧化氮',
+				data: [44],
 				tooltip: {
 					valueSuffix: 'μg/m³'
 				}
@@ -992,7 +991,7 @@ $scope.aqilinechart={
             }
     	},
 
-        //SO2
+        //CO
     	coOption:{
     		options:{
 				chart: {
@@ -1094,7 +1093,7 @@ $scope.aqilinechart={
 			},
 			series: [{
 				name: '一氧化碳',
-				data: [0],
+				data: [1],
 				tooltip: {
 					valueSuffix: 'mg/m³'
 				}
@@ -1207,7 +1206,7 @@ $scope.aqilinechart={
 			},
 			series: [{
 				name: '臭氧',
-				data: [0],
+				data: [7],
 				tooltip: {
 					valueSuffix: 'μg/m³'
 				}
@@ -1220,6 +1219,7 @@ $scope.aqilinechart={
 
     	//上面仪表盘加折线图结束
 
+        //AQI折线图
     	currentAqiLineOption:{
             options:{
                 title: {
@@ -1271,7 +1271,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: 'AQI',
-                data: []
+                data: [43,45,48,53,57,63,60,63,75,87,100,118]
             }],
             size:{
                 width: 500,
@@ -1279,7 +1279,7 @@ $scope.aqilinechart={
             }
         },
 
-
+        //PM2.5折线图
         currentPm25LineOption:{
             options:{
                 title: {
@@ -1331,7 +1331,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: 'PM2.5',
-                data: []
+                data: [52,56,65,58,52,55,40,55,60,49,57,64]
             }],
             size:{
                 width: 500,
@@ -1339,7 +1339,7 @@ $scope.aqilinechart={
             }
         },
 
-
+        //PM10折线图
         currentPm10LineOption:{
             options:{
                 title: {
@@ -1391,7 +1391,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: 'PM10',
-                data: [100,150,123,142]
+                data: [106,102,95,105,115,116,95,83,71,83,78,70]
             }],
             size:{
                 width: 500,
@@ -1399,7 +1399,7 @@ $scope.aqilinechart={
             }
         },
 
-
+        //SO2折线图
         currentSo2LineOption:{
             options:{
                 title: {
@@ -1451,7 +1451,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: '二氧化硫',
-                data: []
+                data: [109,119,93,81,80,78,69,51,47,49,28,54]
             }],
             size:{
                 width: 500,
@@ -1459,7 +1459,7 @@ $scope.aqilinechart={
             }
         },
 
-
+        //NO2折线图
         currentNo2LineOption:{
             options:{
                 title: {
@@ -1511,7 +1511,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: '二氧化氮',
-                data: []
+                data: [43,52,55,58,51,43,35,28,23,20,33,44]
             }],
             size:{
                 width: 500,
@@ -1519,7 +1519,7 @@ $scope.aqilinechart={
             }
         },
 
-
+        //CO折线图
         currentCoLineOption:{
             options:{
                 title: {
@@ -1571,7 +1571,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: '一氧化碳',
-                data: []
+                data: [1,2,1,1,2,2,2,1,1,1,1,1]
             }],
             size:{
                 width: 500,
@@ -1579,7 +1579,7 @@ $scope.aqilinechart={
             }
         },
 
-
+        //O3折线图
         currentO3LineOption:{
             options:{
                 title: {
@@ -1631,7 +1631,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: '臭氧',
-                data: []
+                data: [3,8,19,23,8,6,12,13,15,11,9,7]
             }],
             size:{
                 width: 500,
