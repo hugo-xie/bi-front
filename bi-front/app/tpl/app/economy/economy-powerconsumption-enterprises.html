@@ -4,101 +4,123 @@
 		<a ui-sref="app.index.economy.powerconsumption({title:'工业用电量与经济增长关联分析模块'})" class="pull-right btn btn-sm btn-info m-t-n-xs" >返回</a>
    		<div class="subview3_title">{{title}}</div>
  	</div>
- 	<div class="col-md-4 cgq_margintop2em">
-      <div class="panel b-a">
-        <div class="panel-heading no-border" style="background-color:#428bca;color:black;">          
-          <span class="text-lt">太仓市地图-选择企业</span>
+      <div class="container">
+       	  <div class="col-md-12 cgq_margintop2em" style="height:310px;margin-bottom:2em">
+            <div class="panel b-a">
+              <div class="panel-heading no-border" style="background-color:#428bca;color:white;">          
+                <span class="text-lt">太仓市地图-选择企业</span>
+              </div>
+              <div class="item m-l-n-xxs m-r-n-xxs">
+                <div id="consumptionbyenterprise"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 cgq_margintop2em">
+          	<div class="panel b-a">
+      	        <div class="panel-heading no-border" style="background-color:#428bca;color:white;">          
+      	          <span class="text-lt">企业数据详情</span>
+      	        </div>
+      	        <div class="item m-l-n-xxs m-r-n-xxs">
+
+      	          <highchart   id="enterprisechart" config="EnterpriseChart" ></highchart>
+
+      	        </div>
+      	        
+
+
+      		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+      			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                    <td>年份</td>
+      			        <td ng-repeat="year in totaldata.tabledata.yearvalue">{{year}}</td>
+      			      </tr>
+      			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                    <td>GDP同比增长率(%)</td>
+      			        <td>{{totaldata.tabledata.gdprate[0]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[1]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[2]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[3]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[4]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[5]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[6]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[7]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[8]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[9]}}</td>
+                    <td>{{totaldata.tabledata.gdprate[10]}}</td>
+      			      </tr>
+      			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                    <td>工业用电量同比增长率(%)</td>
+      			        <td>{{totaldata.tabledata.powerrate[0]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[1]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[2]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[3]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[4]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[5]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[6]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[7]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[8]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[9]}}</td>
+                    <td>{{totaldata.tabledata.powerrate[10]}}</td>
+      			      </tr>
+      		    </table>
+
+         		 	
+
+              <div class="hbox text-center b-b b-light text-sm">          
+                <a ng-click="chooseYear()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>返回年份</span>
+                </a>
+                <a ng-click="chooseJan()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>1月</span>
+                </a>
+                <a ng-click="chooseFeb()" class="col padder-v text-muted">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>2月</span>
+                </a>
+                <a ng-click="chooseMar()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>3月</span>
+                </a>
+                <a ng-click="chooseApr()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>4月</span>
+                </a>
+                <a ng-click="chooseMay()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>5月</span>
+                </a>
+                <a ng-click="chooseJun()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>6月</span>
+                </a>
+                <a ng-click="chooseJul()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>7月</span>
+                </a>
+                <a ng-click="chooseAug()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>8月</span>
+                </a>
+                <a ng-click="chooseSep()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>9月</span>
+                </a>
+                <a ng-click="chooseOct()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>10月</span>
+                </a>
+                <a ng-click="chooseNov()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>11月</span>
+                </a>
+                <a ng-click="chooseDec()" class="col padder-v text-muted b-r b-light">
+                  <i class="block m-b-xs fa-2x"></i>
+                  <span>12月</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="item m-l-n-xxs m-r-n-xxs">
-          <div id="consumptionbyenterprise"></div>
-        </div>
-      </div>
     </div>
-    <div class="col-md-8 cgq_margintop2em">
-    	<div class="panel b-a">
-	        <div class="panel-heading no-border" style="background-color:#428bca;color:black;">          
-	          <span class="text-lt">企业数据详情</span>
-	        </div>
-	        <div class="item m-l-n-xxs m-r-n-xxs">
-
-	          <highchart   id="enterprisechart" config="EnterpriseChart" ></highchart>
-
-	        </div>
-	        
-
-
-		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="year in totaldata1.tabledata">{{year.yearvalue}}</td>
-			      </tr>
-			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="gdp in totaldata1.tabledata">{{gdp.gdprate}}</td>
-			      </tr>
-			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="power in totaldata1.tabledata">{{power.powerrate}}</td>
-			      </tr>
-		    </table>
-
-   		 	
-
-        <div class="hbox text-center b-b b-light text-sm">          
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>返回年份</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>1月</span>
-          </a>
-          <a href="" class="col padder-v text-muted">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>2月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>3月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>4月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>5月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>6月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>7月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>8月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>9月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>10月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>11月</span>
-          </a>
-          <a href="" class="col padder-v text-muted b-r b-light">
-            <i class="block m-b-xs fa-2x"></i>
-            <span>12月</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    </div>
-
- 	
- 	
 </div>
