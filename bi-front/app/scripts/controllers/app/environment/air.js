@@ -159,11 +159,11 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 var info1=[];
    info1.push("<h4><strong>太仓监测站</strong></h4>");
     info1.push("<table class='table table-bordered table-striped'>");
-    info1.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>130</td></tr>");
-    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td>PM2.5</td></tr>");
-    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td>54</td></tr>");
-    info1.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td></td></tr>");
-    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>118</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td>pm2.5</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td>64</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>54</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td>轻度污染</td></tr>");
     info1.push("</table>");
 var infowindow1 = new AMap.InfoWindow({
      content: info1.join(''),
@@ -177,11 +177,11 @@ var clickHandle1 = AMap.event.addListener(marker1, 'click', function() {
 var info=[];
    info.push("<h4><strong>科教新城监测站</strong></h4>");
     info.push("<table class='table table-bordered table-striped'>");
-    info.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>主要污染物</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>PM2.5</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>145</td></tr>");
+    info.push("<tr><td style='font-size:15px'>主要污染物</td><td>pm2.5</td></tr>");
+    info.push("<tr><td style='font-size:15px'>PM2.5</td><td>83</td></tr>");
+    info.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>54</td></tr>");
+    info.push("<tr><td style='font-size:15px'>监测站状态</td><td>轻度污染</td></tr>");
     info.push("</table>");
 var infowindow2 = new AMap.InfoWindow({
 
@@ -196,10 +196,10 @@ var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
 var info2=[];
    info2.push("<h4><strong>太仓市气象局</strong></h4>");
     info2.push("<table class='table table-bordered table-striped'>");
-    info2.push("<tr><td style='font-size:15px;width:125px'>当前气温</td><td></td></tr>");
-    info2.push("<tr><td style='font-size:15px'>相对湿度</td><td></td></tr>");
-    info2.push("<tr><td style='font-size:15px'>风级</td><td></td></tr>");
-    info2.push("<tr><td style='font-size:15px'>风向</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px;width:125px'>当前气温</td><td>5</td></tr>");
+    info2.push("<tr><td style='font-size:15px'>相对湿度</td><td>50%</td></tr>");
+    info2.push("<tr><td style='font-size:15px'>风级</td><td>2</td></tr>");
+    info2.push("<tr><td style='font-size:15px'>风向</td><td>东南风</td></tr>");
     info2.push("</table>");
 var infowindow3 = new AMap.InfoWindow({
      content: info2.join(''),
@@ -213,11 +213,11 @@ var clickHandle3 = AMap.event.addListener(marker3, 'click', function() {
 var info4=[];
    info4.push("<h4><strong>华能国际电力股份有限公司太仓电厂</strong></h4>");
     info4.push("<table class='table table-bordered table-striped'>");
-    info4.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>烟尘浓度</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>二氧化硫浓度浓度</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>0.67亿</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>烟尘浓度</td><td>9.21</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>61.08</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td>82.91</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info4.push("</table>");
 var infowindow4 = new AMap.InfoWindow({
      content: info4.join(''),
@@ -231,11 +231,11 @@ var clickHandle4 = AMap.event.addListener(marker4, 'click', function() {
 var info5=[];
    info5.push("<h4><strong>玖龙纸业（太仓）有限公司</strong></h4>");
     info5.push("<table class='table table-bordered table-striped'>");
-    info5.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>烟尘浓度</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>二氧化硫浓度浓度</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>0.12亿</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>烟尘浓度</td><td>16.95</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>23.27</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td>86.85</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info5.push("</table>");
 var infowindow5 = new AMap.InfoWindow({
      content: info5.join(''),
@@ -249,11 +249,11 @@ var clickHandle5 = AMap.event.addListener(marker5, 'click', function() {
 var info6=[];
     info6.push("<h4><strong>太仓港协鑫发电有限公司</strong></h4>");
     info6.push("<table class='table table-bordered table-striped'>");
-    info6.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>烟尘浓度</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>二氧化硫浓度浓度</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>0.36亿</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>烟尘浓度</td><td>5.91</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>二氧化硫浓度浓度</td><td>34.53</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td>86.85</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info6.push("</table>");
 var infowindow6 = new AMap.InfoWindow({
      content: info6.join(''),
@@ -267,11 +267,11 @@ var clickHandle6 = AMap.event.addListener(marker6, 'click', function() {
 var info7=[];
     info7.push("<h4><strong>国华太仓发电有限公司</strong></h4>");
     info7.push("<table class='table table-bordered table-striped'>");
-    info7.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>烟尘浓度</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>二氧化硫浓度浓度</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>0.12亿</td></tr>");
+    info7.push("<tr><td style='font-size:15px'>烟尘浓度</td><td>2.13</td></tr>");
+    info7.push("<tr><td style='font-size:15px'>二氧化硫浓度浓度</td><td>30.15</td></tr>");
+    info7.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td>70.63</td>70.13</tr>");
+    info7.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info7.push("</table>");
 var infowindow7 = new AMap.InfoWindow({
      content: info7.join(''),

@@ -387,16 +387,19 @@
         <tr >
             <td style="width:30%">太仓市气象局</td>
             <td style="width:14%">
-                <span>{{airConditionOne.monitor}}</span>
+                <span>7</span>
             </td>
             <td style="width:14%">
-                <span>{{airConditionOne.index_humidity}}</span>
+                <span>2</span>
             </td>
             <td style="width:14%">
-                <span>{{airConditionOne.index_windLevel}}</span>
+                <span>50</span>
             </td>
             <td style="width:14%">
-                <span>{{airConditionOne.index_windDire}}</span>
+                <span>2</span>
+            </td>
+             <td style="width:14%">
+                <span>东南风</span>
             </td>
         </tr>
     </table>
@@ -464,21 +467,69 @@
 </div>
 <div style="overflow: auto; overflow-x:hidden;height: 320px" ng-show="mapTableStatus.wasteAir">
     <table class="table table-hover table-responsive" style="font-size:14px">
-        <tr ng-repeat="wasteAirOne in wasteAirMarkerList">
-            <td style="width:20%">{{wasteAirOne.monitor.slice(0,6)}}</td>
+        <tr >
+            <td style="width:20%">华能国际电力</td>
             <td style="width:20%">
-                <span>{{(wasteAirOne.index_discharge[1]/100000000).toFixed(2)}}亿</span>
+                <span>0.67亿</span>
             </td>
             <td style="width:20%">
-                <span>{{wasteAirOne.index_smoke.toFixed(2)}}</span>
+                <span>9.21</span>
             </td>
             <td style="width:20%">
-                <span>{{wasteAirOne.index_so2.toFixed(2)}}</span>
+                <span>61.08</span>
             </td>
             <td style="width:20%">
-                <span>{{wasteAirOne.index_no.toFixed(2)}}</span>
+                <span>82.91</span>
             </td>
         </tr>
+        <tr >
+            <td style="width:20%">玖龙纸业</td>
+            <td style="width:20%">
+                <span>0.12亿</span>
+            </td>
+            <td style="width:20%">
+                <span>16.95</span>
+            </td>
+            <td style="width:20%">
+                <span>23.27</span>
+            </td>
+            <td style="width:20%">
+                <span>86.85</span>
+            </td>
+        </tr>
+
+        <tr >
+            <td style="width:20%">太仓港协鑫发电</td>
+            <td style="width:20%">
+                <span>0.36亿</span>
+            </td>
+            <td style="width:20%">
+                <span>5.91</span>
+            </td>
+            <td style="width:20%">
+                <span>34.53</span>
+            </td>
+            <td style="width:20%">
+                <span>86.85</span>
+            </td>
+        </tr>
+
+        <tr >
+            <td style="width:20%">国华太仓发电</td>
+            <td style="width:20%">
+                <span>0.12亿</span>
+            </td>
+            <td style="width:20%">
+                <span>2.13</span>
+            </td>
+            <td style="width:20%">
+                <span>30.15</span>
+            </td>
+            <td style="width:20%">
+                <span>70.63</span>
+            </td>
+        </tr>
+
     </table>
 </div>
 </div>
