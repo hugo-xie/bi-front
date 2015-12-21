@@ -1391,7 +1391,7 @@ $scope.aqilinechart={
             },
             series: [{
                 name: 'PM10',
-                data: []
+                data: [100,150,123,142]
             }],
             size:{
                 width: 500,
