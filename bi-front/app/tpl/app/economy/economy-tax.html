@@ -109,6 +109,7 @@
             <div class="inner" ng-style="{ width: (selectedRange/2+50) + '%'}"></div>
           </div>
         </div>
+<<<<<<< HEAD
 
       </div>
       <div class="col-md-1">
@@ -156,6 +157,165 @@
           </div>
         </div>
       </div>
+=======
+        <div class="col-md-12" style="margin-top:10px" ng-if="forecastYear">
+          <table class="table table-condensed" style="font-size:90%">
+            <tr>
+              <th class="active">年份</th>
+              <th class="active">2005年</th>
+              <th class="active">2006年</th>
+              <th class="active">2007年</th>
+              <th class="active">2008年</th>
+              <th class="active">2009年</th>
+              <th class="active">2010年</th>
+              <th class="active">2011年</th>
+              <th class="active">2012年</th>
+              <th class="active">2013年</th>
+              <th class="active">2014年</th>
+              <th class="active">2015年</th>
+            </tr>
+            <tr>
+              <td class="success">真实值(亿元)</td>
+              <td class="success">18.92</td>
+              <td class="success">29.5</td>
+              <td class="success">37.26</td>
+              <td class="success">50.18</td>
+              <td class="success">70.0</td>
+              <td class="success">85.1</td>
+              <td class="success">90.15</td>
+              <td class="success">100.34</td>
+              <td class="success">106.47</td>
+              <td class="success">110.34</td>
+              <td class="success">--</td>
+            </tr>
+            <tr>
+              <td class="success">预测值</td>
+              <td class="success">193214</td>
+              <td class="success">230005</td>
+              <td class="success">336584</td>
+              <td class="success">416214</td>
+              <td class="success">523621</td>
+              <td class="success">625314</td>
+              <td class="success">688743</td>
+              <td class="success">743214</td>
+              <td class="success">813564</td>
+              <td class="success">892314</td>
+              <td class="success">965248</td>
+            </tr>
+          </table>
+        </div>
+         <div class="col-md-12" style="margin-top:10px" ng-if="deviationYear">
+          <table class="table table-condensed" style="font-size:90%">
+            <tr>
+              <th class="active">年份</th>
+              <th class="active">2005年</th>
+              <th class="active">2006年</th>
+              <th class="active">2007年</th>
+              <th class="active">2008年</th>
+              <th class="active">2009年</th>
+              <th class="active">2010年</th>
+              <th class="active">2011年</th>
+              <th class="active">2012年</th>
+              <th class="active">2013年</th>
+              <th class="active">2014年</th>
+              <th class="active">2015年</th>
+            </tr>
+            <tr>
+              <td class="success">误差</td>
+              <td class="success">2.8%</td>
+              <td class="success">3.3%</td>
+              <td class="success">3.2%</td>
+              <td class="success">2.0%</td>
+              <td class="success">1.7%</td>
+              <td class="success">4.4%</td>
+              <td class="success">3.1%</td>
+              <td class="success">2.7%</td>
+              <td class="success">2.6%</td>
+              <td class="success">2.8%</td>
+              <td class="success">--</td>
+            </tr>
+          </table>
+        </div>
+        
+       </div>
+ <div >
+          <div class="row" >
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px;font-size:100%">固定资产投资</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="selectedRange=0">
+                        <span class="num">{{ selectedRange}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
+                        <div class="inner" ng-style="{ width: (selectedRange/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" ng-model="selectedRange" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px">财政支出</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="selectedRange2=0">
+                        <span class="num">{{ selectedRange2}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2">
+                        <div class="inner" ng-style="{ width: (selectedRange2/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+                 </div>
+                 <div class="col-md-2">
+                    <input type="text" ng-model="selectedRange2" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+           </div>
+
+           <div class="row">
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px">外贸进出口总额</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="selectedRange3=0">
+                        <span class="num">{{ selectedRange3}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3">
+                        <div class="inner" ng-style="{ width: (selectedRange3/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" ng-model="selectedRange3" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px">GDP</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="selectedRange4=0">
+                        <span class="num">{{ selectedRange4}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange4">
+                        <div class="inner" ng-style="{ width: (selectedRange4/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+                 </div>
+                 <div class="col-md-2">
+                    <input type="text" ng-model="selectedRange4" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+           </div>
+  </div>
+>>>>>>> origin/master
     </div>
   </div>
 </div>
@@ -196,6 +356,7 @@
     </span>
   </button>
 
+<<<<<<< HEAD
   <div class="btn-group-vertical" role="group" aria-label="Left Align ">
     <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViews()">切换图标视图</button>
     <button class="btn btn-primary" style="margin-top:10px" ng-click="checkdeviation()">查看预测误差记录</button>
@@ -281,9 +442,97 @@
     </tr>
   </table>
 </div>
+=======
+          <div class="btn-group-vertical" role="group" aria-label="Left Align ">
+            <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViews()">切换图标视图</button>
+            <button class="btn btn-primary" style="margin-top:10px" ng-click="checkdeviation()">查看预测误差记录</button>
+            <button class="btn btn-primary" style="margin-top:10px" ng-click="checkforecast()">查看预测详情</button>
+            <button class="btn btn-primary" style="margin-top:10px" ng-click="adjustParameter()">重置调节</button>
+          </div>
+        </div>
+        <div class="col-md-12" style="margin-top:10px" ng-if="forecast">
+          <table class="table table-condensed" style="font-size:90%">
+            <tr>
+              <th class="active">月份</th>
+              <th class="active">2月</th>
+              <th class="active">3月</th>
+              <th class="active">4月</th>
+              <th class="active">5月</th>
+              <th class="active">6月</th>
+              <th class="active">7月</th>
+              <th class="active">8月</th>
+              <th class="active">9月</th>
+              <th class="active">10月</th>
+              <th class="active">11月</th>
+              <th class="active">12月</th>
+            </tr>
+            <tr>
+              <td class="success">真实值</td>
+              <td class="success">181216</td>
+              <td class="success">233015</td>
+              <td class="success">333858</td>
+              <td class="success">404789</td>
+              <td class="success">490992</td>
+              <td class="success">601972</td>
+              <td class="success">651118</td>
+              <td class="success">710585</td>
+              <td class="success">818419</td>
+              <td class="success">888181</td>
+              <td class="success"></td>
+            </tr>
+            <tr>
+              <td class="success">预测值</td>
+              <td class="success">193214</td>
+              <td class="success">230005</td>
+              <td class="success">336584</td>
+              <td class="success">416214</td>
+              <td class="success">523621</td>
+              <td class="success">625314</td>
+              <td class="success">688743</td>
+              <td class="success">743214</td>
+              <td class="success">813564</td>
+              <td class="success">892314</td>
+              <td class="success">965248</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-12" style="margin-top:10px" ng-if="deviation">
+          <table class="table table-condensed" >
+            <tr>
+              <th class="active">月份</th>
+              <th class="active">2月</th>
+              <th class="active">3月</th>
+              <th class="active">4月</th>
+              <th class="active">5月</th>
+              <th class="active">6月</th>
+              <th class="active">7月</th>
+              <th class="active">8月</th>
+              <th class="active">9月</th>
+              <th class="active">10月</th>
+              <th class="active">11月</th>
+              <th class="active">12月</th>
+            </tr>
+            <tr>
+              <td class="success">误差</td>
+              <td class="success">2.8%</td>
+              <td class="success">3.3%</td>
+              <td class="success">3.2%</td>
+              <td class="success">2.0%</td>
+              <td class="success">1.7%</td>
+              <td class="success">4.4%</td>
+              <td class="success">3.1%</td>
+              <td class="success">2.7%</td>
+              <td class="success">2.6%</td>
+              <td class="success">2.8%</td>
+              <td class="success"></td>
+            </tr>
+          </table>
+        </div>
+>>>>>>> origin/master
 
 </div>
 <div >
+<<<<<<< HEAD
 <div class="row" >
   <div class="col-md-1">
     <p class="handler-title" style="margin-top:15px">固定资产投资</p>
@@ -299,6 +548,82 @@
       </div>
     </div>
 
+=======
+          <div class="row" >
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px">固定资产投资</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="monthselectedRange=0">
+                        <span class="num">{{ monthselectedRange}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange">
+                        <div class="inner" ng-style="{ width: (monthselectedRange/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" ng-model="monthselectedRange" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px">财政支出</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="monthselectedRange2=0">
+                        <span class="num">{{ monthselectedRange2}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange2">
+                        <div class="inner" ng-style="{ width: (monthselectedRange2/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+                 </div>
+                  <div class="col-md-2">
+                    <input type="text" ng-model="monthselectedRange2" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+           </div>
+           <div class="row">
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px">外贸进出口总额</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="monthselectedRange3=0">
+                        <span class="num">{{ monthselectedRange3}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange3">
+                        <div class="inner" ng-style="{ width: (monthselectedRange3/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                   <div class="col-md-2">
+                    <input type="text" ng-model="monthselectedRange3" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+                  <div class="col-md-1">
+                    <p class="handler-title" style="margin-top:15px">GDP</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="progress-box" >
+                      <div class="percentage-cur" ng-init="monthselectedRange4=0">
+                        <span class="num">{{ monthselectedRange4}}%</span>
+                      </div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%">
+                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange4">
+                        <div class="inner" ng-style="{ width: (monthselectedRange4/2+50) + '%'}"></div>
+                      </div>
+                    </div>
+                 </div>
+                 <div class="col-md-2">
+                    <input type="text" ng-model="monthselectedRange4" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                  </div>
+           </div>
+>>>>>>> origin/master
   </div>
   <div class="col-md-1">
     <p class="handler-title" style="margin-top:15px">财政支出</p>

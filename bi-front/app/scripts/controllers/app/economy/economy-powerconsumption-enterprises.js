@@ -1,20 +1,37 @@
 'use strict';
 
 app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
-	$scope.title = $stateParams.title;
-	$scope.zoom = 12;
-	var map ;
-	map = new AMap.Map('consumptionbyenterprise',{
-        zoom: $scope.zoom,
-        center: [121.122455,31.464511],
-        resizeEnable: true,
+  	$scope.title = $stateParams.title;
+
+  	var map ;
+  	map = new AMap.Map('consumptionbyenterprise',{
+          zoom: 14,
+          center: [121.122455,31.464511],
+          resizeEnable: true,
+      });
+  	AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
+  	    var toolBar = new AMap.ToolBar();
+  	    var scale = new AMap.Scale();
+  	    map.addControl(toolBar);
+  	    map.addControl(scale);
+  	});
+
+  	var marker01 = new AMap.Marker({
+  		icon : 'images/economy/enterprise01.png',
+          position: [121.14,31.464511],   
+          map:map,
+          clickable:true,
     });
-	AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
-	    var toolBar = new AMap.ToolBar();
-	    var scale = new AMap.Scale();
-	    map.addControl(toolBar);
-	    map.addControl(scale);
-	})
+    var marker02 = new AMap.Marker({
+          position: [121.14,31.484511],   
+          map:map,
+          clickable:true,
+    });
+    var marker03 = new AMap.Marker({
+      icon : 'images/economy/enterprise01.png',
+        position: [121.122455,31.464511],
+        map:map
+    });
 
     $scope.EnterpriseChart={
          options:{

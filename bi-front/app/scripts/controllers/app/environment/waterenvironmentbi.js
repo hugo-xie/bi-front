@@ -2,7 +2,9 @@
 
 app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
 
-
+ var lalaData=[5,12,2.5,4];
+ var bbData=[5,12,2.5,4];
+ var ccData=[5,12,2.5,4];
     //高德地图初始化
     var map = new AMap.Map('map_wMap',{
         zoom: 10,
@@ -21,8 +23,18 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
             allWater3: false
         };
 
+    $scope.mapTableStatus = {
+        airQuality: false,
+        airCondition: true
 
-
+    };
+//空气质量 Button点击事件
+    $scope.airQualityBtn = function() {
+        $scope.mapTableStatus = {
+             airQuality: true,
+            airCondition: true
+        };
+    };
 
 var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
     $scope.buttonMap2 = [{
@@ -80,13 +92,18 @@ $scope.r=function(){
     return $scope.selectedRange;
 };
 function h(newValue,oldValue,scope){
-    console.log(newValue);
-    o2Data[0]=(newValue*0.03);
-    kmno4Data[0]=(newValue*0.03)*0.5+8;
-    nh4nData[0]=(newValue*0.03)*0.5+1.8;
-    pData[0]=(newValue*0.03)*0.5+0.3;
-    console.log(o2Data[0]);
+    //console.log(newValue);
+    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/200)*100)/100;
+    //console.log(o2Data[0]);
+    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/200)*100)/100;
+    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/200)*100)/100;
+    pData[0]=Math.round((pData[0]+(newValue-oldValue)/200)*100)/100;
+   // console.log(o2Data[0]);
    // gdp[9]=(newValue*0.03)*50+18.3;
+   lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/200)*100)/100;
+   lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/200)*100)/100;
+   lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/200)*100)/100;
+   lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/200)*100)/100;
 }
 $scope.$watch($scope.r,h);
 
@@ -97,26 +114,109 @@ $scope.rrr=function(){
     return $scope.selectedRange2;
 };
 function hh(newValue,oldValue,scope){
-    console.log(newValue);
-    o2Data[0]=(newValue*0.03)*0.3;
-    kmno4Data[0]=(newValue*0.03)*0.5+8;
-    nh4nData[0]=(newValue*0.03)*0.5+3.1;
-    pData[0]=(newValue*0.03)*0.5+0.3;
+  //  console.log(newValue);
+  //  console.log(oldValue);
+    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/200)*100)/100;
+    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/200)*100)/100;
+    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/200)*100)/100;
+    pData[0]=Math.round((pData[0]+(newValue-oldValue)/200)*100)/100;
    // popData[9]=(newValue*0.03)*50+194.1;
   //  gdp[9]=(newValue*0.03)*50+18.3;
+    lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/200)*100)/100;
+    lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/200)*100)/100;
+    lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/200)*100)/100;
+    lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/200)*100)/100;
 }
 function hhh(newValue,oldValue,scope){
-    console.log(newValue);
-    o2Data[0]=(newValue*0.02)*0.25+1;
-    kmno4Data[0]=(newValue*0.03)*0.5+8;
-    nh4nData[0]=(newValue*0.03)*0.5+3.1;
-    pData[0]=(newValue*0.03)*0.5+0.3;
-   // popData[9]=(newValue*0.03)*50+194.1;
-  //  gdp[9]=(newValue*0.03)*50+18.3;
+   // console.log(newValue);
+    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/200)*100)/100;
+    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/200)*100)/100;
+    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/200)*100)/100;
+    pData[0]=Math.round((pData[0]+(newValue-oldValue)/200)*100)/100;
+    lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/200)*100)/100;
+    lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/200)*100)/100;
+    lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/200)*100)/100;
+    lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/200)*100)/100;
+
 }
 $scope.$watch($scope.rr,hh);
 $scope.$watch($scope.rrr,hhh);
 
+$scope.lala={
+ options:{
+ chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['溶解氧', '高锰酸钾', '氨氮', '总磷(/10)']
+        },
+        credits: {
+            enabled: false
+        }
+    },
+        series: [{
+            name: '原值',
+            data:[5,12,2.5,4]
+        },{
+            name: '预计未来值',
+            data: lalaData
+        }]
+
+};
+//第三水厂
+$scope.bb={
+ options:{
+ chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['溶解氧', '高锰酸钾', '氨氮', '总磷(/10)']
+        },
+        credits: {
+            enabled: false
+        }
+    },
+        series: [{
+            name: '原值',
+            data:[5,12,2.5,4]
+        },{
+            name: '预计未来值',
+            data: bbData
+        }]
+
+};
+//第二水厂
+$scope.cc={
+ options:{
+ chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['溶解氧', '高锰酸钾', '氨氮', '总磷(/10)']
+        },
+        credits: {
+            enabled: false
+        }
+    },
+        series: [{
+            name: '原值',
+            data:[5,12,2.5,4]
+        },{
+            name: '预计未来值',
+            data: ccData
+        }]
+
+};
+//console.log(lalaData[0]);
 
 
 //第三水厂调节函数
@@ -126,12 +226,17 @@ $scope.r2=function(){
     return $scope.selectedRange4;
 };
 function h2(newValue,oldValue,scope){
-    console.log(newValue);
-    o2Data2[0]=(newValue*0.03)*50+4;
-    kmno4Data2[0]=(newValue*0.03)*50+11;
-    nh4nData2[0]=(newValue*0.03)*50+1.3;
-    pData2[0]=(newValue*0.03)*50+0.3;
-    console.log(o2Data[0]);
+    //console.log(newValue);
+    o2Data2[0]=Math.round((o2Data2[0]+(newValue-oldValue)/200)*100)/100;
+    kmno4Data2[0]=Math.round((kmno4Data2[0]+(newValue-oldValue)/200)*100)/100;
+    nh4nData2[0]=Math.round((nh4nData2[0]+(newValue-oldValue)/200)*100)/100;
+    pData2[0]=Math.round((pData2[0]+(newValue-oldValue)/200)*100)/100;
+    bbData[0]=Math.round((bbData[0]+(newValue-oldValue)/200)*100)/100;
+    bbData[1]=Math.round((bbData[1]+(newValue-oldValue)/200)*100)/100;
+    bbData[2]=Math.round((bbData[2]+(newValue-oldValue)/200)*100)/100;
+    bbData[3]=Math.round((bbData[3]+(newValue-oldValue)/200)*100)/100;
+
+   // console.log(o2Data[0]);
    // gdp[9]=(newValue*0.03)*50+18.3;
 }
 $scope.$watch($scope.r2,h2);
@@ -140,11 +245,15 @@ $scope.rr2=function(){
     return $scope.selectedRange3;
 };
 function hh2(newValue,oldValue,scope){
-    console.log(newValue);
-    o2Data2[0]=(newValue*0.03)*50+4;
-    kmno4Data2[0]=(newValue*0.03)*50+11;
-    nh4nData2[0]=(newValue*0.03)*50+1.3;
-    pData2[0]=(newValue*0.03)*50+0.3;
+   // console.log(newValue);
+    o2Data2[0]=Math.round((o2Data2[0]+(newValue-oldValue)/200)*100)/100;
+    kmno4Data2[0]=Math.round((kmno4Data2[0]+(newValue-oldValue)/200)*100)/100;
+    nh4nData2[0]=Math.round((nh4nData2[0]+(newValue-oldValue)/200)*100)/100;
+    pData2[0]=Math.round((pData2[0]+(newValue-oldValue)/200)*100)/100;
+    bbData[0]=Math.round((bbData[0]+(newValue-oldValue)/200)*100)/100;
+    bbData[1]=Math.round((bbData[1]+(newValue-oldValue)/200)*100)/100;
+    bbData[2]=Math.round((bbData[2]+(newValue-oldValue)/200)*100)/100;
+    bbData[3]=Math.round((bbData[3]+(newValue-oldValue)/200)*100)/100;
    // popData[9]=(newValue*0.03)*50+194.1;
   //  gdp[9]=(newValue*0.03)*50+18.3;
 }
@@ -158,11 +267,15 @@ $scope.r1=function(){
     return $scope.selectedRange5;
 };
 function h1(newValue,oldValue,scope){
-    console.log(newValue);
-    o2Data1[0]=(newValue*0.03)*0.5+3;
-    kmno4Data1[0]=(newValue*0.03)*0.5+8;
-    nh4nData1[0]=(newValue*0.03)*0.5+0.8;
-    pData1[0]=(newValue*0.03)*0.5+0.3;
+   // console.log(newValue);
+    o2Data1[0]=Math.round((o2Data1[0]+(newValue-oldValue)/200)*100)/100;
+    kmno4Data1[0]=Math.round((kmno4Data1[0]+(newValue-oldValue)/200)*100)/100;
+    nh4nData1[0]=Math.round((nh4nData1[0]+(newValue-oldValue)/200)*100)/100;
+    pData1[0]=Math.round((pData1[0]+(newValue-oldValue)/200)*100)/100;
+    ccData[0]=Math.round((ccData[0]+(newValue-oldValue)/200)*100)/100;
+    ccData[1]=Math.round((ccData[1]+(newValue-oldValue)/200)*100)/100;
+    ccData[2]=Math.round((ccData[2]+(newValue-oldValue)/200)*100)/100;
+    ccData[3]=Math.round((ccData[3]+(newValue-oldValue)/200)*100)/100;
     //console.log(o2Data[0]);
    // gdp[9]=(newValue*0.03)*50+18.3;
 }
@@ -172,26 +285,26 @@ $scope.$watch($scope.r1,h1);
 
 
 
-  var o2Data=[11];
-  var kmno4Data=[21];
-  var nh4nData=[31];
-  var pData=[41];
+  var o2Data=[5];
+  var kmno4Data=[12];
+  var nh4nData=[2.5];
+  var pData=[4];
 
   //第三个
-   var o2Data2=[12];
-  var kmno4Data2=[22];
-  var nh4nData2=[32];
-  var pData2=[42];
+   var o2Data2=[5];
+  var kmno4Data2=[12];
+  var nh4nData2=[2.5];
+  var pData2=[4];
 
   //第二个
-  var o2Data1=[12];
-  var kmno4Data1=[22];
-  var nh4nData1=[32];
-  var pData1=[42];
+  var o2Data1=[5];
+  var kmno4Data1=[12];
+  var nh4nData1=[2.5];
+  var pData1=[4];
 
   //协鑫码头的仪表盘
   //溶解氧
-
+//console.log($scope.chart11.series[0].data);
          $scope.chart11={
          options:{           
          chart: {
@@ -1410,11 +1523,11 @@ $timeout(function () {
                 {
                     name:'废水排放量',
                     type:'bar',
-                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                    data:[41316.379, 41739.668, 40126.664, 39762.43, 41144.68, 39966.195, 39523.172, 40884.328, 41141.418, 37959.043, 37114.941, 38395.945],
                     markPoint : {
                         data : [
-                            {name : '过去12小时最高值', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
-                            {name : '过去12小时最低值', value : 2.3, xAxis: 11, yAxis: 3}
+                            {name : '过去12小时最高值', value : 41739.668, xAxis: 1, yAxis: 41739.668, symbolSize:30},
+                            {name : '过去12小时最低值', value : 37114.941, xAxis: 10, yAxis: 37114.941,symbolSize:30}
                         ]
                     },
                     markLine : {

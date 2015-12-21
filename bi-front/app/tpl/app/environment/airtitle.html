@@ -20,6 +20,11 @@
                                 <img src="/images/common/data_details.png"/>
                             </p>
                             <h4>预测结果解读</h4>
+                            <div>根据太仓最近连续降雨情况可分析出太仓未来24小时空气质量状况良好</div>
+
+
+                    <button ng-click="showTotalTable()" class="btn m-b-xs btn-primary">详细数据列表</button>
+         
                         </div>
                     </div>
                 </div>
@@ -28,6 +33,26 @@
         </div>
     </div>
 </div>
+
+<div class="bg-white  padding0em" style="margin-top:-33px;margin-left:18px;margin-right:18px" ng-if="totalshow">
+        <div class="panel panel-default paddingmargin0em">
+            <div class="panel-heading">数据详情</div>  
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                    <td ng-repeat="year in totaldata.tabledata">{{year.yearvalue}}</td>
+                  </tr>
+                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                    <td ng-repeat="evaporation in totaldata.tabledata">{{evaporation.evaporation}}</td>
+                  </tr>
+                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                    <td ng-repeat="water in totaldata.tabledata">{{water.water}}</td>
+                  </tr>
+                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                    <td ng-repeat="avetep in totaldata.tabledata">{{avetep.avetep}}</td>
+                  </tr>
+            </table>
+        </div>
+    </div>
 
 <div class="col-md-12 ">
     <div class="panel panel-primary" style="margin-top: 20px;">
@@ -328,6 +353,45 @@
 
 <div ng-show="mapTableStatus.airCondition">
     <h5 align="right" style="padding-top: 0px">
+        (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
+                                            + airQualityCurrentDateTime.month + '-'
+                                            + airQualityCurrentDateTime.day + ' '
+                                            + airQualityCurrentDateTime.hour + '时'}})
+    </h5>
+    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+        <tr>
+            <th style="width:30%">气象局</th>
+            <th style="width:14%">气温(℃)</th>
+            <th style="width:14%">相对湿度(%)</th>
+            <th style="width:14%">风级</th>
+            <th style="width:14%">风向</th>
+        </tr>
+    </table>
+
+</div>
+<div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airCondition">
+    <table class="table table-hover table-responsive" style="font-size:14px">
+        <tr ng-repeat="airConditionOne in airConditionMarkerList">
+            <td style="width:30%">{{airConditionOne.monitor}}</td>
+            <td style="width:14%">
+                <span>{{airConditionOne.monitor}}</span>
+            </td>
+            <td style="width:14%">
+                <span>{{airConditionOne.index_humidity}}</span>
+            </td>
+            <td style="width:14%">
+                <span>{{airConditionOne.index_windLevel}}</span>
+            </td>
+            <td style="width:14%">
+                <span>{{airConditionOne.index_windDire}}</span>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<!--<div ng-show="mapTableStatus.airCondition">
+    <h5 align="right" style="padding-top: 0px">
         (更新时间:&nbsp{{airConditionCurrentDateTime.year + '-'
                                         + airConditionCurrentDateTime.month + '-'
                                         + airConditionCurrentDateTime.day + ' '
@@ -361,7 +425,7 @@
             </td>
         </tr>
     </table>
-</div>
+</div>-->
 
 <div ng-show="mapTableStatus.wasteAir">
     <h5 align="right" style="padding-top: 0px">
@@ -503,53 +567,53 @@
 </div>
 </div>
 <hr>
-<div class="ioc-panel-desc">
-<p class="ioc-panel-desc-title">
-<img src="/images/common/one-sentence.png" />
+<div >
+<p style="margin-left:20px;margin-top:105px;margin-bottom:15px">
+<img style="margin-left:20px" src="/images/common/one-sentence.png" />
 </p>
-<p class="ioc-panel-desc-body">
+<p >
 <h5>
-<h5>2015年12月20日9时</h5>
+<h5>&nbsp&nbsp&nbsp&nbsp2015年12月20日9时</h5>
 </h5>
 <h5>{{airQualityOneSentence.monitor}}</h5>
-<h5>空气质量等级:&nbsp1 级</h5>
-<h5>首要污染物:&nbspPM2.5</h5>
+<h5>&nbsp&nbsp&nbsp&nbsp空气质量等级:&nbsp1 级</h5>
+<h5>&nbsp&nbsp&nbsp&nbsp首要污染物:&nbspPM2.5</h5>
 <h5>
 <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.aqiStatus.status)"></span>
-100≤AQI≤300,轻微问题
+&nbsp&nbsp&nbsp&nbsp100≤AQI≤300,轻微问题
 </h5>
 <h5>
 <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.pm25Status.status)"></span>
-75≤PM2.5≤115,轻微问题
+&nbsp&nbsp&nbsp&nbsp75≤PM2.5≤115,轻微问题
 </h5>
 <h5>
 <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.pm10Status.status)"></span>
-PM10≤150,正常
+&nbsp&nbsp&nbsp&nbspPM10≤150,正常
 </h5>
 <h5>
 <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.so2Status.status)"></span>
-二氧化硫≤150,正常
+&nbsp&nbsp&nbsp&nbsp二氧化硫≤150,正常
 </h5>
 <h5>
 <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.no2Status.status)"></span>
-二氧化氮≤200,正常
+&nbsp&nbsp&nbsp&nbsp二氧化氮≤200,正常
 </h5>
 <h5>
 <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.coStatus.status)"></span>
-一氧化碳≤10,正常
+&nbsp&nbsp&nbsp&nbsp一氧化碳≤10,正常
 </h5>
 <h5>
 <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.o3Status.status)"></span>
-臭氧≤160,正常
+&nbsp&nbsp&nbsp&nbsp臭氧≤160,正常
 </h5>
 </p>
 <p style="margin-top:20px">
 <h5>
-<span style="color:#DDDF0D">黄色线----</span>
+<span style="color:#DDDF0D">&nbsp&nbsp&nbsp&nbsp&nbsp黄色线----</span>
 代表轻微问题界线
 </h5>
 <h5>
-<span style="color:#DF5353">红色线----</span>
+<span style="color:#DF5353">&nbsp&nbsp&nbsp&nbsp&nbsp红色线----</span>
 代表问题界线
 </h5>
 </p>
