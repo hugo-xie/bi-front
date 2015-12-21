@@ -65,11 +65,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info=[];
     info.push("<h4><strong>第二水厂</strong></h4>");
     info.push("<table class='table table-bordered table-striped'>");
-    info.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td>1998.66</td></tr>");
+    info.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td>20.01</td></tr>");
+    info.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.37</td></tr>");
+    info.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.09</td></tr>");
+    info.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info.push("</table>");
     var infowindow = new AMap.InfoWindow({
      content: info.join(''),
@@ -83,11 +83,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info1=[];
     info1.push("<h4><strong>协鑫码头</strong></h4>");
     info1.push("<table class='table table-bordered table-striped'>");
-    info1.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
-    info1.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
-    info1.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info1.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info1.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td>1960.20</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td>30.12</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.36</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.08</td></tr>");
+    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info1.push("</table>");
     var infowindow1 = new AMap.InfoWindow({
      content: info1.join(''),
@@ -101,11 +101,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info2=[];
     info2.push("<h4><strong>第三水厂</strong></h4>");
     info2.push("<table class='table table-bordered table-striped'>");
-    info2.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td></td></tr>");
-    info2.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td></td></tr>");
-    info2.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info2.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info2.push("<tr><td style='font-size:15px;width:125px'>溶解氧</td><td>1940.36</td></tr>");
+    info2.push("<tr><td style='font-size:15px'>高锰酸钾浓度</td><td>31.20</td></tr>");
+    info2.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.32</td></tr>");
+    info2.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.07</td></tr>");
+    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info2.push("</table>");
     var infowindow2 = new AMap.InfoWindow({
      content: info2.join(''),
@@ -119,11 +119,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info3=[];
     info3.push("<h4><strong>岳王污水处理厂</strong></h4>");
     info3.push("<table class='table table-bordered table-striped'>");
-    info3.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info3.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
-    info3.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info3.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info3.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info3.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>3002</td></tr>");
+    info3.push("<tr><td style='font-size:15px'>COD浓度</td><td>25.01</td></tr>");
+    info3.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.36</td></tr>");
+    info3.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.08</td></tr>");
+    info3.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info3.push("</table>");
     var infowindow3 = new AMap.InfoWindow({
      content: info3.join(''),
@@ -137,11 +137,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info4=[];
     info4.push("<h4><strong>璜泾镇污水处理厂</strong></h4>");
     info4.push("<table class='table table-bordered table-striped'>");
-    info4.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info4.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info4.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2491.77</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>COD浓度</td><td>24.11</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.35</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.08</td></tr>");
+    info4.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info4.push("</table>");
     var infowindow4 = new AMap.InfoWindow({
      content: info4.join(''),
@@ -155,11 +155,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info5=[];
     info5.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
     info5.push("<table class='table table-bordered table-striped'>");
-    info5.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info5.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info5.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2600.36</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>COD浓度</td><td>23.32</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.31</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.07</td></tr>");
+    info5.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info5.push("</table>");
     var infowindow5 = new AMap.InfoWindow({
      content: info5.join(''),
@@ -173,11 +173,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info6=[];
     info6.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
     info6.push("<table class='table table-bordered table-striped'>");
-    info6.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info6.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info6.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2754</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>COD浓度</td><td>27.21</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.35</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.08</td></tr>");
+    info6.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info6.push("</table>");
     var infowindow6 = new AMap.InfoWindow({
      content: info6.join(''),
@@ -191,11 +191,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info7=[];
     info7.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
     info7.push("<table class='table table-bordered table-striped'>");
-    info7.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info7.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info7.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2902</td></tr>");
+    info7.push("<tr><td style='font-size:15px'>COD浓度</td><td>23.32</td></tr>");
+    info7.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.35</td></tr>");
+    info7.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.07</td></tr>");
+    info7.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info7.push("</table>");
     var infowindow7 = new AMap.InfoWindow({
      content: info7.join(''),
@@ -209,11 +209,11 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     var info8=[];
     info8.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
     info8.push("<table class='table table-bordered table-striped'>");
-    info8.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td></td></tr>");
-    info8.push("<tr><td style='font-size:15px'>COD浓度</td><td></td></tr>");
-    info8.push("<tr><td style='font-size:15px'>氨氮浓度</td><td></td></tr>");
-    info8.push("<tr><td style='font-size:15px'>总磷浓度</td><td></td></tr>");
-    info8.push("<tr><td style='font-size:15px'>监测站状态</td><td></td></tr>");
+    info8.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2854</td></tr>");
+    info8.push("<tr><td style='font-size:15px'>COD浓度</td><td>26.03</td></tr>");
+    info8.push("<tr><td style='font-size:15px'>氨氮浓度</td><td>0.36</td></tr>");
+    info8.push("<tr><td style='font-size:15px'>总磷浓度</td><td>0.08</td></tr>");
+    info8.push("<tr><td style='font-size:15px'>监测站状态</td><td>正常</td></tr>");
     info8.push("</table>");
     var infowindow8 = new AMap.InfoWindow({
      content: info8.join(''),
