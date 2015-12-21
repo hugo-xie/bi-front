@@ -83,7 +83,7 @@
                                             <td colspan="3">
                                                 <div style="font-weight: bold; font-size: 16px; font-family: &#39;微软雅黑&#39;; margin-top: 25px;
                                     float: left; margin-left: 20px;">实时空气质量状况&nbsp;</div>
-                                                <div style="font-family: &#39;微软雅黑&#39;; float: left; margin-top: 28px;">12月10日16 时</div>
+                                                <div style="font-family: &#39;微软雅黑&#39;; float: left; margin-top: 28px;">12月25日8 时</div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -98,8 +98,8 @@
                                                             </tr>
                                                             <tr>
                                                                 <td rowspan="2" style="height: 65px;">
-                                                                    <span class="big" style="font-family: impact; font-weight: normal; font-size: 60px;
-                                                    line-height: 50px; margin-left: 45px;">74</span>
+                                                                    <span class="big" style="font-family: impact; font-weight: normal; font-size: 50px;
+                                                    line-height: 40px; margin-left: 45px;">138</span>
                                                                 </td>
                                                                 <td>
                                                                     &nbsp;
@@ -109,7 +109,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td align="left">
-                                                                <span style="font-size: 14px; font-family: &#39;微软雅黑&#39;; font-weight: bold; padding-left: 5px;">良</span>
+                                                                <span style="font-size: 14px; font-family: &#39;微软雅黑&#39;; font-weight: bold; padding-left: 5px;">轻度污染</span>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -138,7 +138,7 @@
                                                     </tr>
 
                                                     <tr>
-                                                        <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">10日夜间</td>
+                                                        <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">25日夜间</td>
                                                         <td align="center" style="border-right: dashed 1px #ADADAD;">良到轻度污染</td>
                                                         <td align="center" style="border-right: dashed 1px #ADADAD;">
                                                             PM <sub>2.5</sub>
@@ -148,7 +148,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">11日上午</td>
+                                                    <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">26日上午</td>
                                                     <td align="center" style="border-right: dashed 1px #ADADAD;">良到轻度污染</td>
                                                     <td align="center" style="border-right: dashed 1px #ADADAD;">
                                                         PM <sub>2.5</sub>
@@ -158,7 +158,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">11日下午</td>
+                                                <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">26日下午</td>
                                                 <td align="center" style="border-right: dashed 1px #ADADAD;">良</td>
                                                 <td align="center" style="border-right: dashed 1px #ADADAD;">
                                                     PM
@@ -175,7 +175,7 @@
                                             <td align="right" colspan="4" style="color: #5B5B5B;">太仓市环境监测中心</td>
                                         </tr>
                                         <tr class="tr_02">
-                                            <td align="right" colspan="4" style="color: #5B5B5B;">12月10日16时发布</td>
+                                            <td align="right" colspan="4" style="color: #5B5B5B;">12月24日20时发布</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -212,7 +212,7 @@
                                     <td width="30%" valign="top">
                                         <span class="big3" style="font-family: &#39;微软雅黑&#39;;">对健康影响:</span>
                                     </td>
-                                    <td>空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响。</td>
+                                    <td>易感人群症状有轻度加剧，健康人群出现刺激症状。</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -225,7 +225,7 @@
                                     <td width="30%" valign="top">
                                         <span class="big3" style="font-family: &#39;微软雅黑&#39;;">建 议 措 施:</span>
                                     </td>
-                                    <td>极少数异常敏感人群应减少户外活动。</td>
+                                    <td>儿童、老年人及心脏病、呼吸系统疾病患者应减少长时间、高强度的户外锻炼。</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -294,7 +294,7 @@
         <span class="glyphicon glyphicon-hand-right"></span>
         &nbsp城区气象状况预测
     </button>
-    太仓市
+    太仓市未来一天天气状况
 </div>
 <hr/>
 
@@ -330,7 +330,7 @@
 <div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airQuality">
     <table class="table table-hover table-responsive" style="font-size:14px">
         <tr ng-repeat="airQualityOne in airQualityMarkerList">
-            <td style="width:30%">{{airQualityOne.monitor}}</td>
+            <td style="width:30%">太仓市监测站</td>
             <td style="width:14%">
                 <span>{{airQualityOne.index_aqi}}</span>
             </td>
@@ -361,7 +361,8 @@
     <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
         <tr>
             <th style="width:30%">气象局</th>
-            <th style="width:14%">气温(℃)</th>
+            <th style="width:14%">最高气温(℃)</th>
+            <th style="width:14%">最低气温(℃)</th>
             <th style="width:14%">相对湿度(%)</th>
             <th style="width:14%">风级</th>
             <th style="width:14%">风向</th>
@@ -479,21 +480,20 @@
 <div class="panel panel-primary" style="margin-top: 20px;">
 <div class="panel-heading">
 空气质量分析
-<span
-                                    class="glyphicon glyphicon-question-sign pull-right"></span>
+<span class="glyphicon glyphicon-question-sign pull-right"></span>
 </div>
 <div class="panel-body">
 <div class="row">
 <div class="col-md-9 chart-panel">
 <nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">
 <a class="navbar-brand" href="#airQualityAnchorTop"  du-smooth-scroll>空气质量指标</a>
-<a href="#airQualityAnchor1" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>AQI</a>
-<a href="#airQualityAnchor2" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>PM2.5</a>
-<a href="#airQualityAnchor3" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
-<a href="#airQualityAnchor4" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化硫</a>
-<a href="#airQualityAnchor5" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化氮</a>
-<a href="#airQualityAnchor6" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
-<a href="#airQualityAnchor7" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
+<a href="" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>AQI</a>
+<a href="" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>PM2.5</a>
+<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
+<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化硫</a>
+<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化氮</a>
+<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
+<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
 </nav>
 <div  style="overflow: auto; overflow-x:hidden;height:450px"  id="scroll-container" >
 <p id="airQualityAnchorTop"></p>
