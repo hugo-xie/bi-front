@@ -261,13 +261,12 @@
 <div class="panel panel-primary" style="margin-top: 20px;">
 <div class="panel-heading">
 空气质量预测分析
-<span
-                                    class="glyphicon glyphicon-question-sign pull-right"></span>
+<span class="glyphicon glyphicon-question-sign pull-right"></span>
 </div>
 
 <div class="panel-body">
 <div class="col-md-7">
-<div class="panel panel-default" style="height: 650px；width: ">
+<div class="panel panel-default" style="height: 650px; ">
 <div class="panel-body">
 <div id="map_canvas"></div>
 </div>
@@ -498,21 +497,21 @@
 </nav>
 <div  style="overflow: auto; overflow-x:hidden;height:450px;width: 100%"  id="scroll-container" >
 <p id="airQualityAnchorTop"></p>
-<div style="width:98%" class="col-md-12">
+<div  class="col-md-12">
     <a name="airQualityAnchor1">
-        <div class="col-md-3" >
-            <highchart  config="airQualityOptions.aqiOption"></highchart>
+        <div class="col-md-3">
+            <highchart style="width:30%;height:50%" config="airQualityOptions.aqiOption"></highchart>
         </div>
     </a>
-    <div class="col-md-9" style="left:10px">
-        <highchart  config="airQualityOptions.currentAqiLineOption"></highchart>
+    <div class="col-md-9" style="left:30px;">
+        <highchart style="width:100%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
     <div class="col-md-3" name="airQualityAnchor2">
         <highchart config="airQualityOptions.pm25Option"></highchart>
     </div>
-    <div class="col-md-9" style="left:10px">
+    <div class="col-md-9" style="left:30px">
         <highchart config="airQualityOptions.currentPm25LineOption"></highchart>
     </div>
 </div>

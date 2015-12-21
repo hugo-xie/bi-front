@@ -1272,11 +1272,8 @@ $scope.aqilinechart={
             series: [{
                 name: 'AQI',
                 data: [43,45,48,53,57,63,60,63,75,87,100,118]
-            }],
-            size:{
-                width: 500,
-                height: 250
-            }
+            }]
+
         },
 
         //PM2.5折线图

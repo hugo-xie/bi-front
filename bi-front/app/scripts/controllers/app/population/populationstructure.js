@@ -244,7 +244,7 @@ var points =[
   $scope.change=function(btn){
   //  var columnColors = new Array('#7CADDF', '#327EBD', '#195489', '#1FC22B', '#FB9705', '#F26200');
     if(btn.name===2025){
-        $("#a").innerHtml='lalalalalalalalalalala';
+        $("#abc").innerHtml='lalalalalalalalalalala';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.series=[{
             name: '当前男性比例',
@@ -276,7 +276,7 @@ var points =[
             }]
      }
      if(btn.name===2035){
-        $("#a").innerHtml="lalalalalalalalalalala";
+        $("#abc").innerHtml="lalalalalalalalalalala";
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.series=[{
             name: '当前男性比例',
