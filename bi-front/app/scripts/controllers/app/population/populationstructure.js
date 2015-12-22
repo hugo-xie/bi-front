@@ -211,7 +211,7 @@ var points =[
     }
 
  
-
+$()
 
 
  
@@ -248,18 +248,18 @@ var points =[
   $scope.change=function(btn){
   //  var columnColors = new Array('#7CADDF', '#327EBD', '#195489', '#1FC22B', '#FB9705', '#F26200');
     if(btn.name===2025){
-        $("#abc").innerHtml='lalalalalalalalalalala';
+        document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.series=[{
             name: '当前男性比例',
             data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
             stack: 'male'
         }, {
-            name: '当前女性比例',
+            name: '预测男性比例',
             data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
             stack: 'female'
         }, {
-            name: '预测男性比例',
+            name: '当前女性比例',
             data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
             stack: 'male'
         }, {
@@ -281,23 +281,23 @@ var points =[
             }]
      }
      if(btn.name===2035){
-        $("#abc").innerHtml="lalalalalalalalalalala";
+        document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 7%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.series=[{
             name: '当前男性比例',
             data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
             stack: 'male'
         }, {
-            name: '当前女性比例',
+            name: '预测男性比例',
             data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
             stack: 'female'
         }, {
-            name: '预测男性比例',
-            data: [2, 4, 5, 2, 1,2, 5, 3, 3, 3,3],
+            name: '当前女性比例',
+            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
             stack: 'male'
         }, {
             name: '预测女性比例',
-            data: [2, 3, 3, 4, 3,3, 3, 2, 4, 3,3],
+            data: [2, 3, 3, 4, 3,3, 3, 2, 4, 5,3],
             stack: 'female'
         }];
          $scope.population_prediction_year.options.title.text="2035年人口结构图";
@@ -314,19 +314,19 @@ var points =[
             }]
      }
      if(btn.name===2045){
-
+        document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 9%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.series=[{
             name: '当前男性比例',
             data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
             stack: 'male'
         }, {
-            name: '当前女性比例',
+            name: '预测男性比例',
             data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
             stack: 'female'
         }, {
-            name: '预测男性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 5,3],
+            name: '当前女性比例',
+            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
             stack: 'male'
         }, {
             name: '预测女性比例',
@@ -352,6 +352,7 @@ var points =[
   };
   $scope.change1=function(btn){
     if(btn.name===2025){
+        document.getElementById('a').innerHTML="总体来看，太仓市的人口总量处于平稳状态，呈增长趋势，随着二胎政策的全面开放，极大促进了人口数量的增加。";
     $scope.sumpopulation.options.xAxis[0].categories=['2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
     $scope.sumpopulation.options.title.text="太仓市2016年到2025年常住人口人口总量预测趋势图";
     $scope.sumpopulation.series=[{
@@ -376,6 +377,7 @@ var points =[
         }];
      }
      if(btn.name===2035){
+        document.getElementById('a').innerHTML="总体来看，太仓市的人口总量处于平稳状态，呈增长趋势，随着二胎政策的全面开放，极大促进了人口数量的增加。2035年的人口增长率1.17%相比2026年的0.86%有了小幅度的增长。";
         $scope.sumpopulation.options.xAxis[0].categories=['2026','2027','2028','2029','2030','2031','2032','2033','2034','2035'];
         $scope.sumpopulation.options.title.text="太仓市2026年到2035年常住人口人口总量预测趋势图";
     $scope.sumpopulation.series=[{
@@ -400,6 +402,7 @@ var points =[
         }];
      }
      if(btn.name===2045){
+    document.getElementById('a').innerHTML="总体来看，太仓市的人口总量处于平稳状态，呈增长趋势，随着二胎政策的全面开放，极大促进了人口数量的增加。2045年的人口增长率1.54%相比2026年的1.22%有了小幅度的增长。";
      $scope.sumpopulation.options.xAxis[0].categories=['2036','2037','2038','2039','2040','2041','2042','2043','2044','2045'];
         $scope.sumpopulation.options.title.text="太仓市2036年到2045年常住人口人口总量预测趋势图";
     $scope.sumpopulation.series=[{
@@ -476,11 +479,11 @@ var points =[
             data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
             stack: 'male'
         }, {
-            name: '当前女性比例',
+            name: '预测男性比例',
             data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
             stack: 'female'
         }, {
-            name: '预测男性比例',
+            name: '当前女性比例',
             data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
             stack: 'male'
         }, {
