@@ -21,24 +21,24 @@
         </div>
         <div class="col-md-4">
 
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
+          <div style="margin-top:10px;margin-left:10px;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
           <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-            <strong>下个月预测值</br>96.52亿元</strong>
+            <strong>下个月预测值:96.52亿元</strong>
           </span>
-          </button>
+          </div>
 
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
+          <div style="margin-top:10px;border:1px solid lightgrey;font-size:14px;width:40%;margin-left:10%;" class="col-md-6">
           <span class="glyphicon glyphicon-send" aria-hidden="true">
-            <strong> 预测误差范围</br>3.0%</strong>
+            <strong> 预测误差范围:3.0%</strong>
           </span>
-          </button>
+          </div>
 
           <button class="btn btn-primary" style="margin-top:40px;width:38%">一句话解读</button>
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+           <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:18px">
             <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
               <strong>本年的税收增速较往年的增速有所放缓</strong>
             </span>
-          </button>
+          </div>
 
           <div class="btn-group-vertical" role="group" aria-label="Left Align ">
             <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViewsYear()">切换图标视图</button>
@@ -48,80 +48,77 @@
           </div>
         </div>
         <div class="col-md-12" style="margin-top:10px" ng-if="forecastYear">
-          <table class="table table-condensed" style="font-size:90%">
+          <table class="table table-bordered" style="font-size:90%">
             <tr>
-              <th class="active">年份</th>
-              <th class="active">2005年</th>
-              <th class="active">2006年</th>
-              <th class="active">2007年</th>
-              <th class="active">2008年</th>
-              <th class="active">2009年</th>
-              <th class="active">2010年</th>
-              <th class="active">2011年</th>
-              <th class="active">2012年</th>
-              <th class="active">2013年</th>
-              <th class="active">2014年</th>
-              <th class="active">2015年</th>
+              <th class="active">年份(年)</th>
+              <th class="active">2006</th>
+              <th class="active">2007</th>
+              <th class="active">2008</th>
+              <th class="active">2009</th>
+              <th class="active">2010</th>
+              <th class="active">2011</th>
+              <th class="active">2012</th>
+              <th class="active">2013</th>
+              <th class="active">2014</th>
+              <th class="active">2015</th>
             </tr>
             <tr>
-              <td class="success">真实值(亿元)</td>
-              <td class="success">18.92</td>
-              <td class="success">29.5</td>
-              <td class="success">37.26</td>
-              <td class="success">50.18</td>
-              <td class="success">70.0</td>
-              <td class="success">85.1</td>
-              <td class="success">90.15</td>
-              <td class="success">100.34</td>
-              <td class="success">106.47</td>
-              <td class="success">110.34</td>
-              <td class="success">--</td>
+              <td class="info">真实值(亿)</td>
+              <td class="info">27.5</td>
+              <td class="info">37.6</td>
+              <td class="info">50.8</td>
+              <td class="info">58.8</td>
+              <td class="info">70.0</td>
+              <td class="info">85.4</td>
+              <td class="info">90.5</td>
+              <td class="info">100.3</td>
+              <td class="info">106.7</td>
+              <td class="info">--</td>
             </tr>
             <tr>
-              <td class="success">预测值</td>
-              <td class="success">193214</td>
-              <td class="success">230005</td>
-              <td class="success">336584</td>
-              <td class="success">416214</td>
-              <td class="success">523621</td>
-              <td class="success">625314</td>
-              <td class="success">688743</td>
-              <td class="success">743214</td>
-              <td class="success">813564</td>
-              <td class="success">892314</td>
-              <td class="success">965248</td>
+              <td class="info">预测值(亿)</td>
+              <td class="info">29.5</td>
+              <td class="info">39.6</td>
+              <td class="info">51.6</td>
+              <td class="info">62.21</td>
+              <td class="info">72.14</td>
+              <td class="info">88.83</td>
+              <td class="info">94.34</td>
+              <td class="info">103.34</td>
+              <td class="info">110.24</td>
+              <td class="info">117.52</td>
             </tr>
           </table>
         </div>
          <div class="col-md-12" style="margin-top:10px" ng-if="deviationYear">
-          <table class="table table-condensed" style="font-size:90%">
+          <table class="table table-bordered" style="font-size:90%">
             <tr>
-              <th class="active">年份</th>
-              <th class="active">2005年</th>
-              <th class="active">2006年</th>
-              <th class="active">2007年</th>
-              <th class="active">2008年</th>
-              <th class="active">2009年</th>
-              <th class="active">2010年</th>
-              <th class="active">2011年</th>
-              <th class="active">2012年</th>
-              <th class="active">2013年</th>
-              <th class="active">2014年</th>
-              <th class="active">2015年</th>
+              <th class="active">年份(年)</th>
+              <th class="active">2005</th>
+              <th class="active">2006</th>
+              <th class="active">2007</th>
+              <th class="active">2008</th>
+              <th class="active">2009</th>
+              <th class="active">2010</th>
+              <th class="active">2011</th>
+              <th class="active">2012</th>
+              <th class="active">2013</th>
+              <th class="active">2014</th>
+              <th class="active">2015</th>
             </tr>
             <tr>
-              <td class="success">误差</td>
-              <td class="success">2.8%</td>
-              <td class="success">3.3%</td>
-              <td class="success">3.2%</td>
-              <td class="success">2.0%</td>
-              <td class="success">1.7%</td>
-              <td class="success">4.4%</td>
-              <td class="success">3.1%</td>
-              <td class="success">2.7%</td>
-              <td class="success">2.6%</td>
-              <td class="success">2.8%</td>
-              <td class="success">--</td>
+              <td class="info">误差</td>
+              <td class="info">2.8%</td>
+              <td class="info">3.3%</td>
+              <td class="info">3.2%</td>
+              <td class="info">2.0%</td>
+              <td class="info">1.7%</td>
+              <td class="info">4.4%</td>
+              <td class="info">3.1%</td>
+              <td class="info">2.7%</td>
+              <td class="info">2.6%</td>
+              <td class="info">2.8%</td>
+              <td class="info">--</td>
             </tr>
           </table>
         </div>
@@ -225,24 +222,24 @@
         </div>
         <div class="col-md-4">
 
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px;width:45%">
+          <div style="margin-top:10px;margin-left:10px;border:1px solid lightgrey;font-size:15px;width:40%" class="col-md-6">
           <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-            <strong>下个月预测值</br>96.52亿元</strong>
+            <strong>下个月预测值为:96.52亿元</strong>
           </span>
-          </button>
+          </div>
 
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left:23px;margin-top:10px;width:45%">
+          <div style="margin-top:10px;border:1px solid lightgrey;font-size:15px;width:40%;margin-left:10%;" class="col-md-6">
           <span class="glyphicon glyphicon-send" aria-hidden="true">
-            <strong> 预测误差范围</br>3.0%</strong>
+            <strong> 预测误差控制范围:3.0%</strong>
           </span>
-          </button>
+          </div>
 
           <button class="btn btn-primary" style="margin-top:40px;width:38%">一句话解读</button>
-          <button type="button" class="btn btn-default" aria-label="Left Align" style="margin-top:10px">
+           <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:18px">
             <span class="glyphicon glyphicon-list-alt" aria-hidden="true" >
               <strong>本年的税收增速较往年的增速有所放缓</strong>
             </span>
-          </button>
+          </div>
 
           <div class="btn-group-vertical" role="group" aria-label="Left Align ">
             <button class="btn btn-primary" style="margin-top:30px" ng-click="changeViews()">切换图标视图</button>
@@ -252,7 +249,7 @@
           </div>
         </div>
         <div class="col-md-12" style="margin-top:10px" ng-if="forecast">
-          <table class="table table-condensed" style="font-size:90%">
+          <table class="table table-bordered" style="font-size:90%">
             <tr>
               <th class="active">月份</th>
               <th class="active">2月</th>
@@ -268,37 +265,37 @@
               <th class="active">12月</th>
             </tr>
             <tr>
-              <td class="success">真实值</td>
-              <td class="success">181216</td>
-              <td class="success">233015</td>
-              <td class="success">333858</td>
-              <td class="success">404789</td>
-              <td class="success">490992</td>
-              <td class="success">601972</td>
-              <td class="success">651118</td>
-              <td class="success">710585</td>
-              <td class="success">818419</td>
-              <td class="success">888181</td>
-              <td class="success"></td>
+              <td class="info">真实值</td>
+              <td class="info">181216</td>
+              <td class="info">233015</td>
+              <td class="info">333858</td>
+              <td class="info">404789</td>
+              <td class="info">490992</td>
+              <td class="info">601972</td>
+              <td class="info">651118</td>
+              <td class="info">710585</td>
+              <td class="info">818419</td>
+              <td class="info">888181</td>
+              <td class="info">--</td>
             </tr>
             <tr>
-              <td class="success">预测值</td>
-              <td class="success">193214</td>
-              <td class="success">230005</td>
-              <td class="success">336584</td>
-              <td class="success">416214</td>
-              <td class="success">523621</td>
-              <td class="success">625314</td>
-              <td class="success">688743</td>
-              <td class="success">743214</td>
-              <td class="success">813564</td>
-              <td class="success">892314</td>
-              <td class="success">965248</td>
+              <td class="info">预测值</td>
+              <td class="info">193214</td>
+              <td class="info">230005</td>
+              <td class="info">336584</td>
+              <td class="info">416214</td>
+              <td class="info">523621</td>
+              <td class="info">625314</td>
+              <td class="info">688743</td>
+              <td class="info">743214</td>
+              <td class="info">813564</td>
+              <td class="info">892314</td>
+              <td class="info">965248</td>
             </tr>
           </table>
         </div>
         <div class="col-md-12" style="margin-top:10px" ng-if="deviation">
-          <table class="table table-condensed" >
+          <table class="table table-bordered" >
             <tr>
               <th class="active">月份</th>
               <th class="active">2月</th>
@@ -314,18 +311,18 @@
               <th class="active">12月</th>
             </tr>
             <tr>
-              <td class="success">误差</td>
-              <td class="success">2.8%</td>
-              <td class="success">3.3%</td>
-              <td class="success">3.2%</td>
-              <td class="success">2.0%</td>
-              <td class="success">1.7%</td>
-              <td class="success">4.4%</td>
-              <td class="success">3.1%</td>
-              <td class="success">2.7%</td>
-              <td class="success">2.6%</td>
-              <td class="success">2.8%</td>
-              <td class="success"></td>
+              <td class="info">误差</td>
+              <td class="info">2.8%</td>
+              <td class="info">3.3%</td>
+              <td class="info">3.2%</td>
+              <td class="info">2.0%</td>
+              <td class="info">1.7%</td>
+              <td class="info">4.4%</td>
+              <td class="info">3.1%</td>
+              <td class="info">2.7%</td>
+              <td class="info">2.6%</td>
+              <td class="info">2.8%</td>
+              <td class="info">--</td>
             </tr>
           </table>
         </div>
