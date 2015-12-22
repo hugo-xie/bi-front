@@ -149,9 +149,35 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 		position: [121.256718,31.582652],
 	});
 	marker7.setMap(map);
-
-
-
+    // 设置label标签
+    marker1.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "太仓监测站"
+    });
+    marker2.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "科教新城监测站"
+    });
+    marker3.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "太仓市气象局"
+    });
+    marker4.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "华能国际电力电厂"
+    });
+    marker5.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "玖龙纸业"
+    });
+    marker6.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "太仓港协鑫发电"
+    });
+    marker7.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "国华太仓发电公司"
+    });
 
 
  

@@ -7,8 +7,8 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
  var ccData=[5,12,2.5,4];
     //高德地图初始化
     var map = new AMap.Map('map_wMap',{
-        zoom: 10,
-        center: [121.106661, 31.579533]
+        zoom: 12,
+        center: [121.157687,31.583864]
 
     });
 
@@ -56,11 +56,57 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
         position: [121.278300,31.559400],
         map:map
     });
+
+    marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "第二水厂"
+    });
+
+    marker1.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "协鑫码头"
+    });
+
+    marker2.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "第三水厂"
+    });
+
+    marker3.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "岳王污水处理厂"
+    });
+
+    marker4.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "璜泾镇污水处理厂"
+    });
+
+    marker5.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "太仓江城城市污水处理厂"
+    });
+
+    marker6.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "玖龙纸业"
+    });
+
+    marker7.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "港城组团"
+    });
+
+    marker8.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+        content: "浏河镇污水处理厂"
+    });
+
      $scope.waterlist=function(){
         map.setZoomAndCenter(15, [121.268,31.585]);
      };
      $scope.alllist=function(){
-        map.setZoomAndCenter(10, [121.227000,31.597000]);
+        map.setZoomAndCenter(12, [121.157687,31.583864]);
      }
     var info=[];
     info.push("<h4><strong>第二水厂</strong></h4>");
@@ -171,7 +217,7 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     })
 
     var info6=[];
-    info6.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
+    info6.push("<h4><strong>玖龙纸业有限公司</strong></h4>");
     info6.push("<table class='table table-bordered table-striped'>");
     info6.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2754</td></tr>");
     info6.push("<tr><td style='font-size:15px'>COD浓度</td><td>27.21</td></tr>");
@@ -189,7 +235,7 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     })
 
     var info7=[];
-    info7.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
+    info7.push("<h4><strong>港城组团污水处理厂</strong></h4>");
     info7.push("<table class='table table-bordered table-striped'>");
     info7.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2902</td></tr>");
     info7.push("<tr><td style='font-size:15px'>COD浓度</td><td>23.32</td></tr>");
@@ -207,7 +253,7 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
     })
 
     var info8=[];
-    info8.push("<h4><strong>太仓江城城市污水处理有限公司</strong></h4>");
+    info8.push("<h4><strong>浏河镇污水处理厂</strong></h4>");
     info8.push("<table class='table table-bordered table-striped'>");
     info8.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>2854</td></tr>");
     info8.push("<tr><td style='font-size:15px'>COD浓度</td><td>26.03</td></tr>");
