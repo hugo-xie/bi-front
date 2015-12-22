@@ -3,35 +3,37 @@
 app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
   	$scope.title = $stateParams.title;
 
-  	var map ;
-  	map = new AMap.Map('consumptionbyenterprise',{
+    //new地图对象
+  	$scope.map = new AMap.Map('consumptionbyenterprise',{
           zoom: 14,
           center: [121.122455,31.464511],
           resizeEnable: true,
       });
+    //调节侧栏
   	AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
   	    var toolBar = new AMap.ToolBar();
   	    var scale = new AMap.Scale();
-  	    map.addControl(toolBar);
-  	    map.addControl(scale);
+  	    $scope.map.addControl(toolBar);
+  	    $scope.map.addControl(scale);
   	});
-
+    //设置地图标记点
   	var marker01 = new AMap.Marker({
   		icon : 'images/economy/enterprise01.png',
           position: [121.14,31.464511],   
-          map:map,
+          map:$scope.map,
           clickable:true,
     });
     var marker02 = new AMap.Marker({
           position: [121.14,31.484511],   
-          map:map,
+          map:$scope.map,
           clickable:true,
     });
     var marker03 = new AMap.Marker({
       icon : 'images/economy/enterprise01.png',
         position: [121.122455,31.464511],
-        map:map
+        map:$scope.map
     });
+    //地图标记--企业数据详情
     var marker01OnClick = function(){
         $scope.enterprisechosen = 'enterprise01';
         $scope.$apply(function(){
@@ -52,6 +54,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
           $scope.totaldata.tabledata.powerrate = $scope.enterprises.enterprise03.powerdata;
         });
     };
+    //将上述函数添加到监听事件
     AMap.event.addListener(marker01, 'click', marker01OnClick);
     AMap.event.addListener(marker03, 'click', marker03OnClick);
 
@@ -424,7 +427,25 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
       },
     };
 
-    
+    $scope.$watch($scope.enterprisesearch,enterprisefilter);
+    var enterprisefilter = function(newValue,oldValue,scope){
+      $scope.$apply(function(){
+        for(var i=0;i<$scope.enterpriselist.length;i++){
+          if($scope.enterpriselist[i].name.search(newValue)==-1){
+            $scope.enterpriselist[i].isShow = false;
+          }
+        }
+      });
+    };
+
+    $scope.enterpriselist = [
+      {name:'仓市规模以上企业A',
+       isShow:true,
+      },
+      {name:'太仓市规模以上企业B',
+       isShow:true,
+      },
+    ];
     $scope.EnterpriseChart={
          options:{
             chart: {

@@ -26,16 +26,18 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
 	  {yearvalue:'2016',gdprate:'4%',powerrate:'5%'},
   	]
   };
-  //init
 
+  //init
   $scope.charttype = 'spline';
+  //切换第一图表现视图
   $scope.changeTotalChart = function(param){
   	$scope.TotalPowerGDPChart.options.chart.type = param;
   };
+  //控制第一图详细数据列表的显示
   $scope.showTotalTable = function(){
   	$scope.totalshow= !$scope.totalshow;
   }
-
+  //第一图hightchart
   $scope.TotalPowerGDPChart={
 	  	 options:{
 	  	 	chart: {
@@ -82,7 +84,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   };
 
   /*——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————*/
-  //用电量增长率与行业产值增长率分析预测
+  //第二图数据
   $scope.vocationdata = {
     isshowchartvocation:true,
     isshowsinglechartvocation:false,
@@ -100,6 +102,23 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
         ],
     },
     yearrange:[{year:'2015'},{year:'2014'}],
+    totalshow:{
+        title:'各行业用电量增长率与产值增长率关联总图',
+        _2015:{
+            year:'2015年度',
+            data:{
+                gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65],                                                                             
+                powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87],   
+            },
+        },
+        _2014:{
+            year:'2014年度',
+            data:{
+                gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45],                                                                             
+                powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57],   
+            },
+        },
+    },
     agriculture:{
         title:'农、林、牧、渔业',
         _2015:{
@@ -237,23 +256,37 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
         },
     },
   };
-  /*三个视图的切换函数*/
-  $scope.changeToVocationChart = function(){
-  	$scope.vocationdata.isshowchartvocation=true;
-    $scope.vocationdata.isshowsinglechartvocation=false;
-    $scope.vocationdata.isshowsinglechartvocationbyyear=false;
+  /*第二图各种切换函数*/
 
-  };
+  //切换到年图
   $scope.changeToSingleVocationChartByyear = function(){
     $scope.vocationdata.isshowchartvocation=false;
     $scope.vocationdata.isshowsinglechartvocation=false;
     $scope.vocationdata.isshowsinglechartvocationbyyear=true;
   };
 
-    /*初始化*/
+  /*初始化*/
   $scope.yearmark = '2015';
   $scope.vocationmark = 1;
-
+  //第二图总图切换年份
+  $scope.changeTotalYear = function(param){
+    $scope.vocationdata.isshowchartvocation=true;
+    $scope.vocationdata.isshowsinglechartvocation=false;
+    $scope.vocationdata.isshowsinglechartvocationbyyear=false;
+    switch(param){
+        case 2014:
+            $scope.VocationChart.subtitle.text = $scope.vocationdata.totalshow._2014.year;
+            $scope.VocationChart.series[0].data = $scope.vocationdata.totalshow._2014.data.powerdata;
+            $scope.VocationChart.series[1].data = $scope.vocationdata.totalshow._2014.data.gdpdata;
+        break;
+        case 2015:
+            $scope.VocationChart.subtitle.text = $scope.vocationdata.totalshow._2015.year;
+            $scope.VocationChart.series[0].data = $scope.vocationdata.totalshow._2015.data.powerdata;
+            $scope.VocationChart.series[1].data = $scope.vocationdata.totalshow._2015.data.gdpdata;
+        break;
+    }
+  }
+  //按季度显示 并切换年份
   $scope.changeVocationYear = function(param){
     $scope.vocationdata.isshowchartvocation=false;
     $scope.vocationdata.isshowsinglechartvocation=true;
@@ -398,6 +431,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
     }
   }
 
+  //切换不同的行业
   $scope.changeVocationType = function(param){
     $scope.vocationdata.isshowchartvocation=false;
     $scope.vocationdata.isshowsinglechartvocation=true;
@@ -587,7 +621,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   };
 
   /*行业总览视图*/
-  $scope.VocationChart={  
+  $scope.VocationChart={
   	 	options:{
 	  	 	chart: {
 	            type: 'bar',
@@ -595,10 +629,10 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
 	     	},
 	  	 },                                                                
         title: {                                                           
-            text:  $scope.vocationdata.agriculture._2015.title,                
+            text:  $scope.vocationdata.totalshow.title,                
         },                                                                 
         subtitle: {                                                        
-            text: '2015年度'                                  
+            text: $scope.vocationdata.totalshow._2015.year,                                 
         },                                                                 
         xAxis: {                                                        
             categories: ['农、林、牧、渔业', '工业', '建筑业', '交通运输、仓储和邮政业', '信息传输、计算机服务和软件业','批发和零售、住宿和餐饮业','金融、房地产、商务及居民服务业','公共事业及管理组织'],
@@ -734,10 +768,10 @@ $scope.AverageEnterpriseChartByYear={
         },
         series: [{
             name: '企业用电量同比增长率',
-            data: [7.0, 6.5, 6.2, 5.5, 5.2, 5.5, 6.2, 7.5, 6.3, 5.3, 3.9]
+            data: [7.0, 6.5, 6.2, 5.5, 5.2, 5.5, 6.2, 7.5, 6.3, 5.3, 3.9],
         }, {
             name: '企业产值同比增长率',
-            data: [5.2, 4.8, 3.7, 3.6, 3.0, 4.0, 4.8, 4.7, 4.1, 3.1, 2.6]
+            data: [5.2, 4.8, 3.7, 3.6, 3.0, 4.0, 4.8, 4.7, 4.1, 3.1, 2.6],
         }]
   };
   //规模以上企业综合数据

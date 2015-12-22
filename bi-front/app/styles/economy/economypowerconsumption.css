@@ -100,7 +100,9 @@
 .cgq_marginaround1em-top{
 	margin: 0 4% 4% 4%;
 }
-
+input.cgq_search {
+	margin-top: 2em;
+}
 
 
 

@@ -1,10 +1,13 @@
 <div class="vbox cgq_fontsize" style="margin-bottom:5em" name="cgqmarker">
-	<!--topbar-->
-    <div class="wrapper lter b-b bg-white">
-		<a ui-sref="app.index.economy.powerconsumption({title:'工业用电量与经济增长关联分析模块'})" class="pull-right btn btn-sm btn-info m-t-n-xs" >返回</a>
-   		<div class="subview3_title">{{title}}</div>
- 	</div>
+	    <!--topbar-->
+      <div class="wrapper lter b-b bg-white">
+  		  <a ui-sref="app.index.economy.powerconsumption({title:'工业用电量与经济增长关联分析模块'})" class="pull-right btn btn-sm btn-info m-t-n-xs" >返回</a>
+     		<div class="subview3_title">{{title}}</div>
+   	  </div>
       <div class="container">
+          <div class="col-md-12">
+            <input type="email" class="form-control cgq_search ui-select-search ng-pristine ng-valid ng-touched" data-toggle="dropdown" aria-expanded="false" placeholder="搜索企业..." ng-model="enterprisesearch">  
+          </div>
        	  <div class="col-md-12 cgq_margintop2em" style="height:310px;margin-bottom:2em">
             <div class="panel b-a">
               <div class="panel-heading no-border" style="background-color:#428bca;color:white;">          
