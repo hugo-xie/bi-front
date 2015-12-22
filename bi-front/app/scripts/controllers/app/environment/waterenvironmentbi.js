@@ -309,17 +309,17 @@ $scope.r=function(){
 };
 function h(newValue,oldValue,scope){
     //console.log(newValue);
-    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/200)*100)/100;
+    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/150)*100)/100;
     //console.log(o2Data[0]);
-    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/200)*100)/100;
-    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/200)*100)/100;
+    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/100)*100)/100;
+    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/150)*100)/100;
     pData[0]=Math.round((pData[0]+(newValue-oldValue)/200)*100)/100;
    // console.log(o2Data[0]);
    // gdp[9]=(newValue*0.03)*50+18.3;
-   lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/200)*100)/100;
-   lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/200)*100)/100;
-   lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/200)*100)/100;
-   lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/200)*100)/100;
+   lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/150)*100)/100;
+   lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/100)*100)/100;
+   lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/150)*100)/100;
+   lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/100)*100)/100;
 }
 $scope.$watch($scope.r,h);
 
@@ -332,27 +332,27 @@ $scope.rrr=function(){
 function hh(newValue,oldValue,scope){
   //  console.log(newValue);
   //  console.log(oldValue);
-    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/200)*100)/100;
-    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/200)*100)/100;
-    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/200)*100)/100;
-    pData[0]=Math.round((pData[0]+(newValue-oldValue)/200)*100)/100;
+    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/150)*100)/100;
+    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/100)*100)/100;
+    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/150)*100)/100;
+    pData[0]=Math.round((pData[0]+(newValue-oldValue)/100)*100)/100;
    // popData[9]=(newValue*0.03)*50+194.1;
   //  gdp[9]=(newValue*0.03)*50+18.3;
-    lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/200)*100)/100;
-    lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/200)*100)/100;
-    lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/200)*100)/100;
-    lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/200)*100)/100;
+    lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/150)*100)/100;
+    lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/100)*100)/100;
+    lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/150)*100)/100;
+    lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/100)*100)/100;
 }
 function hhh(newValue,oldValue,scope){
    // console.log(newValue);
-    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/200)*100)/100;
-    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/200)*100)/100;
-    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/200)*100)/100;
-    pData[0]=Math.round((pData[0]+(newValue-oldValue)/200)*100)/100;
-    lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/200)*100)/100;
-    lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/200)*100)/100;
-    lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/200)*100)/100;
-    lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/200)*100)/100;
+    o2Data[0]=Math.round((o2Data[0]+(newValue-oldValue)/100)*100)/100;
+    kmno4Data[0]=Math.round((kmno4Data[0]+(newValue-oldValue)/100)*100)/100;
+    nh4nData[0]=Math.round((nh4nData[0]+(newValue-oldValue)/150)*100)/100;
+    pData[0]=Math.round((pData[0]+(newValue-oldValue)/100)*100)/100;
+    lalaData[0]=Math.round((lalaData[0]+(newValue-oldValue)/100)*100)/100;
+    lalaData[1]=Math.round((lalaData[1]+(newValue-oldValue)/100)*100)/100;
+    lalaData[2]=Math.round((lalaData[2]+(newValue-oldValue)/150)*100)/100;
+    lalaData[3]=Math.round((lalaData[3]+(newValue-oldValue)/100)*100)/100;
 
 }
 $scope.$watch($scope.rr,hh);
