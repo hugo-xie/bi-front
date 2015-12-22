@@ -360,7 +360,7 @@ var points =[
             yAxis: 1,
             data: [447046, 450908, 454570, 457963, 461066, 463863, 466970, 469950, 472652, 475038],
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             }
 
         }, {
@@ -384,7 +384,7 @@ var points =[
             yAxis: 1,
             data: [503463, 508465, 513319, 518001, 522475, 526754, 531251, 535567, 539655, 543482],
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             }
 
         }, {
@@ -408,7 +408,7 @@ var points =[
             yAxis: 1,
             data: [550441, 556081, 561654, 567106, 572420, 577676, 583104, 588418, 593579, 598577],
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             }
 
         }, {
@@ -664,7 +664,7 @@ $scope.sumpopulation={
                 }
             },
             labels: {
-                format: '{value} 万人',
+                format: '{value} 人',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -674,15 +674,10 @@ $scope.sumpopulation={
         tooltip: {
             shared: true
         },
-        legend: {
-            layout: 'vertical',
-            align: 'left',
-            x: 120,
-            verticalAlign: 'top',
-            y: 100,
-            floating: true,
-            backgroundColor:  '#FFFFFF'
+        credits:{
+            enabled:false
         }
+       
       },
         series: [{
             name: '人口总量',
@@ -690,7 +685,7 @@ $scope.sumpopulation={
             yAxis: 1,
             data: [447046, 450908, 454570, 457963, 461066, 463863, 466970, 469950, 472652, 475038],
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             }
 
         }, {
