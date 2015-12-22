@@ -168,17 +168,17 @@ $scope.change=function(btn){
    if(btn.name===2025){
 $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
      $scope.GDPChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
-     $scope.GDPChart.series.data=gdp;
-    $scope.populationChart.series.data=popData;
+     $scope.GDPChart.series[0].data=gdp;
+    $scope.populationChart.series[0].data=popData;
   //  $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
     $scope.predictChart.series=[{
-            name: '人口(万人)',
+            name: '人口(人)',
             color: '#4572A7',
             type: 'column',
             yAxis: 1,
             data: popData,
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             },
             tickPositions:[0,50,100,150,200,250]
         }, {
@@ -212,16 +212,17 @@ $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023
    if(btn.name===2035){
      $scope.populationChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
      $scope.GDPChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
-     $scope.GDPChart.series.data=gdp;
-    $scope.populationChart.series.data=popData;
+     $scope.GDPChart.series[0].data=gdp1;
+     $scope.populationChart.series[0].data=popData1;
+    $scope.predictChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
     $scope.predictChart.series=[{
-            name: '人口(万人)',
+            name: '人口(人)',
             color: '#4572A7',
             type: 'column',
             yAxis: 1,
-            data: popData,
+            data: popData1,
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             }
 
         }, {
@@ -255,15 +256,17 @@ $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023
    if(btn.name===2045){
      $scope.populationChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
      $scope.GDPChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
-    $scope.populationChart.series.data=popData;
+     $scope.GDPChart.series[0].data=gdp2;
+    $scope.populationChart.series[0].data=popData2;
+    $scope.predictChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
     $scope.predictChart.series=[{
-            name: '人口(万人)',
+            name: '人口(人)',
             color: '#4572A7',
             type: 'column',
             yAxis: 1,
-            data: popData,
+            data: popData2,
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             }
 
         }, {
@@ -736,10 +739,14 @@ $scope.r=function(){
     return $scope.selectedRange;
 };
 function h(newValue,oldValue,scope){
-    console.log(newValue);
-    popData[9]=(newValue*0.03)*50+194.1;
-    console.log(popData[9]);
-    gdp[9]=(newValue*0.03)*50+18.3;
+    //console.log(newValue);
+    popData[9]=(newValue*0.03)*50+475038;
+    popData1[9]=(newValue*0.03)*50+543482;
+    popData2[9]=(newValue*0.03)*50+598577;
+   //console.log(popData[9]);
+    gdp[9]=(newValue*0.03)*50+2022.31;
+    gdp1[9]=(newValue*0.03)*50+4256.65;
+    gdp2[9]=(newValue*0.03)*50+8373.48;
 }
 $scope.$watch($scope.r,h);
 
@@ -749,15 +756,21 @@ $scope.rr=function(){
 };
 function hh(newValue,oldValue,scope){
     console.log(newValue);
-    popData[9]=(newValue*0.03)*50+194.1;
-    gdp[9]=(newValue*0.03)*50+18.3;
+    popData[9]=(newValue*0.03)*50+475038;
+    popData1[9]=(newValue*0.03)*50+543482;
+    popData2[9]=(newValue*0.03)*50+598577;
+    gdp[9]=(newValue*0.03)*50+2022.31;
+    gdp1[9]=(newValue*0.03)*50+4256.65;
+    gdp2[9]=(newValue*0.03)*50+8373.48;
 }
 $scope.$watch($scope.rr,hh);
 
-    var popData=[49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-         148.5, 216.4, 194.1];
-    var gdp=[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3];
-
+    var popData=[447046, 450908, 454570, 457963, 461066, 463863, 466970, 469950, 472652, 475038];
+    var gdp=[1100, 1177, 1259.39, 1347.55, 1441.88,1542.81,1650.80, 1766.36, 1890.00, 2022.31];
+    var popData1=[503463, 508465, 513319, 518001, 522475, 526754, 531251, 535567, 539655, 543482];
+    var gdp1=[2163.87, 2315.34, 2477.41, 2650.83,2836.39, 3034.93, 3247.38, 3474.7,3717.93,3978.18, 4256.65];
+    var popData2=[550441, 556081, 561654, 567106, 572420, 577676, 583104, 588418, 593579, 598577];
+    var gdp2=[4554.62, 4873.44, 5214.58,5579.60,5970.18, 6388.09,6835.25, 7313.72,7825.68, 8373.48];
          $scope.predictChart ={
  chart: {
             zoomType: 'xy'
@@ -765,10 +778,10 @@ $scope.$watch($scope.rr,hh);
         title: {
             text: '劳动力人口与经济关联分析预测'
         },
-        xAxis: [{
+        xAxis: {
             categories: ['2016', '2017', '2018', '2019', '2020', '2021',
                 '2022', '2023', '2024', '2025']
-        }],
+        },
         yAxis: [{ // Primary yAxis
             labels: {
                 formatter: function() {
@@ -790,14 +803,14 @@ $scope.$watch($scope.rr,hh);
         }, { // Secondary yAxis
             gridLineWidth: 0,
             title: {
-                text: '人口(万人)',
+                text: '人口(人)',
                 style: {
                     color: '#4572A7'
                 }
             },
             labels: {
                 formatter: function() {
-                    return this.value +'万人';
+                    return this.value +'人';
                 },
                 style: {
                     color: '#4572A7'
@@ -837,13 +850,13 @@ $scope.$watch($scope.rr,hh);
             backgroundColor: '#FFFFFF'
         },
         series: [{
-            name: '人口(万人)',
+            name: '人口(人)',
             color: '#4572A7',
             type: 'column',
             yAxis: 1,
             data: popData,
             tooltip: {
-                valueSuffix: '万人'
+                valueSuffix: '人'
             }
 
         }, {
@@ -897,7 +910,7 @@ $scope.populationChart ={
                 yAxis: {
                     min: 0,
                     title: {
-                        text: '万人'
+                        text: '人'
                     }
                 },
                 loading: false,
@@ -1032,9 +1045,9 @@ options: {
                                 type: 'pie',
                                 name: '',
                                 data:[
-               ['第一产业人口',18],
-                ['第二产业人口',44],
-                ['第三产业人口',48]
+               ['第一产业人口',37],
+                ['第二产业人口',30],
+                ['第三产业人口',33]
             ]
                             }]
                                             
@@ -1076,7 +1089,7 @@ options: {
                                 type: 'pie',
                                 name: '',
                                 data:[
-               ['第一产业产值',18],
+              ['第一产业产值',8],
                 ['第二产业产值',44],
                 ['第三产业产值',48]
             ]
