@@ -186,7 +186,7 @@
           <div class="panel-body">
 
             <div class="row">
-              <button ng-repeat="bttn in buttonMap2" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 50px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
+              <button ng-repeat="bttn in buttonMap2" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 55px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
               <!--第一个-->
               <div ng-show="tableStatus.allWater1">
                 <div class="col-md-8 chart-panel">
@@ -292,27 +292,26 @@
             <div ng-show="tableStatus.allWater2">
               <div class="col-md-8 chart-panel">
                 <div class="row">
-
-                  <div class="col-md-3">
-                    <highchart style="height:100%;width:100%;" config="chart21"></highchart>
+                  <div style="border:2px solid #1887CF; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <div style="witdth:220px; float:left; margin-left:10px">
+                      <highchart config="chart21"></highchart>
+                    </div>
+                    <div style="witdth:220px; float:left">
+                      <highchart config="chart22"></highchart>
+                    </div>
+                    <div style="witdth:220px; float:left">
+                      <highchart config="chart23"></highchart>
+                    </div>
+                    <div style="witdth:220px; float:left">
+                      <highchart config="chart24"></highchart>
+                    </div>
                   </div>
-
-                  <div class="col-md-3">
-                    <highchart style="height:100%;width:100%;" config="chart22"></highchart>
-                  </div>
-
-                  <div class="col-md-3">
-                    <highchart style="height:100%;width:100%;" config="chart23"></highchart>
-                  </div>
-
-                  <div class="col-md-3">
-                    <highchart style="height:100%;width:100%;" config="chart24"></highchart>
-                  </div>
-                  <div class="col-md-12">
-                    <highchart style="height:100%;width:100%;" config="bb"></highchart>
+                  <div style="border:2px solid #1887CF; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <highchart config="bb"></highchart>
                   </div>
                 </div>
               </div>
+
               <div class="col-md-4 desc-content">
                 <div class="ioc-panel-desc">
                   <p class="ioc-panel-desc-title">
@@ -375,26 +374,23 @@
             <div ng-show="tableStatus.allWater3">
               <div class="col-md-8 chart-panel">
                 <div class="row">
-
-                  <div class="col-md-3">
-                    <highchart  style="height:100%;width:100%;" config="chart31"></highchart>
-                  </div>
-
-                  <div class="col-md-3">
-                    <highchart style="height:100%;width:100%;" config="chart32"></highchart>
-                  </div>
-
-                  <div class="col-md-3">
-                    <highchart style="height:100%;width:100%;" config="chart33"></highchart>
-                  </div>
-
-                  <div class="col-md-3">
-                    <highchart style="height:100%;width:100%;" config="chart34"></highchart>
-                  </div>
-
-                  <div class="col-md-12">
-                    <highchart style="height:100%;width:100%;" config="cc"></highchart>
-                  </div>
+                    <div style="border:2px solid #1887CF; margin:20px 5px 5px 50px; width:750px; float:left">
+                      <div style="witdth:220px; float:left; margin-left:10px">
+                        <highchart config="chart31"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart32"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart33"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart34"></highchart>
+                      </div>
+                    </div>
+                    <div style="border:2px solid #1887CF; margin:20px 5px 5px 50px; width:750px; float:left">
+                      <highchart config="cc"></highchart>
+                    </div>
                 </div>
               </div>
               <div class="col-md-4 desc-content">

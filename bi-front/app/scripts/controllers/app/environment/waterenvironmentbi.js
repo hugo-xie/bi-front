@@ -983,9 +983,14 @@ $scope.$watch($scope.r1,h1);
             plotBackgroundColor: null,
             plotBackgroundImage: null,
             plotBorderWidth: 0,
-            plotShadow: false
+            plotShadow: false,
+            width: 180,
+            height: 180,
+            margin: [30,0,0,10]
         },
-        
+        exporting: {
+            enabled: false
+        },
         title: {
             text: '溶解氧',
         },
@@ -1080,13 +1085,18 @@ $scope.$watch($scope.r1,h1);
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
                 
                 title: {
                     text: '高锰酸钾'
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 pane: {
                     startAngle: -150,
                     endAngle: 150,
@@ -1176,9 +1186,14 @@ $scope.$watch($scope.r1,h1);
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '氨氮'
                 },
@@ -1272,9 +1287,14 @@ $scope.$watch($scope.r1,h1);
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '总磷'
                 },
@@ -1371,9 +1391,14 @@ $scope.$watch($scope.r1,h1);
             plotBackgroundColor: null,
             plotBackgroundImage: null,
             plotBorderWidth: 0,
-            plotShadow: false
+            plotShadow: false,
+            width: 180,
+            height: 180,
+            margin: [30,0,0,10]
         },
-        
+        exporting: {
+            enabled: false
+        },
         title: {
             text: '溶解氧'
         },
@@ -1468,9 +1493,14 @@ $scope.$watch($scope.r1,h1);
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '高锰酸钾'
                 },
@@ -1564,9 +1594,14 @@ $scope.$watch($scope.r1,h1);
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '氨氮'
                 },
@@ -1660,9 +1695,14 @@ $scope.$watch($scope.r1,h1);
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '总磷'
                 },
