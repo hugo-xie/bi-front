@@ -662,7 +662,7 @@ $scope.$watch($scope.r1,h1);
         }]
     
 
-};  
+    };  
 
       //高锰酸钾仪表盘
          $scope.chart12={
