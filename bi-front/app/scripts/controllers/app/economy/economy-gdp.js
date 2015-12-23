@@ -186,7 +186,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             text: '太仓市经济数据'
         },
         subtitle: {
-            text: '各产业按年份GDP分析'
+            text: '按年度分产业GDP分析'
         },
         xAxis: {
             categories: [
