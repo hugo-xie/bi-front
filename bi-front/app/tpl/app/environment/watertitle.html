@@ -186,30 +186,30 @@
           <div class="panel-body">
 
             <div class="row">
-              <button ng-repeat="bttn in buttonMap2" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
+              <button ng-repeat="bttn in buttonMap2" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 50px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
               <!--第一个-->
               <div ng-show="tableStatus.allWater1">
                 <div class="col-md-8 chart-panel">
                   <div class="row">
-                    <div class="col-md-3">
-                      <highchart style="height:100%;width:100%;" config="chart11"></highchart>
+                    <!-- 四个仪表图 -->
+                    <div style="border:2px solid #1887CF; margin:20px 5px 5px 50px; width:750px; float:left">
+                        <div style="witdth:220px; float:left; margin-left:10px">
+                          <highchart config="chart11"></highchart>
+                        </div>
+                        <div style="witdth:220px; float:left">
+                          <highchart config="chart12"></highchart>
+                        </div>
+                        <div style="witdth:220px; float:left">
+                          <highchart config="chart13"></highchart>
+                        </div>
+                        <div style="witdth:220px; float:left">
+                          <highchart config="chart14"></highchart>
+                        </div>
                     </div>
-
-                    <div class="col-md-3">
-                      <highchart style="height:100%;width:100%;" config="chart12"></highchart>
+                    <!-- 直方图 -->
+                    <div style="border:2px solid #1887CF; margin:20px 5px 5px 50px; width:750px; float:left">
+                      <highchart config="lala"></highchart>
                     </div>
-
-                    <div class="col-md-3">
-                      <highchart style="height:100%;width:100%;" config="chart13"></highchart>
-                    </div>
-
-                    <div class="col-md-3">
-                      <highchart style="height:100%;width:100%;" config="chart14"></highchart>
-                    </div>
-                 
-                  <div class="col-md-12">
-                    <highchart style="height:100%;width:100%;" config="lala"></highchart>
-                  </div>
                 </div>
               </div>
 
@@ -228,7 +228,7 @@
                     <img src="/images/common/ioc-index-mean.png"/>
                   </p>
                   <p class="ioc-panel-desc-body">
-                    可手动调节 <strong>工厂废水排放量</strong>
+                    可手动调节工厂废水排放量
                     观察对应各个水质污染物污染情况
                   </p>
                 </div>
@@ -285,7 +285,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 

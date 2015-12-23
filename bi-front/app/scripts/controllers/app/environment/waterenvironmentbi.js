@@ -420,10 +420,10 @@ $scope.lala={
         }
     },
         series: [{
-            name: '原值',
+            name: '真实值',
             data:[5,12,2.5,4]
         },{
-            name: '预计未来值',
+            name: '预测值',
             data: lalaData
         }]
 
@@ -567,17 +567,22 @@ $scope.$watch($scope.r1,h1);
 
   //协鑫码头的仪表盘
   //溶解氧
-//console.log($scope.chart11.series[0].data);
-         $scope.chart11={
+    //console.log($scope.chart11.series[0].data);
+    $scope.chart11={
          options:{           
          chart: {
             type: 'gauge',
             plotBackgroundColor: null,
             plotBackgroundImage: null,
             plotBorderWidth: 0,
-            plotShadow: false
+            plotShadow: false,
+            width: 180,
+            height: 180,
+            margin: [30,0,0,10]
         },
-        
+        exporting: {
+            enabled: false
+        },
         title: {
             text: '溶解氧'
         },
@@ -664,17 +669,22 @@ $scope.$watch($scope.r1,h1);
 
     };  
 
-      //高锰酸钾仪表盘
-         $scope.chart12={
+    //高锰酸钾仪表盘
+    $scope.chart12={
          options:{           
          chart: {
                     type: 'gauge',
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '高锰酸钾'
                 },
@@ -760,17 +770,22 @@ $scope.$watch($scope.r1,h1);
             
 
         }; 
-        //氨氮仪表盘
-         $scope.chart13={
+    //氨氮仪表盘
+     $scope.chart13={
          options:{           
          chart: {
                     type: 'gauge',
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '氨氮'
                 },
@@ -857,16 +872,21 @@ $scope.$watch($scope.r1,h1);
 
         };  
     //总磷仪表盘
-         $scope.chart14={
-         options:{           
+     $scope.chart14={
+        options:{           
          chart: {
                     type: 'gauge',
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 0,
-                    plotShadow: false
+                    plotShadow: false,
+                    width: 180,
+                    height: 180,
+                    margin: [30,0,0,10]
                 },
-                
+                exporting: {
+                    enabled: false
+                },
                 title: {
                     text: '总磷'
                 },
@@ -967,7 +987,7 @@ $scope.$watch($scope.r1,h1);
         },
         
         title: {
-            text: '溶解氧'
+            text: '溶解氧',
         },
         
         pane: {
