@@ -8,11 +8,22 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
      $scope.showTotalTable = function(){
   	$scope.totalshow= !$scope.totalshow;
   };
+
+  //以下是空气质量预测右侧详情展开控制函数
+  $scope.ishealthopen = false;
+  $scope.issuggestionopen = false;
+  $scope.openHealthList = function(){
+  	$scope.ishealthopen = !$scope.ishealthopen;
+  };
+  $scope.openSuggestionList = function(){
+  	$scope.issuggestionopen = !$scope.issuggestionopen;
+  };
+  //end——————————
   $scope.totaldata = {
   
   	tabledata:
   	[
-	  {yearvalue:'时间', evaporation:'蒸发量',water:'降水量',avetep:'平均温度'},
+	  {yearvalue:'时间', evaporation:'蒸发量',water:'降水量',avetep:'平均气温'},
 	  {yearvalue:'12月19号', evaporation:'2',water:'2.6',avetep:'2'},
 	  {yearvalue:'12月20号', evaporation:'4.9',water:'5.9',avetep:'2.2'},
 	  {yearvalue:'12月21号', evaporation:'7',water:'9',avetep:'3.3'},
@@ -42,6 +53,13 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                 var myChart = ec.init(document.getElementById('main')); 
                 
                 var option = {
+                	title : {
+				        text: '未来七天天气状况',
+				        x:'center',
+				        textStyle:{
+				        	fontFamily:'宋体标题',
+				        },
+				    },
                     tooltip : {
                         trigger: 'axis'
                     },
@@ -57,7 +75,8 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                     },
                     calculable : true,
                     legend: {
-                        data:['蒸发量','降水量','平均温度']
+                        data:['蒸发量','降水量','平均气温'],
+                        y:'bottom',
                     },
                     xAxis : [
                         {
@@ -94,7 +113,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                             data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
                         },
                         {
-                            name:'平均温度',
+                            name:'平均气温',
                             type:'line',
                             yAxisIndex: 1,
                             data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 11.3]
@@ -150,32 +169,34 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	});
 	marker7.setMap(map);
     // 设置label标签
+    var infow=[];
+    infow.push("<div style='background-color:#FFFFFF;border:2px solid #66cc66;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#66cc66;font-size:18px'>新湖镇</div>")
     marker1.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
-        content: "太仓监测站"
+        offset: new AMap.Pixel(23, 5),//修改label相对于maker的位置
+        content: infow.join('')
     });
-    marker2.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+    marker2.setLabel({
+        offset: new AMap.Pixel(18, 3),
         content: "科教新城监测站"
     });
-    marker3.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+    marker3.setLabel({
+        offset: new AMap.Pixel(18, 3),
         content: "太仓市气象局"
     });
-    marker4.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+    marker4.setLabel({
+        offset: new AMap.Pixel(18, 3),
         content: "华能国际电力电厂"
     });
-    marker5.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+    marker5.setLabel({
+        offset: new AMap.Pixel(18, 3),
         content: "玖龙纸业"
     });
-    marker6.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+    marker6.setLabel({
+        offset: new AMap.Pixel(18, 3),
         content: "太仓港协鑫发电"
     });
-    marker7.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(18, 3),//修改label相对于maker的位置
+    marker7.setLabel({
+        offset: new AMap.Pixel(18, 3),
         content: "国华太仓发电公司"
     });
 
@@ -390,24 +411,22 @@ $scope.aqilinechart={
         xAxis: {
             categories: ['12月19', '12月20', '12月21', '12月22', '12月23','12月24','12月25']
         },
-        labels: {
-            items: [{
-                html: '',
-                style: {
-                    left: '50px',
-                    top: '18px',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-                }
-            }]
+        yAxis: {
+            title: {
+                text: '空气质量指数(AQI)值'
+            }
         },
+
         series: [{
             type: 'column',
             name: '实际AQI值',
-            data: [50, 60, 70, 80, 90,100,130]
+            color:"#23b7e5",
+            data: [90, 116, 140, 168, 150,210,182]
         },  {
             type: 'spline',
             name: '预测AQI值',
-            data: [52, 64, 73, 83, 90,100,143],
+            color:"#1F1F1F",
+            data: [100, 120, 138, 175, 163, 201,185],
             
             dataLabels: {
                 enabled: false
@@ -674,7 +693,7 @@ $scope.aqilinechart={
 				name: 'PM2.5',
 				data: [64],
 				tooltip: {
-					valueSuffix: 'μg/m³'
+					valueSuffix: ''
 				}
 			}],
     	},

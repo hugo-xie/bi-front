@@ -2,251 +2,204 @@
     <div class="subview3_title">空气质量预测BI</div>
 </div>
 <div class="fc-container">
-<div class="row" style="margin-top: 20px;">
-    <div class="col-md-12" style="padding:15px 30px 15px 30px">
-        <div class="panel panel-primary" style="margin-top: 20px;">
+    <!--开始-->
+    <div class="col-md-12" style="margin-top:2em;margin-bottom:2em;">
+        <div class="panel panel-primary" style="margin-bottom:0">
             <div class="panel-heading">
                 未来七天天气状况
-                <span class="glyphicon glyphicon-question-sign pull-right"></span>
+                <span class="glyphicon pull-right"></span>
             </div>
-            <div class="panel-body ">
+            <div class="panel-body" style="padding:0">
                 <div class="row">
-                    <div class="col-md-8 chart-panel">
-                        <div id="main" style="width:98%;height: 400px;margin-left:24px" ></div>
+                    <!--未来七天天气状况echart-->
+                    <div class="col-md-8 chart-panel" style="padding:1em 1.5em 1em 1em">
+                        <div id="main" style="width:98%;height:420px;margin-left:24px" ></div>
                     </div>
-                    <div class="col-md-4">
-                        <p class="fill-margin"></p>
-                        <div class="ioc-panel-desc " style="width:98%;">
-                            <p class="ioc-panel-desc-title">
-                                <img src="/images/common/data_details.png"/>
-                            </p>
-                            <h4>预测结果解读</h4>
-                            <div>根据太仓最近连续降雨情况可分析出太仓未来24小时空气质量状况良好</div>
 
-
-                    <button ng-click="showTotalTable()" class="btn m-b-xs btn-primary">详细数据列表</button>
-         
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bg-white  padding0em" style="margin-top:-33px;margin-left:18px;margin-right:18px" ng-if="totalshow">
-        <div class="panel panel-default paddingmargin0em">
-            <div class="panel-heading">数据详情</div>  
-            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                    <td ng-repeat="year in totaldata.tabledata">{{year.yearvalue}}</td>
-                  </tr>
-                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                    <td ng-repeat="evaporation in totaldata.tabledata">{{evaporation.evaporation}}</td>
-                  </tr>
-                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                    <td ng-repeat="water in totaldata.tabledata">{{water.water}}</td>
-                  </tr>
-                  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                    <td ng-repeat="avetep in totaldata.tabledata">{{avetep.avetep}}</td>
-                  </tr>
-            </table>
-        </div>
-    </div>
-
-<div class="col-md-12 ">
-    <div class="panel panel-primary" style="margin-top: 20px;">
-        <div class="panel-heading">
-            空气质量预测
-            <span class="glyphicon glyphicon-question-sign pull-right"></span>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-6 chart-panel">
-                    <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:400px"></highchart>
-
-                </div>
-
-                <div class="col-md-6">
-
-                    <p class="fill-margin"></p>
-                    <div class="ioc-panel-desc">
-                        <p class="ioc-panel-desc-title">
-                            <img src="/images/common/one-sentence.png" />
-                        </p>
-                        <div >
-
-                            <div style="padding:20px 30px 20px 20px">
-                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="3">
-                                                <div style="font-weight: bold; font-size: 16px; font-family: &#39;微软雅黑&#39;; margin-top: 25px;
-                                    float: left; margin-left: 20px;">实时空气质量状况&nbsp;</div>
-                                                <div style="font-family: &#39;微软雅黑&#39;; float: left; margin-top: 28px;">12月25日8 时</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 200px">
-                                                <div style="width: 100%; float: left; cursor: pointer; height: 100%;" onclick="showDiv();">
-                                                    <table>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td colspan="3">
-                                                                    <span class="big3" style="font-family: &#39;微软雅黑&#39;; margin-left: 20px;">实时空气质量指数:</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td rowspan="2" style="height: 65px;">
-                                                                    <span class="big" style="font-family: impact; font-weight: normal; font-size: 50px;
-                                                    line-height: 40px; margin-left: 45px;color:orange;">138</span>
-                                                                </td>
-                                                                <td>
-                                                                    &nbsp;
-                                                                    <!--<span style="font-size: 14px; font-family: '微软雅黑'; font-weight: bold; padding-left: 5px;">二级</span>
-                                                                -->
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="left">
-                                                                <span style="font-size: 14px; font-family: &#39;微软雅黑&#39;; font-weight: bold; padding-left: 5px;">轻度污染</span>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </td>
-                                        <td style="padding-right: 22px;"></td>
-                                        <td rowspan="2" valign="top" style="width: 290px;">
-                                            <div style="width: 270px; float: left; text-align: left;margin-left:0;">
-
-                                                <table style="margin-top: 25px; width: 300px;margin-left:0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td align="center" style="vertical-align: text-top; font-weight: bold; height: 32px;
-                                font-size: 16px; font-family: &#39;微软雅黑&#39;;" colspan="4">空气质量预报</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="20%" align="center" style="border-right: dashed 1px #ADADAD; border-bottom: dashed 1px #ADADAD;
-                                font-family: 宋体; font-size: 12px; font-weight: bold;">时段</td>
-                                                            <td align="center" style="border-right: dashed 1px #ADADAD; border-bottom: dashed 1px #ADADAD;
-                                font-family: 宋体; font-size: 12px; font-weight: bold;">空气质量</td>
-                                                            <td width="25%" align="center" style="border-right: dashed 1px #ADADAD; border-bottom: dashed 1px #ADADAD;
-                                font-family: 宋体; font-size: 12px; font-weight: bold;">首要污染物</td>
-                                                            <!--<td width="20%" align="center" style="border-bottom:dashed 1px #ADADAD;font-family: 宋体; font-size: 12px; font-weight: bold;">AQI</td>
-                                                        -->
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">25日夜间</td>
-                                                        <td align="center" style="border-right: dashed 1px #ADADAD;">良到轻度污染</td>
-                                                        <td align="center" style="border-right: dashed 1px #ADADAD;">
-                                                            PM <sub>2.5</sub>
-                                                        </td>
-                                                        <!--<td align="center" >95-115</td>
-                                                    -->
-                                                </tr>
-
-                                                <tr>
-                                                    <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">26日上午</td>
-                                                    <td align="center" style="border-right: dashed 1px #ADADAD;">良到轻度污染</td>
-                                                    <td align="center" style="border-right: dashed 1px #ADADAD;">
-                                                        PM <sub>2.5</sub>
-                                                    </td>
-                                                    <!--<td align="center" >85-105</td>
-                                                -->
-                                            </tr>
-
-                                            <tr>
-                                                <td align="center" style="height: 33px; border-right: dashed 1px #ADADAD;">26日下午</td>
-                                                <td align="center" style="border-right: dashed 1px #ADADAD;">良</td>
-                                                <td align="center" style="border-right: dashed 1px #ADADAD;">
-                                                    PM
-                                                    <sub>2.5</sub>
-                                                </td>
-                                                <!--<td align="center">70-90</td>
-                                            -->
-                                        </tr>
-
-                                        <tr>
-                                            <td align="left" colspan="4" style="color: #5B5B5B; height: 50px;" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        </tr>
-                                        <tr class="tr_02">
-                                            <td align="right" colspan="4" style="color: #5B5B5B;">太仓市环境监测中心</td>
-                                        </tr>
-                                        <tr class="tr_02">
-                                            <td align="right" colspan="4" style="color: #5B5B5B;">12月24日20时发布</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                    <!--未来七天天气状况 右侧面板-->
+                    <div class="col-md-4" style="padding:1.2em 1em 1em 1em">
+                        <div class="col-md-12" style="padding-left:0">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  <div class="clearfix">
+                                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                                      <img src="images/environment/tianqi.gif" alt="where">
+                                    </a>
+                                    <div class="clear">
+                                      <div class="h3 m-t-xs m-b-xs">
+                                        <span class="fc-font-title">明日天气</span> 
+                                        <i class="fa text-success pull-right text-xs m-t-sm"></i>
+                                      </div>
+                                      <small class="text-muted">2015年12月25日</small>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list-group no-radius alt">
+                                  <a class="list-group-item" href="">
+                                    <span class="badge bg-success">2℃</span>
+                                    <i class="fa  fa-bomb fa-fw text-muted"></i> 
+                                    平均气温
+                                  </a>
+                                  <a class="list-group-item" href="">
+                                    <span class="badge bg-info">2.6ml</span>
+                                    <i class="fa fa-tint fa-fw text-muted"></i> 
+                                    降雨量
+                                  </a>
+                                  <a class="list-group-item" href="">
+                                    <span class="badge bg-light">2ml</span>
+                                    <i class="fa glyphicon-cloud fa-fw text-muted"></i> 
+                                    蒸发量
+                                  </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" style="width: 400px;">
-                    <div style="width: 99%; float: left; padding-left: 10px; color: #5B5B5B; line-height: 20px;
-                                    margin-top: 2px; margin-left: 10px;">
+                        <div class="pull-left" class="col-md-2">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                          </span>
+                        </div>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">一句话解读</h4>
+                        <div class="col-md-12" style="padding-left:0;margin-bottom:1em">
+                            <span class="fc-font-content">根据太仓最近连续降雨情况可分析出太仓未来24小时空气质量状况良好</span>
+                        </div>
 
-                        <table style="width: 98%;">
-                            <tbody>
-                                <tr>
-                                    <td width="30%">
-                                        <span class="big3" style="font-family: &#39;微软雅黑&#39;;">首要污染物:</span>
-                                    </td>
-                                    <td>
-                                        PM2.5
-                                        
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                        <button ng-click="showTotalTable()" class="btn m-b-xs btn-primary pull-left">详细数据列表</button>
                     </div>
-                    <div style="width: 99%; float: left; padding-left: 10px; color: #5B5B5B; line-height: 30px;
-                                    margin-top: 5px; cursor: pointer; margin-left: 10px;" onclick="showDiv();">
-                        <table style="width: 90%;">
-                            <tbody>
-                                <tr>
-                                    <td width="30%" valign="top">
-                                        <span class="big3" style="font-family: &#39;微软雅黑&#39;;">对健康影响:</span>
-                                    </td>
-                                    <td >易感人群症状有轻度加剧，健康人群出现刺激症状。</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div style="width: 99%; float: left; padding-left: 10px; color: #5B5B5B; line-height: 30px;
-                                    margin-top: 5px; cursor: pointer; margin-left: 10px;" onclick="showDiv();">
-                        <table style="width: 90%;">
-                            <tbody>
-                                <tr>
-                                    <td width="30%" valign="top">
-                                        <span class="big3" style="font-family: &#39;微软雅黑&#39;;">建 议 措 施:</span>
-                                    </td>
-                                    <td>儿童、老年人及心脏病、呼吸系统疾病患者应减少长时间、高强度的户外锻炼。</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                </div>
+            </div>
+        </div>
+        <!--未来七天天气状况  数据详情-->
+        <div class="bg-white fc-datatable" ng-if="totalshow">
+            <div class="panel panel-default paddingmargin0em">
+                <div class="panel-heading">数据详情</div>  
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                        <td ng-repeat="year in totaldata.tabledata">{{year.yearvalue}}</td>
+                      </tr>
+                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                        <td ng-repeat="evaporation in totaldata.tabledata">{{evaporation.evaporation}}</td>
+                      </tr>
+                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                        <td ng-repeat="water in totaldata.tabledata">{{water.water}}</td>
+                      </tr>
+                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                        <td ng-repeat="avetep in totaldata.tabledata">{{avetep.avetep}}</td>
+                      </tr>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <!--一图修改完成-->
 
+
+    <!--第二图-->
+    <div class="col-md-12">
+        <div class="panel panel-primary" style="margin-top: 2em;margin-bottom:2em;">
+            <!--标题栏-->
+            <div class="panel-heading">
+                空气质量预测
+                <span class="glyphicon  pull-right"></span>
+            </div>
+            <!--图表正文-->
+            <div class="panel-body" style="padding:0">
+                <div class="row">
+                    <!--echart-->
+                    <div class="col-md-8 chart-panel" style="padding:0.5em 1.5em 1em 1em">
+                        <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:500px"></highchart>
+                    </div>
+                    <!--右侧栏-->
+                    <div class="col-md-4" style="padding:1em 1.8em 1em 1em">
+                      <div class="panel b-a">
+                        <div class="panel-heading text-center bg-info no-border">
+                          <h4 class="text-u-c m-b-none">实时空气质量状况</h4>
+                          <span style="font-size:65%">当前时间:12月23日16时</span>
+                          <h2 class="m-t-none">
+                            <span class="text-2x text-lt">198</span>
+                            <span class="text-xs" > 中度污染</span>
+                          </h2>
+                        </div>
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <span class="badge bg-danger">PM2.5</span>
+                            <i class="glyphicon glyphicon-certificate text-success m-r-xs"></i> 首要污染物
+                          </li>
+                          <li class="list-group-item" ng-click = "openHealthList()">
+                            <span class="badge bg-fail">↓展开</span>
+                            <i class="glyphicon glyphicon-user text-success m-r-xs"></i> 对健康的影响
+                          </li>
+                          <li class="list-group-item" ng-if="ishealthopen">
+                            <i class="text-success m-r-xs"></i>
+                            <span class="fc-list-content">进一步加剧易感人群症状，可能对健康人群心脏、呼吸系统有影响</span>
+                          </li>
+                          <li class="list-group-item" ng-click = "openSuggestionList()">
+                            <span class="badge bg-fail">↓展开</span>
+                            <i class="glyphicon glyphicon-edit text-success m-r-xs"></i> 建议措施
+                          </li>
+                          <li class="list-group-item" ng-if="issuggestionopen">
+                            <i class="text-success m-r-xs"></i>
+                            <span class="fc-list-content">儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群适量减少户外运动</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--空气质量预测-->
+                      <div class="pull-left" class="col-md-2">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                          </span>
+                        </div>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">空气质量预报</h4>
+                      <div class="col-md-12" style="font-size:80%;padding:0">
+                          <div class="panel panel-default">
+                            <table class="table table-striped m-b-none">
+                              <thead>
+                                <tr>
+                                  <th style="width:30%;" class="text-center">时段</th>
+                                  <th style="width:40%;">空气质量</th>                    
+                                  <th style="width:30%;">首要污染物</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>                    
+                                  <td>
+                                    <div ng-init="data1=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'bar', height:19, barWidth:4, barSpacing:2, barColor:'#27c24c'}" class="sparkline inline">23日夜间</div>
+                                  </td>
+                                  <td>轻度污染</td>
+                                  <td class="text-danger">
+                                    <i></i> PM2.5
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <div ng-init="data2=[ 60,30,10 ]" ui-jq="sparkline" ui-options="[60,30,10], {type:'pie', height:19, sliceColors:['#23b7e5','#fff','#fad733']}" class="sparkline inline">24日上午</div>
+                                  </td>
+                                  <td>良</td>
+                                  <td class="text-danger">
+                                    <i></i> PM2.5
+                                  </td>
+                                </tr>
+
+                                <tr>                    
+                                  <td>
+                                    <div ng-init="data3=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'line', height:19, width:60, lineColor:'#7266ba', fillColor:'#fff'}" class="sparkline inline">24日下午</div>
+                                  </td>
+                                  <td>轻度污染</td>
+                                  <td class="text-danger">
+                                    <i></i> PM2.5
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--第二图结束-->
 <div class="col-md-12 " >
 <div class="panel panel-primary" style="margin-top: 20px;">
 <div class="panel-heading">

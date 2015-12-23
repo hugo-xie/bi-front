@@ -1,0 +1,21 @@
+.fc-keyvalue{
+	background-color: #66FFB2;
+	margin-bottom:1em;
+}
+.fc-font-title{
+	font-family: '微软雅黑';
+	font-size:21px;
+}
+.fc-font-content{
+	font-family: '微软雅黑';
+	font-size: 90%;
+}
+.fc-datatable{
+	margin-top: 0;
+	border-bottom: 1px solid #3366BB;
+	border-left: 1px solid #3366BB;
+	border-right: 1px solid #3366BB;
+}
+.fc-list-content{
+	font-size: 90%;	
+}
