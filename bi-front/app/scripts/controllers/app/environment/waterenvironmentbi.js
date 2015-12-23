@@ -1810,7 +1810,7 @@ $timeout(function () {
                 
                 var option = {
             title : {
-                text: '太仓地区污水处理厂污水排放量',
+                text: '太仓市污水分时段排放量',
                 subtext: ''
             },
             tooltip : {

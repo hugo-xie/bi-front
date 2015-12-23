@@ -7,10 +7,7 @@
     <div class="wrapper ">
       <div class="details-content">
         <div class="panel panel-primary" style="margin-top: 10px;">
-          <div class="panel-heading">
-            水质量分析
-            <span class="glyphicon glyphicon  -question-sign pull-right"></span>
-          </div>
+          <div class="panel-heading">水质量分析</div>
           <div class="row" >
             <div class="col-md-7">
               <div style="height:700px;" class="chart-panel">
@@ -150,10 +147,7 @@
     <div class="row" style="margin-top: -20px;">
       <div class="col-md-12" style="padding:15px 30px 15px 30px">
         <div class="panel panel-primary" style="margin-top: 20px;">
-          <div class="panel-heading">
-            污水排放总量变化
-            <span class="glyphicon glyphicon-question-sign pull-right"></span>
-          </div>
+          <div class="panel-heading">污水排放总量变化</div>
           <div class="panel-body ">
             <div class="row">
               <div class="col-md-8 chart-panel">
@@ -163,217 +157,234 @@
                 <p class="fill-margin"></p>
                 <div class="ioc-panel-desc">
                   <p class="ioc-panel-desc-title">
-                    <img src="/images/common/data_details.png"/>
+                    <!-- <img src="/images/common/data_details.png"/>
+                    -->
+                    <button type="button" class="btn btn-primary" style="font-size:110%;">一句话解读</button>
                   </p>
-                  <h4>2015年12月24日每小时污水排放量均正常，无明显超标现象</h4>
-
+                  <h4>2015年12月24日，太仓市每小时污水排放量均正常，无明显超标现象</h4>
+                </div>
+                <br>
+                <p class="fill-margin"></p>
+                <div class="ioc-panel-desc">
+                  <p class="ioc-panel-desc-title">
+                    <!-- <img src="/images/common/ioc-index-mean.png"/>
+                    -->
+                    <button type="button" class="btn btn-primary" style="font-size:110%;">
+                      <span class="glyphicon glyphicon-retweet"></span>
+                      视图切换
+                    </button>
+                  </p>
+                  <p class="ioc-panel-desc-body">
+                    在左侧直方图的右上角可以切换选择数据视图、折线图或直方图，从而变换角度观察污水排放总量的变化
+                  </p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
 
-    <div class="wrapper ">
+    <div class="wrapper">
       <div class="details-content">
         <div class="panel panel-primary" style="margin-top: 10px;">
-          <div class="panel-heading">
-            水环境质量预测分析
-            <span class="glyphicon glyphicon-question-sign pull-right"></span>
-          </div>
+          <div class="panel-heading">排污企业减排对水体影响的分析</div>
           <div class="panel-body">
-
             <div class="row">
-              <button ng-repeat="bttn in buttonMap2" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 55px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
-              <!--第一个-->
+              <button ng-repeat="bttn in buttonMap2" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 50px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
+              <!--协鑫码头-->
               <div ng-show="tableStatus.allWater1">
                 <div class="col-md-8 chart-panel">
                   <div class="row">
                     <!-- 四个仪表图 -->
                     <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
-                        <div style="witdth:220px; float:left; margin-left:10px">
-                          <highchart config="chart11"></highchart>
-                        </div>
-                        <div style="witdth:220px; float:left">
-                          <highchart config="chart12"></highchart>
-                        </div>
-                        <div style="witdth:220px; float:left">
-                          <highchart config="chart13"></highchart>
-                        </div>
-                        <div style="witdth:220px; float:left">
-                          <highchart config="chart14"></highchart>
-                        </div>
+                      <div style="witdth:220px; float:left; margin-left:10px">
+                        <highchart config="chart11"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart12"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart13"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart14"></highchart>
+                      </div>
                     </div>
                     <!-- 直方图 -->
                     <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <highchart config="lala"></highchart>
                     </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 desc-content">
-                <div class="ioc-panel-desc">
-                  <p class="ioc-panel-desc-title">
-                    <img src="/images/common/data_details.png"/>
-                  </p>
-                </div>
-                <div >
-                  <h4>太仓市协鑫码头水质主要受玖龙纸业和港城组团污水处理厂两个工业废水排放场影响</h4>
-                </div>
-                <p class="fill-margin"></p>
-                <div class="ioc-panel-desc">
-                  <p class="ioc-panel-desc-title">
-                    <img src="/images/common/ioc-index-mean.png"/>
-                  </p>
-                  <p class="ioc-panel-desc-body">
-                    可手动调节工厂废水排放量
-                    观察对应各个水质污染物污染情况
-                  </p>
-                </div>
-                <div class="row">
-                  <div class="col-md-5">
-                    <p >玖龙纸业</p>
                   </div>
-                  <div class="col-md-7">
-                    <div class="progress-box">
-                      <div class="percentage-cur">
-                        <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
-                        <span class="num">{{selectedRange}}.00%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider">
-                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange" >
-                        <div class="inner" ng-style="{ width: (selectedRange) + '%'   }" ></div>
+                </div>
+                <div class="col-md-4 desc-content">
+                  <div class="ioc-panel-desc">
+                    <p class="ioc-panel-desc-title">
+                      <!-- <img src="/images/common/data_details.png"/>
+                      -->
+                      <button type="button" class="btn btn-primary" style="font-size:110%;">一句话解读</button>
+                    </p>
+                  </div>
+                  <div >
+                    <h4>协鑫码头区域内，主要排污企业的不同减排方案对水体污染的影响</h4>
+                  </div>
+                  <br>
+                  <p class="fill-margin"></p>
+                  <div class="ioc-panel-desc">
+                    <p class="ioc-panel-desc-title">
+                      <!-- <img src="/images/common/ioc-index-mean.png"/>
+                      -->
+                      <button type="button" class="btn btn-primary" style="font-size:110%;">
+                        <span class="glyphicon glyphicon-hand-down"></span>
+                        参数调节
+                      </button>
+                    </p>
+                    <p class="ioc-panel-desc-body">
+                      拖动滑块调节各工厂废水排放量，在左侧的四个仪表盘中会显示水体中污染物的含量变化，在左下方的直方图中会对比污染物的预测值与真实值
+                    </p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p >玖龙纸业</p>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="progress-box">
+                        <div class="percentage-cur">
+                          <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
+                          <span class="num">{{selectedRange}}.00%</span>
+                        </div>
+                        <div class="progress-bar progress-bar-slider">
+                          <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange" >
+                          <div class="inner" ng-style="{ width: (selectedRange) + '%'   }" ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-5">
-                    <p class="handler-title">江城有限公司</p>
-                  </div>
-                  <div class="col-md-7">
-                    <div class="progress-box">
-                      <div class="percentage-cur">
-                        <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
-                        <span class="num">{{ selectedRange1}}.00%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider">
-                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange1">
-                        <div class="inner" ng-style="{ width: (selectedRange1) + '%'   }" ></div>
-                      </div>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p class="handler-title">江城有限公司</p>
                     </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-5">
-                    <p class="handler-title">岳王污水处理厂</p>
-                  </div>
-                  <div class="col-md-7">
-                    <div class="progress-box">
-                      <div class="percentage-cur">
-                        <input type="text" class="form-control" ng-model="selectedRange2" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
-                        <span class="num">{{ selectedRange2}}.00%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider">
-                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange2">
-                        <div class="inner" ng-style="{ width: (selectedRange2) + '%'  }" ></div>
+                    <div class="col-md-7">
+                      <div class="progress-box">
+                        <div class="percentage-cur">
+                          <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
+                          <span class="num">{{ selectedRange1}}.00%</span>
+                        </div>
+                        <div class="progress-bar progress-bar-slider">
+                          <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange1">
+                          <div class="inner" ng-style="{ width: (selectedRange1) + '%'   }" ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <!--第三水厂排放情况-->
-            <div ng-show="tableStatus.allWater2">
-              <div class="col-md-8 chart-panel">
-                <div class="row">
-                  <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
-                    <div style="witdth:220px; float:left; margin-left:10px">
-                      <highchart config="chart21"></highchart>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p class="handler-title">岳王污水处理厂</p>
                     </div>
-                    <div style="witdth:220px; float:left">
-                      <highchart config="chart22"></highchart>
-                    </div>
-                    <div style="witdth:220px; float:left">
-                      <highchart config="chart23"></highchart>
-                    </div>
-                    <div style="witdth:220px; float:left">
-                      <highchart config="chart24"></highchart>
-                    </div>
-                  </div>
-                  <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
-                    <highchart config="bb"></highchart>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4 desc-content">
-                <div class="ioc-panel-desc">
-                  <p class="ioc-panel-desc-title">
-                    <img src="/images/common/data_details.png"/>
-                  </p>
-                </div>
-                <div >
-                  <h4>第三水厂主要受到港城组团污水处理厂和浏河镇污水处理厂的工业废水排放影响</h4>
-                </div>
-                <p class="fill-margin"></p>
-                <div class="ioc-panel-desc">
-                  <p class="ioc-panel-desc-title">
-                    <img src="/images/common/ioc-index-mean.png"/>
-                  </p>
-                  <p class="ioc-panel-desc-body">
-                    可手动调节 <strong>工业废水排放量</strong>
-                    ，观察对应各个水质污染物污染情况。
-                  </p>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-5">
-                    <p class="handler-title" ng-model="fc.name1">港城组团污水处理厂</p>
-                  </div>
-                  <div class="col-md-7">
-                    <div class="progress-box">
-                      <div class="percentage-cur">
-                        <input type="text" class="form-control" ng-model="selectedRange4" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
-                        <span class="num">{{selectedRange4}}.00%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider">
-                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange4" >
-                        <div class="inner" ng-style="{ width: (selectedRange4) + '%'   }" ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-5">
-                    <p class="handler-title">浏河镇污水处理厂</p>
-                  </div>
-                  <div class="col-md-7">
-                    <div class="progress-box">
-                      <div class="percentage-cur">
-                        <input type="text" class="form-control" ng-model="selectedRange3" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
-                        <span class="num">{{ selectedRange3}}.00%</span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider">
-                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange3">
-                        <div class="inner" ng-style="{ width: (selectedRange3) + '%'   }" ></div>
+                    <div class="col-md-7">
+                      <div class="progress-box">
+                        <div class="percentage-cur">
+                          <input type="text" class="form-control" ng-model="selectedRange2" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
+                          <span class="num">{{ selectedRange2}}.00%</span>
+                        </div>
+                        <div class="progress-bar progress-bar-slider">
+                          <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange2">
+                          <div class="inner" ng-style="{ width: (selectedRange2) + '%'  }" ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <!--第二水厂数据-->
-            <div ng-show="tableStatus.allWater3">
-              <div class="col-md-8 chart-panel">
-                <div class="row">
+              <!--第三水厂排放情况-->
+              <div ng-show="tableStatus.allWater2">
+                <div class="col-md-8 chart-panel">
+                  <div class="row">
+                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                      <div style="witdth:220px; float:left; margin-left:10px">
+                        <highchart config="chart21"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart22"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart23"></highchart>
+                      </div>
+                      <div style="witdth:220px; float:left">
+                        <highchart config="chart24"></highchart>
+                      </div>
+                    </div>
+                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                      <highchart config="bb"></highchart>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 desc-content">
+                  <div class="ioc-panel-desc">
+                    <p class="ioc-panel-desc-title">
+                      <!-- <img src="/images/common/data_details.png"/>
+                      -->
+                      <button type="button" class="btn btn-primary" style="font-size:110%;">一句话解读</button>
+                    </p>
+                  </div>
+                  <div >
+                    <h4>第三水厂区域内，主要排污企业的不同减排方案对水体污染的影响</h4>
+                  </div>
+                  <br>
+                  <p class="fill-margin"></p>
+                  <div class="ioc-panel-desc">
+                    <p class="ioc-panel-desc-title">
+                      <!-- <img src="/images/common/ioc-index-mean.png"/>
+                      -->
+                      <button type="button" class="btn btn-primary" style="font-size:110%;">
+                        <span class="glyphicon glyphicon-hand-down"></span>
+                        参数调节
+                      </button>
+                    </p>
+                    <p class="ioc-panel-desc-body">
+                      拖动滑块调节各工厂废水排放量，在左侧的四个仪表盘中会显示水体中污染物的含量变化，在左下方的直方图中会对比污染物的预测值与真实值
+                    </p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p class="handler-title" ng-model="fc.name1">港城组团污水处理厂</p>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="progress-box">
+                        <div class="percentage-cur">
+                          <input type="text" class="form-control" ng-model="selectedRange4" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
+                          <span class="num">{{selectedRange4}}.00%</span>
+                        </div>
+                        <div class="progress-bar progress-bar-slider">
+                          <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange4" >
+                          <div class="inner" ng-style="{ width: (selectedRange4) + '%'   }" ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p class="handler-title">浏河镇污水处理厂</p>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="progress-box">
+                        <div class="percentage-cur">
+                          <input type="text" class="form-control" ng-model="selectedRange3" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
+                          <span class="num">{{ selectedRange3}}.00%</span>
+                        </div>
+                        <div class="progress-bar progress-bar-slider">
+                          <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange3">
+                          <div class="inner" ng-style="{ width: (selectedRange3) + '%'   }" ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--第二水厂数据-->
+              <div ng-show="tableStatus.allWater3">
+                <div class="col-md-8 chart-panel">
+                  <div class="row">
                     <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <div style="witdth:220px; float:left; margin-left:10px">
                         <highchart config="chart31"></highchart>
@@ -391,42 +402,49 @@
                     <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <highchart config="cc"></highchart>
                     </div>
-                </div>
-              </div>
-              <div class="col-md-4 desc-content">
-                <div class="ioc-panel-desc">
-                  <p class="ioc-panel-desc-title">
-                    <img src="/images/common/data_details.png"/>
-                  </p>
-                </div>
-                <div >
-                  <h4>第二水厂位处璜泾镇污水处理厂下游，受其污水排放影响</h4>
-                </div>
-                <p class="fill-margin"></p>
-                <div class="ioc-panel-desc">
-                  <p class="ioc-panel-desc-title">
-                    <img src="/images/common/ioc-index-mean.png"/>
-                  </p>
-                  <p class="ioc-panel-desc-body">
-                    可手动调节
-                    <strong>工厂废水排放量</strong>
-                    观察对应各个水质污染物污染情况
-                  </p>
-                </div>
-                <div class="row">
-                  <div class="col-md-5">
-                    <p class="handler-title" ng-model="fc.name1">璜泾镇污水处理厂</p>
                   </div>
-                  <div class="col-md-7">
-                    <div class="progress-box">
-                      <div class="percentage-cur">
-                        <input type="text" class="form-control" ng-model="selectedRange5" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
-                        <span class="num">{{selectedRange5}}.00%</span>
-                        <span></span>
-                      </div>
-                      <div class="progress-bar progress-bar-slider">
-                        <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange5" >
-                        <div class="inner" ng-style="{ width: (selectedRange5) + '%'   }" ></div>
+                </div>
+                <div class="col-md-4 desc-content">
+                  <div class="ioc-panel-desc">
+                    <p class="ioc-panel-desc-title">
+                      <!-- <img src="/images/common/data_details.png"/>
+                      -->
+                      <button type="button" class="btn btn-primary" style="font-size:110%;">一句话解读</button>
+                    </p>
+                  </div>
+                  <div >
+                    <h4>第二水厂区域内，主要排污企业的不同减排方案对水体污染的影响</h4>
+                  </div>
+                  <br>
+                  <p class="fill-margin"></p>
+                  <div class="ioc-panel-desc">
+                    <p class="ioc-panel-desc-title">
+                      <!-- <img src="/images/common/ioc-index-mean.png"/>
+                      -->
+                      <button type="button" class="btn btn-primary" style="font-size:110%;">
+                        <span class="glyphicon glyphicon-hand-down"></span>
+                        参数调节
+                      </button>
+                    </p>
+                    <p class="ioc-panel-desc-body">
+                      拖动滑块调节各工厂废水排放量，在左侧的四个仪表盘中会显示水体中污染物的含量变化，在左下方的直方图中会对比污染物的预测值与真实值
+                    </p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p class="handler-title" ng-model="fc.name1">璜泾镇污水处理厂</p>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="progress-box">
+                        <div class="percentage-cur">
+                          <input type="text" class="form-control" ng-model="selectedRange5" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:100%" >
+                          <span class="num">{{selectedRange5}}.00%</span>
+                          <span></span>
+                        </div>
+                        <div class="progress-bar progress-bar-slider">
+                          <input class="progress-slider" type="range" min="0" max="100" ng-model="selectedRange5" >
+                          <div class="inner" ng-style="{ width: (selectedRange5) + '%'   }" ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -434,10 +452,8 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
