@@ -445,10 +445,10 @@ $scope.bb={
         }
     },
         series: [{
-            name: '原值',
+            name: '真实值',
             data:[5,12,2.5,4]
         },{
-            name: '预计未来值',
+            name: '预测值',
             data: bbData
         }]
 
@@ -470,10 +470,10 @@ $scope.cc={
         }
     },
         series: [{
-            name: '原值',
+            name: '真实值',
             data:[5,12,2.5,4]
         },{
-            name: '预计未来值',
+            name: '预测值',
             data: ccData
         }]
 
