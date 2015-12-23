@@ -3,11 +3,11 @@
 </div>
 <div class="fc-container">
   <div class="col-md-12 " >
-    <!--test-->
+    <!--水环境页面模块一-->
     <div class="wrapper ">
       <div class="details-content">
         <div class="panel panel-primary" style="margin-top: 10px;">
-          <div class="panel-heading">水质量分析</div>
+          <div class="panel-heading">水环境质量分区域分析</div>
           <div class="row" >
             <div class="col-md-7">
               <div style="height:700px;" class="chart-panel">
@@ -18,23 +18,25 @@
             </div>
             <div class="col-md-5">
               <div  style="width:100%;height: 700px;">
-                <div >
-                  <h4>水质量分析</h4>
+                <div>
+                  <h3>水环境质量分区域分析</h3>
                   <div>
                     <h5 style="padding-top:0px;">(更新时间:&nbsp 2015年12月11日6时)</h5>
                   </div>
                   <div>
-                    <button class="btn btn-warning" ng-click="waterlist()">
-                      &nbsp超标水质监测点
-                      <span class="badge"></span>
+                    <button class="btn btn-warning" ng-click="waterlist()" style="font-size:110%">
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      显示超标监测点
                     </button>
-                    <button class="btn btn-primary" ng-click="alllist()">列出所有检测点</button>
+                    <button class="btn btn-primary" ng-click="alllist()" style="font-size:110%;margin-left:20px">  <span class="glyphicon glyphicon-paperclip"></span>
+                      显示所有检测点
+                    </button>
                   </div>
                   <br />
                   <div>
-                    <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()">
+                    <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()" style="font-size:110%">
                       <span class="glyphicon glyphicon-hand-right"></span>
-                      &nbsp污水排放分析
+                      附近污染源分析
                     </button>
                   </div>
                   <hr>
@@ -64,11 +66,6 @@
                       </tr>
                     </table>
                   </div>
-                  <!--<br/>
-                  <br/>
-                  <br/>
-                  <br/>
-                  -->
                   <div  style="font-size:16px" ng-show="mapTableStatus.airQuality">
                     <div >
                       <div id="source_analysis">
@@ -134,7 +131,6 @@
                   </div>
                 </div>
               </div>
-
               <div>
                 <button type="button" class="btn btn-block btn-success" ng-click="btn_waterEnvironmentAllList()" ng-show="tableStatus.allWaterQualityFailArrNav" >列出所有监测点</button>
               </div>
@@ -144,6 +140,7 @@
       </div>
     </div>
 
+    <!-- 水环境页面模块二 -->
     <div class="row" style="margin-top: -20px;">
       <div class="col-md-12" style="padding:15px 30px 15px 30px">
         <div class="panel panel-primary" style="margin-top: 20px;">
@@ -184,7 +181,8 @@
         </div>
       </div>
     </div>
-
+    
+    <!-- 水环境页面模块三 -->
     <div class="wrapper">
       <div class="details-content">
         <div class="panel panel-primary" style="margin-top: 10px;">
