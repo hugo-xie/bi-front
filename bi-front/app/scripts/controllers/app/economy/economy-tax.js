@@ -52,7 +52,7 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
           $scope.selectedRange4=0;
   };
   $scope.selectedRange=0;
-  $scope.date=[19.32,29.50,39.65,51.64,62.21,72.14,88.83,94.34,103.34,110.24,117.52,122.25,130.95];
+  $scope.date=[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
   $scope.date2=[193214, 230005, 336584, 416214, 523621, 625314, 688743, 743214, 813564, 892314, 965248];
 $scope.range = function() {
         return $scope.selectedRange;
@@ -195,7 +195,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     series: [{
             name: '真实值',
-            data: [18.92 ,27.59,37.26,50.18,58.80,70.00,85.41,90.15,100.13,106.47]
+            data: [18.92 ,27.59,36.26,48.18,58.80,62.00,68.41,75.15,82.12,90.97]
 
         }, {
             name: '预测值',
