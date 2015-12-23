@@ -247,7 +247,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '太仓市经济数据'
+            text: '第一产业本年度GDP分析'
         },
         subtitle: {
             text: '第一产业本年度GDP分析'
