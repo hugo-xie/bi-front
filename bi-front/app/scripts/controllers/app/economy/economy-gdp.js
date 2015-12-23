@@ -2,6 +2,7 @@
 'use strict';
 
 app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+
    $scope.deviation=false;
    $scope.forecast=false;
    $scope.industrydetail=false;
@@ -186,7 +187,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             text: '太仓市经济数据'
         },
         subtitle: {
-            text: '各产业按年份GDP分析'
+            text: '按年度分产业GDP分析'
         },
         xAxis: {
             categories: [
@@ -231,12 +232,12 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             data: [15.63,16.80,23.03,24.66,26.98,30.88,33.61,33.56,35.24, null, null, null]
 
         }, {
-          
+            color:'#8d4653',
             name: '第二产业',
             data: [223.05,265.51,310.19,355.35,418.96,485.72,520.36,532.46,556.65, null,null,null]
 
         },
-        {   
+        {   color:'#f7a35c',
             name: '第三产业',
             data: [127.95,157.96,194.80,232.00,284.38,350.93,401.15,436.26,473.44,null,null,null]
         }]
@@ -254,9 +255,9 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         xAxis: {
             categories: [
                 '第一季度',
-                '第二季度',
+                '',
                 '第三季度',
-                '第四季度'
+                ''
                 
             ]
         },
@@ -292,6 +293,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             }
         },
         series: [{
+
             type: 'column',
             name: '真实数据',
             data: [ 4.48, 13.32, 23.57, null ]
@@ -323,9 +325,9 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         xAxis: {
             categories: [
                 '第一季度',
-                '第二季度',
+                '',
                 '第三季度',
-                '第四季度'
+                ''
                 
             ]
         },
@@ -361,17 +363,20 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             }
         },
         series: [{
+            color:'#8d4653',
             type: 'column',
             name: '真实数据',
             data: [ 120.46, 293.99, 444.01, null ]
 
-        }, {
+        }, { 
+            color:'#434348',
             type: 'column',
             name: '预测数据',
             data: [117.68, 303.45, 468.21,586.45]
 
         },
         {   
+            color:'#90ed7d',
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
@@ -392,9 +397,9 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
         xAxis: {
             categories: [
                 '第一季度',
-                '第二季度',
+                '',
                 '第三季度',
-                '第四季度'
+                ''
                 
             ]
         },
@@ -430,17 +435,20 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             }
         },
         series: [{
+            color:'#f7a35c',
             type: 'column',
             name: '真实数据',
             data: [ 100.57, 248.41, 382.08, null ]
 
         }, {
+            color:'#434348',
             type: 'column',
             name: '预测数据',
             data: [107.87, 269.68, 404.18,507.54 ]
 
         },
         {   
+            color:'#90ed7d',
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
