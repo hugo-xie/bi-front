@@ -56,6 +56,7 @@ var infowindow2 = new AMap.InfoWindow({
      offset: new AMap.Pixel(0, -30),
      size:new AMap.Size(300,0)
 })
+// 显示信息窗体2
 infowindow2.open(map, marker2.getPosition());
 var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
     infowindow2.open(map, marker2.getPosition())

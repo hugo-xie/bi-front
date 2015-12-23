@@ -158,6 +158,7 @@ app.controller('WaterCtrl', ['$scope', '$timeout' ,function($scope, $timeout) {
      offset: new AMap.Pixel(0, -30),
      size:new AMap.Size(250,0)
      })
+    // infowindow2.open(map, marker2.getPosition());
     var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
     infowindow2.open(map, marker2.getPosition())
     })
