@@ -16,25 +16,26 @@
         <highchart config="keqiangindex"></highchart>
       </div>
       <div class="col-md-4" >
-        <div style="margin-top:10px;margin-left:10px;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-          <strong>本月克强指数为:97.19
-          </strong>
+         <div class="table-responsive" style="width:90%">
+            <table class="table" style="text-align:center">
+              <tr>
+                <th style="background-color:#16aad8;color:#ffffff;text-align:center">本月克强指数</th>
+                <th style="background-color:#16aad8;color:#ffffff;text-align:center">下月可强指数预测值</th>
+              </tr>
+              <tr>
+                <td >97.19</td>
+                <td >121.41</td>
+              </tr>
+            </table>
+          </div>
+      <button class="btn btn-info" style="margin-top:40px">指标含义</button>
+       <div style="margin-top:10px;width:98%;;font-size:17px">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="width:100%;background-color:#f0ebe5">
+          "克强指数"的由来，源于李克强总理2007年任职辽宁省省委书记时，喜欢通过耗电量,铁路货运量和贷款发放量三个指标分析当时辽宁省经济状况,英国《经济学人》自2010年底正式推出这一
+          指数后,受到花旗银行在内的众多国际机构认可
         </span>
       </div>
-     <div style="margin-top:10px;margin-left:10%;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-send" aria-hidden="true">
-         <strong> 本月克强指数为:127.3</strong>
-        </span>
-      </div>
-      <button class="btn btn-primary" style="margin-top:40px">指标含义</button>
-       <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:17px">
-        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="width:100%">
-          <strong>"克强指数"的由来，源于李克强总理2007年任职辽宁省省委书记时，喜欢通过耗电量,铁路货运量和贷款发放量三个指标分析当时辽宁省经济状况,英国《经济学人》自2010年底正式推出这一
-          指数后,受到花旗银行在内的众多国际机构认可</strong>
-        </span>
-      </div>
-      <button class="btn btn-primary" style="margin-top:15px">一句话解读</button>
+      <button class="btn btn-info" style="margin-top:15px">一句话解读</button>
        <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:17px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
           <strong>本月克强指数较上个月有所提高，实体经济增速
@@ -54,19 +55,20 @@
       <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
         <highchart config="keqiangChart"></highchart>
       </div>
-      <div class="col-md-4" >
-        <div style="margin-top:10px;margin-left:10px;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-          <strong>年末GDP模拟:1107.4亿元
-          </strong>
-        </span>
-      </div>
-      <div style="margin-top:10px;margin-left:10%;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-send" aria-hidden="true">
-         <strong>年末税收值模拟91.4亿元</strong>
-        </span>
-      </div>
-      <button class="btn btn-primary" style="margin-top:20%">手动调节</button>
+      <div class="col-md-4" style="padding:10px 15px 0px 15px">
+        <div class="table-responsive" style="width:90%">
+            <table class="table" style="text-align:center">
+              <tr>
+                <th style="background-color:#16aad8;color:#ffffff;text-align:center">本年克强指数拟合GDP总量</th>
+                <th style="background-color:#16aad8;color:#ffffff;text-align:center">本年克强指数拟合GDP增长率</th>
+              </tr>
+              <tr>
+                <td >1117.52亿元</td>
+                <td >7.2%</td>
+              </tr>
+            </table>
+          </div>
+      <button class="btn btn-info" >预测参数调节</button>
                 <div class="handler">
                 <div class="row">
                   <div class="col-md-4" style="margin-top:4%">
@@ -128,7 +130,7 @@
                   <input type="text" ng-model="selectedRange3" style="width:100%" pattern="((-)?[0-9]{1,2}|100|-100)">
                 </div>
                 </div>
-                <button class="btn btn-primary" ng-click="reset()">重置调节</button>
+                <button class="btn btn-info" ng-click="reset()">重置调节</button>
               </div>
             
       </div>

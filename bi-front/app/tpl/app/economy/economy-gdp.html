@@ -16,46 +16,44 @@
     <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
       <highchart   id="chart1" config="yearGDPChart"  style="margin-left:15px"></highchart>
     </div>
-    <div class="col-md-4" >
-    <div class="row">
-      <div style="margin-top:10px;margin-left:10px;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-          <strong>当年预测值:1152.67亿元
-          </strong>
-        </span>
+    <div class="col-md-4" style="padding:5px 15px 15px 15px">
+      <div class="table-responsive" style="width:90%">
+      <table class="table" style="text-align:center">
+        <tr>
+          <th style="background-color:#16aad8;color:#ffffff;text-align:center">下年预测值</th>
+          <th style="background-color:#16aad8;color:#ffffff;text-align:center">预测误差范围</th>
+        </tr>
+        <tr>
+          <td >1218.98亿元</td>
+          <td >3.0%</td>
+        </tr>
+      </table>
       </div>
-      <div style="margin-top:10px;border:1px solid lightgrey;font-size:14px;width:40%;margin-left:10%;" class="col-md-6">
-        <span class="glyphicon glyphicon-send" aria-hidden="true" style="width:100%">
-         <strong> 预测误差范围:3.0%</strong>
-        </span>
-     </div>
-     </div>
-      <button class="btn btn-primary" style="margin-top:30px">一句话解读</button>
+      <button class="btn btn-primary">一句话解读</button>
       <!--改成了div-->
-      <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:18px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-          <strong>本年GDP增速较往年有所放缓</strong>
+          <strong>本年GDP增速较往年的GDP增速有所放缓</strong>
         </span>
-      </div>
+     
 
       <div class="btn-group-vertical" role="group" aria-label="Left Align ">
       <div class="btn-group" style="margin-top:20%">
-         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            切换图表视图 <span class="caret"></span>
          </button>
           <ul class="dropdown-menu">
              <li><a ng-click="exchange('spline')">曲线图</a></li>
-             <li><a ng-click="exchange('column')">柱状图</a></li>
+             <li><a ng-click="exchange('column')">直方图</a></li>
              <li><a ng-click="exchange('line')">折线图</a></li>
              <li><a ng-click="exchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-primary" style="margin-top:20%" ng-click="checkdeviation()">查看预测误差记录</button>
-      <button class="btn btn-primary" style="margin-top:20%" ng-click="checkforecast()">查看预测详情</button>
+      <button class="btn btn-warning" style="margin-top:20%" ng-click="checkdeviation()">查看预测误差记录</button>
+      <button class="btn btn-info" style="margin-top:20%" ng-click="checkforecast()">查看预测详情</button>
       </div>
     </div>
      <div class="col-md-12" style="margin-top:10px" ng-if="deviation">
-    <table class="table table-bordered" >
+    <table class="table table-bordered table-responsive" >
         <tr>
           <th class="active">年份</th>
           <th class="active">2006</th>
@@ -68,9 +66,11 @@
           <th class="active">2013</th>
           <th class="active">2014</th>
           <th class="active">2015</th>
+          <th class="active">2016</th>
+          <th class="active">2017</th>
         </tr>
         <tr>
-          <td class="info">预测误差</td>
+          <td class="info">GDP预测误差</td>
           <td class="info">3.3%</td>
           <td class="info">3.4%</td>
           <td class="info">3.1%</td>
@@ -81,12 +81,14 @@
           <td class="info">3.1%</td>
           <td class="info">3.2%</td>
           <td class="info">--</td>
+          <td class="info">--</td>
+          <td class="info">--</td>
         </tr>
 
       </table>
       
     </div>
-    <div class="col-md-12" style="margin-top:10px"  ng-if="forecast">
+    <div class="col-md-12 table-responsive" style="margin-top:10px;"  ng-if="forecast">
     <table class="table table-bordered" >
         <tr>
           <th class="active">年份</th>
@@ -100,11 +102,11 @@
           <th class="active">2013</th>
           <th class="active">2014</th>
           <th class="active">2015</th>
-
+          <th class="active">2016</th>
+          <th class="active">2017</th>
         </tr>
         <tr>
-          <td class="info">真实值(亿)</td>
-          <td class="info">366.6</td>
+          <td class="info">GDP真实值(亿元)</td>
           <td class="info">440.2</td>
           <td class="info">528.0</td>
           <td class="info">612.1</td>
@@ -113,10 +115,13 @@
           <td class="info">955.1</td>
           <td class="info">1002.2</td>
           <td class="info">1065.3</td>
+          <td class="info">1065.3</td>
+          <td class="info">--</td>
+          <td class="info">--</td>
           <td class="info">--</td>
         </tr>
          <tr>
-          <td class="info">预测值(亿)</td>
+          <td class="info">GDP预测值(亿元)</td>
           <td class="info">328.2</td>
           <td class="info">453.1</td>
           <td class="info">547.8</td>
@@ -127,6 +132,8 @@
           <td class="info">1025.6</td>
           <td class="info">1098.3</td>
           <td class="info">1152.6</td>
+          <td class="info">1218.9</td>
+          <td class="info">1298.0</td>
         </tr>
       </table>
       
@@ -144,41 +151,40 @@
     <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
       <highchart   id="chart1" config="monthGDPChart" style="margin-left:15px"></highchart>
     </div>
-    <div class="col-md-4">
-    <div class="row">
-       <div style="margin-top:10px;margin-left:10px;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-          <strong>下季度预测值:1152.67亿元
-          </strong>
-        </span>
+    <div class="col-md-4" style="padding:10px 15px 15px 15px">
+     <div class="table-responsive" style="width:90%">
+      <table class="table" style="text-align:center">
+        <tr>
+          <th style="background-color:#16aad8;color:#ffffff;text-align:center">下季度预测值</th>
+          <th style="background-color:#16aad8;color:#ffffff;text-align:center">预测误差范围</th>
+        </tr>
+        <tr>
+          <td>1152.68亿元</td>
+          <td>2.5%</td>
+        </tr>
+      </table>
       </div>
-       <div style="margin-top:10px;margin-left:10%;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-send" aria-hidden="true">
-         <strong> 预测误差范围为:2.5%</strong>
-        </span>
-      </div>
-    </div>
-      <button class="btn btn-primary" style="margin-top:40px">一句话解读</button>
+      <button class="btn btn-primary" >一句话解读</button>
       <!--button不可以自动换行-->
-      <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:18px">
+      <div style="margin-top:10px;width:90%;border:1px solid lightgrey;font-size:18px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
           <strong>第四季度经济增速保持稳定</strong>
         </span>
       </div>
       <div class="btn-group-vertical" role="group" aria-label="Left Align ">
      <div class="btn-group" style="margin-top:40px">
-         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            切换图表视图 <span class="caret"></span>
          </button>
           <ul class="dropdown-menu">
              <li><a ng-click="monthexchange('spline')">曲线图</a></li>
-             <li><a ng-click="monthexchange('column')">柱状图</a></li>
+             <li><a ng-click="monthexchange('column')">直方图</a></li>
              <li><a ng-click="monthexchange('line')">折线图</a></li>
              <li><a ng-click="monthexchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-primary" style="margin-top:30px" ng-click="monthcheckdeviation()">查看预测误差记录</button>
-      <button class="btn btn-primary" style="margin-top:30px" ng-click="monthcheckforecast()">查看预测详情</button>
+      <button class="btn btn-warning" style="margin-top:30px" ng-click="monthcheckdeviation()">查看预测误差记录</button>
+      <button class="btn btn-info" style="margin-top:30px" ng-click="monthcheckforecast()">查看预测详情</button>
       </div>
     </div>
     <div class="col-md-12" style="margin-top:10px" ng-if="monthforecast">
@@ -240,27 +246,28 @@
     <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
       <highchart   id="chart1" config="industryyearGDPChart" style="margin-left:15px"></highchart>
     </div>
-    <div class="col-md-4">
-      <div style="margin-top:10px;margin-left:10px;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-tasks" aria-hidden="true">
-          <strong>全行业预测值:1152.67亿
-          </strong>
-        </span>
-      </div>
-      <div style="margin-top:10px;margin-left:10%;border:1px solid lightgrey;font-size:14px;width:40%" class="col-md-6">
-        <span class="glyphicon glyphicon-send" aria-hidden="true">
-         <strong> 预测控制范围为:2.7%</strong>
-        </span>
+    <div class="col-md-4" style="padding:10px 15px 15px 15px">
+      <div class="table-responsive" style="width:90%">
+      <table class="table" style="text-align:center">
+        <tr>
+          <th style="background-color:#16aad8;color:#ffffff;text-align:center">全行业预测值</th>
+          <th style="background-color:#16aad8;color:#ffffff;text-align:center">预测误差范围</th>
+        </tr>
+        <tr>
+          <td>1152.67亿元</td>
+          <td>2.7%</td>
+        </tr>
+      </table>
       </div>
       <button class="btn btn-primary" style="margin-top:10%">一句话解读</button>
-      <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:18px">
-        <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-          <strong>全行业经济增速较往年有所放缓</strong>
+     
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="margin-top:10px">
+          <strong>全行业经济增速较往年增速有所放缓</strong>
         </span>
-      </div>
+ 
       <div class="btn-group-vertical" role="group" aria-label="Left Align " style="margin-top:40px">
       <div class="btn-group">
-         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            切换图表视图 <span class="caret"></span>
          </button>
           <ul class="dropdown-menu">
@@ -270,7 +277,7 @@
              <li><a ng-click="industryexchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-primary" style="margin-top:40px" ng-click="industrycheckdetail()">查看本年度各产业详细分析</button>
+      <button class="btn btn-info" style="margin-top:40px" ng-click="industrycheckdetail()">查看本年度各产业详细分析</button>
      
     </div>
     <div class="col-md-12" style="margin-top:8px" ng-if="industryforecast">
