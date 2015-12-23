@@ -32,9 +32,9 @@
                       显示所有检测点
                     </button>
                   </div>
-                  <br />
+                  <br>
                   <div>
-                    <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()" style="font-size:110%">
+                    <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="isShow=!isShow" style="font-size:110%"><!--ng-click="airQualityBtn()"-->
                       <span class="glyphicon glyphicon-hand-right"></span>
                       附近污染源分析
                     </button>
@@ -66,7 +66,7 @@
                       </tr>
                     </table>
                   </div>
-                  <div  style="font-size:16px" ng-show="mapTableStatus.airQuality">
+                  <div  style="font-size:16px" ng-show="isShow"><!--ng-show="mapTableStatus.airQuality"-->
                     <div >
                       <div id="source_analysis">
                         <h4>附近污染源</h4>
@@ -195,7 +195,7 @@
                 <div class="col-md-8 chart-panel">
                   <div class="row">
                     <!-- 四个仪表图 -->
-                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <div style="border:0px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <div style="witdth:220px; float:left; margin-left:10px">
                         <highchart config="chart11"></highchart>
                       </div>
@@ -210,7 +210,7 @@
                       </div>
                     </div>
                     <!-- 直方图 -->
-                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <div style="border:0px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <highchart config="lala"></highchart>
                     </div>
                   </div>
@@ -298,7 +298,7 @@
               <div ng-show="tableStatus.allWater2">
                 <div class="col-md-8 chart-panel">
                   <div class="row">
-                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <div style="border:0px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <div style="witdth:220px; float:left; margin-left:10px">
                         <highchart config="chart21"></highchart>
                       </div>
@@ -312,7 +312,7 @@
                         <highchart config="chart24"></highchart>
                       </div>
                     </div>
-                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <div style="border:0px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <highchart config="bb"></highchart>
                     </div>
                   </div>
@@ -383,7 +383,7 @@
               <div ng-show="tableStatus.allWater3">
                 <div class="col-md-8 chart-panel">
                   <div class="row">
-                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <div style="border:0px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <div style="witdth:220px; float:left; margin-left:10px">
                         <highchart config="chart31"></highchart>
                       </div>
@@ -397,7 +397,7 @@
                         <highchart config="chart34"></highchart>
                       </div>
                     </div>
-                    <div style="border:1px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
+                    <div style="border:0px solid #3275C1; margin:20px 5px 5px 50px; width:750px; float:left">
                       <highchart config="cc"></highchart>
                     </div>
                   </div>
