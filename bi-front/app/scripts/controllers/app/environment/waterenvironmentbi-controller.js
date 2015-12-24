@@ -572,6 +572,8 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         addMarkerOneAnalysis(waterQualityMarkerArrOne, '/images/environment/marker_sprite.png', 'waterQuality');
         mapObj.setFitView();
         mapObj.zoomOut();
+        mapObj.zoomOut();
+        mapObj.zoomOut();
     };
     $scope.btn_waterEnvironmentAllList = function() {
         $scope.tableStatus = {

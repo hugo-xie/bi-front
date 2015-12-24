@@ -200,434 +200,442 @@
         </div>
     </div>
     <!--第二图结束-->
-<div class="col-md-12 " >
-<div class="panel panel-primary" style="margin-top: 20px;">
-<div class="panel-heading">
-空气质量预测分析
-<span class="glyphicon  pull-right"></span>
-</div>
+    <!--第三个框内容-->
+    <div class="col-md-12 " >
+        <div class="panel panel-primary" style="margin-top: 20px;">
+            <div class="panel-heading">
+            空气质量预测分析
+            <span class="glyphicon  pull-right"></span>
+            </div>   
+            <div class="panel-body">
+             <!--第三个框左侧地图-->
+                <div class="col-md-8">
+                    <div class="panel panel-default" style="height: 650px; ">
+                        <div class="panel-body">
+                           <div id="map_canvas"></div>
+                        </div>
+                    </div>
+                </div>
+            <!--第三个框右侧内容-->
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 650px">
+                            <h4>空气质量预测</h4>
 
-<div class="panel-body">
-<div class="col-md-7">
-<div class="panel panel-default" style="height: 650px; ">
-<div class="panel-body">
-<div id="map_canvas"></div>
-</div>
-</div>
-</div>
+                            <div style="margin-top:5px;font-size:16px">
+                                <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()">
+                                    <span class="glyphicon glyphicon-hand-right"></span>
+                                    &nbsp城区空气质量预测
+                                </button>
+                                存在1个监测点空气质量有轻微问题
+                            </div>
+                            <hr/>
 
-<div class="col-md-5">
-<div class="panel panel-default">
-<div class="panel-body" style="height: 650px">
-<h4>空气质量预测</h4>
+                            <h4>天气预测</h4>
 
-<div style="margin-top:5px;font-size:16px">
-    <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()">
-        <span class="glyphicon glyphicon-hand-right"></span>
-        &nbsp城区空气质量预测
-    </button>
-    存在1个监测点空气质量有轻微问题
-</div>
-<hr/>
+                            <div style="margin-top:5px;font-size:16px">
+                                <button class="btn btn-primary" ng-class="getButtonStatus(airConditionStatus.status)" ng-click="airConditionBtn()">
+                                    <span class="glyphicon glyphicon-hand-right"></span>
+                                    &nbsp城区气象状况预测
+                                </button>
+                                太仓市未来一天天气状况
+                            </div>
+                            <hr/>
 
-<h4>天气预测</h4>
+                            <h4>废气污染分析</h4>
 
-<div style="margin-top:5px;font-size:16px">
-    <button class="btn btn-primary" ng-class="getButtonStatus(airConditionStatus.status)" ng-click="airConditionBtn()">
-        <span class="glyphicon glyphicon-hand-right"></span>
-        &nbsp城区气象状况预测
-    </button>
-    太仓市未来一天天气状况
-</div>
-<hr/>
+                            <div style="margin-top:5px;font-size:16px">
+                                <button class="btn btn-primary" ng-class="getButtonStatus(wasteAirStatus.status)" ng-click="wasteAirBtn()">
+                                    <span class="glyphicon glyphicon-hand-right"></span>
+                                    &nbsp工业废气排放分析
+                                </button>
+                                监测点废气排放均正常
+                            </div>
+                            <hr>
+                            <div ng-show="mapTableStatus.airQuality">
+                                <h5 align="right" style="padding-top: 0px">
+                                    (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
+                                                                        + airQualityCurrentDateTime.month + '-'
+                                                                        + airQualityCurrentDateTime.day + ' '
+                                                                        + airQualityCurrentDateTime.hour + '时'}}&nbsp&nbsp单位：μg/m³)
+                                </h5>
+                                <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                                    <tr>
+                                        <th style="width:30%">监测点</th>
+                                        <th style="width:14%">AQI</th>
+                                        <th style="width:14%">主要污染物</th>
+                                        <th style="width:14%">PM2.5</th>
+                                        <th style="width:14%">SO2</th>
+                                    </tr>
+                                </table>
 
-<h4>废气污染分析</h4>
+                            </div>
+                            <div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airQuality">
+                                <table class="table table-hover table-responsive" style="font-size:14px">
+                                    <tr >
+                                        <td style="width:30%">太仓市监测站</td>
+                                        <td style="width:14%">
+                                            <span>118</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>pm2.5</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>64</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>54</span>
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td style="width:30%">科教新城监测站</td>
+                                        <td style="width:14%">
+                                            <span>145</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>pm2.5</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>83</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>54</span>
+                                        </td>
+                                    </tr>
+                                </table>
 
-<div style="margin-top:5px;font-size:16px">
-    <button class="btn btn-primary" ng-class="getButtonStatus(wasteAirStatus.status)" ng-click="wasteAirBtn()">
-        <span class="glyphicon glyphicon-hand-right"></span>
-        &nbsp工业废气排放分析
-    </button>
-    监测点废气排放均正常
-</div>
-<hr>
-<div ng-show="mapTableStatus.airQuality">
-    <h5 align="right" style="padding-top: 0px">
-        (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
-                                            + airQualityCurrentDateTime.month + '-'
-                                            + airQualityCurrentDateTime.day + ' '
-                                            + airQualityCurrentDateTime.hour + '时'}}&nbsp&nbsp单位：μg/m³)
-    </h5>
-    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-        <tr>
-            <th style="width:30%">监测点</th>
-            <th style="width:14%">AQI</th>
-            <th style="width:14%">主要污染物</th>
-            <th style="width:14%">PM2.5</th>
-            <th style="width:14%">SO2</th>
-        </tr>
-    </table>
-
-</div>
-<div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airQuality">
-    <table class="table table-hover table-responsive" style="font-size:14px">
-        <tr >
-            <td style="width:30%">太仓市监测站</td>
-            <td style="width:14%">
-                <span>118</span>
-            </td>
-            <td style="width:14%">
-                <span>pm2.5</span>
-            </td>
-            <td style="width:14%">
-                <span>64</span>
-            </td>
-            <td style="width:14%">
-                <span>54</span>
-            </td>
-        </tr>
-        <tr >
-            <td style="width:30%">科教新城监测站</td>
-            <td style="width:14%">
-                <span>145</span>
-            </td>
-            <td style="width:14%">
-                <span>pm2.5</span>
-            </td>
-            <td style="width:14%">
-                <span>83</span>
-            </td>
-            <td style="width:14%">
-                <span>54</span>
-            </td>
-        </tr>
-    </table>
-
-</div>
+                            </div>
 
 
-<div ng-show="mapTableStatus.airCondition">
-    <h5 align="right" style="padding-top: 0px">
-        (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
-                                            + airQualityCurrentDateTime.month + '-'
-                                            + airQualityCurrentDateTime.day + ' '
-                                            + airQualityCurrentDateTime.hour + '时'}})
-    </h5>
-    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-        <tr>
-            <th style="width:30%">气象局</th>
-            <th style="width:14%">最高气温(℃)</th>
-            <th style="width:14%">最低气温(℃)</th>
-            <th style="width:14%">相对湿度(%)</th>
-            <th style="width:14%">风级</th>
-            <th style="width:14%">风向</th>
-        </tr>
-    </table>
+                            <div ng-show="mapTableStatus.airCondition">
+                                <h5 align="right" style="padding-top: 0px">
+                                    (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
+                                                                        + airQualityCurrentDateTime.month + '-'
+                                                                        + airQualityCurrentDateTime.day + ' '
+                                                                        + airQualityCurrentDateTime.hour + '时'}})
+                                </h5>
+                                <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                                    <tr>
+                                        <th style="width:30%">气象局</th>
+                                        <th style="width:14%">最高气温(℃)</th>
+                                        <th style="width:14%">最低气温(℃)</th>
+                                        <th style="width:14%">相对湿度(%)</th>
+                                        <th style="width:14%">风级</th>
+                                        <th style="width:14%">风向</th>
+                                    </tr>
+                                </table>
 
-</div>
-<div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airCondition">
-    <table class="table table-hover table-responsive" style="font-size:14px">
-        <tr >
-            <td style="width:30%">太仓市气象局</td>
-            <td style="width:14%">
-                <span>7</span>
-            </td>
-            <td style="width:14%">
-                <span>2</span>
-            </td>
-            <td style="width:14%">
-                <span>50</span>
-            </td>
-            <td style="width:14%">
-                <span>2</span>
-            </td>
-             <td style="width:14%">
-                <span>东南风</span>
-            </td>
-        </tr>
-    </table>
+                            </div>
+                            <div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airCondition">
+                                <table class="table table-hover table-responsive" style="font-size:14px">
+                                    <tr >
+                                        <td style="width:30%">太仓市气象局</td>
+                                        <td style="width:14%">
+                                            <span>7</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>2</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>50</span>
+                                        </td>
+                                        <td style="width:14%">
+                                            <span>2</span>
+                                        </td>
+                                         <td style="width:14%">
+                                            <span>东南风</span>
+                                        </td>
+                                    </tr>
+                                </table>
 
-</div>
+                            </div>
 
-<!--<div ng-show="mapTableStatus.airCondition">
-    <h5 align="right" style="padding-top: 0px">
-        (更新时间:&nbsp{{airConditionCurrentDateTime.year + '-'
-                                        + airConditionCurrentDateTime.month + '-'
-                                        + airConditionCurrentDateTime.day + ' '
-                                        + airConditionCurrentDateTime.hour + '时'}})
-    </h5>
-    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-        <tr>
-            <th style="width:20%">监测点</th>
-            <th style="width:20%">气温(℃)</th>
-            <th style="width:30%">相对湿度(%)</th>
-            <th style="width:15%">风级</th>
-            <th style="width:15%">风向</th>
-        </tr>
-    </table>
-</div>
-<div style="overflow: scroll;overflow-x:hidden;height:340px" ng-show="mapTableStatus.airCondition">
-    <table class="table table-hover table-responsive" style="font-size:14px">
-        <tr ng-repeat="airConditionOne in airConditionMarkerList">
-            <td style="width:20%">{{airConditionOne.monitor}}</td>
-            <td style="width:20%">
-                <span>{{airConditionOne.index_temperature}}</span>
-            </td>
-            <td style="width:30%">
-                <span>{{airConditionOne.index_humidity}}</span>
-            </td>
-            <td style="width:15%">
-                <span>{{airConditionOne.index_windLevel}}</span>
-            </td>
-            <td style="width:15%">
-                <span>{{airConditionOne.index_windDire}}</span>
-            </td>
-        </tr>
-    </table>
-</div>-->
+                            <div ng-show="mapTableStatus.wasteAir">
+                                <h5 align="right" style="padding-top: 0px">
+                                    (更新时间:&nbsp{{wasteAirCurrentDateTime.year + '-'
+                                                                    + wasteAirCurrentDateTime.month + '-'
+                                                                    + wasteAirCurrentDateTime.day }})
+                                </h5>
+                                <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                                    <tr>
+                                        <th style="width:20%">企业</th>
+                                        <th style="width:20%">流量(m³)</th>
+                                        <th style="width:20%">
+                                            烟尘
+                                            <br>(mg/m³)</th>
+                                        <th style="width:20%">
+                                            SO2
+                                            <br>(mg/m³)</th>
+                                        <th style="width:20%">
+                                            氮氧化物
+                                            <br>(mg/m³)</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="overflow: auto; overflow-x:hidden;height: 320px" ng-show="mapTableStatus.wasteAir">
+                                <table class="table table-hover table-responsive" style="font-size:14px">
+                                    <tr >
+                                        <td style="width:20%">华能国际电力</td>
+                                        <td style="width:20%">
+                                            <span>0.67亿</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>9.21</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>61.08</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>82.91</span>
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td style="width:20%">玖龙纸业</td>
+                                        <td style="width:20%">
+                                            <span>0.12亿</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>16.95</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>23.27</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>86.85</span>
+                                        </td>
+                                    </tr>
 
-<div ng-show="mapTableStatus.wasteAir">
-    <h5 align="right" style="padding-top: 0px">
-        (更新时间:&nbsp{{wasteAirCurrentDateTime.year + '-'
-                                        + wasteAirCurrentDateTime.month + '-'
-                                        + wasteAirCurrentDateTime.day }})
-    </h5>
-    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-        <tr>
-            <th style="width:20%">企业</th>
-            <th style="width:20%">流量(m³)</th>
-            <th style="width:20%">
-                烟尘
-                <br>(mg/m³)</th>
-            <th style="width:20%">
-                SO2
-                <br>(mg/m³)</th>
-            <th style="width:20%">
-                氮氧化物
-                <br>(mg/m³)</th>
-        </tr>
-    </table>
-</div>
-<div style="overflow: auto; overflow-x:hidden;height: 320px" ng-show="mapTableStatus.wasteAir">
-    <table class="table table-hover table-responsive" style="font-size:14px">
-        <tr >
-            <td style="width:20%">华能国际电力</td>
-            <td style="width:20%">
-                <span>0.67亿</span>
-            </td>
-            <td style="width:20%">
-                <span>9.21</span>
-            </td>
-            <td style="width:20%">
-                <span>61.08</span>
-            </td>
-            <td style="width:20%">
-                <span>82.91</span>
-            </td>
-        </tr>
-        <tr >
-            <td style="width:20%">玖龙纸业</td>
-            <td style="width:20%">
-                <span>0.12亿</span>
-            </td>
-            <td style="width:20%">
-                <span>16.95</span>
-            </td>
-            <td style="width:20%">
-                <span>23.27</span>
-            </td>
-            <td style="width:20%">
-                <span>86.85</span>
-            </td>
-        </tr>
+                                    <tr >
+                                        <td style="width:20%">太仓港协鑫发电</td>
+                                        <td style="width:20%">
+                                            <span>0.36亿</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>5.91</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>34.53</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>86.85</span>
+                                        </td>
+                                    </tr>
 
-        <tr >
-            <td style="width:20%">太仓港协鑫发电</td>
-            <td style="width:20%">
-                <span>0.36亿</span>
-            </td>
-            <td style="width:20%">
-                <span>5.91</span>
-            </td>
-            <td style="width:20%">
-                <span>34.53</span>
-            </td>
-            <td style="width:20%">
-                <span>86.85</span>
-            </td>
-        </tr>
+                                    <tr >
+                                        <td style="width:20%">国华太仓发电</td>
+                                        <td style="width:20%">
+                                            <span>0.12亿</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>2.13</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>30.15</span>
+                                        </td>
+                                        <td style="width:20%">
+                                            <span>70.63</span>
+                                        </td>
+                                    </tr>
 
-        <tr >
-            <td style="width:20%">国华太仓发电</td>
-            <td style="width:20%">
-                <span>0.12亿</span>
-            </td>
-            <td style="width:20%">
-                <span>2.13</span>
-            </td>
-            <td style="width:20%">
-                <span>30.15</span>
-            </td>
-            <td style="width:20%">
-                <span>70.63</span>
-            </td>
-        </tr>
-
-    </table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-md-12 ">
-<div class="panel panel-primary" style="margin-top: 20px;">
-<div class="panel-heading">
-空气质量分析
-<span class="glyphicon  pull-right"></span>
-</div>
-<div class="panel-body">
-<div class="row">
-<div class="col-md-9 chart-panel">
-<nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">
-<a class="navbar-brand" href="#airQualityAnchorTop"  du-smooth-scroll>空气质量指标</a>
-<a href="" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>AQI</a>
-<a href="" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>PM2.5</a>
-<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
-<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化硫</a>
-<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化氮</a>
-<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
-<a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
-</nav>
-<div  style="overflow: auto; overflow-x:hidden;height:450px;width: 100%"  id="scroll-container" >
-<p id="airQualityAnchorTop"></p>
-<div  class="col-md-12">
-    <a name="airQualityAnchor1">
-        <div class="col-md-3">
-            <highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </a>
-    <div class="col-md-9" style="left:10px;">
-        <highchart style="width:70%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
     </div>
-</div>
-<div class="col-md-12">
-    <div class="col-md-3" name="airQualityAnchor2">
-        <highchart style="width:100%;height:250px" config="airQualityOptions.pm25Option"></highchart>
+
+    <!--第四个框内容-->
+    <div class="col-md-12 ">
+        <div class="panel panel-primary" style="margin-top: 20px;">
+            <div class="panel-heading">
+            空气质量分析
+            <span class="glyphicon  pull-right"></span>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                <!--第四个框第一部分highchart部分-->
+                    <div class="col-md-8 chart-panel">
+                        <nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">
+                        <a class="navbar-brand" href="#airQualityAnchorTop" du-smooth-scroll>空气质量指标</a>
+                        <a href="#airQualityAnchor1" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>AQI</a>
+                        <a href="#airQualityAnchor2" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM2.5</a>
+                        <a href="#airQualityAnchor3" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
+                        <a href="#airQualityAnchor4" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化硫</a>
+                        <a href="#airQualityAnchor5" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化氮</a>
+                        <a href="#airQualityAnchor6" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
+                        <a href="#airQualityAnchor7" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
+                        </nav>
+                            <div  style="overflow: auto; overflow-x:hidden;height:450px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
+                            <p id="airQualityAnchorTop"></p>
+                                <div  class="col-md-12">
+                                        <div class="col-md-3" id="airQualityAnchor1">
+                                            <highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>
+                                        </div>
+                                        <div class="col-md-9" style="left:10px;">
+                                            <highchart style="width:70%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
+                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-3" id="airQualityAnchor2">
+                                        <highchart style="width:100%;height:250px" config="airQualityOptions.pm25Option"></highchart>
+                                    </div>
+                                    <div class="col-md-9" style="left:10px">
+                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm25LineOption"></highchart>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-3" id="airQualityAnchor3">
+                                        <highchart style="width:100%;height:250px" config="airQualityOptions.pm10Option"></highchart>
+                                    </div>
+                                    <div class="col-md-9" style="left:10px">
+                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm10LineOption"></highchart>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-3" id="airQualityAnchor4">
+                                        <highchart style="width:100%;height:250px" config="airQualityOptions.so2Option">SO2</highchart>
+                                    </div>
+                                    <div class="col-md-9" style="left:10px">
+                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentSo2LineOption"></highchart>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-3" id="airQualityAnchor5">
+                                        <highchart style="width:100%;height:250px" config="airQualityOptions.no2Option"></highchart>
+                                    </div>
+                                    <div class="col-md-9" style="left:10px">
+                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentNo2LineOption"></highchart>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-3" id="airQualityAnchor6">
+                                        <highchart style="width:100%;height:250px" config="airQualityOptions.coOption"></highchart>
+                                    </div>
+                                    <div class="col-md-9" style="left:10px">
+                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentCoLineOption"></highchart>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-3" id="airQualityAnchor7">
+                                        <highchart style="width:100%;height:250px" config="airQualityOptions.o3Option"></highchart>
+                                    </div>
+                                    <div class="col-md-9" style="left:10px">
+                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentO3LineOption"></highchart>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                <!--第四个框右侧部分-->
+                    <div class="col-md-4">
+                <h4>空气质量监测点选择</h4>
+                        <div style="font-size:14px;">
+                             <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">太仓市监测点</label>
+                        </div>
+                        <div style="font-size:14px;">
+                           <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">科教新城实验小学监测点</label>
+                        </div>
+                    
+
+                        <div class="list-group">
+                        <a href="" class="list-group-item">
+                          <span class="badge badge-empty">201</span>
+                          <i class="fa fa-envelope fa-fw m-r-xs"></i> Inbox
+                        </a>
+                        <a href="" class="list-group-item">
+                          <span class="badge bg-info">5021</span>
+                          <i class="fa fa-eye fa-fw m-r-xs"></i> Profile visits
+                        </a>
+                        <a href="" class="list-group-item">
+                          <i class="fa fa-chevron-right text-muted"></i>
+                          <span class="badge bg-success">14</span>
+                          <i class="fa fa-phone fa-fw m-r-xs"></i> Call
+                        </a>
+                        <a href="" class="list-group-item">
+                          <span class="badge bg-dark">20</span>
+                          <i class="fa fa-comments-o fa-fw m-r-xs"></i> Messages
+                        </a>
+                        <a href="" class="list-group-item">
+                          <span class="badge bg-warning">14</span>
+                          <i class="fa fa-bookmark fa-fw m-r-xs"></i> Bookmarks
+                        </a>
+                        <a href="" class="list-group-item">
+                          <span class="badge bg-info">30</span>
+                          <i class="fa fa-bell fa-fw m-r-xs"></i> Notifications
+                        </a>
+                        <a href="" class="list-group-item">
+                          <span class="badge bg-danger">10</span>
+                          <i class="fa fa-clock-o fa-fw m-r-xs"></i> Watch
+                        </a>
+                      </div>
+
+                        <!--<h4>空气质量监测点选择</h4>
+                        <div style="font-size:14px;">
+                             <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">太仓市监测点</label>
+                        </div>
+                        <div style="font-size:14px;">
+                           <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">科教新城实验小学监测点</label>
+                        </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <p style="margin-left:20px;margin-top:105px;margin-bottom:15px">
+                            <img style="margin-left:20px" src="/images/common/one-sentence.png" />
+                            </p>
+                            <p >
+                            <h5>
+                            <h5>&nbsp&nbsp&nbsp&nbsp2015年12月20日9时</h5>
+                            </h5>
+                            <h5>{{airQualityOneSentence.monitor}}</h5>
+                            <h5>&nbsp&nbsp&nbsp&nbsp空气质量等级:&nbsp1 级</h5>
+                            <h5>&nbsp&nbsp&nbsp&nbsp首要污染物:&nbspPM2.5</h5>
+                            <h5>
+                            <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.aqiStatus.status)"></span>
+                            &nbsp&nbsp&nbsp&nbsp100≤AQI≤300,轻微问题
+                            </h5>
+                            <h5>
+                            <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.pm25Status.status)"></span>
+                            &nbsp&nbsp&nbsp&nbsp75≤PM2.5≤115,轻微问题
+                            </h5>
+                            <h5>
+                            <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.pm10Status.status)"></span>
+                            &nbsp&nbsp&nbsp&nbspPM10≤150,正常
+                            </h5>
+                            <h5>
+                            <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.so2Status.status)"></span>
+                            &nbsp&nbsp&nbsp&nbsp二氧化硫≤150,正常
+                            </h5>
+                            <h5>
+                            <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.no2Status.status)"></span>
+                            &nbsp&nbsp&nbsp&nbsp二氧化氮≤200,正常
+                            </h5>
+                            <h5>
+                            <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.coStatus.status)"></span>
+                            &nbsp&nbsp&nbsp&nbsp一氧化碳≤10,正常
+                            </h5>
+                            <h5>
+                            <span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.o3Status.status)"></span>
+                            &nbsp&nbsp&nbsp&nbsp臭氧≤160,正常
+                            </h5>
+                            </p>
+                            <p style="margin-top:20px">
+                            <h5>
+                            <span style="color:#DDDF0D">&nbsp&nbsp&nbsp&nbsp&nbsp黄色线----</span>
+                            代表轻微问题界线
+                            </h5>
+                            <h5>
+                            <span style="color:#DF5353">&nbsp&nbsp&nbsp&nbsp&nbsp红色线----</span>
+                            代表问题界线
+                            </h5>
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-9" style="left:10px">
-        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm25LineOption"></highchart>
-    </div>
-</div>
-<div class="col-md-12">
-    <div class="col-md-3" id="airQualityAnchor3">
-        <highchart style="width:100%;height:250px" config="airQualityOptions.pm10Option"></highchart>
-    </div>
-    <div class="col-md-9" style="left:10px">
-        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm10LineOption"></highchart>
-    </div>
-</div>
-<div class="col-md-12">
-    <div class="col-md-3" id="airQualityAnchor4">
-        <highchart style="width:100%;height:250px" config="airQualityOptions.so2Option">SO2</highchart>
-    </div>
-    <div class="col-md-9" style="left:10px">
-        <highchart style="width:70%;height:250px" config="airQualityOptions.currentSo2LineOption"></highchart>
-    </div>
-</div>
-<div class="col-md-12">
-    <div class="col-md-3" id="airQualityAnchor5">
-        <highchart style="width:100%;height:250px" config="airQualityOptions.no2Option"></highchart>
-    </div>
-    <div class="col-md-9" style="left:10px">
-        <highchart style="width:70%;height:250px" config="airQualityOptions.currentNo2LineOption"></highchart>
-    </div>
-</div>
-<div class="col-md-12">
-    <div class="col-md-3" id="airQualityAnchor6">
-        <highchart style="width:100%;height:250px" config="airQualityOptions.coOption"></highchart>
-    </div>
-    <div class="col-md-9" style="left:10px">
-        <highchart style="width:70%;height:250px" config="airQualityOptions.currentCoLineOption"></highchart>
-    </div>
-</div>
-<div class="col-md-12">
-    <div class="col-md-3" id="airQualityAnchor7">
-        <highchart style="width:100%;height:250px" config="airQualityOptions.o3Option"></highchart>
-    </div>
-    <div class="col-md-9" style="left:10px">
-        <highchart style="width:70%;height:250px" config="airQualityOptions.currentO3LineOption"></highchart>
-    </div>
-</div>
-</div>
-</div>
-<div class="col-md-3">
-<h4>空气质量监测点选择</h4>
-<div style="font-size:14px;">
-<input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">太仓市监测点</label>
-</div>
-<div style="font-size:14px;">
-<input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">科教新城实验小学监测点</label>
-</div>
-</div>
-<hr>
-<div >
-<p style="margin-left:20px;margin-top:105px;margin-bottom:15px">
-<img style="margin-left:20px" src="/images/common/one-sentence.png" />
-</p>
-<p >
-<h5>
-<h5>&nbsp&nbsp&nbsp&nbsp2015年12月20日9时</h5>
-</h5>
-<h5>{{airQualityOneSentence.monitor}}</h5>
-<h5>&nbsp&nbsp&nbsp&nbsp空气质量等级:&nbsp1 级</h5>
-<h5>&nbsp&nbsp&nbsp&nbsp首要污染物:&nbspPM2.5</h5>
-<h5>
-<span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.aqiStatus.status)"></span>
-&nbsp&nbsp&nbsp&nbsp100≤AQI≤300,轻微问题
-</h5>
-<h5>
-<span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.pm25Status.status)"></span>
-&nbsp&nbsp&nbsp&nbsp75≤PM2.5≤115,轻微问题
-</h5>
-<h5>
-<span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.pm10Status.status)"></span>
-&nbsp&nbsp&nbsp&nbspPM10≤150,正常
-</h5>
-<h5>
-<span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.so2Status.status)"></span>
-&nbsp&nbsp&nbsp&nbsp二氧化硫≤150,正常
-</h5>
-<h5>
-<span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.no2Status.status)"></span>
-&nbsp&nbsp&nbsp&nbsp二氧化氮≤200,正常
-</h5>
-<h5>
-<span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.coStatus.status)"></span>
-&nbsp&nbsp&nbsp&nbsp一氧化碳≤10,正常
-</h5>
-<h5>
-<span class="glyphicon" ng-class="getOneSentenceStatus(airQualityOneSentence.o3Status.status)"></span>
-&nbsp&nbsp&nbsp&nbsp臭氧≤160,正常
-</h5>
-</p>
-<p style="margin-top:20px">
-<h5>
-<span style="color:#DDDF0D">&nbsp&nbsp&nbsp&nbsp&nbsp黄色线----</span>
-代表轻微问题界线
-</h5>
-<h5>
-<span style="color:#DF5353">&nbsp&nbsp&nbsp&nbsp&nbsp红色线----</span>
-代表问题界线
-</h5>
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
