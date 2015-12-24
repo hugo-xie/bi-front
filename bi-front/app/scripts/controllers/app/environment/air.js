@@ -372,11 +372,11 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	var info1=[];
 	   info1.push("<h4><strong>太仓监测站</strong></h4>");
 	    info1.push("<table class='table table-bordered table-striped'>");
-	    info1.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>118</td></tr>");
+	    info1.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td>118</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td>pm2.5</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td>64</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>54</td></tr>");
-	    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td>轻度污染</td></tr>");
+	    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td><button type='button' class='btn btn-warning'>轻度污染</button></td></tr>");
 	    info1.push("</table>");
 	var infowindow1 = new AMap.InfoWindow({
 	     content: info1.join(''),
@@ -390,11 +390,11 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	var info2=[];
 	    info2.push("<h4><strong>科教新城监测站</strong></h4>");
 	    info2.push("<table class='table table-bordered table-striped'>");
-	    info2.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>145</td></tr>");
+	    info2.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td>145</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>主要污染物</td><td>pm2.5</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>PM2.5</td><td>83</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>54</td></tr>");
-	    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td>轻度污染</td></tr>");
+	    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td><button type='button' class='btn btn-warning'>轻度污染</button></td></tr>");
 	    info2.push("</table>");
 	var infowindow2 = new AMap.InfoWindow({
 
