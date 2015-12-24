@@ -1,0 +1,380 @@
+<link rel="stylesheet" href="/styles/environment/map.css" />
+<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+<style>
+	.sliderExample {
+			width:100%;
+		}
+	.ui-slider-range { background: #729fcf; }
+	.ui-slider-handle { border-color: #729fcf; }
+</style>
+<div class="details-content">
+	<div class="container">
+		<div class="row" style="margin-top: 30px;">
+			<div class="row" >
+				<div class="col-md-7">
+					<div class="panel panel-primary" style="height: 680px">
+						<div class="panel-body">
+							<!--百度地图容器-->
+							<div style="height: 650px; border: #ccc solid 1px;"
+								id="map_canvas_BI"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="panel panel-primary" style="height: 680px">
+			            <div class="panel-body">
+			                <h4>水质量分析</h4>
+							<div>
+								<!-- <h5>所有水质监测点中</h5>
+								<h5>{{wasteWaterOneSentence.index}}</h5>
+								<h5>
+									<span class="glyphicon glyphicon-ok"></span>
+									&nbsp达标：{{waterQualityMonitorStatusCount.accept}}个水质监测点
+								</h5>
+								<h5>
+									<span class="glyphicon glyphicon-remove"></span>
+									&nbsp超标：{{waterQualityMonitorStatusCount.fail}}个水质监测点
+								</h5>
+								<h5>
+									<span class="glyphicon glyphicon-exclamation-sign"></span>
+									&nbsp数据未更新：{{waterQualityMonitorStatusCount.invalid}}个水质监测点
+								</h5> -->
+								<!-- <h5 style="padding-top: 0px">(更新时间:&nbsp{{waterQualityCurrentDateTime.year + '-'
+										+ waterQualityCurrentDateTime.month + '-'
+										+ waterQualityCurrentDateTime.day + ' '
+										+ waterQualityCurrentDateTime.hour + '时'}})</h5> -->
+							</div>
+			                <!-- <div>
+			                    <button class="btn btn-warning" ng-click="btn_waterEnvironmentAnalysisAllList()">&nbsp点击列出超标水质监测点 <span class="badge">{{waterQualityMonitorStatusCount.fail}}</span></button>
+			                </div> -->
+			                <div style="margin-top:10px;font-size:16px">
+			                    <ul class="list-group" style="overflow: auto;overflow-x:hidden;width: 300px;height:120px">
+			                        <li class="list-group-item" style="width: 300px;height:40px;" ng-repeat="waterQualityOne in waterQualityMarkerList2">
+			                            <span class="badge glyphicon glyphicon-exclamation-sign"></span>
+			                            {{waterQualityOne.monitor}}&nbsp&nbsp&nbsp
+			                            <span class="glyphicon glyphicon-hand-right"></span>
+			                            <a style="cursor: pointer" ng-click="btn_waterEnvironmentAnalysisElementsList(waterQualityOne)">&nbsp分析</a>
+			                        </li>
+			                    </ul>
+			                </div>
+			                <hr>
+			                <div ng-show="tableStatus.allWaterQualityFailArr">
+								<table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+									<tr>
+										<th style="width:20%">监测点</th>
+										<th style="width:20%">溶解氧</th>
+										<th style="width:15%">KMnO4</th>
+										<th style="width:15%">氨氮</th>
+										<th style="width:15%">总磷</th>
+									</tr>
+								</table>
+							</div>
+							<div style="overflow: auto;overflow-x:hidden" ng-show="tableStatus.allWaterQualityFailArr">
+								<table class="table table-hover table-responsive" style="font-size:14px">
+									<tr ng-repeat="waterQualityOne in waterQualityMarkerList2">
+										<td style="width:20%">{{waterQualityOne.monitor}}</td>
+										<td style="width:20%"><span>{{waterQualityOne.index_o2.toFixed(2)}}</span></td>
+										<td style="width:15%"><span>{{waterQualityOne.index_kmno4.toFixed(2)}}</span></td>
+										<td style="width:15%"><span>{{waterQualityOne.index_nh4n.toFixed(2)}}</span></td>
+										<td style="width:15%"><span>{{waterQualityOne.index_p.toFixed(2)}}</span></td>
+									</tr>
+								</table>
+							</div>
+			                <div ng-show="tableStatus.allWaterQualityArr">
+								<table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+									<tr>
+										<th style="width:20%">监测点</th>
+										<th style="width:20%">溶解氧</th>
+										<th style="width:15%">KMnO4</th>
+										<th style="width:15%">氨氮</th>
+										<th style="width:15%">总磷</th>
+									</tr>
+								</table>
+							</div>
+							<div style="overflow: auto;overflow-x:hidden" ng-show="tableStatus.allWaterQualityArr">
+								<table class="table table-hover table-responsive" style="font-size:14px">
+									<tr ng-repeat="waterQualityOne in waterQualityMarkerList">
+										<td style="width:20%">{{waterQualityOne.monitor}}</td>
+										<td style="width:20%"><span>{{waterQualityOne.index_o2.toFixed(2)}}</span></td>
+										<td style="width:15%"><span>{{waterQualityOne.index_kmno4.toFixed(2)}}</span></td>
+										<td style="width:15%"><span>{{waterQualityOne.index_nh4n.toFixed(2)}}</span></td>
+										<td style="width:15%"><span>{{waterQualityOne.index_p.toFixed(2)}}</span></td>
+									</tr>
+								</table>
+							</div>
+			                <div ng-show="tableStatus.allWaterQualityElementsArr" style="font-size:16px">
+					            <div class="panel panel-primary">
+					                <div class="panel-body" id="source_analysis">
+					                    <h4>附近污染源</h4>
+					                    <hr>
+					                    <div>
+											<table class="table table-hover table-responsive"  style="font-size:14px;margin-bottom:0px">
+												<tr>
+													<th style="width:30%">企业</th>
+													<th style="width:25%">排放量<br/>(吨)</th>
+													<th style="width:15%">COD<br/>(mg/L)</th>
+													<th style="width:15%">氨氮<br/>(mg/L)</th>
+													<th style="width:15%">总磷<br/>(mg/L)</th>
+												</tr>
+											</table>
+										</div>
+										<div style="overflow: auto; overflow-x:hidden;height:180px">
+											<table class="table table-hover table-responsive"  style="font-size:14px">
+												<tr ng-repeat="wasteWaterOne in wasteWaterAnalysisMarker">
+													<td style="width:25%">{{wasteWaterOne.monitor}}</td>
+													<td style="width:25%"><span>{{wasteWaterOne.index_discharge[1].toFixed(2)}}</span></td>
+													<td style="width:17%"><span>{{wasteWaterOne.index_cod.toFixed(2)}}</span></td>
+													<td style="width:17%"><span>{{wasteWaterOne.index_nh4n.toFixed(2)}}</span></td>
+													<td style="width:16%"><span>{{wasteWaterOne.index_p.toFixed(2)}}</span></td>
+												</tr>
+											</table>
+										</div>
+					                    <div><button type="button" class="btn btn-primary" ng-click="btn_waterPredictionZone()">污染源减排预测</button></div>
+					                </div>
+					            </div>
+					        </div>
+					        <div><button type="button" class="btn btn-block btn-success" ng-click="btn_waterEnvironmentAllList()" ng-show="tableStatus.allWaterQualityFailArrNav" >列出所有监测点</button></div>
+			            </div>
+			        </div>
+				</div>
+			</div>
+			<div class="panel panel-primary" ng-show="tableStatus.predictionZone">
+			    <div class="panel panel-body">
+			        <div class="row">
+			            <div class="col-md-6" style="font-size:13px">
+			            	<h4>水质指标情况：</h4>
+			            	<div class="col-md-12" style="right: 20px;margin-top:20px">
+			                        <form class="form-horizontal" role="form">
+			                            <label for="select_predictionMonitor" class="col-md-2 control-label">监测点</label>
+
+			                            <div class="col-md-10">
+			                                <div class="form-control" style="width: 150px">
+			                                    {{waterQualityAnalysisMarker.monitor}}
+			                                </div>
+			                            </div>
+			                        </form>
+			                    </div>
+			            	<div class="col-md-12"  style="margin-top:10px">
+			            		<h5 align="right" style="padding-top: 0px">（单位:mg/L）</h5>
+			                    <table class="table">
+			                        <tr>
+			                            <td></td>
+			                            <td>溶解氧</td>
+			                            <td>高锰酸钾</td>
+			                            <td>氨氮</td>
+			                            <td>总磷</td>
+			                        </tr>
+			                        <tr>
+			                            <td>原值</td>
+			                            <td>{{waterQualityAnalysisMarker.index_o2}}</td>
+			                            <td>{{waterQualityAnalysisMarker.index_kmno4}}</td>
+			                            <td>{{waterQualityAnalysisMarker.index_nh4n}}</td>
+			                            <td>{{waterQualityAnalysisMarker.index_p}}</td>
+			                        </tr>
+			                        <tr>
+			                            <td>状态</td>
+			                            <td><span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td>
+			                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
+			                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
+			                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)}}</span></td>
+			                        </tr>
+			                    </table>
+			                </div>
+			                <div class="col-md-12 row">
+				            	<div class="col-md-9" style="margin-top:10px">
+				                	<div id="relation_chart" style="width:400px;height: 300px"></div>
+				                </div>
+				                <!-- <div class="col-md-3" style="border:1px solid grey;font-size:13px;line-height:30px;margin-top:80px">
+				                	<div class="radio" ng-repeat="radioPredictionOne in radioPredictionList">
+				                										<label>
+				                										    <input type="radio" name="radio_prediction" value="COD" ng-model="radioPredictionListSelected" ng-value="radioPredictionOne" ng-click="radioPredicitonChange(radioPredictionOne)">
+				                										    {{radioPredictionOne}}
+				                										</label>
+				                									</div>
+				                </div> -->
+				            </div>
+				            <!-- <div class="col-md-12">
+				            	<h5>形状的大小代表该该指标的量值大小</h5>
+				            	<h5>连线的粗细代表该该指标的影响程度</h5>
+				            </div> -->
+			            </div>
+			            <div class="col-md-6" id="analysis_source">
+			                <div class="col-md-12">
+			                    <h4>污染源企业设定：</h4>
+			                    <div class="col-md-3" style="margin-top: 15px">
+			                        <button class="btn btn-sm btn-success" ng-click="button_recommend()"><span class="glyphicon glyphicon-hand-right"></span>&nbsp模型设计</button>
+			                    </div>
+			                    <div class="col-md-3"  style="margin-top: 15px">
+			                        <button class="btn btn-sm btn-success" ng-click="source_predict()"><span class="glyphicon glyphicon-play"></span>&nbsp模型验证</button>
+			                    </div>
+			                </div>
+		                    <div class="col-md-12">
+		                    	<hr>
+		                    </div>
+		                	<div class="col-md-12" style="height:280px;overflow: auto;overflow-x:hidden;font-size:14px;margin-top: 15px">
+		                		<div class="col-md-12 analysis_source_info" ng-repeat="wasteModelOne in wasteModelList">
+				                    <form class="form-horizontal" role="form">
+			                            <div class="form-group col-md-12">
+			                                <label class="col-sm-12" style="left:5px">{{wasteModelOne.title}}</label>
+			                            </div>
+			                            <div class="form-group col-md-12">
+			                                <label class="col-sm-2 control-label">流量</label>
+			                                <div class="col-sm-6">
+												<div class="input-group sliderExample" style="margin-top:11px">
+													<div ui-slider="colorpicker.options" min="0" max="100" ng-model="wasteModelOne.dischargeChange"></div>
+												</div>
+											</div>
+			                                <div class="col-sm-2">
+			                                    <h5>{{wasteModelOne.dischargeChange}}%</h5>
+			                                </div>
+			                                <div class="col-sm-2" style="padding:0">
+			                                    <h5>{{(wasteModelOne.dischargeChange*wasteModelOne.dischargeValue/100).toFixed(0)}}吨</h5>
+			                                </div>
+			                            </div>
+				                    </form>
+			               		</div>
+			               		<hr>
+			            	</div>
+			            	<div class="col-md-12" style="margin-top:15px">
+			            		<div class="col-md-offset-9 col-md-3">
+			            			<button class="btn btn-sm btn-primary btn-block" ng-click="button_reset()">复位</button>
+			            		</div>
+			            		
+		                    </div>
+		                    <div class="col-md-12">
+		            			<hr>
+		            		</div>
+		            		<div class="col-md-12">
+		            			<h4>污水处理费预估(根据废水排放方案确定)：</h4>
+			                    <div class="col-md-3" style="margin-top: 15px">
+			                        <button class="btn btn-sm btn-success" ng-click="feed_calculate()"><span class="glyphicon glyphicon-hand-right"></span>处理费估算</button>
+			                    </div>
+			                    <div class="col-md-9"  style="margin-top: 15px">
+			                        <h4>总处理费用预估为{{feed_sum}}元</h4>
+			                    </div>
+		            		</div>
+			            </div>
+			            <!-- <div class="col-md-12">
+			            	                    	<div class="col-md-12" style="margin-top:30px">
+			            								<highchart config="historyCompareChart" style="width:950px;height:400px"></highchart>
+			            							</div>
+			            	                    </div> -->
+	                    <!-- <div>{{compareData.waterQualityData}}</div>
+	                    <div>{{compareData.wasteWaterData}}</div> -->
+			        </div>
+			    </div>
+			</div>
+
+			<div class="modal fade" id="Modal_Predict">
+			  <div class="modal-dialog " style="min-width:1000px">
+			    <div class="modal-content" style="font-size:14px">
+			        <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			        <h4 class="modal-title" id="myModalLabel">预测结果</h4>
+			        </div>
+			        <div class="modal-body" style="min-height:640px">
+		            	<div class="col-md-12">
+                            <h4>{{predictionMonitor}} 水质量指标变化</h4>
+	                    </div>
+	                    <div class="col-md-12 row">
+							<div class="col-md-2" id="chart_WaterQualityo2"
+								style="width: 200px; height: 200px">溶解氧</div>
+							<div class="col-md-2" id="chart_WaterQualitykmno4"
+								style="width: 200px; height: 200px">高锰酸钾</div>
+							<div class="col-md-2" id="chart_WaterQualitynh4n"
+								style="width: 200px; height: 200px">氨氮</div>
+							<div class="col-md-2" id="chart_WaterQualityp"
+								style="width: 200px; height: 200px">总磷</div>
+	                	</div>
+		            	<div class="col-md-10">
+		                    <table class="table table-bordered">
+		                        <tr>
+		                            <th></th>
+		                            <th colspan="2">溶解氧(mg/L)</th>
+		                            <th colspan="2">高锰酸钾(mg/L)</th>
+		                            <th colspan="2">氨氮(mg/L)</th>
+		                            <th colspan="2">总磷(mg/L)</th>
+		                        </tr>
+		                        <tr>
+			                    	<td></td>
+			                    	<td>原值</td>
+			                    	<td>预测未来值</td>
+			                    	<td>原值</td>
+			                    	<td>预测未来值</td>
+			                    	<td>原值</td>
+			                    	<td>预测未来值</td>
+			                    	<td>原值</td>
+			                    	<td>预测未来值</td>
+		                        </tr>
+		                        <tr>
+		                            <td>值</td>
+		                            <td>{{waterQualityAnalysisMarker.index_o2}}</td>
+		                            <td>{{predict_waterquality.index_o2}}</td>
+		                            <td>{{waterQualityAnalysisMarker.index_kmno4}}</td>
+		                            <td>{{predict_waterquality.index_kmno4}}</td>
+		                            <td>{{waterQualityAnalysisMarker.index_nh4n}}</td>
+		                            <td>{{predict_waterquality.index_nh4n}}</td>
+		                            <td>{{waterQualityAnalysisMarker.index_p}}</td>
+		                            <td>{{predict_waterquality.index_p}}</td>
+		                        </tr>
+		                        <tr>
+		                            <td>状态</td>
+		                            <td><span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td> 
+		                            <td><span ng-class="getLabelCss(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td>
+		                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
+		                            <td><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
+		                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
+		                            <td><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
+		                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)}}</span></td>
+		                            <td><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)}}</span></td>
+		                        </tr>
+		                    </table>
+		                </div>
+		                <hr>
+		                <div class="col-md-12">
+		                	<h4>相关污染源废水排放变化</h4>
+	                		<table class='table table-bordered'>
+	                			<tr>
+	                				<td>企业</td>
+	                				<td>废水排放量(吨)</td>
+	                				<td>模型修改(%)</td>
+	                				<td>最终值(吨)</td>
+	                				<td>处理费(元)</td>
+	                				<!-- <td>COD浓度(mg/L)</td>
+	                				<td>模型修改(%)</td>
+	                				<td>最终值(mg/L)</td>
+	                				<td>氨氮浓度(mg/L)</td>
+	                				<td>模型修改(%)</td>
+	                				<td>最终值(mg/L)</td>
+	                				<td>总磷(mg/L)</td>
+	                				<td>模型修改(%)</td>
+	                				<td>最终值(mg/L)</td> -->
+	                			</tr>
+                				<tr ng-repeat="wasteModelOne in wasteModelList">
+                					<td>{{wasteModelOne.title}}</td>
+                					<td>{{wasteModelOne.dischargeValue}}</td>
+                					<td>{{wasteModelOne.dischargeChange}}</td>
+                					<td>{{(wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
+                					<td>{{(2.29*wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
+                					<!-- <td>{{wasteModelOne.codValue}}</td>
+                					<td>{{wasteModelOne.codChange}}</td>
+                					<td>{{(wasteModelOne.codValue*wasteModelOne.codChange/100).toFixed(2)}}</td>
+                					<td>{{wasteModelOne.nh4nValue}}</td>
+                					<td>{{wasteModelOne.nh4nChange}}</td>
+                					<td>{{(wasteModelOne.nh4nValue*wasteModelOne.nh4nChange/100).toFixed(2)}}</td>
+                					<td>{{wasteModelOne.pValue}}</td>
+                					<td>{{wasteModelOne.pChange}}</td>
+                					<td>{{(wasteModelOne.pValue*wasteModelOne.pChange/100).toFixed(2)}}</td> -->
+                				</tr>
+	                		</table>
+		                </div>
+			        </div>
+			        <div class="modal-footer">
+			        <button type="button" class="btn btn-primary" data-dismiss="modal">返回</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>

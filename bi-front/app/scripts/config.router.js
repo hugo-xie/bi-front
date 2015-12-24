@@ -216,6 +216,19 @@ angular.module('nevermore')
               }]
             }
           })
+          .state('app.emenu.waterEnvironmentBI', {
+          url: '^/app/environment/emenu/waterEnvironmentBI',
+          templateUrl: 'tpl/app/environment/waterEnvironmentBI.html',
+          controller: 'WaterEnvironmentBICtrl',
+          resolve: {
+          controller: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load([
+          'scripts/controllers/app/environment/waterEnvironmentbi-controller.js',
+          'scripts/controllers/app/environment/echarts-plain.js'
+                 ]);
+              }]
+            }
+          })
           .state('app.emenu.airtitle', {
             url: '^/app/environment/emenu/airtitle',
             templateUrl: 'tpl/app/environment/airtitle.html',
