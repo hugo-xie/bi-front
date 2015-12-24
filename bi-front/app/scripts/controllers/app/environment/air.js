@@ -95,7 +95,6 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                         {
                             type : 'value',
                             name : '温度',
-                            color:'#a6bb7a',
                             axisLabel : {
                                 formatter: '{value} °C'
                             }
@@ -106,7 +105,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                         {
                             name:'蒸发量',
                             type:'bar',
-                             borderColor:'#030303',
+                            Color:'#030303',
                             data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
                         },
                         {
