@@ -150,6 +150,11 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 
     //气象 Button点击事件
 	 $scope.airConditionBtn = function() {
+        $scope.mapTableStatus = {
+            airQuality: false,
+            airCondition: true,
+            wasteAir: false
+        };
 	 	map.setZoomAndCenter(15, [121.109247,31.469887]);
 
 	 	var marker3 = new AMap.Marker({
@@ -191,6 +196,11 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	 };
 //废气排放Button点击事件
 	$scope.wasteAirBtn = function() {
+        $scope.mapTableStatus = {
+            airQuality: false,
+            airCondition: false,
+            wasteAir: true
+        };
 		map.setZoomAndCenter(12, [121.201515,31.620498]);
 		//华能国际电力电厂
 		var marker4 = new AMap.Marker({
