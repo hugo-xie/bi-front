@@ -382,7 +382,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	var info1=[];
 	   info1.push("<h4><strong>太仓监测站</strong></h4>");
 	    info1.push("<table class='table table-bordered table-striped'>");
-	    info1.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn btn-danger' style='width:100%'>83</button></td></tr>");
+	    info1.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn btn-danger' style='width:100%'>183</button></td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td style='text-align:center'>PM2.5</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td><button type='button' class='btn btn-success' style='width:100%'>83</button></td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td><button type='button' class='btn btn-success' style='width:100%'>54</button></td></tr>");
@@ -400,7 +400,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	var info2=[];
 	    info2.push("<h4><strong>科教新城监测站</strong></h4>");
 	    info2.push("<table class='table table-bordered table-striped'>");
-	    info2.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn btn-danger' style='width:100%'>83</button></td></tr>");
+	    info2.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn btn-danger' style='width:100%'>161</button></td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>主要污染物</td><td style='text-align:center'>PM2.5</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>PM2.5</td><td><button type='button' class='btn btn-success' style='width:100%'>83</button></td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td><button type='button' class='btn btn-success' style='width:100%'>54</button></td></tr>");
