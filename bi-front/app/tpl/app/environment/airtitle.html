@@ -491,9 +491,9 @@
 <div class="panel-body">
 <div class="row">
 <div class="col-md-9 chart-panel">
-<nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">
+<nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container" id="navbarExample">
 <a class="navbar-brand" href="#airQualityAnchorTop"  du-smooth-scroll>空气质量指标</a>
-<a href="" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>AQI</a>
+<a href="#airQualityAnchor1" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>AQI</a>
 <a href="" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>PM2.5</a>
 <a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
 <a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化硫</a>
@@ -501,20 +501,20 @@
 <a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
 <a href="" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
 </nav>
-<div  style="overflow: auto; overflow-x:hidden;height:450px;width: 100%"  id="scroll-container" >
+<div  style="overflow: auto; overflow-x:hidden;height:450px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
 <p id="airQualityAnchorTop"></p>
 <div  class="col-md-12">
-    <a name="airQualityAnchor1">
-        <div class="col-md-3">
+
+        <div class="col-md-3" id="airQualityAnchor1">
             <highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>
         </div>
-    </a>
+    
     <div class="col-md-9" style="left:10px;">
         <highchart style="width:70%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
     </div>
 </div>
 <div class="col-md-12">
-    <div class="col-md-3" name="airQualityAnchor2">
+    <div class="col-md-3" id="airQualityAnchor2">
         <highchart style="width:100%;height:250px" config="airQualityOptions.pm25Option"></highchart>
     </div>
     <div class="col-md-9" style="left:10px">
