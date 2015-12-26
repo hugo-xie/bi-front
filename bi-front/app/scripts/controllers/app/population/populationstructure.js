@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('PopulationStructureCtrl', function($scope) {
-  var columnColors = new Array( '#3CB371','#000000','#87CEFA', '#0787C8');
+  var columnColors = new Array( '#87CEFA','#FFB01E','#0787C8', '#FB9705');
   var pieColors = new Array('#3795BC', '#FB9705');  //'#0787C8', '#1FC22B'
  // var lineColors = new Array('#0787C8', '#1FC22B');
   //var compareColors = new Array('#3795BC', '#FB9705', '#195489', '#F26200')
@@ -48,7 +48,7 @@ AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
     // 设置鼠标划过点标记显示的文字提示
     marker1.setTitle('');
 var infow=[];
-infow.push("<div style='background-color:#FFFFFF;border:2px solid red;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:red;font-size:18px'>新湖镇</div>")
+infow.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#CC0033;font-size:18px'>新湖镇</div>")
     // 设置label标签
     marker1.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
         offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
@@ -62,6 +62,13 @@ infow.push("<div style='background-color:#FFFFFF;border:2px solid red;border-rad
           image: "/images/marker_sprite.png",
         })
     });
+ var infow5=[];
+infow5.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#CC0033;font-size:18px'>沙溪镇</div>")
+    // 设置label标签
+    marker5.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+        content: infow5.join('')
+    });
  var marker4 = new AMap.Marker({            //板桥镇
         position: [121.134911, 31.491627],
         map:map,
@@ -69,6 +76,13 @@ infow.push("<div style='background-color:#FFFFFF;border:2px solid red;border-rad
           size: new AMap.Size(40, 50),  //图标大小
           image: "/images/marker_sprite.png",
         })
+    });
+  var infow4=[];
+infow4.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#CC0033;font-size:18px'>板桥镇</div>")
+    // 设置label标签
+    marker4.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+        content: infow4.join('')
     });
   var marker2 = new AMap.Marker({
         position: [121.276413, 31.515122], //浏河镇
@@ -78,6 +92,13 @@ infow.push("<div style='background-color:#FFFFFF;border:2px solid red;border-rad
           image: "/images/marker_sprite.png",
         })
     });
+   var infow2=[];
+infow2.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#CC0033;font-size:18px'>浏河镇</div>")
+    // 设置label标签
+    marker2.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+        content: infow2.join('')
+    });
    var marker3 = new AMap.Marker({
         position: [121.10, 31.45],  //太仓市
         map:map,
@@ -85,6 +106,13 @@ infow.push("<div style='background-color:#FFFFFF;border:2px solid red;border-rad
           size: new AMap.Size(40, 50),  //图标大小
           image: "/images/marker_sprite.png",
         })
+    });
+   var infow3=[];
+infow3.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#CC0033;font-size:18px'>太仓城区</div>")
+    // 设置label标签
+    marker3.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+        content: infow3.join('')
     });
    var marker6 = new AMap.Marker({
         position: [121.190549, 31.467665],  //陆渡镇
@@ -94,6 +122,13 @@ infow.push("<div style='background-color:#FFFFFF;border:2px solid red;border-rad
           image: "/images/marker_sprite.png",
         })
     });
+   var infow6=[];
+infow6.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#CC0033;font-size:18px'>陆渡镇</div>")
+    // 设置label标签
+    marker6.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+        content: infow6.join('')
+    });
    var marker7 = new AMap.Marker({
         position: [121.106514, 31.649675],  //璜泾镇
         map:map,
@@ -101,6 +136,13 @@ infow.push("<div style='background-color:#FFFFFF;border:2px solid red;border-rad
           size: new AMap.Size(40, 50),  //图标大小
           image: "/images/marker_sprite.png",
         })
+    });
+   var infow7=[];
+infow7.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#CC0033;font-size:18px'>璜泾镇</div>")
+    // 设置label标签
+    marker7.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+        content: infow7.join('')
     });
 //显示信息窗体(可单击位置显示隐藏的信息窗体)
 var info1=[];
@@ -136,7 +178,7 @@ var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
 })
 
 var info3=[];
-   info3.push("<h4><strong>太仓市人口自然增长率</strong></h4>");
+   info3.push("<h4><strong>太仓城区人口自然增长率</strong></h4>");
     info3.push("<table class='table table-bordered table-striped'>");
     info3.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>8.34‰</td></tr>");
     info3.push("<tr><td style='font-size:15px'>死亡率</td><td>8.12‰</td></tr>");
@@ -641,7 +683,7 @@ $scope.population_year={
                 },
                 labels: {
                     formatter: function () {
-                        return (Math.abs(this.value) / 10000) + 'W';
+                        return (Math.abs(this.value) / 10000) + '万';
                     }
                 },
                 min: -40000,
@@ -722,7 +764,7 @@ $scope.population_year={
                 },
                 labels: {
                     formatter: function () {
-                        return (Math.abs(this.value) / 10000) + 'W';
+                        return (Math.abs(this.value) / 10000) + '万';
                     }
                 },
                 min: -40000,

@@ -2,7 +2,14 @@
 
 app.controller('PrelationCtrl', ['$scope', function($scope) {
 
- 
+     $scope.colorpicker = {
+        options: {
+            orientation: 'horizontal',
+            min: 0,
+            max: 100,
+            range: 'min'
+        }
+    };
         // 路径配置
         require.config({
             paths: {
@@ -136,31 +143,43 @@ app.controller('PrelationCtrl', ['$scope', function($scope) {
 var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
     $scope.buttonMap2 = [{
         name: 2025,
-        label: 2025 + "年分析预测",
+        label: 2025 + "年关联度分析预测",
         radio: "Left"
       }, {
         name: 2035,
-        label: 2035 + "年分析预测",
+        label: 2035 + "年关联度分析预测",
         radio: "Middle"
       }, {
         name: 2045,
-        label: 2045 + "年分析预测",
+        label: 2045 + "年关联度分析预测",
         radio: "Right"
       }];
        $scope.buttonMap3 = [{
         name: 2025,
-        label: 2025 + "年分析预测",
+        label: 2025 + "年关联度分析预测",
         radio: "Left"
       }, {
         name: 2035,
-        label: 2035 + "年分析预测",
+        label: 2035 + "年关联度分析预测",
         radio: "Middle"
       }, {
         name: 2045,
-        label: 2045 + "年分析预测",
+        label: 2045 + "年关联度分析预测",
         radio: "Right"
       }];
-
+       $scope.buttonMap4 = [{
+        name: 2025,
+        label: 2025 + "年比重分析预测",
+        radio: "Left"
+      }, {
+        name: 2035,
+        label: 2035 + "年比重分析预测",
+        radio: "Middle"
+      }, {
+        name: 2045,
+        label: 2045 + "年比重分析预测",
+        radio: "Right"
+      }];
 $scope.btn_click=function(btn){
    $scope.change(btn);
 };
