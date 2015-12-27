@@ -12,11 +12,48 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
   //以下是空气质量预测右侧详情展开控制函数
   $scope.ishealthopen = false;
   $scope.issuggestionopen = false;
+  $scope.isQuality1open = false;
+  $scope.ismainpollution1open = false;
+  $scope.isAQI1open = false;
+  $scope.isPM251open = false;
+  $scope.isPM101open = false;
+  $scope.isSO21open = false;
+  $scope.isCO1open = false;
+  $scope.isNO21open = false;
+   $scope.isO31open = false;
+
   $scope.openHealthList = function(){
   	$scope.ishealthopen = !$scope.ishealthopen;
   };
   $scope.openSuggestionList = function(){
   	$scope.issuggestionopen = !$scope.issuggestionopen;
+  };
+  $scope.openQuality1List = function(){
+  	$scope.isQuality1open = !$scope.isQuality1open;
+  };
+  $scope.openmainpollution1List = function(){
+  	$scope.ismainpollution1open = !$scope.ismainpollution1open;
+  };
+  $scope.openAQI1List = function(){
+  	$scope.isAQI1open = !$scope.isAQI1open;
+  };
+  $scope.openPM251List = function(){
+  	$scope.isPM251open = !$scope.isPM251open;
+  };
+  $scope.openPM101List = function(){
+  	$scope.isPM101open = !$scope.isPM101open;
+  };
+  $scope.openSO21List = function(){
+  	$scope.isSO21open = !$scope.isSO21open;
+  };
+  $scope.openCO1List = function(){
+  	$scope.isCO1open = !$scope.isCO1open;
+  };
+  $scope.openNO21List = function(){
+  	$scope.isNO21open = !$scope.isNO21open;
+  };
+  $scope.openO31List = function(){
+  	$scope.isO31open = !$scope.isO31open;
   };
   //end——————————
   $scope.totaldata = {
@@ -555,7 +592,12 @@ $scope.aqilinechart={
 					plotShadow: false
 				},
 				title: {
-					text: 'AQI'
+					text: 'AQI',
+					y:40,
+					style:{                
+                    fontFamily:'微软雅黑'
+                   }
+
 				},
 				pane: {
 					startAngle: -150, 
@@ -661,7 +703,11 @@ $scope.aqilinechart={
 				},
 
 				title: {
-					text: 'PM2.5'
+					text: 'PM2.5',
+					y:40,
+					style:{                
+                    fontFamily:'微软雅黑'
+                   }
 				},
 
 				pane: {
@@ -769,7 +815,11 @@ $scope.aqilinechart={
 				},
 
 				title: {
-					text: 'PM10'
+					text: 'PM10',
+					y:40,
+					style:{                
+                    fontFamily:'微软雅黑'
+                   }
 				},
 
 				pane: {
@@ -878,7 +928,11 @@ $scope.aqilinechart={
 				},
 
 				title: {
-					text: '二氧化硫'
+					text: '二氧化硫',
+					y:40,
+					style:{                
+                    fontFamily:'微软雅黑'
+                   }
 				},
 
 				pane: {
@@ -987,7 +1041,11 @@ $scope.aqilinechart={
 				},
 
 				title: {
-					text: '二氧化氮'
+					text: '二氧化氮',
+					y:40,
+					style:{                
+                    fontFamily:'微软雅黑'
+                   }
 				},
 
 				pane: {
@@ -1096,7 +1154,11 @@ $scope.aqilinechart={
 				},
 
 				title: {
-					text: '一氧化碳'
+					text: '一氧化碳',
+			        y:40,
+					style:{                
+                    fontFamily:'微软雅黑'
+                   }
 				},
 
 				pane: {
@@ -1205,7 +1267,11 @@ $scope.aqilinechart={
 				},
 
 				title: {
-					text: '臭氧'
+					text: '臭氧',
+					y:40,
+					style:{                
+                    fontFamily:'微软雅黑'
+                   }
 				},
 
 				pane: {

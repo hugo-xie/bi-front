@@ -494,7 +494,7 @@
                         <a href="#airQualityAnchor6" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
                         <a href="#airQualityAnchor7" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
                         </nav>
-                            <div  style="overflow: auto; overflow-x:hidden;height:558px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
+                            <div  style="overflow: auto; overflow-x:hidden;height:515px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
                             <p id="airQualityAnchorTop"></p>
                                 <div  class="col-md-12">
                                         <div class="col-md-3" id="airQualityAnchor1">
@@ -556,37 +556,109 @@
                     </div>
                 <!--第四个框右侧部分-->
                     <div class="col-md-4">
-                        <h4>空气质量监测点选择</h4>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="pull-left" class="col-md-2">
+                                  <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x text-info"></i>
+                                    <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                                  </span>
+                                </div>
+                                <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">空气质量详细数据</h4>
+                              空气质量监测站选择
+                            </div>
+                            <div class="row wrapper">
+                                <div class="col-sm-5 m-b-xs" >
+                                    <select class="input-sm form-control w-sm inline v-middle" style:"width:30%">
+                                        <option value="0">太仓市监测点</option>
+                                        <option value="1">科教新城实验小学监测点</option>
+                                    </select>              
+                                </div>
+                            </div>  
+                            <div class="list-group">
+                                <a href="" class="list-group-item">
+                                 
+                                  <i class="glyphicon  glyphicon-time fa-fw m-r-xs"></i> 日期
+                                   <span class="badge fc-nobg" style="width:30%">2015年12月25日</span>
+                                </a>
 
 
+                                <a href="" class="list-group-item" ng-click = "openAQI1List()">
+                                  <span class="badge fc-nobg">113</span>
+                                  <i class="ic icon-emoticon-smile fa-fw m-r-xs"></i> 空气质量(AQI)
+                                </a>
+                                <li class="list-group-item" ng-if="isAQI1open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">空气质量AQI>100时，开始污染警报,AQI值越大，空气污染越严重。</span>
+                                </li>
+
+                                <a href="" class="list-group-item" ng-click = "openmainpollution1List()">
+                                  <span class="badge fc-nobg" >PM2.5</span>
+                                  <i class="ic icon-bell fa-fw m-r-xs"></i> 首要污染物
+                                </a>
+                                <li class="list-group-item" ng-if="ismainpollution1open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">首要污染物是指污染最重的污染物,近些年太仓主要污染物为PM2.5或者二氧化硫</span>
+                                </li>
 
 
+                                <a href="" class="list-group-item" ng-click = "openPM251List()">
+                                  <span class="badge fc-nobg" style="width:15%">14</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM2.5
+                                </a>
+                                <li class="list-group-item" ng-if="isPM251open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">细颗粒物又称细粒、细颗粒、PM2.5。为当前空气污染主要污染物之一。PM2.5>75ug/m3时,开始污染警报</span>
+                                </li>
 
-<div class="col-md-12 ">
-<div class="panel panel-primary" style="margin-top: 20px;">
-<div class="panel-heading">
-空气质量分析
-<span class="glyphicon  pull-right"></span>
-</div>
-<div class="panel-body">
-<div class="row">
-<div class="col-md-9 chart-panel">
-<nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container" >
-<a class="navbar-brand" href="#airQualityAnchorTop">空气质量指标</a>
-<a href="#airQualityAnchor1" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>AQI</a>
-<a href="#airQualityAnchor2" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>PM2.5</a>
-<a href="#airQualityAnchor3" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
-<a href="#airQualityAnchor4" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化硫</a>
-<a href="#airQualityAnchor5" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化氮</a>
-<a href="#airQualityAnchor6" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
-<a href="#airQualityAnchor7" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
-</nav>
-<div  style="overflow: auto; overflow-x:hidden;height:450px;"  id="scroll-container">
-<p id="airQualityAnchorTop"></p>
-<div  class="col-md-12">
+                                <a href="" class="list-group-item" ng-click = "openPM101List()">
+                                  <span class="badge fc-nobg" style="width:15%">30</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM10
+                                </a>
+                                <li class="list-group-item" ng-if="isPM101open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">可吸入颗粒物指空气动力学当量直径≤10微米的颗粒物,又称为PM10。PM10>150ug/m3时,开始污染警报</span>
+                                </li>
 
+                                <a href="" class="list-group-item" ng-click = "openSO21List()">
+                                  <span class="badge fc-nobg">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 二氧化硫
+                                </a>
+                                <li class="list-group-item" ng-if="isSO21open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">二氧化硫是带去主要污染物之一，太仓二氧化硫污染主要源于港区电厂废气排放。SO2>150ug/m3时,开始污染报警</span>
+                                </li>
 
+                                <a href="" class="list-group-item" ng-click = "openCO1List()">
+                                  <span class="badge fc-nobg">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 一氧化碳
+                                </a>
+                                <li class="list-group-item" ng-if="isCO1open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">一氧化碳是空气污染组成一部分,含量较少,对空气污染影响较小。CO>4mg/m3</span>
+                                </li>
+
+                                <a href="" class="list-group-item" ng-click = "openNO21List()">
+                                  <span class="badge fc-nobg">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 二氧化氮
+                                </a>
+                                <li class="list-group-item" ng-if="isNO21open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">二氧化氮是空气污染组成一部分,含量较少,对空气污染影响较小。NO2>80ug/m3</span>
+                                </li>
+
+                                <a href="" class="list-group-item" ng-click = "openO31List()">
+                                  <span class="badge fc-nobg">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 臭氧
+                                </a>
+                                <li class="list-group-item" ng-if="isO31open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">臭氧是空气污染组成一部分,含量较少,对空气污染影响较小。O3>160ug/m3</span>
+                                </li>
+
+                            </div> 
                         </div>
+                    </div>
                         <!--<h4>空气质量监测点选择</h4>
                         <div style="font-size:14px;">
                              <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">太仓市监测点</label>

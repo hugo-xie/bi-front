@@ -25,3 +25,11 @@
 .fc-button-font{
 	font-family: '微软雅黑';
 }
+.fc-nobg{
+	background-color: white;
+	color: #555555;
+	float:right; 
+	width:15%;
+	font-size: 0.8em;
+	margin-right: 1em;
+}
