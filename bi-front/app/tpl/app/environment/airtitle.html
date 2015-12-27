@@ -557,69 +557,34 @@
                 <!--第四个框右侧部分-->
                     <div class="col-md-4">
                         <h4>空气质量监测点选择</h4>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                              空气质量数据详情
-                            </div>
-                            <div class="row wrapper">
-                                <div class="col-sm-5 m-b-xs">
-                                    <select class="input-sm form-control w-sm inline v-middle">
-                                        <option value="0">Bulk action</option>
-                                        <option value="1">Delete selected</option>
-                                        <option value="2">Bulk edit</option>
-                                        <option value="3">Export</option>
-                                    </select>              
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="input-group">
-                                        <button class="btn btn-sm btn-default" type="button">Go!</button>
-                                    </div>
-                                </div>
-                            </div>  
-                            <div class="list-group">
-                                <a href="" class="list-group-item">
-                                  <span class="badge badge-empty" style="width:30%">2015年12月25日</span>
-                                  <i class="glyphicon  glyphicon-time fa-fw m-r-xs"></i> 日期
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-info" style="width:15%">2</span>
-                                  <i class="fa fa-eye fa-fw m-r-xs"></i> 空气质量等级
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-danger" width:15%>PM2.5</span>
-                                  <i class="fa fa-comments-o fa-fw m-r-xs"></i> 首要污染物
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-green" style="width:15%">113</span>
-                                  <i class="fa fa-comments-o fa-fw m-r-xs"></i> 空气质量(AQI)
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-warning">14</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM2.5
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-info">30</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM10
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-danger">10</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 二氧化硫
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-danger">10</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 一氧化碳
-                                </a>
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-danger">10</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 二氧化氮
-                                </a>
 
-                                <a href="" class="list-group-item">
-                                  <span class="badge bg-danger">10</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 臭氧
-                                </a>
-                            </div> 
-                        </div>
+
+
+
+
+<div class="col-md-12 ">
+<div class="panel panel-primary" style="margin-top: 20px;">
+<div class="panel-heading">
+空气质量分析
+<span class="glyphicon  pull-right"></span>
+</div>
+<div class="panel-body">
+<div class="row">
+<div class="col-md-9 chart-panel">
+<nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container" >
+<a class="navbar-brand" href="#airQualityAnchorTop">空气质量指标</a>
+<a href="#airQualityAnchor1" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>AQI</a>
+<a href="#airQualityAnchor2" class="btn btn-default navbar-btn" role="button" du-smooth-scroll>PM2.5</a>
+<a href="#airQualityAnchor3" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
+<a href="#airQualityAnchor4" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化硫</a>
+<a href="#airQualityAnchor5" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>二氧化氮</a>
+<a href="#airQualityAnchor6" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
+<a href="#airQualityAnchor7" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
+</nav>
+<div  style="overflow: auto; overflow-x:hidden;height:450px;"  id="scroll-container">
+<p id="airQualityAnchorTop"></p>
+<div  class="col-md-12">
+
 
                         </div>
                         <!--<h4>空气质量监测点选择</h4>
