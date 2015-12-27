@@ -23,7 +23,7 @@ app.controller('PrelationCtrl', ['$scope', function($scope) {
                 
                 var option = {
     title : {
-        text: '劳动力人口与GDP关联度分析预测',
+        text: '太仓市2016~2025年劳动力人口与GDP平均关联度分析预测',
         x:'right',
         y:'bottom'
     },
@@ -167,13 +167,17 @@ $scope.btn_click=function(btn){
 $scope.change=function(btn){
    if(btn.name===2025){
 $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+$scope.populationChart.title.text="太仓市2016~2025年劳动力总人口";
      $scope.GDPChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
      $scope.GDPChart.series[0].data=gdp;
+      $scope.GDPChart.title.text="太仓市2016~2025年GDP总量";
     $scope.populationChart.series[0].data=popData;
+    $scope.predictChart.title.text="太仓市2016~2025年劳动力人口与经济关联分析预测";
+     $scope.predictChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
   //  $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
     $scope.predictChart.series=[{
             name: '人口(人)',
-            color: '#4572A7',
+            color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
             data: popData,
@@ -210,14 +214,17 @@ $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023
         }];
    }
    if(btn.name===2035){
+     $scope.predictChart.title.text="太仓市2026~2035年劳动力人口与经济关联分析预测";
      $scope.populationChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
+     $scope.populationChart.title.text="太仓市2026~2035年劳动力总人口";
      $scope.GDPChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
      $scope.GDPChart.series[0].data=gdp1;
+      $scope.GDPChart.title.text="太仓市2026~2035年GDP总量";
      $scope.populationChart.series[0].data=popData1;
     $scope.predictChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
     $scope.predictChart.series=[{
             name: '人口(人)',
-            color: '#4572A7',
+            color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
             data: popData1,
@@ -254,14 +261,17 @@ $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023
         }];
    }
    if(btn.name===2045){
+    $scope.predictChart.title.text="太仓市2036~2045年劳动力人口与经济关联分析预测";
      $scope.populationChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
+     $scope.populationChart.title.text="太仓市2036~2045年劳动力总人口";
      $scope.GDPChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
      $scope.GDPChart.series[0].data=gdp2;
+     $scope.GDPChart.title.text="太仓市2036~2045年GDP总量";
     $scope.populationChart.series[0].data=popData2;
     $scope.predictChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
     $scope.predictChart.series=[{
             name: '人口(人)',
-            color: '#4572A7',
+            color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
             data: popData2,
@@ -304,6 +314,8 @@ $scope.btn_click1=function(btn){
 $scope.change1=function(btn){
    if(btn.name===2025){
     document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    $scope.populationPie.options.title.text="太仓市2025年产业就业人口比重分析预测";
+    $scope.industryPie.options.title.text="太仓市2025年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
@@ -324,6 +336,8 @@ $scope.change1=function(btn){
    }
    if(btn.name===2035){
     document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为27%、35%和38%，产值比重分别是6%、34%和60%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    $scope.populationPie.options.title.text="太仓市2035年产业就业人口比重分析预测";
+    $scope.industryPie.options.title.text="太仓市2035年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
@@ -344,6 +358,8 @@ $scope.change1=function(btn){
    }
    if(btn.name===2045){
     document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为17%、40%和43%，产值比重分别是4%、30%和66%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    $scope.populationPie.options.title.text="太仓市2045年产业就业人口比重分析预测";
+    $scope.industryPie.options.title.text="太仓市2045年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
@@ -380,7 +396,7 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '劳动力人口与GDP关联度分析预测',
+        text: '太仓市2016~2025年劳动力人口与GDP平均关联度分析预测',
         x:'right',
         y:'bottom'
     },
@@ -502,7 +518,7 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '劳动力人口与GDP关联度分析预测',
+        text: '太仓市2026~2035年劳动力人口与GDP平均关联度分析预测',
         x:'right',
         y:'bottom'
     },
@@ -624,7 +640,7 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '劳动力人口与GDP关联度分析预测',
+        text: '太仓市2036~2045年劳动力人口与GDP平均关联度分析预测',
         x:'right',
         y:'bottom'
     },
@@ -779,7 +795,7 @@ $scope.$watch($scope.rr,hh);
             zoomType: 'xy'
         },
         title: {
-            text: '劳动力人口与经济关联分析预测'
+            text: '太仓市2016~2025年劳动力人口与经济关联分析预测'
         },
         xAxis: {
             categories: ['2016', '2017', '2018', '2019', '2020', '2021',
@@ -808,7 +824,7 @@ $scope.$watch($scope.rr,hh);
             title: {
                 text: '人口(人)',
                 style: {
-                    color: '#4572A7'
+                    color: '#7CB5EC'
                 }
             },
             labels: {
@@ -816,7 +832,7 @@ $scope.$watch($scope.rr,hh);
                     return this.value +'人';
                 },
                 style: {
-                    color: '#4572A7'
+                    color: '#7CB5EC'
                 }
             },
              
@@ -854,7 +870,7 @@ $scope.$watch($scope.rr,hh);
         },
         series: [{
             name: '人口(人)',
-            color: '#4572A7',
+            color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
             data: popData,
@@ -899,10 +915,11 @@ $scope.populationChart ={
                 },
                 series: [{
                     name: '劳动力总人口',
+                    
                     data: popData
                 }],
                 title: {
-                    text: '劳动力总人口'
+                    text: '太仓市2016~2025年劳动力总人口'
                 },
                 xAxis: {
                     categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
@@ -931,7 +948,7 @@ $scope.populationChart ={
                     data: gdp
                 }],
                 title: {
-                    text: 'GDP总量'
+                    text: '太仓市2016~2025年GDP总量'
                 },
                 xAxis: {
                     categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
@@ -1023,7 +1040,7 @@ options: {
                                     enabled:false
                                     },
                                 title: {
-                                    text: "产业就业人口比重分析预测"
+                                    text: "太仓市2025年产业就业人口比重分析预测"
                                 },
                                 tooltip: {
                                     pointFormat: ' <b>产业人口</b>:{point.y:1.f}(万人)</b> '
@@ -1036,7 +1053,8 @@ options: {
                                             enabled: true,
                                             color: '#000000',
                                             connectorColor: '#000000',
-                                            format: ' <b>{point.name}</b>:{point.percentage:.1f} %'
+                                            format: ' {point.name}:{point.percentage:.1f} %',
+                                                 
                                         },
                                         showInLegend: true
                                     }
@@ -1067,7 +1085,7 @@ options: {
                                     enabled:false
                                     },
                                 title: {
-                                    text: "产业产值比重分析预测"
+                                    text: "太仓市2025年产业产值比重分析预测"
                                 },
                                 tooltip: {
                                     pointFormat: '<b>产业产值</b>:{point.y:1.f}(亿元)</b> '
@@ -1080,7 +1098,7 @@ options: {
                                             enabled: true,
                                             color: '#000000',
                                             connectorColor: '#000000',
-                                            format: '<b>{point.name}</b>:{point.percentage:.1f} %'
+                                            format: '{point.name}:{point.percentage:.1f} %'
                                         },
                                         showInLegend: true
                                     }

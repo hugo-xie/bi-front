@@ -53,6 +53,10 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
                 var myChart = ec.init(document.getElementById('main')); 
                 
                 var option = {
+                	color : [ 
+                		//颜色待调
+					    '#Fcb371', '#F8860b', '#F0e0e0',
+					],
                 	title : {
 				        text: '未来七天天气状况',
 				        x:'center',
@@ -135,7 +139,9 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 		wasteAir: false
 	};
 	//空气质量 Button点击事件
+	$scope.istownairquality = false;
 	$scope.airQualityBtn = function() {
+		$scope.istownairquality = !$scope.istownairquality;
 		map.setZoomAndCenter(15, [121.116757,31.448875]);
 		$scope.mapTableStatus = {
 			airQuality: true,
@@ -149,7 +155,14 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	};
 
     //气象 Button点击事件
+    $scope.istownaircondition = false;
 	 $scope.airConditionBtn = function() {
+	 	$scope.istownaircondition = !$scope.istownaircondition;
+        $scope.mapTableStatus = {
+            airQuality: false,
+            airCondition: true,
+            wasteAir: false
+        };
 	 	map.setZoomAndCenter(15, [121.109247,31.469887]);
 
 	 	var marker3 = new AMap.Marker({
@@ -169,7 +182,7 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
         var info3=[];
 	    info3.push("<h4><strong>太仓市气象局</strong></h4>");
 	    info3.push("<table class='table table-bordered table-striped'>");
-	    info3.push("<tr><td style='font-size:15px;width:125px'>当前气温</td><td>5</td></tr>");
+	    info3.push("<tr><td style='font-size:15px;width:125px'>明日气温</td><td>5</td></tr>");
 	    info3.push("<tr><td style='font-size:15px'>相对湿度</td><td>50%</td></tr>");
 	    info3.push("<tr><td style='font-size:15px'>风级</td><td>2</td></tr>");
 	    info3.push("<tr><td style='font-size:15px'>风向</td><td>东南风</td></tr>");
@@ -190,7 +203,14 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
     	}, false);
 	 };
 //废气排放Button点击事件
+    $scope.istownwasteair = false;
 	$scope.wasteAirBtn = function() {
+		$scope.istownwasteair = !$scope.istownwasteair;
+        $scope.mapTableStatus = {
+            airQuality: false,
+            airCondition: false,
+            wasteAir: true
+        };
 		map.setZoomAndCenter(12, [121.201515,31.620498]);
 		//华能国际电力电厂
 		var marker4 = new AMap.Marker({
@@ -372,11 +392,11 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	var info1=[];
 	   info1.push("<h4><strong>太仓监测站</strong></h4>");
 	    info1.push("<table class='table table-bordered table-striped'>");
-	    info1.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>118</td></tr>");
+	    info1.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td>118</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td>pm2.5</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td>64</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>54</td></tr>");
-	    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td>轻度污染</td></tr>");
+	    info1.push("<tr><td style='font-size:15px'>监测站状态</td><td><button type='button' class='btn btn-warning'>轻度污染</button></td></tr>");
 	    info1.push("</table>");
 	var infowindow1 = new AMap.InfoWindow({
 	     content: info1.join(''),
@@ -390,17 +410,17 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 	var info2=[];
 	    info2.push("<h4><strong>科教新城监测站</strong></h4>");
 	    info2.push("<table class='table table-bordered table-striped'>");
-	    info2.push("<tr><td style='font-size:15px;width:125px'>AQI</td><td>145</td></tr>");
+	    info2.push("<tr><td style='font-size:15px'>AQI</td><td>145</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>主要污染物</td><td>pm2.5</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>PM2.5</td><td>83</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>54</td></tr>");
-	    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td>轻度污染</td></tr>");
+	    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td><button type='button' class='btn btn-warning'>轻度污染</button></td></tr>");
 	    info2.push("</table>");
 	var infowindow2 = new AMap.InfoWindow({
 
 	     content:  info2.join(''),
 	     //offset: new AMap.Pixel(0,0),
-	     size:new AMap.Size(250,0)
+	     size:new AMap.Size(270,0)
 	})
 	infowindow2.open(map, marker2.getPosition());
 	var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {

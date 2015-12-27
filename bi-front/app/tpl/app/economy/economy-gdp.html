@@ -16,20 +16,18 @@
     <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
       <highchart   id="chart1" config="yearGDPChart"  style="margin-left:15px"></highchart>
     </div>
-    <div class="col-md-4" style="padding:5px 15px 15px 15px">
-      <div class="table-responsive" style="width:90%">
-      <table class="table" style="text-align:center">
-        <tr>
-          <th style="background-color:#16aad8;color:#ffffff;text-align:center">下年预测值</th>
-          <th style="background-color:#16aad8;color:#ffffff;text-align:center">预测误差范围</th>
-        </tr>
-        <tr>
-          <td >1152.67亿元</td>
-          <td >3.0%</td>
-        </tr>
-      </table>
-      </div>
-      <button class="btn btn-primary">一句话解读</button>
+    <div class="col-md-4" style="padding:10px 30px 15px 15px">
+      <div class="hbox bg-primary ">
+              <div class="col wrapper">
+                <span>当年GDP预测值</span>
+                <div class="h1 text-info font-thin" style="text-align:center;margin-top:10%">1152.67</div>
+              </div>
+              <div class="col wrapper bg-info">
+                <span>预测误差范围</span>
+                <div class="h1 text-warning font-thin" style="margin-top:10%;text-align:center">3.0%</div>
+              </div>
+            </div>
+      <button class="btn btn-primary" style="margin-top:15%">一句话解读</button>
       <!--改成了div-->
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
           <strong>本年GDP增速较往年有所放缓</strong>
@@ -48,7 +46,7 @@
              <li><a ng-click="exchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-warning" style="margin-top:20%" ng-click="checkdeviation()">查看预测误差记录</button>
+      <button class="btn btn-warning btn-rounded" style="margin-top:20%" ng-click="checkdeviation()">查看预测误差记录</button>
       <button class="btn btn-info" style="margin-top:20%" ng-click="checkforecast()">查看预测详情</button>
       </div>
     </div>
@@ -151,20 +149,18 @@
     <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
       <highchart   id="chart1" config="monthGDPChart" style="margin-left:15px"></highchart>
     </div>
-    <div class="col-md-4" style="padding:10px 15px 15px 15px">
-     <div class="table-responsive" style="width:90%">
-      <table class="table" style="text-align:center">
-        <tr>
-          <th style="background-color:#16aad8;color:#ffffff;text-align:center">下季度预测值</th>
-          <th style="background-color:#16aad8;color:#ffffff;text-align:center">预测误差范围</th>
-        </tr>
-        <tr>
-          <td>1152.68亿元</td>
-          <td>2.5%</td>
-        </tr>
-      </table>
-      </div>
-      <button class="btn btn-primary" >一句话解读</button>
+    <div class="col-md-4" style="padding:10px 30px 15px 15px">
+     <div class="hbox bg-primary ">
+              <div class="col wrapper">
+                <span>下季度预测值</span>
+                <div class="h1 text-info font-thin" style="text-align:center;margin-top:10%">1152.67</div>
+              </div>
+              <div class="col wrapper bg-info">
+                <span>预测误差范围</span>
+                <div class="h1 text-warning font-thin" style="margin-top:10%;text-align:center">3.0%</div>
+              </div>
+            </div>
+      <button class="btn btn-primary" style="margin-top:15%">一句话解读</button>
       <!--button不可以自动换行-->
       <div style="margin-top:10px;width:90%;border:1px solid lightgrey;font-size:18px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
@@ -246,21 +242,18 @@
     <div class="col-md-8" style="border-right:1px solid;padding-top:10px;padding-bottom:10px">
       <highchart   id="chart1" config="industryyearGDPChart" style="margin-left:15px"></highchart>
     </div>
-    <div class="col-md-4" style="padding:10px 15px 15px 15px">
-      <div class="table-responsive" style="width:90%">
-      <table class="table" style="text-align:center">
-        <tr>
-          <th style="background-color:#16aad8;color:#ffffff;text-align:center">全行业预测值</th>
-          <th style="background-color:#16aad8;color:#ffffff;text-align:center">预测误差范围</th>
-        </tr>
-        <tr>
-          <td>1152.67亿元</td>
-          <td>2.7%</td>
-        </tr>
-      </table>
-      </div>
-      <button class="btn btn-primary" style="margin-top:10%">一句话解读</button>
-     
+     <div class="col-md-4" style="padding:10px 30px 15px 15px">
+      <div class="hbox bg-primary ">
+              <div class="col wrapper">
+                <span>全行业预测值</span>
+                <div class="h1 text-info font-thin" style="text-align:center;margin-top:10%">1152.67</div>
+              </div>
+              <div class="col wrapper bg-info">
+                <span>预测误差范围</span>
+                <div class="h1 text-warning font-thin" style="margin-top:10%;text-align:center">2.7%</div>
+              </div>
+            </div>
+      <button class="btn btn-primary" style="margin-top:15%">一句话解读</button>
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="margin-top:10px">
           <strong>全行业经济增速较往年有所放缓</strong>
         </span>

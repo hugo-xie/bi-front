@@ -105,11 +105,11 @@
             <div class="panel-body" style="padding:0">
                 <div class="row">
                     <!--echart-->
-                    <div class="col-md-8 chart-panel" style="padding:0.5em 1.5em 1em 1em">
+                    <div class="col-md-8 chart-panel" style="padding:0.5em 1.5em 1em 1em;border-right:0">
                         <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:500px"></highchart>
                     </div>
                     <!--右侧栏-->
-                    <div class="col-md-4" style="padding:1em 1.8em 1em 1em">
+                    <div class="col-md-4" style="padding:1em 1.8em 1em 1em;border-left:1px solid lightgrey;">
                       <div class="panel b-a">
                         <div class="panel-heading text-center bg-info no-border">
                           <h4 class="text-u-c m-b-none">实时空气质量状况</h4>
@@ -200,58 +200,86 @@
         </div>
     </div>
     <!--第二图结束-->
+
+
     <!--第三个框内容-->
     <div class="col-md-12 " >
         <div class="panel panel-primary" style="margin-top: 20px;">
+            <!--最上标题栏-->
             <div class="panel-heading">
             空气质量预测分析
             <span class="glyphicon  pull-right"></span>
             </div>   
-            <div class="panel-body">
+            <div class="panel-body fc-panelbody">
              <!--第三个框左侧地图-->
-                <div class="col-md-8">
-                    <div class="panel panel-default" style="height: 650px; ">
-                        <div class="panel-body">
+                <div class="col-md-8" style="border-right:1px solid lightgrey;">
+                    <div class="panel panel-default" style="border-color:lightgrey;border-style: solid;border-radius:1em;border-width: 1px;margin:1em;height:660px">
                            <div id="map_canvas"></div>
-                        </div>
                     </div>
                 </div>
-            <!--第三个框右侧内容-->
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body" style="height: 650px">
-                            <h4>空气质量预测</h4>
+            <!--第三个框右侧栏-->
+                <div class="col-md-4" style="padding:0">  
+                    <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
+                        <div class="pull-left" class="col-md-2">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                          </span>
+                        </div>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">空气质量预测</h4>
+                        <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
+                            <span class="glyphicon glyphicon-hand-right ">
+                                <span class="fc-button-font">城区空气质量预测</span>
+                            </span>                                   
+                        </button>
+                        <br />
+                        <span class="glyphicon  glyphicon-leaf m-r-xs" ng-if="istownairquality">
+                            <span class="fc-button-font">存在1个监测点空气质量有轻微问题</span>                        
+                        </span>
+                    </div>
 
-                            <div style="margin-top:5px;font-size:16px">
-                                <button class="btn btn-primary" ng-class="getButtonStatus(airQualityStatus.status)" ng-click="airQualityBtn()">
-                                    <span class="glyphicon glyphicon-hand-right"></span>
-                                    &nbsp城区空气质量预测
-                                </button>
-                                存在1个监测点空气质量有轻微问题
-                            </div>
-                            <hr/>
+                    <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
+                        <div class="pull-left" class="col-md-2">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                          </span>
+                        </div>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">天气预测</h4>
+                        <button class="btn btn-primary" ng-class="getButtonStatus(airConditionStatus.status)" ng-click="airConditionBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
+                            <span class="glyphicon glyphicon-hand-right ">
+                                <span class="fc-button-font">城区气象状况预测</span>
+                            </span>                                   
+                        </button>
+                        <br />
+                        <span class="glyphicon glyphicon-cloud m-r-xs" ng-if="istownaircondition">
+                            <span class="fc-button-font">太仓市未来一天天气状况</span>                        
+                        </span>
+                    </div>
+                    
+                    <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
+                        <div class="pull-left" class="col-md-2">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                          </span>
+                        </div>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">天气预测</h4>
+                        <button class="btn btn-primary" ng-class="getButtonStatus(wasteAirStatus.status)" ng-click="wasteAirBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
+                            <span class="glyphicon glyphicon-hand-right ">
+                                <span class="fc-button-font">工业废气排放分析</span>
+                            </span>                                   
+                        </button>
+                        <br />
+                        <span class="glyphicon  glyphicon-stats m-r-xs" ng-if="istownwasteair">
+                            <span class="fc-button-font">监测点废气排放均正常</span>                        
+                        </span>
+                    </div>
 
-                            <h4>天气预测</h4>
 
-                            <div style="margin-top:5px;font-size:16px">
-                                <button class="btn btn-primary" ng-class="getButtonStatus(airConditionStatus.status)" ng-click="airConditionBtn()">
-                                    <span class="glyphicon glyphicon-hand-right"></span>
-                                    &nbsp城区气象状况预测
-                                </button>
-                                太仓市未来一天天气状况
-                            </div>
-                            <hr/>
+                            
 
-                            <h4>废气污染分析</h4>
-
-                            <div style="margin-top:5px;font-size:16px">
-                                <button class="btn btn-primary" ng-class="getButtonStatus(wasteAirStatus.status)" ng-click="wasteAirBtn()">
-                                    <span class="glyphicon glyphicon-hand-right"></span>
-                                    &nbsp工业废气排放分析
-                                </button>
-                                监测点废气排放均正常
-                            </div>
-                            <hr>
+       
                             <div ng-show="mapTableStatus.airQuality">
                                 <h5 align="right" style="padding-top: 0px">
                                     (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
@@ -440,8 +468,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -467,7 +494,7 @@
                         <a href="#airQualityAnchor6" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>一氧化碳</a>
                         <a href="#airQualityAnchor7" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>臭氧</a>
                         </nav>
-                            <div  style="overflow: auto; overflow-x:hidden;height:450px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
+                            <div  style="overflow: auto; overflow-x:hidden;height:558px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
                             <p id="airQualityAnchorTop"></p>
                                 <div  class="col-md-12">
                                         <div class="col-md-3" id="airQualityAnchor1">
@@ -529,47 +556,72 @@
                     </div>
                 <!--第四个框右侧部分-->
                     <div class="col-md-4">
-                <h4>空气质量监测点选择</h4>
-                        <div style="font-size:14px;">
-                             <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">太仓市监测点</label>
-                        </div>
-                        <div style="font-size:14px;">
-                           <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">科教新城实验小学监测点</label>
-                        </div>
-                    
+                        <h4>空气质量监测点选择</h4>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                              空气质量数据详情
+                            </div>
+                            <div class="row wrapper">
+                                <div class="col-sm-5 m-b-xs">
+                                    <select class="input-sm form-control w-sm inline v-middle">
+                                        <option value="0">Bulk action</option>
+                                        <option value="1">Delete selected</option>
+                                        <option value="2">Bulk edit</option>
+                                        <option value="3">Export</option>
+                                    </select>              
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <button class="btn btn-sm btn-default" type="button">Go!</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="list-group">
+                                <a href="" class="list-group-item">
+                                  <span class="badge badge-empty" style="width:30%">2015年12月25日</span>
+                                  <i class="glyphicon  glyphicon-time fa-fw m-r-xs"></i> 日期
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-info" style="width:15%">2</span>
+                                  <i class="fa fa-eye fa-fw m-r-xs"></i> 空气质量等级
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-danger" width:15%>PM2.5</span>
+                                  <i class="fa fa-comments-o fa-fw m-r-xs"></i> 首要污染物
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-green" style="width:15%">113</span>
+                                  <i class="fa fa-comments-o fa-fw m-r-xs"></i> 空气质量(AQI)
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-warning">14</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM2.5
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-info">30</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM10
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-danger">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 二氧化硫
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-danger">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 一氧化碳
+                                </a>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-danger">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 二氧化氮
+                                </a>
 
-                        <div class="list-group">
-                        <a href="" class="list-group-item">
-                          <span class="badge badge-empty">201</span>
-                          <i class="fa fa-envelope fa-fw m-r-xs"></i> Inbox
-                        </a>
-                        <a href="" class="list-group-item">
-                          <span class="badge bg-info">5021</span>
-                          <i class="fa fa-eye fa-fw m-r-xs"></i> Profile visits
-                        </a>
-                        <a href="" class="list-group-item">
-                          <i class="fa fa-chevron-right text-muted"></i>
-                          <span class="badge bg-success">14</span>
-                          <i class="fa fa-phone fa-fw m-r-xs"></i> Call
-                        </a>
-                        <a href="" class="list-group-item">
-                          <span class="badge bg-dark">20</span>
-                          <i class="fa fa-comments-o fa-fw m-r-xs"></i> Messages
-                        </a>
-                        <a href="" class="list-group-item">
-                          <span class="badge bg-warning">14</span>
-                          <i class="fa fa-bookmark fa-fw m-r-xs"></i> Bookmarks
-                        </a>
-                        <a href="" class="list-group-item">
-                          <span class="badge bg-info">30</span>
-                          <i class="fa fa-bell fa-fw m-r-xs"></i> Notifications
-                        </a>
-                        <a href="" class="list-group-item">
-                          <span class="badge bg-danger">10</span>
-                          <i class="fa fa-clock-o fa-fw m-r-xs"></i> Watch
-                        </a>
-                      </div>
+                                <a href="" class="list-group-item">
+                                  <span class="badge bg-danger">10</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 臭氧
+                                </a>
+                            </div> 
+                        </div>
 
+                        </div>
                         <!--<h4>空气质量监测点选择</h4>
                         <div style="font-size:14px;">
                              <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">太仓市监测点</label>
@@ -633,7 +685,6 @@
                     </div>
                     </div>
                     </div>-->
-                    </div>
                 </div>
             </div>
         </div>

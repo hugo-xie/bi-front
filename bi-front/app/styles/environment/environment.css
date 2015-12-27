@@ -19,3 +19,9 @@
 .fc-list-content{
 	font-size: 90%;	
 }
+.fc-panelbody{
+	padding:0;
+}
+.fc-button-font{
+	font-family: '微软雅黑';
+}

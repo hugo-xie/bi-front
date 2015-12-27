@@ -12,10 +12,13 @@
            </div>
 
            <div class="panel-body">
-             <div class="row">
-               <button ng-repeat="bttn in buttonMap2" class="btn btn-primary col-md-2" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
+              <div align="center">
+               <button ng-repeat="bttn in buttonMap2" class="btn btn-primary" ng-model="predictionModal" style="margin-left: 25px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
+             </div>
+               <hr />
+               <div class="row">
                <div class="col-md-8 chart-panel">
-
+               
                  <highchart style="height:400px;" config="predictChart"></highchart>
                </div>
                <div class="col-md-4 desc-content">

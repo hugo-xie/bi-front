@@ -293,7 +293,7 @@ var points =[
     if(btn.name===2025){
         document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
         $scope.age_ration.options.colors=columnColors;
-        $scope.age_ration.options.title.text="2025年太仓市人口结构比例图";
+        $scope.age_ration.options.title.text="太仓市人口结构预测2015/2025年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
             data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
@@ -311,7 +311,7 @@ var points =[
             data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
             stack: 'female'
         }];
-        $scope.population_prediction_year.options.title.text="2025年人口结构图";
+        $scope.population_prediction_year.options.title.text="太仓市2025年常住人口结构图";
         $scope.population_prediction_year.series=[{
                 name: '男性',
                 data: [-10017, -8618, -9570, -12017, -19188, -18401, -22241,
@@ -343,7 +343,7 @@ var points =[
      if(btn.name===2035){
         document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 7%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
         $scope.age_ration.options.colors=columnColors;
-        $scope.age_ration.options.title.text="2035年太仓市人口结构比例图";
+        $scope.age_ration.options.title.text="太仓市人口结构预测2015/2035年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
             data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
@@ -361,7 +361,7 @@ var points =[
             data: [2, 3, 3, 4, 3,3, 3, 2, 4, 5,3],
             stack: 'female'
         }];
-         $scope.population_prediction_year.options.title.text="2035年人口结构图";
+         $scope.population_prediction_year.options.title.text="太仓市2035年常住人口结构图";
         $scope.population_prediction_year.series=[{
                 name: '男性',
                 data: [-5825, -6752, -8528, -10049, -8423, -9199, -10784,
@@ -393,7 +393,7 @@ var points =[
      if(btn.name===2045){
         document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 9%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
         $scope.age_ration.options.colors=columnColors;
-        $scope.age_ration.options.title.text="2045年太仓市人口结构比例图";
+        $scope.age_ration.options.title.text="太仓市人口结构预测2015/2045年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
             data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
@@ -411,7 +411,7 @@ var points =[
             data: [3, 0, 4, 4, 3,3, 4, 4, 4, 5,5],
             stack: 'female'
         }];
-        $scope.population_prediction_year.options.title.text="2045年人口结构图";
+        $scope.population_prediction_year.options.title.text="太仓市2045年常住人口结构图";
         $scope.population_prediction_year.series=[{
                 name: '男性',
                 data: [-6005, -5760, -5193, -7176, -9153, -9752, -8370,
@@ -529,7 +529,7 @@ var points =[
         },
 
         title: {
-            text: '2025年太仓市人口结构比例图',
+            text: '太仓市人口结构预测2015/2025年龄层比例图',
             floationg: 'true'
         },
         credits:{
@@ -618,7 +618,7 @@ $scope.population_year={
                 type: 'bar'
             },
             title: {
-                text: '2015年人口结构图'
+                text: '太仓市2015年人口结构图'
             },
             xAxis: [{
                 categories: categories,
@@ -699,7 +699,7 @@ $scope.population_year={
                 type: 'bar'
             },
             title: {
-                text: '2025年人口结构图'
+                text: '太仓市2025年常住人口结构图'
             },
             xAxis: [{
                 categories: categories,

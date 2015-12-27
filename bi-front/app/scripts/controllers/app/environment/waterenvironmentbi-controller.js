@@ -5,7 +5,88 @@
  * @description # AboutCtrl Controller of the iocUiApp
  */
 app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function($scope, $timeout,$http) {
-// app.controller('WaterEnvironmentBICtrl', function($scope, $http, $timeout) {
+    
+    //方成代码
+    $timeout(function () {
+    // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar',// 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/line' 
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('discharge')); 
+                
+                var option = {
+            title : {
+                text: '太仓市污水分时段排放量',
+                subtext: ''
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['排放量']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['1时','2时','3时','4时','5时','6时','7时','8时','9时','10时','11时','12时']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+          
+                {
+                    name:'废水排放量',
+                    type:'bar',
+                    data:[41316.379, 41739.668, 40126.664, 39762.43, 41144.68, 39966.195, 39523.172, 40884.328, 41141.418, 37959.043, 37114.941, 38395.945],
+                    markPoint : {
+                        data : [
+                            {name : '过去12小时最高值', value : 41739.668, xAxis: 1, yAxis: 41739.668, symbolSize:30},
+                            {name : '过去12小时最低值', value : 37114.941, xAxis: 10, yAxis: 37114.941,symbolSize:30}
+                        ]
+                    },
+                    markLine : {
+                        data : [
+                            {type : 'average', name : '平均值'}
+                        ]
+                    }
+                }
+            ]
+        }; 
+                    // 为echarts对象加载数据 
+                    myChart.setOption(option); 
+                }
+            );  
+    },0);
+
+    // 牛哥代码
+    // app.controller('WaterEnvironmentBICtrl', function($scope, $http, $timeout) {
     $scope.colorpicker = {
         options: {
             orientation: 'horizontal',
