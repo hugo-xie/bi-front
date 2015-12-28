@@ -60,114 +60,17 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
   
   	tabledata:
   	[
-	  {yearvalue:'时间', evaporation:'蒸发量',water:'降水量',avetep:'平均气温'},
-	  {yearvalue:'12月19号', evaporation:'2',water:'2.6',avetep:'2'},
-	  {yearvalue:'12月20号', evaporation:'4.9',water:'5.9',avetep:'2.2'},
-	  {yearvalue:'12月21号', evaporation:'7',water:'9',avetep:'3.3'},
-	  {yearvalue:'12月22号', evaporation:'23.2',water:'26.4',avetep:'4.5'},
-	  {yearvalue:'12月23号', evaporation:'25.6',water:'28.7',avetep:'6.3'},
-	  {yearvalue:'12月24号', evaporation:'76.7',water:'70.7',avetep:'10.2'},
-	  {yearvalue:'12月25号', evaporation:'135.6',water:'175.6',avetep:'11.3'}
+	  {yearvalue:'时间', Htemperature:'最高气温(°C)',Ltemperature:'最低气温(°C)'},
+	  {yearvalue:'12月19号', Htemperature:'7',Ltemperature:'-1'},
+	  {yearvalue:'12月20号', Htemperature:'6',Ltemperature:'1'},
+	  {yearvalue:'12月21号', Htemperature:'9',Ltemperature:'3'},
+	  {yearvalue:'12月22号', Htemperature:'13',Ltemperature:'4'},
+	  {yearvalue:'12月23号', Htemperature:'11',Ltemperature:'2'},
+	  {yearvalue:'12月24号', Htemperature:'9',Ltemperature:'-1'},
+	  {yearvalue:'12月25号', Htemperature:'8',Ltemperature:'2'}
   	]
   };
- $timeout(function () {
-    // 路径配置
-        require.config({
-            paths: {
-                echarts: 'http://echarts.baidu.com/build/dist'
-            }
-        });
-        
-        // 使用
-        require(
-            [
-                'echarts',
-                'echarts/chart/bar',// 使用柱状图就加载bar模块，按需加载
-                'echarts/chart/line' 
-            ],
-            function (ec) {
-                // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
-                var option = {
-                	color : [ 
-                		//颜色待调
-					    '#Fcb371', '#F8860b', '#F0e0e0',
-					],
-                	title : {
-				        text: '未来七天天气状况',
-				        x:'center',
-				        textStyle:{
-				        	fontFamily:'宋体标题',
-				        },
-				    },
-                    tooltip : {
-                        trigger: 'axis'
-                    },
-                    toolbox: {
-                        show : true,
-                        feature : {
-                            mark : {show: true},
-                            dataView : {show: true, readOnly: false},
-                            magicType: {show: true, type: ['line', 'bar']},
-                            restore : {show: true},
-                            saveAsImage : {show: true}
-                        }
-                    },
-                    calculable : true,
-                    legend: {
-                        data:['蒸发量','降水量','平均气温'],
-                        y:'bottom',
-                    },
-                    xAxis : [
-                        {
-                            type : 'category',
-                            data : ['12月19号','12月20号','12月21号','12月22号','12月23号','12月24号','12月25号']
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'value',
-                            name : '水量',
-                            axisLabel : {
-                                formatter: '{value} ml'
-                            }
-                        },
-                        {
-                            type : 'value',
-                            name : '温度',
-                            axisLabel : {
-                                formatter: '{value} °C'
-                            }
-                        }
-                    ],
-                    series : [
 
-                        {
-                            name:'蒸发量',
-                            type:'bar',
-                            Color:'#030303',
-                            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
-                        },
-                        {
-                            name:'降水量',
-                            type:'bar',
-                            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
-                        },
-                        {
-                            name:'平均气温',
-                            type:'line',
-                            yAxisIndex: 1,
-                            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 11.3]
-                        }
-                    ]
-                };
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
-            }
-        );  
-},0);
 
     //首页表格显示状态
 	$scope.mapTableStatus = {
@@ -1778,8 +1681,52 @@ $scope.aqilinechart={
 			return "";
 	};
 
-
-          
+ 
+ $scope.temperature={
+	 	options:{
+	 	chart: {
+			renderTo: 'container',
+			type: 'spline',
+			
+			}},
+        title: {
+            text: '未来七天最高最低气温',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        xAxis: {
+            categories: ['1月4', '1月5', '1月6', '1月7', '1月8', '1月9','1月10']
+        },
+        yAxis: {
+            title: {
+                text: '温度 (°C)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '最高气温',
+            data: [7, 6, 9, 13, 11, 9, 8]
+        },  {
+            name: '最低气温',
+            data: [-1, 1, 3, 4, 2, -1, 2]
+        }]
+    };
 
    
 
@@ -1791,48 +1738,105 @@ $scope.aqilinechart={
 
    
 }]);
-	//气象 highcharts options
-	/*$scope.airConditionOptions = {
-		airConditionCurrentOption: {
-			options: {
-				colors: ['#7CADDF', '#7CADDF', '#195489', '#1FC22B', '#FB9705', '#F26200'],
-				chart: {
-					type: 'line',
-				},
-				tooltip: {},
-				xAxis: {
-					categories: [],
-					tickmarkPlacement: 'on'
-				},
-				plotOptions: {
-					column: {
-						dataLabels: {
-							enabled: true,
-						},
-						pointPadding: 0.2,
-						borderWidth: 0
-					}
-				},
-				credits: {
-					enabled: false
-				}
-			},
-			title: {
-				text: ''
-			},
-			yAxis: {
-				min: 0,
-				title: {
-					text: ''
-				}
-			},
-			series: [{
-				name: '',
-				data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-			}]
-		}
-	};*/
 
+/*$timeout(function () {
+    // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar',// 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/line' 
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+                	color : [ 
+                		//颜色待调
+					    '#434348', '#95ceff', '#F0e0e0',
+					],
+                	title : {
+				        text: '未来七天天气状况',
+				        x:'center',
+				        textStyle:{
+				        	fontFamily:'宋体标题',
+				        },
+				    },
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : true,
+                    legend: {
+                        data:['蒸发量','降水量','平均气温'],
+                        y:'bottom',
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : ['12月19号','12月20号','12月21号','12月22号','12月23号','12月24号','12月25号']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            name : '水量',
+                            axisLabel : {
+                                formatter: '{value} mm'
+                            }
+                        },
+                        {
+                            type : 'value',
+                            name : '温度',
+                            axisLabel : {
+                                formatter: '{value} °C'
+                            }
+                        }
+                    ],
+                    series : [
+
+                        {
+                            name:'蒸发量',
+                            type:'bar',
+                            Color:'#030303',
+                            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
+                        },
+                        {
+                            name:'降水量',
+                            type:'bar',
+                            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
+                        },
+                        {
+                            name:'平均气温',
+                            type:'line',
+                            yAxisIndex: 1,
+                            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 11.3]
+                        }
+                    ]
+                };
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );  
+},0);*/
 
 
 
