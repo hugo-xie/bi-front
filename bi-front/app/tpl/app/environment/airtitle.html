@@ -300,7 +300,7 @@
                                 </table>
 
                             </div>
-                            <div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airQuality">
+                            <div style="overflow: auto; overflow-x:hidden;height: 200px" ng-show="mapTableStatus.airQuality">
                                 <table class="table table-hover table-responsive" style="font-size:14px">
                                     <tr >
                                         <td style="width:30%">太仓市监测站</td>
@@ -479,7 +479,7 @@
     <div class="col-md-12 ">
         <div class="panel panel-primary" style="margin-top: 20px;">
             <div class="panel-heading">
-            空气质量分析
+            空气质量历史数据分析
             <span class="glyphicon  pull-right"></span>
             </div>
             <div class="panel-body">
@@ -488,7 +488,7 @@
                     <div class="col-md-8 chart-panel">
 
                         <nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">
-                        <a class="navbar-brand" href="#airQualityAnchorTop" du-smooth-scroll>空气质量指标</a>
+                        <a class="navbar-brand" href="#airQualityAnchorTop" du-smooth-scroll>过去12小时空气质量指标</a>
                         <a href="#airQualityAnchor1" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>AQI</a>
                         <a href="#airQualityAnchor2" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM2.5</a>
                         <a href="#airQualityAnchor3" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
@@ -511,59 +511,59 @@
                             <div  style="overflow: auto; overflow-x:hidden;height:515px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
                             <p id="airQualityAnchorTop"></p>
                                 <div  class="col-md-12">
-                                        <div class="col-md-3" id="airQualityAnchor1">
+                                        <div class="col-md-4" id="airQualityAnchor1">
                                             <highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>
                                         </div>
-                                        <div class="col-md-9" style="left:10px;">
-                                            <highchart style="width:70%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
+                                        <div class="col-md-8" style="left:10px;">
+                                            <highchart style="width:100%;height:250px;margin-left:-70px"  config="airQualityOptions.currentAqiLineOption"></highchart>
                                         </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor2">
+                                    <div class="col-md-4" id="airQualityAnchor2">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.pm25Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm25LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentPm25LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor3">
+                                    <div class="col-md-4" id="airQualityAnchor3">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.pm10Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm10LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentPm10LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor4">
+                                    <div class="col-md-4" id="airQualityAnchor4">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.so2Option">SO2</highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentSo2LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentSo2LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor5">
+                                    <div class="col-md-4" id="airQualityAnchor5">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.no2Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentNo2LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentNo2LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor6">
+                                    <div class="col-md-4" id="airQualityAnchor6">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.coOption"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentCoLineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentCoLineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor7">
+                                    <div class="col-md-4" id="airQualityAnchor7">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.o3Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentO3LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentO3LineOption"></highchart>
                                     </div>
                                 </div>
                             </div>
@@ -571,15 +571,7 @@
                 <!--第四个框右侧部分-->
                     <div class="col-md-4">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="pull-left">
-                                  <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x text-info"></i>
-                                    <i class="fa fa-file-o fa-stack-1x text-white"></i>
-                                  </span>
-                                </div>
-                                <h4 class="fc-font-title" style="margin-top:0.5em;padding-left:0;">空气质量详细数据</h4>
-                            </div> 
+<div class="row row-table row-flush"><div class="col-xs-5"><picture class="lateral-picture"><img src="app/img/bg2.jpg" alt=""></picture></div><div class="col-xs-7 align-middle p-lg"><div class="pull-right"><a href="#" class="btn btn-primary btn-sm">Register</a></div><p><span class="text-lg">16</span>Aug</p><p><strong>EVENT INVITATION</strong></p><p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p></div></div>
                             <div class="list-group">
                                 <a href="" class="list-group-item">
                                  
@@ -599,7 +591,7 @@
 
                                 <a href="" class="list-group-item" ng-click = "openmainpollution1List()">
                                   <span class="badge fc-nobg" >PM2.5</span>
-                                  <i class="ic icon-bell fa-fw m-r-xs"></i> 首要污染物
+                                  <i class="ic icon-bell fa-fw m-r-xs" style="color: #e10602"></i> 首要污染物
                                 </a>
                                 <li class="list-group-item" ng-if="ismainpollution1open">
                                 <i class="text-success m-r-xs"></i>
@@ -609,7 +601,7 @@
 
                                 <a href="" class="list-group-item" ng-click = "openPM251List()">
                                   <span class="badge fc-nobg" style="width:15%">14</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM2.5
+                                  <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM2.5
                                 </a>
                                 <li class="list-group-item" ng-if="isPM251open">
                                 <i class="text-success m-r-xs"></i>
@@ -618,7 +610,7 @@
 
                                 <a href="" class="list-group-item" ng-click = "openPM101List()">
                                   <span class="badge fc-nobg" style="width:15%">30</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> PM10
+                                  <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM10
                                 </a>
                                 <li class="list-group-item" ng-if="isPM101open">
                                 <i class="text-success m-r-xs"></i>
@@ -627,7 +619,7 @@
 
                                 <a href="" class="list-group-item" ng-click = "openSO21List()">
                                   <span class="badge fc-nobg">10</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 二氧化硫
+                                  <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 二氧化硫
                                 </a>
                                 <li class="list-group-item" ng-if="isSO21open">
                                 <i class="text-success m-r-xs"></i>
@@ -636,7 +628,7 @@
 
                                 <a href="" class="list-group-item" ng-click = "openCO1List()">
                                   <span class="badge fc-nobg">10</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs"></i> 一氧化碳
+                                  <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 一氧化碳
                                 </a>
                                 <li class="list-group-item" ng-if="isCO1open">
                                 <i class="text-success m-r-xs"></i>

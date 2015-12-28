@@ -24,4 +24,7 @@ body {
   padding: 0;
 }
 
-
+.chart-panelzzh {
+  height：150%;
+  border-right: solid #ccc 1px;
+}

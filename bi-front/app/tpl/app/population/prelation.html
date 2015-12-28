@@ -20,8 +20,7 @@
            <div class="panel-body">
 
                <div class="row">
-               <div class="col-md-8 chart-panel">
-               
+               <div class="col-md-8 chart-panelzzh">
                  <highchart style="height:400px;" config="predictChart"></highchart>
                </div>
                <div class="col-md-4 desc-content">
@@ -41,31 +40,31 @@
                      <p class="handler-title">劳动力人口</p>
                    </div>
                    <div class="col-md-7">
-                    <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:170px" >
+                    <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:200px" >
                      <div class="progress-box">
                        <div class="percentage-cur">
                          <span class="num">{{selectedRange}}.00%</span>
                        </div>
                       <div  style="margin-top:11px">
-                          <div  ui-slider="colorpicker.options" min="0" max="100" ng-model="selectedRange" ></div>
+                          <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange" ></div>
                         </div>
                      </div>
                    </div>
                  </div>
+                 <br />
                  <div class="row">
                    <div class="col-md-5">
                      <p class="handler-title">GDP</p>
                    </div>
                    <div class="col-md-7">
-                    <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" placeholder="输入数字调节" style="width:170px">
+                    <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" placeholder="输入数字调节" style="width:200px">
                      <div class="progress-box">
                        <div class="percentage-cur">
                          <span class="num">{{ selectedRange1}}.00%</span>
                        </div>
-                       <div class="progress-bar progress-bar-slider">
-                         <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange1">   
-                         <div class="inner" ng-style="{ width: (selectedRange1/2 +50) + '%' || '50%' }" ></div>
-                       </div>
+                       <div  style="margin-top:11px">
+                          <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange1" ></div>
+                        </div>
                      </div>
                    </div>
                  </div>
@@ -80,6 +79,7 @@
                </div>
              </div>
              <div style="height:30px"></div>
+             <br />
              <hr />
              <p class="fill-margin"></p>
              <p class="fill-margin bordered"></p>
