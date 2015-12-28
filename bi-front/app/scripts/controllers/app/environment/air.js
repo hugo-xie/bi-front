@@ -2,7 +2,26 @@
 
 
 app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope, $stateParams, $timeout) {
-  
+
+
+
+//下拉点击事件
+
+
+
+$scope.change=function(model){
+console.log(model);
+if(model===2){
+console.log("true");
+}else if(model===1){
+alert("aaa");
+}
+
+};
+
+
+
+
   $scope.title = $stateParams.title;
     /*var map = new AMap.Map('map_canvas');*/
      $scope.showTotalTable = function(){

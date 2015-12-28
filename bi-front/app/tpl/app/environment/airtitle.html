@@ -298,7 +298,7 @@
                                 </table>
 
                             </div>
-                            <div style="overflow: auto; overflow-x:hidden;height: 340px" ng-show="mapTableStatus.airQuality">
+                            <div style="overflow: auto; overflow-x:hidden;height: 200px" ng-show="mapTableStatus.airQuality">
                                 <table class="table table-hover table-responsive" style="font-size:14px">
                                     <tr >
                                         <td style="width:30%">太仓市监测站</td>
@@ -497,59 +497,59 @@
                             <div  style="overflow: auto; overflow-x:hidden;height:515px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
                             <p id="airQualityAnchorTop"></p>
                                 <div  class="col-md-12">
-                                        <div class="col-md-3" id="airQualityAnchor1">
+                                        <div class="col-md-4" id="airQualityAnchor1">
                                             <highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>
                                         </div>
-                                        <div class="col-md-9" style="left:10px;">
-                                            <highchart style="width:70%;height:250px"  config="airQualityOptions.currentAqiLineOption"></highchart>
+                                        <div class="col-md-8" style="left:10px;">
+                                            <highchart style="width:100%;height:250px;margin-left:-70px"  config="airQualityOptions.currentAqiLineOption"></highchart>
                                         </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor2">
+                                    <div class="col-md-4" id="airQualityAnchor2">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.pm25Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm25LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentPm25LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor3">
+                                    <div class="col-md-4" id="airQualityAnchor3">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.pm10Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentPm10LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentPm10LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor4">
+                                    <div class="col-md-4" id="airQualityAnchor4">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.so2Option">SO2</highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentSo2LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentSo2LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor5">
+                                    <div class="col-md-4" id="airQualityAnchor5">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.no2Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentNo2LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentNo2LineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor6">
+                                    <div class="col-md-4" id="airQualityAnchor6">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.coOption"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentCoLineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentCoLineOption"></highchart>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-3" id="airQualityAnchor7">
+                                    <div class="col-md-4" id="airQualityAnchor7">
                                         <highchart style="width:100%;height:250px" config="airQualityOptions.o3Option"></highchart>
                                     </div>
-                                    <div class="col-md-9" style="left:10px">
-                                        <highchart style="width:70%;height:250px" config="airQualityOptions.currentO3LineOption"></highchart>
+                                    <div class="col-md-8" style="left:10px">
+                                        <highchart style="width:100%;height:250px;margin-left:-70px" config="airQualityOptions.currentO3LineOption"></highchart>
                                     </div>
                                 </div>
                             </div>
@@ -569,10 +569,16 @@
                             </div>
                             <div class="row wrapper">
                                 <div class="col-sm-5 m-b-xs" >
-                                    <select class="input-sm form-control w-sm inline v-middle" style:"width:30%">
-                                        <option value="0">太仓市监测点</option>
-                                        <option value="1">科教新城实验小学监测点</option>
-                                    </select>              
+                                    <select  class="input-sm form-control w-sm inline v-middle" style:"width:30%" ng-model="model" ng-change="change(model)">
+                                        <option  value="2">太仓市监测点</option>
+                                        <option  value="3">科教新城实验小学监测点</option>
+                                    </select> 
+
+                                      <div style="font-size:14px;">
+                                            <div class="radio" ng-repeat="airQualityOne in airQualityCurrentList"><label>
+                                                <input type="radio" ng-model="airQualityCurrentListSelected" ng-value="airQualityOne.monitor" name="airQualityCurrentListRadio" ng-click="airQualityCurrentChange(airQualityOne)">{{airQualityOne.monitor}}
+                                            </label></div>
+                                        </div>             
                                 </div>
                             </div>  
                             <div class="list-group">
