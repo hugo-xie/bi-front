@@ -20,19 +20,23 @@
           <highchart id="yearTaxChart"  config="yearTaxChart" />
         </div>
         <div class="col-md-4" style="padding:10px 30px 15px 15px">
-      <div class="hbox bg-primary ">
-              <div class="col wrapper">
-                <span>本年税收预测值</span>
-                <div class="h1 text-info font-thin" style="text-align:center;margin-top:10%">117.52</div>
+        <div class="r bg-light dker item hbox no-border">
+                <div class="col w-xs v-middle hidden-md">
+                  <div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline">
+                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                      <img src="images/economy/GDP1.png" alt="where">
+                    </a>
+                  </div>
+                </div>
+                <div class="col dk padder-v r-r">
+                  <span class="text-xs">本年税收预测值:</span>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%">117.52亿元</span></div>
+                  <span class="text-xs"style="margin-left:45%">预测误差范围<span class="text-primary">2.7%</span></span>
+                </div>
               </div>
-              <div class="col wrapper bg-info">
-                <span>预测误差范围</span>
-                <div class="h1 text-warning font-thin" style="margin-top:10%;text-align:center">2.5%</div>
-              </div>
-            </div>
 
-          <button class="btn btn-primary" style="width:38%;margin-top:15%">一句话解读</button>
-           <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:18px">
+          <button class="btn btn-primary" style="width:38%;margin-top:10%">一句话解读</button>
+           <div style="margin-top:10px;width:98%;font-size:18px">
             <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
               <strong>本年的税收增速较往年的增速有所放缓</strong>
             </span>
@@ -40,9 +44,9 @@
 
           <div class="btn-group-vertical" role="group" aria-label="Left Align ">
             <button class="btn btn-success" style="margin-top:30px" ng-click="changeViewsYear()">切换图标视图</button>
-            <button class="btn btn-warning" style="margin-top:10px" ng-click="checkdeviationYear()">查看预测误差记录</button>
+            <button class="btn btn-info" style="margin-top:10px" ng-click="checkdeviationYear()">查看预测误差记录</button>
             <button class="btn btn-info" style="margin-top:10px" ng-click="checkforecastYear()">查看预测详情</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="adjustParameterYear()">重置调节</button>
+            <button class="btn btn-info" style="margin-top:10px" ng-click="adjustParameterYear()">重置调节</button>
           </div>
         </div>
         <div class="col-md-12 table-responsive" style="margin-top:10px" ng-if="forecastYear">
@@ -153,7 +157,9 @@
 
                   </div>
                   <div class="col-md-2">
-                    <input type="text" ng-model="selectedRange" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="selectedRange" class="form-control"style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
                   <div class="col-md-1">
                     <p class="handler-title" style="margin-top:15px">财政支出</p>
@@ -170,7 +176,9 @@
                     </div>
                  </div>
                  <div class="col-md-2">
-                    <input type="text" ng-model="selectedRange2" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="selectedRange2" class="form-control"style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
            </div>
 
@@ -191,7 +199,9 @@
 
                   </div>
                   <div class="col-md-2">
-                    <input type="text" ng-model="selectedRange3" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="selectedRange3"class="form-control" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
                   <div class="col-md-1">
                     <p class="handler-title" style="margin-top:15px">GDP</p>
@@ -208,7 +218,9 @@
                     </div>
                  </div>
                  <div class="col-md-2">
-                    <input type="text" ng-model="selectedRange4" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="selectedRange4"class="form-control" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
            </div>
   </div>
@@ -232,19 +244,23 @@
           <highchart id="monthTaxChart"  config="monthTaxChart" />
         </div>
         <div class="col-md-4" style="padding:10px 30px 15px 15px">
-      <div class="hbox bg-primary ">
-              <div class="col wrapper">
-                <span>下月税收预测值</span>
-                <div class="h1 text-info font-thin" style="text-align:center;margin-top:10%">96.52</div>
+           <div class="r bg-light dker item hbox no-border">
+                <div class="col w-xs v-middle hidden-md">
+                  <div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline">
+                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                      <img src="images/economy/GDP1.png" alt="where">
+                    </a>
+                  </div>
+                </div>
+                <div class="col dk padder-v r-r">
+                  <span class="text-xs">下月税收预测值:</span>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%">96.52亿元</span></div>
+                  <span class="text-xs"style="margin-left:45%">预测误差范围<span class="text-primary">3.0%</span></span>
+                </div>
               </div>
-              <div class="col wrapper bg-info">
-                <span>预测误差范围</span>
-                <div class="h1 text-warning font-thin" style="margin-top:10%;text-align:center">3.0%</div>
-              </div>
-            </div>
 
-          <button class="btn btn-primary" style="width:38%;margin-top:15%">一句话解读</button>
-           <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:18px">
+          <button class="btn btn-primary" style="width:38%;margin-top:10%">一句话解读</button>
+           <div style="margin-top:10px;width:98%;font-size:18px">
             <span class="glyphicon glyphicon-list-alt" aria-hidden="true" >
               <strong>本年的税收增速较往年的增速有所放缓</strong>
             </span>
@@ -252,9 +268,9 @@
 
           <div class="btn-group-vertical" role="group" aria-label="Left Align ">
             <button class="btn btn-success" style="margin-top:30px" ng-click="changeViews()">切换图标视图</button>
-            <button class="btn btn-warning" style="margin-top:10px" ng-click="checkdeviation()">查看预测误差记录</button>
+            <button class="btn btn-info" style="margin-top:10px" ng-click="checkdeviation()">查看预测误差记录</button>
             <button class="btn btn-info" style="margin-top:10px" ng-click="checkforecast()">查看预测详情</button>
-            <button class="btn btn-primary" style="margin-top:10px" ng-click="adjustParameter()">重置调节</button>
+            <button class="btn btn-info" style="margin-top:10px" ng-click="adjustParameter()">重置调节</button>
           </div>
         </div>
         <div class="col-md-12 " style="margin-top:10px" ng-if="forecast">
@@ -355,7 +371,9 @@
 
                   </div>
                   <div class="col-md-2">
-                    <input type="text" ng-model="monthselectedRange" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="monthselectedRange"class="form-control" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
                   <div class="col-md-1">
                     <p class="handler-title" style="margin-top:15px">财政支出</p>
@@ -372,7 +390,9 @@
                     </div>
                  </div>
                   <div class="col-md-2">
-                    <input type="text" ng-model="monthselectedRange2" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="monthselectedRange2" class="form-control"style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
            </div>
            <div class="row">
@@ -392,7 +412,9 @@
 
                   </div>
                    <div class="col-md-2">
-                    <input type="text" ng-model="monthselectedRange3" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="monthselectedRange3"class="form-control" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
                   <div class="col-md-1">
                     <p class="handler-title" style="margin-top:15px">GDP</p>
@@ -409,7 +431,9 @@
                     </div>
                  </div>
                  <div class="col-md-2">
-                    <input type="text" ng-model="monthselectedRange4" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
+                    <input type="text" ng-model="monthselectedRange4"class="form-control" style="width:60%;margin-top:15px;" pattern="((-)?[0-9]{1,2}|100|-100)"/>
+                    </div>
                   </div>
            </div>
   </div>
