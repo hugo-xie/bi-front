@@ -268,6 +268,7 @@ angular.module('nevermore')
               controller: ['$ocLazyLoad', function($ocLazyLoad) {
                 return $ocLazyLoad.load([
                   'scripts/controllers/app/population/populationstructure.js',
+                  'scripts/controllers/app/population/echarts.js',
                 ]);
               }]
             }

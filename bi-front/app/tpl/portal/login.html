@@ -1,53 +1,56 @@
 
-<div class="login-page" >
-    <div class="banner-section banner-01">
-        <div class="banner-overlay"></div>
-        <div class="banner-content">
-            <div class="tiger-container clearfix">
-                <!-- <div class="image-wrapper pull-left">
-                    <img src="images/portal/login/image-01.png" alt="..."/>
-                </div> -->
-                <div class="panel-wrapper pull-right">
-                    <div class="panel pane-default login-panel">
-                        <div class="panel-body">
-                            <div class="clearfix">
-                                <h4 class="pull-left" style="font-size:0.9em;">欢迎登陆</h4>
-                                <!-- <a class="pull-right text-red register-link" href="#/register">立即注册&nbsp;<i class="fa fa-angle-right"></i></a> -->
+<nav class="navbar navbar-ioc">
+    <div class="container">
+        <div class="navbar-header" style="margin-top:15px">
+            <a  href="/">
+                <img src="images/ioc-logo-login.png" width="141px" height="40px"></a>
+        </div>
+    </div>
+</nav>
+
+<div class="login-banner">
+    <img src="images/ioc-login-bg.png">
+
+    <div class="login-form-container">
+        <div class="login-form">
+            <div class="login-form-title">太仓市智慧城市运营中心 BI 系统</div>
+            <div class="login-form-content">
+                <form>
+                    <div class="table">
+                        <div class="row" style="height:60px;">
+                            <div class="cell">
+                                <span class="form-text">账号:&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             </div>
-                            <form class="login-form form-validation" name="loginForm" novalidate>
-                                <div class="input-group m-t-md">
-                                    <span class="input-group-addon">
-                                      <i class="fa fa-user"></i>
-                                    </span>
-                                    <input type="text" class="form-control" ng-model="login_name" placeholder="请输入账号" required/>
-                                </div>
-                                <div class="input-group m-t-md">
-                                    <span class="input-group-addon">
-                                      <i class="fa fa-lock"></i>
-                                    </span>
-                                    <input type="password" class="form-control" ng-model="login_password" placeholder="请输入密码" required/>
-                                </div>
-                                <div class="clearfix m-t-sm">
-                                    <label class="i-checks i-checks-sm pull-left" style="font-size:0.7em;">
-                                        <input type="checkbox" ng-model="autoLogin">
-                                        <i></i>&nbsp;自动登录
-                                    </label>
-                                    <a class="pull-right forgotpwd-link" ng-click="forgotPassword()" style="font-size:0.7em;">忘记密码?</a>
-                                </div>
-                                <div class="clearfix m-t-sm">
-                                    <span class="text-danger" style="font-size:70%">{{errorMsg}}</span>
-                                </div>
-                                <!-- <button class="btn btn-primary w-full m-t-sm" ng-click="login()">登录</button> -->
-
-                                <button class="btn btn-primary w-full m-t-sm" ui-sref="{{sref}}" style="margin-top:0;" ng-click="login()">登录</button>
-
-
-                            </form>
+                            <div class="cell">
+                                <input ng-model="login_name" type="text" class="form-control form-input"  required>
+                            </div>
+                        </div>
+                        <div class="row" style="height:40px;">
+                            <div class="cell">
+                                <span class="form-text">密码:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div class="cell">
+                                <input ng-model="login_password" type="password" class="form-control form-input">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                            </div>
+                            <div class="cell" style="height:30px;">
+                                <span class="pull-left" style="color:#ffffff; font-size:12px"></span>
+                                <a class="form-link pull-right"><!-- 忘记密码? --></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell"></div>
+                            <div class="cell">
+                                <button ng-click="login()" class="btn btn-default form-btn">登录</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<div data-ng-include="'tpl/portal/block/simple-footer.html'"></div>
+
