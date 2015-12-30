@@ -6,84 +6,311 @@
  */
 app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function($scope, $timeout,$http) {
     
-    //方成代码
-    $timeout(function () {
-    // 路径配置
-        require.config({
-            paths: {
-                echarts: 'http://echarts.baidu.com/build/dist'
-            }
-        });
-        
-        // 使用
-        require(
-            [
-                'echarts',
-                'echarts/chart/bar',// 使用柱状图就加载bar模块，按需加载
-                'echarts/chart/line' 
-            ],
-            function (ec) {
-                // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('discharge')); 
-                
-                var option = {
-                    title : {
-                        text: '太仓市污水分时段排放量',
-                        subtext: ''
-                    },
-                    tooltip : {
-                        trigger: 'axis'
-                    },
-                    legend: {
-                        data:['排放量']
-                    },
-                    toolbox: {
-                        show : true,
-                        feature : {
-                            mark : {show: true},
-                            dataView : {show: true, readOnly: false},
-                            magicType : {show: true, type: ['line', 'bar']},
-                            restore : {show: true},
-                            saveAsImage : {show: true}
-                        }
-                    },
-                    calculable : true,
-                    xAxis : [
-                        {
-                            type : 'category',
-                            data : ['1时','2时','3时','4时','5时','6时','7时','8时','9时','10时','11时','12时']
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'value'
-                        }
-                    ],
-                    series : [
-                  
-                        {
-                            name:'废水排放量',
-                            type:'bar',
-                            data:[41316.379, 41739.668, 40126.664, 39762.43, 41144.68, 39966.195, 39523.172, 40884.328, 41141.418, 37959.043, 37114.941, 38395.945],
-                            markPoint : {
-                                data : [
-                                    {name : '过去12小时最高值', value : 41739.668, xAxis: 1, yAxis: 41739.668, symbolSize:30},
-                                    {name : '过去12小时最低值', value : 37114.941, xAxis: 10, yAxis: 37114.941,symbolSize:30}
-                                ]
-                            },
-                            markLine : {
-                                data : [
-                                    {type : 'average', name : '平均值'}
-                                ]
-                            }
-                        }
-                    ]
-                }; 
-                    // 为echarts对象加载数据 
-                    myChart.setOption(option); 
+    //第一个框highcharts废水排放分析部分
+    $scope.changePollutionType1 = !$scope.changePollutionType1
+
+    $scope.changePollutionType1=function(){
+        //区域图
+         $scope.discharge={
+            options:{
+            chart: {
+                type: 'area'
+            },
+            title: {
+                text: '废水排放总量'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: ['1月5日', '1月6日', '1月7日', '1月8日', '1月9日', '1月10日'],
+                tickmarkPlacement: 'on',
+                title: {
+                    enabled: false
                 }
-            );  
-    },0);
+            },
+            yAxis: {
+                title: {
+                    text: '吨'
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value;
+                    }
+                }
+            },
+            tooltip: {
+                shared: true,
+                valueSuffix: ' 吨'
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'normal',
+                    lineColor: '#666666',
+                    lineWidth: 1,
+                    marker: {
+                        lineWidth: 1,
+                        lineColor: '#666666'
+                    }
+                }
+            }
+        },
+            series: [{
+                name: '玖龙纸业有限公司',
+                color:"#45a5d6",
+                data: [39023, 37958, 39250, 37219, 33255, 39871]
+            }, {
+                name: '太仓市城区污水处理厂',
+                color:"#69afcd",
+                data: [37289.93, 38061.91, 37985.65, 36860.89, 36602.62, 37506.78]
+            }, {
+                name: '太仓江城城市污水处理有限公司',
+                color:"#57d160",
+                data: [15285.77, 13806.99, 17708, 16371.03, 16052.72, 15899.75]
+            }, {
+                name: '浏河镇污水处理厂',
+                color:"#c7e74f",
+                data: [8325.73, 8570.56, 7456.46, 7884.56, 7973.25, 8653.28]
+            }, {
+                name: '港城组团污水处理厂',
+                color:"#f8d940",
+                data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
+            },{
+                name: '其他污染源',
+                color:"#ffb143",
+                data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
+            }]
+         };
+      };
+      //COD浓度
+      $scope.changePollutionType2=function(){
+        $scope.discharge={
+            options:{
+            chart: {
+                    type: 'column'
+                }},
+                title: {
+                    text: 'COD排放浓度'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        '玖龙纸业有限公司',
+                        '太仓市城区污水处理厂',
+                        '太仓江城城市污水处理有限公司',
+                        '浏河镇污水处理厂',
+                        '港城组团污水处理厂',
+                        '其他污染源'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'mg/L'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'COD浓度',
+                    color: "#20a0e1",
+                    data: [41.73, 22.79, 21.08, 32.09, 14.5, 43.68]
+
+                }]
+        };
+      };
+      //氨氮浓度
+   $scope.changePollutionType3=function(){
+        $scope.discharge={
+            options:{
+            chart: {
+                    type: 'column'
+                }},
+                title: {
+                    text: '氨氮排放浓度'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        '玖龙纸业有限公司',
+                        '太仓市城区污水处理厂',
+                        '太仓江城城市污水处理有限公司',
+                        '浏河镇污水处理厂',
+                        '港城组团污水处理厂',
+                        '其他污染源'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'mg/L'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: '氨氮浓度',
+                    color: "#20a0e1",
+                    data: [0.33, 0.18, 0.59, 1.04, 0.11, 0.85]
+
+                }]
+        };
+      };
+      //总磷浓度
+        $scope.changePollutionType4=function(){
+        $scope.discharge={
+            options:{
+            chart: {
+                    type: 'column'
+                }},
+                title: {
+                    text: '磷排放浓度'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        '玖龙纸业有限公司',
+                        '太仓市城区污水处理厂',
+                        '太仓江城城市污水处理有限公司',
+                        '浏河镇污水处理厂',
+                        '港城组团污水处理厂',
+                        '其他污染源'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'mg/L'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: '总磷浓度',
+                    color: "#20a0e1",
+                    data: [0.01, 0.09, 0.18, 0.1, 0.06, 0.16]
+
+                }]
+        };
+      };
+
+      
+     
+    
+    $scope.discharge={
+       options:{
+            chart: {
+                type: 'area'
+            },
+            title: {
+                text: '废水排放总量'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: ['1月5日', '1月6日', '1月7日', '1月8日', '1月9日', '1月10日'],
+                tickmarkPlacement: 'on',
+                title: {
+                    enabled: false
+                }
+            },
+            yAxis: {
+                title: {
+                    text: '吨'
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value;
+                    }
+                }
+            },
+            tooltip: {
+                shared: true,
+                valueSuffix: ' 吨'
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'normal',
+                    lineColor: '#666666',
+                    lineWidth: 1,
+                    marker: {
+                        lineWidth: 1,
+                        lineColor: '#666666'
+                    }
+                }
+            }
+        },
+            series: [{
+                name: '玖龙纸业有限公司',
+                color:"#45a5d6",
+                data: [39023, 37958, 39250, 37219, 33255, 39871]
+            }, {
+                name: '太仓市城区污水处理厂',
+                color:"#69afcd",
+                data: [37289.93, 38061.91, 37985.65, 36860.89, 36602.62, 37506.78]
+            }, {
+                name: '太仓江城城市污水处理有限公司',
+                color:"#57d160",
+                data: [15285.77, 13806.99, 17708, 16371.03, 16052.72, 15899.75]
+            }, {
+                name: '浏河镇污水处理厂',
+                color:"#c7e74f",
+                data: [8325.73, 8570.56, 7456.46, 7884.56, 7973.25, 8653.28]
+            }, {
+                name: '港城组团污水处理厂',
+                color:"#f8d940",
+                data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
+            },{
+                name: '其他污染源',
+                color:"#ffb143",
+                data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
+            }]
+        };          
+
+        
 
     // 牛哥代码
     // app.controller('WaterEnvironmentBICtrl', function($scope, $http, $timeout) {

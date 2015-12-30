@@ -11,48 +11,58 @@
 <div class="wrapper lter b-b bg-white">
   <div class="subview3_title">水环境分析预测BI</div>
 </div>
-<div class="wrapper container">
+<div class="wrapper container" style="width:1500px">
 	
-	<!-- 污水总量Echarts -->
-	<div class="details-content" style="width:102.5%">
-	  <div class="panel panel-primary" style="margin-top: 20px;">
-	    <div class="panel-heading">污水排放总量变化</div>
-	    <div class="panel-body ">
-	      <div class="row">
-	        <div class="col-md-8 chart-panel">
-	          <div id="discharge" style="width:98%;height: 400px;margin-left:24px" ></div>
-	        </div>
-	        <div class="col-md-4">
-	          <p class="fill-margin"></p>
-	          <div class="ioc-panel-desc">
-	            <p class="ioc-panel-desc-title">
-	              <!-- <img src="/images/common/data_details.png"/>
-	              -->
-	              <button type="button" class="btn btn-primary" style="font-size:110%;">一句话解读</button>
-	            </p>
-	            <h4>2015年12月24日，太仓市每小时污水排放量均正常，无明显超标现象</h4>
-	          </div>
-	          <br>
-	          <p class="fill-margin"></p>
-	          <div class="ioc-panel-desc">
-	            <p class="ioc-panel-desc-title">
-	              <!-- <img src="/images/common/ioc-index-mean.png"/>
-	              -->
-	              <button type="button" class="btn btn-primary" style="font-size:110%;">
-	                <span class="glyphicon glyphicon-retweet"></span>
-	                视图切换
-	              </button>
-	            </p>
-	            <p class="ioc-panel-desc-body">
-	              在左侧直方图的右上角可以切换选择数据视图、折线图或直方图，从而变换角度观察污水排放总量的变化
-	            </p>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+	<!-- 污水总量highcharts -->
+	<div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <div class="panel panel-primary" style="margin-left:10.3%;margin-right:10.3%;margin-top: 20px;">
+	            <div class="panel-heading">
+	              废水排放分析
+	            </div>
+                <div class="panel-body">
+	                <div class="row">
+	                <!--highcharts部分-->
+	                 	<div class="col-md-8 chart-panel">
+	                       <highchart id="discharge" config="discharge" style="width:500px,height: 500px"></highchart>
+	                  	</div>
+		                
 
+	                <!--第一个框的右边栏部分-->
+	                    <div class="col-md-4">
+	                    	<div class="col-md-12 cgq_botomline">
+					      		<p><span class="glyphicon  glyphicon-list"> 废水排放指标选择</span></p>
+					      		
+					      		<div class="col-md-6">
+				      			<button ng-click="changePollutionType1()" class="btn m-b-xs btn-primary  cgq_fixedwidth">废水排放量</button>
+				      			</div>
+					      		<div class="col-md-6">
+					      			<button ng-click="changePollutionType2()" class="btn m-b-xs btn-primary  cgq_fixedwidth">COD浓度</button>
+					      		</div>
+					      		<div class="col-md-6">
+					      			<button ng-click="changePollutionType3()" class="btn m-b-xs btn-primary  cgq_fixedwidth">氨氮浓度</button>
+					      		</div>
+					      		<div class="col-md-6">
+					      			<button ng-click="changePollutionType4()" class="btn m-b-xs btn-primary  cgq_fixedwidth">总磷浓度</button>
+					      		</div>
+						    </div>
+	                    		<p class="fill-margin"></p>
+		                    <div class="ioc-panel-desc">
+		                      <p class="ioc-panel-desc-title">
+		                        <img src="/images/common/data_details.png"/>
+		                      </p>
+
+		                      <h4>预测结果解读</h4>
+		                      <p id='a'>总体来看，太仓市的人口总量处于平稳状态，呈增长趋势，随着二胎政策的全面开放，极大促进了人口数量的增加。</p>
+		                    </div>
+	                        <hr/>
+						</div>
+	                </div>
+            	</div>
+            </div>
+        </div>
+    </div>
+        <!--第一个框结束-->
 	<!-- 牛哥代码 -->
 	<div class="details-content">
 		<div class="container">

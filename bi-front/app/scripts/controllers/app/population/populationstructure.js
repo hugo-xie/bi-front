@@ -676,6 +676,7 @@ var points =[
             name: '人口总量',
             type: 'column',
             yAxis: 1,
+            color: "#95ceff",
             data: [447046, 450908, 454570, 457963, 461066, 463863, 466970, 469950, 472652, 475038],
             tooltip: {
                 valueSuffix: '人'
@@ -684,6 +685,7 @@ var points =[
         }, {
             name: '人口增长率',
             type: 'spline',
+             color: "#434348",
             data: [0.38, 0.43, 0.50, 0.57, 0.63, 0.67, 0.60, 0.67, 0.74, 0.81],
             marker:{
                 symbol:"circle"
@@ -701,6 +703,7 @@ var points =[
             name: '人口总量',
             type: 'column',
             yAxis: 1,
+            color: "#95ceff",
             data: [503463, 508465, 513319, 518001, 522475, 526754, 531251, 535567, 539655, 543482],
             tooltip: {
                 valueSuffix: '人'
@@ -709,6 +712,7 @@ var points =[
         }, {
             name: '人口增长率',
             type: 'spline',
+             color: "#434348",
             data: [0.86, 0.80, 0.86, 0.93, 0.99,1.04, 1.00, 1.06, 1.12, 1.17],
             marker:{
                 symbol:"circle"
@@ -726,6 +730,7 @@ var points =[
             name: '人口总量',
             type: 'column',
             yAxis: 1,
+            color: "#95ceff",
             data: [550441, 556081, 561654, 567106, 572420, 577676, 583104, 588418, 593579, 598577],
             tooltip: {
                 valueSuffix: '人'
@@ -734,6 +739,7 @@ var points =[
         }, {
             name: '人口增长率',
             type: 'spline',
+            color: "#434348",
             data: [1.22, 1.21,1.25, 1.31, 1.37, 1.42, 1.39, 1.43, 1.49, 1.54],
             marker:{
                 symbol:"circle"

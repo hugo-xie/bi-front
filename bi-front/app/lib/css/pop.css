@@ -24,6 +24,12 @@ body {
   padding: 0;
 }
 
+.fcc-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .chart-panelzzh {
   height：150%;
   border-right: solid #ccc 1px;
