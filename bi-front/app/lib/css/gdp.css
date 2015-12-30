@@ -97,3 +97,8 @@
 .slider-handle.triangle {
   background: transparent none;
 }
+.ecsliderExample {
+      width:100%;
+    }
+.ecui-slider-range { background: #729fcf; }
+.ecui-slider-handle { border-color: #729fcf; }

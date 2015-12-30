@@ -1,6 +1,14 @@
 'use strict';
 
 app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+  $scope.colorpicker = {
+        options: {
+            orientation: 'horizontal',
+            min: 0,
+            max: 100,
+            range: 'min'
+        }
+    };
   $scope.title = $stateParams.title;
   
   $scope.deviation=false;

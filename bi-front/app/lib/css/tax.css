@@ -83,3 +83,8 @@
 .hover-tr:hover{
   cursor:pointer;
 }
+.sliderExample {
+      width:100%;
+    }
+.ui-slider-range { background: #729fcf; }
+.ui-slider-handle { border-color: #729fcf; }

@@ -1,7 +1,14 @@
 'use strict';
 
 app.controller('EconomyKeqiangCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
-
+  $scope.colorpicker = {
+        options: {
+            orientation: 'horizontal',
+            min: 0,
+            max: 100,
+            range: 'min'
+        }
+    };
   $scope.title = $stateParams.title;
   $scope.selectedRange=0;
   $scope.loandata=[6.3, 6.6, 6.5, 7.0,7.4,7.5,7.1,6.8,7.5,8.0,8.1,8.6];
