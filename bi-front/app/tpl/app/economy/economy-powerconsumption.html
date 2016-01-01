@@ -19,31 +19,31 @@
 	      <!--Menu side-->
 	      <div class="col-md-4 menustructer">
 	      	<div>
-		      	<div class="col-md-12 ">
+		      	<div class="col-md-12" style="padding-top:0.5em">
 	            	<div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
-		                <span class="text-white font-thin h1 block">{{totaldata.powergrowthrate}}</span>
+		                <span class="text-white font-thin h1 block">{{totaldata.powergrowthrate}}%</span>
 		                <span class="text-xs">{{totaldata.year}}年工业用电量增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>                                                                                                              
 		            </div>
 	            </div>
 	            <div class="col-md-12 ">
 	            	<div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth">
-		                <span class="text-white font-thin h1 block">{{totaldata.gdpgrowthrate}}</span>
+		                <span class="text-white font-thin h1 block">{{totaldata.gdpgrowthrate}}%</span>
 		                <span class="text-xs">{{totaldata.year}}年GDP增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
 		                </span>
 	              	</div>
 	            </div>
-	      		<div class="col-md-12 cgq_marginaround1em">
+	      		<div class="col-md-12 cgq_marginaround1em" style="margin-top:1em">
 					<article class="media cgq_contentwidth">
 			            <div class="pull-left">
 			              <span class="fa-stack fa-lg">
 			                <i class="fa fa-circle fa-stack-2x text-info"></i>
-			                <i class="fa fa-file-o fa-stack-1x text-white"></i>
+			                <i class="icon-bulb fa-stack-1x text-white"></i>
 			              </span>
-			            </div>
-			            <div class="media-body">
 			              <span class="h4">一句话解读</span>
+			            </div>
+			            <div class="media-body clear">			              
 			              <small class="block m-t-xs">{{totaldata.oneword}}</small>
 			            </div>
           			</article>
@@ -51,35 +51,38 @@
 
 	      		<div class="col-md-12 cgq_marginaround1em">
 				    <div class="btn-group dropdown">
-			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
+			        	<button class="btn btn-success cgq-fixed-buttonwidth" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
 			          	<ul class="dropdown-menu">
 			            <li><a ng-click="changeTotalChart('spline')">曲线图</a></li>
 			            <li class="divider"></li>
-			            <li><a ng-click="changeTotalChart('column')">柱状图</a></li>
+			            <li><a ng-click="changeTotalChart('column')">直方图</a></li>
 			            <li><a ng-click="changeTotalChart('area')">区域图</a></li>
 			          </ul>
 			        </div>
 	      		</div>
 	      		<div class="col-md-12 cgq_marginaround1em">
-	      			<button ng-click="showTotalTable()" class="btn m-b-xs btn-primary">详细数据列表</button>
+	      			<button ng-click="showTotalTable()" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据列表</button>
 	      		</div>
 	      		
 	      	</div>
 	      </div>
 	    </div>
     </div>
-    <div class="bg-white container padding0em" ng-if="totalshow">
-    	<div class="panel panel-default paddingmargin0em">
+    <div class="bg-white container padding0em" style="border-top:0" ng-if="totalshow">
+    	<div class="panel panel-default paddingmargin0em" >
 	    	<div class="panel-heading">数据详情</div>  
 		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="year in totaldata.tabledata">{{year.yearvalue}}</td>
+			      	<td>年份</td>
+			        <td ng-repeat="year in totaldata.yearvalue">{{year}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="gdp in totaldata.tabledata">{{gdp.gdprate}}</td>
+			      	<td>GDP同比增长率</td>
+			        <td ng-repeat="gdp in totaldata.gdprate">{{gdp}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="power in totaldata.tabledata">{{power.powerrate}}</td>
+			      	<td>工业用电量同比增长率</td>
+			        <td ng-repeat="power in totaldata.powerrate">{{power}}</td>
 			      </tr>
 		    </table>
   		</div>

@@ -14,7 +14,7 @@
 	padding: 2em;
 }
 .menustructer{
-	border-left: 2px solid #428bca;
+	border-left: 1px solid #428bca;
 	height: 300%;
 	padding-left: 0;
 	padding-right: 0;
@@ -39,7 +39,7 @@
 	margin-bottom: 1em;
 }
 .cgq_marginaround1em{
-	margin: 4%;
+	margin: 0.5em;
 }
 .marginleft1em{
 	margin-left:5%;
@@ -102,6 +102,9 @@
 }
 input.cgq_search {
 	margin-top: 2em;
+}
+.cgq-fixed-buttonwidth{
+	width: 8em
 }
 
 

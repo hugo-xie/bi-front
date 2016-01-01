@@ -7,24 +7,12 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   //企业用电量与经济增长关联分析
   $scope.totaldata = {
   	year: '2016',
-  	oneword: '根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读',
-  	powergrowthrate: '7.55%',
-  	gdpgrowthrate: '6.22%',
-  	tabledata:
-  	[
-	  {yearvalue:'年份',gdprate:'GDP同比增长率',powerrate:'工业用电量同比增长率'},
-	  {yearvalue:'2006',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2007',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2008',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2009',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2010',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2011',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2012',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2013',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2014',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2015',gdprate:'4%',powerrate:'5%'},
-	  {yearvalue:'2016',gdprate:'4%',powerrate:'5%'},
-  	]
+  	oneword: '用电量与经济增长密切相关：用电量增减变动趋势与GDP增减变动趋势基本一致，GDP增长时，用电量也增长，增速相似；GDP回落时，用电量增长也回落;预测阶段用电量增速将大于GDP增速。',
+  	powergrowthrate: 7.6,
+  	gdpgrowthrate: 7.9,
+    yearvalue:['2006', '2007', '2008', '2009', '2010', '2011','2012', '2013', '2014', '2015', '2016','2017','2018'],
+    gdprate:[2.0, 2.9, 3.5, 5.5, 6.2, 7.5, 9.2, 8.5, 7.3, 6.3, 6.9, 7.9, 8.3],
+    powerrate:[2.2, 2.8, 3.7, 4.3, 5.0, 6.0, 7.8, 7.1, 6.1, 5.1, 6.6, 7.9, 8.8],
   };
 
   //init
@@ -39,12 +27,15 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   }
   //第一图hightchart
   $scope.TotalPowerGDPChart={
-	  	 options:{
+        credits:{
+            enabled:false // 禁用版权信息
+        },
+	  	options:{
 	  	 	chart: {
 	            type: $scope.charttype
 	     	},
 	  	 },
-	     title: {
+	    title: {
             text: '工业用电量与GDP增长率关联分析预测',
             x: -20 //center
         },
@@ -53,7 +44,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
             x: -20
         },
         xAxis: {
-            categories: ['2006', '2007', '2008', '2009', '2010', '2011','2012', '2013', '2014', '2015', '2016']
+            categories: $scope.totaldata.yearvalue,
         },
         yAxis: {
             title: {
@@ -76,10 +67,10 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
         },
         series: [{
             name: '工业用电量同比增长率',
-            data: [7.0, 6.9, 6.5, 5.5, 6.2, 7.5, 6.2, 7.5, 6.3, 5.3, 3.9]
+            data: $scope.totaldata.powerrate,
         }, {
             name: 'GDP同比增长率',
-            data: [4.2, 3.8, 3.7, 3.3, 4.0, 5.0, 4.8, 5.1, 4.1, 3.1, 2.6]
+            data: $scope.totaldata.gdprate,
         }]
   };
 
