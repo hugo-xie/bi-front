@@ -58,13 +58,42 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
                 '2016',
                 '2017'
                 
-            ]
+            ],
+            plotBands:[{
+            from: 8.5,
+            to:12.5,
+            color:'rgba(68, 170, 213, .2)',
+            label: {
+                    text: '预测区',
+                    verticalAlign: 'top',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 600
+                    }
+                   
+                }
+            }]
         },
         yAxis: [{
             min: 0,
             title: {
                 text: '年度GDP总值（亿元）'
+            },
+            plotLines:[{
+            color:'red',
+            dashStyle:'DashDot',
+            value:1150,
+            width:2,
+            label:{
+                text:'本年度GDP目标',
+                align:'left',
+                x:10,
+                 style: {
+                        fontSize: '8px',
+                        fontWeight: 200
+                    }
             }
+            }]
         },{
             title: {
                 text: '同比增长率'
@@ -126,14 +155,44 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
                 '第三季度',
                 '第四季度'
                 
-            ]
+            ],
+             plotBands:[{
+            from: 2.5,
+            to:3.5,
+            color:'rgba(68, 170, 213, .2)',
+            label: {
+                    text: '预测区',
+                    verticalAlign: 'top',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 600
+                    }
+                   
+                }
+            }]
         },
         yAxis: [{
             min: 0,
             title: {
                 text: '季度GDP总值（亿元）'
+            },
+             plotLines:[{
+            color:'red',
+            dashStyle:'DashDot',
+            value:1150,
+            width:2,
+            label:{
+                text:'本年度GDP目标',
+                align:'left',
+                x:10,
+                 style: {
+                        fontSize: '8px',
+                        fontWeight: 200
+                    }
             }
-        },{
+            }]
+        },
+        {
             title: {
                 text: '同比增长率'
             },

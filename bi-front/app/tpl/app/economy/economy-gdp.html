@@ -17,21 +17,32 @@
       <highchart   id="chart1" config="yearGDPChart"  style="margin-left:15px"></highchart>
     </div>
     <div class="col-md-4" style="padding:10px 30px 15px 15px">
-      <div class="r bg-light dker item hbox no-border">
+      <div class="r  dker item hbox no-border" style="background-color:rgba(29,155,114,.8)">
                 <div class="col w-xs v-middle hidden-md">
                   <div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline">
-                     <i class="fa fa-area-chart fa-4x" style="color:rgb(35,183,229);margin-left:8%">
+                     <i class="fa fa-area-chart fa-4x" style="color:white;margin-left:8%">
                      
                    </i>
                   </div>
                 </div>
                 <div class="col dk padder-v r-r">
-                  <span class="text-xs">当年GDP预测值:</span>
-                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%">1152.67亿元</span></div>
-                  <span class="text-xs"style="margin-left:45%">预测误差范围<span class="text-primary">3%</span></span>
+                  <span class="text-xs"style="color:white">当年GDP预测值:</span>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;color:white;text-shadow:1px 2px 3px #000000">1152.67亿元</span></div>
+                  <span class="text-xs"style="margin-left:45%;color:white">预测误差范围<span class="text-primary"style="color:white">3%</span></span>
                 </div>
               </div>
-      <button class="btn btn-primary" style="margin-top:10%">一句话解读</button>
+              <article class="media cgq_contentwidth">
+                  <div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                    </span>
+                  </div>
+                  <div class="media-body">
+                    <span class="h4">一句话解读</span>
+                    <small class="block m-t-xs">{{totaldata.oneword}}</small>
+                  </div>
+                </article>
       <!--改成了div-->
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
           <strong>本年GDP增速较往年有所放缓</strong>
@@ -154,21 +165,32 @@
       <highchart   id="chart1" config="monthGDPChart" style="margin-left:15px"></highchart>
     </div>
     <div class="col-md-4" style="padding:10px 30px 15px 15px">
-      <div class="r bg-light dker item hbox no-border">
+      <div class="r  dker item hbox no-border" style="background-color:rgba(29,155,114,.8)">
+
                 <div class="col w-xs v-middle hidden-md">
                   <div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline">
-                   <i class="fa fa-line-chart fa-4x" style="color:rgb(35,183,229);margin-left:8%">
+                   <i class="fa fa-line-chart fa-4x" style="color:white;margin-left:8%">
                      
                    </i>
                   </div>
                 </div>
                 <div class="col dk padder-v r-r">
-                 <span class="text-xs">下季度GDP预测值:</span>
-                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%">1152.67亿元</span></div>
-                  <span class="text-xs"style="margin-left:45%">预测误差范围<span class="text-primary">3%</span></span>
+                 <span class="text-xs"style="color:white">下季度GDP预测值:</span>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;color:white;color:white;text-shadow:1px 2px 3px #000000">1152.67亿元</span></div>
+                  <span class="text-xs"style="margin-left:45%;color:white">预测误差范围<span class="text-primary" style="color:white">3%</span></span>
+
                 </div>
               </div>
-      <button class="btn btn-primary" style="margin-top:10%" ng-disabled="true">一句话解读</button>
+               <div class="r  dker item hbox no-border" style="background-color:rgba(29,155,114,.8)">
+
+                
+                <div class="col dk padder-v r-r">
+                 <span class="text-xs" style="margin-left:10%;color:white">至第三季度结束,GDP为<span class="text font-thin h3"style="color:white;color:white;text-shadow:1px 2px 3px #000000">820.75</span>亿元</span>
+                  <div class="text font-thin h5" style="margin-left:10%"><span style="color:white">距完成年度GDP目标还差:<span class="text font-thin h3"style="color:white;text-shadow:1px 2px 3px #000000">329.25</span>亿元</span></div>
+                 </span></span>
+                </div>
+              </div>
+      <button class="btn btn-primary" style="margin-top:2%" ng-disabled="true">一句话解读</button>
       <!--button不可以自动换行-->
       <div style="margin-top:10px;width:90%;font-size:18px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
@@ -176,7 +198,7 @@
         </span>
       </div>
       <div class="btn-group-vertical" role="group" aria-label="Left Align ">
-     <div class="btn-group" style="margin-top:40px">
+     <div class="btn-group" style="margin-top:5px">
          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            切换图表视图 <span class="caret"></span>
          </button>
@@ -187,8 +209,8 @@
              <li><a ng-click="monthexchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-info" style="margin-top:30px" ng-click="monthcheckdeviation()">查看预测误差记录</button>
-      <button class="btn btn-info" style="margin-top:30px" ng-click="monthcheckforecast()">查看预测详情</button>
+      <button class="btn btn-info" style="margin-top:5px" ng-click="monthcheckdeviation()">查看预测误差记录</button>
+      <button class="btn btn-info" style="margin-top:5px" ng-click="monthcheckforecast()">查看预测详情</button>
       </div>
     </div>
     <div class="col-md-12" style="margin-top:10px" ng-if="monthforecast">
@@ -251,18 +273,18 @@
       <highchart   id="chart1" config="industryyearGDPChart" style="margin-left:15px"></highchart>
     </div>
      <div class="col-md-4" style="padding:10px 30px 15px 15px">
-      <div class="r bg-light dker item hbox no-border">
+      <div class="r  dker item hbox no-border" style="background-color:rgba(29,155,114,.8)">
                 <div class="col w-xs v-middle hidden-md">
                   <div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline">
-                     <i class="fa fa-bar-chart-o fa-4x" style="color:rgb(35,183,229);margin-left:5%">
+                     <i class="fa fa-bar-chart-o fa-4x" style="color:white;margin-left:5%">
                      
                      </i>
                   </div>
                 </div>
                 <div class="col dk padder-v r-r">
-                  <span class="text-xs">全行业预测值:</span>
-                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%">1152.67亿元</span></div>
-                  <span class="text-xs"style="margin-left:45%">预测误差范围<span class="text-primary">3%</span></span>
+                  <span class="text-xs" style="color:white">全行业预测值:</span>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;color:white;color:white;text-shadow:1px 2px 3px #000000">1152.67亿元</span></div>
+                  <span class="text-xs"style="margin-left:45%;color:white">预测误差范围<span class="text-primary"style="color:white">3%</span></span>
                 </div>
               </div>
       <button class="btn btn-primary" style="margin-top:10%" ng-disabled="true">一句话解读</button>
