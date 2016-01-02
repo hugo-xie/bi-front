@@ -77,18 +77,162 @@
 			        <td ng-repeat="year in totaldata.yearvalue">{{year}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			      	<td>GDP同比增长率</td>
+			      	<td>GDP同比增长率(%)</td>
 			        <td ng-repeat="gdp in totaldata.gdprate">{{gdp}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			      	<td>工业用电量同比增长率</td>
+			      	<td>工业用电量同比增长率(%)</td>
 			        <td ng-repeat="power in totaldata.powerrate">{{power}}</td>
 			      </tr>
 		    </table>
   		</div>
     </div>
 
-    <!--用电量增长率与行业产值增长率分析预测————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
+    <!--用电量增长率与行业产值增长率分析预测—————————————————————————————————总体视图———————————————————————————————————————————————————————————————————————————-->
+    <div class="wrapper bg-white container space-top" ng-controller="EconomyPowerConsumptionCtrl_Industries">
+	    <div class="row">
+	      <!--标题-->
+	      <div class="col-md-12 topbar">
+	      	<h4 class="cgq_title"><span>行业用电量与产值增长率对比分析</span><span>{{}}</span></h4>
+	      </div>
+	      <!--highchart图表-->
+	      <div class="col-md-12 cgq-clearsidepadding">
+	      	<div class="col-md-6 chartshow cgq-paddingaround0.5em cgq-dashedborder">
+	        	<highchart   id="chartvocation" config='VocationChartPiePower'></highchart>
+	      	</div>
+	      	<div class="col-md-6 chartshow cgq-paddingaround0.5em cgq-dashedborder">
+	        	<highchart   id="chartvocation" config='VocationChartPieGdp'></highchart>
+	      	</div>	
+	      </div>
+	      <div class="col-md-12" style="padding-top:0.5em;padding-bottom:0.5em;border-bottom:1px dashed lightblue">
+	      	
+	      	<li ng-click="changeYear(2007)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2007</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2008)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2008</div>
+	            </div>
+	      	</li>
+			<li ng-click="changeYear(2009)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2009</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2010)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2010</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2011)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2011</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2012)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2012</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2013)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2013</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2014)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2014</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2015)" class="inline col-md-1 cgq-wrap b-info">
+	      		<div class="tl-content panel bg-info padder">
+	              <span class="arrow arrow-info bottom"></span>
+	              <span class="arrow arrow-info bottom"></span>
+	              <div class="text-lt">2015</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2016)" class="inline col-md-1 cgq-wrap b-success">
+	      		<div class="tl-content panel bg-success padder">
+	              <span class="arrow arrow-success bottom"></span>
+	              <span class="arrow arrow-success bottom"></span>
+	              <div class="text-lt">2016</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2017)" class="inline col-md-1 cgq-wrap b-success">
+	      		<div class="tl-content panel bg-success padder">
+	              <span class="arrow arrow-success bottom"></span>
+	              <span class="arrow arrow-success bottom"></span>
+	              <div class="text-lt">2017</div>
+	            </div>
+	      	</li>
+	      	<li ng-click="changeYear(2018)" class="inline col-md-1 cgq-wrap b-success">
+	      		<div class="tl-content panel bg-success padder">
+	              <span class="arrow arrow-success bottom"></span>
+	              <span class="arrow arrow-success bottom"></span>
+	              <div class="text-lt">2018</div>
+	            </div>
+	      	</li>	      	
+	      </div>
+	      <!---->
+	      <div class="col-md-12" style="padding:3px">
+	      	<table st-table="rowCollectionBasic" class="table table-bordered table-striped" style="margin-bottom:0;font-size:70%;text-align:center;">		      
+		          <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			      	<td><span style="color:orange">{{tempvalue.yearmark}}</span><span>年数据：</span></td>
+			        <td><strong>农林牧渔</strong></td>
+			        <td><strong>工业</strong></td>
+			        <td><strong>建筑</strong></td>
+			        <td><strong>交通运输仓储邮政</strong></td>
+			        <td><strong>信息传输计算机服务和软件</strong></td>
+			        <td><strong>批发零售住宿和餐饮</strong></td>
+			        <td><strong>金融房地产商务及居民服务</strong></td>
+			        <td><strong>公共事业及管理组织</strong></td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			      	<td>用电量增长率(%)</td>
+			        <td>{{tempvalue.power[0]}}</td>
+			        <td>{{tempvalue.power[1]}}</td>
+			        <td>{{tempvalue.power[2]}}</td>
+			        <td>{{tempvalue.power[3]}}</td>
+			        <td>{{tempvalue.power[4]}}</td>
+			        <td>{{tempvalue.power[5]}}</td>
+			        <td>{{tempvalue.power[6]}}</td>
+			        <td>{{tempvalue.power[7]}}</td>
+			      </tr>
+			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			      	<td>产值增长率(%)</td>
+			        <td >{{tempvalue.gdp[0]}}</td>
+			        <td >{{tempvalue.gdp[1]}}</td>
+			        <td >{{tempvalue.gdp[2]}}</td>
+			        <td >{{tempvalue.gdp[3]}}</td>
+			        <td >{{tempvalue.gdp[4]}}</td>
+			        <td >{{tempvalue.gdp[5]}}</td>
+			        <td >{{tempvalue.gdp[6]}}</td>
+			        <td >{{tempvalue.gdp[7]}}</td>
+			      </tr>
+		    </table>
+	      </div>
+	      
+	    </div>
+    </div>
+    <!--End of Vocation-->
     <div class="wrapper bg-white container space-top">
 	    <div class="row">
 	      <!--标题-->
@@ -172,7 +316,6 @@
 	      </div>
 	    </div>
     </div>
-    <!--End of Vocation-->
 
     <!--规模以上企业用电量增长率与产值增长率分析预测————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
     <div class="wrapper bg-white container space-top" style="margin-bottom:0em;">
