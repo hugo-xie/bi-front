@@ -1299,6 +1299,9 @@ $scope.aqilinechart={
         //AQI折线图
     	currentAqiLineOption:{
             options:{
+            	chart: {
+            		height:250
+            	},
                 title: {
                     text: null,
                 },
