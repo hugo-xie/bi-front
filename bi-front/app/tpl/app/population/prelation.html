@@ -27,28 +27,37 @@
                  
                  <p class="fill-margin"></p>
                  <div class="ioc-panel-desc">
-                   <p class="ioc-panel-desc-title">
-                     <img src="/images/common/ioc-index-mean.png"/>   
-                   </p>
+                  <div class="pull-left">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-file-o fa-stack-1x text-white"></i>
+                          </span>
+                        </div>
+                      <h5 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:3%;font-size:130%;font-weight:normal">指标含义</h5>
                    <p class="ioc-panel-desc-body">
-                     可手动调节 <strong>劳动力人口与经济</strong>
-                     各个指标值,观察对应经济与劳动力人口的指标变化情况。
+                     可手动调节劳动力人口与经济各个指标值,观察对应经济与劳动力人口的指标变化情况。
                    </p>
                  </div>
+                 <br />
                  <div class="row">
                    <div class="col-md-5">
                      <p class="handler-title">劳动力人口</p>
                    </div>
                    <div class="col-md-7">
-                    <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:200px" >
-                     <div class="progress-box">
-                       <div class="percentage-cur">
-                         <span class="num">{{selectedRange}}.00%</span>
-                       </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                    <input  class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:50px;border:2px solid #a1a1a1;padding:10px 40px;background:#FFFFFF;border-radius:5px;" >
+                    </input>
+                  </div>
+                  <div class="col-md-3">
+                     <span class="num" style="width:50px">{{selectedRange}}.00%</span>
+                  </div>
+                     <div class="progress-box col-md-3">
                       <div  style="margin-top:11px">
                           <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange" ></div>
                         </div>
                      </div>
+                   </div>
                    </div>
                  </div>
                  <br />
