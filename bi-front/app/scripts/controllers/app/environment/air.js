@@ -471,14 +471,14 @@ alert("aaa");
 
 $scope.aqilinechart={
  title: {
-            text: '空气质量AQI',
+            text: '过去七天空气质量AQI',
             style: {
             	fontSize:'180%'
             },
             x:20
         },
         xAxis: {
-            categories: ['12月19', '12月20', '12月21', '12月22', '12月23','12月24','12月25']
+            categories: ['1月2', '1月3', '1月4', '1月5', '1月6','1月7','1月8']
         },
         yAxis: {
             title: {
@@ -1713,7 +1713,7 @@ $scope.aqilinechart={
 			
 			}},
         title: {
-            text: '未来一周最高最低气温',
+            text: '未来七天最高最低气温',
             style: {
             	fontSize:'180%'
             },
