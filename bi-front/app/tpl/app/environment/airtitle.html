@@ -235,7 +235,7 @@
                         </button>
                         <br />
                         <span class="glyphicon  glyphicon-leaf m-r-xs" ng-if="istownairquality">
-                            <span class="fc-button-font">存在1个监测点空气质量有轻微问题</span>                        
+                            <span class="fc-button-font">未来24小时太仓城区2个空气监测点监测到空气质量有轻微问题</span>                        
                         </span>
                     </div>
 
@@ -246,7 +246,7 @@
                             <i class="glyphicon  glyphicon-cloud fa-stack-1x text-white"></i>
                           </span>
                         </div>
-                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">天气预测</h4>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">城区天气预测</h4>
                         <button class="btn btn-primary" ng-class="getButtonStatus(airConditionStatus.status)" ng-click="airConditionBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
                             <span class="glyphicon glyphicon-hand-right ">
                                 <span class="fc-button-font">城区气象状况预测</span>
@@ -265,7 +265,7 @@
                             <i class="glyphicon  glyphicon-stats  fa-stack-1x text-white"></i>
                           </span>
                         </div>
-                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">天气预测</h4>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">工业废气排放分析</h4>
                         <button class="btn btn-primary" ng-class="getButtonStatus(wasteAirStatus.status)" ng-click="wasteAirBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
                             <span class="glyphicon glyphicon-hand-right ">
                                 <span class="fc-button-font">工业废气排放分析</span>
@@ -276,53 +276,53 @@
                             <span class="fc-button-font">监测点废气排放均正常</span>                        
                         </span>
                     </div>
-                                    <div class="col-md-12">
+                    <div class="col-md-12">
                   <div ng-show="mapTableStatus.airQuality">
                     <h5 align="right" style="padding-top: 0px">
-                        (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
-                                                            + airQualityCurrentDateTime.month + '-'
-                                                            + airQualityCurrentDateTime.day + ' '
-                                                            + airQualityCurrentDateTime.hour + '时'}}&nbsp&nbsp单位：μg/m³)
+                        (更新时间:&nbsp{{2016 + '-'
+                                                            + 1 + '-'
+                                                            + 8 + ' '
+                                                            + 9 + '时'}}&nbsp&nbsp单位：μg/m³)
                     </h5>
                     <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
                         <tr>
-                            <th style="width:30%">监测点</th>
-                            <th style="width:14%">AQI</th>
-                            <th style="width:14%">主要污染物</th>
-                            <th style="width:14%">PM2.5</th>
-                            <th style="width:14%">SO2</th>
+                            <th style="width:29%">监测点</th>
+                            <th style="width:15%">AQI</th>
+                            <th style="width:20%">主要污染物</th>
+                            <th style="width:18%">PM2.5</th>
+                            <th style="width:18%">SO2</th>
                         </tr>
                     </table>
                   </div>
                   <div style="overflow: auto; overflow-x:hidden;height:180px" ng-show="mapTableStatus.airQuality">
                       <table class="table table-hover table-responsive" style="font-size:14px">
                           <tr >
-                              <td style="width:30%">太仓市监测站</td>
-                              <td style="width:14%">
+                              <td style="width:29%">太仓市监测站</td>
+                              <td style="width:15%">
                                   <span>118</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:20%">
                                   <span>pm2.5</span>
                               </td>
-                              <td style="width:14%">
-                                  <span>64</span>
+                              <td style="width:18%">
+                                  <span>110</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:18%">
                                   <span>54</span>
                               </td>
                           </tr>
                           <tr >
-                              <td style="width:30%">科教新城监测站</td>
-                              <td style="width:14%">
+                              <td style="width:29%">科教新城监测站</td>
+                              <td style="width:15%">
                                   <span>145</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:20%">
                                   <span>pm2.5</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:18%">
                                   <span>83</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:18%">
                                   <span>54</span>
                               </td>
                           </tr>
@@ -330,39 +330,39 @@
                   </div>
                   <div ng-show="mapTableStatus.airCondition">
                       <h5 align="right" style="padding-top: 0px">
-                          (更新时间:&nbsp{{airQualityCurrentDateTime.year + '-'
-                                                              + airQualityCurrentDateTime.month + '-'
-                                                              + airQualityCurrentDateTime.day + ' '
-                                                              + airQualityCurrentDateTime.hour + '时'}})
+                          (更新时间:&nbsp{{2016 + '-'
+                                                              + 1+ '-'
+                                                              + 8+ ' '
+                                                              + 9+ '时'}})
                       </h5>
                       <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
                           <tr>
-                              <th style="width:30%">气象局</th>
-                              <th style="width:14%">最高气温(℃)</th>
-                              <th style="width:14%">最低气温(℃)</th>
-                              <th style="width:14%">相对湿度(%)</th>
-                              <th style="width:14%">风级</th>
-                              <th style="width:14%">风向</th>
+                              <th style="width:28%">气象局</th>
+                              <th style="width:13%">最高气温(℃)</th>
+                              <th style="width:13%">最低气温(℃)</th>
+                              <th style="width:13%">相对湿度(%)</th>
+                              <th style="width:13%">风级</th>
+                              <th style="width:20%">风向</th>
                           </tr>
                       </table>
                   </div>
                   <div style="overflow: auto; overflow-x:hidden;" ng-show="mapTableStatus.airCondition">
                       <table class="table table-hover table-responsive" style="font-size:14px">
                           <tr >
-                              <td style="width:30%">太仓市气象局</td>
-                              <td style="width:14%">
+                              <td style="width:28%">太仓市气象局</td>
+                              <td style="width:13%">
                                   <span>7</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:13%">
                                   <span>2</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:13%">
                                   <span>50</span>
                               </td>
-                              <td style="width:14%">
+                              <td style="width:13%">
                                   <span>2</span>
                               </td>
-                               <td style="width:14%">
+                               <td style="width:20%">
                                   <span>东南风</span>
                               </td>
                           </tr>
@@ -371,9 +371,9 @@
                   </div>
                   <div ng-show="mapTableStatus.wasteAir">
                       <h5 align="right" style="padding-top: 0px">
-                          (更新时间:&nbsp{{wasteAirCurrentDateTime.year + '-'
-                                                          + wasteAirCurrentDateTime.month + '-'
-                                                          + wasteAirCurrentDateTime.day }})
+                          (更新时间:&nbsp{{2016 + '-'
+                                                          + 1 + '-'
+                                                          + 8 }})
                       </h5>
                       <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
                           <tr>
@@ -457,8 +457,8 @@
                           </tr>
 
                       </table>
-                  </div>
-                </div> 
+                    </div>
+                  </div> 
                 </div>
             </div>
         </div>
@@ -468,7 +468,7 @@
     <div class="col-md-12 ">
         <div class="panel panel-primary" style="margin-top: 20px;">
             <div class="panel-heading">
-            空气质量历史数据分析
+            空气质量实时变化数据
             <span class="glyphicon  pull-right"></span>
             </div>
             <div class="panel-body">
@@ -477,7 +477,7 @@
                     <div class="col-md-8 chart-panel">
 
                         <nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">
-                        <a class="navbar-brand" href="#airQualityAnchorTop" du-smooth-scroll>过去12小时空气质量指标</a>
+                        <a class="navbar-brand" href="#airQualityAnchorTop" du-smooth-scroll>空气质量指标</a>
                         <a href="#airQualityAnchor1" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>AQI</a>
                         <a href="#airQualityAnchor2" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM2.5</a>
                         <a href="#airQualityAnchor3" class="btn btn-default navbar-btn " role="button" du-smooth-scroll>PM10</a>
@@ -497,7 +497,7 @@
                             </h5>
                         </div>
 
-                            <div  style="overflow: auto; overflow-x:hidden;height:515px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
+                            <div  style="overflow: auto; overflow-x:hidden;height:550px;width: 100%"  id="scroll-container" data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">
                             <p id="airQualityAnchorTop"></p>
                                 <div  class="col-md-12">
                                         <div class="col-md-4" id="airQualityAnchor1">
@@ -563,7 +563,7 @@
                             
                               <div class="panel panel-color panel-primary" style="margin-bottom:0em;border-bottom:solid white" >
                                   <div class="panel-heading"> 
-                                      <h3 class="panel-title">空气质量数据分析</h3> 
+                                      <h3 class="panel-title">当前空气质量数据分析</h3> 
                                   </div> 
                                   <div class="panel-body"> 
                                       <p>空气污染的污染物包括烟尘、总悬浮颗粒物、可吸入颗粒物(PM10)、细颗粒物(PM2.5) 、二氧化硫、一氧化碳、臭氧、挥发性有机化合物等等。</p> 
@@ -576,12 +576,12 @@
                                 <a href="" class="list-group-item">
                                  
                                   <i class="fa fa-calendar fa-fw m-r-xs"style="color: #009f95"></i> 日期
-                                   <span class="badge fc-nobg" style=" width:35%">2015年12月25日</span>
+                                   <span class="badge fc-nobg" style=" width:40%">2015年12月25日</span>
                                 </a>
 
 
                                 <a href="" class="list-group-item" ng-click = "openAQI1List()">
-                                  <span class="badge fc-nobg" style="color: #ffa500">113</span>
+                                  <span class="badge fc-nobg" >118</span>
                                   <i class="ic icon-emoticon-smile fa-fw m-r-xs" style="color: #3eae1d"></i> 空气质量(AQI)
                                 </a>
                                 <li class="list-group-item" ng-if="isAQI1open">
@@ -590,7 +590,7 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openmainpollution1List()">
-                                  <span class="badge fc-nobg" >PM2.5</span>
+                                  <div class="badge fc-nobg">PM2.5</div>
                                   <i class="ic icon-bell fa-fw m-r-xs" style="color: #e10602"></i> 首要污染物
                                 </a>
                                 <li class="list-group-item" ng-if="ismainpollution1open">
@@ -600,7 +600,7 @@
 
 
                                 <a href="" class="list-group-item" ng-click = "openPM251List()">
-                                  <span class="badge fc-nobg" style="width:15%">14</span>
+                                  <span class="badge fc-nobg" >64</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM2.5
                                 </a>
                                 <li class="list-group-item" ng-if="isPM251open">
@@ -609,7 +609,7 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openPM101List()">
-                                  <span class="badge fc-nobg" style="width:15%">30</span>
+                                  <span class="badge fc-nobg" >70</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM10
                                 </a>
                                 <li class="list-group-item" ng-if="isPM101open">
@@ -618,7 +618,7 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openSO21List()">
-                                  <span class="badge fc-nobg">10</span>
+                                  <span class="badge fc-nobg">54</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 二氧化硫
                                 </a>
                                 <li class="list-group-item" ng-if="isSO21open">
@@ -626,17 +626,8 @@
                                 <span class="fc-list-content">二氧化硫是带去主要污染物之一，太仓二氧化硫污染主要源于港区电厂废气排放。SO2>150ug/m3时,开始污染报警</span>
                                 </li>
 
-                                <a href="" class="list-group-item" ng-click = "openCO1List()">
-                                  <span class="badge fc-nobg">10</span>
-                                  <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 一氧化碳
-                                </a>
-                                <li class="list-group-item" ng-if="isCO1open">
-                                <i class="text-success m-r-xs"></i>
-                                <span class="fc-list-content">一氧化碳是空气污染组成一部分,含量较少,对空气污染影响较小。CO>4mg/m3时,开始污染报警</span>
-                                </li>
-
                                 <a href="" class="list-group-item" ng-click = "openNO21List()">
-                                  <span class="badge fc-nobg">10</span>
+                                  <span class="badge fc-nobg">44</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 二氧化氮
                                 </a>
                                 <li class="list-group-item" ng-if="isNO21open">
@@ -644,8 +635,17 @@
                                 <span class="fc-list-content">二氧化氮是空气污染组成一部分,含量较少,对空气污染影响较小。NO2>80ug/m3时,开始污染报警</span>
                                 </li>
 
+                                <a href="" class="list-group-item" ng-click = "openCO1List()">
+                                  <span class="badge fc-nobg">1</span>
+                                  <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 一氧化碳
+                                </a>
+                                <li class="list-group-item" ng-if="isCO1open">
+                                <i class="text-success m-r-xs"></i>
+                                <span class="fc-list-content">一氧化碳是空气污染组成一部分,含量较少,对空气污染影响较小。CO>4mg/m3时,开始污染报警</span>
+                                </li>
+
                                 <a href="" class="list-group-item" ng-click = "openO31List()">
-                                  <span class="badge fc-nobg">10</span>
+                                  <span class="badge fc-nobg">7</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 臭氧
                                 </a>
                                 <li class="list-group-item" ng-if="isO31open">

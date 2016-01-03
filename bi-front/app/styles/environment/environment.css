@@ -26,10 +26,34 @@
 	font-family: '微软雅黑';
 }
 .fc-nobg{
-	background-color: white;
-	color: #555555;
+	background-color: #97cbff;
+	color: #000000;
 	float:right; 
-	width:15%;
+	width:20%;
+	font-weight: 500;
 	font-size: 0.8em;
 	margin-right: 1em;
+}
+.mapfont{
+	font-size: 15px;
+}
+.maptable{
+	font-size:17px;
+	text-align:center;
+	line-height:35px
+	
+}
+.map-table-right{
+	font-size:15px;
+	text-align:center;
+	width:100px;
+	border-radius:5px;
+	borderWidth:5px;
+	padding:4px;
+	color:white;
+}
+.mapbutton{
+	width:90%;
+	margin-left:0.5em;
+	color:white;
 }
