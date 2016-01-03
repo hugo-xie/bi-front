@@ -31,9 +31,10 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
                 var option = {
     title : {
         text: '太仓市2016~2025年劳动力人口与GDP平均关联度分析预测',
-        x:'right',
-        y:'bottom'
+        x:'center',
+        y:'top'
     },
+
     tooltip : {
         trigger: 'item',
         formatter: function (params) {
@@ -45,16 +46,22 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
         }
     },
     toolbox: {
-        show : true,
+        show : false,
         feature : {
             restore : {show: true},
             magicType: {show: true, type: ['force', 'chord']},
             saveAsImage : {show: true}
-        }
+        },
+     
+            x:"right",
+            y:"bottom",
+
     },
     legend: {
-        x: 'left',
-        data:['第一产业人口', '第二产业人口', '第三产业人口']
+        x: 'center',
+        data:['第一产业人口', '第二产业人口', '第三产业人口'],
+        y:'bottom'
+
     },
     series : [
         {
