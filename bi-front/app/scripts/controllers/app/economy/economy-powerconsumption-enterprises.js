@@ -6,10 +6,13 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
     //new地图对象
   	$scope.map = new AMap.Map('consumptionbyenterprise',{
           zoom: 14,
-          center: [121.122455,31.464511],
+          center: [121.14,31.484511],
           resizeEnable: true,
       });
     //调节侧栏
+
+    $scope.map.setMapStyle('fresh');
+
   	AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
   	    var toolBar = new AMap.ToolBar();
   	    var scale = new AMap.Scale();
@@ -17,22 +20,32 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
   	    $scope.map.addControl(scale);
   	});
     //设置地图标记点
-  	var marker01 = new AMap.Marker({
-  		icon : 'images/economy/enterprise01.png',
-          position: [121.14,31.464511],   
-          map:$scope.map,
-          clickable:true,
+    var marker01 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: [121.14,31.484511],
+        map:$scope.map,
+        clickable:true,
     });
+
+    marker01.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: "太仓市规模以上企业B",
+        clickable:true,
+    });
+
     var marker02 = new AMap.Marker({
-          position: [121.14,31.484511],   
-          map:$scope.map,
-          clickable:true,
+        icon : 'images/marker_sprite.png',
+        position: [121.12,31.484511],
+        map:$scope.map,
+        clickable:true,
     });
-    var marker03 = new AMap.Marker({
-      icon : 'images/economy/enterprise01.png',
-        position: [121.122455,31.464511],
-        map:$scope.map
+
+    marker02.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: "太仓市规模以上企业A",
+        clickable:true,
     });
+
     //地图标记--企业数据详情
     var marker01OnClick = function(){
         $scope.enterprisechosen = 'enterprise01';
@@ -55,11 +68,13 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         });
     };
     //将上述函数添加到监听事件
+ 
     AMap.event.addListener(marker01, 'click', marker01OnClick);
-    AMap.event.addListener(marker03, 'click', marker03OnClick);
+    AMap.event.addListener(marker02, 'click', marker03OnClick);
 
     //标记被选择的企业
     $scope.enterprisechosen = 'enterprise01';
+
     $scope.chooseJan = function(){
       switch($scope.enterprisechosen){
         case 'enterprise01':{

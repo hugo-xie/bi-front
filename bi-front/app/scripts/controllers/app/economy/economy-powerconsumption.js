@@ -45,6 +45,31 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
         },
         xAxis: {
             categories: $scope.totaldata.yearvalue,
+            plotBands: [{
+                from: 9.5,
+                to: 12.5,
+                label: { 
+                    text:"预测区",
+                    style: {
+                        color: 'grey',
+                    },
+                },
+                color: 'rgba(68, 170, 213, .2)'
+            }],
+        },
+        
+        plotOptions: {
+            
+            series: {
+                allowPointSelect: true,
+                point: {
+                    events: {
+                        click: function () {
+                            alert('Category: ');
+                        }
+                    }
+                }
+            }
         },
         yAxis: {
             title: {
@@ -57,7 +82,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
             }]
         },
         tooltip: {
-            valueSuffix: '%'
+            valueSuffix: '%',
         },
         legend: {
             layout: 'vertical',
@@ -75,7 +100,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   };
 
   /*——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————*/
-  //第二图数据
+  //
   $scope.vocationdata = {
     isshowchartvocation:true,
     isshowsinglechartvocation:false,
@@ -552,7 +577,8 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
     $scope.SingleVocationChart={  
          options:{
             chart: {
-                type: 'spline'
+                type: 'spline',
+                height: 250
             },
          },
          title: {
@@ -600,7 +626,8 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   $scope.SingleVocationChartByYear={
          options:{
             chart: {
-                type: $scope.charttype
+                type: $scope.charttype,
+                height: 350
             },
          },
          title: {
@@ -718,8 +745,6 @@ $scope.AverageEnterpriseChartByYear={
   }
 
 }]);
-
-
 
 
 
@@ -1177,6 +1202,12 @@ app.controller('EconomyPowerConsumptionCtrl_Industries', ['$scope','$stateParams
 
 
 
+
+
+
+app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$stateParams', function($scope, $stateParams) {
+
+}]);
 
 
 

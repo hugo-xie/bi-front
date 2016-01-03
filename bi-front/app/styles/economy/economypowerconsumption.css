@@ -100,9 +100,6 @@
 .cgq_marginaround1em-top{
 	margin: 0 4% 4% 4%;
 }
-input.cgq_search {
-	margin-top: 2em;
-}
 .cgq-fixed-buttonwidth{
 	width: 8em
 }
@@ -160,7 +157,27 @@ input.cgq_search {
   background: #ffffff;
   border-color: grey;
 }
-
+.amap-marker-label{
+	 color: rgb(170,204,104);
+    padding: 6px 10px;
+    border: 2px solid rgb(170,204,104);
+    white-space: nowrap;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    background-color: rgba(255,255,255,1);
+    border-radius: 10px;
+}
+.amap-logo {
+    right: 0 !important;
+    left: auto !important;
+    display: none;
+}      
+.amap-copyright {
+    right: 0 !important;
+    left: auto !important;
+    display: none;
+} 
 
 
 
