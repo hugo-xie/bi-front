@@ -1,3 +1,10 @@
+<style>
+  .sliderExample {
+      width:100%;
+    }
+  .ui-slider-range { background: rgb(35,155,214); }
+  .ui-slider-handle { border-color: rgb(35,155,214); }
+</style>
 <div class="vbox">
   <div class="wrapper lter b-b bg-white">
     <a href="" class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">“克强指数”</a>
@@ -35,8 +42,19 @@
           指数后,受到花旗银行在内的众多国际机构认可
         </span>
       </div>
-      <button class="btn btn-info" style="margin-top:15px">一句话解读</button>
-       <div style="margin-top:10px;width:98%;border:1px solid lightgrey;font-size:17px">
+     <article class="media cgq_contentwidth">
+                  <div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+                  <div class="media-body clear">                    
+                    <small class="block m-t-xs">{{totaldata.oneword}}</small>
+                  </div>
+                </article>
+       <div style="margin-top:10px;width:98%;font-size:17px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
           <strong>本月克强指数较上个月有所提高，实体经济增速
           有所加快</strong>
@@ -80,8 +98,7 @@
                         <span class="num">{{ selectedRange }}%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
-                        <div class="inner" ng-style="{ width: (selectedRange/2 +50) + '%' || '50%' }" ></div>
+                        <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange"></div>
                       </div>
                     </div>
 
@@ -103,8 +120,7 @@
                         <span class="num">{{ selectedRange2 }}%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%" >
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2"  >
-                        <div class="inner" ng-style="{ width: (selectedRange2/2 +50) + '%' || '50%' }"></div>
+                        <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange2"></div>
                       </div>
                     </div>
 
@@ -125,8 +141,7 @@
                         <span class="num">{{ selectedRange3 }}%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3"  >
-                        <div class="inner" ng-style="{ width: (selectedRange3/2 +50) + '%' }"></div>
+                         <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange3"></div>
                       </div>
                     </div>
                   </div>

@@ -270,7 +270,7 @@ $scope.populationChart.title.text="太仓市2016~2025年劳动力总人口";
             name: 'GDP(亿元)',
             color: '#89A54E',
             type: 'spline',
-            data: gdp,
+            data: gdp1,
             marker:{
                symbol:"square" 
            },
@@ -317,7 +317,7 @@ $scope.populationChart.title.text="太仓市2016~2025年劳动力总人口";
             name: 'GDP(亿元)',
             color: '#89A54E',
             type: 'spline',
-            data: gdp,
+            data: gdp2,
             marker:{
                 symbol:"square"
             },
@@ -327,10 +327,10 @@ $scope.populationChart.title.text="太仓市2016~2025年劳动力总人口";
         }];
    }
 };
-$scope.btn_click1=function(btn){
-   $scope.change1(btn);
+$scope.btn_click3=function(btn){
+   $scope.change3(btn);
 };
-$scope.change1=function(btn){
+$scope.change3=function(btn){
    if(btn.name===2025){
     document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2025年产业就业人口比重分析预测";

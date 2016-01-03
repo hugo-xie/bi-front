@@ -1,3 +1,10 @@
+<style>
+  .sliderExample {
+      width:100%;
+    }
+  .ui-slider-range { background: rgb(35,155,214); }
+  .ui-slider-handle { border-color: rgb(35,155,214); }
+</style>
 <div class="vbox">
     <div class="wrapper lter b-b bg-white">
     <a href="" class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">税收收入预测</a>
@@ -20,22 +27,33 @@
           <highchart id="yearTaxChart"  config="yearTaxChart" />
         </div>
         <div class="col-md-4" style="padding:10px 30px 15px 15px">
-        <div class="r bg-light dker item hbox no-border">
+         <div class="r  dker item hbox no-border" style="background-color:rgba(29,155,114,.8)">
                 <div class="col w-xs v-middle hidden-md">
                   <div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline">
-                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
-                      <img src="images/economy/GDP1.png" alt="where">
-                    </a>
+                    <i class="fa fa-pie-chart fa-4x fa-spin" style="color:white;margin-left:8%">
+                     
+                   </i>
                   </div>
                 </div>
                 <div class="col dk padder-v r-r">
-                  <span class="text-xs">本年税收预测值:</span>
-                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%">117.52亿元</span></div>
-                  <span class="text-xs"style="margin-left:45%">预测误差范围<span class="text-primary">2.7%</span></span>
+                  <span class="text-xs" style="color:white">本年税收预测值:</span>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;color:white;text-shadow:1px 2px 3px #000000">117.52亿元</span></div>
+                  <span class="text-xs"style="margin-left:45%;color:white">预测误差范围<span class="text-primary" style="color:white">2.7%</span></span>
                 </div>
               </div>
 
-          <button class="btn btn-primary" style="width:38%;margin-top:10%">一句话解读</button>
+                <article class="media cgq_contentwidth">
+                  <div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+                  <div class="media-body clear">                    
+                    <small class="block m-t-xs">{{totaldata.oneword}}</small>
+                  </div>
+                </article>
            <div style="margin-top:10px;width:98%;font-size:18px">
             <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
               <strong>本年的税收增速较往年的增速有所放缓</strong>
@@ -145,16 +163,14 @@
                     <p class="handler-title" style="margin-top:15px;font-size:100%">固定资产投资</p>
                   </div>
                   <div class="col-md-3">
-                    <div class="progress-box" >
-                      <div class="percentage-cur" ng-init="selectedRange=0">
-                        <span class="num">{{ selectedRange}}%</span>
-                      </div>
+                     <div class="progress-box">
+                       <div class="percentage-cur">
+                         <span class="num">{{selectedRange}}%</span>
+                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange">
-                        <div class="inner" ng-style="{ width: (selectedRange/2+50) + '%'}"></div>
+                        <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange"></div>
                       </div>
-                    </div>
-
+                     </div>
                   </div>
                   <div class="col-md-2">
                     <div class="input-group input-group-sm" style="padding:5px 5px 5px 5px">
@@ -170,8 +186,7 @@
                         <span class="num">{{selectedRange2}}%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange2">
-                        <div class="inner" ng-style="{ width: (selectedRange2/2+50) + '%'}"></div>
+                        <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange2"></div>
                       </div>
                     </div>
                  </div>
@@ -192,8 +207,7 @@
                         <span class="num">{{ selectedRange3}}%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange3">
-                        <div class="inner" ng-style="{ width: (selectedRange3/2+50) + '%'}"></div>
+                        <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange3"></div>
                       </div>
                     </div>
 
@@ -212,8 +226,8 @@
                         <span class="num">{{ selectedRange4}}%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="selectedRange4">
-                        <div class="inner" ng-style="{ width: (selectedRange4/2+50) + '%'}"></div>
+                         <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange4"></div>
+                        
                       </div>
                     </div>
                  </div>
@@ -244,22 +258,33 @@
           <highchart id="monthTaxChart"  config="monthTaxChart" />
         </div>
         <div class="col-md-4" style="padding:10px 30px 15px 15px">
-           <div class="r bg-light dker item hbox no-border">
+            <div class="r  dker item hbox no-border" style="background-color:rgba(29,155,114,.8)">
                 <div class="col w-xs v-middle hidden-md">
                   <div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline">
-                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
-                      <img src="images/economy/GDP1.png" alt="where">
-                    </a>
+                     <i class="fa fa-bar-chart-o fa-4x" style="color:white;margin-left:8%">
+                     
+                   </i>
                   </div>
                 </div>
-                <div class="col dk padder-v r-r">
-                  <span class="text-xs">下月税收预测值:</span>
-                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%">96.52亿元</span></div>
-                  <span class="text-xs"style="margin-left:45%">预测误差范围<span class="text-primary">3.0%</span></span>
+                <div class="col dk padder-v r-r" >
+                  <span class="text-xs" style="color:white">下月税收预测值:</span>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;text-shadow:1px 2px 3px #000000;color:white">96.52亿元</span></div>
+                  <span class="text-xs"style="margin-left:45%;color:white">预测误差范围<span class="text-primary"style="color:white">3.0%</span></span>
                 </div>
               </div>
 
-          <button class="btn btn-primary" style="width:38%;margin-top:10%">一句话解读</button>
+               <article class="media cgq_contentwidth">
+                  <div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+                  <div class="media-body clear">                    
+                    <small class="block m-t-xs">{{totaldata.oneword}}</small>
+                  </div>
+                </article>
            <div style="margin-top:10px;width:98%;font-size:18px">
             <span class="glyphicon glyphicon-list-alt" aria-hidden="true" >
               <strong>本年的税收增速较往年的增速有所放缓</strong>
@@ -363,9 +388,8 @@
                       <div class="percentage-cur" ng-init="monthselectedRange=0">
                         <span class="num">{{ monthselectedRange}}%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange">
-                        <div class="inner" ng-style="{ width: (monthselectedRange/2+50) + '%'}"></div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%;margin-top:1%">
+                       <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="monthselectedRange"></div>
                       </div>
                     </div>
 
@@ -383,9 +407,8 @@
                       <div class="percentage-cur" ng-init="monthselectedRange2=0">
                         <span class="num">{{ monthselectedRange2}}%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange2">
-                        <div class="inner" ng-style="{ width: (monthselectedRange2/2+50) + '%'}"></div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%;margin-top:1%">
+                         <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="monthselectedRange2"></div>
                       </div>
                     </div>
                  </div>
@@ -404,9 +427,8 @@
                       <div class="percentage-cur" ng-init="monthselectedRange3=0">
                         <span class="num">{{ monthselectedRange3}}%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange3">
-                        <div class="inner" ng-style="{ width: (monthselectedRange3/2+50) + '%'}"></div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%;margin-top:1%">
+                        <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="monthselectedRange3"></div>
                       </div>
                     </div>
 
@@ -424,9 +446,8 @@
                       <div class="percentage-cur" ng-init="monthselectedRange4=0">
                         <span class="num">{{ monthselectedRange4}}%</span>
                       </div>
-                      <div class="progress-bar progress-bar-slider" style="width:100%">
-                        <input class="progress-slider" type="range" min="-100" max="100" ng-model="monthselectedRange4">
-                        <div class="inner" ng-style="{ width: (monthselectedRange4/2+50) + '%'}"></div>
+                      <div class="progress-bar progress-bar-slider" style="width:100%;margin-top:1%">
+                       <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="monthselectedRange4"></div>
                       </div>
                     </div>
                  </div>

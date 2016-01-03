@@ -1,6 +1,14 @@
 'use strict';
 
 app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+  $scope.colorpicker = {
+        options: {
+            orientation: 'horizontal',
+            min: 0,
+            max: 100,
+            range: 'min'
+        }
+    };
   $scope.title = $stateParams.title;
   
   $scope.deviation=false;
@@ -132,7 +140,23 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     title: {text:'2015年月度税收收入预测'},
 
-    xAxis: {categories: $scope.monthArray},
+    xAxis: {
+      categories: $scope.monthArray,
+        plotBands:[{
+            from: 9.5,
+            to:12.5,
+            color:'rgba(68, 170, 213, .2)',
+            label: {
+                    text: '预测区',
+                    verticalAlign: 'top',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 600
+                    }
+                   
+                }
+            }]
+    },
     yAxis: 
     {
       min: 0,
@@ -172,7 +196,24 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     title: {text:'2015年-2017年税收收入预测'},
 
-    xAxis: {categories: $scope.yearArray},
+    xAxis: {
+      categories: $scope.yearArray,
+        plotBands:[{
+            from: 9.5,
+            to:12.5,
+            color:'rgba(68, 170, 213, .2)',
+            label: {
+                    text: '预测区',
+                    verticalAlign: 'top',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 600
+                    }
+                   
+                }
+            }]
+
+    },
     yAxis: 
     {
       min: 0,

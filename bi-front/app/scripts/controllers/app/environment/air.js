@@ -189,7 +189,7 @@ alert("aaa");
         var info4=[];
 	    info4.push("<h4><strong>华能国际电力股份有限公司电厂</strong></h4>");
 	    info4.push("<table class='table table-bordered table-striped'>");
-	    info4.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td>0.26亿</td></tr>");
+	    info4.push("<tr><td style='font-size:15px;width:125px'>排放量</td><td><button class='btn' style='background-color:rgb(240,173,78)' style='width:100%'>0.26亿</button></td></tr>");
 	    info4.push("<tr><td style='font-size:15px'>烟尘浓度</td><td>8.42mg/m³</td></tr>");
 	    info4.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td>60.51mg/m³</td></tr>");
 	    info4.push("<tr><td style='font-size:15px'>氮氧化物浓度</td><td>82.75mg/m³</td></tr>");
@@ -351,7 +351,7 @@ alert("aaa");
 	var info1=[];
 	   info1.push("<h4><strong>太仓监测站</strong></h4>");
 	    info1.push("<table class='table table-bordered table-striped'>");
-	    info1.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn btn-danger' style='width:100%'>183</button></td></tr>");
+	    info1.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn ' style='width:100%;background-color:rgb(240,173,78)'>183</button></td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>主要污染物</td><td style='text-align:center'>PM2.5</td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>PM2.5</td><td><button type='button' class='btn btn-success' style='width:100%'>83</button></td></tr>");
 	    info1.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td><button type='button' class='btn btn-success' style='width:100%'>54</button></td></tr>");
@@ -370,11 +370,11 @@ alert("aaa");
 	    info2.push("<h4><strong>科教新城监测站</strong></h4>");
 	    info2.push("<table class='table table-bordered table-striped'>");
 
-	    info2.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn btn-danger' style='width:100%'>161</button></td></tr>");
+	    info2.push("<tr><td style='font-size:15px;width:150%'>AQI</td><td><button type='button' class='btn ' style='width:100%'>161</button></td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>主要污染物</td><td style='text-align:center'>PM2.5</td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>PM2.5</td><td><button type='button' class='btn btn-success' style='width:100%'>83</button></td></tr>");
 	    info2.push("<tr><td style='font-size:15px'>二氧化硫浓度</td><td><button type='button' class='btn btn-success' style='width:100%'>54</button></td></tr>");
-	    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td><button type='button' class='btn btn-warning' style='width:100%'>轻度污染</button></td></tr>");
+	    info2.push("<tr><td style='font-size:15px'>监测站状态</td><td><button type='button' class='btn btn-warning' style='width:100%;background-color:rgb(240,173,78)'>轻度污染</button></td></tr>");
 
 	    info2.push("</table>");
 	var infowindow2 = new AMap.InfoWindow({
