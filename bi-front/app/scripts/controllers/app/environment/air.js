@@ -50,27 +50,83 @@ alert("aaa");
   };
   $scope.openmainpollution1List = function(){
   	$scope.ismainpollution1open = !$scope.ismainpollution1open;
+  	$scope.isPM251open = false;
+  	$scope.isPM101open = false;
+  	$scope.isSO21open = false;
+  	$scope.isCO1open = false;
+  	$scope.isNO21open = false;
+  	$scope.isO31open = false;
+  	$scope.isAQI1open=false;
   };
   $scope.openAQI1List = function(){
   	$scope.isAQI1open = !$scope.isAQI1open;
+  	$scope.isPM251open = false;
+  	$scope.isPM101open = false;
+  	$scope.isSO21open = false;
+  	$scope.isCO1open = false;
+  	$scope.isNO21open = false;
+  	$scope.isO31open = false;
+  	$scope.ismainpollution1open=false;
   };
   $scope.openPM251List = function(){
   	$scope.isPM251open = !$scope.isPM251open;
+  	$scope.isAQI1open = false;
+  	$scope.isPM101open = false;
+  	$scope.isSO21open = false;
+  	$scope.isCO1open = false;
+  	$scope.isNO21open = false;
+  	$scope.isO31open = false;
+  	$scope.ismainpollution1open=false;
   };
   $scope.openPM101List = function(){
   	$scope.isPM101open = !$scope.isPM101open;
+  	$scope.isPM251open = false;
+  	$scope.isAQI1open = false;
+  	$scope.isSO21open = false;
+  	$scope.isCO1open = false;
+  	$scope.isNO21open = false;
+  	$scope.isO31open = false;
+  	$scope.ismainpollution1open=false;
   };
   $scope.openSO21List = function(){
   	$scope.isSO21open = !$scope.isSO21open;
+  	$scope.isPM251open = false;
+  	$scope.isPM101open = false;
+  	$scope.isAQI11open = false;
+  	$scope.isCO1open = false;
+  	$scope.isNO21open = false;
+  	$scope.isO31open = false;
+  	$scope.ismainpollution1open=false;
   };
   $scope.openCO1List = function(){
   	$scope.isCO1open = !$scope.isCO1open;
+  	$scope.isPM251open = false;
+  	$scope.isPM101open = false;
+  	$scope.isSO21open = false;
+  	$scope.isAQI1open = false;
+  	$scope.isNO21open = false;
+  	$scope.isO31open = false;
+  	$scope.ismainpollution1open=false;
   };
   $scope.openNO21List = function(){
   	$scope.isNO21open = !$scope.isNO21open;
+  	$scope.isPM251open = false;
+  	$scope.isPM101open = false;
+  	$scope.isSO21open = false;
+  	$scope.isCO1open = false;
+  	$scope.isAQI1open = false;
+  	$scope.isO31open = false;
+  	$scope.ismainpollution1open=false;
   };
   $scope.openO31List = function(){
   	$scope.isO31open = !$scope.isO31open;
+  	$scope.isPM251open = false;
+  	$scope.isPM101open = false;
+  	$scope.isSO21open = false;
+  	$scope.isCO1open = false;
+  	$scope.isNO21open = false;
+  	$scope.isAQI1open = false;
+  	$scope.ismainpollution1open=false;
   };
   //end——————————
   $scope.totaldata = {
@@ -99,6 +155,8 @@ alert("aaa");
 	$scope.istownairquality = false;
 	$scope.airQualityBtn = function() {
 		$scope.istownairquality = !$scope.istownairquality;
+		$scope.istownaircondition=false;
+		$scope.istownwasteair=false;
 		map.setZoomAndCenter(15, [121.116757,31.448875]);
 		$scope.mapTableStatus = {
 			airQuality: true,
@@ -115,6 +173,8 @@ alert("aaa");
     $scope.istownaircondition = false;
 	 $scope.airConditionBtn = function() {
 	 	$scope.istownaircondition = !$scope.istownaircondition;
+	 	$scope.istownairquality=false;
+		$scope.istownwasteair=false;
         $scope.mapTableStatus = {
             airQuality: false,
             airCondition: true,
@@ -163,6 +223,8 @@ alert("aaa");
     $scope.istownwasteair = false;
 	$scope.wasteAirBtn = function() {
 		$scope.istownwasteair = !$scope.istownwasteair;
+		$scope.istownaircondition=false;
+		$scope.istownairquality=false;
         $scope.mapTableStatus = {
             airQuality: false,
             airCondition: false,
