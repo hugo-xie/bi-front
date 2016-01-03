@@ -508,7 +508,8 @@ $scope.aqilinechart={
 					plotBackgroundColor: null,
 					plotBackgroundImage: null,
 					plotBorderWidth: 0,
-					plotShadow: false
+					plotShadow: false,
+					width:200
 				},
 				title: {
 					text: 'AQI',
@@ -618,7 +619,8 @@ $scope.aqilinechart={
 					plotBackgroundColor: null,
 					plotBackgroundImage: null,
 					plotBorderWidth: 0,
-					plotShadow: false
+					plotShadow: false,
+					width:200
 				},
 
 				title: {
@@ -730,7 +732,8 @@ $scope.aqilinechart={
 					plotBackgroundColor: null,
 					plotBackgroundImage: null,
 					plotBorderWidth: 0,
-					plotShadow: false
+					plotShadow: false,
+					width:200
 				},
 
 				title: {
@@ -843,7 +846,8 @@ $scope.aqilinechart={
 					plotBackgroundColor: null,
 					plotBackgroundImage: null,
 					plotBorderWidth: 0,
-					plotShadow: false
+					plotShadow: false,
+					width:200
 				},
 
 				title: {
@@ -956,7 +960,8 @@ $scope.aqilinechart={
 					plotBackgroundColor: null,
 					plotBackgroundImage: null,
 					plotBorderWidth: 0,
-					plotShadow: false
+					plotShadow: false,
+					width:200
 				},
 
 				title: {
@@ -1069,7 +1074,8 @@ $scope.aqilinechart={
 					plotBackgroundColor: null,
 					plotBackgroundImage: null,
 					plotBorderWidth: 0,
-					plotShadow: false
+					plotShadow: false,
+					width:200
 				},
 
 				title: {
@@ -1182,7 +1188,8 @@ $scope.aqilinechart={
 					plotBackgroundColor: null,
 					plotBackgroundImage: null,
 					plotBorderWidth: 0,
-					plotShadow: false
+					plotShadow: false,
+					width:200
 				},
 
 				title: {
