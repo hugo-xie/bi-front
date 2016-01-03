@@ -471,7 +471,11 @@ alert("aaa");
 
 $scope.aqilinechart={
  title: {
-            text: '空气质量AQI'
+            text: '空气质量AQI',
+            style: {
+            	fontSize:'180%'
+            },
+            x:20
         },
         xAxis: {
             categories: ['12月19', '12月20', '12月21', '12月22', '12月23','12月24','12月25']
@@ -1709,12 +1713,11 @@ $scope.aqilinechart={
 			
 			}},
         title: {
-            text: '未来七天最高最低气温',
-            x: -20 //center
-        },
-        subtitle: {
-            text: '',
-            x: -20
+            text: '未来一周最高最低气温',
+            style: {
+            	fontSize:'180%'
+            },
+            x:20
         },
         xAxis: {
             categories: ['1月9', '1月10', '1月11', '1月12', '1月13', '1月14','1月15']
@@ -1736,10 +1739,10 @@ $scope.aqilinechart={
             layout: 'vertical',
             align: 'right',
             verticalAlign: 'middle',
-            borderWidth: 0
+            borderWidth: 0,
         },
         series: [{
-            name: '最高气温',
+        	name: "最高气温",
             data: [6, 7, 7, 7, 8, 7, 7]
         },  {
             name: '最低气温',
