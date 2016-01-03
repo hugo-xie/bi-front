@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('PrelationCtrl', ['$scope', function($scope) {
-
+var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
      $scope.colorpicker = {
         options: {
             orientation: 'horizontal',
@@ -1049,7 +1049,7 @@ $scope.populationChart ={
 };
 $scope.populationPie={
 options: {
-                              
+                              colors:piecolor,
                                 chart: {
                                     plotBackgroundColor: null,
                                     plotBorderWidth: null,
@@ -1094,7 +1094,7 @@ options: {
 };
 $scope.industryPie={
 options: {
-                              
+                                colors:piecolor,
                                 chart: {
                                     plotBackgroundColor: null,
                                     plotBorderWidth: null,

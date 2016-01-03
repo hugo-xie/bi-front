@@ -21,7 +21,7 @@
 
                <div class="row">
                <div class="col-md-8 chart-panel">
-                 <highchart style="height:400px;" config="predictChart"></highchart>
+                 <highchart style="height:500px;" config="predictChart"></highchart>
                </div>
                <div class="col-md-4 desc-content">
                  
@@ -34,7 +34,7 @@
                           </span>
                         </div>
                       <h5 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:3%;font-size:130%;font-weight:normal">指标含义</h5>
-                   <p class="ioc-panel-desc-body">
+                   <p class="ioc-panel-desc-body" style="margin-right:10px">
                      可手动调节劳动力人口与经济各个指标值,观察对应经济与劳动力人口的指标变化情况。
                    </p>
                  </div>
@@ -46,7 +46,7 @@
                    <div class="col-md-7">
                     <div class="row">
                       <div class="col-md-6">
-                    <input  class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:50px;border:2px solid #a1a1a1;padding:10px 40px;background:#FFFFFF;border-radius:5px;" >
+                    <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:105px;border:2px solid #a1a1a1;padding:10px 40px;background:#FFFFFF;border-radius:5px;" >
                     </input>
                   </div>
                   <div class="col-md-3">
@@ -66,15 +66,20 @@
                      <p class="handler-title">GDP</p>
                    </div>
                    <div class="col-md-7">
-                    <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" placeholder="输入数字调节" style="width:200px">
-                     <div class="progress-box">
-                       <div class="percentage-cur">
-                         <span class="num">{{ selectedRange1}}.00%</span>
-                       </div>
-                       <div  style="margin-top:11px">
+                      <div class="row">
+                      <div class="col-md-6">
+                    <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:105px;border:2px solid #a1a1a1;padding:10px 40px;background:#FFFFFF;border-radius:5px;" >
+                    </input>
+                  </div>
+                  <div class="col-md-3">
+                     <span class="num" style="width:50px">{{selectedRange1}}.00%</span>
+                  </div>
+                     <div class="progress-box col-md-3">
+                      <div  style="margin-top:11px">
                           <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange1" ></div>
                         </div>
                      </div>
+                   </div>
                    </div>
                  </div>
                  <hr />
@@ -87,8 +92,8 @@
         </div>
                </div>
              </div>
-             <div style="height:30px"></div>
-             <br />
+            
+      
           
              <p class="fill-margin"></p>
              <p class="fill-margin bordered"></p>
@@ -109,7 +114,7 @@
          </div>
        </div>
      </div>
-     <div class="zzh-container" style="width:1200px">
+     <div class="zzh-container" style="width:1200px;">
        <div class="row" style="margin-top: 20px;">
          <div class="col-md-12">
            <div class="panel panel-primary" style="margin-top: 20px;">
@@ -117,23 +122,23 @@
                劳动力人口与经济关联度分析预测
                <span class="glyphicon glyphicon-question-sign pull-right"></span>
              </div>
-             <div class="panel-body" style="padding:0">
+             <div class="panel-body" style="padding:0;height:530px">
 
                <div class="row">
           
-                 <div class="col-md-8 chart-panel">
-                   <div id="main"  style="width:95%;height: 500px"></div>
+                 <div class="col-md-8 chart-panel" >
+                   <div id="main"  style="width:95%;height: 530px"></div>
                  </div>
                  <div class="col-md-4">
 
                    <p class="fill-margin"></p>
                    <div class="ioc-panel-desc">
                      <p class="ioc-panel-desc-title">
-                       <img src="/images/common/data_details.png"/>   
-                     </p>
-
-                     <h4>预测结果解读</h4>
-                     <p>在经济发展水平对人口的影响中，关联度最高的是第二产业总值，排在第一位；其次是生产总值，排在第三位的是第三产业总值，说明第二、三产业的发展较迅速，增加了各自的就业人口，从而对人口发展的影响较大。总体来说，由于第一产业总值的所占比重逐年下降，第二、三产业总值比重上升，将成为影响人口就业结构和城乡结构变化的主要因素。</p>
+                        <div style="background:#929dce;width:130px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
+                      </p>
+                     <div style="height:3px"></div>
+                      <h4>预测结果解读</h4>
+                     <p style="margin-right:10px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在经济发展水平对人口的影响中，关联度最高的是第二产业总值，排在第一位；其次是生产总值，排在第三位的是第三产业总值，说明第二、三产业的发展较迅速，增加了各自的就业人口，从而对人口发展的影响较大。总体来说，由于第一产业总值的所占比重逐年下降，第二、三产业总值比重上升，将成为影响人口就业结构和城乡结构变化的主要因素。</p>
                    </div>
                   <hr />
                  <div class="btn-group dropdown">
@@ -175,12 +180,12 @@
                    <div class="col-md-4">
                      <p class="fill-margin"></p>
                      <div class="ioc-panel-desc">
-                       <p class="ioc-panel-desc-title">
-                         <img src="/images/common/data_details.png"/>   
-                       </p>
-
-                       <h4>预测结果解读</h4>
-                       <p id="b">结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。</p>
+                        <p class="ioc-panel-desc-title">
+                        <div style="background:#929dce;width:130px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
+                      </p>
+                     <div style="height:3px"></div>
+                      <h4>预测结果解读</h4>
+                       <p id="b">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。</p>
                      </div>
                       <hr />
                  <div class="btn-group dropdown">
