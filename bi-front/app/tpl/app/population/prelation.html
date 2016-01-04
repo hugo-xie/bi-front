@@ -13,7 +13,7 @@
        <div class="zzh-container" style="width:1200px" >
          <div class="panel panel-primary" style="margin-top: 50px;">
            <div class="panel-heading">
-             劳动力总人口与GDP的预测分析
+             劳动力总人口与GDP的分析预测
              <span class="glyphicon glyphicon-question-sign pull-right"></span>
            </div>
 
@@ -21,7 +21,7 @@
 
                <div class="row">
                <div class="col-md-8 chart-panel">
-                 <highchart style="height:500px;" config="predictChart"></highchart>
+                 <highchart style="height:530px;" config="predictChart"></highchart>
                </div>
                <div class="col-md-4 desc-content">
                  
@@ -54,7 +54,7 @@
                   </div>
                      <div class="progress-box col-md-3">
                       <div  style="margin-top:11px">
-                          <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange" ></div>
+                          <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange" style="width:180px" ></div>
                         </div>
                      </div>
                    </div>
@@ -76,7 +76,7 @@
                   </div>
                      <div class="progress-box col-md-3">
                       <div  style="margin-top:11px">
-                          <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange1" ></div>
+                          <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange1" style="width:180px"></div>
                         </div>
                      </div>
                    </div>
@@ -89,14 +89,14 @@
           <ul class="dropdown-menu">
              <button ng-repeat="bttn in buttonMap2" class="btn btn-primary" ng-model="predictionModal" style="margin-left: 0px;margin-bottom:1px" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
           </ul>
+
         </div>
                </div>
              </div>
             
-      
+     
           
-             <p class="fill-margin"></p>
-             <p class="fill-margin bordered"></p>
+    <div style="width:1198px;height:1px;margin:0px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
             
              <div class="row">
                <div class=" col-md-12">
@@ -134,7 +134,7 @@
                    <p class="fill-margin"></p>
                    <div class="ioc-panel-desc">
                      <p class="ioc-panel-desc-title">
-                        <div style="background:#929dce;width:130px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
+                        <div style="background:#929dce;width:115px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
                       </p>
                      <div style="height:3px"></div>
                       <h4>预测结果解读</h4>
@@ -181,7 +181,7 @@
                      <p class="fill-margin"></p>
                      <div class="ioc-panel-desc">
                         <p class="ioc-panel-desc-title">
-                        <div style="background:#929dce;width:130px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
+                        <div style="background:#929dce;width:115px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
                       </p>
                      <div style="height:3px"></div>
                       <h4>预测结果解读</h4>

@@ -31,6 +31,9 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
                 var option = {
     title : {
         text: '太仓市2016~2025年劳动力人口与GDP平均关联度分析预测',
+         textStyle:{
+            fontWeight:'normal'
+        },
         x:'center',
         y:'top'
     },
@@ -46,7 +49,7 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
         }
     },
     toolbox: {
-        show : false,
+        show : true,
         feature : {
             restore : {show: true},
             magicType: {show: true, type: ['force', 'chord']},
@@ -54,13 +57,17 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
         },
      
             x:"right",
-            y:"bottom",
+            y:"top",
 
     },
+
     legend: {
         x: 'center',
         data:['第一产业人口', '第二产业人口', '第三产业人口'],
-        y:'bottom'
+        y:'bottom',
+        textStyle:{
+            fontWeight:'bold'
+        }
 
     },
     series : [
@@ -72,9 +79,12 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
             itemStyle : {
                 normal : {
                     label : {
-                        rotate : true
+                        rotate : false
                     }
                 }
+            },
+            textStyle:{
+            fontWeight:'nomal'
             },
             // 使用 nodes links 表达和弦图
             nodes: [
@@ -423,8 +433,11 @@ $scope.change2=function(btn){
                 var option = {
     title : {
         text: '太仓市2016~2025年劳动力人口与GDP平均关联度分析预测',
-        x:'right',
-        y:'bottom'
+         textStyle:{
+            fontWeight:'normal'
+        },
+        x:'center',
+        y:'top'
     },
     tooltip : {
         trigger: 'item',
@@ -445,8 +458,12 @@ $scope.change2=function(btn){
         }
     },
     legend: {
-        x: 'left',
-        data:['第一产业人口', '第二产业人口', '第三产业人口']
+        x: 'center',
+        y: 'bottom',
+        data:['第一产业人口', '第二产业人口', '第三产业人口'],
+        textStyle:{
+            fontWeight:'bold'
+        }
     },
     series : [
         {
@@ -457,7 +474,7 @@ $scope.change2=function(btn){
             itemStyle : {
                 normal : {
                     label : {
-                        rotate : true
+                        rotate : false
                     }
                 }
             },
@@ -545,8 +562,11 @@ $scope.change2=function(btn){
                 var option = {
     title : {
         text: '太仓市2026~2035年劳动力人口与GDP平均关联度分析预测',
-        x:'right',
-        y:'bottom'
+         textStyle:{
+            fontWeight:'normal'
+        },
+        x:'center',
+        y:'top'
     },
     tooltip : {
         trigger: 'item',
@@ -567,8 +587,12 @@ $scope.change2=function(btn){
         }
     },
     legend: {
-        x: 'left',
-        data:['第一产业人口', '第二产业人口', '第三产业人口']
+        x: 'center',
+        y: 'bottom',
+        data:['第一产业人口', '第二产业人口', '第三产业人口'],
+        textStyle:{
+            fontWeight:'bold'
+        }
     },
     series : [
         {
@@ -579,7 +603,7 @@ $scope.change2=function(btn){
             itemStyle : {
                 normal : {
                     label : {
-                        rotate : true
+                        rotate : false
                     }
                 }
             },
@@ -667,8 +691,11 @@ $scope.change2=function(btn){
                 var option = {
     title : {
         text: '太仓市2036~2045年劳动力人口与GDP平均关联度分析预测',
-        x:'right',
-        y:'bottom'
+        textStyle:{
+            fontWeight:'normal'
+        },
+        x:'center',
+        y:'top'
     },
     tooltip : {
         trigger: 'item',
@@ -689,8 +716,12 @@ $scope.change2=function(btn){
         }
     },
     legend: {
-        x: 'left',
-        data:['第一产业人口', '第二产业人口', '第三产业人口']
+        x: 'center',
+        y: 'bottom',
+        data:['第一产业人口', '第二产业人口', '第三产业人口'],
+        textStyle:{
+            fontWeight:'bold'
+        }
     },
     series : [
         {
@@ -701,7 +732,7 @@ $scope.change2=function(btn){
             itemStyle : {
                 normal : {
                     label : {
-                        rotate : true
+                        rotate : false
                     }
                 }
             },

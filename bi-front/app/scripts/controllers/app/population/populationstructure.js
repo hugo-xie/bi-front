@@ -587,7 +587,9 @@ var points =[
         credits:{
           enabled:false
         },
-      
+        legend:{
+           itemDistance: 30
+         },
         xAxis: {
             categories: ['0-5岁', '6-11岁', '12-17岁', '18-23岁', '24-29岁','30-35岁','36-41岁','42-47岁','48-53岁','54-59岁','60岁以上'],
             labels: {
