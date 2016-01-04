@@ -426,9 +426,8 @@
 	      </div>
 	    </div>
     </div>
-
     <!--规模以上企业用电量增长率与产值增长率分析预测———————————————————————————————————————第四图—————————————————————————————————————————————————————————————————————-->
-    <div class="wrapper bg-white container space-top" style="margin-bottom:0em;">
+    <div class="wrapper bg-white container space-top" style="margin-bottom:0;">
 	    <div class="row">
 	      <!--标题-->
 	      <div class="col-md-12 topbar">
@@ -436,64 +435,64 @@
 	      </div>
 	      <!--highchart-->
 	      <div class="col-md-8 chartshow">
-	        <highchart   id="chartenterprise" config="AverageEnterpriseChartByYear" ></highchart>
+	        <highchart   id="chartenterprise" config="AverageEnterpriseChartByYear"></highchart>
 	      </div>
 	      <!--Menu side-->
 	      <div class="col-md-4 menustructer">
 	      	<div>
-		      	<div class="col-md-12 ">
+		      	<div class="col-md-12" style="padding-top:0.5em">
 	            	<div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
-		                <span class="text-white font-thin h1 block">{{averageenterprisedata.powergrowthrate}}</span>
+		                <span class="text-white font-thin h1 block">{{averageenterprisedata.powergrowthrate}}%</span>
 		                <span class="text-xs">{{averageenterprisedata.year}}年企业用电量增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>                                                                                                              
 		            </div>
 	            </div>
 	            <div class="col-md-12 ">
 	            	<div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth">
-		                <span class="text-white font-thin h1 block">{{averageenterprisedata.gdpgrowthrate}}</span>
-		                <span class="text-xs">{{averageenterprisedata.year}}年产值增长率预测值</span>
+		                <span class="text-white font-thin h1 block">{{totaldata.gdpgrowthrate}}%</span>
+		                <span class="text-xs">{{totaldata.year}}年GDP增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
 		                </span>
 	              	</div>
 	            </div>
-	      		<div class="col-md-12 cgq_marginaround1em">
+	      		<div class="col-md-12 cgq_marginaround1em" style="margin-top:1em">
 					<article class="media cgq_contentwidth">
 			            <div class="pull-left">
 			              <span class="fa-stack fa-lg">
 			                <i class="fa fa-circle fa-stack-2x text-info"></i>
-			                <i class="fa fa-file-o fa-stack-1x text-white"></i>
+			                <i class="icon-bulb fa-spin fa-stack-1x text-white"></i>
 			              </span>
-			            </div>
-			            <div class="media-body">
 			              <span class="h4">一句话解读</span>
-			              <small class="block m-t-xs">{{averageenterprisedata.oneword}}</small>
+			            </div>
+			            <div class="media-body clear">			              
+			              <small class="block m-t-xs">{{totaldata.oneword}}</small>
 			            </div>
           			</article>
 	      		</div>
 
-	      		<div class="col-md-12 cgq_marginaround1em" style="margin-bottom:0.5em">
+	      		<div class="col-md-12 cgq_marginaround1em">
 				    <div class="btn-group dropdown">
-			        	<button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
+			        	<button class="btn btn-success cgq-fixed-buttonwidth" data-toggle="dropdown" aria-expanded="false">切换图表视图<span class="caret"></span></button>
 			          	<ul class="dropdown-menu">
 			            <li><a ng-click="changeAverageEnterpriseChart('spline')">曲线图</a></li>
 			            <li class="divider"></li>
-			            <li><a ng-click="changeAverageEnterpriseChart('column')">柱状图</a></li>
+			            <li><a ng-click="changeAverageEnterpriseChart('column')">直方图</a></li>
 			            <li><a ng-click="changeAverageEnterpriseChart('area')">区域图</a></li>
 			          </ul>
 			        </div>
 	      		</div>
 	      		<div class="col-md-12 cgq_marginaround1em">
-	      			<button ng-click="showAverageEnterpriseTable()" class="btn m-b-xs btn-primary">详细数据列表</button>
+	      			<button ng-click="showAverageEnterpriseTable()" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据列表</button>
 	      		</div>
-	      		<div class="col-md-12 cgq_marginaround1em-top">
-	      			<button ui-sref="app.index.economy.powerconsumptionofenterprises({title:'各企业用电量与经济增长关联分析'})" class="btn m-b-xs btn-primary ">查看企业详情</button>
+	      		<div class="col-md-12 cgq_marginaround1em">
+	      			<button ui-sref="app.index.economy.powerconsumptionofenterprises({title:'各企业用电量与经济增长关联分析'})" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">查看企业详情</button>
 	      		</div>
 	      	</div>
 	      </div>
 	    </div>
     </div>
-    <div class="bg-white container padding0em" ng-if="averageenterprisetableshow" style="margin-bottom:2em;">
-    	<div class="panel panel-default" style="margin-bottom:0em;">
+    <div class="bg-white container padding0em" style="border-top:0" ng-if="totalshow">
+    	<div class="panel panel-default paddingmargin0em" >
 	    	<div class="panel-heading">数据详情</div>  
 		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
@@ -508,6 +507,8 @@
 		    </table>
   		</div>
     </div>
+    
+    
 
 </div>
 
