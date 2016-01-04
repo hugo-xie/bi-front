@@ -1409,7 +1409,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: [],
+                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1466,7 +1466,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: [],
+                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1522,7 +1522,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: [],
+                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1578,7 +1578,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: [],
+                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1634,7 +1634,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: [],
+                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1690,7 +1690,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: [],
+                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1746,7 +1746,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: [],
+                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {

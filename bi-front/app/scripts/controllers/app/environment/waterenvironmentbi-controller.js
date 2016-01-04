@@ -23,7 +23,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 text: ''
             },
             xAxis: {
-                categories: ['1月5日', '1月6日', '1月7日', '1月8日', '1月9日', '1月10日'],
+                categories: ['1月3日', '1月4日', '1月5日', '1月6日', '1月7日', '1月8日'],
                 tickmarkPlacement: 'on',
                 title: {
                     enabled: false
