@@ -513,5 +513,22 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
       powerrate:$scope.enterprises.enterprise01.powerdata,
     },
   };
+  $scope.enterpriselist = [
+      {
+          name : '规模以上企业A',
+          code : 1
+      },
+      {
+          name : '规模以上企业B',
+          code : 2
+      },
+      {
+          name : '规模以上企业C',
+          code : 3
+      }
+  ];
+  $scope.chooseEnterprise = function(){
+    $scope.map.setZoomAndCenter(16, [121.14,31.484511]);
+  }
   	
 }]);

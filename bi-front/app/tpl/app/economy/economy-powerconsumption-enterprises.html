@@ -6,18 +6,29 @@
      		<div class="subview3_title">{{title}}</div>
  	  </div>
     <div class="container" name="enterprise_map">
-     	  <div class="col-md-12 cgq_margintop2em" style="height:310px;margin-bottom:2em">
+        <div class="col-md-12">
+        
+                      <input type="text" class="form-control ui-select-search ng-pristine ng-valid ng-touched" data-toggle="dropdown" aria-expanded="false" placeholder="搜索企业..." ng-model="search.name"> 
+                      <ul class="ui-select-choices ui-select-choices-content dropdown-menu ng-scope" role="menu" aria-labelledby="dLabel" ng-show="true" aria-hidden="false" style="margin-left:15px;padding:0">
+                          <li class="ui-select-choices-row ng-scope cgq-li-hover" ng-repeat="enterpriselist in enterpriselist | filter:search" role="button" tabindex="0" style="">                            
+                              <a ng-click="chooseEnterprise()" class="ui-select-choices-row-inner">
+                                <div>{{enterpriselist.name}}</div>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+        
+     	  <div class="col-md-12 cgq_margintop2em" style="height:310px;">
             <div class="panel b-a">
                 <div class="panel-heading no-border" style="background-color:#428bca;color:white;">          
                     <span class="text-lt">太仓市地图-选择企业{{enterprisesearch}}</span>
                 </div>
                 <div class="item m-l-n-xxs m-r-n-xxs">
-                    <input type="text" class="form-control ui-select-search ng-pristine ng-valid ng-touched" data-toggle="dropdown" aria-expanded="false" placeholder="搜索企业..." ng-model="enterprisesearch">  
                   <div id="consumptionbyenterprise"></div>
                 </div>
             </div>
         </div>
-        <div class="col-md-12 cgq_margintop2em">
+        <div class="col-md-12" style="margin-top:3em">
           	<div class="panel b-a">
       	        <div class="panel-heading no-border" style="background-color:#428bca;color:white;">          
       	          <span class="text-lt">企业数据详情</span>
