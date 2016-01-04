@@ -38,7 +38,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '太仓市经济数据'
+            text: '太仓市GDP数据'
         },
         subtitle: {
             text: '年度GDP分析'
@@ -143,7 +143,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '太仓市经济数据'
+            text: '太仓市GDP数据'
         },
         subtitle: {
             text: '季度GDP分析'
@@ -243,7 +243,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
       },
     },
         title: {
-            text: '太仓市经济数据'
+            text: '太仓市GDP数据'
         },
         subtitle: {
             text: '按年度分产业GDP分析'
@@ -306,7 +306,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '第一产业本年度GDP分析'
+            text: '太仓市GDP数据'
         },
         subtitle: {
             text: '第一产业本年度GDP分析'
@@ -376,7 +376,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '太仓市经济数据'
+            text: '太仓市GDP数据'
         },
         subtitle: {
             text: '第二产业本年度GDP分析'
@@ -422,20 +422,20 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             }
         },
         series: [{
-            color:'#8d4653',
+         
             type: 'column',
             name: '真实数据',
             data: [ 120.46, 293.99, 444.01, null ]
 
         }, { 
-            color:'#434348',
+           
             type: 'column',
             name: '预测数据',
             data: [117.68, 303.45, 468.21,586.45]
 
         },
         {   
-            color:'#90ed7d',
+           
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
@@ -448,7 +448,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '太仓市经济数据'
+            text: '太仓市GDP数据'
         },
         subtitle: {
             text: '第三产业本年度GDP分析'
@@ -494,20 +494,20 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             }
         },
         series: [{
-            color:'#f7a35c',
+           
             type: 'column',
             name: '真实数据',
             data: [ 100.57, 248.41, 382.08, null ]
 
         }, {
-            color:'#434348',
+           
             type: 'column',
             name: '预测数据',
             data: [107.87, 269.68, 404.18,507.54 ]
 
         },
         {   
-            color:'#90ed7d',
+            
             yAxis: 1,
             type:'spline',
             name: '同比增长率',

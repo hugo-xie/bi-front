@@ -61,7 +61,7 @@ $scope.range2=function(){
     },
     title: 
     {
-        text: '“克强指数”拟合GDP增长率',
+        text: '本年度“克强指数”走势',
         x: -20 //center
     },
     xAxis: 
@@ -72,7 +72,7 @@ $scope.range2=function(){
     {
         title: 
         {
-            text: 'GDP增长率（%）'
+            text: '克强指数'
         },
         plotLines: [{
             value: 0,
@@ -112,7 +112,21 @@ $scope.keqiangChart={
     },
     xAxis: 
     {
-        categories: ['一季度', '二季度', '三季度', '四季度']
+        categories: ['一季度', '二季度', '三季度', '四季度'],
+         plotBands:[{
+            from: 2.5,
+            to:4,
+            color:'rgba(68, 170, 213, .2)',
+            label: {
+                    text: '预测区',
+                    verticalAlign: 'top',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 600
+                    }
+                   
+                }
+            }]
     },
     yAxis: 
     {
@@ -138,7 +152,7 @@ $scope.keqiangChart={
         borderWidth: 0
     },
     series:[{
-        name: 'GDP增长率',
+        name: 'GDP实际增长率',
         data: [7.9, 8.1, 7.5, null]
         }, {
         name: '“克强指数”拟合GDP增长率',
@@ -153,10 +167,10 @@ $scope.loanChart = {
         }
     },
     series: [{
-        name: '银行中长期贷款',
+        name: '真实值',
         data: [7.9, 8.1, 7.5, 7.7,7.2,7.4,7.6,7.1,7.9,8.2,8.3,null]
     },{
-        name: '预测',
+        name: '预测值',
         type:'line',
         data: $scope.loandata
     }],
@@ -184,10 +198,10 @@ $scope.transChart = {
         }
     },
     series: [{
-        name: '货运量',
+        name: '真实值',
         data: [7.9, 8.1, 7.5, 7.7,7.2,7.4,7.6,7.1,7.9,8.2,8.3,null]
     },{
-        name: '预测',
+        name: '预测值',
         type:'line',
         data: $scope.transdata
     }],
@@ -212,10 +226,10 @@ $scope.elecChart = {
         }
     },
     series: [{
-        name: '工业用电量',
+        name: '真实值',
         data: [7.9, 8.1, 7.5, 7.7,7.2,7.4,7.6,7.1,7.9,8.2,8.3,null]
     },{
-        name: '预测',
+        name: '预测值',
         type:'line',
         data: $scope.elecdata
     }],
