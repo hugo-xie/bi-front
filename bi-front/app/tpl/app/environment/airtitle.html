@@ -37,23 +37,23 @@
                                 <div class="list-group no-radius alt">
                                   <a class="list-group-item" href="">
                                     <span class="badge bg-light">多云</span>
-                                    <i class="fa  fa-asterisk fa-spin "></i> 
+                                    <i class="fa fa-pagelines fa-fw " style="color:#88cb26"></i> 
                                     天气状况
                                   </a>
                                     <a class="list-group-item" href="">
                                     <span class="badge bg-success" style="width: 15%; background-color:#fbc003; color:#ffffff">7°C</span>
                                     <i class="icon ion-thermometer " style="color: #eb2026;margin-left:5px;"></i> 
-                                    &nbsp;最高气温
+                                    &nbsp;&nbsp;最高气温
                                   </a>
                                   <a class="list-group-item" href="">
                                     <span class="badge bg-info" style="width: 15%; background-color: #27c24c">1°C</span>
                                     <i class="icon ion-thermometer" style="color: #24a8dd;margin-left:5px;"></i> 
-                                    <span>&nbsp;最低气温</span> 
+                                    <span>&nbsp;&nbsp;最低气温</span> 
                                   </a>
                                   <a class="list-group-item" href="">
                                     <span class="badge bg-light">东北风3-4级</span>
                                     <i class="icon ion-cloud" style="color: #24a8dd"></i> 
-                                    风向风级
+                                    &nbsp;风向风级
                                   </a>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                         </div>
                         <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0">&nbsp;一句话解读</h3>
                         <div class="col-md-12" style="margin-bottom:1em">
-                            <span class="fc-font-content" style="font-size:105%;font-weight:500">太仓市明日天气多云，温差较小。未来七天气温相对稳定。</span>
+                            <span class="fc-font-content" style="font-size:105%;font-weight:500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;太仓市明日天气多云，温差较小。未来七天气温相对稳定。</span>
                         </div>
                         <br>
                         <button ng-click="showTotalTable()" class="btn m-b-xs btn-primary pull-left" style="margin-left:0;font-weight:bold">详细数据列表</button>
@@ -122,11 +122,11 @@
                         <ul class="list-group">
                           <li class="list-group-item">
                             <span class="badge bg-danger">PM2.5</span>
-                            <i class="glyphicon glyphicon-certificate text-success m-r-xs"></i> 首要污染物
+                            <i class="glyphicon glyphicon-certificate m-r-xs" style="color:#88cb26"></i> 首要污染物
                           </li>
                           <li class="list-group-item" ng-click = "openHealthList()">
                             <span class="badge bg-fail">↓展开</span>
-                            <i class="glyphicon glyphicon-user text-success m-r-xs"></i> 对健康的影响
+                            <i class="glyphicon glyphicon-user m-r-xs" style="color:#88cb26"></i> 对健康的影响
                           </li>
                           <li class="list-group-item" ng-if="ishealthopen">
                             <i class="text-success m-r-xs"></i>
@@ -134,7 +134,7 @@
                           </li>
                           <li class="list-group-item" ng-click = "openSuggestionList()">
                             <span class="badge bg-fail">↓展开</span>
-                            <i class="glyphicon glyphicon-edit text-success m-r-xs"></i> 建议措施
+                            <i class="glyphicon glyphicon-edit m-r-xs" style="color:#88cb26"></i> 建议措施
                           </li>
                           <li class="list-group-item" ng-if="issuggestionopen">
                             <i class="text-success m-r-xs"></i>
