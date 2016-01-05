@@ -23,25 +23,14 @@
         <highchart config="keqiangindex"></highchart>
       </div>
       <div class="col-md-4" >
-         <div class="table-responsive" style="width:90%">
-            <table class="table" style="text-align:center">
-              <tr>
-                <th style="background-color:#16aad8;color:#ffffff;text-align:center">本月克强指数</th>
-                <th style="background-color:#16aad8;color:#ffffff;text-align:center">下月克强指数预测值</th>
-              </tr>
-              <tr>
-                <td >97.19</td>
-                <td >121.41</td>
-              </tr>
-            </table>
-          </div>
-      <button class="btn btn-info" style="margin-top:20px">指标含义</button>
+        
+      <button class="btn btn-info" style="margin-top:10px">指标含义</button>
        <div style="margin-top:10px;width:98%;;font-size:17px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="width:100%">
           "克强指数"的由来，源于李克强总理2007年任职辽宁省省委书记时，使用耗电量,铁路货运量和贷款发放量三个指标分析当时辽宁省经济状况,英国《经济学人》自2010年底正式推出这一指数后,受到花旗银行在内的众多国际机构认可。
         </span>
       </div>
-     <article class="media cgq_contentwidth">
+     <article class="media cgq_contentwidth" style="margin-top:30px">
                   <div class="pull-left">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x text-info"></i>
@@ -101,13 +90,12 @@
                     </div>
 
                   </div>
-                   <div class="col-md-3">
-                    <div class="input-group input-group-sm" style="width:100%;margin-top:17px;">
+                   <div class="col-md-3" style="padding:0px 20px 20px 15px;margin-top:3px">
+                   <div class="input-group input-group-sm" style="width:100%;margin-top:17px;">
                       
                       <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3" ng-model="selectedRange"attern="((-)?[0-9]{1,2}|100|-100)"  />
                       <span class="input-group-addon" id="sizing-addon3"style="padding:0px 2px 0px 2px">%</span>
                     </div>
-                </div>
                 </div>
                 </div>
                
@@ -126,8 +114,8 @@
                     </div>
 
                   </div>
-                  <div class="col-md-3">
-                    <div class="input-group input-group-sm" style="width:100%;margin-top:17px;">
+                   <div class="col-md-3" style="padding:0px 20px 20px 15px;margin-top:3px">
+                   <div class="input-group input-group-sm" style="width:100%;margin-top:17px;">
                       
                       <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3" ng-model="selectedRange2"attern="((-)?[0-9]{1,2}|100|-100)"  />
                       <span class="input-group-addon" id="sizing-addon3"style="padding:0px 2px 0px 2px">%</span>
@@ -141,20 +129,19 @@
                   <div class="col-md-5">
                     <div class="progress-box" ng-app>
                       <div class="percentage-cur" ng-init="selectedRange3=0">
-                        <span class="num">{{ selectedRange3 }}%</span>
+                        <span class="num">{{ selectedRange3}}%</span>
                       </div>
                       <div class="progress-bar progress-bar-slider" style="width:100%">
                          <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange3"></div>
                       </div>
                     </div>
                   </div>
-                   <div class="col-md-3">
+                   <div class="col-md-3" style="margin-top:3px;padding:0px 20px 20px 15px">
                     <div class="input-group input-group-sm" style="width:100%;margin-top:17px;">
                       
                       <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3" ng-model="selectedRange3"attern="((-)?[0-9]{1,2}|100|-100)"  />
                       <span class="input-group-addon" id="sizing-addon3"style="padding:0px 2px 0px 2px">%</span>
                     </div>
-                </div>
                 </div>
                 </div>
                 <button class="btn btn-info" ng-click="reset()">重置调节</button>
