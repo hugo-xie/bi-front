@@ -1213,7 +1213,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
 		$timeout(function() {
 		  $.isLoading('hide');
 		  for (var i = 0; i < $scope.wasteModelList.length; i++) {
-		      $scope.wasteModelList[i].dischargeChange = parseInt(90 + Math.random()*10);
+		      $scope.wasteModelList[i].dischargeChange = parseInt(80 + Math.random()*15);
 		      $scope.wasteModelList[i].codChange = parseInt(70 + Math.random()*30);
 		      $scope.wasteModelList[i].nh4nChange = parseInt(50 + Math.random()*50);
 		      $scope.wasteModelList[i].pChange = parseInt(90 + Math.random()*10);
