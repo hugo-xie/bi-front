@@ -3444,7 +3444,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
       {
           name : '太仓中化环保化工有限公司',
           code : 5,
-          position:[121.271566,31.58156],
+          position:[121.271566,31.57156],
       },
       {
           name : '江苏长乐纤维科技有限公司',
@@ -3600,61 +3600,51 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
     //地图标记--企业数据详情
     var marker0OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[0].position);
           $scope.changeIndustry(0);
         });
     };
     var marker1OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[1].position);
           $scope.changeIndustry(1);
         });
     };
     var marker2OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[2].position);
           $scope.changeIndustry(2);
         });
     };
     var marker3OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[3].position);
           $scope.changeIndustry(3);
         });
     };
     var marker4OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[4].position);
           $scope.changeIndustry(4);
         });
     };
     var marker5OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[5].position);
           $scope.changeIndustry(5);
         });
     };
     var marker6OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[6].position);
           $scope.changeIndustry(6);
         });
     };
     var marker7OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[7].position);
           $scope.changeIndustry(7);
         });
     };
     var marker8OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[8].position);
           $scope.changeIndustry(8);
         });
     };
     var marker9OnClick = function(){
         $scope.$apply(function(){
-          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[9].position);
           $scope.changeIndustry(9);
         });
     };
