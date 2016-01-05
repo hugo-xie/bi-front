@@ -90,7 +90,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     type: 'column'
                 }},
                 title: {
-                    text: 'COD排放浓度'
+                    text: '溶解氧排放浓度'
                 },
                 subtitle: {
                     text: ''
@@ -192,7 +192,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     type: 'column'
                 }},
                 title: {
-                    text: '磷排放浓度'
+                    text: '总磷排放浓度'
                 },
                 subtitle: {
                     text: ''
@@ -236,7 +236,57 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         };
       };
 
-      
+     //总磷浓度
+        $scope.changePollutionType5=function(){
+        $scope.discharge={
+            options:{
+            chart: {
+                    type: 'column'
+                }},
+                title: {
+                    text: '高锰酸钾排放浓度'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        '玖龙纸业有限公司',
+                        '太仓市城区污水处理厂',
+                        '太仓江城城市污水处理有限公司',
+                        '浏河镇污水处理厂',
+                        '港城组团污水处理厂',
+                        '其他污染源'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'mg/L'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: '总磷浓度',
+                    color: "#20a0e1",
+                    data: [0.01, 0.09, 0.18, 0.1, 0.06, 0.16]
+
+                }]
+        };
+      }; 
      
     
     $scope.discharge={

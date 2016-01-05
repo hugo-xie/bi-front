@@ -18,7 +18,7 @@
         <div class="col-md-12">
             <div class="panel panel-primary" style="margin-left:10.3%;margin-right:10.3%;margin-top: 20px;">
 	            <div class="panel-heading">
-	              废水排放分析
+	              废水排放指标分析
 	            </div>
 
                 <div class="panel-body" style="padding-top:0;padding-bottom:0;">
@@ -32,13 +32,14 @@
 	                <!--第一个框的右边栏部分-->
 	                    <div class="col-md-4" style="padding:15px 0 0 0;">
 	                    	<div class="col-md-12" style="margin-bottom:1.5em;border-bottom:1px solid lightgrey;padding-bottom:1em">
-					      		<p><i class="glyphicon  glyphicon-list" ></i><span class="fc-font-title" style="margin-left:0.5em">废水排放指标选择</span></p>
+					      		<p><i class="glyphicon  glyphicon-list" ></i><span class="fc-font-title" style="margin-left:0.5em">废水排放指标</span></p>
 					      		
 					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
-				      				<button ng-click="changePollutionType1()" class="btn m-b-xs btn-primary  cgq_fixedwidth" >废水排放量</button>
+				      				<button ng-click="changePollutionType1()" class="btn m-b-xs btn-primary  cgq_fixedwidth" >废水排放总量</button>
 				      			</div>
+				      			<br><br>
 					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
-					      			<button ng-click="changePollutionType2()" class="btn m-b-xs btn-primary  cgq_fixedwidth">COD浓度</button>
+					      			<button ng-click="changePollutionType2()" class="btn m-b-xs btn-primary  cgq_fixedwidth">溶解氧浓度</button>
 					      		</div>
 					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
 					      			<button ng-click="changePollutionType3()" class="btn m-b-xs btn-primary  cgq_fixedwidth">氨氮浓度</button>
@@ -46,13 +47,16 @@
 					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
 					      			<button ng-click="changePollutionType4()" class="btn m-b-xs btn-primary  cgq_fixedwidth">总磷浓度</button>
 					      		</div>
+					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
+					      			<button ng-click="changePollutionType5()" class="btn m-b-xs btn-primary  cgq_fixedwidth">高锰酸钾浓度</button>
+					      		</div>
 						    </div>
 						    <!--一句话解读-->
 						   
 	                        <div class="col-md-12">	                        
 	                        	<i class="fa  fa-mortar-board (alias) fa-fw text-muted" style="color: #23b7e5"></i> 
 	                            <span class="fc-font-title">一句话解读</span>	                       	
-	                            <p class="fc-font-content" style="margin-top:0.5em">废水排放分析主要提供工厂污水排放中废水排放量、COD浓度、氨氮浓度和总磷浓度四项数据,根据污染分析报告和当前数据可分析判断出哪些工厂是主要污染排放源.</p>
+	                            <p class="fc-font-content" style="margin-top:0.5em">本模块首先给出废水排放量的。然后，以直方图方式提供溶解氧浓度、氨氮浓度、总磷浓度、高锰酸钾浓度等四项水质详细指标。根据污染分析报告和当前数据可分析判断出哪些工厂是主要污染排放源.</p>
 	                        </div>	                            
 						</div>
 	                </div>
