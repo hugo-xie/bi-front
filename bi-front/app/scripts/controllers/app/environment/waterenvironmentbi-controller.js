@@ -1701,10 +1701,10 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         var data = {
             dictid: data.dictid,
             monitor: data.monitor,
-            index_o2: (data.index_o2*2.5).toFixed(2),
-            index_kmno4: (data.index_kmno4*0.6).toFixed(2),
-            index_nh4n: (data.index_nh4n*0.4).toFixed(2),
-            index_p: (data.index_p*0.6).toFixed(2),
+            index_o2: (100/$scope.wasteModelList[0].dischargeChange*data.index_o2*2).toFixed(2),
+            index_kmno4: ($scope.wasteModelList[0].dischargeChange/100*data.index_kmno4*0.6).toFixed(2),
+            index_nh4n: ($scope.wasteModelList[0].dischargeChange/100*data.index_nh4n*0.4).toFixed(2),
+            index_p: ($scope.wasteModelList[0].dischargeChange/100*data.index_p*0.6).toFixed(2),
         }
         return data;
     };
