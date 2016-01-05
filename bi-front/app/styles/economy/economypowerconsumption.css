@@ -9,6 +9,8 @@
 	margin: 0px;
 	background-color: #428bca;
 	padding: 0.5em 1em;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 .chartshow {
 	padding: 2em;
@@ -21,7 +23,7 @@
 }
 .cgq_title {
 	color: white;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 .cgq_bg-lightyellow {
 	text-align: center;
