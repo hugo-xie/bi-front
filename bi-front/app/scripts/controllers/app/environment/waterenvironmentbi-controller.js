@@ -56,10 +56,6 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
             }
         },
             series: [{
-                name: '玖龙纸业有限公司',
-                color:"#45a5d6",
-                data: [39023, 37958, 39250, 37219, 33255, 39871]
-            }, {
                 name: '太仓市城区污水处理厂',
                 color:"#69afcd",
                 data: [37289.93, 38061.91, 37985.65, 36860.89, 36602.62, 37506.78]
@@ -76,13 +72,13 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 color:"#f8d940",
                 data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
             },{
-                name: '其他污染源',
+                name: '其他污水处理厂',
                 color:"#ffb143",
                 data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
             }]
          };
       };
-      //COD浓度
+      //溶解氧浓度
       $scope.changePollutionType2=function(){
         $scope.discharge={
             options:{
@@ -97,12 +93,11 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 xAxis: {
                     categories: [
-                        '玖龙纸业有限公司',
                         '太仓市城区污水处理厂',
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污染源'
+                        '其他污水处理厂'
                     ]
                 },
                 yAxis: {
@@ -126,9 +121,9 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     }
                 },
                 series: [{
-                    name: 'COD浓度',
+                    name: '溶解氧浓度',
                     color: "#20a0e1",
-                    data: [41.73, 22.79, 21.08, 32.09, 14.5, 43.68]
+                    data: [22.79, 21.08, 32.09, 14.5, 43.68]
 
                 }]
         };
@@ -148,12 +143,11 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 xAxis: {
                     categories: [
-                        '玖龙纸业有限公司',
                         '太仓市城区污水处理厂',
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污染源'
+                        '其他污水处理厂'
                     ]
                 },
                 yAxis: {
@@ -179,7 +173,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 series: [{
                     name: '氨氮浓度',
                     color: "#20a0e1",
-                    data: [0.33, 0.18, 0.59, 1.04, 0.11, 0.85]
+                    data: [0.18, 0.59, 1.04, 0.11, 0.85]
 
                 }]
         };
@@ -199,7 +193,6 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 xAxis: {
                     categories: [
-                        '玖龙纸业有限公司',
                         '太仓市城区污水处理厂',
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
@@ -230,7 +223,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 series: [{
                     name: '总磷浓度',
                     color: "#20a0e1",
-                    data: [0.01, 0.09, 0.18, 0.1, 0.06, 0.16]
+                    data: [0.09, 0.18, 0.1, 0.06, 0.16]
 
                 }]
         };
@@ -251,7 +244,6 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 xAxis: {
                     categories: [
-                        '玖龙纸业有限公司',
                         '太仓市城区污水处理厂',
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
@@ -280,9 +272,9 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     }
                 },
                 series: [{
-                    name: '总磷浓度',
+                    name: '高锰酸钾浓度',
                     color: "#20a0e1",
-                    data: [0.01, 0.09, 0.18, 0.1, 0.06, 0.16]
+                    data: [4.02, 3.83, 3.91, 4.12, 3.89]
 
                 }]
         };
