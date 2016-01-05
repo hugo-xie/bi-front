@@ -57,3 +57,13 @@
 	margin-left:0.5em;
 	color:white;
 }
+.menu{
+	
+	font-weight: 900;
+    width: 10%;
+    height: 20px;
+    margin-right: 10px;
+    font-size:20px;
+    margin-right:10px;
+    background-color: #00ff00;
+}

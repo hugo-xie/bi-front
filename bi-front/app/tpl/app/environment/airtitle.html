@@ -572,22 +572,28 @@
                             <!--下拉框部分-->
                             <div class="list-group panel panel-primary" style="border-top:solid white">
                                 <a href="" class="list-group-item">
-                                 
                                   <i class="fa fa-calendar fa-fw m-r-xs"style="color: #009f95"></i> 日期
                                    <span class="badge fc-nobg" style=" width:40%">2016年1月7日</span>
                                 </a>
 
-
                                 <a href="" class="list-group-item" ng-click = "openAQI1List()">
-                                  <span class="badge fc-nobg" >118</span>
-                                  <i class="ic icon-emoticon-smile fa-fw m-r-xs" style="color: #3eae1d"></i> 空气质量(AQI){{openorclose2}}
+                                <span class="badge">
+                                    <i class="fa fa-chevron-up" ng-if="updown11"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown12"></i>
+                                </span>
+                                  <span class="badge fc-nobg ">118</span>      
+                                  <i class="glyphicon  glyphicon-leaf m-r-xs" style="color: #3eae1d"></i>&nbsp;空气质量(AQI)
                                 </a>
                                 <li class="list-group-item" ng-if="isAQI1open">
-                                <i class="text-success m-r-xs"></i>
+                                <i class=" m-r-xs"></i>
                                 <span class="fc-list-content">&nbsp;&nbsp;空气质量AQI>100时，开始污染警报,AQI值越大，空气污染越严重。</span>
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openmainpollution1List()">
+                                <span class="badge">
+                                    <i class="fa fa-chevron-up" ng-if="updown21"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown22"></i>
+                                </span>
                                   <div class="badge fc-nobg">PM2.5</div>
                                   <i class="ic icon-bell fa-fw m-r-xs" style="color: #e10602"></i> 首要污染物
                                 </a>
@@ -598,6 +604,10 @@
 
 
                                 <a href="" class="list-group-item" ng-click = "openPM251List()">
+                                  <span class="badge">
+                                    <i class="fa fa-chevron-up"  ng-if="updown31"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown32"></i>
+                                  </span>
                                   <span class="badge fc-nobg" >64</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM2.5
                                 </a>
@@ -607,6 +617,10 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openPM101List()">
+                                <span class="badge">
+                                    <i class="fa fa-chevron-up" ng-if="updown41"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown42"></i>
+                                  </span>
                                   <span class="badge fc-nobg" >70</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM10
                                 </a>
@@ -616,6 +630,10 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openSO21List()">
+                                <span class="badge">
+                                    <i class="fa fa-chevron-up" ng-if="updown51"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown52"></i>
+                                  </span>
                                   <span class="badge fc-nobg">54</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 二氧化硫
                                 </a>
@@ -625,6 +643,10 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openNO21List()">
+                                 <span class="badge">
+                                    <i class="fa fa-chevron-up" ng-if="updown61"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown62"></i>
+                                  </span>
                                   <span class="badge fc-nobg">44</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 二氧化氮
                                 </a>
@@ -634,6 +656,10 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openCO1List()">
+                                  <span class="badge">
+                                    <i class="fa fa-chevron-up" ng-if="updown71"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown72"></i>
+                                  </span>
                                   <span class="badge fc-nobg">1</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 一氧化碳
                                 </a>
@@ -643,6 +669,10 @@
                                 </li>
 
                                 <a href="" class="list-group-item" ng-click = "openO31List()">
+                                <span class="badge">
+                                    <i class="fa fa-chevron-up" ng-if="updown81"></i>
+                                    <i class="fa fa-chevron-down" ng-if="updown82"></i>
+                                  </span>
                                   <span class="badge fc-nobg">7</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 臭氧
                                 </a>

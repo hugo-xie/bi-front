@@ -64,9 +64,17 @@ $scope.openorclose='↓展开';
   $scope.openQuality1List = function(){
   	$scope.isQuality1open = !$scope.isQuality1open;
   };
-
+ 
+  $scope.updown22=true;
   $scope.openmainpollution1List = function(){
   	$scope.ismainpollution1open = !$scope.ismainpollution1open;
+  	if ($scope.ismainpollution1open){
+  		$scope.updown21=true;
+  		$scope.updown22=false;
+  	}else{
+  		$scope.updown21=false;
+  		$scope.updown22=true;
+  	} 	
   	$scope.isPM251open = false;
   	$scope.isPM101open = false;
   	$scope.isSO21open = false;
@@ -75,13 +83,15 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.isAQI1open=false;
   };
-  $scope.openorclose2='↓展开';
+  $scope.updown12=true;
   $scope.openAQI1List = function(){
   	$scope.isAQI1open = !$scope.isAQI1open;
-  	if (!$scope.isAQI1open){
-  		$scope.openorclose2='↓展开';
+  	if ($scope.isAQI1open){
+  		$scope.updown11=true;
+  		$scope.updown12=false;
   	}else{
-  		$scope.openorclose2='↑关闭';
+  		$scope.updown11=false;
+  		$scope.updown12=true;
   	} 	
   	$scope.isPM251open = false;
   	$scope.isPM101open = false;
@@ -91,8 +101,17 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.ismainpollution1open=false;
   };
+
+  $scope.updown32=true;
   $scope.openPM251List = function(){
   	$scope.isPM251open = !$scope.isPM251open;
+  	if ($scope.isPM251open){
+  		$scope.updown31=true;
+  		$scope.updown32=false;
+  	}else{
+  		$scope.updown31=false;
+  		$scope.updown32=true;
+  	} 	
   	$scope.isAQI1open = false;
   	$scope.isPM101open = false;
   	$scope.isSO21open = false;
@@ -101,8 +120,16 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.ismainpollution1open=false;
   };
+  $scope.updown42=true;
   $scope.openPM101List = function(){
   	$scope.isPM101open = !$scope.isPM101open;
+  	  	if ($scope.isPM251open){
+  		$scope.updown41=true;
+  		$scope.updown42=false;
+  	}else{
+  		$scope.updown41=false;
+  		$scope.updown42=true;
+  	} 
   	$scope.isPM251open = false;
   	$scope.isAQI1open = false;
   	$scope.isSO21open = false;
@@ -111,8 +138,16 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.ismainpollution1open=false;
   };
+   $scope.updown52=true;
   $scope.openSO21List = function(){
   	$scope.isSO21open = !$scope.isSO21open;
+  	  	if ($scope.isSO21open){
+  		$scope.updown51=true;
+  		$scope.updown52=false;
+  	}else{
+  		$scope.updown51=false;
+  		$scope.updown52=true;
+  	} 
   	$scope.isPM251open = false;
   	$scope.isPM101open = false;
   	$scope.isAQI11open = false;
@@ -121,8 +156,16 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.ismainpollution1open=false;
   };
+  $scope.updown72=true;
   $scope.openCO1List = function(){
   	$scope.isCO1open = !$scope.isCO1open;
+  	if ($scope.isCO1open){
+  		$scope.updown71=true;
+  		$scope.updown72=false;
+  	}else{
+  		$scope.updown71=false;
+  		$scope.updown72=true;
+  	} 
   	$scope.isPM251open = false;
   	$scope.isPM101open = false;
   	$scope.isSO21open = false;
@@ -131,8 +174,16 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.ismainpollution1open=false;
   };
+  $scope.updown62=true;
   $scope.openNO21List = function(){
   	$scope.isNO21open = !$scope.isNO21open;
+  	  	if ($scope.isNO21open){
+  		$scope.updown61=true;
+  		$scope.updown62=false;
+  	}else{
+  		$scope.updown61=false;
+  		$scope.updown62=true;
+  	} 
   	$scope.isPM251open = false;
   	$scope.isPM101open = false;
   	$scope.isSO21open = false;
@@ -141,8 +192,16 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.ismainpollution1open=false;
   };
+  $scope.updown82=true;
   $scope.openO31List = function(){
   	$scope.isO31open = !$scope.isO31open;
+  	if ($scope.isO31open){
+  		$scope.updown81=true;
+  		$scope.updown82=false;
+  	}else{
+  		$scope.updown81=false;
+  		$scope.updown82=true;
+  	} 
   	$scope.isPM251open = false;
   	$scope.isPM101open = false;
   	$scope.isSO21open = false;
