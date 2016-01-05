@@ -121,7 +121,7 @@
                           <h4 class="text-u-c m-b-none" style="font-size:20px;">实时空气质量状况</h4>
                           <span style="font-size:65%">当前时间:1月7日9时</span>
                           <h2 class="m-t-none">
-                            <span class="text-2x text-lt">110</span>
+                            <span class="text-2x text-lt">118</span>
                             <span class="text-xs" > 轻度污染</span>
                           </h2>
                         </div>
@@ -242,6 +242,52 @@
                         <span class="glyphicon  glyphicon-leaf m-r-xs" ng-if="istownairquality">
                             <span class="fc-button-font">未来24小时太仓城区2个空气监测点监测到空气质量有轻微问题</span>                        
                         </span>
+                        
+                        <div ng-show="mapTableStatus.airQuality">
+                          <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                              <tr>
+                                  <th style="width:29%">监测点</th>
+                                  <th style="width:15%">AQI</th>
+                                  <th style="width:20%">污染物</th>
+                                  <th style="width:18%">PM2.5</th>
+                                  <th style="width:18%">SO2</th>
+                              </tr>
+                          </table>
+                        </div>
+                        <div style="overflow: auto; overflow-x:hidden;height:180px" ng-show="mapTableStatus.airQuality">
+                            <table class="table table-hover table-responsive" style="font-size:14px">
+                                <tr >
+                                    <td style="width:29%">太仓市监测站</td>
+                                    <td style="width:15%">
+                                        <span>93</span>
+                                    </td>
+                                    <td style="width:20%">
+                                        <span>PM2.5</span>
+                                    </td>
+                                    <td style="width:18%">
+                                        <span>72</span>
+                                    </td>
+                                    <td style="width:18%">
+                                        <span>54</span>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td style="width:29%">科教新城监测站</td>
+                                    <td style="width:15%">
+                                        <span>110</span>
+                                    </td>
+                                    <td style="width:20%">
+                                        <span>PM2.5</span>
+                                    </td>
+                                    <td style="width:18%">
+                                        <span>83</span>
+                                    </td>
+                                    <td style="width:18%">
+                                        <span>54</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
 
                     <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
@@ -261,6 +307,43 @@
                         <span class="glyphicon glyphicon-cloud m-r-xs" ng-if="istownaircondition">
                             <span class="fc-button-font">太仓市未来一天天气状况</span>                        
                         </span>
+
+                        <div ng-show="mapTableStatus.airCondition">
+                            <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                                <tr>
+                                    <th style="width:28%">气象局</th>
+                                    <th style="width:13%">最高气温(℃)</th>
+                                    <th style="width:13%">最低气温(℃)</th>
+                                    <th style="width:13%">相对湿度(%)</th>
+                                    <th style="width:13%">风级</th>
+                                    <th style="width:20%">风向</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="overflow: auto; overflow-x:hidden;" ng-show="mapTableStatus.airCondition">
+                            <table class="table table-hover table-responsive" style="font-size:14px">
+                                <tr >
+                                    <td style="width:28%">太仓市气象局</td>
+                                    <td style="width:13%">
+                                        <span>7</span>
+                                    </td>
+                                    <td style="width:13%">
+                                        <span>2</span>
+                                    </td>
+                                    <td style="width:13%">
+                                        <span>50</span>
+                                    </td>
+                                    <td style="width:13%">
+                                        <span>2</span>
+                                    </td>
+                                     <td style="width:20%">
+                                        <span>东南风</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                           <div style="height:50px"></div>
+                        </div>
                     </div>
                     
                     <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
@@ -282,186 +365,88 @@
                         </span>
                     </div>
                     <div class="col-md-12">
-                  <div ng-show="mapTableStatus.airQuality">
-                    <h5 align="right" style="padding-top: 0px">
-                        (更新时间:&nbsp{{2016 + '-'
-                                                            + 1 + '-'
-                                                            + 8 + ' '
-                                                            + 9 + '时'}}&nbsp&nbsp单位：μg/m³)
-                    </h5>
-                    <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-                        <tr>
-                            <th style="width:29%">监测点</th>
-                            <th style="width:15%">AQI</th>
-                            <th style="width:20%">污染物</th>
-                            <th style="width:18%">PM2.5</th>
-                            <th style="width:18%">SO2</th>
-                        </tr>
-                    </table>
-                  </div>
-                  <div style="overflow: auto; overflow-x:hidden;height:180px" ng-show="mapTableStatus.airQuality">
-                      <table class="table table-hover table-responsive" style="font-size:14px">
-                          <tr >
-                              <td style="width:29%">太仓市监测站</td>
-                              <td style="width:15%">
-                                  <span>93</span>
-                              </td>
-                              <td style="width:20%">
-                                  <span>PM2.5</span>
-                              </td>
-                              <td style="width:18%">
-                                  <span>72</span>
-                              </td>
-                              <td style="width:18%">
-                                  <span>54</span>
-                              </td>
-                          </tr>
-                          <tr >
-                              <td style="width:29%">科教新城监测站</td>
-                              <td style="width:15%">
-                                  <span>110</span>
-                              </td>
-                              <td style="width:20%">
-                                  <span>PM2.5</span>
-                              </td>
-                              <td style="width:18%">
-                                  <span>83</span>
-                              </td>
-                              <td style="width:18%">
-                                  <span>54</span>
-                              </td>
-                          </tr>
-                      </table>
-                  </div>
-                  <div ng-show="mapTableStatus.airCondition">
-                      <h5 align="right" style="padding-top: 0px">
-                          (更新时间:&nbsp{{2016 + '-'
-                                                              + 1+ '-'
-                                                              + 8+ ' '
-                                                              + 9+ '时'}})
-                      </h5>
-                      <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-                          <tr>
-                              <th style="width:28%">气象局</th>
-                              <th style="width:13%">最高气温(℃)</th>
-                              <th style="width:13%">最低气温(℃)</th>
-                              <th style="width:13%">相对湿度(%)</th>
-                              <th style="width:13%">风级</th>
-                              <th style="width:20%">风向</th>
-                          </tr>
-                      </table>
-                  </div>
-                  <div style="overflow: auto; overflow-x:hidden;" ng-show="mapTableStatus.airCondition">
-                      <table class="table table-hover table-responsive" style="font-size:14px">
-                          <tr >
-                              <td style="width:28%">太仓市气象局</td>
-                              <td style="width:13%">
-                                  <span>7</span>
-                              </td>
-                              <td style="width:13%">
-                                  <span>2</span>
-                              </td>
-                              <td style="width:13%">
-                                  <span>50</span>
-                              </td>
-                              <td style="width:13%">
-                                  <span>2</span>
-                              </td>
-                               <td style="width:20%">
-                                  <span>东南风</span>
-                              </td>
-                          </tr>
-                      </table>
-                     <div style="height:50px"></div>
-                  </div>
-                  <div ng-show="mapTableStatus.wasteAir">
-                      <h5 align="right" style="padding-top: 0px">
-                          (更新时间:&nbsp{{2016 + '-'
-                                                          + 1 + '-'
-                                                          + 8 }})
-                      </h5>
-                      <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-                          <tr>
-                              <th style="width:25%">企业</th>
-                              <th style="width:19%">流量(m³)</th>
-                              <th style="width:19%">
-                                  烟尘
-                                  <br>(mg/m³)</th>
-                              <th style="width:19%">
-                                  SO2
-                                  <br>(mg/m³)</th>
-                              <th style="width:18%">
-                                  氮氧化物
-                                  <br>(mg/m³)</th>
-                          </tr>
-                      </table>
-                  </div>
-                  <div style="overflow: auto; overflow-x:hidden;height:180px" ng-show="mapTableStatus.wasteAir" >
-                      <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0">
-                          <tr >
-                              <td style="width:25%">华能国际电力</td>
-                              <td style="width:19%">
-                                  <span>0.67亿</span>
-                              </td>
-                              <td style="width:19%">
-                                  <span>9.21</span>
-                              </td>
-                              <td style="width:19%">
-                                  <span>61.08</span>
-                              </td>
-                              <td style="width:18%">
-                                  <span>82.91</span>
-                              </td>
-                          </tr>
-                          <tr >
-                              <td style="width:25%">玖龙纸业</td>
-                              <td style="width:19%">
-                                  <span>0.12亿</span>
-                              </td>
-                              <td style="width:19%">
-                                  <span>16.95</span>
-                              </td>
-                              <td style="width:19%">
-                                  <span>23.27</span>
-                              </td>
-                              <td style="width:18%">
-                                  <span>86.85</span>
-                              </td>
-                          </tr>
+                    <div ng-show="mapTableStatus.wasteAir">
+                        <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                            <tr>
+                                <th style="width:25%">企业</th>
+                                <th style="width:19%">流量(m³)</th>
+                                <th style="width:19%">
+                                    烟尘
+                                    <br>(mg/m³)</th>
+                                <th style="width:19%">
+                                    SO2
+                                    <br>(mg/m³)</th>
+                                <th style="width:18%">
+                                    氮氧化物
+                                    <br>(mg/m³)</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="overflow: auto; overflow-x:hidden;height:180px" ng-show="mapTableStatus.wasteAir" >
+                        <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0">
+                            <tr >
+                                <td style="width:25%">华能国际电力</td>
+                                <td style="width:19%">
+                                    <span>0.67亿</span>
+                                </td>
+                                <td style="width:19%">
+                                    <span>9.21</span>
+                                </td>
+                                <td style="width:19%">
+                                    <span>61.08</span>
+                                </td>
+                                <td style="width:18%">
+                                    <span>82.91</span>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td style="width:25%">玖龙纸业</td>
+                                <td style="width:19%">
+                                    <span>0.12亿</span>
+                                </td>
+                                <td style="width:19%">
+                                    <span>16.95</span>
+                                </td>
+                                <td style="width:19%">
+                                    <span>23.27</span>
+                                </td>
+                                <td style="width:18%">
+                                    <span>86.85</span>
+                                </td>
+                            </tr>
 
-                          <tr >
-                              <td style="width:25%">太仓港协鑫发电</td>
-                              <td style="width:19%">
-                                  <span>0.36亿</span>
-                              </td>
-                              <td style="width:19%">
-                                  <span>5.91</span>
-                              </td>
-                              <td style="width:19%">
-                                  <span>34.53</span>
-                              </td>
-                              <td style="width:18%">
-                                  <span>86.85</span>
-                              </td>
-                          </tr>
+                            <tr >
+                                <td style="width:25%">太仓港协鑫发电</td>
+                                <td style="width:19%">
+                                    <span>0.36亿</span>
+                                </td>
+                                <td style="width:19%">
+                                    <span>5.91</span>
+                                </td>
+                                <td style="width:19%">
+                                    <span>34.53</span>
+                                </td>
+                                <td style="width:18%">
+                                    <span>86.85</span>
+                                </td>
+                            </tr>
 
-                          <tr >
-                              <td style="width:20%">国华太仓发电</td>
-                              <td style="width:20%">
-                                  <span>0.12亿</span>
-                              </td>
-                              <td style="width:20%">
-                                  <span>2.13</span>
-                              </td>
-                              <td style="width:20%">
-                                  <span>30.15</span>
-                              </td>
-                              <td style="width:20%">
-                                  <span>70.63</span>
-                              </td>
-                          </tr>
-
-                      </table>
+                            <tr >
+                                <td style="width:20%">国华太仓发电</td>
+                                <td style="width:20%">
+                                    <span>0.12亿</span>
+                                </td>
+                                <td style="width:20%">
+                                    <span>2.13</span>
+                                </td>
+                                <td style="width:20%">
+                                    <span>30.15</span>
+                                </td>
+                                <td style="width:20%">
+                                    <span>70.63</span>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                   </div> 
                 </div>
