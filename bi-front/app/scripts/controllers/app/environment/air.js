@@ -215,14 +215,14 @@ $scope.openorclose='↓展开';
   
   	tabledata:
   	[
-	  {yearvalue:'日期', Htemperature:'最高气温(°C)',Ltemperature:'最低气温(°C)'},
-	  {yearvalue:'1月9日', Htemperature:'6',Ltemperature:'0'},
-	  {yearvalue:'1月10日', Htemperature:'7',Ltemperature:'-1'},
-	  {yearvalue:'1月11日', Htemperature:'7',Ltemperature:'0'},
-	  {yearvalue:'1月12日', Htemperature:'7',Ltemperature:'1'},
-	  {yearvalue:'1月13日', Htemperature:'8',Ltemperature:'1'},
-	  {yearvalue:'1月14日', Htemperature:'7',Ltemperature:'1'},
-	  {yearvalue:'1月15日', Htemperature:'7',Ltemperature:'1'}
+	  {yearvalue:'日期',weather:'天气状况' ,Htemperature:'最高气温(°C)',Ltemperature:'最低气温(°C)',wind:'风向风级'},
+	  {yearvalue:'1月8日',weather:'多云',Htemperature:'8',Ltemperature:'1',wind:'北风3级'},
+	  {yearvalue:'1月9日',weather:'晴转多云', Htemperature:'9',Ltemperature:'3',wind:'西南风3级'},
+	  {yearvalue:'1月10日', weather:'阴',Htemperature:'10',Ltemperature:'5',wind:'东风3级'},
+	  {yearvalue:'1月11日', weather:'阴转多云',Htemperature:'12',Ltemperature:'-3',wind:'东北风3级'},
+	  {yearvalue:'1月12日', weather:'多云转晴',Htemperature:'8',Ltemperature:'1',wind:'北风转西风3级'},
+	  {yearvalue:'1月13日', weather:'晴转多云',Htemperature:'8',Ltemperature:'0',wind:'西北风3级'},
+	  {yearvalue:'1月14日', weather:'多云',Htemperature:'8',Ltemperature:'1',wind:'东风3~4级'}
   	]
   };
 
@@ -340,7 +340,7 @@ $scope.openorclose='↓展开';
 	        content: infow.join('')
 	    });
         var info3=[];
-	    info3.push("<h4><strong>太仓市气象局</strong></h4>");
+	    info3.push("<h4><strong>太仓市气象局(明日天气预报)</strong></h4>");
 	    info3.push("<table class='table table-bordered table-striped'>");
 	    info3.push("<tr><td class='maptable' style='line-height:35px;'>明日气温</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>2℃~7℃</div></td></tr>");
 	    info3.push("<tr><td class='maptable' style='line-height:35px;'>相对湿度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>50%</div></td></tr>");
@@ -386,13 +386,13 @@ $scope.openorclose='↓展开';
 	        content: infow.join('')
 	    });
         var info4=[];
-	    info4.push("<h4><strong>华能国际电力股份有限公司电厂</strong></h4>");
+	    info4.push("<h4><strong>华能国际电力股份有限公司电厂(实时数据)</strong></h4>");
 	    info4.push("<table class='table table-bordered table-striped'>");
 	    info4.push("<tr><td class='maptable' style='line-height:35px;'>排放量</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>0.67亿</div></td></tr>");
 	    info4.push("<tr><td class='maptable' style='line-height:35px;'>烟尘浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>8.42mg/m³</div></td></tr>");
 	    info4.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>60.51mg/m³</div></td></tr>");
 	    info4.push("<tr><td class='maptable' style='line-height:35px;'>氮氧化物浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>82.75mg/m³</div></td></tr>");
-	    info4.push("<tr><td class='maptable' style='line-height:35px;'>监测站状态</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
+	    info4.push("<tr><td class='maptable' style='line-height:35px;'>废气排放状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
 	    info4.push("</table>");
 		var infowindow4 = new AMap.InfoWindow({
 		     content: info4.join(''),
@@ -413,13 +413,13 @@ $scope.openorclose='↓展开';
 	        content: infow.join('')
 	    });
         var info5=[];
-	    info5.push("<h4><strong>玖龙纸业(太仓)有限公司</strong></h4>");
+	    info5.push("<h4><strong>玖龙纸业(太仓)有限公司(实时数据)</strong></h4>");
 	    info5.push("<table class='table table-bordered table-striped'>");
 	    info5.push("<tr><td class='maptable' style='line-height:35px;'>排放量</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>0.12亿</div></td></tr>");
 	    info5.push("<tr><td class='maptable' style='line-height:35px;'>烟尘浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>16.95mg/m³</div></td></tr>");
 	    info5.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>23.27mg/m³</div></td></tr>");
 	    info5.push("<tr><td class='maptable' style='line-height:35px;'>氮氧化物浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>86.85mg/m³</div></td></tr>");
-	    info5.push("<tr><td class='maptable' style='line-height:35px;'>监测站状态</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
+	    info5.push("<tr><td class='maptable' style='line-height:35px;'>废气排放状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
 	    info5.push("</table>");
 		var infowindow5 = new AMap.InfoWindow({
 		     content: info5.join(''),
@@ -440,13 +440,13 @@ $scope.openorclose='↓展开';
 	        content: infow.join('')
 	    });
         var info6=[];
-        info6.push("<h4><strong>太仓港协鑫发电有限公司</strong></h4>");
+        info6.push("<h4><strong>太仓港协鑫发电有限公司(实时数据)</strong></h4>");
 	    info6.push("<table class='table table-bordered table-striped'>");
 	    info6.push("<tr><td class='maptable' style='line-height:35px;'>排放量</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>0.36亿</div></td></tr>");
 	    info6.push("<tr><td class='maptable' style='line-height:35px;'>烟尘浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>5.91mg/m³</div></td></tr>");
 	    info6.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>34.53mg/m³</div></td></tr>");
 	    info6.push("<tr><td class='maptable' style='line-height:35px;'>氮氧化物浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>86.85mg/m³</div></td></tr>");
-	    info6.push("<tr><td class='maptable' style='line-height:35px;'>监测站状态</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
+	    info6.push("<tr><td class='maptable' style='line-height:35px;'>废气排放状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
 	    info6.push("</table>");
 		var infowindow6 = new AMap.InfoWindow({
 		     content: info6.join(''),
@@ -467,13 +467,13 @@ $scope.openorclose='↓展开';
 	        content: infow.join('')
 	    });
         var info7=[];
-	    info7.push("<h4><strong>国华太仓发电有限公司</strong></h4>");
+	    info7.push("<h4><strong>国华太仓发电有限公司(实时数据)</strong></h4>");
 	    info7.push("<table class='table table-bordered table-striped'>");
         info7.push("<tr><td class='maptable' style='line-height:35px;'>排放量</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>0.12亿</div></td></tr>");
 	    info7.push("<tr><td class='maptable' style='line-height:35px;'>烟尘浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>2.13mg/m³</div></td></tr>");
 	    info7.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>30.15mg/m³</div></td></tr>");
 	    info7.push("<tr><td class='maptable' style='line-height:35px;'>氮氧化物浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>70.63mg/m³</div></td></tr>");
-	    info7.push("<tr><td class='maptable' style='line-height:35px;'>监测站状态</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
+	    info7.push("<tr><td class='maptable' style='line-height:35px;'>废气排放状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:10px;margin-top:4px;'>正常</div></td></tr>");
 	    info7.push("</table>");
 		var infowindow7 = new AMap.InfoWindow({
 		     content: info7.join(''),
@@ -530,13 +530,13 @@ $scope.openorclose='↓展开';
  
 	//显示信息窗体(可单击位置显示隐藏的信息窗体)
 	var info1=[];
-	   info1.push("<h4><strong>太仓监测站</strong></h4>");
+	   info1.push("<h4><strong>太仓监测站(明日空气质量)</strong></h4>");
 	    info1.push("<table class='table table-bordered table-striped'>");
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>118</div></td></tr>");	    
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#d9534f;margin-left:2.5px;'>PM2.5</div></td></tr>");
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>110</div></td></tr>");
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>93</div></td></tr>");	    
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>PM2.5</div></td></tr>");
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>72</div></td></tr>");
 	    info1.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;;margin-left:2.5px;'>54</div></td></tr>");
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>监测站状态</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;;margin-left:2.5px;;margin-left:2.5px;'>轻度污染</div></td></tr>");
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>空气质量状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;;margin-left:2.5px;;margin-left:2.5px;'>轻度污染</div></td></tr>");
 	    info1.push("</table>");
 	var infowindow1 = new AMap.InfoWindow({
 	     content: info1.join(''),
@@ -548,13 +548,13 @@ $scope.openorclose='↓展开';
 	})
 
 	var info2=[];
-	    info2.push("<h4><strong>科教新城监测站</strong></h4>");
+	    info2.push("<h4><strong>科教新城监测站(明日空气质量)</strong></h4>");
 	    info2.push("<table class='table table-bordered table-striped'>");
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>161</div></td></tr>");	    
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#d9534f;margin-left:2.5px;'>PM2.5</div></td></tr>");
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>83</div></td></tr>");
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>110</div></td></tr>");	    
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>PM2.5</div></td></tr>");
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>83</div></td></tr>");
 	    info2.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>54</div></td></tr>");
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>监测站状态</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>轻度污染</div></td></tr>");
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>空气质量状况</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>轻度污染</div></td></tr>");
 	    info2.push("</table>");
 	    var infowindow2 = new AMap.InfoWindow({
 	    content:  info2.join(''),
@@ -646,7 +646,7 @@ $scope.openorclose='↓展开';
 
 
 $scope.aqilinechart={
- title: {
+    title: {
             text: '过去七天空气质量AQI',
             style: {
             	fontSize:'180%'
@@ -654,24 +654,23 @@ $scope.aqilinechart={
             x:20
         },
         xAxis: {
-            categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日','1月7日','1月8日']
+            categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日','1月6日','1月7日']
         },
         yAxis: {
             title: {
                 text: '空气质量指数(AQI)值'
             }
         },
-
         series: [{
             type: 'column',
             name: '实际AQI值',
-            color:"#23b7e5",
-            data: [90, 116, 140, 168, 150,210,182]
+            color:"#95ceff",
+            data: [127, 157, 183, 188, 50,100,80]
         },  {
             type: 'spline',
             name: '预测AQI值',
             color:"#1F1F1F",
-            data: [100, 120, 138, 175, 163, 201,185],
+            data: [132, 148, 188, 175, 60, 108,88],
             
             dataLabels: {
                 enabled: false
@@ -1499,16 +1498,34 @@ $scope.aqilinechart={
                     min:0,
                     max:310,
                     plotLines : [{
-						color: '#DDDF0D',
+						        color: '#DF5353',
 		                width: 2,
-		                value: airQualityAQIScan.scan[0],
-                    	dashStyle: 'Dot'
-					},{
-						color: '#DF5353',
-		                width: 2,
-		                value: airQualityAQIScan.scan[1],
-                    	dashStyle: 'Dot'
-					}]
+		                value: 200,
+                    dashStyle: 'Dot',
+                    label:{
+                    text:'严重污染',
+                    align:'left',
+                    x:10,
+                     style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
+					           },{
+          					color: '#DDDF0D',
+          		              width: 2,
+          		              value: 100,
+                            dashStyle: 'Dot',
+                             label:{
+                             text:'轻度污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
+          					}]
                 },
                 tooltip: {
                     valueSuffix: ''
@@ -1558,13 +1575,31 @@ $scope.aqilinechart={
                     plotLines : [{
 						color: '#DDDF0D',
 		                width: 2,
-		                value: airQualityPM25Scan.scan[0],
-                    	dashStyle: 'Dot'
+		                value: 75,
+                    dashStyle: 'Dot',
+                    label:{
+                             text:'轻度污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					},{
 						color: '#DF5353',
 		                width: 2,
-		                value: airQualityPM25Scan.scan[1],
-                    	dashStyle: 'Dot'
+		                value: 150,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'严重污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					}]
                 },
                 tooltip: {
@@ -1614,13 +1649,31 @@ $scope.aqilinechart={
                     plotLines : [{
 						color: '#DDDF0D',
 		                width: 2,
-		                value: airQualityPM10Scan.scan[0],
-                    	dashStyle: 'Dot'
+		                value: 150,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'轻度污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					},{
 						color: '#DF5353',
 		                width: 2,
-		                value: airQualityPM10Scan.scan[1],
-                    	dashStyle: 'Dot'
+		                value: 250,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'严重污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					}]
                 },
                 tooltip: {
@@ -1670,13 +1723,31 @@ $scope.aqilinechart={
                     plotLines : [{
 						color: '#DDDF0D',
 		                width: 2,
-		                value: airQualitySo2Scan.scan[0],
-                    	dashStyle: 'Dot'
+		                value: 150,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'轻度污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					},{
 						color: '#DF5353',
 		                width: 2,
-		                value: airQualitySo2Scan.scan[1],
-                    	dashStyle: 'Dot'
+		                value: 475,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'严重污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					}]
                 },
                 tooltip: {
@@ -1726,13 +1797,31 @@ $scope.aqilinechart={
                     plotLines : [{
 						color: '#DDDF0D',
 		                width: 2,
-		                value: airQualityNo2Scan.scan[0],
-                    	dashStyle: 'Dot'
+		                value: 80,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'轻度污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					},{
 						color: '#DF5353',
 		                width: 2,
-		                value: airQualityNo2Scan.scan[1],
-                    	dashStyle: 'Dot'
+		                value: 180,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'严重污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					}]
                 },
                 tooltip: {
@@ -1782,13 +1871,32 @@ $scope.aqilinechart={
                     plotLines : [{
 						color: '#DDDF0D',
 		                width: 2,
-		                value: airQualityCoScan.scan[0],
-                    	dashStyle: 'Dot'
+		                value: 4,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'轻度污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					},{
 						color: '#DF5353',
 		                width: 2,
 		                value: airQualityCoScan.scan[1],
-                    	dashStyle: 'Dot'
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'严重污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
+
 					}]
                 },
                 tooltip: {
@@ -1838,13 +1946,31 @@ $scope.aqilinechart={
                     plotLines : [{
 						color: '#DDDF0D',
 		                width: 2,
-		                value: airQualityO3Scan.scan[0],
-                    	dashStyle: 'Dot'
+		                value: 160,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'轻度污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					},{
 						color: '#DF5353',
 		                width: 2,
-		                value: airQualityO3Scan.scan[1],
-                    	dashStyle: 'Dot'
+		                value: 215,
+                    	dashStyle: 'Dot',
+                      label:{
+                             text:'严重污染',
+                             align:'left',
+                             x:10,
+                             style: {
+                            fontSize: '8px',
+                            fontWeight: 200
+                        }
+                     }
 					}]
                 },
                 tooltip: {
@@ -1897,7 +2023,12 @@ $scope.aqilinechart={
 			renderTo: 'container',
 			type: 'spline',
 			
-			}},
+			},
+    legend: {
+      itemStyle:{
+      fontWeight:'normal'
+      }
+      }},
         title: {
             text: '未来七天最高最低气温',
             style: {
@@ -1906,7 +2037,7 @@ $scope.aqilinechart={
             x:20
         },
         xAxis: {
-            categories: ['1月9日', '1月10日', '1月11日', '1月12日', '1月13日', '1月14日','1月15日']
+            categories: ['1月8日', '1月9日', '1月10日', '1月11日', '1月12日', '1月13日','1月14日']
         },
         yAxis: {
             title: {
@@ -1929,10 +2060,10 @@ $scope.aqilinechart={
         },
         series: [{
         	name: "最高气温",
-            data: [6, 7, 7, 7, 8, 7, 7]
+            data: [8, 9, 10, 12, 8, 8, 8]
         },  {
             name: '最低气温',
-            data: [0, -1, 0, 1, 1, 1, 1]
+            data: [1, 3, 5, -3, 1, 0, 1]
         }]
     };
 

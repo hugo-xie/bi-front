@@ -45,7 +45,10 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 legend: {
                     title: {
                         style: { fontWeight: 'normal' }
-                    }
+                    },
+                    itemStyle:{
+                        fontWeight:'normal'
+                       }
                 },
                 tooltip: {
                     shared: true,
@@ -92,6 +95,11 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
             options:{
             chart: {
                     type: 'column'
+                },
+                legend: {
+                    itemStyle:{
+                    fontWeight:'normal'
+                       }
                 }},
                 credits: {
                     enabled:false
@@ -118,6 +126,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         text: 'mg/L'
                     }
                 },
+                
                 tooltip: {
                     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
@@ -134,7 +143,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 series: [{
                     name: '溶解氧浓度',
-                    color: "#20a0e1",
+                    color: "#7cb5ec",
                     data: [22.79, 21.08, 32.09, 14.5, 43.68]
 
                 }]
@@ -146,6 +155,11 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
             options:{
             chart: {
                     type: 'column'
+                },
+            legend: {
+                    itemStyle:{
+                    fontWeight:'normal'
+                    }
                 }},
                 credits: {
                     enabled:false
@@ -187,7 +201,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 series: [{
                     name: '氨氮浓度',
-                    color: "#20a0e1",
+                    color: "#7cb5ec",
                     data: [0.18, 0.59, 1.04, 0.11, 0.85]
 
                 }]
@@ -199,6 +213,11 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
             options:{
             chart: {
                     type: 'column'
+                },
+            legend: {
+                    itemStyle:{
+                    fontWeight:'normal'
+                    }
                 }},
                 credits: {
                     enabled:false
@@ -240,7 +259,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 series: [{
                     name: '总磷浓度',
-                    color: "#20a0e1",
+                    color: "#7cb5ec",
                     data: [0.09, 0.18, 0.1, 0.06, 0.16]
 
                 }]
@@ -256,7 +275,12 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     },
                     credits: {
                         enabled:false
-                    }
+                    },
+                    legend: {
+                    itemStyle:{
+                        fontWeight:'normal'
+                       }
+                }
                 },
                 title: {
                     text: '高锰酸钾排放浓度'
@@ -295,7 +319,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 },
                 series: [{
                     name: '高锰酸钾浓度',
-                    color: "#20a0e1",
+                    color: "#7cb5ec",
                     data: [4.02, 3.83, 3.91, 4.12, 3.89]
 
                 }]
@@ -334,6 +358,14 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     }
                 }
             },
+            legend: {
+                    title: {
+                        style: { fontWeight: 'normal' }
+                    },
+                    itemStyle:{
+                        fontWeight:'normal'
+                       }
+                },
             tooltip: {
                 shared: true,
                 valueSuffix: ' 吨'

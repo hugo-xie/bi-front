@@ -30,7 +30,7 @@
                                         <span class="fc-font-title" style="font-weight:normal;font-size:100%">明日天气</span> 
                                         <i class="fa text-success pull-right text-xs m-t-sm"></i>
                                       </div>
-                                      <small class="text-muted">2016年1月9日</small>
+                                      <small class="text-muted">2016年1月8日</small>
                                     </div>
                                   </div>
                                 </div>
@@ -41,7 +41,7 @@
                                     天气状况
                                   </a>
                                     <a class="list-group-item" href="">
-                                    <span class="badge bg-success" style="width: 15%; background-color:#fbc003; color:#ffffff">7°C</span>
+                                    <span class="badge bg-success" style="width: 15%; background-color:#fbc003; color:#ffffff">8°C</span>
                                     <i class="icon ion-thermometer " style="color: #eb2026;margin-left:5px;"></i> 
                                     &nbsp;&nbsp;最高气温
                                   </a>
@@ -51,7 +51,7 @@
                                     <span>&nbsp;&nbsp;最低气温</span> 
                                   </a>
                                   <a class="list-group-item" href="">
-                                    <span class="badge bg-light">东北风3-4级</span>
+                                    <span class="badge bg-light">北风3级</span>
                                     <i class="icon ion-cloud" style="color: #24a8dd"></i> 
                                     &nbsp;风向风级
                                   </a>
@@ -80,13 +80,19 @@
                 <div class="panel-heading"><center>数据详情</center></div>  
                 <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
                       <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                        <td ng-repeat="year in totaldata.tabledata">{{year.yearvalue}}</td>
+                        <td ng-repeat="year in totaldata.tabledata" style="text-align: center;">{{year.yearvalue}}</td>
                       </tr>
                       <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                        <td ng-repeat="Htemperature in totaldata.tabledata">{{Htemperature.Htemperature}}</td>
+                        <td ng-repeat="weather in totaldata.tabledata" style="text-align: center;">{{weather.weather}}</td>
                       </tr>
                       <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                        <td ng-repeat="Ltemperature in totaldata.tabledata">{{Ltemperature.Ltemperature}}</td>
+                        <td ng-repeat="Htemperature in totaldata.tabledata" style="text-align: center;">{{Htemperature.Htemperature}}</td>
+                      </tr>
+                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                        <td ng-repeat="Ltemperature in totaldata.tabledata" style="text-align: center;">{{Ltemperature.Ltemperature}}</td>
+                      </tr>
+                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+                        <td ng-repeat="wind in totaldata.tabledata" style="text-align: center;">{{wind.wind}}</td>
                       </tr>
                 </table>
             </div>
@@ -106,17 +112,17 @@
                 <div class="row">
                     <!--echart-->
                     <div class="col-md-8 chart-panel" style="padding:1em 1em 1em 4em;border-right:0">
-                        <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:500px"></highchart>
+                        <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:535px"></highchart>
                     </div>
                     <!--右侧栏-->
                     <div class="col-md-4" style="padding:1em 1.8em 1em 1em;border-left:1px solid lightgrey;">
                       <div class="panel b-a">
                         <div class="panel-heading text-center bg-info no-border">
-                          <h4 class="text-u-c m-b-none">实时空气质量状况</h4>
-                          <span style="font-size:65%">当前时间:1月8日9时</span>
+                          <h4 class="text-u-c m-b-none" style="font-size:20px;">实时空气质量状况</h4>
+                          <span style="font-size:65%">当前时间:1月7日9时</span>
                           <h2 class="m-t-none">
-                            <span class="text-2x text-lt">182</span>
-                            <span class="text-xs" > 中度污染</span>
+                            <span class="text-2x text-lt">110</span>
+                            <span class="text-xs" > 轻度污染</span>
                           </h2>
                         </div>
                         <ul class="list-group">
@@ -156,16 +162,16 @@
                               <thead>
                                 <tr>
                                   <th style="width:30%;">时段</th>
-                                  <th style="width:35%;">空气质量</th>                    
-                                  <th style="width:35%;">首要污染物</th>
+                                  <th style="width:40%;">空气质量</th>                    
+                                  <th style="width:30%;">首要污染物</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>                    
                                   <td>
-                                    <div ng-init="data1=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'bar', height:19, barWidth:4, barSpacing:2, barColor:'#27c24c'}" class="sparkline inline">9日夜间</div>
+                                    <div ng-init="data1=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'bar', height:19, barWidth:4, barSpacing:2, barColor:'#27c24c'}" class="sparkline inline">7日夜间</div>
                                   </td>
-                                  <td>轻度污染</td>
+                                  <td>轻度污染(118)</td>
                                   <td style="color:#f05050">
                                     <i></i> PM2.5
                                   </td>
@@ -173,9 +179,9 @@
 
                                 <tr>
                                   <td>
-                                    <div ng-init="data2=[ 60,30,10 ]" ui-jq="sparkline" ui-options="[60,30,10], {type:'pie', height:19, sliceColors:['#23b7e5','#fff','#fad733']}" class="sparkline inline">10日上午</div>
+                                    <div ng-init="data2=[ 60,30,10 ]" ui-jq="sparkline" ui-options="[60,30,10], {type:'pie', height:19, sliceColors:['#23b7e5','#fff','#fad733']}" class="sparkline inline">8日上午</div>
                                   </td>
-                                  <td>良</td>
+                                  <td>良(63)</td>
                                   <td style="color:#f05050">
                                     <i></i> PM2.5
                                   </td>
@@ -183,9 +189,9 @@
 
                                 <tr>                    
                                   <td>
-                                    <div ng-init="data3=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'line', height:19, width:60, lineColor:'#7266ba', fillColor:'#fff'}" class="sparkline inline">10日下午</div>
+                                    <div ng-init="data3=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'line', height:19, width:60, lineColor:'#7266ba', fillColor:'#fff'}" class="sparkline inline">8日下午</div>
                                   </td>
-                                  <td>优</td>
+                                  <td>良(85)</td>
                                   <td style="color:#f05050">
                                     <i></i> PM2.5
                                   </td>
@@ -298,13 +304,13 @@
                           <tr >
                               <td style="width:29%">太仓市监测站</td>
                               <td style="width:15%">
-                                  <span>118</span>
+                                  <span>93</span>
                               </td>
                               <td style="width:20%">
                                   <span>PM2.5</span>
                               </td>
                               <td style="width:18%">
-                                  <span>110</span>
+                                  <span>72</span>
                               </td>
                               <td style="width:18%">
                                   <span>54</span>
@@ -313,7 +319,7 @@
                           <tr >
                               <td style="width:29%">科教新城监测站</td>
                               <td style="width:15%">
-                                  <span>145</span>
+                                  <span>110</span>
                               </td>
                               <td style="width:20%">
                                   <span>PM2.5</span>
@@ -573,7 +579,7 @@
                             <div class="list-group panel panel-primary" style="border-top:solid white">
                                 <a href="" class="list-group-item">
                                   <i class="fa fa-calendar fa-fw m-r-xs"style="color: #009f95"></i> 日期
-                                   <span class="badge fc-nobg" style=" width:40%">2016年1月7日</span>
+                                   <span class="badge fc-nobg" style=" width:40%">2016年1月7日9时</span>
                                 </a>
 
                                 <a href="" class="list-group-item" ng-click = "openAQI1List()">
