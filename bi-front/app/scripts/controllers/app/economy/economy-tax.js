@@ -60,8 +60,8 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
           $scope.selectedRange4=0;
   };
   $scope.selectedRange=0;
-  $scope.date=[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
-  $scope.date2=[193214, 230005, 336584, 416214, 523621, 625314, 688743, 743214, 813564, 892314, 965248];
+  $scope.date =[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
+  $scope.date2=[19.32,23.00,33.66,41.62,52.36,62.53,68.87,74.32,81.36,89.23,96.52];
 $scope.range = function() {
         return $scope.selectedRange;
       };
@@ -160,7 +160,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     yAxis: 
     {
       min: 0,
-      title: {text: '税收收入（万元）'}
+      title: {text: '税收收入（亿元）'}
     },
     tooltip: 
     {
@@ -179,7 +179,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     series: [{
             name: '真实值',
-            data: [181216, 233015, 333858, 404789, 490992, 601972, 651118, 710585, 818419,888181]
+            data: [18.12, 23.30, 33.39, 40.48, 49.10, 60.20, 65.11, 71.06, 81.84,88.82]
 
         }, {
             name: '预测值',

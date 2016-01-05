@@ -7,7 +7,7 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   //企业用电量与经济增长关联分析
   $scope.totaldata = {
   	year: '2016',
-  	oneword: '用电量与经济增长密切相关：用电量增减变动趋势与GDP增减变动趋势基本一致，GDP增长时，用电量也增长，增速相似；GDP回落时，用电量增长也回落;预测阶段用电量增速将大于GDP增速。',
+  	oneword: '工业用电量与GDP增长率关联分析时所采用的是格兰杰因果检验模型和误差修正模型的组合模型，通过该模型分析预测得出：用电量增减变动趋势与GDP增减变动趋势基本一致，GDP增长时，用电量也增长，增速相似；GDP回落时，用电量增长也回落;预测阶段用电量增速将大于GDP增速。',
   	powergrowthrate: 7.6,
   	gdpgrowthrate: 7.9,
     yearvalue:['2006', '2007', '2008', '2009', '2010', '2011','2012', '2013', '2014', '2015', '2016','2017','2018'],

@@ -45,12 +45,13 @@
                 </article>
       <!--改成了div-->
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-          <strong>本年GDP增速较往年有所放缓</strong>
+          <strong>年度GDP预测采用的是基于时间序列的ARIMA模型，通过该模型分析预测得出：本年GDP增速较往年有所放缓。</strong>
+          
         </span>
      
 
       <div class="btn-group-vertical" role="group" aria-label="Left Align ">
-      <div class="btn-group" style="margin-top:20%">
+      <div class="btn-group" style="margin-top:10%">
          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            切换图表视图 <span class="caret"></span>
          </button>
@@ -61,41 +62,41 @@
              <li><a ng-click="exchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-info btn-rounded" style="margin-top:20%" ng-click="checkdeviation()">查看预测误差记录</button>
-      <button class="btn btn-info" style="margin-top:20%" ng-click="checkforecast()">查看预测详情</button>
+      <button class="btn btn-info btn-rounded" style="margin-top:10%" ng-click="checkdeviation()">查看预测误差记录</button>
+      <button class="btn btn-info" style="margin-top:10%" ng-click="checkforecast()">查看预测详情</button>
       </div>
     </div>
      <div class="col-md-12" style="margin-top:10px" ng-if="deviation">
     <table class="table table-bordered table-responsive" >
         <tr>
-          <th class="active">年份</th>
-          <th class="active">2006</th>
-          <th class="active">2007</th>
-          <th class="active">2008</th>
-          <th class="active">2009</th>
-          <th class="active">2010</th>
-          <th class="active">2011</th>
-          <th class="active">2012</th>
-          <th class="active">2013</th>
-          <th class="active">2014</th>
-          <th class="active">2015</th>
-          <th class="active">2016</th>
-          <th class="active">2017</th>
+          <th class="active" style="text-align:center;">年份</th>
+          <th class="active" style="text-align:center;">2006</th>
+          <th class="active" style="text-align:center;">2007</th>
+          <th class="active" style="text-align:center;">2008</th>
+          <th class="active" style="text-align:center;">2009</th>
+          <th class="active" style="text-align:center;">2010</th>
+          <th class="active" style="text-align:center;">2011</th>
+          <th class="active" style="text-align:center;">2012</th>
+          <th class="active" style="text-align:center;">2013</th>
+          <th class="active" style="text-align:center;">2014</th>
+          <th class="active" style="text-align:center;">2015</th>
+          <th class="active" style="text-align:center;">2016</th>
+          <th class="active" style="text-align:center;">2017</th>
         </tr>
         <tr>
-          <td class="info">GDP预测误差</td>
-          <td class="info">3.3%</td>
-          <td class="info">3.4%</td>
-          <td class="info">3.1%</td>
-          <td class="info">3.2%</td>
-          <td class="info">2.8%</td>
-          <td class="info">2.9%</td>
-          <td class="info">3.0%</td>
-          <td class="info">3.1%</td>
-          <td class="info">3.2%</td>
-          <td class="info">--</td>
-          <td class="info">--</td>
-          <td class="info">--</td>
+          <td class="info" style="text-align:center;">GDP预测误差</td>
+          <td class="info" style="text-align:center;">3.3%</td>
+          <td class="info" style="text-align:center;">3.4%</td>
+          <td class="info" style="text-align:center;">3.1%</td>
+          <td class="info" style="text-align:center;">3.2%</td>
+          <td class="info" style="text-align:center;">2.8%</td>
+          <td class="info" style="text-align:center;">2.9%</td>
+          <td class="info" style="text-align:center;">3.0%</td>
+          <td class="info" style="text-align:center;">3.1%</td>
+          <td class="info" style="text-align:center;">3.2%</td>
+          <td class="info" style="text-align:center;">--</td>
+          <td class="info" style="text-align:center;">--</td>
+          <td class="info" style="text-align:center;">--</td>
         </tr>
 
       </table>
@@ -104,49 +105,49 @@
     <div class="col-md-12 table-responsive" style="margin-top:10px;"  ng-if="forecast">
     <table class="table table-bordered" >
         <tr>
-          <th class="active">年份</th>
-          <th class="active">2006</th>
-          <th class="active">2007</th>
-          <th class="active">2008</th>
-          <th class="active">2009</th>
-          <th class="active">2010</th>
-          <th class="active">2011</th>
-          <th class="active">2012</th>
-          <th class="active">2013</th>
-          <th class="active">2014</th>
-          <th class="active">2015</th>
-          <th class="active">2016</th>
-          <th class="active">2017</th>
+          <th class="active" style="text-align:center;">年份</th>
+          <th class="active" style="text-align:center;">2006</th>
+          <th class="active" style="text-align:center;">2007</th>
+          <th class="active" style="text-align:center;">2008</th>
+          <th class="active" style="text-align:center;">2009</th>
+          <th class="active" style="text-align:center;">2010</th>
+          <th class="active" style="text-align:center;">2011</th>
+          <th class="active" style="text-align:center;">2012</th>
+          <th class="active" style="text-align:center;">2013</th>
+          <th class="active" style="text-align:center;">2014</th>
+          <th class="active" style="text-align:center;">2015</th>
+          <th class="active" style="text-align:center;">2016</th>
+          <th class="active" style="text-align:center;">2017</th>
         </tr>
         <tr>
-          <td class="info">GDP真实值(亿元)</td>
-          <td class="info">440.2</td>
-          <td class="info">528.0</td>
-          <td class="info">612.1</td>
-          <td class="info">730.3</td>
-          <td class="info">867.5</td>
-          <td class="info">955.1</td>
-          <td class="info">1002.2</td>
-          <td class="info">1065.3</td>
-          <td class="info">1065.3</td>
-          <td class="info">--</td>
-          <td class="info">--</td>
-          <td class="info">--</td>
+          <td class="info" style="text-align:center;">GDP真实值(亿元)</td>
+          <td class="info" style="text-align:center;">440.2</td>
+          <td class="info" style="text-align:center;">528.0</td>
+          <td class="info" style="text-align:center;">612.1</td>
+          <td class="info" style="text-align:center;">730.3</td>
+          <td class="info" style="text-align:center;">867.5</td>
+          <td class="info" style="text-align:center;">955.1</td>
+          <td class="info" style="text-align:center;">1002.2</td>
+          <td class="info" style="text-align:center;">1065.3</td>
+          <td class="info" style="text-align:center;">1065.3</td>
+          <td class="info" style="text-align:center;">--</td>
+          <td class="info" style="text-align:center;">--</td>
+          <td class="info" style="text-align:center;">--</td>
         </tr>
          <tr>
-          <td class="info">GDP预测值(亿元)</td>
-          <td class="info">328.2</td>
-          <td class="info">453.1</td>
-          <td class="info">547.8</td>
-          <td class="info">602.8</td>
-          <td class="info">758.9</td>
-          <td class="info">890.7</td>
-          <td class="info">991.4</td>
-          <td class="info">1025.6</td>
-          <td class="info">1098.3</td>
-          <td class="info">1152.6</td>
-          <td class="info">1218.9</td>
-          <td class="info">1298.0</td>
+          <td class="info" style="text-align:center;">GDP预测值(亿元)</td>
+          <td class="info" style="text-align:center;">328.2</td>
+          <td class="info" style="text-align:center;">453.1</td>
+          <td class="info" style="text-align:center;">547.8</td>
+          <td class="info" style="text-align:center;">602.8</td>
+          <td class="info" style="text-align:center;">758.9</td>
+          <td class="info" style="text-align:center;">890.7</td>
+          <td class="info" style="text-align:center;">991.4</td>
+          <td class="info" style="text-align:center;">1025.6</td>
+          <td class="info" style="text-align:center;">1098.3</td>
+          <td class="info" style="text-align:center;">1152.6</td>
+          <td class="info" style="text-align:center;">1218.9</td>
+          <td class="info" style="text-align:center;">1298.0</td>
         </tr>
       </table>
       
@@ -205,7 +206,7 @@
       <!--button不可以自动换行-->
       <div style="margin-top:10px;width:90%;font-size:18px">
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
-          <strong>第四季度经济增速保持稳定</strong>
+          <strong>季度GDP预测采用的是基于时间序列的ARIMA模型，通过该模型分析预测得出：第四季度经济增速保持稳定。</strong>
         </span>
       </div>
       <div class="btn-group-vertical" role="group" aria-label="Left Align ">
@@ -227,25 +228,25 @@
     <div class="col-md-12" style="margin-top:10px" ng-if="monthforecast">
       <table class="table table-bordered" >
         <tr>
-          <th class="active">季度</th>
-          <th class="active">第一季度</th>
-          <th class="active">第二季度</th>
-          <th class="active">第三季度</th>
-          <th class="active">第四季度</th>
+          <th class="active" style="text-align:center;">季度</th>
+          <th class="active" style="text-align:center;">第一季度</th>
+          <th class="active" style="text-align:center;">第二季度</th>
+          <th class="active" style="text-align:center;">第三季度</th>
+          <th class="active" style="text-align:center;">第四季度</th>
         </tr>
         <tr>
-          <td class="info">GDP真实值(亿)</td>
-          <td class="info">225.51</td>
-          <td class="info">555.72</td>
-          <td class="info">849.66</td>
-          <td class="info">-</td>
+          <td class="info" style="text-align:center;">GDP真实值(亿)</td>
+          <td class="info" style="text-align:center;">225.51</td>
+          <td class="info" style="text-align:center;">555.72</td>
+          <td class="info" style="text-align:center;">849.66</td>
+          <td class="info" style="text-align:center;">-</td>
         </tr>
         <tr>
-          <td class="info">GDP预测值(亿)</td>
-          <td class="info">248.77</td>
-          <td class="info">541.86</td>
-          <td class="info">867.74</td>
-          <td class="info">1152.67</td>
+          <td class="info" style="text-align:center;">GDP预测值(亿)</td>
+          <td class="info" style="text-align:center;">248.77</td>
+          <td class="info" style="text-align:center;">541.86</td>
+          <td class="info" style="text-align:center;">867.74</td>
+          <td class="info" style="text-align:center;">1152.67</td>
         </tr>
 
       </table>
@@ -253,18 +254,18 @@
     <div class="col-md-12" style="margin-top:10px" ng-if="monthdeviation">
     <table class="table table-bordered" >
         <tr>
-          <th class="active">季度</th>
-          <th class="active">第一季度</th>
-          <th class="active">第二季度</th>
-          <th class="active">第三季度</th>
-          <th class="active">第四季度</th>
+          <th class="active" style="text-align:center;">季度</th>
+          <th class="active" style="text-align:center;">第一季度</th>
+          <th class="active" style="text-align:center;">第二季度</th>
+          <th class="active" style="text-align:center;">第三季度</th>
+          <th class="active" style="text-align:center;">第四季度</th>
         </tr>
         <tr>
-          <td class="info">误差</td>
-          <td class="info">3.5%</td>
-          <td class="info">2.7%</td>
-          <td class="info">3.3%</td>
-          <td class="info">3.0%</td>
+          <td class="info" style="text-align:center;">误差</td>
+          <td class="info" style="text-align:center;">3.5%</td>
+          <td class="info" style="text-align:center;">2.7%</td>
+          <td class="info" style="text-align:center;">3.3%</td>
+          <td class="info" style="text-align:center;">3.0%</td>
         </tr>
 
       </table>
@@ -311,7 +312,7 @@
                   </div>
                 </article>
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="margin-top:10px">
-          <strong>全行业经济增速较往年有所放缓</strong>
+          <strong>分产业GDP预测采用的是基于时间序列的ARIMA模型，通过该模型分析预测得出：全行业经济增速较往年有所放缓。</strong>
         </span>
  
       <div class="btn-group-vertical" role="group" aria-label="Left Align " style="margin-top:40px">
@@ -326,7 +327,7 @@
              <li><a ng-click="industryexchange('area')">区域图</a></li>
           </ul>
      </div>
-      <button class="btn btn-info" style="margin-top:40px" ng-click="industrycheckdetail()">查看本年度各产业详细分析</button>
+      <button class="btn btn-info" style="margin-top:20px" ng-click="industrycheckdetail()">查看本年度各产业详细分析</button>
      
     </div>
     <div class="col-md-12" style="margin-top:8px" ng-if="industryforecast">

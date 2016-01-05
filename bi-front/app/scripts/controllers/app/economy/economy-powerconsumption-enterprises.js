@@ -22,27 +22,27 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
     //设置地图标记点
     var marker01 = new AMap.Marker({
         icon : 'images/marker_sprite.png',
-        position: [121.14,31.484511],
+        position: [121.118329,31.478157],
         map:$scope.map,
         clickable:true,
     });
 
     marker01.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
         offset: new AMap.Pixel(20, -2),
-        content: "太仓市规模以上企业B",
+        content: "舍弗勒(中国)有限公司",
         clickable:true,
     });
 
     var marker02 = new AMap.Marker({
         icon : 'images/marker_sprite.png',
-        position: [121.12,31.484511],
+        position: [121.100277,31.603982],
         map:$scope.map,
         clickable:true,
     });
 
     marker02.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
         offset: new AMap.Pixel(20, -2),
-        content: "太仓市规模以上企业A",
+        content: "太仓振辉化纤有限公司",
         clickable:true,
     });
 
@@ -78,7 +78,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
     },    
 
     agriculture:{
-        title:'规模以上企业A',
+        title:'太仓振辉化纤有限公司',
         yeardata:{
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
@@ -99,7 +99,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         },
     },
     industry:{
-        title:'规模以上企业B',
+        title:'申久化纤有限公司',
         yeardata:{
           gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65,0.76, 0.31, 0.65, 0.23, 0.2],                                                                             
           powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87,0.63, 0.41, 0.70, 0.34, 0.32],
@@ -120,7 +120,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         },
     },
     construction:{
-        title:'规模以上企业C',
+        title:'太仓协鑫光伏科技有限公司',
         yeardata:{
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
@@ -141,7 +141,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         },
     },
     traffic:{
-        title:'规模以上企业D',
+        title:'苏州达诺铸造有限公司',
         yeardata:{
           gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65,0.76, 0.31, 0.65, 0.23, 0.2],                                                                             
           powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87,0.63, 0.41, 0.70, 0.34, 0.32], 
@@ -247,7 +247,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         },
     },
     computer:{
-        title:'规模以上企业E',
+        title:'舍弗勒(中国)有限公司',
         yeardata:{
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
@@ -268,7 +268,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         },
     },
     retail:{
-        title:'规模以上企业F',
+        title:'太仓中化环保化工有限公司',
         yeardata:{
           gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65,0.76, 0.31, 0.65, 0.23, 0.2],                                                                             
           powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87,0.63, 0.41, 0.70, 0.34, 0.32], 
@@ -289,7 +289,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         },
     },
     finance:{
-        title:'规模以上企业G',
+        title:'江苏长乐纤维科技有限公司',
         yeardata:{
           gdpdata: [0.73, 0.30, 0.63, 0.21, 0.19,0.32,0.33,0.63,0.73, 0.30, 0.63, 0.21, 0.19],                                                                             
           powerdata: [0.61, 0.43, 0.72, 0.35, 0.35,0.24,0.64,0.86,0.61, 0.43, 0.72, 0.35, 0.35],
@@ -310,7 +310,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         },
     },
     service:{
-        title:'规模以上企业H',
+        title:'太仓海螺水泥有限公司',
         yeardata:{
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
@@ -817,39 +817,43 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
 
   $scope.enterpriselist = [
       {
-          name : '规模以上企业A',
+          name : '太仓振辉化纤有限公司',
           code : 1
       },
       {
-          name : '规模以上企业B',
+          name : '申久化纤有限公司',
           code : 2
       },
       {
-          name : '规模以上企业C',
+          name : '太仓协鑫光伏科技有限公司',
           code : 3
       },
       {
-          name : '规模以上企业D',
+          name : '苏州达诺铸造有限公司',
           code : 1
       },
       {
-          name : '规模以上企业E',
+          name : '舍弗勒(中国)有限公司',
           code : 2
       },
       {
-          name : '规模以上企业F',
+          name : '太仓中化环保化工有限公司',
           code : 3
       },
       {
-          name : '规模以上企业G',
+          name : '江苏长乐纤维科技有限公司',
           code : 1
       },
       {
-          name : '规模以上企业H',
+          name : '太仓海螺水泥有限公司',
           code : 2
       },
       {
-          name : '规模以上企业I',
+          name : '江苏仓环铜业股份有限公司',
+          code : 3
+      },
+      {
+          name : '奥特斯维能源(太仓)有限公司',
           code : 3
       },
   ];
