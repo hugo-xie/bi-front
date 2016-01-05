@@ -9,16 +9,13 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
 
 
 
-$scope.change=function(model){
-console.log(model);
-if(model===2){
-console.log("true");
-}else if(model===1){
-alert("aaa");
-}
-
-};
-
+  $scope.change=function(model){
+  console.log(model);
+  if(model===2){
+  console.log("true");
+  }else if(model===1){
+  alert("aaa");
+  }};
 
   $scope.title = $stateParams.title;
     /*var map = new AMap.Map('map_canvas');*/
@@ -234,7 +231,7 @@ $scope.openorclose='↓展开';
 		wasteAir: false
 	};
 	//空气质量 Button点击事件
-	$scope.istownairquality = false;
+	$scope.istownairquality = true;
 	var marker3 = new AMap.Marker({
 	    position: [121.106157,31.466373],//图标大小
 	    icon: new AMap.Icon({            
@@ -1488,7 +1485,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
+                    categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1500,7 +1497,7 @@ $scope.aqilinechart={
                     plotLines : [{
 						        color: '#DF5353',
 		                width: 2,
-		                value: 200,
+		                value: 300,
                     dashStyle: 'Dot',
                     label:{
                     text:'严重污染',
@@ -1563,7 +1560,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
+                    categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1637,7 +1634,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
+                    categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1711,7 +1708,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
+                    categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1785,7 +1782,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
+                    categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1859,7 +1856,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
+                    categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
@@ -1934,7 +1931,7 @@ $scope.aqilinechart={
                     text: null,
                 },
                 xAxis: {
-                    categories: ['8时','9时','10时','11时','12时','13时','14时','15时','16时','17时','18时','19时'],
+                    categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                     tickmarkPlacement: 'on'
                 },
                 yAxis: {
