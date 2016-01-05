@@ -38,15 +38,29 @@ alert("aaa");
   $scope.isCO1open = false;
   $scope.isNO21open = false;
    $scope.isO31open = false;
+$scope.openorclose='↓展开';
 
   $scope.openHealthList = function(){
   	$scope.ishealthopen = !$scope.ishealthopen;
+  	if (!$scope.ishealthopen){
+  		$scope.openorclose='↓展开';
+  	}else{
+  		$scope.openorclose='↑关闭';
+  	} 			
   	$scope.issuggestionopen = false; 
   };
+
+  $scope.openorclose1='↓展开';
   $scope.openSuggestionList = function(){
   	$scope.issuggestionopen = !$scope.issuggestionopen;
-     $scope.ishealthopen = false; 
+  	if (!$scope.issuggestionopen){
+  		$scope.openorclose1='↓展开';
+  	}else{
+  		$scope.openorclose1='↑关闭';
+  	} 			
+  	$scope.ishealthopen = false; 
   };
+
   $scope.openQuality1List = function(){
   	$scope.isQuality1open = !$scope.isQuality1open;
   };
