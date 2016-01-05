@@ -69,7 +69,7 @@
 			<!-- 牛哥代码 -->
 			<div class="panel panel-primary" style="margin-top: 30px;margin-left:10.3%;margin-right:10.3%;">
 				<div class="panel-heading">
-	            	水质分析与污染源减排预测
+	            	水质分析与排污点减排预测
 	            </div>
 				<div class="panel-body">
 					<div class="row">
@@ -144,7 +144,7 @@
 					                <div ng-show="tableStatus.allWaterQualityElementsArr" style="font-size:16px">
 							            <div class="panel panel-primary">
 							                <div class="panel-body" id="source_analysis">
-							                    <h4>附近污染源</h4>
+							                    <h4>附近排污点</h4>
 							                    <hr>
 							                    <div>
 													<table class="table table-hover table-responsive"  style="font-size:14px;margin-bottom:0px">
@@ -168,7 +168,7 @@
 														</tr>
 													</table>
 												</div>
-							                    <div><button type="button" class="btn btn-primary" ng-click="btn_waterPredictionZone()">污染源减排预测</button></div>
+							                    <div><button type="button" class="btn btn-primary" ng-click="btn_waterPredictionZone()">排污点减排预测</button></div>
 							                </div>
 							            </div>
 							        </div>
@@ -177,7 +177,7 @@
 					        </div>
 						</div>
 			            <div class="col-md-6" style="font-size:13px;border-top:1px solid lightgrey;padding-top:1em" ng-show="tableStatus.predictionZone">
-			            	<h4>水质指标情况：</h4>
+			            	<h4>水质分析：</h4>
 			            	<div class="col-md-12" style="right: 20px;margin-top:20px">
 			                        <form class="form-horizontal" role="form">
 			                            <label for="select_predictionMonitor" class="col-md-2 control-label">监测点</label>
@@ -200,7 +200,7 @@
 			                            <td>总磷</td>
 			                        </tr>
 			                        <tr>
-			                            <td>当前实际值</td>
+			                            <td>实时数据</td>
 			                            <td>{{waterQualityAnalysisMarker.index_o2}}</td>
 			                            <td>{{waterQualityAnalysisMarker.index_kmno4}}</td>
 			                            <td>{{waterQualityAnalysisMarker.index_nh4n}}</td>
@@ -231,7 +231,7 @@
 			            </div>
 			            <div class="col-md-6" id="analysis_source"style="font-size:13px;border-top:1px solid lightgrey;padding-top:1em" ng-show="tableStatus.predictionZone">
 			                <div class="col-md-12">
-			                    <h4>污染源企业设定：</h4>
+			                    <h4>排污点减排预测(设原排污量为100%)：</h4>
 			                    <div class="col-md-3" style="margin-top: 15px">
 			                        <button class="btn btn-sm btn-success" ng-click="button_recommend()"><span class="glyphicon glyphicon-hand-right"></span>&nbsp模型设计</button>
 			                    </div>
