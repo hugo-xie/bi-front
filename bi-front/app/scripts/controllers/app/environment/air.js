@@ -136,13 +136,13 @@ alert("aaa");
   	tabledata:
   	[
 	  {yearvalue:'时间', Htemperature:'最高气温(°C)',Ltemperature:'最低气温(°C)'},
-	  {yearvalue:'1月9号', Htemperature:'6',Ltemperature:'0'},
-	  {yearvalue:'1月10号', Htemperature:'7',Ltemperature:'-1'},
-	  {yearvalue:'1月11号', Htemperature:'7',Ltemperature:'0'},
-	  {yearvalue:'1月12号', Htemperature:'7',Ltemperature:'1'},
-	  {yearvalue:'1月13号', Htemperature:'8',Ltemperature:'1'},
-	  {yearvalue:'1月14号', Htemperature:'7',Ltemperature:'1'},
-	  {yearvalue:'1月15号', Htemperature:'7',Ltemperature:'1'}
+	  {yearvalue:'1月9日', Htemperature:'6',Ltemperature:'0'},
+	  {yearvalue:'1月10日', Htemperature:'7',Ltemperature:'-1'},
+	  {yearvalue:'1月11日', Htemperature:'7',Ltemperature:'0'},
+	  {yearvalue:'1月12日', Htemperature:'7',Ltemperature:'1'},
+	  {yearvalue:'1月13日', Htemperature:'8',Ltemperature:'1'},
+	  {yearvalue:'1月14日', Htemperature:'7',Ltemperature:'1'},
+	  {yearvalue:'1月15日', Htemperature:'7',Ltemperature:'1'}
   	]
   };
 
@@ -574,7 +574,7 @@ $scope.aqilinechart={
             x:20
         },
         xAxis: {
-            categories: ['1月2', '1月3', '1月4', '1月5', '1月6','1月7','1月8']
+            categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日','1月7日','1月8日']
         },
         yAxis: {
             title: {
@@ -1826,7 +1826,7 @@ $scope.aqilinechart={
             x:20
         },
         xAxis: {
-            categories: ['1月9', '1月10', '1月11', '1月12', '1月13', '1月14','1月15']
+            categories: ['1月9日', '1月10日', '1月11日', '1月12日', '1月13日', '1月14日','1月15日']
         },
         yAxis: {
             title: {
