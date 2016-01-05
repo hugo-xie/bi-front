@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('PopulationStructureCtrl', function($scope) {
-  var columnColors = new Array( '#87CEFA','#FFB01E','#0787C8', '#FB9705');
+  var columnColors = new Array( '#87CEFA','#929bce','#0787C8', '#465296');
   var pieColors = new Array('#3795BC', '#FB9705');  //'#0787C8', '#1FC22B'
  // var lineColors = new Array('#0787C8', '#1FC22B');
   //var compareColors = new Array('#3795BC', '#FB9705', '#195489', '#F26200')
@@ -150,9 +150,9 @@ infow7.push("<div style='background-color:#FFFFFF;border:2px solid #CC0033;borde
 var info1=[];
    info1.push("<h4><strong>新湖镇人口自然增长率</strong></h4>");
     info1.push("<table class='table table-bordered table-striped'>");
-    info1.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>6.31‰</td></tr>");
-    info1.push("<tr><td style='font-size:15px'>死亡率</td><td>6.34‰</td></tr>");
-    info1.push("<tr><td style='font-size:15px'>人口自然增长率</td><td>-0.03‰</td></tr>");
+    info1.push("<tr><td style='font-size:15px;width:150px;text-align:center'>出生率</td><td>6.31‰</td></tr>");
+    info1.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>6.34‰</td></tr>");
+    info1.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td>-0.03‰</td></tr>");
     info1.push("</table>");
 var infowindow1 = new AMap.InfoWindow({
      content: info1.join(''),
@@ -166,9 +166,9 @@ var clickHandle1 = AMap.event.addListener(marker1, 'click', function() {
 var info2=[];
    info2.push("<h4><strong>浏河镇人口自然增长率</strong></h4>");
     info2.push("<table class='table table-bordered table-striped'>");
-    info2.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>8.05‰</td></tr>");
-    info2.push("<tr><td style='font-size:15px'>死亡率</td><td>7.95‰</td></tr>");
-    info2.push("<tr><td style='font-size:15px'>人口自然增长率</td><td>0.1‰</td></tr>");
+    info2.push("<tr><td style='font-size:15px;width:150px;text-align:center'>出生率</td><td>8.05‰</td></tr>");
+    info2.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>7.95‰</td></tr>");
+    info2.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td>0.1‰</td></tr>");
     info2.push("</table>");
 var infowindow2 = new AMap.InfoWindow({
      content: info2.join(''),
@@ -182,9 +182,9 @@ var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
 var info3=[];
    info3.push("<h4><strong>太仓城区人口自然增长率</strong></h4>");
     info3.push("<table class='table table-bordered table-striped'>");
-    info3.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>8.34‰</td></tr>");
-    info3.push("<tr><td style='font-size:15px'>死亡率</td><td>8.12‰</td></tr>");
-    info3.push("<tr><td style='font-size:15px'>人口自然增长率</td><td>0.22‰</td></tr>");
+    info3.push("<tr><td style='font-size:15px;text-align:center'>出生率</td><td>8.34‰</td></tr>");
+    info3.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>8.12‰</td></tr>");
+    info3.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td>0.22‰</td></tr>");
     info3.push("</table>");
 var infowindow3 = new AMap.InfoWindow({
      content: info3.join(''),
@@ -199,9 +199,9 @@ var clickHandle3 = AMap.event.addListener(marker3, 'click', function() {
 var info4=[];
    info4.push("<h4><strong>板桥镇人口自然增长率</strong></h4>");
     info4.push("<table class='table table-bordered table-striped'>");
-    info4.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>7.54‰</td></tr>");
-    info4.push("<tr><td style='font-size:15px'>死亡率</td><td>7.85‰</td></tr>");
-    info4.push("<tr><td style='font-size:15px'>人口自然增长率</td><td>-0.31‰</td></tr>");
+    info4.push("<tr><td style='font-size:15px;text-align:center'>出生率</td><td>7.54‰</td></tr>");
+    info4.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>7.85‰</td></tr>");
+    info4.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td>-0.31‰</td></tr>");
     info4.push("</table>");
 var infowindow4 = new AMap.InfoWindow({
      content: info4.join(''),
@@ -215,9 +215,9 @@ var clickHandle4 = AMap.event.addListener(marker4, 'click', function() {
 var info5=[];
    info5.push("<h4><strong>沙溪镇人口自然增长率</strong></h4>");
     info5.push("<table class='table table-bordered table-striped'>");
-    info5.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>8.11‰</td></tr>");
-    info5.push("<tr><td style='font-size:15px'>死亡率</td><td>7.98‰</td></tr>");
-    info5.push("<tr><td style='font-size:15px'>人口自然增长率</td><td>0.13‰</td></tr>");
+    info5.push("<tr><td style='font-size:15px;width:150px;text-align:center'>出生率</td><td>8.11‰</td></tr>");
+    info5.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>7.98‰</td></tr>");
+    info5.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td>0.13‰</td></tr>");
     info5.push("</table>");
 var infowindow5 = new AMap.InfoWindow({
      content: info5.join(''),
@@ -231,9 +231,9 @@ var clickHandle5 = AMap.event.addListener(marker5, 'click', function() {
 var info6=[];
    info6.push("<h4><strong>陆渡镇人口自然增长率</strong></h4>");
     info6.push("<table class='table table-bordered table-striped'>");
-    info6.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>8.54‰</td></tr>");
-    info6.push("<tr><td style='font-size:15px'>死亡率</td><td>8.24‰</td></tr>");
-    info6.push("<tr><td style='font-size:15px'>人口自然增长率</td><td>0.3‰</td></tr>");
+    info6.push("<tr><td style='font-size:15px;text-align:center'>出生率</td><td>8.54‰</td></tr>");
+    info6.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>8.24‰</td></tr>");
+    info6.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td>0.3‰</td></tr>");
     info6.push("</table>");
 var infowindow6 = new AMap.InfoWindow({
      content: info6.join(''),
@@ -246,9 +246,9 @@ var clickHandle6 = AMap.event.addListener(marker6, 'click', function() {
 var info7=[];
    info7.push("<h4><strong>璜泾镇人口自然增长率</strong></h4>");
     info7.push("<table class='table table-bordered table-striped'>");
-    info7.push("<tr><td style='font-size:15px;width:150px'>出生率</td><td>8.34‰</td></tr>");
-    info7.push("<tr><td style='font-size:15px'>死亡率</td><td>8.54‰</td></tr>");
-    info7.push("<tr><td style='font-size:15px'>人口自然增长率</td><td>-0.2‰</td></tr>");
+    info7.push("<tr><td style='font-size:15px;width:150px;text-align:center'>出生率</td><td>8.34‰</td></tr>");
+    info7.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>8.54‰</td></tr>");
+    info7.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td>-0.2‰</td></tr>");
     info7.push("</table>");
 var infowindow7 = new AMap.InfoWindow({
      content: info7.join(''),
@@ -303,17 +303,32 @@ var points =[
 
  
   $scope.buttonMap = [{
+        name: 2020,
+        label: 2020 + "年人口结构预测",
+       
+      }, {
         name: 2025,
         label: 2025 + "年人口结构预测",
-        radio: "Left"
-      }, {
+       
+      },
+       {
+        name: 2030,
+        label: 2030 + "年人口结构预测",
+       
+      },
+       {
         name: 2035,
         label: 2035 + "年人口结构预测",
-        radio: "Middle"
+       
+      },
+       {
+        name: 2040,
+        label: 2040 + "年人口结构预测",
+        
       }, {
         name: 2045,
         label: 2045 + "年人口结构预测",
-        radio: "Right"
+        
       }];
 
     $scope.buttonMap1 = [{
@@ -334,8 +349,60 @@ var points =[
   };
   $scope.change=function(btn){
   //  var columnColors = new Array('#7CADDF', '#327EBD', '#195489', '#1FC22B', '#FB9705', '#F26200');
-    if(btn.name===2025){
-        document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
+     if(btn.name===2020){
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        $scope.age_ration.options.colors=columnColors;
+        $scope.age_ration.options.title.text="太仓市人口结构预测2015/2020年龄层比例图";
+        $scope.age_ration.series=[{
+            name: '当前男性比例',
+            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            stack: 'male'
+        },{
+            name: '当前女性比例',
+            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            stack: 'male'
+        },{
+            name: '预测男性比例',
+            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            stack: 'female'
+        },{
+            name: '预测女性比例',
+            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            stack: 'female'
+        }];
+        $scope.population_prediction_year.options.title.text="太仓市2020年常住人口结构图";
+        $scope.population_prediction_year.series=[{
+                name: '男性',
+                data: [-1508, -1483, -1573, -1624, -1674, -1792, -1670,
+                    -1548, -1840, -1594, -1498, -1398, -1363, -1352,
+                    
+                    -1308, -1447, -1720, -1343, -1543, -1473, -1815,
+                    -1622, -1741, -1880, -1841, -1882, -2019, -2089,-2247, -2442, -2735, -2881, -3215, -3758, -4048,
+                    -3637, -2003, -2386, -3854, -3929, -2463, -3570,-3443, -3818, -4205, -3766, -3469, -3996, -4640,
+                    -4410, -4607, -3387, -4052, -4137, -5623, -4715,
+                    
+                    -1874, -2844, -2690, -3269, -3368, -3854, -3894,
+                    -4628, -4299, -4834, -3924, -2998, -3170, -3084,-3045, -2858, -2409, -2299, -1849, -1843, -2064,
+                    -1447, -1248, -1385, -1190, -1254, -1070, -1026,-1133, -880, -690, -890, -733, -740, -605,
+                    -537, -551, -396, -288, -266, -201, -182,
+                    -110, -83, -182]
+            }, {
+                name: '女性',
+                data: [1230, 1295, 1344, 1427, 1417, 1514, 1542, 1560,
+                    1659, 1778, 1771, 1666, 1649, 1887, 1586, 1566,
+                    1414, 1307, 1462, 1374, 1526,1724, 1361, 1605, 1629, 1729, 1655, 1809, 1917,
+                    1920, 1826, 2072, 2172, 2202, 2201, 2493, 2613,
+                    2672, 3273, 3521, 3104, 1528,1846, 3363, 3410, 2250, 3163, 3117, 3078, 3034,
+                    3353, 3834, 3548, 3122, 3726, 4432, 4154, 4498,
+                    3332, 4038, 4010, 3960, 5377,4459, 1873, 2825, 2690, 3286, 3381, 3655, 3725,
+                    4429, 3864, 4349, 3393, 2604, 2549, 2340, 2352,
+                    2273, 1875, 1673, 1335, 1277,1367, 902, 790, 839, 659, 559, 482, 404,
+                    385, 283, 186, 163, 116, 98, 56, 39,
+                    66]
+            }]
+     }
+      if(btn.name===2025){
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2025年龄层比例图";
         $scope.age_ration.series=[{
@@ -386,8 +453,112 @@ var points =[
                     66]
             }]
      }
+      if(btn.name===2030){
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        $scope.age_ration.options.colors=columnColors;
+        $scope.age_ration.options.title.text="太仓市人口结构预测2015/2030年龄层比例图";
+        $scope.age_ration.series=[{
+            name: '当前男性比例',
+            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            stack: 'male'
+        },{
+            name: '当前女性比例',
+            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            stack: 'male'
+        },{
+            name: '预测男性比例',
+            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            stack: 'female'
+        },{
+            name: '预测女性比例',
+            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            stack: 'female'
+        }];
+        $scope.population_prediction_year.options.title.text="太仓市2030年常住人口结构图";
+        $scope.population_prediction_year.series=[{
+                name: '男性',
+                data: [-1223, -1223, -1276, -1317, -1476, -1493, -1470,
+                    -1562, -1615, -1667, -1787, -1665, -1543, -1835,
+                    
+                    -1589, -1493, -1393, -1358, -1347, -1303, -1442,
+                    -1714, -1338, -1536, -1468, -1805, -1612, -1731,-1870, -1831, -1872, -2008, -2077, -2234, -2428,
+                    -2720, -2861, -3193, -3735, -4019, -3612, -1987,-2366, -3821, -3895, -2438, -3536, -3407, -3470,
+                    -3453, -3768, -4146, -3710, -3415, -3929, -4560,
+                    
+                    -4328, -4513, -3312, -3958, -4034, -3857, -5448,
+                    -4553, -1802, -2728, -2564, -3097, -3170, -3606,-3621, -4261, -3920, -4364, -3508, -2653, -2719,
+                    -2629, -2547, -2346, -1939, -1802, -1409, -1365,-1488, -1015, -838, -890, -733, -740, -605,
+                    -537, -551, -396, -288, -266, -201, -182,
+                    -110, -83, -182]
+            }, {
+                name: '女性',
+                data: [1230, 1295, 1344, 1427, 1417, 1514, 1542, 1560,
+                    1659, 1778, 1771, 1666, 1649, 1887, 1586, 1566,
+                    1414, 1307, 1462, 1374, 1526,1724, 1361, 1605, 1629, 1729, 1655, 1809, 1917,
+                    1920, 1826, 2072, 2172, 2202, 2201, 2493, 2613,
+                    2672, 3273, 3521, 3104, 1528,1846, 3363, 3410, 2250, 3163, 3117, 3078, 3034,
+                    3353, 3834, 3548, 3122, 3726, 4432, 4154, 4498,
+                    3332, 4038, 4010, 3960, 5377,4459, 1873, 2825, 2690, 3286, 3381, 3655, 3725,
+                    4429, 3864, 4349, 3393, 2604, 2549, 2340, 2352,
+                    2273, 1875, 1673, 1335, 1277,1367, 902, 790, 839, 659, 559, 482, 404,
+                    385, 283, 186, 163, 116, 98, 56, 39,
+                    66]
+            }]
+     }
+      if(btn.name===2040){
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        $scope.age_ration.options.colors=columnColors;
+        $scope.age_ration.options.title.text="太仓市人口结构预测2015/2040年龄层比例图";
+        $scope.age_ration.series=[{
+            name: '当前男性比例',
+            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            stack: 'male'
+        },{
+            name: '当前女性比例',
+            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            stack: 'male'
+        },{
+            name: '预测男性比例',
+            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            stack: 'female'
+        },{
+            name: '预测女性比例',
+            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            stack: 'female'
+        }];
+        $scope.population_prediction_year.options.title.text="太仓市2040年常住人口结构图";
+        $scope.population_prediction_year.series=[{
+                name: '男性',
+                data: [-1223, -1223, -1276, -1317, -1476, -1493, -1470,
+                    -1562, -1615, -1667, -1787, -1665, -1543, -1835,
+                    
+                    -1589, -1493, -1393, -1358, -1347, -1303, -1442,
+                    -1714, -1338, -1536, -1468, -1805, -1612, -1731,-1870, -1831, -1872, -2008, -2077, -2234, -2428,
+                    -2720, -2861, -3193, -3735, -4019, -3612, -1987,-2366, -3821, -3895, -2438, -3536, -3407, -3470,
+                    -3453, -3768, -4146, -3710, -3415, -3929, -4560,
+                    
+                    -4328, -4513, -3312, -3958, -4034, -3857, -5448,
+                    -4553, -1802, -2728, -2564, -3097, -3170, -3606,-3621, -4261, -3920, -4364, -3508, -2653, -2719,
+                    -2629, -2547, -2346, -1939, -1802, -1409, -1365,-1488, -1015, -838, -890, -733, -740, -605,
+                    -537, -551, -396, -288, -266, -201, -182,
+                    -110, -83, -182]
+            }, {
+                name: '女性',
+                data: [1230, 1295, 1344, 1427, 1417, 1514, 1542, 1560,
+                    1659, 1778, 1771, 1666, 1649, 1887, 1586, 1566,
+                    1414, 1307, 1462, 1374, 1526,1724, 1361, 1605, 1629, 1729, 1655, 1809, 1917,
+                    1920, 1826, 2072, 2172, 2202, 2201, 2493, 2613,
+                    2672, 3273, 3521, 3104, 1528,1846, 3363, 3410, 2250, 3163, 3117, 3078, 3034,
+                    3353, 3834, 3548, 3122, 3726, 4432, 4154, 4498,
+                    3332, 4038, 4010, 3960, 5377,4459, 1873, 2825, 2690, 3286, 3381, 3655, 3725,
+                    4429, 3864, 4349, 3393, 2604, 2549, 2340, 2352,
+                    2273, 1875, 1673, 1335, 1277,1367, 902, 790, 839, 659, 559, 482, 404,
+                    385, 283, 186, 163, 116, 98, 56, 39,
+                    66]
+            }]
+     }
      if(btn.name===2035){
-        document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 7%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2035年龄层比例图";
         $scope.age_ration.series=[{
@@ -437,7 +608,7 @@ var points =[
             }]
      }
      if(btn.name===2045){
-        document.getElementById('abc').innerHTML='太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 9%。影响：1. 劳动人口減少；2. 产业劳动力资源相对短缺；3. 社会资源偏向成年人福利及医疗开支，导致财政负担过高。解决办法：1. 实行鼓励生育政策；2. 完善社会保障体系；3. 适度提高老人退休年龄；';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 9%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2045年龄层比例图";
         $scope.age_ration.series=[{
@@ -588,7 +759,10 @@ var points =[
           enabled:false
         },
         legend:{
-           itemDistance: 30
+           itemDistance: 30,
+           itemStyle:{
+            fontWeight:'normal'
+           }
          },
         xAxis: {
             categories: ['0-5岁', '6-11岁', '12-17岁', '18-23岁', '24-29岁','30-35岁','36-41岁','42-47岁','48-53岁','54-59岁','60岁以上'],
@@ -672,8 +846,14 @@ $scope.population_year={
                 type: 'bar'
             },
             title: {
-                text: '太仓市2015年人口结构图'
+                text: '太仓市2015年常住人口结构图'
             },
+        legend:{
+        
+           itemStyle:{
+            fontWeight:'normal'
+           }
+         },
             xAxis: [{
                 categories: categories,
                 reversed: false,
@@ -753,8 +933,14 @@ $scope.population_year={
                 type: 'bar'
             },
             title: {
-                text: '太仓市2025年常住人口结构图'
+                text: '太仓市2025年常住人口预测结构图'
             },
+            legend:{
+        
+           itemStyle:{
+            fontWeight:'normal'
+           }
+         },
             xAxis: [{
                 categories: categories,
                 reversed: false,
@@ -836,8 +1022,14 @@ $scope.sumpopulation={
             zoomType: 'xy'
         },
         title: {
-            text: '太仓市2016年到2025年常住人口人口总量预测趋势图'
+            text: '太仓市2016年到2025年常住人口总量预测趋势图'
         },
+        legend:{
+        
+           itemStyle:{
+            fontWeight:'normal'
+           }
+         },
         xAxis: [{
             categories: ['2016', '2017', '2018', '2019', '2020',
                 '2021', '2022', '2023', '2024', '2025'],

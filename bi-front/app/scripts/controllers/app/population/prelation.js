@@ -1,6 +1,28 @@
 'use strict';
 
 app.controller('PrelationCtrl', ['$scope', function($scope) {
+
+   $scope.showTotalTable = function(){
+    $scope.totalshow= !$scope.totalshow;
+  };
+
+ $scope.totaldata = {
+  
+    tabledata:
+    [
+      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
+      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
+      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
+      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
+      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
+      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
+      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+  
+    ]
+  };
+
+
+
 var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
      $scope.colorpicker = {
         options: {
@@ -30,9 +52,12 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
                 
                 var option = {
     title : {
-        text: '太仓市2016~2025年劳动力人口与GDP平均关联度分析预测',
+        text: '太仓市2020年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
-            fontWeight:'normal'
+            
+            fontWeight:'normal',
+            fontFamily:'宋体',
+            fontSize:'18'
         },
         x:'center',
         y:'top'
@@ -65,8 +90,10 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
         x: 'center',
         data:['第一产业人口', '第二产业人口', '第三产业人口'],
         y:'bottom',
+        itemGap:20,
         textStyle:{
-            fontWeight:'bold'
+            fontWeight:'normal'
+
         }
 
     },
@@ -158,41 +185,78 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
         );
 
 var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
-    $scope.buttonMap2 = [{
+    $scope.buttonMap2 = [ {
         name: 2025,
         label: 2025 + "年关联度分析预测",
-        radio: "Left"
-      }, {
+        radio: "Middle"
+      }, 
+      {
         name: 2035,
         label: 2035 + "年关联度分析预测",
         radio: "Middle"
-      }, {
+      },
+     {
         name: 2045,
         label: 2045 + "年关联度分析预测",
         radio: "Right"
       }];
+
        $scope.buttonMap3 = [{
-        name: 2025,
-        label: 2025 + "年关联度分析预测",
+        name: 2020,
+        label: 2020 + "年关联度分析预测",
         radio: "Left"
       }, {
+        name: 2025,
+        label: 2025 + "年关联度分析预测",
+        radio: "Middle"
+      }, 
+      {
+        name: 2030,
+        label: 2030 + "年关联度分析预测",
+        radio: "Middle"
+      },
+      {
         name: 2035,
         label: 2035 + "年关联度分析预测",
         radio: "Middle"
-      }, {
+      },
+      {
+        name: 2040,
+        label: 2040 + "年关联度分析预测",
+        radio: "Middle"
+      },{
         name: 2045,
         label: 2045 + "年关联度分析预测",
         radio: "Right"
       }];
+       
+
+       
+
        $scope.buttonMap4 = [{
+        name: 2020,
+        label: 2020 + "年比重分析预测",
+        radio: "Left"
+      }, {
         name: 2025,
         label: 2025 + "年比重分析预测",
-        radio: "Left"
-      }, {
+        radio: "Middle"
+      }, 
+      {
+        name: 2030,
+        label: 2030 + "年比重分析预测",
+        radio: "Middle"
+      },
+      {
         name: 2035,
         label: 2035 + "年比重分析预测",
         radio: "Middle"
-      }, {
+      },
+      {
+        name: 2040,
+        label: 2040 + "年比重分析预测",
+        radio: "Middle"
+      },{
         name: 2045,
         label: 2045 + "年比重分析预测",
         radio: "Right"
@@ -203,12 +267,12 @@ $scope.btn_click=function(btn){
 $scope.change=function(btn){
    if(btn.name===2025){
 $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
-$scope.populationChart.title.text="太仓市2016~2025年劳动力总人口";
+$scope.populationChart.title.text="太仓市2016至2025年劳动力总人口";
      $scope.GDPChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
      $scope.GDPChart.series[0].data=gdp;
-      $scope.GDPChart.title.text="太仓市2016~2025年GDP总量";
+      $scope.GDPChart.title.text="太仓市2016至2025年GDP总量";
     $scope.populationChart.series[0].data=popData;
-    $scope.predictChart.title.text="太仓市2016~2025年劳动力人口与经济关联分析预测";
+    $scope.predictChart.title.text="太仓市2016至2025年劳动力人口与经济关联分析预测";
      $scope.predictChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
   //  $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
     $scope.predictChart.series=[{
@@ -250,12 +314,12 @@ $scope.populationChart.title.text="太仓市2016~2025年劳动力总人口";
         }];
    }
    if(btn.name===2035){
-     $scope.predictChart.title.text="太仓市2026~2035年劳动力人口与经济关联分析预测";
+     $scope.predictChart.title.text="太仓市2026至2035年劳动力人口与经济关联分析预测";
      $scope.populationChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
-     $scope.populationChart.title.text="太仓市2026~2035年劳动力总人口";
+     $scope.populationChart.title.text="太仓市2026至2035年劳动力总人口";
      $scope.GDPChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
      $scope.GDPChart.series[0].data=gdp1;
-      $scope.GDPChart.title.text="太仓市2026~2035年GDP总量";
+      $scope.GDPChart.title.text="太仓市2026至2035年GDP总量";
      $scope.populationChart.series[0].data=popData1;
     $scope.predictChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
     $scope.predictChart.series=[{
@@ -297,12 +361,12 @@ $scope.populationChart.title.text="太仓市2016~2025年劳动力总人口";
         }];
    }
    if(btn.name===2045){
-    $scope.predictChart.title.text="太仓市2036~2045年劳动力人口与经济关联分析预测";
+    $scope.predictChart.title.text="太仓市2036至2045年劳动力人口与经济关联分析预测";
      $scope.populationChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
-     $scope.populationChart.title.text="太仓市2036~2045年劳动力总人口";
+     $scope.populationChart.title.text="太仓市2036至2045年劳动力总人口";
      $scope.GDPChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
      $scope.GDPChart.series[0].data=gdp2;
-     $scope.GDPChart.title.text="太仓市2036~2045年GDP总量";
+     $scope.GDPChart.title.text="太仓市2036至2045年GDP总量";
     $scope.populationChart.series[0].data=popData2;
     $scope.predictChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
     $scope.predictChart.series=[{
@@ -348,6 +412,28 @@ $scope.btn_click3=function(btn){
    $scope.change3(btn);
 };
 $scope.change3=function(btn){
+   if(btn.name===2020){
+    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    $scope.populationPie.options.title.text="太仓市2020年产业就业人口比重分析预测";
+    $scope.industryPie.options.title.text="太仓市2020年产业产值比重分析预测";
+    $scope.populationPie.series=[{
+            type: 'pie',
+            data: [
+                ['第一产业人口',27],
+                ['第二产业人口',40],
+                ['第三产业人口',43]
+                ]
+        }];
+    $scope.industryPie.series=[{
+            type: 'pie',
+            name: '',
+            data: [
+               ['第一产业产值',18],
+                ['第二产业产值',44],
+                ['第三产业产值',48]
+            ]
+        }];
+   }
    if(btn.name===2025){
     document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2025年产业就业人口比重分析预测";
@@ -355,16 +441,60 @@ $scope.change3=function(btn){
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',37],
-                ['第二产业人口',30],
-                ['第三产业人口',33]
+                ['第一产业人口',27],
+                ['第二产业人口',40],
+                ['第三产业人口',43]
                 ]
         }];
     $scope.industryPie.series=[{
             type: 'pie',
             name: '',
             data: [
-               ['第一产业产值',8],
+               ['第一产业产值',18],
+                ['第二产业产值',44],
+                ['第三产业产值',48]
+            ]
+        }];
+   }
+   if(btn.name===2030){
+    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    $scope.populationPie.options.title.text="太仓市2030年产业就业人口比重分析预测";
+    $scope.industryPie.options.title.text="太仓市2030年产业产值比重分析预测";
+    $scope.populationPie.series=[{
+            type: 'pie',
+            data: [
+                ['第一产业人口',27],
+                ['第二产业人口',40],
+                ['第三产业人口',43]
+                ]
+        }];
+    $scope.industryPie.series=[{
+            type: 'pie',
+            name: '',
+            data: [
+               ['第一产业产值',18],
+                ['第二产业产值',44],
+                ['第三产业产值',48]
+            ]
+        }];
+   }
+   if(btn.name===2040){
+    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    $scope.populationPie.options.title.text="太仓市2040年产业就业人口比重分析预测";
+    $scope.industryPie.options.title.text="太仓市2040年产业产值比重分析预测";
+    $scope.populationPie.series=[{
+            type: 'pie',
+            data: [
+                ['第一产业人口',27],
+                ['第二产业人口',40],
+                ['第三产业人口',43]
+                ]
+        }];
+    $scope.industryPie.series=[{
+            type: 'pie',
+            name: '',
+            data: [
+               ['第一产业产值',18],
                 ['第二产业产值',44],
                 ['第三产业产值',48]
             ]
@@ -377,17 +507,17 @@ $scope.change3=function(btn){
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',27],
-                ['第二产业人口',35],
-                ['第三产业人口',38]
+                ['第一产业人口',17],
+                ['第二产业人口',55],
+                ['第三产业人口',58]
                 ]
         }];
     $scope.industryPie.series=[{
             type: 'pie',
             name: '',
             data: [
-               ['第一产业产值',6],
-                ['第二产业产值',34],
+               ['第一产业产值',16],
+                ['第二产业产值',54],
                 ['第三产业产值',60]
             ]
         }];
@@ -399,9 +529,9 @@ $scope.change3=function(btn){
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',17],
-                ['第二产业人口',40],
-                ['第三产业人口',43]
+                ['第一产业人口',7],
+                ['第二产业人口',50],
+                ['第三产业人口',53]
                 ]
         }];
     $scope.industryPie.series=[{
@@ -409,7 +539,7 @@ $scope.change3=function(btn){
             name: '',
             data: [
                ['第一产业产值',4],
-                ['第二产业产值',30],
+                ['第二产业产值',60],
                 ['第三产业产值',66]
             ]
         }];
@@ -419,7 +549,21 @@ $scope.btn_click2=function(btn){
    $scope.change2(btn);
 };
 $scope.change2=function(btn){
-   if(btn.name===2025){
+   if(btn.name===2020){
+    $scope.totaldata = {
+  
+    tabledata:
+    [
+      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
+      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
+      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
+      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
+      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
+      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
+      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+  
+    ]
+  };
     require(
             [
                 'echarts',
@@ -432,9 +576,10 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '太仓市2016~2025年劳动力人口与GDP平均关联度分析预测',
+        text: '太仓市2020年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
-            fontWeight:'normal'
+            fontWeight:'normal',
+            fontFamily:'宋体'
         },
         x:'center',
         y:'top'
@@ -460,9 +605,445 @@ $scope.change2=function(btn){
     legend: {
         x: 'center',
         y: 'bottom',
+        itemGap:20,
         data:['第一产业人口', '第二产业人口', '第三产业人口'],
         textStyle:{
-            fontWeight:'bold'
+            fontWeight:'normal'
+        }
+    },
+    series : [
+        {
+            type:'chord',
+            sort : 'ascending',
+            sortSub : 'descending',
+            showScale : false,
+            itemStyle : {
+                normal : {
+                    label : {
+                        rotate : false
+                    }
+                }
+            },
+            // 使用 nodes links 表达和弦图
+            nodes: [
+                {name:'总人口'},
+                {name:'人口密度'},
+                {name:'人口出生率'},
+                {name:'人口自然增长率'},
+                {name:'人口死亡率'},
+                {name:'第一产业人口'},
+                {name:'第二产业人口'},
+                {name:'第三产业人口'},
+                {name:'城镇人口'},
+                {name:'乡村人口'},
+                {name:'地方生产总值'},
+                {name:'第一产业产值'},
+                {name:'第二产业产值'},
+                {name:'第三产业产值'},
+                {name:'人均GDP'},
+                {name:'社会消费品零售总额'}
+               
+            ],
+            links: [
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.7469,name:'0.7469关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.7295,name:'0.7295关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.7725,name:'0.7725关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.7624,name:'0.7624关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.7484,name:'0.7484关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.7598,name:'0.7598关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.7649,name:'0.7649关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.7293,name:'0.7293关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.7724,name:'0.7724关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.7624,name:'0.7624关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.7483,name:'0.7483关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.7597,name:'0.7597关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.7589,name:'0.7589关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.7116,name:'0.7116关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.7647,name:'0.7647关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.7588,name:'0.7588关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.7396,name:'0.7396关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.7531,name:'0.7531关联'},
+
+                // Ribbon Type 的和弦图每一对节点之间必须是双向边
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.7469},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.7295},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.7725},
+                {target: '第一产业人口', source: '第三产业产值', weight: 0.7624},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.7484},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.7598},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.7649},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.7293},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.7724},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.7624},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.7483},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.7597},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.7589},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.7116},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.7647},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.7588},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.7396},
+                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.7531}
+            ]
+        }
+    ]
+};
+                    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+   }
+   if(btn.name===2025){
+     $scope.totaldata = {
+  
+    tabledata:
+    [
+      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
+      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
+      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
+      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
+      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
+      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
+      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+  
+    ]
+  };
+    require(
+            [
+                'echarts',
+                'echarts/chart/chord',
+                'echarts/chart/force' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+    title : {
+        text: '太仓市2025年劳动力人口与各项经济指标关联度分析预测',
+         textStyle:{
+            fontWeight:'normal',
+            fontFamily:'宋体'
+        },
+        x:'center',
+        y:'top'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: function (params) {
+            if (params.indicator2) {    // is edge
+                return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
+            } else {    // is node
+                return params.name
+            }
+        }
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {show: true, type: ['force', 'chord']},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        x: 'center',
+        y: 'bottom',
+        itemGap:20,
+        data:['第一产业人口', '第二产业人口', '第三产业人口'],
+        textStyle:{
+            fontWeight:'normal'
+        }
+    },
+    series : [
+        {
+            type:'chord',
+            sort : 'ascending',
+            sortSub : 'descending',
+            showScale : false,
+            itemStyle : {
+                normal : {
+                    label : {
+                        rotate : false
+                    }
+                }
+            },
+            // 使用 nodes links 表达和弦图
+            nodes: [
+                {name:'总人口'},
+                {name:'人口密度'},
+                {name:'人口出生率'},
+                {name:'人口自然增长率'},
+                {name:'人口死亡率'},
+                {name:'第一产业人口'},
+                {name:'第二产业人口'},
+                {name:'第三产业人口'},
+                {name:'城镇人口'},
+                {name:'乡村人口'},
+                {name:'地方生产总值'},
+                {name:'第一产业产值'},
+                {name:'第二产业产值'},
+                {name:'第三产业产值'},
+                {name:'人均GDP'},
+                {name:'社会消费品零售总额'}
+               
+            ],
+            links: [
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.7469,name:'0.7469关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.7295,name:'0.7295关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.7725,name:'0.7725关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.7624,name:'0.7624关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.7484,name:'0.7484关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.7598,name:'0.7598关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.7649,name:'0.7649关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.7293,name:'0.7293关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.7724,name:'0.7724关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.7624,name:'0.7624关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.7483,name:'0.7483关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.7597,name:'0.7597关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.7589,name:'0.7589关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.7116,name:'0.7116关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.7647,name:'0.7647关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.7588,name:'0.7588关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.7396,name:'0.7396关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.7531,name:'0.7531关联'},
+
+                // Ribbon Type 的和弦图每一对节点之间必须是双向边
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.7469},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.7295},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.7725},
+                {target: '第一产业人口', source: '第三产业产值', weight: 0.7624},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.7484},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.7598},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.7649},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.7293},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.7724},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.7624},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.7483},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.7597},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.7589},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.7116},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.7647},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.7588},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.7396},
+                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.7531}
+            ]
+        }
+    ]
+};
+                    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+   }
+   if(btn.name===2030){
+     $scope.totaldata = {
+  
+    tabledata:
+    [
+      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
+      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
+      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
+      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
+      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
+      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
+      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+  
+    ]
+  };
+    require(
+            [
+                'echarts',
+                'echarts/chart/chord',
+                'echarts/chart/force' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+    title : {
+        text: '太仓市2030年劳动力人口与各项经济指标关联度分析预测',
+         textStyle:{
+            fontWeight:'normal',
+            fontFamily:'宋体'
+        },
+        x:'center',
+        y:'top'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: function (params) {
+            if (params.indicator2) {    // is edge
+                return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
+            } else {    // is node
+                return params.name
+            }
+        }
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {show: true, type: ['force', 'chord']},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        x: 'center',
+        y: 'bottom',
+        itemGap:20,
+        data:['第一产业人口', '第二产业人口', '第三产业人口'],
+        textStyle:{
+            fontWeight:'normal'
+        }
+    },
+    series : [
+        {
+            type:'chord',
+            sort : 'ascending',
+            sortSub : 'descending',
+            showScale : false,
+            itemStyle : {
+                normal : {
+                    label : {
+                        rotate : false
+                    }
+                }
+            },
+            // 使用 nodes links 表达和弦图
+            nodes: [
+                {name:'总人口'},
+                {name:'人口密度'},
+                {name:'人口出生率'},
+                {name:'人口自然增长率'},
+                {name:'人口死亡率'},
+                {name:'第一产业人口'},
+                {name:'第二产业人口'},
+                {name:'第三产业人口'},
+                {name:'城镇人口'},
+                {name:'乡村人口'},
+                {name:'地方生产总值'},
+                {name:'第一产业产值'},
+                {name:'第二产业产值'},
+                {name:'第三产业产值'},
+                {name:'人均GDP'},
+                {name:'社会消费品零售总额'}
+               
+            ],
+            links: [
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.7469,name:'0.7469关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.7295,name:'0.7295关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.7725,name:'0.7725关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.7624,name:'0.7624关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.7484,name:'0.7484关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.7598,name:'0.7598关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.7649,name:'0.7649关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.7293,name:'0.7293关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.7724,name:'0.7724关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.7624,name:'0.7624关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.7483,name:'0.7483关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.7597,name:'0.7597关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.7589,name:'0.7589关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.7116,name:'0.7116关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.7647,name:'0.7647关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.7588,name:'0.7588关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.7396,name:'0.7396关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.7531,name:'0.7531关联'},
+
+                // Ribbon Type 的和弦图每一对节点之间必须是双向边
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.7469},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.7295},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.7725},
+                {target: '第一产业人口', source: '第三产业产值', weight: 0.7624},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.7484},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.7598},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.7649},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.7293},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.7724},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.7624},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.7483},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.7597},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.7589},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.7116},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.7647},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.7588},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.7396},
+                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.7531}
+            ]
+        }
+    ]
+};
+                    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+   }
+   if(btn.name===2040){
+     $scope.totaldata = {
+  
+    tabledata:
+    [
+      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
+      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
+      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
+      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
+      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
+      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
+      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+  
+    ]
+  };
+    require(
+            [
+                'echarts',
+                'echarts/chart/chord',
+                'echarts/chart/force' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+    title : {
+        text: '太仓市2040年劳动力人口与各项经济指标关联度分析预测',
+         textStyle:{
+            fontWeight:'normal',
+            fontFamily:'宋体'
+        },
+        x:'center',
+        y:'top'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: function (params) {
+            if (params.indicator2) {    // is edge
+                return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
+            } else {    // is node
+                return params.name
+            }
+        }
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {show: true, type: ['force', 'chord']},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        x: 'center',
+        y: 'bottom',
+        itemGap:20,
+        data:['第一产业人口', '第二产业人口', '第三产业人口'],
+        textStyle:{
+            fontWeight:'normal'
         }
     },
     series : [
@@ -549,6 +1130,20 @@ $scope.change2=function(btn){
         );
    }
    if(btn.name===2035){
+     $scope.totaldata = {
+  
+    tabledata:
+    [
+      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
+      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
+      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
+      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
+      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
+      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
+      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+  
+    ]
+  };
     require(
             [
                 'echarts',
@@ -561,9 +1156,10 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '太仓市2026~2035年劳动力人口与GDP平均关联度分析预测',
+        text: '太仓市2035年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
-            fontWeight:'normal'
+            fontWeight:'normal',
+            fontFamily:'宋体'
         },
         x:'center',
         y:'top'
@@ -589,9 +1185,10 @@ $scope.change2=function(btn){
     legend: {
         x: 'center',
         y: 'bottom',
+        itemGap:20,
         data:['第一产业人口', '第二产业人口', '第三产业人口'],
         textStyle:{
-            fontWeight:'bold'
+            fontWeight:'normal'
         }
     },
     series : [
@@ -678,6 +1275,20 @@ $scope.change2=function(btn){
         );
    }
    if(btn.name===2045){
+     $scope.totaldata = {
+  
+    tabledata:
+    [
+      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
+      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
+      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
+      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
+      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
+      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
+      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'10'}
+  
+    ]
+  };
     require(
             [
                 'echarts',
@@ -690,9 +1301,10 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '太仓市2036~2045年劳动力人口与GDP平均关联度分析预测',
+        text: '太仓市2045年劳动力人口与各项经济指标关联度分析预测',
         textStyle:{
-            fontWeight:'normal'
+            fontWeight:'normal',
+            fontFamily:'宋体'
         },
         x:'center',
         y:'top'
@@ -718,9 +1330,10 @@ $scope.change2=function(btn){
     legend: {
         x: 'center',
         y: 'bottom',
+        itemGap:20,
         data:['第一产业人口', '第二产业人口', '第三产业人口'],
         textStyle:{
-            fontWeight:'bold'
+            fontWeight:'normal'
         }
     },
     series : [
@@ -848,11 +1461,11 @@ $scope.$watch($scope.rr,hh);
     var popData2=[550441, 556081, 561654, 567106, 572420, 577676, 583104, 588418, 593579, 598577];
     var gdp2=[4554.62, 4873.44, 5214.58,5579.60,5970.18, 6388.09,6835.25, 7313.72,7825.68, 8373.48];
          $scope.predictChart ={
- chart: {
+options:{ chart: {
             zoomType: 'xy'
         },
         title: {
-            text: '太仓市2016~2025年劳动力人口与经济关联分析预测'
+            text: '太仓市2016至2025年劳动力总人口与GDP关联分析预测'
         },
         xAxis: {
             categories: ['2016', '2017', '2018', '2019', '2020', '2021',
@@ -917,14 +1530,15 @@ $scope.$watch($scope.rr,hh);
             shared: true
         },
         legend: {
-            layout: 'vertical',
-            align: 'left',
-            x: 120,
-            verticalAlign: 'top',
-            y: 80,
-            floating: true,
-            backgroundColor: '#FFFFFF'
-        },
+          
+            align: 'center',
+         
+            verticalAlign: 'bottom',
+             itemStyle:{
+                    fontWeight:'normal'
+                    }
+        }
+    },
         series: [{
             name: '人口(人)',
             color: '#7CB5EC',
@@ -968,16 +1582,23 @@ $scope.populationChart ={
       options: {
                     chart: {
                         type: 'column'
+                    },
+                  legend:{
+                    itemStyle:{
+                        fontWeight:'normal'
                     }
+                }
                 },
+
                 series: [{
                     name: '劳动力总人口',
                     
                     data: popData
                 }],
                 title: {
-                    text: '太仓市2016~2025年劳动力总人口'
+                    text: '太仓市2016至2025年劳动力总人口预测值'
                 },
+               
                 xAxis: {
                     categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
                     title:{
@@ -995,17 +1616,22 @@ $scope.populationChart ={
 
     };  
     $scope.GDPChart ={
-     options: {
+       options: {
                     chart: {
                         type: 'column'
+                    },
+                    legend:{
+                    itemStyle:{
+                        fontWeight:'normal'
                     }
+                }
                 },
                 series: [{
                     name: 'GDP总量',
                     data: gdp
                 }],
                 title: {
-                    text: '太仓市2016~2025年GDP总量'
+                    text: '太仓市2016至2025年GDP总量预测值'
                 },
                 xAxis: {
                     categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
@@ -1059,10 +1685,9 @@ $scope.populationChart ={
             valueSuffix: ''
         },
         legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
+            itemStyle:{
+                fontWeight:'normal'
+            }
         }
     },
         series: [{
@@ -1097,7 +1722,7 @@ options: {
                                     enabled:false
                                     },
                                 title: {
-                                    text: "太仓市2025年产业就业人口比重分析预测"
+                                    text: "太仓市2020年产业就业人口比重分析预测"
                                 },
                                 tooltip: {
                                     pointFormat: ' <b>产业人口</b>:{point.y:1.f}(万人)</b> '
@@ -1117,15 +1742,20 @@ options: {
                                     }
                                 
                                 
-                            }
+                            },
+                            legend:{
+                                itemStyle:{
+                                    fontWeight:'normal'
+                                    }
+                               }
                         },
                             series: [{
                                 type: 'pie',
                                 name: '',
                                 data:[
-               ['第一产业人口',37],
-                ['第二产业人口',30],
-                ['第三产业人口',33]
+               ['第一产业人口',27],
+                ['第二产业人口',40],
+                ['第三产业人口',43]
             ]
                             }]
                                             
@@ -1142,7 +1772,7 @@ options: {
                                     enabled:false
                                     },
                                 title: {
-                                    text: "太仓市2025年产业产值比重分析预测"
+                                    text: "太仓市2020年产业产值比重分析预测"
                                 },
                                 tooltip: {
                                     pointFormat: '<b>产业产值</b>:{point.y:1.f}(亿元)</b> '
@@ -1161,13 +1791,18 @@ options: {
                                     }
                                 
                                 
+                            },
+                            legend:{
+                                itemStyle:{
+                                    fontWeight:'normal'
+                                }
                             }
                         },
                             series: [{
                                 type: 'pie',
                                 name: '',
                                 data:[
-              ['第一产业产值',8],
+              ['第一产业产值',18],
                 ['第二产业产值',44],
                 ['第三产业产值',48]
             ]
