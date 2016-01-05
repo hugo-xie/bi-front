@@ -200,14 +200,14 @@
 			                            <td>总磷</td>
 			                        </tr>
 			                        <tr>
-			                            <td>原值</td>
+			                            <td>当前实际值</td>
 			                            <td>{{waterQualityAnalysisMarker.index_o2}}</td>
 			                            <td>{{waterQualityAnalysisMarker.index_kmno4}}</td>
 			                            <td>{{waterQualityAnalysisMarker.index_nh4n}}</td>
 			                            <td>{{waterQualityAnalysisMarker.index_p}}</td>
 			                        </tr>
 			                        <tr>
-			                            <td>状态</td>
+			                            <td>水质状态</td>
 			                            <td><span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td>
 			                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
 			                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
@@ -290,11 +290,11 @@
 						    <div class="modal-content" style="font-size:14px">
 						        <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						        <h4 class="modal-title" id="myModalLabel">预测结果</h4>
+						        <h4 class="modal-title" id="myModalLabel">减排后水质变化及处理费估算</h4>
 						        </div>
 						        <div class="modal-body" style="min-height:640px">
 					            	<div class="col-md-12">
-			                            <h4>{{predictionMonitor}} 水质量指标变化</h4>
+			                            <h4>{{predictionMonitor}} 水质指标变化</h4>
 				                    </div>
 				                    <div class="col-md-12 row">
 										<div class="col-md-2" id="chart_WaterQualityo2"
@@ -308,57 +308,54 @@
 				                	</div>
 					            	<div class="col-md-10">
 					                    <table class="table table-bordered">
-					                        <tr>
-					                            <th></th>
-					                            <th colspan="2">溶解氧(mg/L)</th>
-					                            <th colspan="2">高锰酸钾(mg/L)</th>
-					                            <th colspan="2">氨氮(mg/L)</th>
-					                            <th colspan="2">总磷(mg/L)</th>
+					                        <tr style="width:100%">
+					                            <th colspan="2" style="text-align:center;width:25%">溶解氧(mg/L)</th>
+					                            <th colspan="2" style="text-align:center;width:25%">高锰酸钾(mg/L)</th>
+					                            <th colspan="2" style="text-align:center;width:25%">氨氮(mg/L)</th>
+					                            <th colspan="2" style="text-align:center;width:25%">总磷(mg/L)</th>
 					                        </tr>
 					                        <tr>
-						                    	<td></td>
-						                    	<td>原值</td>
-						                    	<td>预测未来值</td>
-						                    	<td>原值</td>
-						                    	<td>预测未来值</td>
-						                    	<td>原值</td>
-						                    	<td>预测未来值</td>
-						                    	<td>原值</td>
-						                    	<td>预测未来值</td>
+						                    	<td style="text-align:center">减排前
+						                    	</td>
+						                    	<td style="text-align:center">减排后</td>
+						                    	<td style="text-align:center">减排前</td>
+						                    	<td style="text-align:center">减排后</td>
+						                    	<td style="text-align:center">减排前</td>
+						                    	<td style="text-align:center">减排后</td>
+						                    	<td style="text-align:center">减排前</td>
+						                    	<td style="text-align:center">减排后</td>
 					                        </tr>
 					                        <tr>
-					                            <td>值</td>
-					                            <td>{{waterQualityAnalysisMarker.index_o2}}</td>
-					                            <td>{{predict_waterquality.index_o2}}</td>
-					                            <td>{{waterQualityAnalysisMarker.index_kmno4}}</td>
-					                            <td>{{predict_waterquality.index_kmno4}}</td>
-					                            <td>{{waterQualityAnalysisMarker.index_nh4n}}</td>
-					                            <td>{{predict_waterquality.index_nh4n}}</td>
-					                            <td>{{waterQualityAnalysisMarker.index_p}}</td>
-					                            <td>{{predict_waterquality.index_p}}</td>
+					                            <td style="text-align:center">{{waterQualityAnalysisMarker.index_o2}}</td>
+					                            <td style="text-align:center">{{predict_waterquality.index_o2}}</td>
+					                            <td style="text-align:center">{{waterQualityAnalysisMarker.index_kmno4}}</td>
+					                            <td style="text-align:center">{{predict_waterquality.index_kmno4}}</td>
+					                            <td style="text-align:center">{{waterQualityAnalysisMarker.index_nh4n}}</td>
+					                            <td style="text-align:center">{{predict_waterquality.index_nh4n}}</td>
+					                            <td style="text-align:center">{{waterQualityAnalysisMarker.index_p}}</td>
+					                            <td style="text-align:center">{{predict_waterquality.index_p}}</td>
 					                        </tr>
 					                        <tr>
-					                            <td>状态</td>
-					                            <td><span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td> 
-					                            <td><span ng-class="getLabelCss(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td>
-					                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
-					                            <td><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
-					                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
-					                            <td><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
-					                            <td><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)}}</span></td>
-					                            <td><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)}}</span></td>
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(waterQualityAnalysisMarker.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td> 
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)">{{getChineseStatusView(getStatusDesc(predict_waterquality.index_o2,waterQualityO2Scan.scan,'溶解氧').status)}}</span></td>
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_kmno4,waterQualityKmno4Scan.scan,'高锰酸钾').status)}}</span></td>
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_nh4n,waterQualityNh4nScan.scan,'氨氮').status)}}</span></td>
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)">{{getChineseStatusView(getStatusAsc(waterQualityAnalysisMarker.index_p,waterQualityPScan.scan,'总磷').status)}}</span></td>
+					                            <td style="text-align:center"><span ng-class="getLabelCss(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)">{{getChineseStatusView(getStatusAsc(predict_waterquality.index_p,waterQualityPScan.scan,'总磷').status)}}</span></td>
 					                        </tr>
 					                    </table>
 					                </div>
 					                <hr>
 					                <div class="col-md-12">
-					                	<h4>相关污染源废水排放变化</h4>
+					                	<h4>减排后处理费估算</h4>
 				                		<table class='table table-bordered'>
 				                			<tr>
-				                				<td>企业</td>
-				                				<td>废水排放量(吨)</td>
-				                				<td>模型修改(%)</td>
-				                				<td>最终值(吨)</td>
+				                				<td>污水处理厂/企业</td>
+				                				<td>减排前废水排放量(吨)</td>
+				                				<td>减排后废水排放量(吨)</td>
+				                				<td>减排比例(%)</td>
 				                				<td>处理费(元)</td>
 				                				<!-- <td>COD浓度(mg/L)</td>
 				                				<td>模型修改(%)</td>
@@ -373,8 +370,8 @@
 			                				<tr ng-repeat="wasteModelOne in wasteModelList">
 			                					<td>{{wasteModelOne.title}}</td>
 			                					<td>{{wasteModelOne.dischargeValue}}</td>
-			                					<td>{{wasteModelOne.dischargeChange}}</td>
 			                					<td>{{(wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
+			                					<td>{{100-wasteModelOne.dischargeChange}}</td>
 			                					<td>{{(2.29*wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
 			                					<!-- <td>{{wasteModelOne.codValue}}</td>
 			                					<td>{{wasteModelOne.codChange}}</td>

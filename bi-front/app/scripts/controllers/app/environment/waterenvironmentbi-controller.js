@@ -551,7 +551,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         (function(markerTemp) {
             //构建信息窗体中显示的内容
             var info = [];
-            info.push("<div><b>" + markerInfoOne.monitor + "(实时值)" + "</b>");
+            info.push("<div><b>" + markerInfoOne.monitor + "(实时数据)" + "</b>");
             if (type == 'waterQuality') {
                 info.push("<div style=\"margin-top:10px; font-size:14px\"><table class=\"table table-bordered\">")
                 info.push("<tr><td>溶解氧</td><td><span class=\"label " + getLabelCss(getStatusDesc(markerInfoOne.index_o2, waterQualityO2Scan.scan, '溶解氧').status) + "\">" + markerInfoOne.index_o2 + "mg/L</span></td></tr>");
@@ -613,7 +613,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         (function(markerTemp) {
             //构建信息窗体中显示的内容
             var info = [];
-            info.push("<div><b>" + markerInfoOne.monitor + "(实时值)" + "</b>");
+            info.push("<div><b>" + markerInfoOne.monitor + "(实时数据)" + "</b>");
             if (type == 'waterQuality') {
                 info.push("<div style=\"margin-top:10px; font-size:14px\"><table class=\"table table-bordered\">")
                 info.push("<tr><td>溶解氧</td><td><span class=\"label " + getLabelCss(getStatusDesc(markerInfoOne.index_o2, waterQualityO2Scan.scan, '溶解氧').status) + "\">" + markerInfoOne.index_o2 + "mg/L</span></td></tr>");
