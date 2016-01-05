@@ -272,7 +272,7 @@ $scope.openorclose='↓展开';
         })//国华太仓发电公司
 	    });
 	$scope.airQualityBtn = function() {
-		$scope.istownairquality = !$scope.istownairquality;
+		$scope.istownairquality = true;
 		$scope.istownaircondition=false;
 		$scope.istownwasteair=false;
 		map.setZoomAndCenter(15, [121.116757,31.448875]);
@@ -306,7 +306,7 @@ $scope.openorclose='↓展开';
     //气象 Button点击事件
     $scope.istownaircondition = false;
 	 $scope.airConditionBtn = function() {
-	 	$scope.istownaircondition = !$scope.istownaircondition;
+	 	$scope.istownaircondition = true;
 	 	$scope.istownairquality=false;
 		$scope.istownwasteair=false;
         $scope.mapTableStatus = {
@@ -362,7 +362,7 @@ $scope.openorclose='↓展开';
     //废气排放Button点击事件
     $scope.istownwasteair = false;
 	$scope.wasteAirBtn = function() {
-		$scope.istownwasteair = !$scope.istownwasteair;
+		$scope.istownwasteair = true;
 		$scope.istownaircondition=false;
 		$scope.istownairquality=false;
         $scope.mapTableStatus = {
@@ -643,10 +643,11 @@ $scope.openorclose='↓展开';
 
 
 $scope.aqilinechart={
-    title: {
+    options:{
+      title: {
             text: '过去七天空气质量AQI',
             style: {
-            	fontSize:'180%'
+            	fontWeight:'bold',
             },
             x:20
         },
@@ -658,6 +659,12 @@ $scope.aqilinechart={
                 text: '空气质量指数(AQI)值'
             }
         },
+        legend: {
+        itemStyle:{
+          fontWeight:'normal'
+            }
+        }
+      },
         series: [{
             type: 'column',
             name: '实际AQI值',
@@ -2029,7 +2036,7 @@ $scope.aqilinechart={
         title: {
             text: '未来七天最高最低气温',
             style: {
-            	fontSize:'180%'
+            fontWeight:'bold',
             },
             x:20
         },
@@ -2075,104 +2082,7 @@ $scope.aqilinechart={
    
 }]);
 
-/*$timeout(function () {
-    // 路径配置
-        require.config({
-            paths: {
-                echarts: 'http://echarts.baidu.com/build/dist'
-            }
-        });
-        
-        // 使用
-        require(
-            [
-                'echarts',
-                'echarts/chart/bar',// 使用柱状图就加载bar模块，按需加载
-                'echarts/chart/line' 
-            ],
-            function (ec) {
-                // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
-                var option = {
-                	color : [ 
-                		//颜色待调
-					    '#434348', '#95ceff', '#F0e0e0',
-					],
-                	title : {
-				        text: '未来七天天气状况',
-				        x:'center',
-				        textStyle:{
-				        	fontFamily:'宋体标题',
-				        },
-				    },
-                    tooltip : {
-                        trigger: 'axis'
-                    },
-                    toolbox: {
-                        show : true,
-                        feature : {
-                            mark : {show: true},
-                            dataView : {show: true, readOnly: false},
-                            magicType: {show: true, type: ['line', 'bar']},
-                            restore : {show: true},
-                            saveAsImage : {show: true}
-                        }
-                    },
-                    calculable : true,
-                    legend: {
-                        data:['蒸发量','降水量','平均气温'],
-                        y:'bottom',
-                    },
-                    xAxis : [
-                        {
-                            type : 'category',
-                            data : ['12月19号','12月20号','12月21号','12月22号','12月23号','12月24号','12月25号']
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'value',
-                            name : '水量',
-                            axisLabel : {
-                                formatter: '{value} mm'
-                            }
-                        },
-                        {
-                            type : 'value',
-                            name : '温度',
-                            axisLabel : {
-                                formatter: '{value} °C'
-                            }
-                        }
-                    ],
-                    series : [
 
-                        {
-                            name:'蒸发量',
-                            type:'bar',
-                            Color:'#030303',
-                            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
-                        },
-                        {
-                            name:'降水量',
-                            type:'bar',
-                            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
-                        },
-                        {
-                            name:'平均气温',
-                            type:'line',
-                            yAxisIndex: 1,
-                            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 11.3]
-                        }
-                    ]
-                };
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
-            }
-        );  
-},0);*/
 
 
 
