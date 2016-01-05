@@ -138,7 +138,12 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
         type:'column'
       },
     },
-    title: {text:'2015年月度税收收入预测'},
+    title: {
+      text:'2015年月度税收收入预测',
+      style:{
+        fontWeight:'bold'
+      }
+    },
 
     xAxis: {
       categories: $scope.monthArray,
@@ -158,10 +163,36 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
             }]
     },
     yAxis: 
-    {
+    [{
       min: 0,
-      title: {text: '税收收入（亿元）'}
+      title: {text: '税收收入（亿元）'},
+       plotLines:[{
+            color:'red',
+            dashStyle:'DashDot',
+            value:95.62,
+            width:2,
+            label:{
+                text:'本年度税收目标',
+                align:'left',
+                x:10,
+                 style: {
+                        fontSize: '8px',
+                        fontWeight: 200
+                    }
+            }
+            }]
     },
+    {
+            title: {
+                text: '同比增长率'
+            },
+            labels: {
+                format: '{value} %',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+        },
+        opposite:true}],
     tooltip: 
     {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
@@ -185,6 +216,12 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
             name: '预测值',
             data: $scope.date2
 
+        },
+        {   
+            yAxis: 1,
+            type:'spline',
+            name: '同比增长率',
+            data: [6.4, 7.2, 7.5, 6.7, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2, 7.7]
         }]   
   };
 
@@ -194,7 +231,12 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
         type:'column'
       },
     },
-    title: {text:'2015年-2017年税收收入预测'},
+    title: {
+      text:'年度税收收入预测',
+      style:{
+        fontWeight:'bold'
+      }
+    },
 
     xAxis: {
       categories: $scope.yearArray,
@@ -215,10 +257,39 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
 
     },
     yAxis: 
-    {
+    [{
       min: 0,
-      title: {text: '税收收入（亿元）'}
+      title: {
+        text: '税收收入（亿元）'
+      },
+       plotLines:[{
+            color:'red',
+            dashStyle:'DashDot',
+            value:95.62,
+            width:2,
+            label:{
+                text:'本年度税收目标',
+                align:'left',
+                x:10,
+                 style: {
+                        fontSize: '8px',
+                        fontWeight: 200
+                    }
+            }
+            }]
+
     },
+    {
+            title: {
+                text: '同比增长率'
+            },
+            labels: {
+                format: '{value} %',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+        },
+        opposite:true}],
     tooltip: 
     {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
@@ -242,6 +313,12 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
             name: '预测值',
             data: $scope.date
 
+        },
+         {   
+            yAxis: 1,
+            type:'spline',
+            name: '同比增长率',
+            data: [6.4, 7.2, 7.5, 6.7, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2, 7.7]
         }]   
   };
 

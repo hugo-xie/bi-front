@@ -38,7 +38,10 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '太仓市GDP数据'
+            text: '太仓市GDP数据',
+            style:{
+                fontWeight:'bold'
+            }
         },
         subtitle: {
             text: '年度GDP分析'
@@ -143,7 +146,10 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
             
         },
         title: {
-            text: '太仓市GDP数据'
+            text: '太仓市GDP数据',
+             style:{
+                fontWeight:'bold'
+            }
         },
         subtitle: {
             text: '季度GDP分析'
@@ -243,7 +249,10 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
       },
     },
         title: {
-            text: '太仓市GDP数据'
+            text: '太仓市GDP数据',
+             style:{
+                fontWeight:'bold'
+            }
         },
         subtitle: {
             text: '按年度分产业GDP分析'

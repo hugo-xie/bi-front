@@ -62,23 +62,37 @@ $scope.range2=function(){
     title: 
     {
         text: '本年度“克强指数”走势',
-        x: -20 //center
+        style:{
+        fontWeight:'bold'
+      }
+       
     },
     xAxis: 
     {
         categories: ['一月', '二月', '三月', '四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
     },
     yAxis: 
-    {
+    { plotLines:[{
+            color:'red',
+            dashStyle:'solid',
+            value:7.9,
+            width:2,
+            label:{
+                text:'本年度GDP增长率预测值',
+                align:'right',
+                x:10,
+                 style: {
+                        fontSize: '8px',
+                        fontWeight: 200
+                    }
+            }
+            }],
         title: 
         {
-            text: '克强指数'
+            text: '增长率％'
         },
-        plotLines: [{
-            value: 0,
-            width: 1,
-            color: '#808080'
-        }]
+        
+        
         },
     tooltip: 
     {
@@ -92,8 +106,19 @@ $scope.range2=function(){
         borderWidth: 0
     },
     series:[{
-        name: '克强指数',
-        data: [97.9, 82.1, 93.5, 99.7,100.3,110.4,105.7,103.8,115.9,97.19,126.4,null]
+        name: '工业用电量',
+        color:"rgb(205,130,61)",
+        data: [7.9, 10.1, 9.5, 7.7,12.3,7.4,7.5,7.7,-3.3,9.9,2.4,null]
+        },
+        {
+        name: '新增贷款',
+        color:"rgb(51,181,88)",
+        data: [8.9, 18.1, -18.1, 18.2,32.3,2.2,28.2,1.7,20.0,7.2,22.3,null]
+        },
+        {
+        name: '货运量',
+        color:"rgb(62,160,200)",
+        data: [-3.2, -4.3, -8, -0.7,6.7,8.2,7.3,10.5,4.3,4.7,-0.9,null]
         }]
 };
 
@@ -108,7 +133,10 @@ $scope.keqiangChart={
     title: 
     {
         text: '“克强指数”拟合GDP增长率',
-        x: -20 //center
+        style:{
+        fontWeight:'bold'
+      }
+
     },
     xAxis: 
     {
