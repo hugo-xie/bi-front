@@ -1824,6 +1824,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
             result = result + 2.29 * ($scope.wasteModelList[i].dischargeChange*$scope.wasteModelList[i].dischargeValue/100)
         }
         $scope.feed_sum = result.toFixed(0);
+        return $scope.feed_sum;
     };
     /**
      * 页面初始化区
