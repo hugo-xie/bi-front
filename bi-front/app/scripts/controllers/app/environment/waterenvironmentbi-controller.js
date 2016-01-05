@@ -952,7 +952,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         if ((data[1] - data[0]) / data[0] <= waterPollutionDischargeScan.scan[0] && data[1] != 0) {
             return {
                 status: "accept",
-                sentence: "废水排放量正常"
+                sentence: "废水排放量优良"
             }
         } else if ((data[1] - data[0]) / data[0] <= waterPollutionDischargeScan.scan[1] && (data[1] - data[0]) / data[0] > waterPollutionDischargeScan.scan[0] && data[1] != 0) {
             return {
@@ -1751,17 +1751,17 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         if (data <= scan[0] && data > 0) {
             return {
                 status: 'accept',
-                sentence: indexName + '≤' + scan[0] + ',正常'
+                sentence: indexName + '≤' + scan[0] + ',优良'
             }
         } else if (data > scan[0] && data <= scan[1]) {
             return {
                 status: 'caution',
-                sentence: scan[0] + '≤' + indexName + '≤' + scan[1] + ',轻微问题'
+                sentence: scan[0] + '≤' + indexName + '≤' + scan[1] + ',轻度污染'
             }
         } else if (data > scan[1]) {
             return {
                 status: 'take_action',
-                sentence: indexName + '>' + scan[1] + ',问题'
+                sentence: indexName + '>' + scan[1] + ',严重污染'
             }
         } else if (data == 0) {
             return {
@@ -1775,17 +1775,17 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         if (data <= scan[0] && data > 0) {
             return {
                 status: 'accept',
-                sentence: indexName + '≤' + scan[0] + ',正常'
+                sentence: indexName + '≤' + scan[0] + ',优良'
             }
         } else if (data > scan[0] && data <= scan[1]) {
             return {
                 status: 'caution',
-                sentence: scan[0] + '≤' + indexName + '≤' + scan[1] + ',轻微问题'
+                sentence: scan[0] + '≤' + indexName + '≤' + scan[1] + ',轻度污染'
             }
         } else if (data > scan[1]) {
             return {
                 status: 'take_action',
-                sentence: indexName + '>' + scan[1] + ',问题'
+                sentence: indexName + '>' + scan[1] + ',严重污染'
             }
         } else if (data == 0) {
             return {
@@ -1800,17 +1800,17 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         if (data >= scan[0]) {
             return {
                 status: 'accept',
-                sentence: indexName + '≥' + scan[0] + ',正常'
+                sentence: indexName + '≥' + scan[0] + ',优良'
             }
         } else if (data < scan[0] && data >= scan[1]) {
             return {
                 status: 'caution',
-                sentence: scan[1] + '≤' + indexName + '≤' + scan[0] + ',轻微问题'
+                sentence: scan[1] + '≤' + indexName + '≤' + scan[0] + ',轻度污染'
             }
         } else if (data < scan[1] && data > 0) {
             return {
                 status: 'take_action',
-                sentence: indexName + '<' + scan[1] + ',问题'
+                sentence: indexName + '<' + scan[1] + ',严重污染'
             }
         } else if (data == 0) {
             return {
@@ -1824,17 +1824,17 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         if (data >= scan[0]) {
             return {
                 status: 'accept',
-                sentence: indexName + '≥' + scan[0] + ',正常'
+                sentence: indexName + '≥' + scan[0] + ',优良'
             }
         } else if (data < scan[0] && data >= scan[1]) {
             return {
                 status: 'caution',
-                sentence: scan[1] + '≤' + indexName + '≤' + scan[0] + ',轻微问题'
+                sentence: scan[1] + '≤' + indexName + '≤' + scan[0] + ',轻度污染'
             }
         } else if (data < scan[1] && data > 0) {
             return {
                 status: 'take_action',
-                sentence: indexName + '<' + scan[1] + ',问题'
+                sentence: indexName + '<' + scan[1] + ',严重污染'
             }
         } else if (data == 0) {
             return {
@@ -1846,22 +1846,22 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
     //得到中文状态名称
     function getChineseStatus(status) {
         if (status == 'accept') {
-            return '正常';
+            return '优良';
         } else if (status == 'caution') {
-            return '轻微问题';
+            return '轻度污染';
         } else if (status == 'take_action') {
-            return '问题';
+            return '严重污染';
         } else {
             return '无数据';
         }
     };
     $scope.getChineseStatusView = function(status) {
         if (status == 'accept') {
-            return '正常';
+            return '优良';
         } else if (status == 'caution') {
-            return '轻微问题';
+            return '轻度污染';
         } else if (status == 'take_action') {
-            return '问题';
+            return '严重污染';
         } else {
             return '无数据';
         }
