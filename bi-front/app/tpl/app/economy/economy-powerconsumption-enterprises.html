@@ -6,8 +6,8 @@
      		<div class="subview3_title">{{title}}</div>
  	  </div>
     <div class="container" name="enterprise_map">
-        <div class="col-md-12">       
-            <input type="text" class="form-control ui-select-search ng-pristine ng-valid ng-touched" data-toggle="dropdown" aria-expanded="false" placeholder="搜索企业..." ng-model="search.name"> 
+        <div class="col-md-12" style="margin-top:1em;">       
+            <input type="text" class="form-control ui-select-search ng-pristine ng-valid ng-touched" data-toggle="dropdown" aria-expanded="false" placeholder="搜索企业..." ng-model="search.name" style="height:3em"> 
             <ul class="ui-select-choices ui-select-choices-content dropdown-menu ng-scope" role="menu" aria-labelledby="dLabel" ng-show="true" aria-hidden="false" style="margin-left:15px;padding:0">
                 <li class="ui-select-choices-row ng-scope cgq-li-hover" ng-repeat="enterpriselist in enterpriselist | filter:search" role="button" tabindex="0" style="">                            
                     <a ng-click="chooseEnterprise()" class="ui-select-choices-row-inner">
@@ -17,8 +17,8 @@
             </ul>
         </div>
         
-     	  <div class="col-md-12 cgq_margintop2em" style="height:310px;">
-            <div class="panel b-a">
+     	  <div class="col-md-12 cgq_margintop2em" style="height:400px;">
+
                 
                 <div class="col-md-12 topbar">
                   <h4 class="cgq_title">太仓市地图-选择企业</h4>
@@ -26,10 +26,9 @@
                 <div class="item m-l-n-xxs m-r-n-xxs">
                   <div id="consumptionbyenterprise"></div>
                 </div>
-            </div>
+
         </div>
-        <div class="wrapper bg-white container space-top" style="margin-top:500px">
-      <div class="row">
+      <div class="col-md-12 bg-white wrapper ">
         <!--标题-->
         <div class="col-md-12 topbar">
           <h4 class="cgq_title">规模以上企业用电量与产值增长率关联分析</h4>
@@ -201,6 +200,5 @@
         </div>
         </div>
       </div>
-    </div>
     </div>
 </div>

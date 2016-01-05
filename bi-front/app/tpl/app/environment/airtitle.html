@@ -297,15 +297,17 @@
                             <i class="glyphicon  glyphicon-cloud fa-stack-1x text-white"></i>
                           </span>
                         </div>
-                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">城区天气预测</h4>
+                        <h4 class="col-md-10 fc-font-title" style="margin-top:0.5em;padding-left:0;">天气预测</h4>
                         <button class="btn btn-primary" ng-class="getButtonStatus(airConditionStatus.status)" ng-click="airConditionBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
                             <span class="glyphicon glyphicon-hand-right ">
-                                <span class="fc-button-font">城区气象状况预测</span>
+                                <span class="fc-button-font">城区天气状况预测</span>
                             </span>                                   
                         </button>
                         <br />
                         <span class="glyphicon glyphicon-cloud m-r-xs" ng-if="istownaircondition">
-                            <span class="fc-button-font">太仓市明日天气状况</span>                        
+
+                            <span class="fc-button-font">太仓市明日天气状况</span>                                             
+
                         </span>
                     </div>
                     <div ng-show="mapTableStatus.airCondition">
@@ -357,6 +359,7 @@
                         <br />
                         <span class="glyphicon  glyphicon-stats m-r-xs" ng-if="istownwasteair">
                             <span class="fc-button-font">监测到废气排放均达标</span>                        
+
                         </span>
                     </div>
                     <div class="col-md-12">
