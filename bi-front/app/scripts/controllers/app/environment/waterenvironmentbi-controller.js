@@ -551,20 +551,20 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         (function(markerTemp) {
             //构建信息窗体中显示的内容
             var info = [];
-            info.push("<div><b>" + markerInfoOne.monitor + "</b>");
+            info.push("<div><b>" + markerInfoOne.monitor + "(实时值)" + "</b>");
             if (type == 'waterQuality') {
                 info.push("<div style=\"margin-top:10px; font-size:14px\"><table class=\"table table-bordered\">")
                 info.push("<tr><td>溶解氧</td><td><span class=\"label " + getLabelCss(getStatusDesc(markerInfoOne.index_o2, waterQualityO2Scan.scan, '溶解氧').status) + "\">" + markerInfoOne.index_o2 + "mg/L</span></td></tr>");
                 info.push("<tr><td>高锰酸钾浓度</td><td><span class=\"label " + getLabelCss(getStatusAsc(markerInfoOne.index_kmno4, waterQualityKmno4Scan.scan, '高锰酸钾').status) + "\">" + markerInfoOne.index_kmno4 + "mg/L</span></td></tr>");
                 info.push("<tr><td>氨氮浓度</td><td><span class=\"label " + getLabelCss(getStatusAsc(markerInfoOne.index_nh4n, waterQualityNh4nScan.scan, '氨氮').status) + "\">" + markerInfoOne.index_nh4n + "mg/L</span></td></tr>");
                 info.push("<tr><td>总磷浓度</td><td><span class=\"label " + getLabelCss(getStatusAsc(markerInfoOne.index_p, waterQualityPScan.scan, '总磷').status) + "\">" + markerInfoOne.index_p + "mg/L</span></td></tr>");
-                info.push("<tr><td>监测站状态</td><td><span class=\"label " + getLabelCss(markerInfoOne.monitor_status) + "\">" + getChineseStatus(markerInfoOne.monitor_status) + "</span></td></tr>");
+                info.push("<tr><td>水质状态</td><td><span class=\"label " + getLabelCss(markerInfoOne.monitor_status) + "\">" + getChineseStatus(markerInfoOne.monitor_status) + "</span></td></tr>");
                 info.push("</table></div></div>");
             } else if (type == 'waterCondition') {
                 info.push("<div style=\"margin-top:10px; font-size:14px\"><table class=\"table table-bordered\">")
                 info.push("<tr><td>闸上水位</td><td><span class=\"label " + getLabelCss(WaterConditionStatusUpLevel(markerInfoOne.index_levelUp).status) + "\">" + markerInfoOne.index_levelUp + "m</span></td></tr>");
                 info.push("<tr><td>闸下水位</td><td><span class=\"label " + getLabelCss(WaterConditionStatusDownLevel(markerInfoOne.index_levelDown).status) + "\">" + markerInfoOne.index_levelDown + "m</span></td></tr>");
-                info.push("<tr><td>监测站状态</td><td><span class=\"label " + getLabelCss(markerInfoOne.monitor_status) + "\">" + getChineseStatus(markerInfoOne.monitor_status) + "</span></td></tr>");
+                info.push("<tr><td>水质状态</td><td><span class=\"label " + getLabelCss(markerInfoOne.monitor_status) + "\">" + getChineseStatus(markerInfoOne.monitor_status) + "</span></td></tr>");
                 info.push("</table></div></div>");
             } else if (type == 'waterPollution') {
                 info.push("<div style=\"margin-top:10px; font-size:14px\"><table class=\"table table-bordered\">")
@@ -572,7 +572,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 info.push("<tr><td>COD浓度</td><td><span class=\"label " + getLabelCss(getStatusAsc(markerInfoOne.index_cod, waterPollutionCodScan.scan, 'COD浓度').status) + "\">" + (markerInfoOne.index_cod).toFixed(2) + "mg/L</span></td></tr>");
                 info.push("<tr><td>氨氮浓度</td><td><span class=\"label " + getLabelCss(getStatusAsc(markerInfoOne.index_nh4n, waterPollutionNh4nScan.scan, '氨氮浓度').status) + "\">" + (markerInfoOne.index_nh4n).toFixed(2) + "mg/L</span></td></tr>");
                 info.push("<tr><td>总磷浓度</td><td><span class=\"label " + getLabelCss(getStatusAsc(markerInfoOne.index_p, waterPollutionPScan.scan, '总磷浓度').status) + "\">" + (markerInfoOne.index_p).toFixed(2) + "mg/L</span></td></tr>");
-                info.push("<tr><td>监测站状态</td><td><span class=\"label " + getLabelCss(markerInfoOne.monitor_status) + "\">" + getChineseStatus(markerInfoOne.monitor_status) + "</span></td></tr>");
+                info.push("<tr><td>水质状态</td><td><span class=\"label " + getLabelCss(markerInfoOne.monitor_status) + "\">" + getChineseStatus(markerInfoOne.monitor_status) + "</span></td></tr>");
                 info.push("</table></div></div>");
             }
             var infoWindow = new AMap.InfoWindow({
@@ -613,7 +613,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         (function(markerTemp) {
             //构建信息窗体中显示的内容
             var info = [];
-            info.push("<div><b>" + markerInfoOne.monitor + "(实时水质)" + "</b>");
+            info.push("<div><b>" + markerInfoOne.monitor + "(实时值)" + "</b>");
             if (type == 'waterQuality') {
                 info.push("<div style=\"margin-top:10px; font-size:14px\"><table class=\"table table-bordered\">")
                 info.push("<tr><td>溶解氧</td><td><span class=\"label " + getLabelCss(getStatusDesc(markerInfoOne.index_o2, waterQualityO2Scan.scan, '溶解氧').status) + "\">" + markerInfoOne.index_o2 + "mg/L</span></td></tr>");
