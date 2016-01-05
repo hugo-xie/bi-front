@@ -215,7 +215,7 @@ $scope.openorclose='↓展开';
   
   	tabledata:
   	[
-	  {yearvalue:'时间', Htemperature:'最高气温(°C)',Ltemperature:'最低气温(°C)'},
+	  {yearvalue:'日期', Htemperature:'最高气温(°C)',Ltemperature:'最低气温(°C)'},
 	  {yearvalue:'1月9日', Htemperature:'6',Ltemperature:'0'},
 	  {yearvalue:'1月10日', Htemperature:'7',Ltemperature:'-1'},
 	  {yearvalue:'1月11日', Htemperature:'7',Ltemperature:'0'},
