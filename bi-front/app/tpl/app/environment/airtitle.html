@@ -219,13 +219,13 @@
             <div class="panel-body fc-panelbody">
              <!--第三个框左侧地图-->
                 <div class="col-md-8" >
-                    <div class="panel panel-default" style="border-color:lightgrey;border-style: solid;border-radius:1em;border-width: 1px;margin:1em;height:630px">
+                    <div class="panel panel-default" style="border-color:lightgrey;border-style: solid;border-width: 1px;margin:0.8em;height:630px">
                            <div id="map_canvas"></div>
                     </div>
                 </div>
             <!--第三个框右侧栏-->
                 <div class="col-md-4" style="border-left:1px solid lightgrey;padding:0">  
-                    <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
+                    <div style="padding:1em;font-size:16px;">
                         <div class="pull-left" class="col-md-2">
                           <span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
@@ -242,8 +242,8 @@
                         <span class="glyphicon  glyphicon-leaf m-r-xs" ng-if="istownairquality">
                             <span class="fc-button-font">未来24小时太仓城区2个空气监测点监测到空气质量有轻微问题</span>                        
                         </span>
-                        
-                        <div ng-show="mapTableStatus.airQuality">
+                    </div>
+                    <div ng-show="mapTableStatus.airQuality"style="margin-top:5px;">
                           <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
                               <tr>
                                   <th style="width:29%">监测点</th>
@@ -254,7 +254,7 @@
                               </tr>
                           </table>
                         </div>
-                        <div style="overflow: auto; overflow-x:hidden;height:180px" ng-show="mapTableStatus.airQuality">
+                        <div style="overflow: auto; overflow-x:hidden;height:180px;border-bottom:solid 1px lightgrey;" ng-show="mapTableStatus.airQuality">
                             <table class="table table-hover table-responsive" style="font-size:14px">
                                 <tr >
                                     <td style="width:29%">太仓市监测站</td>
@@ -287,10 +287,10 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div>
-                    </div>
+                         </div>
 
-                    <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
+
+                    <div style="padding:1em;font-size:16px;">
                         <div class="pull-left" class="col-md-2">
                           <span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"  style="color:#93e0ff"></i>
@@ -307,46 +307,41 @@
                         <span class="glyphicon glyphicon-cloud m-r-xs" ng-if="istownaircondition">
                             <span class="fc-button-font">太仓市未来一天天气状况</span>                        
                         </span>
-
-                        <div ng-show="mapTableStatus.airCondition">
+                    </div>
+                    <div ng-show="mapTableStatus.airCondition">
                             <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
                                 <tr>
-                                    <th style="width:28%">气象局</th>
-                                    <th style="width:13%">最高气温(℃)</th>
-                                    <th style="width:13%">最低气温(℃)</th>
-                                    <th style="width:13%">相对湿度(%)</th>
-                                    <th style="width:13%">风级</th>
-                                    <th style="width:20%">风向</th>
+                                    <th style="width:20%">气象局</th>
+                                    <th style="width:20%">天气状况</th>
+                                    <th style="width:20%">最高气温(℃)</th>
+                                    <th style="width:20%">最低气温(℃)</th>
+                                    <th style="width:20%">风级风向</th>
+
                                 </tr>
                             </table>
                         </div>
-                        <div style="overflow: auto; overflow-x:hidden;" ng-show="mapTableStatus.airCondition">
+                        <div style="overflow: auto; overflow-x:hidden;border-bottom:solid 1px lightgrey;" ng-show="mapTableStatus.airCondition">
                             <table class="table table-hover table-responsive" style="font-size:14px">
                                 <tr >
-                                    <td style="width:28%">太仓市气象局</td>
-                                    <td style="width:13%">
-                                        <span>7</span>
+                                    <td style="width:20%">太仓市气象局</td>
+                                    <td style="width:20%">
+                                        <span>多云</span>
                                     </td>
-                                    <td style="width:13%">
-                                        <span>2</span>
+                                    <td style="width:20%">
+                                        <span>8</span>
                                     </td>
-                                    <td style="width:13%">
-                                        <span>50</span>
-                                    </td>
-                                    <td style="width:13%">
-                                        <span>2</span>
+                                    <td style="width:20%">
+                                        <span>1</span>
                                     </td>
                                      <td style="width:20%">
-                                        <span>东南风</span>
+                                        <span>东南风2级</span>
                                     </td>
                                 </tr>
                             </table>
-
-                           <div style="height:50px"></div>
+                           <div style="height:100px"></div>
                         </div>
-                    </div>
                     
-                    <div style="padding:1em;font-size:16px;border-bottom:1px solid lightgrey">
+                    <div style="padding:1em;font-size:16px;">
                         <div class="pull-left" class="col-md-2">
                           <span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x text-info" style="color:#93e0ff"s></i>
