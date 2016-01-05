@@ -20,13 +20,16 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     enabled:false
                 },
                 title: {
-                    text: '废水排放总量'
+                    text: '废水排放总量',
+                    style: {
+                        fontWeight:'bold',
+                    }
                 },
                 subtitle: {
                     text: ''
                 },
                 xAxis: {
-                    categories: ['1月3日', '1月4日', '1月5日', '1月6日', '1月7日', '1月8日'],
+                    categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日', '1月6日'],
                     tickmarkPlacement: 'on',
                     title: {
                         enabled: false
@@ -100,15 +103,23 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     itemStyle:{
                     fontWeight:'normal'
                        }
-                }},
+                },
                 credits: {
                     enabled:false
                 },
                 title: {
-                    text: '溶解氧排放浓度'
+                    text: '溶解氧排放浓度',
+                    style: {
+                        fontWeight:'bold',
+                    }
                 },
                 subtitle: {
-                    text: ''
+                    text: '2016年1月7日9时',
+                    style: {
+                        fontWeight: 'normal',
+                        fontSize: 'larger',
+                        fontStyle: '宋体'
+                    }
                 },
                 xAxis: {
                     categories: [
@@ -117,7 +128,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
                         '其他污水处理厂'
-                    ]
+                    ],
                     
                 },
                 yAxis: {
@@ -140,6 +151,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         pointPadding: 0.2,
                         borderWidth: 0
                     }
+                }
                 },
                 series: [{
                     name: '溶解氧浓度',
@@ -160,15 +172,23 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     itemStyle:{
                     fontWeight:'normal'
                     }
-                }},
+                },
                 credits: {
                     enabled:false
                 },
                 title: {
-                    text: '氨氮排放浓度'
+                    text: '氨氮排放浓度',
+                    style: {
+                        fontWeight:'bold',
+                    }
                 },
                 subtitle: {
-                    text: ''
+                    text: '2016年1月7日9时',
+                    style: {
+                        fontWeight: 'normal',
+                        fontSize: 'larger',
+                        fontStyle: '宋体'
+                    }
                 },
                 xAxis: {
                     categories: [
@@ -198,6 +218,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         pointPadding: 0.2,
                         borderWidth: 0
                     }
+                }
                 },
                 series: [{
                     name: '氨氮浓度',
@@ -218,15 +239,23 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     itemStyle:{
                     fontWeight:'normal'
                     }
-                }},
+                },
                 credits: {
                     enabled:false
                 },
                 title: {
-                    text: '总磷排放浓度'
+                    text: '总磷排放浓度',
+                    style: {
+                        fontWeight:'bold',
+                    }
                 },
                 subtitle: {
-                    text: ''
+                    text: '2016年1月7日9时',
+                    style: {
+                        fontWeight: 'normal',
+                        fontSize: 'larger',
+                        fontStyle: '宋体'
+                    }
                 },
                 xAxis: {
                     categories: [
@@ -236,6 +265,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         '港城组团污水处理厂',
                         '其他污水处理厂'
                     ]
+                   
                 },
                 yAxis: {
                     min: 0,
@@ -256,7 +286,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         pointPadding: 0.2,
                         borderWidth: 0
                     }
-                },
+                }},
                 series: [{
                     name: '总磷浓度',
                     color: "#7cb5ec",
@@ -281,12 +311,20 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         fontWeight:'normal'
                        }
                 }
-                },
+                ,
                 title: {
-                    text: '高锰酸钾排放浓度'
+                    text: '高锰酸钾排放浓度',
+                    style: {
+                        fontWeight:'bold',
+                    }
                 },
                 subtitle: {
-                    text: ''
+                    text: '2016年1月7日9时',
+                      style: {
+                        fontWeight: 'normal',
+                        fontSize: 'larger',
+                        fontStyle: '宋体'
+                    }
                 },
                 xAxis: {
                     categories: [
@@ -316,6 +354,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         pointPadding: 0.2,
                         borderWidth: 0
                     }
+                }
                 },
                 series: [{
                     name: '高锰酸钾浓度',
@@ -336,13 +375,16 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 enabled:false
             },
             title: {
-                text: '废水排放总量'
+                text: '废水排放总量',
+                style: {
+                        fontWeight:'bold',
+                    }
             },
             subtitle: {
                 text: ''
             },
             xAxis: {
-                categories: ['1月3日', '1月4日', '1月5日', '1月6日', '1月7日', '1月8日'],
+                categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日', '1月6日'],
                 tickmarkPlacement: 'on',
                 title: {
                     enabled: false
