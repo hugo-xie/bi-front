@@ -5,8 +5,8 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
 
     //new地图对象
   	$scope.map = new AMap.Map('consumptionbyenterprise',{
-          zoom: 14,
-          center: [121.14,31.484511],
+          zoom: 12,
+          center: [121.127511,31.598285],
           resizeEnable: true,
       });
     //调节侧栏
@@ -19,58 +19,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
   	    $scope.map.addControl(toolBar);
   	    $scope.map.addControl(scale);
   	});
-    //设置地图标记点
-    var marker01 = new AMap.Marker({
-        icon : 'images/marker_sprite.png',
-        position: [121.118329,31.478157],
-        map:$scope.map,
-        clickable:true,
-    });
-
-    marker01.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(20, -2),
-        content: "舍弗勒(中国)有限公司",
-        clickable:true,
-    });
-
-    var marker02 = new AMap.Marker({
-        icon : 'images/marker_sprite.png',
-        position: [121.100277,31.603982],
-        map:$scope.map,
-        clickable:true,
-    });
-
-    marker02.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
-        offset: new AMap.Pixel(20, -2),
-        content: "太仓振辉化纤有限公司",
-        clickable:true,
-    });
-
-    //地图标记--企业数据详情
-    var marker01OnClick = function(){
-        $scope.enterprisechosen = 'enterprise01';
-        $scope.$apply(function(){
-          $scope.EnterpriseChart.title.text = $scope.enterprises.enterprise01.title;
-          $scope.EnterpriseChart.series[0].data = $scope.enterprises.enterprise01.powerdata;
-          $scope.EnterpriseChart.series[1].data = $scope.enterprises.enterprise01.gdpdata;  
-          $scope.totaldata.tabledata.gdprate = $scope.enterprises.enterprise01.gdpdata;
-          $scope.totaldata.tabledata.powerrate = $scope.enterprises.enterprise01.powerdata;
-        });
-    };
-    var marker03OnClick = function(){
-        $scope.enterprisechosen = 'enterprise03';
-        $scope.$apply(function(){
-          $scope.EnterpriseChart.title.text = $scope.enterprises.enterprise03.title;
-          $scope.EnterpriseChart.series[0].data = $scope.enterprises.enterprise03.powerdata;
-          $scope.EnterpriseChart.series[1].data = $scope.enterprises.enterprise03.gdpdata;
-          $scope.totaldata.tabledata.gdprate = $scope.enterprises.enterprise03.gdpdata;
-          $scope.totaldata.tabledata.powerrate = $scope.enterprises.enterprise03.powerdata;
-        });
-    };
-    //将上述函数添加到监听事件
- 
-    AMap.event.addListener(marker01, 'click', marker01OnClick);
-    AMap.event.addListener(marker02, 'click', marker03OnClick);
+    
 
      $scope.industriesdata = {
     total:{
@@ -818,47 +767,230 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
   $scope.enterpriselist = [
       {
           name : '太仓振辉化纤有限公司',
-          code : 1
+          code : 0,
+          position:[121.100277,31.603982],
       },
       {
           name : '申久化纤有限公司',
-          code : 2
+          code : 1,
+          position:[121.097839,31.69338],
       },
       {
           name : '太仓协鑫光伏科技有限公司',
-          code : 3
+          code : 2,
+          position:[121.19411,31.620342],
       },
       {
           name : '苏州达诺铸造有限公司',
-          code : 1
+          code : 3,
+          position:[121.182226,31.609841],
       },
       {
           name : '舍弗勒(中国)有限公司',
-          code : 2
+          code : 4,
+          position:[121.118329,31.478157],
       },
       {
           name : '太仓中化环保化工有限公司',
-          code : 3
+          code : 5,
+          position:[121.271566,31.58156],
       },
       {
           name : '江苏长乐纤维科技有限公司',
-          code : 1
+          code : 6,
+          position:[121.108497,31.68122],
       },
       {
           name : '太仓海螺水泥有限公司',
-          code : 2
+          code : 7,
+          position:[121.127511,31.598285],
       },
       {
           name : '江苏仓环铜业股份有限公司',
-          code : 3
+          code : 8,
+          position:[121.091417,31.443898],
       },
       {
           name : '奥特斯维能源(太仓)有限公司',
-          code : 3
+          code : 9,
+          position:[121.19704,31.622541],
       },
   ];
-  $scope.chooseEnterprise = function(){
-    $scope.map.setZoomAndCenter(16, [121.14,31.484511]);
-  }
+  //设置地图标记点
+    var marker0 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[0].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker0.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[0].name,
+        clickable:true,
+    });
+
+    var marker1 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[1].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker1.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[1].name,
+        clickable:true,
+    });
+
+    var marker2 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[2].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker2.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[2].name,
+        clickable:true,
+    });
+
+    var marker3 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[3].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker3.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[3].name,
+        clickable:true,
+    });
+
+    var marker4 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[4].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker4.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[4].name,
+        clickable:true,
+    });
+
+    var marker5 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[5].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker5.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[5].name,
+        clickable:true,
+    });
+
+    var marker6 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[6].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker6.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[6].name,
+        clickable:true,
+    });
+
+    var marker7 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[7].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker7.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[7].name,
+        clickable:true,
+    });
+
+    var marker8 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[8].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker8.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[8].name,
+        clickable:true,
+    });
+
+    var marker9 = new AMap.Marker({
+        icon : 'images/marker_sprite.png',
+        position: $scope.enterpriselist[9].position,
+        map:$scope.map,
+        clickable:true,
+    });
+
+    marker9.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, -2),
+        content: $scope.enterpriselist[9].name,
+        clickable:true,
+    });
+    //地图标记--企业数据详情
+    var marker0OnClick = function(){
+        
+    };
+    var marker1OnClick = function(){
+        
+    };
+    //将上述函数添加到监听事件
+ 
+    AMap.event.addListener(marker0, 'click', marker0OnClick);
+    AMap.event.addListener(marker1, 'click', marker1OnClick);
+    $scope.chooseEnterprise = function(param){
+      switch(param){
+        case 0:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[0].position);
+        };break;
+        case 1:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[1].position);
+        };break;
+        case 2:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[2].position);
+        };break;
+        case 3:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[3].position);
+        };break;
+        case 4:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[4].position);
+        };break;
+        case 5:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[5].position);
+        };break;
+        case 6:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[6].position);
+        };break;
+        case 7:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[7].position);
+        };break;
+        case 8:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[8].position);
+        };break;
+        case 9:{
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[9].position);
+        };break;
+      }
+
+    }
   	
 }]);
