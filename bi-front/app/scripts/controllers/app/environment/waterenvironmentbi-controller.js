@@ -110,6 +110,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         '港城组团污水处理厂',
                         '其他污水处理厂'
                     ]
+                    
                 },
                 yAxis: {
                     min: 0,
