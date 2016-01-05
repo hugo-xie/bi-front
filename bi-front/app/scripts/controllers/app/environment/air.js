@@ -64,6 +64,7 @@ $scope.openorclose='↓展开';
   $scope.openQuality1List = function(){
   	$scope.isQuality1open = !$scope.isQuality1open;
   };
+
   $scope.openmainpollution1List = function(){
   	$scope.ismainpollution1open = !$scope.ismainpollution1open;
   	$scope.isPM251open = false;
@@ -74,8 +75,14 @@ $scope.openorclose='↓展开';
   	$scope.isO31open = false;
   	$scope.isAQI1open=false;
   };
+  $scope.openorclose2='↓展开';
   $scope.openAQI1List = function(){
   	$scope.isAQI1open = !$scope.isAQI1open;
+  	if (!$scope.isAQI1open){
+  		$scope.openorclose2='↓展开';
+  	}else{
+  		$scope.openorclose2='↑关闭';
+  	} 	
   	$scope.isPM251open = false;
   	$scope.isPM101open = false;
   	$scope.isSO21open = false;
