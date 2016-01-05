@@ -234,7 +234,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污染源'
+                        '其他污水处理厂'
                     ]
                 },
                 yAxis: {
@@ -294,7 +294,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污染源'
+                        '其他污水处理厂'
                     ]
                 },
                 yAxis: {
@@ -399,7 +399,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 color:"#f8d940",
                 data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
             },{
-                name: '其他污染水处理厂',
+                name: '其他污水处理厂',
                 color:"#ffb143",
                 data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
             }]
