@@ -78,17 +78,17 @@
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
 			      	<td>GDP同比增长率(%)</td>
-			        <td ng-repeat="gdp in totaldata.gdprate">{{gdp}}</td>
+			        <td ng-repeat="gdp in totaldata.gdprate">{{gdp}}%</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
 			      	<td>工业用电量同比增长率(%)</td>
-			        <td ng-repeat="power in totaldata.powerrate">{{power}}</td>
+			        <td ng-repeat="power in totaldata.powerrate">{{power}}%</td>
 			      </tr>
 		    </table>
   		</div>
     </div>
 
-    <!--用电量增长率与行业产值增长率分析预测—————————————————————————————————总体视图———————————————————————————————————————————————————————————————————————————-->
+    <!--用电量增长率与行业产值增长率分析预测—————————————————————————————————第二图———————————————————————————————————————————————————————————————————————————-->
     <div class="wrapper bg-white container space-top" ng-controller="EconomyPowerConsumptionCtrl_Industries">
 	    <div class="row">
 	      <!--标题-->
@@ -207,25 +207,25 @@
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
 			      	<td>用电量增长率</td>
-			        <td>{{tempvalue.power[0]}}</td>
-			        <td>{{tempvalue.power[1]}}</td>
-			        <td>{{tempvalue.power[2]}}</td>
-			        <td>{{tempvalue.power[3]}}</td>
-			        <td>{{tempvalue.power[4]}}</td>
-			        <td>{{tempvalue.power[5]}}</td>
-			        <td>{{tempvalue.power[6]}}</td>
-			        <td>{{tempvalue.power[7]}}</td>
+			        <td>{{tempvalue.power[0]*100|number:0}}%</td>
+			        <td>{{tempvalue.power[1]*100|number:0}}%</td>
+			        <td>{{tempvalue.power[2]*100|number:0}}%</td>
+			        <td>{{tempvalue.power[3]*100|number:0}}%</td>
+			        <td>{{tempvalue.power[4]*100|number:0}}%</td>
+			        <td>{{tempvalue.power[5]*100|number:0}}%</td>
+			        <td>{{tempvalue.power[6]*100|number:0}}%</td>
+			        <td>{{tempvalue.power[7]*100|number:0}}%</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
 			      	<td>产值增长率</td>
-			        <td >{{tempvalue.gdp[0]}}</td>
-			        <td >{{tempvalue.gdp[1]}}</td>
-			        <td >{{tempvalue.gdp[2]}}</td>
-			        <td >{{tempvalue.gdp[3]}}</td>
-			        <td >{{tempvalue.gdp[4]}}</td>
-			        <td >{{tempvalue.gdp[5]}}</td>
-			        <td >{{tempvalue.gdp[6]}}</td>
-			        <td >{{tempvalue.gdp[7]}}</td>
+			        <td >{{tempvalue.gdp[0]*100|number:0}}%</td>
+			        <td >{{tempvalue.gdp[1]*100|number:0}}%</td>
+			        <td >{{tempvalue.gdp[2]*100|number:0}}%</td>
+			        <td >{{tempvalue.gdp[3]*100|number:0}}%</td>
+			        <td >{{tempvalue.gdp[4]*100|number:0}}%</td>
+			        <td >{{tempvalue.gdp[5]*100|number:0}}%</td>
+			        <td >{{tempvalue.gdp[6]*100|number:0}}%</td>
+			        <td >{{tempvalue.gdp[7]*100|number:0}}%</td>
 			      </tr>
 		    </table>
 	      </div>
@@ -279,7 +279,7 @@
 				        <td>{{temptable.year.power[6]}}</td>
 				      </tr>
 				      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-				      	<td>年份</td>
+				      	<td></td>
 				        <td>{{industriesdata.total.years[7]}}</td>
 				        <td>{{industriesdata.total.years[8]}}</td>
 				        <td>{{industriesdata.total.years[9]}}</td>
@@ -484,14 +484,14 @@
 	      		<div class="col-md-12 cgq_marginaround1em">
 	      			<button ng-click="showAverageEnterpriseTable()" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据列表</button>
 	      		</div>
-	      		<div class="col-md-12 cgq_marginaround1em">
+	      		<div class="col-md-12 cgq_marginaround1em" style="margin-top:0">
 	      			<button ui-sref="app.index.economy.powerconsumptionofenterprises({title:'各企业用电量与经济增长关联分析'})" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">查看企业详情</button>
 	      		</div>
 	      	</div>
 	      </div>
 	    </div>
     </div>
-    <div class="bg-white container padding0em" style="border-top:0" ng-if="totalshow">
+    <div class="bg-white container padding0em" style="border-top:0" ng-if="averageenterprisetableshow">
     	<div class="panel panel-default paddingmargin0em" >
 	    	<div class="panel-heading">数据详情</div>  
 		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
@@ -499,17 +499,14 @@
 			        <td ng-repeat="year in averageenterprisedata.tabledata">{{year.yearvalue}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="gdp in totaldata.tabledata">{{gdp.gdprate}}</td>
+			        <td ng-repeat="gdp in averageenterprisedata.tabledata">{{gdp.gdprate}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="power in totaldata.tabledata">{{power.powerrate}}</td>
+			        <td ng-repeat="power in averageenterprisedata.tabledata">{{power.powerrate}}</td>
 			      </tr>
 		    </table>
   		</div>
     </div>
-    
-    
-
 </div>
 
 

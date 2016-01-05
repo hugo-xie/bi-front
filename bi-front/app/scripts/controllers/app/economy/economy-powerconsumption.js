@@ -100,479 +100,6 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   };
 
   /*——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————*/
-  //
-  $scope.vocationdata = {
-    isshowchartvocation:true,
-    isshowsinglechartvocation:false,
-    isshowsinglechartvocationbyyear:false,
-    total:{
-        years:[
-            {
-                year:2014,
-
-            },
-            {
-                year:2015,
-                
-            },
-        ],
-    },
-    yearrange:[{year:'2015'},{year:'2014'}],
-    agriculture:{
-        title:'农、林、牧、渔业',
-        _2015:{
-            season:
-                {
-                    powerdata:[5.4, 6.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
-                },
-        },
-    },
-    industry:{
-        title:'工业',
-        _2015:{
-            season:
-                {
-                    powerdata:[3.4, 3.9, 1.5, 2.5],
-                    gdpdata:[6.3, 7.3, 3.2, 2.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
-                },
-        },
-    },
-    construction:{
-        title:'建筑业',
-        _2015:{
-            season:
-                {
-                    powerdata:[1.4, 4.29, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
-                },
-        },
-    },
-    traffic:{
-        title:'交通运输、仓储和邮政业',
-        _2015:{
-            season:
-                {
-                    powerdata:[1.4, 6.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[6.4, 5.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
-                },
-        },
-    },
-    computer:{
-        title:'信息传输、计算机服务和软件业',
-        _2015:{
-            season:
-                {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
-                },
-        },
-    },
-    retail:{
-        title:'批发和零售、住宿和餐饮业',
-        _2015:{
-            season:
-                {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[2.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
-                },
-        },
-    },
-    finance:{
-        title:'金融、房地产、商务及居民服务业',
-        _2015:{
-            season:
-                {
-                    powerdata:[5.4, 6.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[6.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
-                },
-        },
-    },
-    service:{
-        title:'公共事业及管理组织',
-        _2015:{
-            season:
-                {
-                    powerdata:[5.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
-                },
-        },
-        _2014:{
-            season:
-                {
-                    powerdata:[6.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
-                },
-        },
-    },
-  };
-  /*第二图各种切换函数*/
-
-  //切换到年图
-  $scope.changeToSingleVocationChartByyear = function(){
-    $scope.vocationdata.isshowchartvocation=false;
-    $scope.vocationdata.isshowsinglechartvocation=false;
-    $scope.vocationdata.isshowsinglechartvocationbyyear=true;
-  };
-
-  /*初始化*/
-  $scope.yearmark = '2015';
-  $scope.vocationmark = 1;
-  //第二图总图切换年份
-  $scope.changeTotalYear = function(param){
-    $scope.vocationdata.isshowchartvocation=true;
-    $scope.vocationdata.isshowsinglechartvocation=false;
-    $scope.vocationdata.isshowsinglechartvocationbyyear=false;
-    switch(param){
-        case 2014:
-            $scope.VocationChart.subtitle.text = $scope.vocationdata.totalshow._2014.year;
-            $scope.VocationChart.series[0].data = $scope.vocationdata.totalshow._2014.data.powerdata;
-            $scope.VocationChart.series[1].data = $scope.vocationdata.totalshow._2014.data.gdpdata;
-        break;
-        case 2015:
-            $scope.VocationChart.subtitle.text = $scope.vocationdata.totalshow._2015.year;
-            $scope.VocationChart.series[0].data = $scope.vocationdata.totalshow._2015.data.powerdata;
-            $scope.VocationChart.series[1].data = $scope.vocationdata.totalshow._2015.data.gdpdata;
-        break;
-    }
-  }
-  //按季度显示 并切换年份
-  $scope.changeVocationYear = function(param){
-    $scope.vocationdata.isshowchartvocation=false;
-    $scope.vocationdata.isshowsinglechartvocation=true;
-    $scope.vocationdata.isshowsinglechartvocationbyyear=false;
-
-    $scope.SingleVocationChart.subtitle.text = param+'年度';
-    $scope.yearmark = param;
-    switch($scope.vocationmark){
-        case 1:
-             switch($scope.yearmark){
-                case '2015':
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.agriculture.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.agriculture._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.agriculture._2015.season.gdpdata;
-                break;
-                case '2014':
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.agriculture.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.agriculture._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.agriculture._2014.season.gdpdata;
-                break;
-             }
-        break;
-        case 2:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.industry.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.industry._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.industry._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.industry.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.industry._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.industry._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 3:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.construction.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.construction._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.construction._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.construction.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.construction._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.construction._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 4:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.traffic.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.traffic._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.traffic._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.traffic.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.traffic._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.traffic._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 5:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.computer.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.computer._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.computer._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.computer.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.computer._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.computer._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 6:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.retail.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.retail._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.retail._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.retail.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.retail._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.retail._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 7:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.finance.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.finance._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.finance._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.finance.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.finance._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.finance._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 8:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.service.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.service._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.service._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.service.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.service._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.service._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-    }
-  }
-
-  //切换不同的行业
-  $scope.changeVocationType = function(param){
-    $scope.vocationdata.isshowchartvocation=false;
-    $scope.vocationdata.isshowsinglechartvocation=true;
-    $scope.vocationdata.isshowsinglechartvocationbyyear=false;
-
-    $scope.vocationmark = param;
-    switch($scope.vocationmark){
-        case 1:
-             switch($scope.yearmark){
-                case '2015':
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.agriculture.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.agriculture._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.agriculture._2015.season.gdpdata;
-                break;
-                case '2014':
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.agriculture.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.agriculture._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.agriculture._2014.season.gdpdata;
-                break;
-             }
-        break;
-        case 2:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.industry.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.industry._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.industry._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.industry.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.industry._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.industry._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 3:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.construction.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.construction._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.construction._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.construction.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.construction._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.construction._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 4:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.traffic.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.traffic._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.traffic._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.traffic.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.traffic._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.traffic._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 5:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.computer.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.computer._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.computer._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.computer.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.computer._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.computer._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 6:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.retail.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.retail._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.retail._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.retail.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.retail._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.retail._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 7:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.finance.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.finance._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.finance._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.finance.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.finance._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.finance._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-        case 8:{
-             switch($scope.yearmark){
-                case '2015':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.service.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.service._2015.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.service._2015.season.gdpdata;
-                };
-                break;
-                case '2014':{
-                    $scope.SingleVocationChart.title.text = $scope.vocationdata.service.title;
-                    $scope.SingleVocationChart.series[0].data = $scope.vocationdata.service._2014.season.powerdata;
-                    $scope.SingleVocationChart.series[1].data = $scope.vocationdata.service._2014.season.gdpdata;
-                };
-                break;
-             };             
-        };
-        break;
-    }
-  }
   $scope.AverageEnterpriseChartByYear={
          options:{
             chart: {
@@ -655,6 +182,8 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
     ]
   };
   //changeAverageEnterpriseChart
+  $scope.averageenterprisetableshow = false;
+
   $scope.changeAverageEnterpriseChart = function(param){
     $scope.AverageEnterpriseChartByYear.options.chart.type = param;
   };
@@ -681,63 +210,63 @@ app.controller('EconomyPowerConsumptionCtrl_Industries', ['$scope','$stateParams
         title:'各行业用电量增长率与产值增长率对比分析',
         _2018:{
             year:'2018',
-            gdpdata: [0.73, 0.30, 0.63, 0.21, 0.19,0.32,0.33,0.63],                                                                             
-            powerdata: [0.61, 0.43, 0.72, 0.35, 0.35,0.24,0.64,0.86],  
+            gdpdata: [0.073, 0.030, 0.063, 0.021, 0.019,0.032,0.033,0.063],                                                                             
+            powerdata: [0.061, 0.043, 0.072, 0.035, 0.035,0.024,0.064,0.086],  
         },
         _2017:{
             year:'2017',
-            gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65],                                                                             
-            powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87],  
+            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
+            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
         },
         _2016:{
             year:'2016',
-            gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45],                                                                             
-            powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57],
+            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
+            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
         },
         _2015:{
             year:'2015',
-            gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65],                                                                             
-            powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87],  
+            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
+            powerdata: [0.063, 0.041, 0.07, 0.034, 0.032,0.023,0.065,0.087],  
         },
         _2014:{
             year:'2014',
-            gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45],                                                                             
-            powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57],
+            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
+            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
         },
         _2013:{
             year:'2013',
-            gdpdata: [0.73, 0.30, 0.63, 0.21, 0.19,0.32,0.33,0.63],                                                                             
-            powerdata: [0.61, 0.43, 0.72, 0.35, 0.35,0.24,0.64,0.86],  
+            gdpdata: [0.073, 0.030, 0.063, 0.021, 0.019,0.032,0.033,0.063],                                                                             
+            powerdata: [0.061, 0.043, 0.072, 0.035, 0.035,0.024,0.064,0.086],  
         },
         _2012:{
             year:'2012',
-            gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65],                                                                             
-            powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87],  
+            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
+            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
         },
         _2011:{
             year:'2011',
-            gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45],                                                                             
-            powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57],
+            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
+            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
         },
         _2010:{
             year:'2010',
-            gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65],                                                                             
-            powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87],  
+            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
+            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
         },
         _2009:{
             year:'2009',
-            gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45],                                                                             
-            powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57],
+            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
+            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
         },
         _2008:{
             year:'2008',
-            gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65],                                                                             
-            powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87],  
+            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
+            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
         },
         _2007:{
             year:'2007',
-            gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45],                                                                             
-            powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57],
+            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
+            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
         },
     };
 
@@ -1135,6 +664,27 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
         },
+        _2018:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2017:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2016:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
         _2015:{
             season:
                 {
@@ -1149,12 +699,89 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
                     gdpdata:[3.3, 5.3, 3.2, 1.7],
                 },
         },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2012:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2010:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2008:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 7.5, 7.5],
+                    gdpdata:[6.3, 6.3, 7.2, 7.7],
+                },
+        },
+        _2006:{
+            season:
+                {
+                    powerdata:[5.4, 7.9, 5.5, 6.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
     },
     industry:{
         title:'工业',
         yeardata:{
           gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65,0.76, 0.31, 0.65, 0.23, 0.2],                                                                             
           powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87,0.63, 0.41, 0.70, 0.34, 0.32],
+        },
+        _2018:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2017:{
+            season:
+                {
+                    powerdata:[3.4, 3.9, 1.5, 2.5],
+                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                },
+        },
+        _2016:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
         },
         _2015:{
             season:
@@ -1170,6 +797,62 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
                     gdpdata:[4.3, 6.3, 4.2, 2.7],
                 },
         },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2012:{
+            season:
+                {
+                    powerdata:[3.4, 3.9, 1.5, 2.5],
+                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2010:{
+            season:
+                {
+                    powerdata:[3.4, 3.9, 1.5, 2.5],
+                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2008:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[3.4, 3.9, 1.5, 2.5],
+                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                },
+        },
+        _2006:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
     },
     construction:{
         title:'建筑业',
@@ -1177,18 +860,95 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
         },
+        _2018:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2017:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2016:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
         _2015:{
             season:
                 {
-                    powerdata:[1.4, 4.29, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
                 },
         },
         _2014:{
             season:
                 {
                     powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2012:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2010:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2008:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2006:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
                 },
         },
     },
@@ -1197,7 +957,7 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
         yeardata:{
           gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65,0.76, 0.31, 0.65, 0.23, 0.2],                                                                             
           powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87,0.63, 0.41, 0.70, 0.34, 0.32], 
-          //年数据应该是有季度数据加起来得到的
+          //年数据应该是有季度数据按公式计算得到的
         },
         _2018:{
             season:
@@ -1304,18 +1064,95 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
         },
-        _2015:{
+        _2018:{
             season:
                 {
                     powerdata:[5.4, 4.9, 3.5, 5.5],
                     gdpdata:[4.3, 6.3, 3.2, 4.7],
                 },
         },
-        _2014:{
+        _2017:{
             season:
                 {
                     powerdata:[6.4, 7.9, 6.5, 5.5],
                     gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2016:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2015:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2014:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2012:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2010:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2008:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2006:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
                 },
         },
     },
@@ -1324,6 +1161,27 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
         yeardata:{
           gdpdata: [0.76, 0.31, 0.65, 0.23, 0.2,0.34,0.32,0.65,0.76, 0.31, 0.65, 0.23, 0.2],                                                                             
           powerdata: [0.63, 0.41, 0.70, 0.34, 0.32,0.23,0.65,0.87,0.63, 0.41, 0.70, 0.34, 0.32], 
+        },
+        _2018:{
+            season:
+                {
+                    powerdata:[5.4, 6.9, 3.5, 3.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2017:{
+            season:
+                {
+                    powerdata:[5.4, 6.9, 3.5, 3.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2016:{
+            season:
+                {
+                    powerdata:[2.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
         },
         _2015:{
             season:
@@ -1339,6 +1197,62 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
                     gdpdata:[4.3, 6.3, 4.2, 2.7],
                 },
         },
+        _2013:{
+            season:
+                {
+                    powerdata:[5.4, 6.9, 3.5, 3.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2012:{
+            season:
+                {
+                    powerdata:[5.4, 6.9, 3.5, 3.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[2.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2010:{
+            season:
+                {
+                    powerdata:[5.4, 6.9, 3.5, 3.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[2.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2008:{
+            season:
+                {
+                    powerdata:[2.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[5.4, 6.9, 3.5, 3.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2006:{
+            season:
+                {
+                    powerdata:[2.4, 7.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
     },
     finance:{
         title:'金融房地产、商务及居民服务业',
@@ -1346,18 +1260,95 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
           gdpdata: [0.73, 0.30, 0.63, 0.21, 0.19,0.32,0.33,0.63,0.73, 0.30, 0.63, 0.21, 0.19],                                                                             
           powerdata: [0.61, 0.43, 0.72, 0.35, 0.35,0.24,0.64,0.86,0.61, 0.43, 0.72, 0.35, 0.35],
         },
+        _2018:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2017:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2016:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
         _2015:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
                 },
         },
         _2014:{
             season:
                 {
-                    powerdata:[6.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2012:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2010:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2008:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2006:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
                 },
         },
     },
@@ -1367,18 +1358,95 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
           gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
           powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
         },
-        _2015:{
+        _2018:{
             season:
                 {
-                    powerdata:[5.4, 7.9, 3.5, 5.5],
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
                     gdpdata:[4.3, 6.3, 3.2, 4.7],
                 },
         },
-        _2014:{
+        _2017:{
             season:
                 {
-                    powerdata:[6.4, 4.9, 3.5, 5.5],
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
                     gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2016:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2015:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2014:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2012:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2010:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2008:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2006:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
                 },
         },
     },
@@ -1418,70 +1486,1944 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
     $scope.isshow.isShowYearTable = !$scope.isshow.isShowYearTable;
   }
   $scope.changeYear = function(param){
-      switch(param){
-        case 6:{
-            $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2006.season.powerdata;
-            $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2006.season.gdpdata;
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[0];
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[1];
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[2];
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[3];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2006.season.powerdata[0];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2006.season.powerdata[1];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2006.season.powerdata[2];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2006.season.powerdata[3];
-            $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2006.season.gdpdata;
-            $scope.temptable.season.power = $scope.industriesdata.agriculture._2006.season.powerdata;
-        };break;
-        case 7:{
-            $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2007.season.powerdata;
-            $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2007.season.gdpdata;
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[0];
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[1];
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[2];
-            $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[3];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2007.season.powerdata[0];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2007.season.powerdata[1];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2007.season.powerdata[2];
-            $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2007.season.powerdata[3];
-            $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2007.season.gdpdata;
-            $scope.temptable.season.power = $scope.industriesdata.agriculture._2007.season.powerdata;
-        };break;
-        case 8:{
-          
-        };break;
-        case 9:{
-          
-        };break;
-        case 10:{
-          
-        };break;
-        case 11:{
-          
-        };break;
-        case 12:{
-          
-        };break;
-        case 13:{
-          
-        };break;
-        case 14:{
-          
-        };break;
-        case 15:{
-          
-        };break;
-        case 16:{
-          
-        };break;
-        case 17:{
-          
-        };break;
-        case 18:{
-          
-        };break;
-      };
-    
+    switch($scope.industrymark){
+      case 0:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.agriculture._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.agriculture._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.agriculture._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.agriculture._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.agriculture._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.agriculture._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.agriculture._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.agriculture._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+      case 1:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.industry._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.industry._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.industry._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.industry._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.industry._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.industry._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.industry._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.industry._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+      case 2:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.construction._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.construction._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.construction._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.construction._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.construction._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.construction._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.construction._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.construction._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+      case 3:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.traffic._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.traffic._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.traffic._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.traffic._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.traffic._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.traffic._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.traffic._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.traffic._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+      case 4:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.computer._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.computer._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.computer._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.computer._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.computer._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.computer._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.computer._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.computer._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+      case 5:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.retail._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.retail._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.retail._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.retail._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.retail._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.retail._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.retail._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.retail._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+      case 6:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.finance._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.finance._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.finance._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.finance._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.finance._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.finance._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.finance._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.finance._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+      case 7:{
+        switch(param){
+          case 6:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2006.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2006.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2006.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2006.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2006.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2006.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2006.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2006.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2006.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2006.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2006.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2006.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2006年度';
+              $scope.SingleVocationChart.subtitle.text = '2006年度';
+              $scope.temptable.selectedyear = '2006';
+          };break;
+          case 7:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2007.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2007.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2007.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2007.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2007.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2007.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2007.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2007.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2007.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2007.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2007.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2007.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2007年度';
+              $scope.SingleVocationChart.subtitle.text = '2007年度';
+              $scope.temptable.selectedyear = '2007';
+          };break;
+          case 8:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2008.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2008.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2008.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2008.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2008.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2008.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2008.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2008.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2008.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2008.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2008.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2008.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2008年度';
+              $scope.SingleVocationChart.subtitle.text = '2008年度';
+              $scope.temptable.selectedyear = '2008';
+          };break;
+          case 9:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2009.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2009.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2009.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2009.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2009.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2009.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2009.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2009.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2009.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2009.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2009.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2009.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2009年度';
+              $scope.SingleVocationChart.subtitle.text = '2009年度';
+              $scope.temptable.selectedyear = '2009';
+            
+          };break;
+          case 10:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2010.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2010.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2010.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2010.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2010.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2010.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2010.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2010.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2010.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2010.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2010.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2010.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2010年度';
+              $scope.SingleVocationChart.subtitle.text = '2010年度';
+              $scope.temptable.selectedyear = '2010';
+            
+          };break;
+          case 11:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2011.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2011.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2011.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2011.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2011.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2011.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2011.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2011.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2011.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2011.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2011.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2011.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2011年度';
+              $scope.SingleVocationChart.subtitle.text = '2011年度';
+              $scope.temptable.selectedyear = '2011';
+          };break;
+          case 12:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2012.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2012.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2012.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2012.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2012.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2012.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2012.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2012.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2012.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2012.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2012.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2012.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2012年度';
+              $scope.SingleVocationChart.subtitle.text = '2012年度';
+              $scope.temptable.selectedyear = '2012';
+            
+          };break;
+          case 13:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2013.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2013.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2013.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2013.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2013.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2013.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2013.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2013.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2013.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2013.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2013.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2013.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2013年度';
+              $scope.SingleVocationChart.subtitle.text = '2013年度';
+              $scope.temptable.selectedyear = '2013';
+            
+          };break;
+          case 14:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2014.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2014.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2014.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2014.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2014.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2014.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2014.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2014.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2014.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2014.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2014.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2014.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2014年度';
+              $scope.SingleVocationChart.subtitle.text = '2014年度';
+              $scope.temptable.selectedyear = '2014';
+          };break;
+          case 15:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2015.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2015.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2015.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2015.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2015.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2015.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2015.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2015.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2015.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2015.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2015.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2015.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2015年度';
+              $scope.SingleVocationChart.subtitle.text = '2015年度';
+              $scope.temptable.selectedyear = '2015';
+          };break;
+          case 16:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2016.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2016.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2016.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2016.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2016.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2016.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2016.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2016.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2016.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2016.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2016.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2016.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2016年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2016年度 预测值';
+              $scope.temptable.selectedyear = '2016';
+          };break;
+          case 17:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2017.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2017.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2017.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2017.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2017.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2017.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2017.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2017.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2017.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2017.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2017.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2017.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2017年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2017年度 预测值';
+              $scope.temptable.selectedyear = '2017';
+          };break;
+          case 18:{
+              $scope.SingleVocationChart.series[0].data = $scope.industriesdata.service._2018.season.powerdata;
+              $scope.SingleVocationChart.series[1].data = $scope.industriesdata.service._2018.season.gdpdata;
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2018.season.gdpdata[0];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2018.season.gdpdata[1];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2018.season.gdpdata[2];
+              $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2018.season.gdpdata[3];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata.service._2018.season.powerdata[0];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata.service._2018.season.powerdata[1];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata.service._2018.season.powerdata[2];
+              $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata.service._2018.season.powerdata[3];
+              $scope.temptable.season.gdp = $scope.industriesdata.service._2018.season.gdpdata;
+              $scope.temptable.season.power = $scope.industriesdata.service._2018.season.powerdata;
+              $scope.IndustryPowerChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.IndustryGdpChartBySeasonPie.subtitle.text = '2018年度 预测值';
+              $scope.SingleVocationChart.subtitle.text = '2018年度 预测值';
+              $scope.temptable.selectedyear = '2018';
+          };break;
+        }
+      }break;
+    }   
   }
   $scope.changeIndustry = function(param){
     switch(param){
@@ -1677,11 +3619,6 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
         $scope.temptable.selectedindustry = $scope.industriesdata.service.title;
         $scope.industrymark = param;
       };break;
-    }
-  }
-  $scope.changeYear = function(param){
-    switch(param){
-
     }
   }
   /*上———第一图*/
