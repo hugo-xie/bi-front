@@ -413,7 +413,7 @@ $scope.btn_click3=function(btn){
 };
 $scope.change3=function(btn){
    if(btn.name===2020){
-    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2020年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2020年产业产值比重分析预测";
     $scope.populationPie.series=[{
@@ -435,7 +435,7 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2025){
-    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2025年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2025年产业产值比重分析预测";
     $scope.populationPie.series=[{
@@ -457,7 +457,7 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2030){
-    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2030年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2030年产业产值比重分析预测";
     $scope.populationPie.series=[{
@@ -479,7 +479,7 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2040){
-    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2040年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2040年产业产值比重分析预测";
     $scope.populationPie.series=[{
@@ -501,7 +501,7 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2035){
-    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为27%、35%和38%，产值比重分别是6%、34%和60%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为27%、35%和38%，产值比重分别是6%、34%和60%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2035年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2035年产业产值比重分析预测";
     $scope.populationPie.series=[{
@@ -523,7 +523,7 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2045){
-    document.getElementById("b").innerHTML="结合两者的平均比重，即第一、二、三产业就业人口比重分别为17%、40%和43%，产值比重分别是4%、30%和66%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为17%、40%和43%，产值比重分别是4%、30%和66%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2045年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2045年产业产值比重分析预测";
     $scope.populationPie.series=[{
