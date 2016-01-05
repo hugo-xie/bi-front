@@ -8,7 +8,7 @@ angular.module('nevermore')
 
       // config
       $scope.app = {
-        name: 'Administrator',
+        name: 'system',
         version: '1.0.0',
         // for chart colors
         color: {

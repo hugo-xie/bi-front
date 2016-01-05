@@ -221,7 +221,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: [6.4, 7.2, 7.5, 6.7, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2, 7.7]
+            data: [6.4, 7.2, 7.5, 7.1, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2]
         }]   
   };
 
@@ -318,7 +318,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: [6.4, 7.2, 7.5, 6.7, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2, 7.7]
+            data: [7.4, 7.2, 7.5, 7.4, 7.3, 7.5, 7.4, 7.4, 7.1, 7.3, 7.2, 7.1,7.2]
         }]   
   };
 
