@@ -817,6 +817,202 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
                 },
         },
     },
+    _8:{
+        title:'江苏仓环铜业股份有限公司',
+        yeardata:{
+          gdpdata: [0.73, 0.30, 0.63, 0.21, 0.19,0.32,0.33,0.63,0.73, 0.30, 0.63, 0.21, 0.19],                                                                             
+          powerdata: [0.61, 0.43, 0.72, 0.35, 0.35,0.24,0.64,0.86,0.61, 0.43, 0.72, 0.35, 0.35],
+        },
+        _2018:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2017:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2016:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2015:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2014:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2012:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2010:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2008:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[6.4, 6.9, 6.5, 7.5],
+                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                },
+        },
+        _2006:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 3.5, 5.5],
+                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                },
+        },
+    },
+    _9:{
+        title:'奥特斯维能源(太仓)有限公司',
+        yeardata:{
+          gdpdata: [0.66, 0.41, 0.55, 0.33, 0.17,0.37,0.35,0.45,0.66, 0.41, 0.55, 0.33, 0.17],                                                                             
+          powerdata: [0.53, 0.47, 0.50, 0.34, 0.22,0.43,0.45,0.57,0.53, 0.47, 0.50, 0.34, 0.22],
+        },
+        _2018:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2017:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2016:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2015:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2014:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2013:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2012:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2011:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2010:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2009:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2008:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+        _2007:{
+            season:
+                {
+                    powerdata:[6.4, 7.9, 6.5, 5.5],
+                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                },
+        },
+         _2006:{
+            season:
+                {
+                    powerdata:[5.4, 4.9, 3.5, 5.5],
+                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                },
+        },
+    },
   };
   $scope.temptable = {
     selectedyear:'2015',
@@ -2986,6 +3182,54 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
         $scope.temptable.selectedindustry = $scope.industriesdata.service.title;
         $scope.industrymark = param;
       };break;
+      case 8:{
+        $scope.SingleVocationChartByYear.title.text = $scope.industriesdata._8.title;
+        $scope.SingleVocationChartByYear.series[0].data = $scope.industriesdata._8.yeardata.powerdata;
+        $scope.SingleVocationChartByYear.series[1].data = $scope.industriesdata._8.yeardata.gdpdata;
+        $scope.SingleVocationChart.title.text = $scope.industriesdata._8.title;
+        $scope.SingleVocationChart.series[0].data = $scope.industriesdata._8._2015.season.powerdata;
+        $scope.SingleVocationChart.series[1].data = $scope.industriesdata._8._2015.season.gdpdata;
+        $scope.IndustryGdpChartBySeasonPie.title.text = $scope.industriesdata._8.title+'产值同比增速对比';
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata._8._2015.season.gdpdata[0];
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata._8._2015.season.gdpdata[1];
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata._8._2015.season.gdpdata[2];
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata._8._2015.season.gdpdata[3];
+        $scope.IndustryPowerChartBySeasonPie.title.text = $scope.industriesdata._8.title+'用电量同比增速对比';
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata._8._2015.season.powerdata[0];
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata._8._2015.season.powerdata[1];
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata._8._2015.season.powerdata[2];
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata._8._2015.season.powerdata[3];
+        $scope.temptable.year.gdp = $scope.industriesdata._8.yeardata.gdpdata;
+        $scope.temptable.year.power = $scope.industriesdata._8.yeardata.powerdata;
+        $scope.temptable.season.gdp = $scope.industriesdata._8._2015.season.gdpdata;
+        $scope.temptable.season.power = $scope.industriesdata._8._2015.season.powerdata;
+        $scope.temptable.selectedindustry = $scope.industriesdata._8.title;
+        $scope.industrymark = param;
+      };break;
+      case 9:{
+        $scope.SingleVocationChartByYear.title.text = $scope.industriesdata._9.title;
+        $scope.SingleVocationChartByYear.series[0].data = $scope.industriesdata._9.yeardata.powerdata;
+        $scope.SingleVocationChartByYear.series[1].data = $scope.industriesdata._9.yeardata.gdpdata;
+        $scope.SingleVocationChart.title.text = $scope.industriesdata._9.title;
+        $scope.SingleVocationChart.series[0].data = $scope.industriesdata._9._2015.season.powerdata;
+        $scope.SingleVocationChart.series[1].data = $scope.industriesdata._9._2015.season.gdpdata;
+        $scope.IndustryGdpChartBySeasonPie.title.text = $scope.industriesdata._9.title+'产值同比增速对比';
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata._9._2015.season.gdpdata[0];
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata._9._2015.season.gdpdata[1];
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata._9._2015.season.gdpdata[2];
+        $scope.IndustryGdpChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata._9._2015.season.gdpdata[3];
+        $scope.IndustryPowerChartBySeasonPie.title.text = $scope.industriesdata._9.title+'用电量同比增速对比';
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[0][1] = $scope.industriesdata._9._2015.season.powerdata[0];
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[1][1] = $scope.industriesdata._9._2015.season.powerdata[1];
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[2][1] = $scope.industriesdata._9._2015.season.powerdata[2];
+        $scope.IndustryPowerChartBySeasonPie.series[0].data[3][1] = $scope.industriesdata._9._2015.season.powerdata[3];
+        $scope.temptable.year.gdp = $scope.industriesdata._9.yeardata.gdpdata;
+        $scope.temptable.year.power = $scope.industriesdata._9.yeardata.powerdata;
+        $scope.temptable.season.gdp = $scope.industriesdata._9._2015.season.gdpdata;
+        $scope.temptable.season.power = $scope.industriesdata._9._2015.season.powerdata;
+        $scope.temptable.selectedindustry = $scope.industriesdata._9.title;
+        $scope.industrymark = param;
+      };break;
     }
   }
   /*上———第一图*/
@@ -3355,15 +3599,77 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
     });
     //地图标记--企业数据详情
     var marker0OnClick = function(){
-        
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[0].position);
+          $scope.changeIndustry(0);
+        });
     };
     var marker1OnClick = function(){
-        
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[1].position);
+          $scope.changeIndustry(1);
+        });
+    };
+    var marker2OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[2].position);
+          $scope.changeIndustry(2);
+        });
+    };
+    var marker3OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[3].position);
+          $scope.changeIndustry(3);
+        });
+    };
+    var marker4OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[4].position);
+          $scope.changeIndustry(4);
+        });
+    };
+    var marker5OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[5].position);
+          $scope.changeIndustry(5);
+        });
+    };
+    var marker6OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[6].position);
+          $scope.changeIndustry(6);
+        });
+    };
+    var marker7OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[7].position);
+          $scope.changeIndustry(7);
+        });
+    };
+    var marker8OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[8].position);
+          $scope.changeIndustry(8);
+        });
+    };
+    var marker9OnClick = function(){
+        $scope.$apply(function(){
+          $scope.map.setZoomAndCenter(16, $scope.enterpriselist[9].position);
+          $scope.changeIndustry(9);
+        });
     };
     //将上述函数添加到监听事件
  
     AMap.event.addListener(marker0, 'click', marker0OnClick);
     AMap.event.addListener(marker1, 'click', marker1OnClick);
+    AMap.event.addListener(marker2, 'click', marker2OnClick);
+    AMap.event.addListener(marker3, 'click', marker3OnClick);
+    AMap.event.addListener(marker4, 'click', marker4OnClick);
+    AMap.event.addListener(marker5, 'click', marker5OnClick);
+    AMap.event.addListener(marker6, 'click', marker6OnClick);
+    AMap.event.addListener(marker7, 'click', marker7OnClick);
+    AMap.event.addListener(marker8, 'click', marker8OnClick);
+    AMap.event.addListener(marker9, 'click', marker9OnClick);
     $scope.chooseEnterprise = function(param){
       switch(param){
         case 0:{
