@@ -30,7 +30,7 @@
                                         <span class="fc-font-title" style="font-weight:normal;font-size:100%">明日天气</span> 
                                         <i class="fa text-success pull-right text-xs m-t-sm"></i>
                                       </div>
-                                      <small class="text-muted">2016年1月8日</small>
+                                      <small class="text-muted">2016年1月9日</small>
                                     </div>
                                   </div>
                                 </div>
@@ -46,12 +46,12 @@
                                     &nbsp;&nbsp;最高气温
                                   </a>
                                   <a class="list-group-item" href="">
-                                    <span class="badge bg-info" style="width: 15%; background-color: #27c24c">1°C</span>
+                                    <span class="badge bg-info" style="width: 15%; background-color: #27c24c">2°C</span>
                                     <i class="icon ion-thermometer" style="color: #24a8dd;margin-left:5px;"></i> 
                                     <span>&nbsp;&nbsp;最低气温</span> 
                                   </a>
                                   <a class="list-group-item" href="">
-                                    <span class="badge bg-light">北风3级</span>
+                                    <span class="badge bg-light">东风3~4级</span>
                                     <i class="icon ion-cloud" style="color: #24a8dd"></i> 
                                     &nbsp;风向风级
                                   </a>
@@ -66,7 +66,7 @@
                         </div>
                         <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0">&nbsp;一句话解读</h3>
                         <div class="col-md-12" style="margin-bottom:1em">
-                            <span class="fc-font-content" style="font-size:105%;font-weight:500">太仓市明日天气多云，温差较小。未来七天气温相对稳定。</span>
+                            <span class="fc-font-content" style="font-size:105%;font-weight:500;margin-left:2em;">太仓市明日天气多云，温差较小。未来七天气温相对稳定。</span>
                         </div>
                         <br>
                         <button ng-click="showTotalTable()" class="btn m-b-xs btn-primary pull-left" style="margin-left:0;font-weight:bold">详细数据列表</button>
@@ -112,14 +112,14 @@
                 <div class="row">
                     <!--echart-->
                     <div class="col-md-8 chart-panel" style="padding:1em 1em 1em 4em;border-right:0">
-                        <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:535px"></highchart>
+                        <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:660px"></highchart>
                     </div>
                     <!--右侧栏-->
                     <div class="col-md-4" style="padding:1em 1.8em 1em 1em;border-left:1px solid lightgrey;">
                       <div class="panel b-a">
                         <div class="panel-heading text-center bg-info no-border">
                           <h4 class="text-u-c m-b-none" style="font-size:20px;">实时空气质量状况</h4>
-                          <span style="font-size:65%">当前时间:1月7日9时</span>
+                          <span style="font-size:65%">当前时间:1月8日9时</span>
                           <h2 class="m-t-none">
                             <span class="text-2x text-lt">118</span>
                             <span class="text-xs" > 轻度污染</span>
@@ -169,7 +169,7 @@
                               <tbody>
                                 <tr>                    
                                   <td>
-                                    <div ng-init="data1=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'bar', height:19, barWidth:4, barSpacing:2, barColor:'#27c24c'}" class="sparkline inline">7日夜间</div>
+                                    <div class="sparkline inline">7日夜间</div>
                                   </td>
                                   <td>轻度污染(118)</td>
                                   <td style="color:#f05050">
@@ -179,7 +179,7 @@
 
                                 <tr>
                                   <td>
-                                    <div ng-init="data2=[ 60,30,10 ]" ui-jq="sparkline" ui-options="[60,30,10], {type:'pie', height:19, sliceColors:['#23b7e5','#fff','#fad733']}" class="sparkline inline">8日上午</div>
+                                    <div class="sparkline inline">8日上午</div>
                                   </td>
                                   <td>良(63)</td>
                                   <td style="color:#f05050">
@@ -189,7 +189,7 @@
 
                                 <tr>                    
                                   <td>
-                                    <div ng-init="data3=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="[16,15,15,14,17,18,16,15,16], {type:'line', height:19, width:60, lineColor:'#7266ba', fillColor:'#fff'}" class="sparkline inline">8日下午</div>
+                                    <div class="sparkline inline">8日下午</div>
                                   </td>
                                   <td>良(85)</td>
                                   <td style="color:#f05050">
@@ -199,6 +199,16 @@
                               </tbody>
                             </table>
                           </div>
+                        </div>
+                          <div class="pull-left" class="col-md-2">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                          </span>
+                        </div>
+                        <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0">&nbsp;一句话解读</h3>
+                        <div class="col-md-12" style="margin-bottom:1em">
+                            <span class="fc-font-content" style="font-size:105%;font-weight:500;margin-left:2em;">空气质量预测采用混沌遗传神经网络模型。</span>
                         </div>
                     </div>
                 </div>

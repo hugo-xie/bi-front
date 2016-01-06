@@ -213,13 +213,13 @@ $scope.openorclose='↓展开';
   	tabledata:
   	[
 	  {yearvalue:'日期',weather:'天气状况' ,Htemperature:'最高气温(°C)',Ltemperature:'最低气温(°C)',wind:'风向风级'},
-	  {yearvalue:'1月8日',weather:'多云',Htemperature:'8',Ltemperature:'1',wind:'北风3级'},
-	  {yearvalue:'1月9日',weather:'晴转多云', Htemperature:'9',Ltemperature:'3',wind:'西南风3级'},
-	  {yearvalue:'1月10日', weather:'阴',Htemperature:'10',Ltemperature:'5',wind:'东风3级'},
-	  {yearvalue:'1月11日', weather:'阴转多云',Htemperature:'12',Ltemperature:'-3',wind:'东北风3级'},
-	  {yearvalue:'1月12日', weather:'多云转晴',Htemperature:'8',Ltemperature:'1',wind:'北风转西风3级'},
-	  {yearvalue:'1月13日', weather:'晴转多云',Htemperature:'8',Ltemperature:'0',wind:'西北风3级'},
-	  {yearvalue:'1月14日', weather:'多云',Htemperature:'8',Ltemperature:'1',wind:'东风3~4级'}
+	  {yearvalue:'1月9日',weather:'多云',Htemperature:'8',Ltemperature:'2',wind:'东风3~4级'},
+	  {yearvalue:'1月10日',weather:'小雨', Htemperature:'9',Ltemperature:'5',wind:'东风3~4级'},
+	  {yearvalue:'1月11日', weather:'中雨',Htemperature:'10',Ltemperature:'5',wind:'东北风4~5级'},
+	  {yearvalue:'1月12日', weather:'小雨转多云',Htemperature:'9',Ltemperature:'8',wind:'西风3级'},
+	  {yearvalue:'1月13日', weather:'多云',Htemperature:'6',Ltemperature:'-1',wind:'西北风3~4级'},
+	  {yearvalue:'1月14日', weather:'多云',Htemperature:'6',Ltemperature:'-1',wind:'南风3级'},
+	  {yearvalue:'1月15日', weather:'多云',Htemperature:'7',Ltemperature:'0',wind:'西南风转西风3级'}
   	]
   };
 
@@ -669,7 +669,7 @@ $scope.aqilinechart={
             type: 'column',
             name: '实际AQI值',
             color:"#95ceff",
-            data: [127, 157, 183, 188, 50,100,80]
+            data: [127, 157, 183, 188, 56,100,80]
         },  {
             type: 'spline',
             name: '预测AQI值',
@@ -2041,7 +2041,7 @@ $scope.aqilinechart={
             x:20
         },
         xAxis: {
-            categories: ['1月8日', '1月9日', '1月10日', '1月11日', '1月12日', '1月13日','1月14日']
+            categories: ['1月9日', '1月10日', '1月11日', '1月12日', '1月13日', '1月14日','1月15日']
         },
         yAxis: {
             title: {
@@ -2064,10 +2064,10 @@ $scope.aqilinechart={
         },
         series: [{
         	name: "最高气温",
-            data: [8, 9, 10, 12, 8, 8, 8]
+            data: [8, 9, 10, 9, 6, 6, 7]
         },  {
             name: '最低气温',
-            data: [1, 3, 5, -3, 1, 0, 1]
+            data: [2, 5, 5, 8, -1, -1, 0]
         }]
     };
 
