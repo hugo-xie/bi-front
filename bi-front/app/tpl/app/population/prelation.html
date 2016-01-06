@@ -43,14 +43,16 @@
                      <p class="handler-title">劳动力人口</p>
                    </div>
                    <div class="col-md-7">
+                   
+                   <div class="input-group input-group-sm" style="width:50%;">
+                      
+                      <input type="text" class="form-control ng-pristine ng-valid ng-touched" aria-describedby="sizing-addon3" ng-model="selectedRange" attern="((-)?[0-9]{1,2}|100|-100)" style="">
+                      <span class="input-group-addon" id="sizing-addon3" style="padding:0px 2px 0px 2px">%</span>
+                    </div>
+
                     <div class="row">
-                      <div class="col-md-6">
-                    <input type="text" class="form-control" ng-model="selectedRange" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:110px;border:2px solid #a1a1a1;padding:10px 40px;background:#FFFFFF;border-radius:5px;" >
-                    </input>
-                  </div>
-                  <div class="col-md-3">
-                     <span class="num" style="width:50px">{{selectedRange}}.00%</span>
-                  </div>
+                    
+                
                      <div class="progress-box col-md-3">
                       <div  style="margin-top:11px">
                           <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange" style="width:180px" ></div>
@@ -65,14 +67,13 @@
                      <p class="handler-title">GDP</p>
                    </div>
                    <div class="col-md-7">
+                   <div class="input-group input-group-sm" style="width:50%;">
+                      
+                      <input type="text" class="form-control ng-pristine ng-valid ng-touched"  aria-describedby="sizing-addon3" ng-model="selectedRange1" attern="((-)?[0-9]{1,2}|100|-100)" style="">
+                      <span class="input-group-addon" id="sizing-addon3" style="padding:0px 2px 0px 2px">%</span>
+                    </div>
+
                       <div class="row">
-                      <div class="col-md-6">
-                    <input type="text" class="form-control" ng-model="selectedRange1" pattern="((-)?[0-9]{1,2}|100|-100)" style="width:110px;border:2px solid #a1a1a1;padding:10px 40px;background:#FFFFFF;border-radius:5px;" >
-                    </input>
-                  </div>
-                  <div class="col-md-3">
-                     <span class="num" style="width:50px">{{selectedRange1}}.00%</span>
-                  </div>
                      <div class="progress-box col-md-3">
                       <div  style="margin-top:11px">
                           <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange1" style="width:180px"></div>
@@ -164,7 +165,7 @@
                     <span class="h4">一句话解读</span>
                   </div>
                
-                <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="height:45px">
           <strong>劳动力人口与各项经济指标关联度分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</strong>
           
         </span>
@@ -194,17 +195,17 @@
             <div class="panel panel-default paddingmargin0em">
                 <div class="panel-heading">数据详情</div>  
                 <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                        <td ng-repeat="year in totaldata.tabledata">{{year.yearvalue}}</td>
+                      <tr st-select-row="row" class="ng-scope ng-isolate-scope" >
+                        <td ng-repeat="year in totaldata.tabledata" style="text-align:center;">{{year.yearvalue}}</td>
                       </tr>
                       <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                        <td ng-repeat="Fp in totaldata.tabledata">{{Fp.Fp}}</td>
+                        <td ng-repeat="Fp in totaldata.tabledata" style="text-align:center;">{{Fp.Fp}}</td>
                       </tr>
                       <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                        <td ng-repeat="Sp in totaldata.tabledata">{{Sp.Sp}}</td>
+                        <td ng-repeat="Sp in totaldata.tabledata" style="text-align:center;">{{Sp.Sp}}</td>
                       </tr>
                       <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-                        <td ng-repeat="Tp in totaldata.tabledata">{{Tp.Tp}}</td>
+                        <td ng-repeat="Tp in totaldata.tabledata" style="text-align:center;">{{Tp.Tp}}</td>
                       </tr>
                 </table>
             </div>
