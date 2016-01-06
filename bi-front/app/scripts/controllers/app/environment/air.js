@@ -120,7 +120,7 @@ $scope.openorclose='↓展开';
   $scope.updown42=true;
   $scope.openPM101List = function(){
   	$scope.isPM101open = !$scope.isPM101open;
-  	  	if ($scope.isPM251open){
+  	  	if ($scope.isPM101open){
   		$scope.updown41=true;
   		$scope.updown42=false;
   	}else{
@@ -529,11 +529,11 @@ $scope.openorclose='↓展开';
 	var info1=[];
 	   info1.push("<h4><strong>太仓监测站(明日空气质量)</strong></h4>");
 	    info1.push("<table class='table table-bordered table-striped'>");
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>93</div></td></tr>");	    
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>PM2.5</div></td></tr>");
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>72</div></td></tr>");
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;;margin-left:2.5px;'>54</div></td></tr>");
-	    info1.push("<tr><td class='maptable' style='line-height:35px;'>空气质量状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;;margin-left:2.5px;;margin-left:2.5px;'>轻度污染</div></td></tr>");
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>93</div></td></tr>");	    
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>PM2.5</div></td></tr>");
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>72</div></td></tr>");
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>54</div></td></tr>");
+	    info1.push("<tr><td class='maptable' style='line-height:35px;'>空气质量状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>优良</div></td></tr>");
 	    info1.push("</table>");
 	var infowindow1 = new AMap.InfoWindow({
 	     content: info1.join(''),
@@ -547,11 +547,11 @@ $scope.openorclose='↓展开';
 	var info2=[];
 	    info2.push("<h4><strong>科教新城监测站(明日空气质量)</strong></h4>");
 	    info2.push("<table class='table table-bordered table-striped'>");
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>110</div></td></tr>");	    
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>PM2.5</div></td></tr>");
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>83</div></td></tr>");
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;'>54</div></td></tr>");
-	    info2.push("<tr><td class='maptable' style='line-height:35px;'>空气质量状况</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;'>轻度污染</div></td></tr>");
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>AQI</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;margin-top:4px;'>110</div></td></tr>");	    
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>主要污染物</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;margin-top:4px;'>PM2.5</div></td></tr>");
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>PM2.5</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;margin-top:4px;'>83</div></td></tr>");
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>二氧化硫浓度</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>54</div></td></tr>");
+	    info2.push("<tr><td class='maptable' style='line-height:35px;'>空气质量状况</td><td><div class='map-table-right' style='background-Color:#f0ad4e;margin-left:2.5px;margin-top:4px;'>轻度污染</div></td></tr>");
 	    info2.push("</table>");
 	    var infowindow2 = new AMap.InfoWindow({
 	    content:  info2.join(''),
