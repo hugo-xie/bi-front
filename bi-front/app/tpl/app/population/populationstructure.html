@@ -19,14 +19,17 @@
                 <div class="row">
                   <div class="span12 col-md-12">
                     <div class="col-md-8 chart-panel ">
-                      <highchart id="age_ration" config="age_ration" style="height: 550px" style="float:left"></highchart>
+                      <highchart id="age_ration" config="age_ration" style="height: 620px" style="float:left"></highchart>
 
                     </div>
 
                     <div class="col-md-4">
 
                       <p class="fill-margin"></p>
+
                       <div class="ioc-panel-desc">
+
+
                         <p class="ioc-panel-desc-title">
                           <div style="background:#929dce;width:115px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
                         </p>
@@ -47,6 +50,21 @@
                       </div>
                       <hr/>
                        
+
+                  <div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+               
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>常住人口结构分析预测采用的是灰色预测模型。</strong>
+          
+        </span>
+<hr />
+
                       <div class="btn-group dropdown">
           <button class="btn btn-primary">年份选择</button>
           <button class="btn btn-primary" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
@@ -54,7 +72,7 @@
             <button ng-repeat="bttn in buttonMap" class="btn btn-primary" ng-model="predictionModal" style="margin-bottom:1px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</button>
           </ul>
         </div>
-  <div style="height:50px"></div>
+  <div style="height:10px"></div>
 
                     </div>
                   </div>
@@ -77,7 +95,7 @@
           </div>
         </div>
 
-        <div class="row" style="margin-top: 20px;">
+        <div class="row" style="margin-top: 20px">
           <div class="col-md-12">
             <div class="panel panel-primary" style="margin-top: 20px;">
               <div class="panel-heading">
@@ -86,9 +104,9 @@
               <div class="panel-body" style="padding:0">
 
                 <div class="row">
-                  <div class="col-md-8 chart-panel">
+                  <div class="col-md-8 chart-panel" style="height:450px">
 
-                    <highchart id="sumpopulation" config="sumpopulation" style="width:500px,height: 500px"></highchart>
+                    <highchart id="sumpopulation" config="sumpopulation" style="height: 450px"></highchart>
                   </div>
                   <div class="col-md-4">
                     <p class="fill-margin"></p>
@@ -101,6 +119,20 @@
                       <p id='a' style="margin-right:10px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 总体来看，太仓市的人口总量处于平稳状态，呈增长趋势，随着二胎政策的全面开放，极大促进了人口数量的增加。</p>
                     </div>
                     <hr />
+<div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+               
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>常住人口总量分析预测采用的是灰色预测模型。</strong>
+          
+        </span>
+<hr />
+
 
                     <div class="btn-group dropdown">
           <button class="btn btn-primary">年份选择</button>
@@ -109,7 +141,7 @@
             <button ng-repeat="bttn in buttonMap1" class="btn btn-primary" ng-model="predictionModal" style="margin-bottom:1px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</button>
           </ul>
         </div>
-
+       <div style="height:10px"></div>
                   </div>
                 </div>
 
@@ -124,7 +156,7 @@
           <div class="col-md-12">
             <div class="panel panel-primary" style="margin-top: 20px;">
               <div class="panel-heading">
-                当前各乡镇常住人口自然增长率分析
+                当前各城镇常住人口自然增长率分析
               </div>
 
               <div class="panel-body" style="padding:0">
@@ -141,8 +173,10 @@
                         <div style="background:#929dce;width:115px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
                       </p>
                      <div style="height:3px"></div>
+                     <h5><span style="color:#CC0033">红色框------该城镇人口自然增长率为负</span></h5>
+                     <h5><span style="color:#66cc66">绿色框------该城镇人口自然增长率为正</span></h5>
                       <h4>结果解读</h4>
-                      <p style="margin-right:10px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp从图中可以看出太仓各乡镇的人口自然增长率情况；目前，板桥镇和新湖镇人口自然增长率为负；太仓市，陆渡镇和沙溪镇人口自然增长率为正。</p>
+                      <p style="margin-right:10px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp从图中可以看出太仓各城镇的人口自然增长率情况；目前，板桥镇和新湖镇人口自然增长率为负；太仓市，陆渡镇和沙溪镇人口自然增长率为正。</p>
                       <div id="map" style="width:400px;height:40px"></div>
                     </div>
 

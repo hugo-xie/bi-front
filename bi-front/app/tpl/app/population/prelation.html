@@ -19,8 +19,8 @@
            <div class="panel-body" style="padding:0">
 
                <div class="row">
-               <div class="col-md-8 chart-panel">
-                 <highchart style="height:450px;" config="predictChart"></highchart>
+               <div class="col-md-8 chart-panel" style="height:570px">
+                 <highchart style="height:500px;" config="predictChart"></highchart>
                </div>
                <div class="col-md-4 desc-content">
                  
@@ -82,6 +82,21 @@
                    </div>
                  </div>
                  <hr />
+<div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+               
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>劳动力总人口与GDP关联分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</strong>
+          
+        </span>
+<hr />
+
+
                  <div class="btn-group dropdown">
           <button class="btn btn-primary">年份选择</button>
           <button class="btn btn-primary" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
@@ -90,6 +105,8 @@
           </ul>
 
         </div>
+
+
                </div>
              </div>
             
@@ -120,12 +137,12 @@
              <div class="panel-heading">
                劳动力人口与各项经济指标关联度分析预测
              </div>
-             <div class="panel-body" style="padding:0;height:450px">
+             <div class="panel-body" style="padding:0;height:600px">
 
                <div class="row">
           
                  <div class="col-md-8 chart-panel" >
-                   <div id="main"  style="width:95%;height: 450px"></div>
+                   <div id="main"  style="width:95%;height: 600px"></div>
                  </div>
                  <div class="col-md-4">
 
@@ -139,6 +156,20 @@
                      <p style="margin-right:10px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在经济发展水平对人口的影响中，关联度最高的是第二产业总值，排在第一位；其次是生产总值，排在第三位的是第三产业总值，说明第二、三产业的发展较迅速，增加了各自的就业人口，从而对人口发展的影响较大。总体来说，由于第一产业总值的所占比重逐年下降，第二、三产业总值比重上升，将成为影响人口就业结构和城乡结构变化的主要因素。</p>
                    </div>
                   <hr />
+<div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+               
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>劳动力人口与各项经济指标关联度分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</strong>
+          
+        </span>
+<hr />
+
                  <div class="btn-group dropdown">
           <button class="btn btn-primary">年份选择</button>
           <button class="btn btn-primary" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
@@ -148,7 +179,7 @@
         </div>
         <div style="height:10px"></div>
        
-         <button  ng-click="showTotalTable()" class="btn m-b-xs btn-primary pull-left" style="margin-left:0;font-weight:bold;width:116px">数据详情</button>
+         <button  ng-click="showTotalTable()" class="btn btn-primary pull-left" style="margin-left:0;font-weight:bold">数据详情</button>
                  </div>
 
                </div>
@@ -159,9 +190,7 @@
            </div>
            </div>
          </div>
-
-       </div>
-       <div class="bg-white fc-datatable" ng-if="totalshow" style="width:1200px;margin-left:138px;margin-top:-20px">
+ <div class="bg-white fc-datatable" ng-if="totalshow" style="width:1200px;margin-left:0px;margin-top:-20px">
             <div class="panel panel-default paddingmargin0em">
                 <div class="panel-heading">数据详情</div>  
                 <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
@@ -180,6 +209,8 @@
                 </table>
             </div>
         </div>
+       </div>
+      
     </div>
 
 <div class="bg-white">
@@ -211,6 +242,20 @@
                        <p id="b">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为37%、30%和33%，产值比重分别是8%、44%和48%，可见结业结构仍滞后于产值结构。总体表现为：第一产业劳动力过剩，第二、三产业劳动力不足；一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。</p>
                      </div>
                       <hr />
+
+                      <div class="pull-left">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                    </span>
+                    <span class="h4">一句话解读</span>
+                  </div>
+               
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true">
+          <strong>产业人口与产业GDP比重分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</strong>
+          
+        </span>
+<hr />
                  <div class="btn-group dropdown">
           <button class="btn btn-primary">年份选择</button>
           <button class="btn btn-primary" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>

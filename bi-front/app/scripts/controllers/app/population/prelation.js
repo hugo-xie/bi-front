@@ -56,8 +56,9 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
          textStyle:{
             
             fontWeight:'normal',
-            fontFamily:'宋体',
-            fontSize:'18'
+            fontFamily:'Lucida Sans Unicode',
+            fontSize:'18',
+            color:"#000000"
         },
         x:'center',
         y:'top'
@@ -185,20 +186,18 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
         );
 
 var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
-    $scope.buttonMap2 = [ {
+    $scope.buttonMap2 = [{
         name: 2025,
         label: 2025 + "年关联度分析预测",
-        radio: "Middle"
-      }, 
-      {
+      
+      }, {
         name: 2035,
         label: 2035 + "年关联度分析预测",
-        radio: "Middle"
-      },
-     {
+     
+      },{
         name: 2045,
         label: 2045 + "年关联度分析预测",
-        radio: "Right"
+     
       }];
 
        $scope.buttonMap3 = [{
@@ -261,19 +260,20 @@ var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
         label: 2045 + "年比重分析预测",
         radio: "Right"
       }];
+
 $scope.btn_click=function(btn){
    $scope.change(btn);
 };
 $scope.change=function(btn){
    if(btn.name===2025){
 $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
-$scope.populationChart.title.text="太仓市2016至2025年劳动力总人口";
+$scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预测值";
      $scope.GDPChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
      $scope.GDPChart.series[0].data=gdp;
-      $scope.GDPChart.title.text="太仓市2016至2025年GDP总量";
+      $scope.GDPChart.title.text="太仓市2016至2025年GDP总量预测值";
     $scope.populationChart.series[0].data=popData;
-    $scope.predictChart.title.text="太仓市2016至2025年劳动力人口与经济关联分析预测";
-     $scope.predictChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+    $scope.predictChart.options.title.text="太仓市2016至2025年劳动力人口与经济关联分析预测";
+     $scope.predictChart.options.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
   //  $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
     $scope.predictChart.series=[{
             name: '人口(人)',
@@ -314,14 +314,14 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口";
         }];
    }
    if(btn.name===2035){
-     $scope.predictChart.title.text="太仓市2026至2035年劳动力人口与经济关联分析预测";
+     $scope.predictChart.options.title.text="太仓市2026至2035年劳动力人口与经济关联分析预测";
      $scope.populationChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
-     $scope.populationChart.title.text="太仓市2026至2035年劳动力总人口";
+     $scope.populationChart.title.text="太仓市2026至2035年劳动力总人口预测值";
      $scope.GDPChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
      $scope.GDPChart.series[0].data=gdp1;
-      $scope.GDPChart.title.text="太仓市2026至2035年GDP总量";
+      $scope.GDPChart.title.text="太仓市2026至2035年GDP总量预测值";
      $scope.populationChart.series[0].data=popData1;
-    $scope.predictChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
+    $scope.predictChart.options.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
     $scope.predictChart.series=[{
             name: '人口(人)',
             color: '#7CB5EC',
@@ -361,14 +361,14 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口";
         }];
    }
    if(btn.name===2045){
-    $scope.predictChart.title.text="太仓市2036至2045年劳动力人口与经济关联分析预测";
+    $scope.predictChart.options.title.text="太仓市2036至2045年劳动力人口与经济关联分析预测";
      $scope.populationChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
-     $scope.populationChart.title.text="太仓市2036至2045年劳动力总人口";
+     $scope.populationChart.title.text="太仓市2036至2045年劳动力总人口预测值";
      $scope.GDPChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
      $scope.GDPChart.series[0].data=gdp2;
-     $scope.GDPChart.title.text="太仓市2036至2045年GDP总量";
+     $scope.GDPChart.title.text="太仓市2036至2045年GDP总量预测值";
     $scope.populationChart.series[0].data=popData2;
-    $scope.predictChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
+    $scope.predictChart.options.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
     $scope.predictChart.series=[{
             name: '人口(人)',
             color: '#7CB5EC',
@@ -579,7 +579,9 @@ $scope.change2=function(btn){
         text: '太仓市2020年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
             fontWeight:'normal',
-            fontFamily:'宋体'
+            fontFamily:'Lucida Sans Unicode',
+            fontSize:'18',
+            color:"#000000"
         },
         x:'center',
         y:'top'
@@ -724,7 +726,9 @@ $scope.change2=function(btn){
         text: '太仓市2025年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
             fontWeight:'normal',
-            fontFamily:'宋体'
+            fontFamily:'Lucida Sans Unicode',
+            fontSize:'18',
+            color:"#000000"
         },
         x:'center',
         y:'top'
@@ -869,7 +873,9 @@ $scope.change2=function(btn){
         text: '太仓市2030年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
             fontWeight:'normal',
-            fontFamily:'宋体'
+            fontFamily:'Lucida Sans Unicode',
+            fontSize:'18',
+            color:"#000000"
         },
         x:'center',
         y:'top'
@@ -1014,7 +1020,9 @@ $scope.change2=function(btn){
         text: '太仓市2040年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
             fontWeight:'normal',
-            fontFamily:'宋体'
+            fontFamily:'Lucida Sans Unicode',
+            fontSize:'18',
+            color:"#000000"
         },
         x:'center',
         y:'top'
@@ -1159,7 +1167,9 @@ $scope.change2=function(btn){
         text: '太仓市2035年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
             fontWeight:'normal',
-            fontFamily:'宋体'
+            fontFamily:'Lucida Sans Unicode',
+            fontSize:'18',
+            color:"#000000"
         },
         x:'center',
         y:'top'
@@ -1304,7 +1314,9 @@ $scope.change2=function(btn){
         text: '太仓市2045年劳动力人口与各项经济指标关联度分析预测',
         textStyle:{
             fontWeight:'normal',
-            fontFamily:'宋体'
+            fontFamily:'Lucida Sans Unicode',
+            fontSize:'18',
+            color:"#000000"
         },
         x:'center',
         y:'top'
