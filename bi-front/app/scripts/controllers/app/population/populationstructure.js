@@ -182,8 +182,8 @@ var clickHandle2 = AMap.event.addListener(marker2, 'click', function() {
 var info3=[];
    info3.push("<h4><strong>太仓城区人口自然增长率</strong></h4>");
     info3.push("<table class='table table-bordered table-striped'>");
-    info3.push("<tr><td style='font-size:15px;text-align:center'>出生率</td><td>8.34‰</td style='text-align:center'></tr>");
-    info3.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td>8.12‰</td style='text-align:center'></tr>");
+    info3.push("<tr><td style='font-size:15px;text-align:center'>出生率</td><td style='text-align:center'>8.34‰</td ></tr>");
+    info3.push("<tr><td style='font-size:15px;text-align:center'>死亡率</td><td style='text-align:center'>8.12‰</td ></tr>");
     info3.push("<tr><td style='font-size:15px;text-align:center'>人口自然增长率</td><td style='text-align:center'>0.22‰</td></tr>");
     info3.push("</table>");
 var infowindow3 = new AMap.InfoWindow({
@@ -558,7 +558,7 @@ var points =[
             }]
      }
      if(btn.name===2035){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2035的 8%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，60岁及以上人口比例从2015的 5% 增加到2035的 8%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2035年龄层比例图";
         $scope.age_ration.series=[{
@@ -608,7 +608,7 @@ var points =[
             }]
      }
      if(btn.name===2045){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2045的 11%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，60岁及以上人口比例从2015的 5% 增加到2045的 11%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2045年龄层比例图";
         $scope.age_ration.series=[{
