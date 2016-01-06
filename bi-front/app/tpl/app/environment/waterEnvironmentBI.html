@@ -347,11 +347,11 @@
 					                	<h4>减排后处理费估算</h4>
 				                		<table class='table table-bordered'>
 				                			<tr>
-				                				<td>相关污水处理厂/企业</td>
-				                				<td>减排前废水排放量(吨)</td>
-				                				<td>减排后废水排放量(吨)</td>
-				                				<td>减排比例(%)</td>
-				                				<td>处理费(元)</td>
+				                				<td style="text-align: center;">相关污水处理厂/企业</td>
+				                				<td style="text-align: center;">减排前废水排放量(吨)</td>
+				                				<td style="text-align: center;">减排后废水排放量(吨)</td>
+				                				<td style="text-align: center;">减排比例(%)</td>
+				                				<td style="text-align: center;">处理费(元)</td>
 				                				<!-- <td>COD浓度(mg/L)</td>
 				                				<td>模型修改(%)</td>
 				                				<td>最终值(mg/L)</td>
@@ -363,11 +363,11 @@
 				                				<td>最终值(mg/L)</td> -->
 				                			</tr>
 			                				<tr ng-repeat="wasteModelOne in wasteModelList">
-			                					<td>{{wasteModelOne.title}}</td>
-			                					<td>{{wasteModelOne.dischargeValue}}</td>
-			                					<td>{{(wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
-			                					<td>{{100-wasteModelOne.dischargeChange}}</td>
-			                					<td>{{(2.29*wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
+			                					<td style="text-align: center;">{{wasteModelOne.title}}</td>
+			                					<td style="text-align: center;">{{wasteModelOne.dischargeValue}}</td>
+			                					<td style="text-align: center;">{{(wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
+			                					<td style="text-align: center;">{{100-wasteModelOne.dischargeChange}}</td>
+			                					<td style="text-align: center;">{{(2.29*wasteModelOne.dischargeValue*wasteModelOne.dischargeChange/100).toFixed(2)}}</td>
 			                					<!-- <td>{{wasteModelOne.codValue}}</td>
 			                					<td>{{wasteModelOne.codChange}}</td>
 			                					<td>{{(wasteModelOne.codValue*wasteModelOne.codChange/100).toFixed(2)}}</td>

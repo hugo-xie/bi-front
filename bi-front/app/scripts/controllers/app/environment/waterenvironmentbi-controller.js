@@ -29,7 +29,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     text: ''
                 },
                 xAxis: {
-                    categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日', '1月6日'],
+                    categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日', '1月7日'],
                     tickmarkPlacement: 'on',
                     title: {
                         enabled: false
@@ -114,7 +114,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     }
                 },
                 subtitle: {
-                    text: '2016年1月7日9时',
+                    text: '2016年1月8日9时',
                     style: {
                         fontWeight: 'normal',
                         fontSize: 'larger',
@@ -183,7 +183,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     }
                 },
                 subtitle: {
-                    text: '2016年1月7日9时',
+                    text: '2016年1月8日9时',
                     style: {
                         fontWeight: 'normal',
                         fontSize: 'larger',
@@ -250,7 +250,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     }
                 },
                 subtitle: {
-                    text: '2016年1月7日9时',
+                    text: '2016年1月8日9时',
                     style: {
                         fontWeight: 'normal',
                         fontSize: 'larger',
@@ -319,7 +319,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     }
                 },
                 subtitle: {
-                    text: '2016年1月7日9时',
+                    text: '2016年1月8日9时',
                       style: {
                         fontWeight: 'normal',
                         fontSize: 'larger',
@@ -384,7 +384,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                 text: ''
             },
             xAxis: {
-                categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日', '1月6日'],
+                categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日', '1月7日'],
                 tickmarkPlacement: 'on',
                 title: {
                     enabled: false
