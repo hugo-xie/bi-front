@@ -30,6 +30,7 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
   }
   $scope.adjustParameter=function(){
     $scope.date2[10]=96.52;
+    $scope.ratedate1[10]=7.2;
   }
 
   $scope.deviationYear=false;
@@ -52,13 +53,18 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
   };
   $scope.adjustParameterYear=function(){
          
-          $scope.date[10]=96.52;
-          $scope.date[11]=103.43;
-          $scope.date[12]=110.02;
+
+         
+          $scope.selectedRange=0;
+          $scope.selectedRange2=0;
+          $scope.selectedRange3=0;
+          $scope.selectedRange4=0;
   };
   $scope.selectedRange=0;
   $scope.date =[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
   $scope.date2=[19.32,23.00,33.66,41.62,52.36,62.53,68.87,74.32,81.36,89.23,96.52];
+  $scope.ratedate1=[6.4, 7.2, 7.5, 7.1, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2];
+  $scope.ratedate=[7.4, 7.2, 7.5, 7.4, 7.3, 7.5, 7.4, 7.4, 7.1, 7.3, 7.2, 7.0,7.2];
 $scope.range = function() {
         return $scope.selectedRange;
       };
@@ -87,37 +93,50 @@ var changedetail=function(newValue,oldValue,scope){
   $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+   $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
+    $scope.ratedate[11]=$scope.ratedate[11]+$scope.ratedate[11]*(newValue-oldValue)/200;
+   $scope.ratedate[12]=$scope.ratedate[12]+$scope.ratedate[12]*(newValue-oldValue)/200;
 };
 var changedetail2=function(newValue,oldValue,scope){
   $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+   $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
+    $scope.ratedate[11]=$scope.ratedate[11]+$scope.ratedate[11]*(newValue-oldValue)/200;
+   $scope.ratedate[12]=$scope.ratedate[12]+$scope.ratedate[12]*(newValue-oldValue)/200;
 };
 var changedetail3=function(newValue,oldValue,scope){
   $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+   $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
+    $scope.ratedate[11]=$scope.ratedate[11]+$scope.ratedate[11]*(newValue-oldValue)/200;
+   $scope.ratedate[12]=$scope.ratedate[12]+$scope.ratedate[12]*(newValue-oldValue)/200;
 };
 var changedetail4=function(newValue,oldValue,scope){
   $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
+   $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
+    $scope.ratedate[11]=$scope.ratedate[11]+$scope.ratedate[11]*(newValue-oldValue)/200;
+   $scope.ratedate[12]=$scope.ratedate[12]+$scope.ratedate[12]*(newValue-oldValue)/200;
 };
 var changemonthdetail=function(newValue,oldValue,scope){
   $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
+  $scope.ratedate1[10]=$scope.ratedate1[10]+$scope.ratedate1[10]*(newValue-oldValue)/200;
   
 };
 var changemonthdetail2=function(newValue,oldValue,scope){
   $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
-  
+  $scope.ratedate1[10]=$scope.ratedate1[10]+$scope.ratedate1[10]*(newValue-oldValue)/200;
 };
 var changemonthdetail3=function(newValue,oldValue,scope){
-  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
-  
+$scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
+  $scope.ratedate1[10]=$scope.ratedate1[10]+$scope.ratedate1[10]*(newValue-oldValue)/200;
 };
 var changemonthdetail4=function(newValue,oldValue,scope){
-  $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
-  
+ $scope.date2[10]=$scope.date2[10]+$scope.date2[10]*(newValue-oldValue)/200;
+  $scope.ratedate1[10]=$scope.ratedate1[10]+$scope.ratedate1[10]*(newValue-oldValue)/200;
 };
 $scope.$watch($scope.range,changedetail);
 $scope.$watch($scope.range2,changedetail2);
@@ -218,7 +237,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: [6.4, 7.2, 7.5, 7.1, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2]
+            data: $scope.ratedate1
         }]   
   };
 
@@ -315,7 +334,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: [7.4, 7.2, 7.5, 7.4, 7.3, 7.5, 7.4, 7.4, 7.1, 7.3, 7.2, 7.1,7.2]
+            data: $scope.ratedate
         }]   
   };
 

@@ -31,15 +31,15 @@ $scope.range2=function(){
        $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue-oldValue)/800;
   };
   var changeloandata2=function(newValue,oldValue,scope){
-       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue-oldValue)/500;
-       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue-oldValue)/100;
+       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue-oldValue)/100;
+       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue-oldValue)/500;
        $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue-oldValue)/250;
        $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue-oldValue)/800;
   };
   var changeloandata3=function(newValue,oldValue,scope){
-       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue-oldValue)/500;
-       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue-oldValue)/250;
-       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue-oldValue)/100;
+       $scope.loandata[11]=$scope.loandata[11]+$scope.loandata[11]*(newValue-oldValue)/100;
+       $scope.transdata[11]=$scope.transdata[11]+$scope.transdata[11]*(newValue-oldValue)/500;
+       $scope.elecdata[11]=$scope.elecdata[11]+$scope.elecdata[11]*(newValue-oldValue)/250;
        $scope.keqiangdata[3]=$scope.keqiangdata[3]+$scope.keqiangdata[3]*(newValue-oldValue)/800;
 
   };
