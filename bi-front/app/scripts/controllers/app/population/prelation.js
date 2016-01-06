@@ -990,18 +990,18 @@ $scope.change2=function(btn){
             }
         );
    }
-   if(btn.name===2040){
+   if(btn.name===2045){
      $scope.totaldata = {
   
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
-      {yearvalue:'第一产业产值', Fp:'0.7395',Sp:'0.8193',Tp:'0.7116'},
-      {yearvalue:'第二产业产值', Fp:'0.7425',Sp:'0.8924',Tp:'0.7947'},
-      {yearvalue:'第三产业产值', Fp:'0.7924',Sp:'0.8824',Tp:'0.7488'},
-      {yearvalue:'人均GDP', Fp:'0.7184',Sp:'0.7583',Tp:'0.8196'},
-      {yearvalue:'地方生产总值', Fp:'0.8569',Sp:'0.7249',Tp:'0.8589'},
-      {yearvalue:'社会消费品零售总额', Fp:'0.7498',Sp:'0.7997',Tp:'0.7631'}
+      {yearvalue:'第一产业产值', Fp:'0.9395',Sp:'0.4193',Tp:'0.4116'},
+      {yearvalue:'第二产业产值', Fp:'0.4425',Sp:'0.9724',Tp:'0.5947'},
+      {yearvalue:'第三产业产值', Fp:'0.4924',Sp:'0.5824',Tp:'0.9488'},
+      {yearvalue:'人均GDP', Fp:'0.4184',Sp:'0.6583',Tp:'0.7196'},
+      {yearvalue:'地方生产总值', Fp:'0.4569',Sp:'0.6249',Tp:'0.7589'},
+      {yearvalue:'社会消费品零售总额', Fp:'0.4498',Sp:'0.6997',Tp:'0.7631'}
   
     ]
   };
@@ -1017,7 +1017,7 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '太仓市2040年劳动力人口与各项经济指标关联度分析预测',
+        text: '太仓市2045年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
             fontWeight:'normal',
             fontFamily:'Lucida Sans Unicode',
@@ -1088,43 +1088,43 @@ $scope.change2=function(btn){
                
             ],
             links: [
-                {source: '第一产业人口', target: '地方生产总值', weight: 0.8569,name:'0.8569关联'},
-                {source: '第一产业人口', target: '第一产业产值', weight: 0.7395,name:'0.7395关联'},
-                {source: '第一产业人口', target: '第二产业产值', weight: 0.7425,name:'0.7425关联'},
-                {source: '第一产业人口', target: '第三产业产值', weight: 0.7924,name:'0.7924关联'},
-                {source: '第一产业人口', target: '人均GDP', weight: 0.7184,name:'0.7184关联'},
-                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.7498,name:'0.7498关联'},
-                {source: '第二产业人口', target: '地方生产总值', weight: 0.7249,name:'0.7249关联'},
-                {source: '第二产业人口', target: '第一产业产值', weight: 0.8193,name:'0.8193关联'},
-                {source: '第二产业人口', target: '第二产业产值', weight: 0.8924,name:'0.8924关联'},
-                {source: '第二产业人口', target: '第三产业产值', weight: 0.8824,name:'0.8824关联'},
-                {source: '第二产业人口', target: '人均GDP', weight: 0.7583,name:'0.7583关联'},
-                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.7997,name:'0.7997关联'},
-                {source: '第三产业人口', target: '地方生产总值', weight: 0.8589,name:'0.8589关联'},
-                {source: '第三产业人口', target: '第一产业产值', weight: 0.7616,name:'0.7616关联'},
-                {source: '第三产业人口', target: '第二产业产值', weight: 0.7947,name:'0.7947关联'},
-                {source: '第三产业人口', target: '第三产业产值', weight: 0.7488,name:'0.7488关联'},
-                {source: '第三产业人口', target: '人均GDP', weight: 0.8196,name:'0.8196关联'},
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.4569,name:'0.4569关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.9395,name:'0.9395关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.4425,name:'0.4425关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.4924,name:'0.4924关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.4184,name:'0.4184关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.4498,name:'0.4498关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.6249,name:'0.6249关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.4193,name:'0.4193关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.9724,name:'0.9724关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.5824,name:'0.5824关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.6583,name:'0.6583关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.6997,name:'0.6997关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.7589,name:'0.7589关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.4116,name:'0.4116关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.5947,name:'0.5947关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.9488,name:'0.9488关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.7196,name:'0.7196关联'},
                 {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.7631,name:'0.7631关联'},
 
                 // Ribbon Type 的和弦图每一对节点之间必须是双向边
-                {target: '第一产业人口', source: '地方生产总值', weight: 0.8569},
-                {target: '第一产业人口', source: '第一产业产值', weight: 0.7395},
-                {target: '第一产业人口', source: '第二产业产值', weight: 0.7425},
-                {target: '第一产业人口', source: '第三产业产值', weight: 0.7924},
-                {target: '第一产业人口', source: '人均GDP', weight: 0.7184},
-                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.7498},
-                {target: '第二产业人口', source: '地方生产总值', weight: 0.7249},
-                {target: '第二产业人口', source: '第一产业产值', weight: 0.8193},
-                {target: '第二产业人口', source: '第二产业产值', weight: 0.8924},
-                {target: '第二产业人口', source: '第三产业产值', weight: 0.8824},
-                {target: '第二产业人口', source: '人均GDP', weight: 0.7583},
-                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.7997},
-                {target: '第三产业人口', source: '地方生产总值', weight: 0.8589},
-                {target: '第三产业人口', source: '第一产业产值', weight: 0.7116},
-                {target: '第三产业人口', source: '第二产业产值', weight: 0.7947},
-                {target: '第三产业人口', source: '第三产业产值', weight: 0.7488},
-                {target: '第三产业人口', source: '人均GDP', weight: 0.8196},
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.4569},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.9395},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.4425},
+                {target: '第一产业人口', source: '第三产业产值', weight: 0.4924},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.4184},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.4498},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.6249},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.4193},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.9724},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.5824},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.6583},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.6997},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.7589},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.4116},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.5947},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.9488},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.7196},
                 {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.7631}
             ]
         }
@@ -1284,7 +1284,7 @@ $scope.change2=function(btn){
             }
         );
    }
-   if(btn.name===2045){
+   if(btn.name===2040){
      $scope.totaldata = {
   
     tabledata:
@@ -1311,7 +1311,7 @@ $scope.change2=function(btn){
                 
                 var option = {
     title : {
-        text: '太仓市2045年劳动力人口与各项经济指标关联度分析预测',
+        text: '太仓市2040年劳动力人口与各项经济指标关联度分析预测',
         textStyle:{
             fontWeight:'normal',
             fontFamily:'Lucida Sans Unicode',
@@ -1445,6 +1445,7 @@ function h(newValue,oldValue,scope){
     popData1[9]=(newValue*0.03)*50+543482;
     popData2[9]=(newValue*0.03)*50+598577;
    //console.log(popData[9]);
+    $scope.selectedRange1=Math.round((($scope.selectedRange*0.2)));
     gdp[9]=(newValue*0.03)*50+2022.31;
     gdp1[9]=(newValue*0.03)*50+4256.65;
     gdp2[9]=(newValue*0.03)*50+8373.48;
@@ -1457,6 +1458,7 @@ $scope.rr=function(){
 };
 function hh(newValue,oldValue,scope){
     console.log(newValue);
+    $scope.selectedRange=Math.round((($scope.selectedRange1*0.2)));
     popData[9]=(newValue*0.03)*50+475038;
     popData1[9]=(newValue*0.03)*50+543482;
     popData2[9]=(newValue*0.03)*50+598577;
