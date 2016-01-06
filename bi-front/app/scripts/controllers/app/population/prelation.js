@@ -11,12 +11,12 @@ app.controller('PrelationCtrl', ['$scope', function($scope) {
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
-      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
-      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
-      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
-      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
-      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
-      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+      {yearvalue:'第一产业产值', Fp:'0.7295',Sp:'0.7293',Tp:'0.7116'},
+      {yearvalue:'第二产业产值', Fp:'0.7725',Sp:'0.7724',Tp:'0.7647'},
+      {yearvalue:'第三产业产值', Fp:'0.7624',Sp:'0.7624',Tp:'0.7588'},
+      {yearvalue:'人均GDP', Fp:'0.7484',Sp:'0.7483',Tp:'0.7396'},
+      {yearvalue:'地方生产总值', Fp:'0.7496',Sp:'0.7483',Tp:'0.7589'},
+      {yearvalue:'社会消费品零售总额', Fp:'0.7598',Sp:'0.7597',Tp:'0.7531'}
   
     ]
   };
@@ -555,12 +555,12 @@ $scope.change2=function(btn){
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
-      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
-      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
-      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
-      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
-      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
-      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+      {yearvalue:'第一产业产值', Fp:'0.7295',Sp:'0.7293',Tp:'0.7116'},
+      {yearvalue:'第二产业产值', Fp:'0.7725',Sp:'0.7724',Tp:'0.7647'},
+      {yearvalue:'第三产业产值', Fp:'0.7624',Sp:'0.7624',Tp:'0.7588'},
+      {yearvalue:'人均GDP', Fp:'0.7484',Sp:'0.7483',Tp:'0.7396'},
+      {yearvalue:'地方生产总值', Fp:'0.7496',Sp:'0.7483',Tp:'0.7589'},
+      {yearvalue:'社会消费品零售总额', Fp:'0.7598',Sp:'0.7597',Tp:'0.7531'}
   
     ]
   };
