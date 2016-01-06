@@ -350,7 +350,7 @@ var points =[
   $scope.change=function(btn){
   //  var columnColors = new Array('#7CADDF', '#327EBD', '#195489', '#1FC22B', '#FB9705', '#F26200');
      if(btn.name===2020){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，60岁及以上人口比例从2015的 5% 增加到2020的 7%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2020年龄层比例图";
         $scope.age_ration.series=[{
@@ -402,7 +402,7 @@ var points =[
             }]
           }
       if(btn.name===2025){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，60岁及以上人口比例从2015的 5% 增加到2025的 8%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2025年龄层比例图";
         $scope.age_ration.series=[{
@@ -419,7 +419,7 @@ var points =[
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,4],
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2025年常住人口结构图";
@@ -454,7 +454,7 @@ var points =[
             }]
      }
       if(btn.name===2030){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，60岁及以上人口比例从2015的 5% 增加到2030的 9%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2030年龄层比例图";
         $scope.age_ration.series=[{
@@ -467,11 +467,11 @@ var points =[
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,5],
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,4],
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2030年常住人口结构图";
@@ -506,7 +506,7 @@ var points =[
             }]
      }
       if(btn.name===2040){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，60岁及以上人口比例从2015的 5% 增加到2040的 10%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2040年龄层比例图";
         $scope.age_ration.series=[{
@@ -519,11 +519,11 @@ var points =[
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,5],
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,5],
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2040年常住人口结构图";
@@ -558,7 +558,7 @@ var points =[
             }]
      }
      if(btn.name===2035){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 7%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2035的 8%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2035年龄层比例图";
         $scope.age_ration.series=[{
@@ -575,7 +575,7 @@ var points =[
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [2, 3, 3, 4, 3,3, 3, 2, 4, 5,3],
+            data: [2, 3, 3, 4, 3,3, 3, 2, 4, 5,4],
             stack: 'female'
         }];
          $scope.population_prediction_year.options.title.text="太仓市2035年常住人口结构图";
@@ -608,7 +608,7 @@ var points =[
             }]
      }
      if(btn.name===2045){
-        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构持续老龄化；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2025的 9%。';
+        document.getElementById('abc').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp太仓市人口结构呈现不断老龄化趋势；其中，54~59岁的人口比例从8%到10%；60岁及以上人口比例从2015的 5% 增加到2045的 11%。';
         $scope.age_ration.options.colors=columnColors;
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2045年龄层比例图";
         $scope.age_ration.series=[{
@@ -621,7 +621,7 @@ var points =[
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,6],
             stack: 'female'
         },{
             name: '预测女性比例',
@@ -631,10 +631,10 @@ var points =[
         $scope.population_prediction_year.options.title.text="太仓市2045年常住人口结构图";
         $scope.population_prediction_year.series=[{
                 name: '男性',
-                data: [-1022, -988, -987, -1000, -1023, -985, -988,
-                    -994, -953, -924, -937, -964, -935, -956,
-                    -964, -994, -1055, -1009, -1084, -1147, -1198,-1199, -1253, -1295, -1455, -1473, -1450, -1540,
-                    -1592, -1643, -1762, -1639, -1519, -1804, -1560,
+                data: [-3522, -3288, -3187, -3100, -3023, -2985, -2988,
+                    -2794, -2653, -2524, -2437, -2364, -2235, -2156,
+                    -1964, -1994, -1755, -1709, -1884, -1747, -1698,-1699, -1653, -1695, -1655, -1673, -1750, -1740,
+                    -1892, -1843, -2021, -1639, -1519, -1804, -1560,
                     -1468, -1367, -1331, -1319, -1274, -1407, -1672,-1306, -1495, -1425, -1755, -1565, -1677, -1814,
                     -1773, -1812, -1939, -1999, -2150, -2329, -2605,
                     -2734, -3043, -3554, -3812, -3417, -1863, -2212,-3554, -3603, -2243, -3223, -3072, -3103, -3056,
@@ -644,9 +644,9 @@ var points =[
                     -272, -216, -76]
             }, {
                 name: '女性',
-                data: [789, 851, 866, 877, 855, 896, 905, 898,
-                    938, 963, 955, 942, 985, 981, 1007, 1023,
-                    1010, 1124, 1134, 1169, 1205,1271, 1321, 1405, 1396, 1494, 1522, 1538, 1636,
+                data: [3589, 3251, 3166, 3077, 2955, 2896, 2905, 2898,
+                    2738, 2663, 2555, 2442, 2385, 2281, 2007, 2023,
+                    2010, 1924, 1834, 1869, 1705,1671, 1621, 1605, 1696, 1694, 1622, 1638, 1636,
                     1754, 1746, 1640, 1622, 1854, 1557, 1536, 1388,
                     1280, 1431, 1345, 1491, 1682,1327, 1564, 1586, 1679, 1607, 1755, 1861, 1862,
                     1766, 1988, 2091, 2118, 2114, 2388, 2500, 2548,
