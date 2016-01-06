@@ -272,7 +272,21 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $sta
                 '2016',
                 '2017'
                 
-            ]
+            ],
+             plotBands:[{
+            from: 8.5,
+            to:12.5,
+            color:'rgba(68, 170, 213, .2)',
+            label: {
+                    text: '预测区',
+                    verticalAlign: 'top',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 600
+                    }
+                   
+                }
+            }]
         },
         yAxis: {
             min: 0,

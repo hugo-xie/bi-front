@@ -29,10 +29,7 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
     $scope.forecast=!$scope.forecast;
   }
   $scope.adjustParameter=function(){
-    $scope.monthselectedRange=0;
-    $scope.monthselectedRange2=0;
-    $scope.monthselectedRange3=0;
-    $scope.monthselectedRange4=0;
+    $scope.date2[10]=96.52;
   }
 
   $scope.deviationYear=false;
@@ -54,10 +51,10 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $sta
     $scope.forecastYear=!$scope.forecastYear;
   };
   $scope.adjustParameterYear=function(){
-          $scope.selectedRange=0;
-          $scope.selectedRange2=0;
-          $scope.selectedRange3=0;
-          $scope.selectedRange4=0;
+         
+          $scope.date[10]=96.52;
+          $scope.date[11]=103.43;
+          $scope.date[12]=110.02;
   };
   $scope.selectedRange=0;
   $scope.date =[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
@@ -149,7 +146,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
       categories: $scope.monthArray,
         plotBands:[{
             from: 9.5,
-            to:12.5,
+            to:10.5,
             color:'rgba(68, 170, 213, .2)',
             label: {
                     text: '预测区',
