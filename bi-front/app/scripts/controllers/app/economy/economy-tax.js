@@ -90,7 +90,7 @@ $scope.range = function() {
         return $scope.monthselectedRange4;
       };
 var changedetail=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[10]=(($scope.date[10]+$scope.date[10]*(newValue-oldValue)/200)*100)/100;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
    $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
@@ -98,7 +98,7 @@ var changedetail=function(newValue,oldValue,scope){
    $scope.ratedate[12]=$scope.ratedate[12]+$scope.ratedate[12]*(newValue-oldValue)/200;
 };
 var changedetail2=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[10]=(($scope.date[10]+$scope.date[10]*(newValue-oldValue)/200)*100)/100;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
    $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
@@ -106,7 +106,7 @@ var changedetail2=function(newValue,oldValue,scope){
    $scope.ratedate[12]=$scope.ratedate[12]+$scope.ratedate[12]*(newValue-oldValue)/200;
 };
 var changedetail3=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[10]=(($scope.date[10]+$scope.date[10]*(newValue-oldValue)/200)*100)/100;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
    $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
@@ -114,7 +114,7 @@ var changedetail3=function(newValue,oldValue,scope){
    $scope.ratedate[12]=$scope.ratedate[12]+$scope.ratedate[12]*(newValue-oldValue)/200;
 };
 var changedetail4=function(newValue,oldValue,scope){
-  $scope.date[10]=$scope.date[10]+$scope.date[10]*(newValue-oldValue)/200;
+  $scope.date[10]=(($scope.date[10]+$scope.date[10]*(newValue-oldValue)/200)*100)/100;
   $scope.date[11]=$scope.date[11]+$scope.date[11]*(newValue-oldValue)/200;
   $scope.date[12]=$scope.date[12]+$scope.date[12]*(newValue-oldValue)/200;
    $scope.ratedate[10]=$scope.ratedate[10]+$scope.ratedate[10]*(newValue-oldValue)/200;
@@ -308,6 +308,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
         opposite:true}],
     tooltip: 
     {
+
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
       pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
           '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',

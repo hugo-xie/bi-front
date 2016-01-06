@@ -1143,12 +1143,12 @@ $scope.change2=function(btn){
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
-      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
-      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
-      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
-      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
-      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
-      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'2'}
+      {yearvalue:'第一产业产值', Fp:'0.7080',Sp:'0.7173',Tp:'0.7234'},
+      {yearvalue:'第二产业产值', Fp:'0.7631',Sp:'0.7674',Tp:'0.7701'},
+      {yearvalue:'第三产业产值', Fp:'0.7582',Sp:'0.7600',Tp:'0.7613'},
+      {yearvalue:'人均GDP', Fp:'0.7378',Sp:'0.7425',Tp:'0.7457'},
+      {yearvalue:'地方生产总值', Fp:'0.7610',Sp:'0.7631',Tp:'0.7631'},
+      {yearvalue:'社会消费品零售总额', Fp:'0.7517',Sp:'0.7554',Tp:'0.7577'}
   
     ]
   };
@@ -1290,12 +1290,12 @@ $scope.change2=function(btn){
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
-      {yearvalue:'第一产业产值', Fp:'6',Sp:'0',Tp:'2'},
-      {yearvalue:'第二产业产值', Fp:'7',Sp:'-1',Tp:'2'},
-      {yearvalue:'第三产业产值', Fp:'7',Sp:'0',Tp:'2'},
-      {yearvalue:'人均GDP', Fp:'7',Sp:'1',Tp:'2'},
-      {yearvalue:'地方生产总值', Fp:'8',Sp:'1',Tp:'2'},
-      {yearvalue:'社会消费品零售总额', Fp:'7',Sp:'1',Tp:'10'}
+      {yearvalue:'第一产业产值', Fp:'0.7327',Sp:'0.7670',Tp:'0.7378'},
+      {yearvalue:'第二产业产值', Fp:'0.7737',Sp:'0.7870',Tp:'0.7759'},
+      {yearvalue:'第三产业产值', Fp:'0.7630',Sp:'0.7691',Tp:'0.7640'},
+      {yearvalue:'人均GDP', Fp:'0.7500',Sp:'0.7654',Tp:'0.7525'},
+      {yearvalue:'地方生产总值', Fp:'0.7764',Sp:'0.7677',Tp:'0.7677'},
+      {yearvalue:'社会消费品零售总额', Fp:'0.7610',Sp:'0.7725',Tp:'0.7628'}
   
     ]
   };
