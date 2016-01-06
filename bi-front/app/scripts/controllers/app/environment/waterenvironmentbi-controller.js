@@ -1307,7 +1307,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                     // the value axis
                     yAxis: {
                         min: 0,
-                        max: 10,
+                        max: 15,
                         minorTickInterval: 'auto',
                         minorTickWidth: 1,
                         minorTickLength: 10,
@@ -1327,7 +1327,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         },
                         plotBands: [{
                             from: waterQualityO2Scan.scan[0],
-                            to: 10,
+                            to: 15,
                             color: '#55BF3B' // green
                         }, {
                             from: waterQualityO2Scan.scan[1],
