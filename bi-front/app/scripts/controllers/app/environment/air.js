@@ -68,6 +68,20 @@ $scope.openorclose='↓展开';
   	if ($scope.ismainpollution1open){
   		$scope.updown21=true;
   		$scope.updown22=false;
+      $scope.updown12=true;
+      $scope.updown32=true;
+      $scope.updown42=true;
+      $scope.updown52=true;
+      $scope.updown62=true;
+      $scope.updown72=true;
+      $scope.updown82=true;
+      $scope.updown11=false;
+      $scope.updown31=false;
+      $scope.updown41=false;
+      $scope.updown51=false;
+      $scope.updown61=false;
+      $scope.updown71=false;
+      $scope.updown81=false;
   	}else{
   		$scope.updown21=false;
   		$scope.updown22=true;
@@ -86,6 +100,21 @@ $scope.openorclose='↓展开';
   	if ($scope.isAQI1open){
   		$scope.updown11=true;
   		$scope.updown12=false;
+      $scope.updown21=false;
+      $scope.updown22=true;
+      $scope.updown32=true;
+      $scope.updown42=true;
+      $scope.updown52=true;
+      $scope.updown62=true;
+      $scope.updown72=true;
+      $scope.updown82=true;
+      
+      $scope.updown31=false;
+      $scope.updown41=false;
+      $scope.updown51=false;
+      $scope.updown61=false;
+      $scope.updown71=false;
+      $scope.updown81=false;
   	}else{
   		$scope.updown11=false;
   		$scope.updown12=true;
@@ -105,6 +134,23 @@ $scope.openorclose='↓展开';
   	if ($scope.isPM251open){
   		$scope.updown31=true;
   		$scope.updown32=false;
+      $scope.updown11=false;
+      $scope.updown12=true;
+      $scope.updown21=false;
+      $scope.updown22=true;
+ 
+      $scope.updown42=true;
+      $scope.updown52=true;
+      $scope.updown62=true;
+      $scope.updown72=true;
+      $scope.updown82=true;
+      
+   
+      $scope.updown41=false;
+      $scope.updown51=false;
+      $scope.updown61=false;
+      $scope.updown71=false;
+      $scope.updown81=false;
   	}else{
   		$scope.updown31=false;
   		$scope.updown32=true;
@@ -123,6 +169,23 @@ $scope.openorclose='↓展开';
   	  	if ($scope.isPM101open){
   		$scope.updown41=true;
   		$scope.updown42=false;
+      $scope.updown11=false;
+      $scope.updown12=true;
+      $scope.updown21=false;
+      $scope.updown22=true;
+      $scope.updown32=true;
+
+      $scope.updown52=true;
+      $scope.updown62=true;
+      $scope.updown72=true;
+      $scope.updown82=true;
+      
+      $scope.updown31=false;
+  
+      $scope.updown51=false;
+      $scope.updown61=false;
+      $scope.updown71=false;
+      $scope.updown81=false;
   	}else{
   		$scope.updown41=false;
   		$scope.updown42=true;
@@ -141,6 +204,23 @@ $scope.openorclose='↓展开';
   	  	if ($scope.isSO21open){
   		$scope.updown51=true;
   		$scope.updown52=false;
+      $scope.updown11=false;
+      $scope.updown12=true;
+      $scope.updown21=false;
+      $scope.updown22=true;
+      $scope.updown32=true;
+      $scope.updown42=true;
+  
+      $scope.updown62=true;
+      $scope.updown72=true;
+      $scope.updown82=true;
+      
+      $scope.updown31=false;
+      $scope.updown41=false;
+ 
+      $scope.updown61=false;
+      $scope.updown71=false;
+      $scope.updown81=false;
   	}else{
   		$scope.updown51=false;
   		$scope.updown52=true;
@@ -159,6 +239,23 @@ $scope.openorclose='↓展开';
   	if ($scope.isCO1open){
   		$scope.updown71=true;
   		$scope.updown72=false;
+      $scope.updown11=false;
+      $scope.updown12=true;
+      $scope.updown21=false;
+      $scope.updown22=true;
+      $scope.updown32=true;
+      $scope.updown42=true;
+      $scope.updown52=true;
+      $scope.updown62=true;
+
+      $scope.updown82=true;
+      
+      $scope.updown31=false;
+      $scope.updown41=false;
+      $scope.updown51=false;
+      $scope.updown61=false;
+ 
+      $scope.updown81=false;
   	}else{
   		$scope.updown71=false;
   		$scope.updown72=true;
@@ -177,6 +274,23 @@ $scope.openorclose='↓展开';
   	  	if ($scope.isNO21open){
   		$scope.updown61=true;
   		$scope.updown62=false;
+      $scope.updown11=false;
+      $scope.updown12=true;
+      $scope.updown21=false;
+      $scope.updown22=true;
+      $scope.updown32=true;
+      $scope.updown42=true;
+      $scope.updown52=true;
+
+      $scope.updown72=true;
+      $scope.updown82=true;
+      
+      $scope.updown31=false;
+      $scope.updown41=false;
+      $scope.updown51=false;
+  
+      $scope.updown71=false;
+      $scope.updown81=false;
   	}else{
   		$scope.updown61=false;
   		$scope.updown62=true;
@@ -195,6 +309,23 @@ $scope.openorclose='↓展开';
   	if ($scope.isO31open){
   		$scope.updown81=true;
   		$scope.updown82=false;
+      $scope.updown11=false;
+      $scope.updown12=true;
+      $scope.updown21=false;
+      $scope.updown22=true;
+      $scope.updown32=true;
+      $scope.updown42=true;
+      $scope.updown52=true;
+      $scope.updown62=true;
+      $scope.updown72=true;
+ 
+      
+      $scope.updown31=false;
+      $scope.updown41=false;
+      $scope.updown51=false;
+      $scope.updown61=false;
+      $scope.updown71=false;
+      
   	}else{
   		$scope.updown81=false;
   		$scope.updown82=true;
