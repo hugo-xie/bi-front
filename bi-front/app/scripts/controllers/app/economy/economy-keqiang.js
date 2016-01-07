@@ -29,18 +29,24 @@ $scope.range2=function(){
        $scope.transdata[11]=Math.round($scope.transdata[11]*(1+(newValue-oldValue)/500)*100)/100;
        $scope.elecdata[11]=Math.round($scope.elecdata[11]*(1+(newValue-oldValue)/250)*100)/100;
        $scope.keqiangdata[3]=Math.round($scope.keqiangdata[3]*(1+(newValue-oldValue)/800)*100)/100;
+       $scope.selectedRange2=Math.round(($scope.selectedRange2+($scope.selectedRange*(newValue-oldValue)/200)));
+       $scope.selectedRange3=Math.round(($scope.selectedRange3+($scope.selectedRange*(newValue-oldValue)/150)));
   };
   var changeloandata2=function(newValue,oldValue,scope){
        $scope.loandata[11]=Math.round($scope.loandata[11]*(1+(newValue-oldValue)/100)*100)/100;
        $scope.transdata[11]=Math.round($scope.transdata[11]*(1+(newValue-oldValue)/500)*100)/100;
        $scope.elecdata[11]=Math.round($scope.elecdata[11]*(1+(newValue-oldValue)/250)*100)/100;
        $scope.keqiangdata[3]=Math.round($scope.keqiangdata[3]*(1+(newValue-oldValue)/800)*100)/100;
+       $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange2*(newValue-oldValue)/200)));
+       $scope.selectedRange3=Math.round(($scope.selectedRange3+($scope.selectedRange2*(newValue-oldValue)/150)));
   };
   var changeloandata3=function(newValue,oldValue,scope){
        $scope.loandata[11]=Math.round($scope.loandata[11]*(1+(newValue-oldValue)/100)*100)/100;
        $scope.transdata[11]=Math.round($scope.transdata[11]*(1+(newValue-oldValue)/500)*100)/100;
        $scope.elecdata[11]=Math.round($scope.elecdata[11]*(1+(newValue-oldValue)/250)*100)/100;
        $scope.keqiangdata[3]=Math.round($scope.keqiangdata[3]*(1+(newValue-oldValue)/800)*100)/100;
+       $scope.selectedRange2=Math.round(($scope.selectedRange2+($scope.selectedRange3*(newValue-oldValue)/200)));
+       $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange3*(newValue-oldValue)/150)));
   };
   $scope.reset=function(){
     $scope.selectedRange=0;
