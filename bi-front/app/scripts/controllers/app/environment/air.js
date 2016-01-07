@@ -41,8 +41,10 @@ $scope.openorclose='↓展开';
   	$scope.ishealthopen = !$scope.ishealthopen;
   	if (!$scope.ishealthopen){
   		$scope.openorclose='↓展开';
+      $scope.openorclose1='↑关闭';
   	}else{
   		$scope.openorclose='↑关闭';
+      $scope.openorclose1='↓展开';
   	} 			
   	$scope.issuggestionopen = false; 
   };
@@ -52,8 +54,10 @@ $scope.openorclose='↓展开';
   	$scope.issuggestionopen = !$scope.issuggestionopen;
   	if (!$scope.issuggestionopen){
   		$scope.openorclose1='↓展开';
+      $scope.openorclose='↑关闭';
   	}else{
   		$scope.openorclose1='↑关闭';
+      $scope.openorclose='↓展开';
   	} 			
   	$scope.ishealthopen = false; 
   };
