@@ -104,9 +104,7 @@ var changedetail=function(newValue,oldValue,scope){
   $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.selectedRange2=Math.round(($scope.selectedRange2+($scope.selectedRange*(newValue-oldValue)/200))*100)/100;
-  $scope.selectedRange3=Math.round(($scope.selectedRange3+($scope.selectedRange*(newValue-oldValue)/150))*100)/100;
-  $scope.selectedRange4=Math.round(($scope.selectedRange4+($scope.selectedRange*(newValue-oldValue)/180))*100)/100;
+ 
 };
 var changedetail2=function(newValue,oldValue,scope){
   $scope.date[10]=Math.round($scope.date[10]*(1+(newValue-oldValue)/200)*100)/100;
@@ -115,7 +113,7 @@ var changedetail2=function(newValue,oldValue,scope){
   $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange2*(newValue-oldValue)/200))*100)/100;
+  
 };
 var changedetail3=function(newValue,oldValue,scope){
   $scope.date[10]=Math.round($scope.date[10]*(1+(newValue-oldValue)/200)*100)/100;
@@ -124,7 +122,7 @@ var changedetail3=function(newValue,oldValue,scope){
   $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange3*(newValue-oldValue)/200))*100)/100;
+ 
 
 };
 var changedetail4=function(newValue,oldValue,scope){
@@ -134,38 +132,30 @@ var changedetail4=function(newValue,oldValue,scope){
   $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange4*(newValue-oldValue)/200))*100)/100;
+ 
 };
 var changemonthdetail=function(newValue,oldValue,scope){
   $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.monthselectedRange2=Math.round(($scope.monthselectedRange2+($scope.monthselectedRange*(newValue-oldValue)/200))*100)/100;
-  $scope.monthselectedRange3=Math.round(($scope.monthselectedRange3+($scope.monthselectedRange*(newValue-oldValue)/170))*100)/100;
-  $scope.monthselectedRange4=Math.round(($scope.monthselectedRange4+($scope.monthselectedRange*(newValue-oldValue)/160))*100)/100;
+ 
 
 };
 var changemonthdetail2=function(newValue,oldValue,scope){
   $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
 
-  $scope.monthselectedRange=Math.round(($scope.monthselectedRange+($scope.monthselectedRange2*(newValue-oldValue)/200))*100)/100;
-  $scope.monthselectedRange3=Math.round(($scope.monthselectedRange3+($scope.monthselectedRange2*(newValue-oldValue)/200))*100)/100;
-  $scope.monthselectedRange4=Math.round(($scope.monthselectedRange4+($scope.monthselectedRange2*(newValue-oldValue)/200))*100)/100;
+  
 
 };
 var changemonthdetail3=function(newValue,oldValue,scope){
   $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.monthselectedRange=Math.round(($scope.monthselectedRange+($scope.monthselectedRange3*(newValue-oldValue)/200))*100)/100;
-  $scope.monthselectedRange2=Math.round(($scope.monthselectedRange2+($scope.monthselectedRange3*(newValue-oldValue)/200))*100)/100;
-  $scope.monthselectedRange4=Math.round(($scope.monthselectedRange4+($scope.monthselectedRange3*(newValue-oldValue)/200))*100)/100;
+ 
 };
 var changemonthdetail4=function(newValue,oldValue,scope){
   $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
   $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.monthselectedRange=Math.round(($scope.monthselectedRange+($scope.monthselectedRange4*(newValue-oldValue)/200))*100)/100;
-  $scope.monthselectedRange2=Math.round(($scope.monthselectedRange2+($scope.monthselectedRange4*(newValue-oldValue)/200))*100)/100;
-  $scope.monthselectedRange3=Math.round(($scope.monthselectedRange3+($scope.monthselectedRange4*(newValue-oldValue)/200))*100)/100;
+ 
 };
 $scope.$watch($scope.range,changedetail);
 $scope.$watch($scope.range2,changedetail2);
