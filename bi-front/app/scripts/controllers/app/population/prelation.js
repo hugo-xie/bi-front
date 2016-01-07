@@ -413,15 +413,16 @@ $scope.btn_click3=function(btn){
 };
 $scope.change3=function(btn){
    if(btn.name===2020){
-    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为5%、50.2%和44.8%，产值比重分别是5%、48%和47%。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为31.4%、32.2%和36.4%，产值比重分别是5%、48%和47%。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2020年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2020年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',2.3053],
-                ['第二产业人口',23.1311],
-                ['第三产业人口',20.6702]
+            ['第一产业人口',23.5],
+                ['第二产业人口',24.1],
+                ['第三产业人口',27.2]
+               
                 ]
         }];
     $scope.industryPie.series=[{
@@ -435,15 +436,15 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2025){
-    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为15.5%、45.5%和39.1%，产值比重分别是15%、45%和40%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为29.4%、32.0%和38.6%，产值比重分别是4.2%、46.8%和49.1%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2025年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2025年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',17],
-                ['第二产业人口',50],
-                ['第三产业人口',43]
+             ['第一产业人口',22.8],//
+                ['第二产业人口',24.8],
+                ['第三产业人口',29.9]
                 ]
         }];
     $scope.industryPie.series=[{
@@ -457,15 +458,15 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2030){
-    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为9.7%、38.8%和51.5%，产值比重分别是16.4%、36.1%和47.5%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为22.6%、34.9%和42.5%，产值比重分别是3.8%、44.3%和52.0%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2030年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2030年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',10],
-                ['第二产业人口',40],
-                ['第三产业人口',53]
+                ['第一产业人口',18.63],
+                ['第二产业人口',28.72],
+                ['第三产业人口',34.95]
                 ]
         }];
     $scope.industryPie.series=[{
@@ -479,15 +480,15 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2040){
-    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为5.4%、48.4%和46.2%，产值比重分别是7.3%、49.1%和43.6%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为12.8%、32.2%和55.0%，产值比重分别是3.5%、40.5%和56.0%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2040年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2040年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',5],
-                ['第二产业人口',45],
-                ['第三产业人口',43]
+                ['第一产业人口',11.15],
+                ['第二产业人口',28.05],
+                ['第三产业人口',48]
                 ]
         }];
     $scope.industryPie.series=[{
@@ -501,15 +502,15 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2035){
-    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为13.1%、42.3%和44.6%，产值比重分别是12.3%、41.5%和46.2%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为17.3%、33.2%和49.5%，产值比重分别是3.6%、41.0%和55.4%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2035年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2035年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',17],
-                ['第二产业人口',55],
-                ['第三产业人口',58]
+                ['第一产业人口',14.6],
+                ['第二产业人口',27.97],
+                ['第三产业人口',41.73]
                 ]
         }];
     $scope.industryPie.series=[{
@@ -523,15 +524,15 @@ $scope.change3=function(btn){
         }];
    }
    if(btn.name===2045){
-    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为6.4%、45.5%和48.2%，产值比重分别是3.1%、46.2%和50.8%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
+    document.getElementById("b").innerHTML="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp结合两者的平均比重，即第一、二、三产业就业人口比重分别为5.7%、31.5%和62.8%，产值比重分别是3.1%、46.2%和50.8%，相比往年，可见产业结构、产值结构有所变化。一般情况下，随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。";
     $scope.populationPie.options.title.text="太仓市2045年产业就业人口比重分析预测";
     $scope.industryPie.options.title.text="太仓市2045年产业产值比重分析预测";
     $scope.populationPie.series=[{
             type: 'pie',
             data: [
-                ['第一产业人口',259.58],
-                ['第二产业人口',3265.66],
-                ['第三产业人口',4848.24]
+                ['第一产业人口',5.1],
+                ['第二产业人口',28.43],
+                ['第三产业人口',56.67]
                 ]
         }];
     $scope.industryPie.series=[{
@@ -1294,16 +1295,17 @@ $scope.change2=function(btn){
      $scope.totaldata = {
   
     tabledata:
-    [
+     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
-      {yearvalue:'第一产业产值', Fp:'0.7327',Sp:'0.7670',Tp:'0.7378'},
-      {yearvalue:'第二产业产值', Fp:'0.7737',Sp:'0.7870',Tp:'0.7759'},
-      {yearvalue:'第三产业产值', Fp:'0.7630',Sp:'0.7691',Tp:'0.7640'},
-      {yearvalue:'人均GDP', Fp:'0.7500',Sp:'0.7654',Tp:'0.7525'},
-      {yearvalue:'地方生产总值', Fp:'0.7764',Sp:'0.7677',Tp:'0.7677'},
-      {yearvalue:'社会消费品零售总额', Fp:'0.7610',Sp:'0.7725',Tp:'0.7628'}
+      {yearvalue:'第一产业产值', Fp:'0.9245',Sp:'0.2154',Tp:'0.3116'},
+      {yearvalue:'第二产业产值', Fp:'0.2425',Sp:'0.9524',Tp:'0.3547'},
+      {yearvalue:'第三产业产值', Fp:'0.2124',Sp:'0.3824',Tp:'0.9488'},
+      {yearvalue:'人均GDP', Fp:'0.7184',Sp:'0.7583',Tp:'0.8196'},
+      {yearvalue:'地方生产总值', Fp:'0.8569',Sp:'0.7249',Tp:'0.8589'},
+      {yearvalue:'社会消费品零售总额', Fp:'0.7498',Sp:'0.7997',Tp:'0.7631'}
   
     ]
+
   };
     require(
             [
@@ -1388,45 +1390,46 @@ $scope.change2=function(btn){
                
             ],
             links: [
-                {source: '第一产业人口', target: '地方生产总值', weight: 0.7660,name:'0.7660关联'},
-                {source: '第一产业人口', target: '第一产业产值', weight: 0.7327,name:'0.7327关联'},
-                {source: '第一产业人口', target: '第二产业产值', weight: 0.7737,name:'0.7737关联'},
-                {source: '第一产业人口', target: '第三产业产值', weight: 0.7630,name:'0.7630关联'},
-                {source: '第一产业人口', target: '人均GDP', weight: 0.7500,name:'0.7500关联'},
-                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.7610,name:'0.7610关联'},
-                {source: '第二产业人口', target: '地方生产总值', weight: 0.7764,name:'0.7764关联'},
-                {source: '第二产业人口', target: '第一产业产值', weight: 0.7670,name:'0.7670关联'},
-                {source: '第二产业人口', target: '第二产业产值', weight: 0.7870,name:'0.7870关联'},
-                {source: '第二产业人口', target: '第三产业产值', weight: 0.7691,name:'0.7691关联'},
-                {source: '第二产业人口', target: '人均GDP', weight: 0.7654,name:'0.7654关联'},
-                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.7725,name:'0.7725关联'},
-                {source: '第三产业人口', target: '地方生产总值', weight: 0.7677,name:'0.7677关联'},
-                {source: '第三产业人口', target: '第一产业产值', weight: 0.7378,name:'0.7378关联'},
-                {source: '第三产业人口', target: '第二产业产值', weight: 0.7759,name:'0.7759关联'},
-                {source: '第三产业人口', target: '第三产业产值', weight: 0.7640,name:'0.7640关联'},
-                {source: '第三产业人口', target: '人均GDP', weight: 0.7525,name:'0.7525关联'},
-                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.7628,name:'0.7628关联'},
+                {source: '第一产业人口', target: '地方生产总值', weight: 0.6125,name:'0.6125关联'},
+                {source: '第一产业人口', target: '第一产业产值', weight: 0.9245,name:'0.9245关联'},
+                {source: '第一产业人口', target: '第二产业产值', weight: 0.2154,name:'0.2154关联'},
+                {source: '第一产业人口', target: '第三产业产值', weight: 0.3116,name:'0.3116关联'},
+                {source: '第一产业人口', target: '人均GDP', weight: 0.9245,name:'0.9245关联'},
+                {source: '第一产业人口', target: '社会消费品零售总额', weight: 0.6125,name:'0.6125关联'},
+                {source: '第二产业人口', target: '地方生产总值', weight: 0.8521,name:'0.8521关联'},
+                {source: '第二产业人口', target: '第一产业产值', weight: 0.2425,name:'0.2425关联'},
+                {source: '第二产业人口', target: '第二产业产值', weight: 0.9524,name:'0.9524关联'},
+                {source: '第二产业人口', target: '第三产业产值', weight: 0.3547,name:'0.3547关联'},
+                {source: '第二产业人口', target: '人均GDP', weight: 0.8241,name:'0.8241关联'},
+                {source: '第二产业人口', target: '社会消费品零售总额', weight: 0.7797,name:'0.7997关联'},
+                {source: '第三产业人口', target: '地方生产总值', weight: 0.7598,name:'0.7598关联'},
+                {source: '第三产业人口', target: '第一产业产值', weight: 0.2124,name:'0.2124关联'},
+                {source: '第三产业人口', target: '第二产业产值', weight: 0.3824,name:'0.3824关联'},
+                {source: '第三产业人口', target: '第三产业产值', weight: 0.9488,name:'0.9488关联'},
+                {source: '第三产业人口', target: '人均GDP', weight: 0.8851,name:'0.8851关联'},
+                {source: '第三产业人口', target: '社会消费品零售总额', weight: 0.8531,name:'0.8531关联'},
 
                 // Ribbon Type 的和弦图每一对节点之间必须是双向边
-                {target: '第一产业人口', source: '地方生产总值', weight: 0.7660},
-                {target: '第一产业人口', source: '第一产业产值', weight: 0.7327},
-                {target: '第一产业人口', source: '第二产业产值', weight: 0.7737},
-                {target: '第一产业人口', source: '第三产业产值', weight: 0.7630},
-                {target: '第一产业人口', source: '人均GDP', weight: 0.7500},
-                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.7610},
-                {target: '第二产业人口', source: '地方生产总值', weight: 0.7764},
-                {target: '第二产业人口', source: '第一产业产值', weight: 0.7670},
-                {target: '第二产业人口', source: '第二产业产值', weight: 0.7870},
-                {target: '第二产业人口', source: '第三产业产值', weight: 0.7691},
-                {target: '第二产业人口', source: '人均GDP', weight: 0.7654},
-                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.7725},
-                {target: '第三产业人口', source: '地方生产总值', weight: 0.7677},
-                {target: '第三产业人口', source: '第一产业产值', weight: 0.7378},
-                {target: '第三产业人口', source: '第二产业产值', weight: 0.7759},
-                {target: '第三产业人口', source: '第三产业产值', weight: 0.7640},
-                {target: '第三产业人口', source: '人均GDP', weight: 0.7525},
-                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.7628}
+                {target: '第一产业人口', source: '地方生产总值', weight: 0.6125},
+                {target: '第一产业人口', source: '第一产业产值', weight: 0.9569},
+                {target: '第一产业人口', source: '第二产业产值', weight: 0.2185},
+                {target: '第一产业人口', source: '第三产业产值', weight: 0.2456},
+                {target: '第一产业人口', source: '人均GDP', weight: 0.9245},
+                {target: '第一产业人口', source: '社会消费品零售总额', weight: 0.6125},
+                {target: '第二产业人口', source: '地方生产总值', weight: 0.8521},
+                {target: '第二产业人口', source: '第一产业产值', weight: 0.3145},
+                {target: '第二产业人口', source: '第二产业产值', weight: 0.9582},
+                {target: '第二产业人口', source: '第三产业产值', weight: 0.5214},
+                {target: '第二产业人口', source: '人均GDP', weight: 0.8241},
+                {target: '第二产业人口', source: '社会消费品零售总额', weight: 0.7797},
+                {target: '第三产业人口', source: '地方生产总值', weight: 0.7598},
+                {target: '第三产业人口', source: '第一产业产值', weight: 0.2185},
+                {target: '第三产业人口', source: '第二产业产值', weight: 0.4156},
+                {target: '第三产业人口', source: '第三产业产值', weight: 0.9102},
+                {target: '第三产业人口', source: '人均GDP', weight: 0.8851},
+                {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.8531}
             ]
+
         }
     ]
 };
@@ -1447,11 +1450,12 @@ $scope.r=function(){
 };
 function h(newValue,oldValue,scope){
     //console.log(newValue);
-    popData[9]=(newValue*0.03)*50+475038;
-    popData1[9]=(newValue*0.03)*50+543482;
-    popData2[9]=(newValue*0.03)*50+598577;
+    popData[9]=(newValue*0.03)*50+775038;
+    popData1[9]=(newValue*0.03)*50+843482;
+    popData2[9]=(newValue*0.03)*50+898577;
    //console.log(popData[9]);
-    $scope.selectedRange1=Math.round((($scope.selectedRange*0.2)));
+   $scope.selectedRange1=Math.round(($scope.selectedRange1+($scope.selectedRange*(newValue-oldValue)/200))*100)/100;
+    //$scope.selectedRange1=Math.round((($scope.selectedRange*0.2)));
     gdp[9]=(newValue*0.03)*50+2022.31;
     gdp1[9]=(newValue*0.03)*50+4256.65;
     gdp2[9]=(newValue*0.03)*50+8373.48;
@@ -1464,21 +1468,21 @@ $scope.rr=function(){
 };
 function hh(newValue,oldValue,scope){
     console.log(newValue);
-    $scope.selectedRange=Math.round((($scope.selectedRange1*0.2)));
-    popData[9]=(newValue*0.03)*50+475038;
-    popData1[9]=(newValue*0.03)*50+543482;
-    popData2[9]=(newValue*0.03)*50+598577;
+     $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange1*(newValue-oldValue)/200))*100)/100;
+    popData[9]=(newValue*0.03)*50+775038;
+    popData1[9]=(newValue*0.03)*50+843482;
+    popData2[9]=(newValue*0.03)*50+898577;
     gdp[9]=(newValue*0.03)*50+2022.31;
     gdp1[9]=(newValue*0.03)*50+4256.65;
     gdp2[9]=(newValue*0.03)*50+8373.48;
 }
 $scope.$watch($scope.rr,hh);
 
-    var popData=[447046, 450908, 454570, 457963, 461066, 463863, 466970, 469950, 472652, 475038];
+    var popData=[747046, 750908, 754570, 757963, 761066, 763863, 766970, 769950, 772652, 775038];
     var gdp=[1100, 1177, 1259.39, 1347.55, 1441.88,1542.81,1650.80, 1766.36, 1890.00, 2022.31];
-    var popData1=[503463, 508465, 513319, 518001, 522475, 526754, 531251, 535567, 539655, 543482];
+    var popData1=[803463, 808465, 813319, 818001, 822475, 826754, 831251, 835567, 839655, 843482];
     var gdp1=[2163.87, 2315.34, 2477.41, 2650.83,2836.39, 3034.93, 3247.38, 3474.7,3717.93, 4256.65];
-    var popData2=[550441, 556081, 561654, 567106, 572420, 577676, 583104, 588418, 593579, 598577];
+    var popData2=[850441, 856081, 861654, 867106, 872420, 877676, 883104, 888418, 893579, 898577];
     var gdp2=[4554.62, 4873.44, 5214.58,5579.60,5970.18, 6388.09,6835.25, 7313.72,7825.68, 8373.48];
          $scope.predictChart ={
 options:{ chart: {
@@ -1773,9 +1777,9 @@ options: {
                                 type: 'pie',
                                 name: '',
                                 data:[
-               ['第一产业人口',2.3053],
-                ['第二产业人口',23.1311],
-                ['第三产业人口',20.6702]
+             ['第一产业人口',23.5],
+                ['第二产业人口',24.1],
+                ['第三产业人口',27.2]
             ]
                             }]
                                             
