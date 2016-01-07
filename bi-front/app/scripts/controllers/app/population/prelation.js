@@ -1450,9 +1450,9 @@ $scope.r=function(){
 };
 function h(newValue,oldValue,scope){
     //console.log(newValue);
-    popData[9]=(newValue*0.03)*50+775038;
-    popData1[9]=(newValue*0.03)*50+843482;
-    popData2[9]=(newValue*0.03)*50+898577;
+    popData[9]=Math.round((newValue*0.03)*50+775038);
+    popData1[9]=Math.round((newValue*0.03)*50+843482);
+    popData2[9]=Math.round((newValue*0.03)*50+898577);
    //console.log(popData[9]);
    $scope.selectedRange1=Math.round(($scope.selectedRange1+($scope.selectedRange*(newValue-oldValue)/200))*100)/100;
     //$scope.selectedRange1=Math.round((($scope.selectedRange*0.2)));
@@ -1469,9 +1469,9 @@ $scope.rr=function(){
 function hh(newValue,oldValue,scope){
     console.log(newValue);
      $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange1*(newValue-oldValue)/200))*100)/100;
-    popData[9]=(newValue*0.03)*50+775038;
-    popData1[9]=(newValue*0.03)*50+843482;
-    popData2[9]=(newValue*0.03)*50+898577;
+    popData[9]=Math.round((newValue*0.03)*50+775038);
+    popData1[9]=Math.round((newValue*0.03)*50+843482);
+    popData2[9]=Math.round((newValue*0.03)*50+898577);
     gdp[9]=(newValue*0.03)*50+2022.31;
     gdp1[9]=(newValue*0.03)*50+4256.65;
     gdp2[9]=(newValue*0.03)*50+8373.48;

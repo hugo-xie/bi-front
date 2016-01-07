@@ -128,7 +128,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
                         '其他污水处理厂'
-                    ],
+                    ]
                     
                 },
                 yAxis: {
