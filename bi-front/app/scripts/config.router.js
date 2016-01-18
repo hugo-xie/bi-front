@@ -286,6 +286,19 @@ angular.module('nevermore')
               }]
             }
           })
+           .state('app.pmenu.new', {
+            url: '^/app/pmenu/new',
+            templateUrl: 'tpl/app/population/new.html',
+            controller: 'PrelationCtrl',
+            resolve: {
+              controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                  'scripts/controllers/app/population/new.js',
+                  'scripts/controllers/app/population/echarts.js',
+                ]);
+              }]
+            }
+          })
            //population end
 
           .state('app.index.teacher-reservation', {
