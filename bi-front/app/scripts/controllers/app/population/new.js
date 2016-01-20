@@ -1,6 +1,39 @@
 'use strict';
 
-app.controller('PrelationCtrl', ['$scope', function($scope) {
+app.controller('NewCtrl', ['$scope', function($scope) {
+
+$scope.buttonMap3 = [{
+        name: 2025,
+        label: 2025 + "年",
+        radio: "Middle"
+      },
+      {
+        name: 2035,
+        label: 2035 + "年",
+        radio: "Middle"
+      },
+      {
+        name: 2045,
+        label: 2045 + "年",
+        radio: "Right"
+      }];
+ $scope.btn_click3=function(bttn){
+     $scope.change3(bttn);
+  };    
+ $scope.change3=function(bttn){
+   if(bttn.name===2025){
+    $scope.jobf.options.xAxis.categories=['2016', '2017', '2018', '2019', '2020', '2021',
+                '2022', '2023', '2024', '2025'];
+   }
+   if(bttn.name===2035){
+    $scope.jobf.options.xAxis.categories=['2026', '2027', '2028', '2029', '2030', '2031',
+                '2032', '2033', '2034', '2035'];
+   }
+   if(bttn.name===2045){
+    $scope.jobf.options.xAxis.categories=['2036', '2037', '2038', '2039', '2040', '2041',
+                '2042', '2043', '2044', '2045'];
+   }
+ };
 
    $scope.showTotalTable = function(){
     $scope.totalshow= !$scope.totalshow;
@@ -100,29 +133,7 @@ if(tchrGrntOne.name==="高中"){
     }
  };
 
-  $scope.btn_click2=function(bttn){
-     $scope.change(bttn);
-  };    
- $scope.change=function(bttn){
-    if(bttn.name===2020){
-        $scope.jobf.options.subtitle.text="(2016~2020)";
-    }
-    if(bttn.name===2025){
-        $scope.jobf.options.subtitle.text="(2021~2025)";
-    }
-    if(bttn.name===2030){
-        $scope.jobf.options.subtitle.text="(2026~2030)";
-    }
-    if(bttn.name===2035){
-        $scope.jobf.options.subtitle.text="(2031~2035)";
-    }
-    if(bttn.name===2040){
-        $scope.jobf.options.subtitle.text="(2036~2040)";
-    }
-    if(bttn.name===2045){
-        $scope.jobf.options.subtitle.text="(2041~2045)";
-    }
- };
+
        
 $scope.buttonMap1 = [{
         name: 2025,
@@ -161,31 +172,60 @@ $scope.buttonMap1 = [{
 
 
  $scope.jobf ={
-     options:{
-      chart: {
-            type: 'column'
+      options:{
+        chart: {
+            type: 'areaspline'
         },
         title: {
-            text: '分三次产业的就业增长'
+            text: '就业人数'
         },
-        subtitle:{
-           text:'(2016~2020)'
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 150,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         xAxis: {
-            categories: ['总值', '第一产业', '第二产业', '第三产业']
+            categories: ['2016', '2017', '2018', '2019', '2020', '2021',
+                '2022', '2023', '2024', '2025']
+        },
+        yAxis: {
+            title: {
+                text: '人数'
+            }
+        },
+        tooltip: {
+            shared: true,
+            valueSuffix: ' 万人'
         },
         credits: {
             enabled: false
+        },
+        plotOptions: {
+            areaspline: {
+                fillOpacity: 0.5
+            }
         }
     },
         series: [{
-            name: '比率',
-            data: [2, -2, -3, 2]
-        }]
+            name: '劳动力人口数',
 
+            data: [50.2, 51.8, 52.3, 52.8, 53.1, 54.1, 54.7,55.2,55.8,56.3]
+        }, {
+            name: '就业人数',
+
+            data: [40.0, 40.8, 42.3, 42.8, 43.7, 44.9, 45.3,46.7,47.2,47.9]
+        }]
 };  
 $scope.jobt ={
        options:{
+        chart: {
+            zoomType: 'xy'
+        },
         title: {
             text: '就业结构的变化',
             x: -20 //center
@@ -197,18 +237,36 @@ $scope.jobt ={
             categories: ['2016', '2017', '2018', '2019', '2020', '2021',
                 '2022', '2023', '2024', '2025']
         },
-        yAxis: {
-            title: {
-                text: '比例 (%)'
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value}%',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
             },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
+            title: {
+                text: '比例',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: '就业人数',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} 万人',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
         tooltip: {
-            valueSuffix: '°C'
+            valueSuffix: '%'
         },
         legend: {
            // layout: 'vertical',
@@ -218,14 +276,26 @@ $scope.jobt ={
         }
     },
         series: [{
+            name: '就业人数',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1],
+            tooltip: {
+                valueSuffix: ' 万人'
+            }
+
+        },{
             name: '第一产业',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3]
+            type: 'spline',
+            data: [17.0, 16.9, 19.5, 14.5, 12.2, 11.5, 15.2, 6.5, 5.3, 4.3]
         }, {
             name: '第二产业',
-            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1]
+            type: 'spline',
+            data: [35.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1]
         }, {
             name: '第三产业',
-            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0]
+            type: 'spline',
+            data: [37.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0]
         }]
 
     };    

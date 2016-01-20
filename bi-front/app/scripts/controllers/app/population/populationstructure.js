@@ -26,7 +26,7 @@ var map = new AMap.Map('conMap');
 map.setZoom(12);
 map.setCenter([121.10, 31.45]);
 
-//
+
  
 AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
     var toolBar = new AMap.ToolBar();
