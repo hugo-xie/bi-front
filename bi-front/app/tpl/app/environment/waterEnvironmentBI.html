@@ -13,9 +13,131 @@
 </div>
 <div class="wrapper container" style="width:1500px">
 	
-	<!-- 污水总量highcharts -->
+	
 	<div class="row" style="margin-top: 20px;">
         <div class="col-md-12">
+        <!-- 年度污水排放highcharts -->
+            <div class="panel panel-primary" style="margin-left:10.3%;margin-right:10.3%;margin-top: 20px;">
+	            <div class="panel-heading">
+	              工业行业废水及主要污染物排放情况
+	            </div>
+
+                <div class="panel-body" style="padding-top:0;padding-bottom:0;">
+	                <div class="row">
+	                	<!--highcharts部分-->
+	                 	<div class="col-md-8 chart-panel" style="padding-top:15px;padding-bottom:15px;">
+	                       <highchart id="pollution" config="pollution" style="width:500px,height: 500px"></highchart>
+	                  	</div>
+		                
+
+	                <!--第一个框的右边栏部分-->
+	                    <div class="col-md-4" style="padding:15px 0 0 0;">
+	                    	<div class="col-md-12" style="margin-bottom:1em;padding-bottom:1em;border-bottom:1px solid lightgrey;">
+					      		<p><i class="glyphicon  glyphicon-list" ></i><span class="fc-font-title" style="margin-left:0.5em">工业行业废水排放情况</span></p>
+					      		
+					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
+				      				<button ng-click="industryPollution1()" class="btn m-b-xs btn-primary  cgq_fixedwidth" >废水排放量</button>
+				      			</div>
+				      		</div>
+				      		<br><br>
+							<div class="col-md-12" style="margin-bottom:1em;padding-bottom:1em;border-bottom:1px solid lightgrey;">
+				      			<p><i class="glyphicon  glyphicon-list" ></i><span class="fc-font-title" style="margin-left:0.5em">所排放废水中各污染指标</span></p>
+					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
+					      			<button ng-click="industryPollution2()" class="btn m-b-xs btn-primary  cgq_fixedwidth">工业行业化学需氧量</button>
+					      		</div>
+					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
+					      			<button ng-click="industryPollution3()" class="btn m-b-xs btn-primary  cgq_fixedwidth">工业行业氨氮</button>
+					      		</div>
+					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
+					      			<button ng-click="industryPollution4()" class="btn m-b-xs btn-primary  cgq_fixedwidth">工业行业重金属</button>
+					      		</div>
+					      		<div class="col-md-6" style="padding-left:0;padding-right:2em">
+					      			<button ng-click="industryPollution5()" class="btn m-b-xs btn-primary  cgq_fixedwidth">工业行业石油类污染物</button>
+					      		</div>
+						    </div>
+						    <!--一句话解读-->
+	                        <div class="col-md-12">	                        
+	                        	<i class="fa  fa-mortar-board (alias) fa-fw text-muted" style="color: #23b7e5"></i> 
+	                            <span class="fc-font-title">一句话解读</span>	      <br/>                 	
+	                            <span class="fc-font-content" style="margin-top:0.5em;margin-left:2em;">水质分析与排污点减排预测采用基于朴素贝叶斯分类的神经网络模型设计。</span>
+	                        </div>	                            
+						</div>
+	                </div>
+            	</div>
+            </div>
+
+            <!-- 五强企业排放highcharts -->
+            <div class="panel panel-primary" style="margin-left:10.3%;margin-right:10.3%;margin-top: 20px;margin-bottom:0px;">
+	            <div class="panel-heading">
+	              工业行业废水及主要污染物排放情况
+	            </div>
+
+                <div class="panel-body" style="padding-top:0;padding-bottom:0;">
+	                <div class="row">
+	                	<!--highcharts部分-->
+	                 	<div class="col-md-8 chart-panel" style="padding-top:15px;padding-bottom:15px;">
+	                       <highchart id="factory" config="factory" style="width:500px,height: 500px"></highchart>
+	                  	</div>
+		                
+
+	                <!--第三个框的右边栏部分-->
+	                  <div class="col-md-4">
+	                    <p class="fill-margin"></p>
+	                    <div class="ioc-panel-desc">
+	                      <p class="ioc-panel-desc-title">
+	                        <div style="background:#929dce;width:115px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" >数据详情</div>
+	                      </p>
+	                      <div style="height:3px"></div>
+	                      <h4>预测结果解读</h4>
+	                      <p id='a' style="margin-right:10px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 对太仓市五家工业废水排放大户实时污水排放量展示</p>
+	                    </div>
+	                    <hr />
+	                    <div class="pull-left">
+		                    <span class="fa-stack fa-lg">
+		                      <i class="fa fa-circle fa-stack-2x text-info"></i>
+		                      <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+		                    </span>
+		                    <span class="h4">一句话解读</span>
+		                    <br />
+		                    <div style="margin-right:10px">
+		                    	<span class="glyphicon glyphico    n-list-alt" aria-hidden="true" style="height:5px;margin-right:13px"></span>
+		                     	<span style="font-size:18px;margin-right:10px">  玖龙纸业有限公司是太仓市工业废水主要排放源。</span>
+			                 </div>
+		                </div>
+                        <br>
+                        <button ng-click="showindustry()" class="btn m-b-xs btn-primary pull-left" style="margin-left:0;font-weight:bold">详细数据列表</button>
+	                  </div>
+	                </div>
+            	</div>
+            </div>
+                    <!--工厂废水排放  数据详情-->
+	        <div class="bg-white fc-water" style=""ng-if="industryshow">
+	            <div class="panel panel-default paddingmargin0em">
+	                <div class="panel-heading"><center>数据详情</center></div>  
+	                <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+	                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+	                        <td ng-repeat="year in totaldata.tabledata" style="text-align: center;">{{year.yearvalue}}</td>
+	                      </tr>
+	                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+	                        <td ng-repeat="JLfactory in totaldata.tabledata" style="text-align: center;">{{JLfactory.JLfactory}}</td>
+	                      </tr>
+	                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+	                        <td ng-repeat="Afactory in totaldata.tabledata" style="text-align: center;">{{Afactory.Afactory}}</td>
+	                      </tr>
+	                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+	                        <td ng-repeat="Bfactory in totaldata.tabledata" style="text-align: center;">{{Bfactory.Bfactory}}</td>
+	                      </tr>
+	                      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+	                        <td ng-repeat="Cfactory in totaldata.tabledata" style="text-align: center;">{{Cfactory.Cfactory}}</td>
+	                      </tr>
+	                       <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+	                        <td ng-repeat="Dfactory in totaldata.tabledata" style="text-align: center;">{{Dfactory.Dfactory}}</td>
+	                      </tr>
+	                </table>
+	            </div>
+	        </div>
+
+        <!-- 污水总量highcharts -->
             <div class="panel panel-primary" style="margin-left:10.3%;margin-right:10.3%;margin-top: 20px;">
 	            <div class="panel-heading">
 	              废水排放分析
@@ -29,7 +151,7 @@
 	                  	</div>
 		                
 
-	                <!--第一个框的右边栏部分-->
+	                <!--第二个框的右边栏部分-->
 	                    <div class="col-md-4" style="padding:15px 0 0 0;">
 	                    	<div class="col-md-12" style="margin-bottom:1em;padding-bottom:1em;border-bottom:1px solid lightgrey;">
 					      		<p><i class="glyphicon  glyphicon-list" ></i><span class="fc-font-title" style="margin-left:0.5em">各污水处理厂废水排放量</span></p>
@@ -64,12 +186,11 @@
 	                </div>
             	</div>
             </div>
-
 			
 			<!-- 牛哥代码 -->
 			<div class="panel panel-primary" style="margin-top: 30px;margin-left:10.3%;margin-right:10.3%;">
 				<div class="panel-heading">
-	            	水质分析与排污点减排预测
+	            	水质监测站及其附近污水处理厂查看
 	            </div>
 				<div class="panel-body">
 					<div class="row">
@@ -84,14 +205,14 @@
 						<div class="col-md-5">
 							<div class="panel panel-primary" style="height: 680px">
 					            <div class="panel-body">
-					                <h4>水质分析</h4>													           
+					                <h4>&nbsp水质监测站</h4>													           
 					                <div style="margin-top:10px;font-size:16px">
 					                    <ul class="list-group" style="overflow: auto;overflow-x:hidden;height:120px">
 					                        <li class="list-group-item" style="height:40px;" ng-repeat="waterQualityOne in waterQualityMarkerList2">
 					                            <span class="badge glyphicon glyphicon-exclamation-sign"></span>
 					                            {{waterQualityOne.monitor}}&nbsp&nbsp&nbsp
 					                            <span class="glyphicon glyphicon-hand-right"></span>
-					                            <a style="cursor: pointer" ng-click="btn_waterEnvironmentAnalysisElementsList(waterQualityOne)">&nbsp分析</a>
+					                            <a style="cursor: pointer" ng-click="btn_waterEnvironmentAnalysisElementsList(waterQualityOne)">&nbsp查看</a>
 					                        </li>
 					                    </ul>
 					                </div>
@@ -167,7 +288,7 @@
 														</tr>
 													</table>
 												</div>
-							                    <div><button type="button" class="btn btn-primary" ng-click="btn_waterPredictionZone()">排污点减排预测</button></div>
+							                    <!--<div><button type="button" class="btn btn-primary" ng-click="btn_waterPredictionZone()">排污点减排预测</button></div>-->
 							                </div>
 							            </div>
 							        </div>

@@ -5,93 +5,366 @@
  * @description # AboutCtrl Controller of the iocUiApp
  */
 app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function($scope, $timeout,$http) {
-    
-    //第一个框highcharts废水排放分析部分
+    //第一个框highcharts工业污水分析部分
+    $scope.pollution={
+         options:{
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '2015年重点行业废水排放情况'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            }},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['其他产业',   49.7],
+                    ['电力、热力生产和供应业',   7.5],
+                    {
+                        name: '造纸和纸制品业',
+                        y: 18.0,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['化学原料和化学制品制造业',    13.5],
+                    ['纺织业',     11.3]
+                ]
+            }]
+        };  
+    //行业废水排放情况
+    $scope.industryPollution1 = !$scope.industryPollution1
+
+    $scope.industryPollution1=function(){   
+        $scope.pollution={
+         options:{
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '2015年重点行业废水排放情况'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            }},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['其他产业',   49.7],
+                    ['电力、热力生产和供应业',   7.5],
+                    {
+                        name: '造纸和纸制品业',
+                        y: 18.0,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['化学原料和化学制品制造业',    13.5],
+                    ['纺织业',     11.3]
+                ]
+            }]
+        }; 
+        }; 
+    //行业化学需氧量排放情况
+    $scope.industryPollution2 = !$scope.industryPollution2
+
+    $scope.industryPollution2=function(){   
+        $scope.pollution={
+         options:{
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '2015年重点行业化学需氧量排放情况'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            }},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['其他产业',   40.5],
+                    ['纺织业',   9.1],
+                    {
+                        name: '造纸和纸制品业',
+                        y: 23.0,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['化学原料和化学制品制造业',    10.2],
+                    ['农副食品加工',     17.2]
+                ]
+            }]
+        }; 
+        };  
+
+    // 行业氨氮排放情况 
+    $scope.industryPollution3 = !$scope.industryPollution3
+
+    $scope.industryPollution3=function(){   
+        $scope.pollution={
+         options:{
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '2015年工业行业氨氮排放情况'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            }},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['其他产业',   39.4],
+                    ['纺织业',   7.7],
+                    {
+                        name: '化学原料和化学制品制造业',
+                        y: 35.3,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['造纸和纸制品种',    9.5],
+                    ['农副食品加工',     8.0]
+                ]
+            }]
+        }; 
+        };
+    //行业重金属等污染物排放情况
+    $scope.industryPollution4 = !$scope.industryPollution4
+
+    $scope.industryPollution4=function(){   
+        $scope.pollution={
+         options:{
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '2015年工业行业重金属排放情况'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            }},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['其他产业',   21.4],
+                    ['有色金属矿采选业',   14.0],
+                    {
+                        name: '有色金属冶炼和压延加工业',
+                        y: 27.5,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['金属制品业',    17.7],
+                    ['皮革、毛皮、羽毛及其制品和制鞋业',     19.4]
+                ]
+            }]
+        }; 
+        };
+        //行业石油类排放情况
+    $scope.industryPollution5 = !$scope.industryPollution5
+
+    $scope.industryPollution5=function(){   
+        $scope.pollution={
+         options:{
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '2015年工业行业石油类污染物排放情况'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            }},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['其他产业',  42.8],
+                    ['化学原料和化学制品制造业',   11.9],
+                    {
+                        name: '煤炭开采和洗选业',
+                        y: 17.1,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['石油加工、炼焦和核燃料加工业',    12.0],
+                    ['黑色金属冶炼和压延加工业',     19.4]
+                ]
+            }]
+        }; 
+        };
+    //第二个框highcharts废水排放分析部分
     $scope.changePollutionType1 = !$scope.changePollutionType1
 
     $scope.changePollutionType1=function(){
-        //区域图
-         $scope.discharge={
-            options:{
-                chart: {
-                    type: 'area'
-                },
-                credits: {
-                    enabled:false
-                },
+        //区域图  
+       $scope.discharge={
+        options:{
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '太仓市主要污水处理厂废水排放分析'
+            },
+            xAxis: {
+                categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日','1月7日']
+            },
+            yAxis: {
+                min: 0,
                 title: {
-                    text: '废水排放总量',
+                    text: '吨'
+                },
+                stackLabels: {
+                    enabled: true,
                     style: {
-                        fontWeight:'bold',
-                    }
-                },
-                subtitle: {
-                    text: ''
-                },
-                xAxis: {
-                    categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日', '1月7日'],
-                    tickmarkPlacement: 'on',
-                    title: {
-                        enabled: false
-                    }
-                },
-                yAxis: {
-                    title: {
-                        text: '吨'
-                    },
-                    labels: {
-                        formatter: function() {
-                            return this.value;
-                        }
-                    }
-                },
-                legend: {
-                    title: {
-                        style: { fontWeight: 'normal' }
-                    },
-                    itemStyle:{
-                        fontWeight:'normal'
-                       }
-                },
-                tooltip: {
-                    shared: true,
-                    valueSuffix: ' 吨'
-                },
-                plotOptions: {
-                    area: {
-                        stacking: 'normal',
-                        lineColor: '#666666',
-                        lineWidth: 1,
-                        marker: {
-                            lineWidth: 1,
-                            lineColor: '#666666'
-                        }
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
                     }
                 }
             },
+            legend: {
+                align: 'center',
+                x: 33,
+                verticalAlign: 'bottom',
+                y: 0,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: true
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: false,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        style: {
+                            textShadow: '0 0 3px black'
+                        }
+                    }
+                }
+            }},
             series: [{
                 name: '太仓市城区污水处理厂',
-                color:"#69afcd",
+                color:'#69afcd',
                 data: [37289.93, 38061.91, 37985.65, 36860.89, 36602.62, 37506.78]
             }, {
                 name: '太仓江城城市污水处理有限公司',
-                color:"#57d160",
+                color:'#57d160',
                 data: [15285.77, 13806.99, 17708, 16371.03, 16052.72, 15899.75]
             }, {
                 name: '浏河镇污水处理厂',
-                color:"#c7e74f",
+                color:'#c7e74f',
                 data: [8325.73, 8570.56, 7456.46, 7884.56, 7973.25, 8653.28]
             }, {
                 name: '港城组团污水处理厂',
-                color:"#f8d940",
+                color:'#f8d940',
                 data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
-            },{
+            }, {
                 name: '其他污水处理厂',
-                color:"#ffb143",
+                color:'#ffb143',
                 data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
             }]
-         };
-      };
+        };
+        };
       //溶解氧浓度
       $scope.changePollutionType2=function(){
         $scope.discharge={
@@ -367,87 +640,165 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
      
     
     $scope.discharge={
-       options:{
+        options:{
             chart: {
-                type: 'area'
-            },
-            credits: {
-                enabled:false
+                type: 'column'
             },
             title: {
-                text: '废水排放总量',
-                style: {
-                        fontWeight:'bold',
-                    }
-            },
-            subtitle: {
-                text: ''
+                text: '太仓市主要污水处理厂废水排放分析'
             },
             xAxis: {
-                categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日', '1月7日'],
-                tickmarkPlacement: 'on',
-                title: {
-                    enabled: false
-                }
+                categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日','1月7日']
             },
             yAxis: {
+                min: 0,
                 title: {
                     text: '吨'
                 },
-                labels: {
-                    formatter: function() {
-                        return this.value;
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
                     }
                 }
             },
             legend: {
-                    title: {
-                        style: { fontWeight: 'normal' }
-                    },
-                    itemStyle:{
-                        fontWeight:'normal'
-                       }
-                },
+                align: 'center',
+                x: 33,
+                verticalAlign: 'bottom',
+                y: 0,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: true
+            },
             tooltip: {
-                shared: true,
-                valueSuffix: ' 吨'
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
             },
             plotOptions: {
-                area: {
+                column: {
                     stacking: 'normal',
-                    lineColor: '#666666',
-                    lineWidth: 1,
-                    marker: {
-                        lineWidth: 1,
-                        lineColor: '#666666'
+                    dataLabels: {
+                        enabled: false,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        style: {
+                            textShadow: '0 0 3px black'
+                        }
                     }
                 }
-            }
-        },
+            }},
             series: [{
                 name: '太仓市城区污水处理厂',
-                color:"#69afcd",
+                color:'#69afcd',
                 data: [37289.93, 38061.91, 37985.65, 36860.89, 36602.62, 37506.78]
             }, {
                 name: '太仓江城城市污水处理有限公司',
-                color:"#57d160",
+                color:'#57d160',
                 data: [15285.77, 13806.99, 17708, 16371.03, 16052.72, 15899.75]
             }, {
                 name: '浏河镇污水处理厂',
-                color:"#c7e74f",
+                color:'#c7e74f',
                 data: [8325.73, 8570.56, 7456.46, 7884.56, 7973.25, 8653.28]
             }, {
                 name: '港城组团污水处理厂',
-                color:"#f8d940",
+                color:'#f8d940',
                 data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
-            },{
+            }, {
                 name: '其他污水处理厂',
-                color:"#ffb143",
+                color:'#ffb143',
                 data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
             }]
-        };          
+        };
+    //第三个框highchart
 
-        
+$scope.factory={
+    options:{
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '工业排放'
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com'
+        },
+        xAxis: {
+            categories: [
+                '1月1日',
+                '1月2日',
+                '1月3日',
+                '1月4日',
+                '1月5日',
+                '1月6日',
+                '1与7日',
+              
+            ]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '吨'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        }},
+        series: [{
+            name: '玖龙纸业有限公司',
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
+
+        }, {
+            name: '工厂A',
+            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0]
+
+        }, {
+            name: '工厂B',
+            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0]
+
+        }, {
+            name: '工厂C',
+            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4]
+
+        }, {
+            name: '工厂D',
+            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4]
+
+        }]
+    };            
+
+    //列表展示
+    $scope.showindustry= function(){
+    $scope.industryshow= !$scope.industryshow;
+    };
+    $scope.totaldata = { 
+    tabledata:
+    [
+      {yearvalue:'日期',JLfactory:'玖龙纸业有限公司' ,Afactory:'工厂A',Bfactory:'工厂B',Cfactory:'工厂C',Dfactory:'工厂D'},
+      {yearvalue:'1月9日',JLfactory:'49.9',Afactory:'83.6',Bfactory:'48.9',Cfactory:'42.4',Dfactory:'42.4'},
+      {yearvalue:'1月10日',JLfactory:'71.5', Afactory:'78.8',Bfactory:'38.8',Cfactory:'33.2',Dfactory:'33.2'},
+      {yearvalue:'1月11日', JLfactory:'106.4',Afactory:'98.5',Bfactory:'39.3',Cfactory:'34.5',Dfactory:'54.8'},
+      {yearvalue:'1月12日', JLfactory:'129.2',Afactory:'93.4',Bfactory:'41.4',Cfactory:'39.7',Dfactory:'106.5'},
+      {yearvalue:'1月13日', JLfactory:'144.0',Afactory:'106.0',Bfactory:'47.0',Cfactory:'52.6',Dfactory:'78.2'},
+      {yearvalue:'1月14日', JLfactory:'176.0',Afactory:'84.5',Bfactory:'48.3',Cfactory:'75.5',Dfactory:'68.5'},
+      {yearvalue:'1月15日', JLfactory:'135.6',Afactory:'105.0',Bfactory:'59.0',Cfactory:'57.4',Dfactory:'112.5'}
+    ]
+  };
 
     // 牛哥代码
     // app.controller('WaterEnvironmentBICtrl', function($scope, $http, $timeout) {
@@ -1218,15 +1569,8 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
 		      $scope.wasteModelList[i].nh4nChange = parseInt(50 + Math.random()*50);
 		      $scope.wasteModelList[i].pChange = parseInt(90 + Math.random()*10);
 		    }
-		  // $http.post("/waterEnvironmentAnalysis/reverse_predict",dataTemp).success(function(data){
-		  //   for (var i = 0; i < $scope.wasteModelList.length; i++) {
-		  //     $scope.wasteModelList[i].dischargeChange = parseInt(data[i].index_discharge/$scope.wasteModelList[i].dischargeValue*100>100?100:data[i].index_discharge/$scope.wasteModelList[i].dischargeValue*100);
-		  //     $scope.wasteModelList[i].codChange = parseInt(data[i].index_cod/$scope.wasteModelList[i].codValue*100>100?100:data[i].index_cod/$scope.wasteModelList[i].codValue*100);
-		  //     $scope.wasteModelList[i].nh4nChange = parseInt(data[i].index_nh4n/$scope.wasteModelList[i].nh4nValue*100>100?100:data[i].index_nh4n/$scope.wasteModelList[i].nh4nValue*100);
-		  //     $scope.wasteModelList[i].pChange = parseInt(data[i].index_p/$scope.wasteModelList[i].pValue*100>100?100:data[i].index_p/$scope.wasteModelList[i].pValue*100);
-		  //   }
-		  // }
-		  // )
+		  
+
 		 
 		}, 1000);
     };
@@ -1871,23 +2215,8 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         if (val1 == val2) return true;
         else return false;
     };
-    // var getCurrentDate = function(databaseDate) {
-    //     var year = moment(dateService.get_system_time()).get('year');
-    //     var month = moment(dateService.get_system_time()).get('month') + 1;
-    //     var day = moment(dateService.get_system_time()).get('date');
-    //     var hour = moment(dateService.get_system_time()).get('hour');
-    //     var systemDate = moment(year + '-' + month + '-' + day + ' ' + hour + ':00:00');
-    //     if (moment(databaseDate).toDate() < moment(systemDate).toDate()) return moment(databaseDate).toDate().getTime();
-    //     else return moment(systemDate).toDate().getTime();
-    // };
-    // var getCurrentDateForDayData = function(databaseDate) {
-    //     var year = moment(dateService.get_system_time()).get('year');
-    //     var month = moment(dateService.get_system_time()).get('month') + 1;
-    //     var day = moment(dateService.get_system_time()).subtract(1, 'days').get('date');
-    //     var systemDate = moment(year + '-' + month + '-' + day + ' ' + '00:00:00');
-    //     if (moment(databaseDate).toDate() < moment(systemDate).toDate()) return moment(databaseDate).toDate().getTime();
-    //     else return moment(systemDate).toDate().getTime();
-    // };
+
+
     var getSubstractDate = function(date, hours) {
         return moment(date).subtract(hours, 'hours').toDate().getTime();
     };
@@ -1900,41 +2229,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
         $scope.feed_sum = result.toFixed(0);
         return $scope.feed_sum;
     };
-    /**
-     * 页面初始化区
-     * 有些图表的数据是在网页刷新时就请求到的
-     */
-    //水质量 当天数据模块 初始化
-    // kpiDetailService.getLastestObject('WaterQuality', ['date'], function(data) {
-    //     var date = data.data.date;
-    //     var datebaseLastestDate = moment('2015-05-03 09:00:00.000');
-    //     var startTime = getSubstractDate(getCurrentDate(datebaseLastestDate), 23);
-    //     var endTime = getCurrentDate(datebaseLastestDate);
-    //     kpiDetailService.advancedQuery('WaterQuality', {
-    //         date: {
-    //             value1: startTime,
-    //             value2: endTime,
-    //             queryType: 'bt',
-    //             valueType: 'datte'
-    //         },
-    //         sort1: {
-    //             key: 'waterMonitor.id',
-    //             sortType: 'asc'
-    //         },
-    //         sort2: {
-    //             key: 'date',
-    //             sortType: 'asc'
-    //         }
-    //     }, function(data) {
-    //         waterQualityCurrentSuccess(data);
-    //         initMap();
-    //     });
-    //     // var waterQualityLastDate = {
-    //     //     year: dateService.formatDateTime(endTime).slice(0, 4),
-    //     //     month: dateService.formatDateTime(endTime).slice(5, 7),
-    //     //     day: dateService.formatDateTime(endTime).slice(8, 10),
-    //     //     hour: dateService.formatDateTime(endTime).slice(11, 13)
-    //     // };
+
         var waterQualityLastDate = {
             year: 2015,
             month: 5,
@@ -1951,36 +2246,9 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function
             error(function(data, status, headers, config) {
               console.log(data);
             });
-        // waterQualityCurrentSuccess(waterQualityData);
-    // });
-    //废水排放 当天数据模块 初始化
-    // kpiDetailService.getLastestObject('WaterPollution', ['date'], function(data) {
-    //     var date = data.data.date;
-    //     var datebaseLastestDate = moment('2015-05-03 00:00:00.000');
-    //     var startTime = getSubstractDate(getCurrentDateForDayData(datebaseLastestDate), 24 * 5);
-    //     var endTime = getCurrentDateForDayData(datebaseLastestDate);
-    //     kpiDetailService.advancedQuery('WaterPollution', {
-    //         date: {
-    //             value1: startTime,
-    //             value2: endTime,
-    //             queryType: 'bt',
-    //             valueType: 'datte'
-    //         },
-    //         sort1: {
-    //             key: 'waterPollutionSource.id',
-    //             sortType: 'asc'
-    //         },
-    //         sort2: {
-    //             key: 'date',
-    //             sortType: 'asc'
-    //         }
-    //     }, wasteWaterCurrentSuccess);
-    //     // var wasteWaterLastDate = {
-    //     //     year: dateService.formatDateTime(endTime).slice(0, 4),
-    //     //     month: dateService.formatDateTime(endTime).slice(5, 7),
-    //     //     day: dateService.formatDateTime(endTime).slice(8, 10),
-    //     //     hour: dateService.formatDateTime(endTime).slice(11, 13)
-    //     // };
+        
+
+
         var waterQualityLastDate = {
             year: 2015,
             month: 5,

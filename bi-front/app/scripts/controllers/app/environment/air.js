@@ -16,10 +16,10 @@ app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope,
   }else if(model===1){
   alert("aaa");
   }};
-
   $scope.title = $stateParams.title;
     /*var map = new AMap.Map('map_canvas');*/
-     $scope.showTotalTable = function(){
+    
+    $scope.showTotalTable = function(){
   	$scope.totalshow= !$scope.totalshow;
   };
 
