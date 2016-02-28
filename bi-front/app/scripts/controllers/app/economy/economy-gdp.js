@@ -1,12 +1,21 @@
 //controller: 'EconomyGdpCtrl'
 'use strict';
 
-app.controller('EconomyGdpCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope, $stateParams,qService,forecastFactory) {
+    
+    $scope.data = null;
+    var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'gdpForecastData'});
+    promise.then(function(rc) {
+
+    $scope.data = rc.data;
+
+    });
+
 
    $scope.deviation=false;
    $scope.forecast=false;
    $scope.industrydetail=false;
-  $scope.title = $stateParams.title;
+   $scope.title = $stateParams.title;
   $scope.checkdeviation=function(){
     $scope.deviation=!$scope.deviation;
   };
