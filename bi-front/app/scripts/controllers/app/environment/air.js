@@ -1,7 +1,7 @@
 'use strict';
 
 
-app.controller('AirCtrl', ['$scope','$stateParams', '$timeout', function($scope, $stateParams, $timeout) {
+app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','forecastFactory',function($scope,$stateParams,$timeout,qService,forecastFactory) {
 
 
 

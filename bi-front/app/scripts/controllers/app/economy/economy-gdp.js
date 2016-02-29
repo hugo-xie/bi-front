@@ -1,7 +1,7 @@
 //controller: 'EconomyGdpCtrl'
 'use strict';
 
-app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope, $stateParams,qService,forecastFactory) {
+app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope,$stateParams,qService,forecastFactory) {
     
     $scope.data = null;
     var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'gdpForecastData'});
