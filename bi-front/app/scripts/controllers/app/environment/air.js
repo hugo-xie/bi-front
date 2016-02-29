@@ -3,12 +3,15 @@
 
 app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','forecastFactory',function($scope,$stateParams,$timeout,qService,forecastFactory) {
 
+  $scope.data = null;
+  var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'airConditionData'});
+  promise.then(function(rc) {
 
+  console.log(rc.data);
 
-//下拉点击事件
+  });
 
-
-
+  //下拉点击事件
   $scope.change=function(model){
   console.log(model);
   if(model===2){
