@@ -4,13 +4,11 @@ app.controller('EconomyPowerConsumptionCtrl',
     ['$scope','$stateParams','qService','forecastFactory_Power', function($scope, $stateParams,qService,forecastFactory_Power) {
 
 
-var promise = qService.tokenHttpGet(forecastFactory_Power.query,{tableName:'getSomeShit'});
+var promise = qService.tokenHttpGet(forecastFactory_Power.query,{tableName:'powerGdpCorrelationData'});
 
 promise.then(function(result) {
 
   $scope.getData = result.data;
-
-  console.log($scope.getData);
 
   $scope.title = $stateParams.title;
 
@@ -18,11 +16,11 @@ promise.then(function(result) {
   $scope.totaldata = {
   	year: '2016',
   	oneword: '工业用电量与GDP增长率关联分析时所采用的是格兰杰因果检验模型和误差修正模型的组合模型，通过该模型分析预测得出：用电量增减变动趋势与GDP增减变动趋势基本一致，GDP增长时，用电量也增长，增速相似；GDP回落时，用电量增长也回落;预测阶段用电量增速将大于GDP增速。',
-  	powergrowthrate: 7.6,
-  	gdpgrowthrate: 7.9,
-    yearvalue:['2006', '2007', '2008', '2009', '2010', '2011','2012', '2013', '2014', '2015', '2016','2017','2018'],
-    gdprate:[2.0, 2.9, 3.5, 5.5, 6.2, 7.5, 9.2, 8.5, 7.3, 6.3, 6.9, 7.9, 8.3],
-    powerrate:[2.2, 2.8, 3.7, 4.3, 5.0, 6.0, 7.8, 7.1, 6.1, 5.1, 6.6, 7.9, 8.8],
+  	powergrowthrate: $scope.getData[2][10],
+  	gdpgrowthrate: $scope.getData[1][10],
+    yearvalue:$scope.getData[0],
+    gdprate:$scope.getData[1],
+    powerrate:$scope.getData[2],
   };
 
   //init
