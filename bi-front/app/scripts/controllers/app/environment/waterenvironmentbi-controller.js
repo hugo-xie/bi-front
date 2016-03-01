@@ -4,7 +4,14 @@
  * @name iocUiApp.controller:AboutCtrl
  * @description # AboutCtrl Controller of the iocUiApp
  */
-app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http' ,function($scope, $timeout,$http) {
+app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qService','rawFactory' ,function($scope, $timeout,$http,qService,rawFactory) {
+    $scope.data = null;
+    var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'waterConditionData'});
+    promise.then(function(rc) {
+
+        console.log(rc.data);
+
+    });
     //第一个框highcharts工业污水分析部分
     $scope.pollution={
          options:{
