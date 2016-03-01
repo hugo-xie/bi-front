@@ -1,6 +1,13 @@
 'use strict';
 
-app.controller('EconomyKeqiangCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('EconomyKeqiangCtrl', ['$scope','$stateParams','qService','forecastFactory', function($scope, $stateParams,qService,forecastFactory) {
+     var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'keqiangForecastData'});
+    promise.then(function(rc) {
+
+    console.log(rc.data);
+    //alert(rc.data);
+    //$scope.forecastvalue=rc.data[0].gdpForecastValue;
+    
   $scope.colorpicker = {
         options: {
             orientation: 'horizontal',
@@ -284,7 +291,7 @@ $scope.elecChart = {
     }
 
 };
-
+});
 
 }]);
 

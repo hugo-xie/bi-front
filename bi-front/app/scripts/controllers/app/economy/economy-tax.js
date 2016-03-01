@@ -1,6 +1,13 @@
 'use strict';
 
-app.controller('EconomyTaxCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('EconomyTaxCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope, $stateParams,qService,forecastFactory) {
+  var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'taxForecastData'});
+    promise.then(function(rc) {
+
+    console.log(rc.data);
+    //alert(rc.data);
+    //$scope.forecastvalue=rc.data[0].gdpForecastValue;
+    });
   $scope.colorpicker = {
         options: {
             orientation: 'horizontal',

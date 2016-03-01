@@ -3,15 +3,18 @@
 
 app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope,$stateParams,qService,forecastFactory) {
     
-    $scope.data = null;
+
     var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'gdpForecastData'});
     promise.then(function(rc) {
 
     console.log(rc.data);
+    //alert(rc.data);
+    
+    
+    
+   
 
-    });
-
-
+   
    $scope.deviation=false;
    $scope.forecast=false;
    $scope.industrydetail=false;
@@ -42,114 +45,8 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
   $scope.industryexchange=function(param){
      $scope.industryyearGDPChart.options.chart.type=param;
   };
-  $scope.yearGDPChart={
-    chart: {
-            
-        },
-        title: {
-            text: '太仓市GDP数据',
-            style:{
-                fontWeight:'bold'
-            }
-        },
-        subtitle: {
-            text: '年度GDP分析'
-        },
-        xAxis: {
-            categories: [
-                '2006',
-                '2007',
-                '2008',
-                '2009',
-                '2010',
-                '2011',
-                '2012',
-                '2013',
-                '2014',
-                '2015',
-                '2016',
-                '2017'
-                
-            ],
-            plotBands:[{
-            from: 8.5,
-            to:12.5,
-            color:'rgba(68, 170, 213, .2)',
-            label: {
-                    text: '预测区',
-                    verticalAlign: 'top',
-                    style: {
-                        fontSize: '12px',
-                        fontWeight: 600
-                    }
-                   
-                }
-            }]
-        },
-        yAxis: [{
-            min: 0,
-            title: {
-                text: '年度GDP总值（亿元）'
-            },
-            plotLines:[{
-            color:'red',
-            dashStyle:'DashDot',
-            value:1150,
-            width:2,
-            label:{
-                text:'本年度GDP目标',
-                align:'left',
-                x:10,
-                 style: {
-                        fontSize: '8px',
-                        fontWeight: 200
-                    }
-            }
-            }]
-        },{
-            title: {
-                text: '同比增长率'
-            },
-            labels: {
-                format: '{value} %',
-                style: {
-                    color: Highcharts.getOptions().colors[0]
-                }
-        },
-        opposite:true
-        }],
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            type: 'column',
-            name: '真实数据',
-            data: [366.63, 440.27, 528.02, 612.01, 730.32, 867.53, 955.12, 1002.28, 1065.33, null, null, null]
-
-        }, {
-            type: 'column',
-            name: '预测数据',
-            data: [328.24, 453.61, 547.18, 602.58, 758.69, 890.37, 991.74, 1025.56, 1098.33, 1152.67, 1218.98, 1298.03]
-
-        },
-        {   
-            yAxis: 1,
-            type:'spline',
-            name: '同比增长率',
-            data: [6.4, 7.2, 7.5, 6.7, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2, 7.7]
-        }]
-  };
+  
+  
   $scope.monthGDPChart={
     chart: {
             
@@ -251,6 +148,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
             data: [6.1, 6.2, 6.4, 6.7]
         }]
   };
+
   $scope.industryyearGDPChart={
     options: {
       chart: {
@@ -547,5 +445,113 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
         }]
   
   };
-   
+  $scope.yearGDPChart={
+    chart: {
+            
+        },
+        title: {
+            text: '太仓市GDP数据',
+            style:{
+                fontWeight:'bold'
+            }
+        },
+        subtitle: {
+            text: '年度GDP分析'
+        },
+        xAxis: {
+            categories: [
+                '2006',
+                '2007',
+                '2008',
+                '2009',
+                '2010',
+                '2011',
+                '2012',
+                '2013',
+                '2014',
+                '2015',
+                '2016',
+                '2017'
+                
+            ],
+            plotBands:[{
+            from: 8.5,
+            to:12.5,
+            color:'rgba(68, 170, 213, .2)',
+            label: {
+                    text: '预测区',
+                    verticalAlign: 'top',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 600
+                    }
+                   
+                }
+            }]
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: '年度GDP总值（亿元）'
+            },
+            plotLines:[{
+            color:'red',
+            dashStyle:'DashDot',
+            value:1150,
+            width:2,
+            label:{
+                text:'本年度GDP目标',
+                align:'left',
+                x:10,
+                 style: {
+                        fontSize: '8px',
+                        fontWeight: 200
+                    }
+            }
+            }]
+        },{
+            title: {
+                text: '同比增长率'
+            },
+            labels: {
+                format: '{value} %',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+        },
+        opposite:true
+        }],
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            type: 'column',
+            name: '真实数据',
+            data: [366.63, 440.27, 528.02, 612.01, 730.32, 867.53, 955.12, 1002.28, 1065.33, null, null, null]
+
+        }, {
+            type: 'column',
+            name: '预测数据',
+            data: [328.24, 453.61, 547.18, 602.58, 758.69, 890.37, 991.74, 1025.56, 1098.33, 1152.67, 1218.98, 1298.03]
+
+        },
+        {   
+            yAxis: 1,
+            type:'spline',
+            name: '同比增长率',
+            data: [6.4, 7.2, 7.5, 6.7, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2, 7.7]
+        }]
+  };
+   });
 }]);
