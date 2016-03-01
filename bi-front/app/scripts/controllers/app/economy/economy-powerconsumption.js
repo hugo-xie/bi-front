@@ -1,6 +1,16 @@
 'use strict';
 
-app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('EconomyPowerConsumptionCtrl', 
+    ['$scope','$stateParams','qService','forecastFactory_Power', function($scope, $stateParams,qService,forecastFactory_Power) {
+
+
+var promise = qService.tokenHttpGet(forecastFactory_Power.query,{tableName:'getSomeShit'});
+
+promise.then(function(result) {
+
+  $scope.getData = result.data;
+
+  console.log($scope.getData);
 
   $scope.title = $stateParams.title;
 
@@ -190,6 +200,8 @@ app.controller('EconomyPowerConsumptionCtrl', ['$scope','$stateParams', function
   $scope.showAverageEnterpriseTable = function(){
     $scope.averageenterprisetableshow= !$scope.averageenterprisetableshow;
   }
+
+  });
 
 }]);
 

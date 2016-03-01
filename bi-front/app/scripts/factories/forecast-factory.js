@@ -16,4 +16,21 @@ angular.module('nevermore')
 
 	return this;
 
+	})
+
+  .factory('forecastFactory_Power', function($resource, BASE_URL) {
+
+	this.query = function(headers) {
+		return $resource(BASE_URL + '/predictData/:tableName', {
+			tableName: '@tableName'
+		}, {
+			'get': {
+				method: 'GET',
+				headers: headers
+			}
+		});
+	};
+
+	return this;
+
 	});
