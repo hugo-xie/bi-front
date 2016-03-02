@@ -12,6 +12,13 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
         console.log(rc.data);
 
     });
+
+    var promise1 = qService.tokenHttpGet(rawFactory.query,{tableName:'waterIndustryData'});
+    promise1.then(function(rc) {
+
+        console.log(rc.data);
+
+    });
     //第一个框highcharts工业污水分析部分
     $scope.pollution={
          options:{
