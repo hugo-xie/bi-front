@@ -7,7 +7,21 @@ app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFac
   var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'airConditionData'});
   promise.then(function(rc) {
 
-  console.log(rc.data);
+    console.log(rc.data);
+
+  });
+
+  var promise1 = qService.tokenHttpGet(rawFactory.query,{tableName:'airPollutionData'});
+  promise1.then(function(rc) {
+
+    console.log(rc.data);
+
+  });
+
+  var promise2 = qService.tokenHttpGet(rawFactory.query,{tableName:'airQualityData'});
+  promise2.then(function(rc) {
+
+    console.log(rc.data);
 
   });
 
