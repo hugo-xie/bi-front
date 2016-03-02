@@ -27,6 +27,13 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
 
     });
 
+    var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'waterQualityData'});
+    promise3.then(function(rc) {
+
+        console.log(rc.data);
+
+    });
+
     //第一个框highcharts工业污水分析部分
     $scope.pollution={
          options:{
