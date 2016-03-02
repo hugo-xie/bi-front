@@ -1,7 +1,7 @@
 'use strict';
 
 
-app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFactory',function($scope,$stateParams,$timeout,qService,rawFactory) {
+app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFactory','forecastFactory',function($scope,$stateParams,$timeout,qService,rawFactory,forecastFactory) {
 
   $scope.data = null;
   var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'airConditionData'});
@@ -27,6 +27,13 @@ app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFac
 
   var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'aqiScopeData'});
   promise3.then(function(rc) {
+
+    console.log(rc.data);
+
+  });
+
+  var promise4 = qService.tokenHttpGet(forecastFactory.query,{tableName:'airQualityPredictData'});
+  promise4.then(function(rc) {
 
     console.log(rc.data);
 
