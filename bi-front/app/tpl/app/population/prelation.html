@@ -23,7 +23,7 @@
                  <highchart style="height:500px;" config="predictChart"></highchart>
                </div>
                <div class="col-md-4 desc-content">
-                 
+
                  <p class="fill-margin"></p>
                  <div class="ioc-panel-desc">
                   <div class="pull-left">
@@ -43,16 +43,16 @@
                      <p class="handler-title">劳动力人口</p>
                    </div>
                    <div class="col-md-7">
-                   
+
                    <div class="input-group input-group-sm" style="width:50%;">
-                      
+
                       <input type="text" class="form-control ng-pristine ng-valid ng-touched" aria-describedby="sizing-addon3" ng-model="selectedRange" attern="((-)?[0-9]{1,2}|100|-100)" style="">
                       <span class="input-group-addon" id="sizing-addon3" style="padding:0px 2px 0px 2px">%</span>
                     </div>
 
                     <div class="row">
-                    
-                
+
+
                      <div class="progress-box col-md-3">
                       <div  style="margin-top:11px">
                           <div  ui-slider="colorpicker.options" min="-100" max="100" ng-model="selectedRange" style="width:180px" ></div>
@@ -68,7 +68,7 @@
                    </div>
                    <div class="col-md-7">
                    <div class="input-group input-group-sm" style="width:50%;">
-                      
+
                       <input type="text" class="form-control ng-pristine ng-valid ng-touched"  aria-describedby="sizing-addon3" ng-model="selectedRange1" attern="((-)?[0-9]{1,2}|100|-100)" style="">
                       <span class="input-group-addon" id="sizing-addon3" style="padding:0px 2px 0px 2px">%</span>
                     </div>
@@ -93,7 +93,7 @@
                     <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="height:5px;margin-right:13px"></span>
                      <span style="font-size:18px;margin-right:10px">   劳动力总人口与GDP关联分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</span>
                   </div>
-               
+
 <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
 
 
@@ -109,11 +109,11 @@
 
                </div>
              </div>
-            
-     
-          
+
+
+
     <div style="width:1198px;height:1px;margin:0px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
-            
+
              <div class="row">
                <div class=" col-md-12">
                  <div class="col-md-6 chart-panel">
@@ -140,7 +140,7 @@
              <div class="panel-body" style="padding:0;height:600px">
 
                <div class="row">
-          
+
                  <div class="col-md-8 chart-panel" >
                    <div id="main"  style="width:95%;height: 600px"></div>
                  </div>
@@ -178,21 +178,21 @@
           </ul>
         </div>
         <div style="height:10px"></div>
-       
+
          <button  ng-click="showTotalTable()" class="btn btn-primary pull-left" style="margin-left:0;font-weight:bold;width:120px">详情数据</button>
                  </div>
 
                </div>
 
              </div>
-                  
-         
+
+
            </div>
            </div>
          </div>
  <div class="bg-white fc-datatable" ng-if="totalshow" style="width:1200px;margin-left:0px;margin-top:-20px">
             <div class="panel panel-default paddingmargin0em">
-                <div class="panel-heading">数据详情</div>  
+                <div class="panel-heading">数据详情</div>
                 <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
                       <tr st-select-row="row" class="ng-scope ng-isolate-scope" >
                         <td ng-repeat="year in totaldata.tabledata" style="text-align:center;">{{year.yearvalue}}</td>
@@ -210,7 +210,7 @@
             </div>
         </div>
        </div>
-      
+
     </div>
 
 <div class="bg-white">
@@ -227,7 +227,7 @@
                  <div class=" col-md-12">
                    <div class="col-md-8 chart-panel">
                      <highchart id="populationPie" config="populationPie" style="width:95%;height:363px"></highchart>
-                     <hr />   
+                     <hr />
                      <highchart id="industryPie" config="industryPie" style="width:95%;height:363px"></highchart>
                    </div>
 

@@ -1,13 +1,40 @@
 'use strict';
 
-app.controller('PrelationCtrl', ['$scope', function($scope) {
+app.controller('PrelationCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope, $stateParams,qService,forecastFactory) {
 
-   $scope.showTotalTable = function(){
-    $scope.totalshow= !$scope.totalshow;
-  };
+    $scope.data = null;
+    var popData;
+    var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'laborGdpRelationPreData'});
+    promise.then(function(rc) {
+
+    console.log(rc.data);
+    var popData1=[100000,100000,100000,100000,100000,100000,100000,100000,100000,100000];
+    var popData2=[100000,100000,100000,100000,100000,100000,100000,100000,100000,100000];
+    var popData3=[100000,100000,100000,100000,100000,100000,100000,100000,100000,100000];
+
+     popData=rc.data;
+     for(var i=0;i<popData1.length;i++){
+       popData1[i] = popData[i].preLaborPopulation;
+     }
+     for(var i=0;i<popData2.length;i++){
+       popData2[i] = popData[i+10].preLaborPopulation;
+     }
+     for(var i=0;i<popData3.length;i++){
+       popData3[i] = popData[i+20].preLaborPopulation;
+     }
+     $scope.showTotalTable = function(){
+     $scope.totalshow= !$scope.totalshow;
+}
+
+
+// app.controller('PrelationCtrl', ['$scope', function($scope) {
+//
+//    $scope.showTotalTable = function(){
+//     $scope.totalshow= !$scope.totalshow;
+//   };
 
  $scope.totaldata = {
-  
+
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
@@ -17,7 +44,7 @@ app.controller('PrelationCtrl', ['$scope', function($scope) {
       {yearvalue:'人均GDP', Fp:'0.7484',Sp:'0.7483',Tp:'0.8396'},
       {yearvalue:'地方生产总值', Fp:'0.5469',Sp:'0.7483',Tp:'0.8589'},
       {yearvalue:'社会消费品零售总额', Fp:'0.3598',Sp:'0.6597',Tp:'0.8531'}
-  
+
     ]
   };
 
@@ -38,7 +65,7 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
                 echarts: 'http://echarts.baidu.com/build/dist'
             }
         });
-        
+
         // 使用
         require(
             [
@@ -48,13 +75,13 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
+                var myChart = ec.init(document.getElementById('main'));
+
                 var option = {
     title : {
         text: '太仓市2020年劳动力人口与各项经济指标关联度分析预测',
          textStyle:{
-            
+
             fontWeight:'normal',
             fontFamily:'Lucida Sans Unicode',
             fontSize:'18',
@@ -81,7 +108,7 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
             magicType: {show: true, type: ['force', 'chord']},
             saveAsImage : {show: true}
         },
-     
+
             x:"right",
             y:"top",
 
@@ -132,7 +159,7 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
                 {name:'第三产业产值'},
                 {name:'人均GDP'},
                 {name:'社会消费品零售总额'}
-               
+
             ],
             links: [
                 {source: '第一产业人口', target: '地方生产总值', weight: 0.5469,name:'0.5469关联'},
@@ -178,10 +205,10 @@ var piecolor=new Array('#7CB5EC','#929dce','#90ED7D');
         }
     ]
 };
-                    
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
+
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
             }
         );
 
@@ -189,15 +216,15 @@ var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
     $scope.buttonMap2 = [{
         name: 2025,
         label: 2025 + "年关联度分析预测",
-      
+
       }, {
         name: 2035,
         label: 2035 + "年关联度分析预测",
-     
+
       },{
         name: 2045,
         label: 2045 + "年关联度分析预测",
-     
+
       }];
 
        $scope.buttonMap3 = [{
@@ -208,7 +235,7 @@ var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
         name: 2025,
         label: 2025 + "年关联度分析预测",
         radio: "Middle"
-      }, 
+      },
       {
         name: 2030,
         label: 2030 + "年关联度分析预测",
@@ -228,9 +255,9 @@ var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
         label: 2045 + "年关联度分析预测",
         radio: "Right"
       }];
-       
 
-       
+
+
 
        $scope.buttonMap4 = [{
         name: 2020,
@@ -240,7 +267,7 @@ var splinecolors=new Array('#3CB371','#000000','#87CEFA' );
         name: 2025,
         label: 2025 + "年比重分析预测",
         radio: "Middle"
-      }, 
+      },
       {
         name: 2030,
         label: 2030 + "年比重分析预测",
@@ -271,7 +298,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
      $scope.GDPChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
      $scope.GDPChart.series[0].data=gdp;
       $scope.GDPChart.title.text="太仓市2016至2025年GDP总量预测值";
-    $scope.populationChart.series[0].data=popData;
+    $scope.populationChart.series[0].data=popData1;
     $scope.predictChart.options.title.text="太仓市2016至2025年劳动力人口与经济关联分析预测";
      $scope.predictChart.options.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
   //  $scope.predictChart.yAxis[1].tickPositions=[0,50,100,150,200,250];
@@ -280,7 +307,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
             color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
-            data: popData,
+            data: popData1,
             tooltip: {
                 valueSuffix: '人'
             },
@@ -306,7 +333,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
             type: 'spline',
             data: gdp,
             marker:{
-               symbol:"square" 
+               symbol:"square"
            },
             tooltip: {
                 valueSuffix: '亿元'
@@ -320,14 +347,14 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
      $scope.GDPChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
      $scope.GDPChart.series[0].data=gdp1;
       $scope.GDPChart.title.text="太仓市2026至2035年GDP总量预测值";
-     $scope.populationChart.series[0].data=popData1;
+     $scope.populationChart.series[0].data=popData2;
     $scope.predictChart.options.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
     $scope.predictChart.series=[{
             name: '人口(人)',
             color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
-            data: popData1,
+            data: popData2,
             tooltip: {
                 valueSuffix: '人'
             }
@@ -353,7 +380,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
             type: 'spline',
             data: gdp1,
             marker:{
-               symbol:"square" 
+               symbol:"square"
            },
             tooltip: {
                 valueSuffix: '亿元'
@@ -367,14 +394,14 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
      $scope.GDPChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
      $scope.GDPChart.series[0].data=gdp2;
      $scope.GDPChart.title.text="太仓市2036至2045年GDP总量预测值";
-    $scope.populationChart.series[0].data=popData2;
+    $scope.populationChart.series[0].data=popData3;
     $scope.predictChart.options.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
     $scope.predictChart.series=[{
             name: '人口(人)',
             color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
-            data: popData2,
+            data: popData3,
             tooltip: {
                 valueSuffix: '人'
             }
@@ -422,7 +449,7 @@ $scope.change3=function(btn){
             ['第一产业人口',23.5],
                 ['第二产业人口',24.1],
                 ['第三产业人口',27.2]
-               
+
                 ]
         }];
     $scope.industryPie.series=[{
@@ -552,7 +579,7 @@ $scope.btn_click2=function(btn){
 $scope.change2=function(btn){
    if(btn.name===2020){
     $scope.totaldata = {
-  
+
     tabledata:
      [
      {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
@@ -562,7 +589,7 @@ $scope.change2=function(btn){
       {yearvalue:'人均GDP', Fp:'0.7484',Sp:'0.7483',Tp:'0.8396'},
       {yearvalue:'地方生产总值', Fp:'0.5469',Sp:'0.7483',Tp:'0.8589'},
       {yearvalue:'社会消费品零售总额', Fp:'0.3598',Sp:'0.6597',Tp:'0.8531'}
-  
+
     ]
   };
     require(
@@ -573,8 +600,8 @@ $scope.change2=function(btn){
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
+                var myChart = ec.init(document.getElementById('main'));
+
                 var option = {
     title : {
         text: '太仓市2020年劳动力人口与各项经济指标关联度分析预测',
@@ -645,7 +672,7 @@ $scope.change2=function(btn){
                 {name:'第三产业产值'},
                 {name:'人均GDP'},
                 {name:'社会消费品零售总额'}
-               
+
             ],
             links: [
                  {source: '第一产业人口', target: '地方生产总值', weight: 0.5469,name:'0.5469关联'},
@@ -690,16 +717,16 @@ $scope.change2=function(btn){
         }
     ]
 };
-                    
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
+
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
             }
         );
    }
    if(btn.name===2025){
      $scope.totaldata = {
-  
+
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
@@ -709,7 +736,7 @@ $scope.change2=function(btn){
       {yearvalue:'人均GDP', Fp:'0.9245',Sp:'0.8241',Tp:'0.8851'},
       {yearvalue:'地方生产总值', Fp:'0.6125',Sp:'0.8521',Tp:'0.7589'},
       {yearvalue:'社会消费品零售总额', Fp:'0.6125',Sp:'0.7797',Tp:'0.8531'}
-  
+
     ]
   };
     require(
@@ -720,8 +747,8 @@ $scope.change2=function(btn){
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
+                var myChart = ec.init(document.getElementById('main'));
+
                 var option = {
     title : {
         text: '太仓市2025年劳动力人口与各项经济指标关联度分析预测',
@@ -792,7 +819,7 @@ $scope.change2=function(btn){
                 {name:'第三产业产值'},
                 {name:'人均GDP'},
                 {name:'社会消费品零售总额'}
-               
+
             ],
             links: [
                 {source: '第一产业人口', target: '地方生产总值', weight: 0.8469,name:'0.8469关联'},
@@ -837,16 +864,16 @@ $scope.change2=function(btn){
         }
     ]
 };
-                    
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
+
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
             }
         );
    }
    if(btn.name===2030){
      $scope.totaldata = {
-  
+
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
@@ -856,7 +883,7 @@ $scope.change2=function(btn){
       {yearvalue:'人均GDP', Fp:'0.6214',Sp:'0.7183',Tp:'0.8196'},
       {yearvalue:'地方生产总值', Fp:'0.8269',Sp:'0.7349',Tp:'0.7189'},
       {yearvalue:'社会消费品零售总额', Fp:'0.8898',Sp:'0.8097',Tp:'0.7631'}
-  
+
     ]
   };
     require(
@@ -867,8 +894,8 @@ $scope.change2=function(btn){
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
+                var myChart = ec.init(document.getElementById('main'));
+
                 var option = {
     title : {
         text: '太仓市2030年劳动力人口与各项经济指标关联度分析预测',
@@ -939,7 +966,7 @@ $scope.change2=function(btn){
                 {name:'第三产业产值'},
                 {name:'人均GDP'},
                 {name:'社会消费品零售总额'}
-               
+
             ],
             links: [
                 {source: '第一产业人口', target: '地方生产总值', weight: 0.8269,name:'0.8269关联'},
@@ -984,16 +1011,16 @@ $scope.change2=function(btn){
         }
     ]
 };
-                    
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
+
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
             }
         );
    }
    if(btn.name===2045){
      $scope.totaldata = {
-  
+
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
@@ -1006,7 +1033,7 @@ $scope.change2=function(btn){
       {yearvalue:'社会消费品零售总额', Fp:'0.4498',Sp:'0.6997',Tp:'0.7631'}
 
 
-  
+
     ]
   };
     require(
@@ -1017,8 +1044,8 @@ $scope.change2=function(btn){
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
+                var myChart = ec.init(document.getElementById('main'));
+
                 var option = {
     title : {
         text: '太仓市2045年劳动力人口与各项经济指标关联度分析预测',
@@ -1089,7 +1116,7 @@ $scope.change2=function(btn){
                 {name:'第三产业产值'},
                 {name:'人均GDP'},
                 {name:'社会消费品零售总额'}
-               
+
             ],
             links: [
 
@@ -1132,21 +1159,21 @@ $scope.change2=function(btn){
                 {target: '第三产业人口', source: '人均GDP', weight: 0.7196},
                 {target: '第三产业人口', source: '社会消费品零售总额', weight: 0.7631}
 
-               
+
             ]
         }
     ]
 };
-                    
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
+
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
             }
         );
    }
    if(btn.name===2035){
      $scope.totaldata = {
-  
+
     tabledata:
     [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
@@ -1156,7 +1183,7 @@ $scope.change2=function(btn){
       {yearvalue:'人均GDP', Fp:'0.7378',Sp:'0.7425',Tp:'0.7457'},
       {yearvalue:'地方生产总值', Fp:'0.7610',Sp:'0.7631',Tp:'0.7631'},
       {yearvalue:'社会消费品零售总额', Fp:'0.7517',Sp:'0.7554',Tp:'0.7577'}
-  
+
     ]
   };
     require(
@@ -1167,8 +1194,8 @@ $scope.change2=function(btn){
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
+                var myChart = ec.init(document.getElementById('main'));
+
                 var option = {
     title : {
         text: '太仓市2035年劳动力人口与各项经济指标关联度分析预测',
@@ -1239,7 +1266,7 @@ $scope.change2=function(btn){
                 {name:'第三产业产值'},
                 {name:'人均GDP'},
                 {name:'社会消费品零售总额'}
-               
+
             ],
             links: [
                 {source: '第一产业人口', target: '地方生产总值', weight: 0.7546,name:'0.7546关联'},
@@ -1284,16 +1311,16 @@ $scope.change2=function(btn){
         }
     ]
 };
-                    
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
+
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
             }
         );
    }
    if(btn.name===2040){
      $scope.totaldata = {
-  
+
     tabledata:
      [
       {yearvalue:'指标', Fp:'第一产业人口',Sp:'第二产业人口',Tp:'第三产业人口'},
@@ -1303,7 +1330,7 @@ $scope.change2=function(btn){
       {yearvalue:'人均GDP', Fp:'0.7184',Sp:'0.7583',Tp:'0.8196'},
       {yearvalue:'地方生产总值', Fp:'0.8569',Sp:'0.7249',Tp:'0.8589'},
       {yearvalue:'社会消费品零售总额', Fp:'0.7498',Sp:'0.7997',Tp:'0.7631'}
-  
+
     ]
 
   };
@@ -1315,8 +1342,8 @@ $scope.change2=function(btn){
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main')); 
-                
+                var myChart = ec.init(document.getElementById('main'));
+
                 var option = {
     title : {
         text: '太仓市2040年劳动力人口与各项经济指标关联度分析预测',
@@ -1387,7 +1414,7 @@ $scope.change2=function(btn){
                 {name:'第三产业产值'},
                 {name:'人均GDP'},
                 {name:'社会消费品零售总额'}
-               
+
             ],
             links: [
                 {source: '第一产业人口', target: '地方生产总值', weight: 0.6125,name:'0.6125关联'},
@@ -1433,10 +1460,10 @@ $scope.change2=function(btn){
         }
     ]
 };
-                    
-        
-                // 为echarts对象加载数据 
-                myChart.setOption(option); 
+
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
             }
         );
    }
@@ -1450,9 +1477,9 @@ $scope.r=function(){
 };
 function h(newValue,oldValue,scope){
     //console.log(newValue);
-    popData[9]=Math.round((newValue*0.03)*50+775038);
-    popData1[9]=Math.round((newValue*0.03)*50+843482);
-    popData2[9]=Math.round((newValue*0.03)*50+898577);
+  //  popData1[9]=Math.round((newValue*0.03)*50+775038);
+//    popData2[9]=Math.round((newValue*0.03)*50+843482);
+  //  popData3[9]=Math.round((newValue*0.03)*50+898577);
    //console.log(popData[9]);
   // $scope.selectedRange1=Math.round(($scope.selectedRange1+($scope.selectedRange*(newValue-oldValue)/200))*100)/100;
     //$scope.selectedRange1=Math.round((($scope.selectedRange*0.2)));
@@ -1469,20 +1496,20 @@ $scope.rr=function(){
 function hh(newValue,oldValue,scope){
     console.log(newValue);
     // $scope.selectedRange=Math.round(($scope.selectedRange+($scope.selectedRange1*(newValue-oldValue)/200))*100)/100;
-    popData[9]=Math.round((newValue*0.03)*50+775038);
-    popData1[9]=Math.round((newValue*0.03)*50+843482);
-    popData2[9]=Math.round((newValue*0.03)*50+898577);
+  //  popData1[9]=Math.round((newValue*0.03)*50+775038);
+//    popData2[9]=Math.round((newValue*0.03)*50+843482);
+  //  popData3[9]=Math.round((newValue*0.03)*50+898577);
     gdp[9]=(newValue*0.03)*50+2022.31;
     gdp1[9]=(newValue*0.03)*50+4256.65;
     gdp2[9]=(newValue*0.03)*50+8373.48;
 }
 $scope.$watch($scope.rr,hh);
 
-    var popData=[747046, 750908, 754570, 757963, 761066, 763863, 766970, 769950, 772652, 775038];
+    //var popData1=[747046, 750908, 754570, 757963, 761066, 763863, 766970, 769950, 772652, 775038];
     var gdp=[1100, 1177, 1259.39, 1347.55, 1441.88,1542.81,1650.80, 1766.36, 1890.00, 2022.31];
-    var popData1=[803463, 808465, 813319, 818001, 822475, 826754, 831251, 835567, 839655, 843482];
+  //  var popData2=[803463, 808465, 813319, 818001, 822475, 826754, 831251, 835567, 839655, 843482];
     var gdp1=[2163.87, 2315.34, 2477.41, 2650.83,2836.39, 3034.93, 3247.38, 3474.7,3717.93, 4256.65];
-    var popData2=[850441, 856081, 861654, 867106, 872420, 877676, 883104, 888418, 893579, 898577];
+  //  var popData3=[850441, 856081, 861654, 867106, 872420, 877676, 883104, 888418, 893579, 898577];
     var gdp2=[4554.62, 4873.44, 5214.58,5579.60,5970.18, 6388.09,6835.25, 7313.72,7825.68, 8373.48];
          $scope.predictChart ={
 options:{ chart: {
@@ -1511,7 +1538,7 @@ options:{ chart: {
                 }
             },
             opposite: true,
-         
+
 
         }, { // Secondary yAxis
             gridLineWidth: 0,
@@ -1529,7 +1556,7 @@ options:{ chart: {
                     color: '#7CB5EC'
                 }
             },
-             
+
 
         }, { // Tertiary yAxis
             gridLineWidth: 0,
@@ -1554,9 +1581,9 @@ options:{ chart: {
             shared: true
         },
         legend: {
-          
+
             align: 'center',
-         
+
             verticalAlign: 'bottom',
              itemStyle:{
                     fontWeight:'normal'
@@ -1568,7 +1595,7 @@ options:{ chart: {
             color: '#7CB5EC',
             type: 'column',
             yAxis: 1,
-            data: popData,
+            data: popData1,
             tooltip: {
                 valueSuffix: '人'
             }
@@ -1601,7 +1628,7 @@ options:{ chart: {
             }
         }]
 
-};  
+};
 $scope.populationChart ={
       options: {
                     chart: {
@@ -1616,13 +1643,13 @@ $scope.populationChart ={
 
                 series: [{
                     name: '劳动力总人口',
-                    
-                    data: popData
+
+                    data: popData1
                 }],
                 title: {
                     text: '太仓市2016至2025年劳动力总人口预测值'
                 },
-               
+
                 xAxis: {
                     categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
                     title:{
@@ -1638,7 +1665,7 @@ $scope.populationChart ={
                 loading: false,
 
 
-    };  
+    };
     $scope.GDPChart ={
        options: {
                     chart: {
@@ -1671,8 +1698,8 @@ $scope.populationChart ={
                 },
                 loading: false,
 
-    };  
-    
+    };
+
     $scope.sumpopulation ={
    options:{
     colors:splinecolors,
@@ -1760,12 +1787,12 @@ options: {
                                             color: '#000000',
                                             connectorColor: '#000000',
                                             format: ' {point.name}:{point.percentage:.1f} %',
-                                                 
+
                                         },
                                         showInLegend: true
                                     }
-                                
-                                
+
+
                             },
                             legend:{
                                 itemStyle:{
@@ -1782,7 +1809,7 @@ options: {
                 ['第三产业人口',27.2]
             ]
                             }]
-                                            
+
 };
 $scope.industryPie={
 options: {
@@ -1813,8 +1840,8 @@ options: {
                                         },
                                         showInLegend: true
                                     }
-                                
-                                
+
+
                             },
                             legend:{
                                 itemStyle:{
@@ -1831,7 +1858,8 @@ options: {
                 ['第三产业产值',677.6836]
             ]
                             }]
-                                         
 
-};                  
+
+};
+});
 }]);
