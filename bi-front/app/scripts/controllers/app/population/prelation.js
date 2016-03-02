@@ -12,15 +12,22 @@ app.controller('PrelationCtrl', ['$scope','$stateParams','qService','forecastFac
     var popData2=[100000,100000,100000,100000,100000,100000,100000,100000,100000,100000];
     var popData3=[100000,100000,100000,100000,100000,100000,100000,100000,100000,100000];
 
+    var gdp1=[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000];
+    var gdp2=[2000,2000,2000,2000,2000,2000,2000,2000,2000,2000];
+    var gdp3=[3000,3000,3000,3000,3000,3000,3000,3000,3000,3000];
+    //数据更新
      popData=rc.data;
      for(var i=0;i<popData1.length;i++){
        popData1[i] = popData[i].preLaborPopulation;
+       gdp1[i] = popData[i].preGdp;
      }
      for(var i=0;i<popData2.length;i++){
        popData2[i] = popData[i+10].preLaborPopulation;
+        gdp2[i] = popData[i+10].preGdp;
      }
      for(var i=0;i<popData3.length;i++){
        popData3[i] = popData[i+20].preLaborPopulation;
+         gdp3[i] = popData[i+20].preGdp;
      }
      $scope.showTotalTable = function(){
      $scope.totalshow= !$scope.totalshow;
@@ -296,7 +303,7 @@ $scope.change=function(btn){
 $scope.populationChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
 $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预测值";
      $scope.GDPChart.xAxis.categories=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
-     $scope.GDPChart.series[0].data=gdp;
+     $scope.GDPChart.series[0].data=gdp1;
       $scope.GDPChart.title.text="太仓市2016至2025年GDP总量预测值";
     $scope.populationChart.series[0].data=popData1;
     $scope.predictChart.options.title.text="太仓市2016至2025年劳动力人口与经济关联分析预测";
@@ -331,7 +338,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
             name: 'GDP(亿元)',
             color: '#89A54E',
             type: 'spline',
-            data: gdp,
+            data: gdp1,
             marker:{
                symbol:"square"
            },
@@ -345,7 +352,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
      $scope.populationChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
      $scope.populationChart.title.text="太仓市2026至2035年劳动力总人口预测值";
      $scope.GDPChart.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
-     $scope.GDPChart.series[0].data=gdp1;
+     $scope.GDPChart.series[0].data=gdp2;
       $scope.GDPChart.title.text="太仓市2026至2035年GDP总量预测值";
      $scope.populationChart.series[0].data=popData2;
     $scope.predictChart.options.xAxis.categories=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
@@ -378,7 +385,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
             name: 'GDP(亿元)',
             color: '#89A54E',
             type: 'spline',
-            data: gdp1,
+            data: gdp2,
             marker:{
                symbol:"square"
            },
@@ -392,7 +399,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
      $scope.populationChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
      $scope.populationChart.title.text="太仓市2036至2045年劳动力总人口预测值";
      $scope.GDPChart.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
-     $scope.GDPChart.series[0].data=gdp2;
+     $scope.GDPChart.series[0].data=gdp3;
      $scope.GDPChart.title.text="太仓市2036至2045年GDP总量预测值";
     $scope.populationChart.series[0].data=popData3;
     $scope.predictChart.options.xAxis.categories=[2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
@@ -425,7 +432,7 @@ $scope.populationChart.title.text="太仓市2016至2025年劳动力总人口预�
             name: 'GDP(亿元)',
             color: '#89A54E',
             type: 'spline',
-            data: gdp2,
+            data: gdp3,
             marker:{
                 symbol:"square"
             },
@@ -1483,9 +1490,9 @@ function h(newValue,oldValue,scope){
    //console.log(popData[9]);
   // $scope.selectedRange1=Math.round(($scope.selectedRange1+($scope.selectedRange*(newValue-oldValue)/200))*100)/100;
     //$scope.selectedRange1=Math.round((($scope.selectedRange*0.2)));
-    gdp[9]=(newValue*0.03)*50+2022.31;
-    gdp1[9]=(newValue*0.03)*50+4256.65;
-    gdp2[9]=(newValue*0.03)*50+8373.48;
+  //  gdp[9]=(newValue*0.03)*50+2022.31;
+  //  gdp1[9]=(newValue*0.03)*50+4256.65;
+  //  gdp2[9]=(newValue*0.03)*50+8373.48;
 }
 $scope.$watch($scope.r,h);
 
@@ -1499,18 +1506,18 @@ function hh(newValue,oldValue,scope){
   //  popData1[9]=Math.round((newValue*0.03)*50+775038);
 //    popData2[9]=Math.round((newValue*0.03)*50+843482);
   //  popData3[9]=Math.round((newValue*0.03)*50+898577);
-    gdp[9]=(newValue*0.03)*50+2022.31;
-    gdp1[9]=(newValue*0.03)*50+4256.65;
-    gdp2[9]=(newValue*0.03)*50+8373.48;
+    //gdp[9]=(newValue*0.03)*50+2022.31;
+    //gdp1[9]=(newValue*0.03)*50+4256.65;
+    //gdp2[9]=(newValue*0.03)*50+8373.48;
 }
 $scope.$watch($scope.rr,hh);
 
     //var popData1=[747046, 750908, 754570, 757963, 761066, 763863, 766970, 769950, 772652, 775038];
-    var gdp=[1100, 1177, 1259.39, 1347.55, 1441.88,1542.81,1650.80, 1766.36, 1890.00, 2022.31];
+    //var gdp=[1100, 1177, 1259.39, 1347.55, 1441.88,1542.81,1650.80, 1766.36, 1890.00, 2022.31];
   //  var popData2=[803463, 808465, 813319, 818001, 822475, 826754, 831251, 835567, 839655, 843482];
-    var gdp1=[2163.87, 2315.34, 2477.41, 2650.83,2836.39, 3034.93, 3247.38, 3474.7,3717.93, 4256.65];
+    //var gdp1=[2163.87, 2315.34, 2477.41, 2650.83,2836.39, 3034.93, 3247.38, 3474.7,3717.93, 4256.65];
   //  var popData3=[850441, 856081, 861654, 867106, 872420, 877676, 883104, 888418, 893579, 898577];
-    var gdp2=[4554.62, 4873.44, 5214.58,5579.60,5970.18, 6388.09,6835.25, 7313.72,7825.68, 8373.48];
+    //var gdp2=[4554.62, 4873.44, 5214.58,5579.60,5970.18, 6388.09,6835.25, 7313.72,7825.68, 8373.48];
          $scope.predictChart ={
 options:{ chart: {
             zoomType: 'xy'
@@ -1619,7 +1626,7 @@ options:{ chart: {
             name: 'GDP(亿元)',
             color: '#89A54E',
             type: 'spline',
-            data: gdp,
+            data: gdp1,
             marker:{
                 symbol:"square"
             },
@@ -1679,7 +1686,7 @@ $scope.populationChart ={
                 },
                 series: [{
                     name: 'GDP总量',
-                    data: gdp
+                    data: gdp1
                 }],
                 title: {
                     text: '太仓市2016至2025年GDP总量预测值'
