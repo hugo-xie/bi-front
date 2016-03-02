@@ -213,70 +213,81 @@ promise.then(function(result) {
 
 
 //第二图：行业总体比较视图控制器————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————》》》》》》
-app.controller('EconomyPowerConsumptionCtrl_Industries', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('EconomyPowerConsumptionCtrl_Industries', ['$scope','$stateParams', 'qService','forecastFactory_Power',function($scope, $stateParams,qService,forecastFactory_Power) {
 
-    $scope.industrydata = {      
+
+var promise = qService.tokenHttpGet(forecastFactory_Power.query,{tableName:'powerGdpCorrelationIndustryData'});
+
+promise.then(function(result) {
+
+    $scope.getData = result.data;
+
+    console.log($scope.getData);
+
+    $scope.industrydata = {
+
         years:[2014,2015],
+
         title:'各行业用电量增长率与产值增长率对比分析',
         _2018:{
             year:'2018',
-            gdpdata: [0.073, 0.030, 0.063, 0.021, 0.019,0.032,0.033,0.063],                                                                             
-            powerdata: [0.061, 0.043, 0.072, 0.035, 0.035,0.024,0.064,0.086],  
+            gdpdata: $scope.getData[2018][0],                                                                             
+            powerdata: $scope.getData[2018][1],  
         },
         _2017:{
             year:'2017',
-            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
-            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
+            gdpdata: $scope.getData[2017][0],                                                                             
+            powerdata: $scope.getData[2017][1],  
         },
         _2016:{
             year:'2016',
-            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
-            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
+            gdpdata: $scope.getData[2016][0],                                                                             
+            powerdata: $scope.getData[2016][1],
         },
         _2015:{
             year:'2015',
-            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
-            powerdata: [0.063, 0.041, 0.07, 0.034, 0.032,0.023,0.065,0.087],  
+            gdpdata: $scope.getData[2015][0],                                                                             
+            powerdata: $scope.getData[2015][1],  
         },
         _2014:{
             year:'2014',
-            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
-            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
+             gdpdata: $scope.getData[2014][0],                                                                             
+            powerdata: $scope.getData[2014][1],
         },
         _2013:{
             year:'2013',
-            gdpdata: [0.073, 0.030, 0.063, 0.021, 0.019,0.032,0.033,0.063],                                                                             
-            powerdata: [0.061, 0.043, 0.072, 0.035, 0.035,0.024,0.064,0.086],  
+             gdpdata: $scope.getData[2013][0],                                                                             
+            powerdata: $scope.getData[2013][1],  
         },
         _2012:{
             year:'2012',
-            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
-            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
+             gdpdata: $scope.getData[2012][0],                                                                             
+            powerdata: $scope.getData[2012][1],  
         },
         _2011:{
             year:'2011',
-            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
-            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
+             gdpdata: $scope.getData[2011][0],                                                                             
+            powerdata: $scope.getData[2011][1],
         },
         _2010:{
             year:'2010',
-            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
-            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
+             gdpdata: $scope.getData[2010][0],                                                                             
+            powerdata: $scope.getData[2010][1],  
         },
         _2009:{
             year:'2009',
-            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
-            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
+             gdpdata: $scope.getData[2009][0],                                                                             
+            powerdata: $scope.getData[2009][1],
         },
         _2008:{
             year:'2008',
-            gdpdata: [0.076, 0.031, 0.065, 0.023, 0.02,0.034,0.032,0.065],                                                                             
-            powerdata: [0.063, 0.041, 0.070, 0.034, 0.032,0.023,0.065,0.087],  
+             gdpdata: $scope.getData[2008][0],                                                                             
+            powerdata: $scope.getData[2008][1], 
         },
         _2007:{
             year:'2007',
-            gdpdata: [0.066, 0.041, 0.055, 0.033, 0.017,0.037,0.035,0.045],                                                                             
-            powerdata: [0.053, 0.047, 0.050, 0.034, 0.022,0.043,0.045,0.057],
+             gdpdata: $scope.getData[2007][0],                                                                             
+            powerdata: $scope.getData[2007][1],
         },
     };
 
@@ -655,6 +666,8 @@ app.controller('EconomyPowerConsumptionCtrl_Industries', ['$scope','$stateParams
             ]
         }]
     };
+
+});
 }]);
 
 
