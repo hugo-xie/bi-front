@@ -1,6 +1,3 @@
-//controller: 'EconomyGdpCtrl'
-'use strict';
-
 app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope,$stateParams,qService,forecastFactory) {
     
 
@@ -10,41 +7,9 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
     console.log(rc.data);
     //alert(rc.data);
     
-    $scope.gdprealvalue=rc.data[0];
-    $scope.forecastvalue=rc.data[1][10];
-    $scope.gdpforecastvalue=rc.data[1];
-    $scope.errorvalue=rc.data[2];
-    $scope.gdpquarterrealvalue=rc.data[3];
-    $scope.gdpquarterforcastvalue=rc.data[4];
-    $scope.gdpgrowratevalue=rc.data[5];
-    $scope.gdpquartergrowratevalue=rc.data[6];
-    $scope.firstindustryvalue=rc.data[7];
-    $scope.secondindustryvalue=rc.data[8];
-    $scope.thirdindustryvalue=rc.data[9];
-    $scope.thisyearfirstindustryvalue=rc.data[10];
-    $scope.thisyearfirstindustryfcvalue=rc.data[11];
-    $scope.thisyearfirstindustrygrowvalue=rc.data[12];
-    $scope.thisyearsecondindustryvalue=rc.data[13];
-    $scope.thisyearsecondindustryfcvalue=rc.data[14];
-    $scope.thisyearsecondindustrygrowvalue=rc.data[15];
-    $scope.thisyearthirdindustryvalue=rc.data[16];
-    $scope.thisyearthirdindustryfcvalue=rc.data[17];
-    $scope.thisyearthirdindustrygrowvalue=rc.data[18];
-    $scope.xAxis= [
-                '2006',
-                '2007',
-                '2008',
-                '2009',
-                '2010',
-                '2011',
-                '2012',
-                '2013',
-                '2014',
-                '2015',
-                '2016',
-                '2017'
-                
-            ];
+    
+   
+
    
    $scope.deviation=false;
    $scope.forecast=false;
@@ -79,11 +44,9 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
   
     
   $scope.yearGDPChart={
-    options: {
-      chart: {
-        type:'column'
-      },
-    },
+    chart: {
+            
+        },
         title: {
             text: '太仓市GDP数据',
             style:{
@@ -94,7 +57,21 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
             text: '年度GDP分析'
         },
         xAxis: {
-            categories:$scope.xAxis,
+            categories: [
+                '2006',
+                '2007',
+                '2008',
+                '2009',
+                '2010',
+                '2011',
+                '2012',
+                '2013',
+                '2014',
+                '2015',
+                '2016',
+                '2017'
+                
+            ],
             plotBands:[{
             from: 8.5,
             to:12.5,
@@ -159,28 +136,26 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
         series: [{
             type: 'column',
             name: '真实数据',
-            data: $scope.gdprealvalue
+            data: [366.63, 440.27, 528.02, 612.01, 730.32, 867.53, 955.12, 1002.28, 1065.33, null, null, null]
 
         }, {
             type: 'column',
             name: '预测数据',
-            data: $scope.gdpforecastvalue
+            data: [328.24, 453.61, 547.18, 602.58, 758.69, 890.37, 991.74, 1025.56, 1098.33, 1152.67, 1218.98, 1298.03]
 
         },
         {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: $scope.gdpgrowratevalue
+            data: [6.4, 7.2, 7.5, 6.7, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2, 7.7]
         }]
   };
-  
+  });
   $scope.monthGDPChart={
-    options: {
-      chart: {
-        type:'column'
-      },
-    },
+    chart: {
+            
+        },
         title: {
             text: '太仓市GDP数据',
              style:{
@@ -263,19 +238,19 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
         series: [{
             type: 'column',
             name: '真实数据',
-            data: $scope.gdpquarterrealvalue
+            data: [ 225.51, 555.72, 849.66, null ]
 
         }, {
             type: 'column',
             name: '预测数据',
-            data: $scope.gdpquarterforcastvalue
+            data: [248.77, 541.86, 867.74,1152.67]
 
         },
         {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: $scope.gdpquartergrowratevalue
+            data: [6.1, 6.2, 6.4, 6.7]
         }]
   };
 
@@ -348,17 +323,17 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
         series: [{
             color:'#929bce',
             name: '第一产业',
-            data: $scope.firstindustryvalue
+            data: [15.63,16.80,23.03,24.66,26.98,30.88,33.61,33.56,35.24, 36.44, 37.90, 39.61]
 
         }, {
             
             name: '第二产业',
-            data: $scope.secondindustryvalue
+            data: [223.05,265.51,310.19,355.35,418.96,485.72,520.36,532.46,556.65, 594.55,636.76,682.61]
 
         },
         {   color:'#465299',
             name: '第三产业',
-            data: $scope.thirdindustryvalue
+            data: [127.95,157.96,194.80,232.00,284.38,350.93,401.15,436.26,473.44,521.68,544.32,575.81]
         }]
   };
   $scope.primaryGDPChart={
@@ -415,19 +390,19 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
 
             type: 'column',
             name: '真实数据',
-            data: $scope.thisyearfirstindustryvalue
+            data: [ 4.48, 13.32, 23.57, null ]
 
         }, {
             type: 'column',
             name: '预测数据',
-            data: $scope.thisyearfirstindustryfcvalue
+            data: [4.85, 12.64, 22.78,36.77 ]
 
         },
         {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: $scope.thisyearfirstindustrygrowvalue
+            data: [4.4, 5.2, 5.5, 6.7]
         }]
   
   };
@@ -485,13 +460,13 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
          
             type: 'column',
             name: '真实数据',
-            data: $scope.thisyearsecondindustryvalue
+            data: [ 120.46, 293.99, 444.01, null ]
 
         }, { 
            
             type: 'column',
             name: '预测数据',
-            data: $scope.thisyearsecondindustryfcvalue
+            data: [117.68, 303.45, 468.21,586.45]
 
         },
         {   
@@ -499,7 +474,7 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: $scope.thisyearsecondindustrygrowvalue
+            data: [6.0, 5.7, 6.0, 6.7]
         }]
   
   };
@@ -557,13 +532,13 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
            
             type: 'column',
             name: '真实数据',
-            data: $scope.thisyearthirdindustryvalue
+            data: [ 100.57, 248.41, 382.08, null ]
 
         }, {
            
             type: 'column',
             name: '预测数据',
-            data: $scope.thisyearthirdindustryfcvalue
+            data: [107.87, 269.68, 404.18,507.54 ]
 
         },
         {   
@@ -571,10 +546,10 @@ app.controller('EconomyGdpCtrl', ['$scope','$stateParams','qService','forecastFa
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: $scope.thisyearthirdindustrygrowvalue
+            data: [6.4, 7.0, 7.1, 7.3]
         }]
   
   };
-   });
+  
    
 }]);

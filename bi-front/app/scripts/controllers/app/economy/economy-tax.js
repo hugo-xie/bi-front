@@ -7,7 +7,7 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams','qService','forecastFa
     console.log(rc.data);
     //alert(rc.data);
     //$scope.forecastvalue=rc.data[0].gdpForecastValue;
-    });
+    
   $scope.colorpicker = {
         options: {
             orientation: 'horizontal',
@@ -365,5 +365,5 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
         }]   
   };
 
-    
+    });
 }]);
