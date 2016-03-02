@@ -25,6 +25,13 @@ app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFac
 
   });
 
+  var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'aqiScopeData'});
+  promise3.then(function(rc) {
+
+    console.log(rc.data);
+
+  });
+
   //下拉点击事件
   $scope.change=function(model){
   console.log(model);
