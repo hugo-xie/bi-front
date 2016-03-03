@@ -810,6 +810,8 @@ $scope.openorclose='↓展开';
 
           console.log(rc.data);
           $scope.aqi=rc.data[0];
+          $scope.predictaqi=rc.data[1];
+          $scope.date=rc.data[2];
 
           $scope.aqilinechart={
               options:{
@@ -821,7 +823,8 @@ $scope.openorclose='↓展开';
                       x:20
                   },
                   xAxis: {
-                      categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日','1月6日','1月7日']
+                      categories: $scope.date
+                      // ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日','1月6日','1月7日']
                   },
                   yAxis: {
                       title: {
@@ -843,11 +846,7 @@ $scope.openorclose='↓展开';
                       type: 'spline',
                       name: '预测AQI值',
                       color:"#1F1F1F",
-                      data: [132, 148, 188, 175, 60, 108,88],
-                      
-                      dataLabels: {
-                          enabled: false
-                      }
+                      data: $scope.predictaqi
                   }]
           };
     });
