@@ -4,40 +4,37 @@
 app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFactory','forecastFactory',function($scope,$stateParams,$timeout,qService,rawFactory,forecastFactory) {
 
   $scope.data = null;
-  var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'airConditionData'});
-  promise.then(function(rc) {
 
-    console.log(rc.data);
-
-  });
 
   var promise1 = qService.tokenHttpGet(rawFactory.query,{tableName:'airPollutionData'});
-  promise1.then(function(rc) {
+  promise1.then(function(rc1) {
 
-    console.log(rc.data);
+    console.log(rc1.data);
 
   });
 
-  var promise2 = qService.tokenHttpGet(rawFactory.query,{tableName:'airQualityData'});
-  promise2.then(function(rc) {
+  var promise2 = qService.tokenHttpGet(rawFactory.query,{tableName:'airConditionData'});
+  promise2.then(function(rc2) {
 
-    console.log(rc.data);
+    console.log(rc2.data);
 
   });
 
   var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'aqiScopeData'});
-  promise3.then(function(rc) {
+  promise3.then(function(rc3) {
 
-    console.log(rc.data);
+    console.log(rc3.data);
 
   });
 
   var promise4 = qService.tokenHttpGet(forecastFactory.query,{tableName:'airQualityPredictData'});
-  promise4.then(function(rc) {
+  promise4.then(function(rc4) {
 
-    console.log(rc.data);
+    console.log(rc4.data);
 
   });
+
+
 
   //下拉点击事件
   $scope.change=function(model){
@@ -808,45 +805,52 @@ $scope.openorclose='↓展开';
 	var wasteAirCurrentTimeList;
 
 
-$scope.aqilinechart={
-    options:{
-      title: {
-            text: '过去七天空气质量AQI',
-            style: {
-            	fontWeight:'bold',
-            },
-            x:20
-        },
-        xAxis: {
-            categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日','1月6日','1月7日']
-        },
-        yAxis: {
-            title: {
-                text: '空气质量指数(AQI)值'
-            }
-        },
-        legend: {
-        itemStyle:{
-          fontWeight:'normal'
-            }
-        }
-      },
-        series: [{
-            type: 'column',
-            name: '实际AQI值',
-            color:"#95ceff",
-            data: [127, 157, 183, 188, 56,100,80]
-        },  {
-            type: 'spline',
-            name: '预测AQI值',
-            color:"#1F1F1F",
-            data: [132, 148, 188, 175, 60, 108,88],
-            
-            dataLabels: {
-                enabled: false
-            }
-        }]
-};
+  var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'airQualityData'});
+  promise.then(function(rc) {
+
+    console.log(rc.data);
+    $scope.aqi=rc.data[0];
+
+          $scope.aqilinechart={
+              options:{
+                title: {
+                      text: '过去七天空气质量AQI',
+                      style: {
+                      	fontWeight:'bold',
+                      },
+                      x:20
+                  },
+                  xAxis: {
+                      categories: ['1月1日', '1月2日', '1月3日', '1月4日', '1月5日','1月6日','1月7日']
+                  },
+                  yAxis: {
+                      title: {
+                          text: '空气质量指数(AQI)值'
+                      }
+                  },
+                  legend: {
+                  itemStyle:{
+                    fontWeight:'normal'
+                      }
+                  }
+                },
+                  series: [{
+                      type: 'column',
+                      name: '实际AQI值',
+                      color:"#95ceff",
+                      data: $scope.aqi
+                  },  {
+                      type: 'spline',
+                      name: '预测AQI值',
+                      color:"#1F1F1F",
+                      data: [132, 148, 188, 175, 60, 108,88],
+                      
+                      dataLabels: {
+                          enabled: false
+                      }
+                  }]
+          };
+    });
 
 
 //空气质量 highcharts options
