@@ -108,6 +108,18 @@ promise.then(function(result) {
   };
 
   /*——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————*/
+  
+
+  });
+
+}]);
+
+
+
+
+app.controller('EconomyPowerConsumptionOfEnterpriseTotalCtrl', 
+    ['$scope','$stateParams','qService','forecastFactory_Power', function($scope, $stateParams,qService,forecastFactory_Power) {
+
   $scope.AverageEnterpriseChartByYear={
          options:{
             chart: {
@@ -199,18 +211,7 @@ promise.then(function(result) {
     $scope.averageenterprisetableshow= !$scope.averageenterprisetableshow;
   }
 
-  });
-
 }]);
-
-
-
-
-
-
-
-
-
 
 //第二图：行业总体比较视图控制器————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————》》》》》》
 app.controller('EconomyPowerConsumptionCtrl_Industries', ['$scope','$stateParams', 'qService','forecastFactory_Power',function($scope, $stateParams,qService,forecastFactory_Power) {
@@ -222,7 +223,6 @@ promise.then(function(result) {
 
     $scope.getData = result.data;
 
-    console.log($scope.getData);
 
     $scope.industrydata = {
 
@@ -675,7 +675,17 @@ promise.then(function(result) {
 
 
 
-app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$stateParams', 'qService','forecastFactory_Power',function($scope, $stateParams,qService,forecastFactory_Power) {
+
+var promise = qService.tokenHttpGet(forecastFactory_Power.query,{tableName:'powerGdpCorrelationIndustrySoloData'});
+
+$scope.totalYears = [2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018];
+
+promise.then(function(result) {
+
+  $scope.getData = result.data;
+
+
   $scope.industriesdata = {
     total:{
         years:[2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018],
@@ -684,792 +694,785 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
     agriculture:{
         title:'农、林、牧、渔业',
         yeardata:{
-          gdpdata: [6.6, 4.1, 5.5, 3.3, 1.7,3.7,3.5,4.5,6.6, 4.1, 5.5, 3.3, 1.7],                                                                             
-          powerdata: [5.3, 4.7, 5.0, 3.4, 2.2,4.3,4.5,5.7,5.3, 4.7, 5.0, 3.4, 2.2],
+          gdpdata: $scope.getData[3001][0],                                                                             
+          powerdata: $scope.getData[3001][1],
         },
         _2018:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3001][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3001][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2017][1],
                 },
         },
         _2016:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3001][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3001][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2015][1],
                 },
         },
         _2014:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3001][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3001][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2013][1],
                 },
         },
         _2012:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3001][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3001][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2011][1],
                 },
         },
         _2010:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3001][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3001][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2009][1],
                 },
         },
         _2008:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3001][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 7.5, 7.5],
-                    gdpdata:[6.3, 6.3, 7.2, 7.7],
+                    gdpdata: $scope.getData[3001][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2007][1],
                 },
         },
         _2006:{
             season:
                 {
-                    powerdata:[5.4, 7.9, 5.5, 6.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3001][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3001][2][2006][1],
                 },
         },
     },
     industry:{
         title:'工业',
         yeardata:{
-          gdpdata: [7.6, 3.1, 6.5, 2.3, 2.0,3.4,3.2,6.5,7.6, 3.1, 6.5, 2.3, 2.0],                                                                             
-          powerdata: [6.3, 4.1, 7.0, 3.4, 3.2,2.3,6.5,8.7,6.3, 4.1, 7.0, 3.4, 3.2],
+          gdpdata: $scope.getData[3002][0],                                                                             
+          powerdata: $scope.getData[3002][1],
         },
         _2018:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[3.4, 3.9, 1.5, 2.5],
-                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2017][1],
                 },
         },
         _2016:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[3.4, 3.9, 1.5, 2.5],
-                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2015][1],
                 },
         },
         _2014:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2013][1],
                 },
         },
         _2012:{
             season:
                 {
-                    powerdata:[3.4, 3.9, 1.5, 2.5],
-                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2011][1],
                 },
         },
         _2010:{
             season:
                 {
-                    powerdata:[3.4, 3.9, 1.5, 2.5],
-                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2009][1],
                 },
         },
         _2008:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[3.4, 3.9, 1.5, 2.5],
-                    gdpdata:[6.3, 7.3, 3.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2007][1],
                 },
         },
         _2006:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3002][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3002][2][2006][1],
                 },
         },
     },
     construction:{
         title:'建筑业',
         yeardata:{
-          gdpdata: [6.6, 4.1, 5.5, 3.3, 1.7,3.7,3.5,4.5,6.6, 4.1, 5.5, 3.3, 1.7],                                                                             
-          powerdata: [5.3, 4.7, 5.0, 3.4, 2.2,4.3,4.5,5.7,5.3, 4.7, 5.0, 3.4, 2.2],
+          gdpdata: $scope.getData[3003][0],                                                                             
+          powerdata: $scope.getData[3003][1],
         },
         _2018:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3003][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3003][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2017][1],
                 },
         },
         _2016:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3003][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3003][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2015][1],
                 },
         },
         _2014:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3003][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3003][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2013][1],
                 },
         },
         _2012:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3003][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3003][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2011][1],
                 },
         },
         _2010:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3003][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3003][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2009][1],
                 },
         },
         _2008:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3003][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3003][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2007][1],
                 },
         },
         _2006:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3003][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3003][2][2006][1],
                 },
         },
     },
     traffic:{
         title:'交通运输、仓储和邮政业',
         yeardata:{
-          gdpdata: [7.6, 3.1, 6.5, 2.3, 2.0,3.4,3.2,6.5,7.6, 3.1, 6.5, 2.3, 2.0],                                                                             
-          powerdata: [6.3, 4.1, 7.0, 3.4, 3.2,2.3,6.5,8.7,6.3, 4.1, 7.0, 3.4, 3.2], 
+          gdpdata: $scope.getData[3004][0],                                                                             
+          powerdata: $scope.getData[3004][1], 
           //年数据应该是有季度数据按公式计算得到的
         },
         _2018:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 6.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3004][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[7.4, 6.9, 7.5, 8.5],
-                    gdpdata:[7.3, 6.3, 7.2, 8.7],
+                    gdpdata: $scope.getData[3004][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2017][1],
                 },
         },
         _2016:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 5.5, 6.5],
-                    gdpdata:[5.3, 7.3, 5.2, 6.7],
+                    gdpdata: $scope.getData[3004][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[1.4, 6.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3004][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2015][1],
                 },
         },
         _2014:{
             season:
                 {
-                    powerdata:[6.4, 5.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3004][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 6.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3004][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2013][1],
                 },
         },
         _2012:{
             season:
                 {
-                    powerdata:[7.4, 6.9, 7.5, 8.5],
-                    gdpdata:[7.3, 6.3, 7.2, 8.7],
-                },
-        },
-        _2012:{
-            season:
-                {
-                    powerdata:[5.4, 6.9, 5.5, 6.5],
-                    gdpdata:[5.3, 7.3, 5.2, 6.7],
+                    gdpdata: $scope.getData[3004][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[1.4, 6.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3004][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2011][1],
                 },
         },
         _2010:{
             season:
                 {
-                    powerdata:[6.4, 5.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3004][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[7.4, 6.9, 7.5, 8.5],
-                    gdpdata:[7.3, 6.3, 7.2, 8.7],
+                    gdpdata: $scope.getData[3004][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2009][1],
                 },
         },
         _2008:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 5.5, 6.5],
-                    gdpdata:[5.3, 7.3, 5.2, 6.7],
+                    gdpdata: $scope.getData[3004][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[1.4, 6.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3004][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2007][1],
                 },
         },
         _2006:{
             season:
                 {
-                    powerdata:[6.4, 5.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3004][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3004][2][2006][1],
                 },
         },
     },
     computer:{
         title:'信息传输、计算机服务和软件业',
         yeardata:{
-          gdpdata: [6.6, 4.1, 5.5, 3.3, 1.7,3.7,3.5,4.5,6.6, 4.1, 5.5, 3.3, 1.7],                                                                             
-          powerdata: [5.3, 4.7, 5.0, 3.4, 2.2,4.3,4.5,5.7,5.3, 4.7, 5.0, 3.4, 2.2],
+          gdpdata: $scope.getData[3005][0],                                                                             
+          powerdata: $scope.getData[3005][1],
         },
         _2018:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3005][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3005][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2017][1],
                 },
         },
-         _2016:{
+        _2016:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3005][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3005][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2015][1],
                 },
         },
-         _2014:{
+        _2014:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3005][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3005][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2013][1],
                 },
         },
-         _2012:{
+        _2012:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3005][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3005][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2011][1],
                 },
         },
-         _2010:{
+        _2010:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3005][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3005][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2009][1],
                 },
         },
-         _2008:{
+        _2008:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3005][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3005][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2007][1],
                 },
         },
-         _2006:{
+        _2006:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3005][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3005][2][2006][1],
                 },
         },
     },
     retail:{
         title:'批发和零售、住宿和餐饮业',
         yeardata:{
-          gdpdata: [7.6, 3.1, 6.5, 2.3, 2.0,3.4,3.2,6.5,7.6, 3.1, 6.5, 2.3, 2.0],                                                                             
-          powerdata: [6.3, 4.1, 7.0, 3.4, 3.2,2.3,6.5,8.7,6.3, 4.1, 7.0, 3.4, 3.2], 
+          gdpdata: $scope.getData[3006][0],                                                                             
+          powerdata: $scope.getData[3006][1],
         },
         _2018:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3006][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3006][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2017][1],
                 },
         },
         _2016:{
             season:
                 {
-                    powerdata:[2.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3006][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3006][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2015][1],
                 },
         },
         _2014:{
             season:
                 {
-                    powerdata:[2.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3006][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3006][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2013][1],
                 },
         },
         _2012:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3006][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[2.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3006][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2011][1],
                 },
         },
         _2010:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3006][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[2.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3006][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2009][1],
                 },
         },
         _2008:{
             season:
                 {
-                    powerdata:[2.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3006][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[5.4, 6.9, 3.5, 3.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3006][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2007][1],
                 },
         },
         _2006:{
             season:
                 {
-                    powerdata:[2.4, 7.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3006][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3006][2][2006][1],
                 },
         },
     },
     finance:{
         title:'金融房地产、商务及居民服务业',
         yeardata:{
-          gdpdata: [7.3, 3.0, 6.3, 2.1, 1.9,3.2,3.3,6.3,7.3, 3.0, 6.3, 2.1, 1.9],                                                                             
-          powerdata: [6.1, 4.3, 7.2, 3.5, 3.5,2.4,6.4,8.6,6.1, 4.3, 7.2, 3.5, 3.5],
+          gdpdata: $scope.getData[3007][0],                                                                             
+          powerdata: $scope.getData[3007][1],
         },
         _2018:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3007][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3007][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2017][1],
                 },
         },
         _2016:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3007][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3007][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2015][1],
                 },
         },
         _2014:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3007][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3007][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2013][1],
                 },
         },
         _2012:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3007][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3007][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2011][1],
                 },
         },
         _2010:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3007][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3007][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2009][1],
                 },
         },
         _2008:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3007][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[6.4, 6.9, 6.5, 7.5],
-                    gdpdata:[6.3, 6.3, 6.2, 6.7],
+                    gdpdata: $scope.getData[3007][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2007][1],
                 },
         },
         _2006:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 3.5, 5.5],
-                    gdpdata:[3.3, 5.3, 3.2, 1.7],
+                    gdpdata: $scope.getData[3007][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3007][2][2006][1],
                 },
         },
     },
     service:{
         title:'公共事业及管理组织',
         yeardata:{
-          gdpdata: [6.6, 4.1, 5.5, 3.3, 1.7,3.7,3.5,4.5,6.6, 4.1, 5.5, 3.3, 1.7],                                                                             
-          powerdata: [5.3, 4.7, 5.0, 3.4, 2.2,4.3,4.5,5.7,5.3, 4.7, 5.0, 3.4, 2.2],
+          gdpdata: $scope.getData[3008][0],                                                                             
+          powerdata: $scope.getData[3008][1],
         },
-        _2018:{
+       _2018:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3008][2][2018][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2018][1],
                 },
         },
         _2017:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3008][2][2017][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2017][1],
                 },
         },
-         _2016:{
+        _2016:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3008][2][2016][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2016][1],
                 },
         },
         _2015:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3008][2][2015][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2015][1],
                 },
         },
-         _2014:{
+        _2014:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3008][2][2014][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2014][1],
                 },
         },
         _2013:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3008][2][2013][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2013][1],
                 },
         },
-         _2012:{
+        _2012:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3008][2][2012][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2012][1],
                 },
         },
         _2011:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3008][2][2011][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2011][1],
                 },
         },
-         _2010:{
+        _2010:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3008][2][2010][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2010][1],
                 },
         },
         _2009:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3008][2][2009][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2009][1],
                 },
         },
-         _2008:{
+        _2008:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3008][2][2008][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2008][1],
                 },
         },
         _2007:{
             season:
                 {
-                    powerdata:[6.4, 7.9, 6.5, 5.5],
-                    gdpdata:[4.3, 6.3, 4.2, 2.7],
+                    gdpdata: $scope.getData[3008][2][2007][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2007][1],
                 },
         },
-         _2006:{
+        _2006:{
             season:
                 {
-                    powerdata:[5.4, 4.9, 3.5, 5.5],
-                    gdpdata:[4.3, 6.3, 3.2, 4.7],
+                    gdpdata: $scope.getData[3008][2][2006][0],                                                                             
+                    powerdata: $scope.getData[3008][2][2006][1],
                 },
         },
     },
@@ -3827,7 +3830,7 @@ app.controller('EconomyPowerConsumptionCtrl_IndustryEach', ['$scope','$statePara
         }]
   };
   //各行业数据
-  
+  });
 
 }]);
 

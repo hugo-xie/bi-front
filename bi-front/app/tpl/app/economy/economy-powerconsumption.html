@@ -78,11 +78,35 @@
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
 			      	<td>GDP同比增长率</td>
-			        <td ng-repeat="gdp in totaldata.gdprate">{{gdp}}%</td>
+			        <td>{{totaldata.gdprate[0]}}%</td>
+			        <td>{{totaldata.gdprate[1]}}%</td>
+			        <td>{{totaldata.gdprate[2]}}%</td>
+			        <td>{{totaldata.gdprate[3]}}%</td>
+			        <td>{{totaldata.gdprate[4]}}%</td>
+			        <td>{{totaldata.gdprate[5]}}%</td>
+			        <td>{{totaldata.gdprate[6]}}%</td>
+			        <td>{{totaldata.gdprate[7]}}%</td>
+			        <td>{{totaldata.gdprate[8]}}%</td>
+			        <td>{{totaldata.gdprate[9]}}%</td>
+			        <td>{{totaldata.gdprate[10]}}%</td>
+			        <td>{{totaldata.gdprate[11]}}%</td>
+			        <td>{{totaldata.gdprate[12]}}%</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
 			      	<td>工业用电量同比增长率</td>
-			        <td ng-repeat="power in totaldata.powerrate">{{power}}%</td>
+			        <td>{{totaldata.powerrate[0]}}%</td>
+			        <td>{{totaldata.powerrate[1]}}%</td>
+			        <td>{{totaldata.powerrate[2]}}%</td>
+			        <td>{{totaldata.powerrate[3]}}%</td>
+			        <td>{{totaldata.powerrate[4]}}%</td>
+			        <td>{{totaldata.powerrate[5]}}%</td>
+			        <td>{{totaldata.powerrate[6]}}%</td>
+			        <td>{{totaldata.powerrate[7]}}%</td>
+			        <td>{{totaldata.powerrate[8]}}%</td>
+			        <td>{{totaldata.powerrate[9]}}%</td>
+			        <td>{{totaldata.powerrate[10]}}%</td>
+			        <td>{{totaldata.powerrate[11]}}%</td>
+			        <td>{{totaldata.powerrate[12]}}%</td>
 			      </tr>
 		    </table>
   		</div>
@@ -427,7 +451,7 @@
 	    </div>
     </div>
     <!--规模以上企业用电量增长率与产值增长率分析预测———————————————————————————————————————第四图—————————————————————————————————————————————————————————————————————-->
-    <div class="wrapper bg-white container space-top" style="margin-bottom:0;">
+    <div class="wrapper bg-white container space-top" style="margin-bottom:0;" ng-controller="EconomyPowerConsumptionOfEnterpriseTotalCtrl">
 	    <div class="row">
 	      <!--标题-->
 	      <div class="col-md-12 topbar">
@@ -490,9 +514,7 @@
 	      	</div>
 	      </div>
 	    </div>
-    </div>
-    <div class="bg-white container padding0em" style="border-top:0" ng-if="averageenterprisetableshow">
-    	<div class="panel panel-default paddingmargin0em" >
+	    <div class="panel panel-default" style="margin-left:-15px;margin-right:-15px;margin-bottom:0px;border-top:1px solid #428bca" ng-if="averageenterprisetableshow">
 	    	<div class="panel-heading">数据详情</div>  
 		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
