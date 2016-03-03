@@ -120,6 +120,24 @@ promise.then(function(result) {
 app.controller('EconomyPowerConsumptionOfEnterpriseTotalCtrl', 
     ['$scope','$stateParams','qService','forecastFactory_Power', function($scope, $stateParams,qService,forecastFactory_Power) {
 
+var promise = qService.tokenHttpGet(forecastFactory_Power.query,{tableName:'powerGdpCorrelationEnterpriseAverageData'});
+
+promise.then(function(result) {
+
+  $scope.getData = result.data;
+
+  $scope.charttype = 'spline';
+
+  $scope.enterpriseAverageData = {
+    year: '2016',
+    oneword: '工业用电量与GDP增长率关联分析时所采用的是格兰杰因果检验模型和误差修正模型的组合模型，通过该模型分析预测得出：用电量增减变动趋势与GDP增减变动趋势基本一致，GDP增长时，用电量也增长，增速相似；GDP回落时，用电量增长也回落;预测阶段用电量增速将大于GDP增速。',
+    powergrowthrate: $scope.getData[2][10],
+    gdpgrowthrate: $scope.getData[1][10],
+    yearvalue:$scope.getData[0],
+    gdprate:$scope.getData[1],
+    powerrate:$scope.getData[2],
+  };
+
   $scope.AverageEnterpriseChartByYear={
          options:{
             chart: {
@@ -135,7 +153,7 @@ app.controller('EconomyPowerConsumptionOfEnterpriseTotalCtrl',
             x: -20
         },
         xAxis: {
-            categories: ['2006', '2007', '2008', '2009', '2010', '2011','2012', '2013', '2014', '2015', '2016','2017','2018'],
+            categories: $scope.enterpriseAverageData.yearvalue,
             plotBands: [{
                 from: 9.5,
                 to: 12.5,
@@ -169,38 +187,13 @@ app.controller('EconomyPowerConsumptionOfEnterpriseTotalCtrl',
         },
         series: [{
             name: '企业用电量同比增长率',
-            data: [7.0, 6.5, 6.2, 5.5, 5.2, 5.5, 6.2, 7.5, 6.3, 5.3, 3.9,4.3,5.5],
+            data: $scope.enterpriseAverageData.powerrate,
         }, {
             name: '企业产值同比增长率',
-            data: [5.2, 4.8, 3.7, 3.6, 3.0, 4.0, 4.8, 4.7, 4.1, 3.1, 2.6,5.5,6.7],
+            data: $scope.enterpriseAverageData.gdprate,
         }]
   };
     
-
-
-  
-  //规模以上企业综合数据
-  $scope.averageenterprisedata = {
-    year: '2016',
-    oneword: '根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读根据后台一句话解读',
-    powergrowthrate: '7.55%',
-    gdpgrowthrate: '6.22%',
-    tabledata:
-    [
-      {yearvalue:'年份',gdprate:'企业产值同比增长率',powerrate:'企业用电量同比增长率'},
-      {yearvalue:'2006',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2007',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2008',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2009',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2010',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2011',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2012',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2013',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2014',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2015',gdprate:'4%',powerrate:'5%'},
-      {yearvalue:'2016',gdprate:'4%',powerrate:'5%'},
-    ]
-  };
   //changeAverageEnterpriseChart
   $scope.averageenterprisetableshow = false;
 
@@ -211,6 +204,7 @@ app.controller('EconomyPowerConsumptionOfEnterpriseTotalCtrl',
     $scope.averageenterprisetableshow= !$scope.averageenterprisetableshow;
   }
 
+});
 }]);
 
 //第二图：行业总体比较视图控制器————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————》》》》》》

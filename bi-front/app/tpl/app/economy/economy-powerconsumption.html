@@ -466,15 +466,15 @@
 	      	<div>
 		      	<div class="col-md-12" style="padding-top:0.5em">
 	            	<div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
-		                <span class="text-white font-thin h1 block">{{averageenterprisedata.powergrowthrate}}%</span>
-		                <span class="text-xs">{{averageenterprisedata.year}}年企业用电量增长率预测值</span>
+		                <span class="text-white font-thin h1 block">{{enterpriseAverageData.powergrowthrate}}%</span>
+		                <span class="text-xs">{{enterpriseAverageData.year}}年企业用电量增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>                                                                                                              
 		            </div>
 	            </div>
 	            <div class="col-md-12 ">
 	            	<div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth">
-		                <span class="text-white font-thin h1 block">{{totaldata.gdpgrowthrate}}%</span>
-		                <span class="text-xs">{{totaldata.year}}年GDP增长率预测值</span>
+		                <span class="text-white font-thin h1 block">{{enterpriseAverageData.gdpgrowthrate}}%</span>
+		                <span class="text-xs">{{enterpriseAverageData.year}}年GDP增长率预测值</span>
 		                	<i class="glyphicon glyphicon-send" aria-hidden="true"></i>
 		                </span>
 	              	</div>
@@ -489,7 +489,7 @@
 			              <span class="h4">一句话解读</span>
 			            </div>
 			            <div class="media-body clear">			              
-			              <small class="block m-t-xs">{{totaldata.oneword}}</small>
+			              <small class="block m-t-xs">{{enterpriseAverageData.oneword}}</small>
 			            </div>
           			</article>
 	      		</div>
@@ -517,14 +517,41 @@
 	    <div class="panel panel-default" style="margin-left:-15px;margin-right:-15px;margin-bottom:0px;border-top:1px solid #428bca" ng-if="averageenterprisetableshow">
 	    	<div class="panel-heading">数据详情</div>  
 		    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="year in averageenterprisedata.tabledata">{{year.yearvalue}}</td>
+		    	  <tr st-select-row="row" class="ng-scope ng-isolate-scope">
+			      	<td>年份</td>
+			        <td ng-repeat="year in enterpriseAverageData.yearvalue">{{year}}</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="gdp in averageenterprisedata.tabledata">{{gdp.gdprate}}</td>
+			      	<td>企业产值同比增长率</td>
+			        <td>{{enterpriseAverageData.gdprate[0]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[1]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[2]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[3]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[4]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[5]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[6]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[7]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[8]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[9]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[10]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[11]}}%</td>
+			        <td>{{enterpriseAverageData.gdprate[12]}}%</td>
 			      </tr>
 			      <tr st-select-row="row" class="ng-scope ng-isolate-scope">
-			        <td ng-repeat="power in averageenterprisedata.tabledata">{{power.powerrate}}</td>
+			      	<td>企业用电量同比增长率</td>
+			        <td>{{enterpriseAverageData.powerrate[0]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[1]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[2]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[3]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[4]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[5]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[6]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[7]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[8]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[9]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[10]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[11]}}%</td>
+			        <td>{{enterpriseAverageData.powerrate[12]}}%</td>
 			      </tr>
 		    </table>
   		</div>
