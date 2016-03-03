@@ -808,8 +808,8 @@ $scope.openorclose='↓展开';
   var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'airQualityData'});
   promise.then(function(rc) {
 
-    console.log(rc.data);
-    $scope.aqi=rc.data[0];
+          console.log(rc.data);
+          $scope.aqi=rc.data[0];
 
           $scope.aqilinechart={
               options:{
