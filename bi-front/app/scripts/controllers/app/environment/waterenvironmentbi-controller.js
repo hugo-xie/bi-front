@@ -845,9 +845,10 @@ $scope.factory={
         if (data.data.length == 0) return null;
         waterQualityCurrentArr = [];
         waterQualityMarkerArr = [];
+       // console.log(data.data);
         var hourOne = data.data[0].hour;
         //取每四小时的最大值
-        for (var i = 0; i < data.data.length / 24; i++) {
+        for (var i = 0; i < data.data.length / 24; i++) {//天
             var index_o2List = [];
             var index_kmno4List = [];
             var index_nh4nList = [];

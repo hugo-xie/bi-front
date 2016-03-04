@@ -1,26 +1,815 @@
 'use strict';
 
-app.controller('PopulationStructureCtrl', function($scope) {
+app.controller('PopulationStructureCtrl', ['$scope','$stateParams','qService','forecastFactory',function($scope, $stateParams,qService,forecastFactory) {
+
+    $scope.data = null;
+    var popData;
+
+  
+    var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'populationStructurePreData'});
+    
+   // var promise = qService.tokenHttpGet(forecastFactory.query,{tableName:'populationStructurePreData'});
+    promise.then(function(rc) {
+
+    console.log(rc.data);
+     popData=rc.data;
+     //return popData;
+     
+    console.log(popData[0].preResidentPopulation);
+//2015年的数据
+    var popData13=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测男性数据
+    var popData14=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测女性数据
+    var sumMale6=0;//初始化男性总数
+    var sumFemale6=0;//初始化女性总数
+    var curMale=[];
+    var curMale1=[];
+    for(var i=0;i<popData.length;i++){
+      if(popData[i].preYear===2015){
+        if(popData[i].sexType_id===1){ //当前男性
+          curMale.push(-popData[i].preResidentPopulation);
+           sumMale6+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData13[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData13[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData13[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData13[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData13[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData13[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData13[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData13[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData13[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData13[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData13[10]+=popData[i].preResidentPopulation;
+            }
+      }
+      if(popData[i].sexType_id===2){  //预测女性
+        curMale1.push(popData[i].preResidentPopulation);
+           sumFemale6+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData14[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData14[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData14[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData14[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData14[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData14[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData14[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData14[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData14[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData14[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData14[10]+=popData[i].preResidentPopulation;
+            }
+      }
+    }
+    }
+    popData13[0]=parseFloat(((popData13[0]/sumMale6)*100).toFixed(2));
+    popData13[1]=parseFloat(((popData13[1]/sumMale6)*100).toFixed(2));
+    popData13[2]=parseFloat(((popData13[2]/sumMale6)*100).toFixed(2));
+    popData13[3]=parseFloat(((popData13[3]/sumMale6)*100).toFixed(2));
+    popData13[4]=parseFloat(((popData13[4]/sumMale6)*100).toFixed(2));
+    popData13[5]=parseFloat(((popData13[5]/sumMale6)*100).toFixed(2));
+    popData13[6]=parseFloat(((popData13[6]/sumMale6)*100).toFixed(2));
+    popData13[7]=parseFloat(((popData13[7]/sumMale6)*100).toFixed(2));
+    popData13[8]=parseFloat(((popData13[8]/sumMale6)*100).toFixed(2));
+    popData13[9]=parseFloat(((popData13[9]/sumMale6)*100).toFixed(2));
+    popData13[10]=parseFloat(((popData13[10]/sumMale6)*100).toFixed(2));
+
+    popData14[0]=parseFloat(((popData14[0]/sumFemale6)*100).toFixed(2));
+    popData14[1]=parseFloat(((popData14[1]/sumFemale6)*100).toFixed(2));
+    popData14[2]=parseFloat(((popData14[2]/sumFemale6)*100).toFixed(2));
+    popData14[3]=parseFloat(((popData14[3]/sumFemale6)*100).toFixed(2));
+    popData14[4]=parseFloat(((popData14[4]/sumFemale6)*100).toFixed(2));
+    popData14[5]=parseFloat(((popData14[5]/sumFemale6)*100).toFixed(2));
+    popData14[6]=parseFloat(((popData14[6]/sumFemale6)*100).toFixed(2));
+    popData14[7]=parseFloat(((popData14[7]/sumFemale6)*100).toFixed(2));
+    popData14[8]=parseFloat(((popData14[8]/sumFemale6)*100).toFixed(2));
+    popData14[9]=parseFloat(((popData14[9]/sumFemale6)*100).toFixed(2));
+    popData14[10]=parseFloat(((popData14[10]/sumFemale6)*100).toFixed(2));
+   console.log(popData13);
+   console.log(sumMale6);
+
+   console.log(popData14);
+   console.log(sumFemale6);
+
+   //console.log(z);
+ 
+//2020年的数据
+    var popData1=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测男性数据
+    var popData2=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测女性数据
+    var sumMale=0;//初始化男性总数
+    var sumFemale=0;//初始化女性总数
+    
+    for(var i=0;i<popData.length;i++){
+      if(popData[i].preYear===2020){
+        if(popData[i].sexType_id===1){ //预测男性
+           sumMale+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData1[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData1[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData1[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData1[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData1[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData1[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData1[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData1[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData1[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData1[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData1[10]+=popData[i].preResidentPopulation;
+            }
+      }
+      if(popData[i].sexType_id===2){  //预测女性
+           sumFemale+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData2[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData2[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData2[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData2[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData2[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData2[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData2[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData2[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData2[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData2[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData2[10]+=popData[i].preResidentPopulation;
+            }
+      }
+    }
+    }
+    popData1[0]=parseFloat(((popData1[0]/sumMale)*100).toFixed(2));
+    popData1[1]=parseFloat(((popData1[1]/sumMale)*100).toFixed(2));
+    popData1[2]=parseFloat(((popData1[2]/sumMale)*100).toFixed(2));
+    popData1[3]=parseFloat(((popData1[3]/sumMale)*100).toFixed(2));
+    popData1[4]=parseFloat(((popData1[4]/sumMale)*100).toFixed(2));
+    popData1[5]=parseFloat(((popData1[5]/sumMale)*100).toFixed(2));
+    popData1[6]=parseFloat(((popData1[6]/sumMale)*100).toFixed(2));
+    popData1[7]=parseFloat(((popData1[7]/sumMale)*100).toFixed(2));
+    popData1[8]=parseFloat(((popData1[8]/sumMale)*100).toFixed(2));
+    popData1[9]=parseFloat(((popData1[9]/sumMale)*100).toFixed(2));
+    popData1[10]=parseFloat(((popData1[10]/sumMale)*100).toFixed(2));
+
+    popData2[0]=parseFloat(((popData2[0]/sumFemale)*100).toFixed(2));
+    popData2[1]=parseFloat(((popData2[1]/sumFemale)*100).toFixed(2));
+    popData2[2]=parseFloat(((popData2[2]/sumFemale)*100).toFixed(2));
+    popData2[3]=parseFloat(((popData2[3]/sumFemale)*100).toFixed(2));
+    popData2[4]=parseFloat(((popData2[4]/sumFemale)*100).toFixed(2));
+    popData2[5]=parseFloat(((popData2[5]/sumFemale)*100).toFixed(2));
+    popData2[6]=parseFloat(((popData2[6]/sumFemale)*100).toFixed(2));
+    popData2[7]=parseFloat(((popData2[7]/sumFemale)*100).toFixed(2));
+    popData2[8]=parseFloat(((popData2[8]/sumFemale)*100).toFixed(2));
+    popData2[9]=parseFloat(((popData2[9]/sumFemale)*100).toFixed(2));
+    popData2[10]=parseFloat(((popData2[10]/sumFemale)*100).toFixed(2));
+   console.log(popData1);
+   console.log(sumMale);
+
+   console.log(popData2);
+   console.log(sumFemale);
+ 
+ //2025年的数据
+    var popData3=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测男性数据
+    var popData4=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测女性数据
+    var sumMale1=0;//初始化男性总数
+    var sumFemale1=0;//初始化女性总数
+    
+    for(var i=0;i<popData.length;i++){
+      if(popData[i].preYear===2025){
+        if(popData[i].sexType_id===1){ //预测男性
+           sumMale1+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData3[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData3[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData3[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData3[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData3[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData3[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData3[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData3[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData3[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData3[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData3[10]+=popData[i].preResidentPopulation;
+            }
+      }
+      if(popData[i].sexType_id===2){  //预测女性
+           sumFemale1+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData4[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData4[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData4[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData4[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData4[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData4[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData4[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData4[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData4[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData4[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData4[10]+=popData[i].preResidentPopulation;
+            }
+      }
+    }
+    }
+    popData3[0]=parseFloat(((popData3[0]/sumMale1)*100).toFixed(2));
+    popData3[1]=parseFloat(((popData3[1]/sumMale1)*100).toFixed(2));
+    popData3[2]=parseFloat(((popData3[2]/sumMale1)*100).toFixed(2));
+    popData3[3]=parseFloat(((popData3[3]/sumMale1)*100).toFixed(2));
+    popData3[4]=parseFloat(((popData3[4]/sumMale1)*100).toFixed(2));
+    popData3[5]=parseFloat(((popData3[5]/sumMale1)*100).toFixed(2));
+    popData3[6]=parseFloat(((popData3[6]/sumMale1)*100).toFixed(2));
+    popData3[7]=parseFloat(((popData3[7]/sumMale1)*100).toFixed(2));
+    popData3[8]=parseFloat(((popData3[8]/sumMale1)*100).toFixed(2));
+    popData3[9]=parseFloat(((popData3[9]/sumMale1)*100).toFixed(2));
+    popData3[10]=parseFloat(((popData3[10]/sumMale1)*100).toFixed(2));
+
+    popData4[0]=parseFloat(((popData4[0]/sumFemale1)*100).toFixed(2));
+    popData4[1]=parseFloat(((popData4[1]/sumFemale1)*100).toFixed(2));
+    popData4[2]=parseFloat(((popData4[2]/sumFemale1)*100).toFixed(2));
+    popData4[3]=parseFloat(((popData4[3]/sumFemale1)*100).toFixed(2));
+    popData4[4]=parseFloat(((popData4[4]/sumFemale1)*100).toFixed(2));
+    popData4[5]=parseFloat(((popData4[5]/sumFemale1)*100).toFixed(2));
+    popData4[6]=parseFloat(((popData4[6]/sumFemale1)*100).toFixed(2));
+    popData4[7]=parseFloat(((popData4[7]/sumFemale1)*100).toFixed(2));
+    popData4[8]=parseFloat(((popData4[8]/sumFemale1)*100).toFixed(2));
+    popData4[9]=parseFloat(((popData4[9]/sumFemale1)*100).toFixed(2));
+    popData4[10]=parseFloat(((popData4[10]/sumFemale1)*100).toFixed(2));
+   console.log(popData3);
+   console.log(sumMale1);
+
+   console.log(popData4);
+   console.log(sumFemale1);
+
+
+  //2030年的数据
+    var popData5=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测男性数据
+    var popData6=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测女性数据
+    var sumMale2=0;//初始化男性总数
+    var sumFemale2=0;//初始化女性总数
+    
+    for(var i=0;i<popData.length;i++){
+      if(popData[i].preYear===2030){
+        if(popData[i].sexType_id===1){ //预测男性
+           sumMale2+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData5[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData5[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData5[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData5[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData5[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData5[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData5[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData5[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData5[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData5[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData5[10]+=popData[i].preResidentPopulation;
+            }
+      }
+      if(popData[i].sexType_id===2){  //预测女性
+           sumFemale2+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData6[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData6[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData6[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData6[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData6[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData6[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData6[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData6[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData6[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData6[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData6[10]+=popData[i].preResidentPopulation;
+            }
+      }
+    }
+    }
+    popData5[0]=parseFloat(((popData5[0]/sumMale2)*100).toFixed(2));
+    popData5[1]=parseFloat(((popData5[1]/sumMale2)*100).toFixed(2));
+    popData5[2]=parseFloat(((popData5[2]/sumMale2)*100).toFixed(2));
+    popData5[3]=parseFloat(((popData5[3]/sumMale2)*100).toFixed(2));
+    popData5[4]=parseFloat(((popData5[4]/sumMale2)*100).toFixed(2));
+    popData5[5]=parseFloat(((popData5[5]/sumMale2)*100).toFixed(2));
+    popData5[6]=parseFloat(((popData5[6]/sumMale2)*100).toFixed(2));
+    popData5[7]=parseFloat(((popData5[7]/sumMale2)*100).toFixed(2));
+    popData5[8]=parseFloat(((popData5[8]/sumMale2)*100).toFixed(2));
+    popData5[9]=parseFloat(((popData5[9]/sumMale2)*100).toFixed(2));
+    popData5[10]=parseFloat(((popData5[10]/sumMale2)*100).toFixed(2));
+
+    popData6[0]=parseFloat(((popData6[0]/sumFemale2)*100).toFixed(2));
+    popData6[1]=parseFloat(((popData6[1]/sumFemale2)*100).toFixed(2));
+    popData6[2]=parseFloat(((popData6[2]/sumFemale2)*100).toFixed(2));
+    popData6[3]=parseFloat(((popData6[3]/sumFemale2)*100).toFixed(2));
+    popData6[4]=parseFloat(((popData6[4]/sumFemale2)*100).toFixed(2));
+    popData6[5]=parseFloat(((popData6[5]/sumFemale2)*100).toFixed(2));
+    popData6[6]=parseFloat(((popData6[6]/sumFemale2)*100).toFixed(2));
+    popData6[7]=parseFloat(((popData6[7]/sumFemale2)*100).toFixed(2));
+    popData6[8]=parseFloat(((popData6[8]/sumFemale2)*100).toFixed(2));
+    popData6[9]=parseFloat(((popData6[9]/sumFemale2)*100).toFixed(2));
+    popData6[10]=parseFloat(((popData6[10]/sumFemale2)*100).toFixed(2));
+   console.log(popData5);
+   console.log(sumMale2);
+
+   console.log(popData6);
+   console.log(sumFemale2);
+
+   //2035年的数据
+    var popData7=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测男性数据
+    var popData8=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测女性数据
+    var sumMale3=0;//初始化男性总数
+    var sumFemale3=0;//初始化女性总数
+    
+    for(var i=0;i<popData.length;i++){
+      if(popData[i].preYear===2035){
+        if(popData[i].sexType_id===1){ //预测男性
+           sumMale3+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData7[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData7[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData7[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData7[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData7[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData7[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData7[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData7[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData7[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData7[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData7[10]+=popData[i].preResidentPopulation;
+            }
+      }
+      if(popData[i].sexType_id===2){  //预测女性
+           sumFemale3+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData8[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData8[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData8[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData8[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData8[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData8[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData8[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData8[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData8[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData8[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData8[10]+=popData[i].preResidentPopulation;
+            }
+      }
+    }
+    }
+    popData7[0]=parseFloat(((popData7[0]/sumMale3)*100).toFixed(2));
+    popData7[1]=parseFloat(((popData7[1]/sumMale3)*100).toFixed(2));
+    popData7[2]=parseFloat(((popData7[2]/sumMale3)*100).toFixed(2));
+    popData7[3]=parseFloat(((popData7[3]/sumMale3)*100).toFixed(2));
+    popData7[4]=parseFloat(((popData7[4]/sumMale3)*100).toFixed(2));
+    popData7[5]=parseFloat(((popData7[5]/sumMale3)*100).toFixed(2));
+    popData7[6]=parseFloat(((popData7[6]/sumMale3)*100).toFixed(2));
+    popData7[7]=parseFloat(((popData7[7]/sumMale3)*100).toFixed(2));
+    popData7[8]=parseFloat(((popData7[8]/sumMale3)*100).toFixed(2));
+    popData7[9]=parseFloat(((popData7[9]/sumMale3)*100).toFixed(2));
+    popData7[10]=parseFloat(((popData7[10]/sumMale3)*100).toFixed(2));
+
+    popData8[0]=parseFloat(((popData8[0]/sumFemale3)*100).toFixed(2));
+    popData8[1]=parseFloat(((popData8[1]/sumFemale3)*100).toFixed(2));
+    popData8[2]=parseFloat(((popData8[2]/sumFemale3)*100).toFixed(2));
+    popData8[3]=parseFloat(((popData8[3]/sumFemale3)*100).toFixed(2));
+    popData8[4]=parseFloat(((popData8[4]/sumFemale3)*100).toFixed(2));
+    popData8[5]=parseFloat(((popData8[5]/sumFemale3)*100).toFixed(2));
+    popData8[6]=parseFloat(((popData8[6]/sumFemale3)*100).toFixed(2));
+    popData8[7]=parseFloat(((popData8[7]/sumFemale3)*100).toFixed(2));
+    popData8[8]=parseFloat(((popData8[8]/sumFemale3)*100).toFixed(2));
+    popData8[9]=parseFloat(((popData8[9]/sumFemale3)*100).toFixed(2));
+    popData8[10]=parseFloat(((popData8[10]/sumFemale3)*100).toFixed(2));
+   console.log(popData7);
+   console.log(sumMale3);
+
+   console.log(popData8);
+   console.log(sumFemale3);
+
+   //2040年的数据
+    var popData9=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测男性数据
+    var popData10=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测女性数据
+    var sumMale4=0;//初始化男性总数
+    var sumFemale4=0;//初始化女性总数
+    
+    for(var i=0;i<popData.length;i++){
+      if(popData[i].preYear===2040){
+        if(popData[i].sexType_id===1){ //预测男性
+           sumMale4+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData9[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData9[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData9[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData9[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData9[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData9[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData9[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData9[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData9[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData9[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData9[10]+=popData[i].preResidentPopulation;
+            }
+      }
+      if(popData[i].sexType_id===2){  //预测女性
+           sumFemale4+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData10[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData10[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData10[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData10[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData10[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData10[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData10[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData10[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData10[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData10[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData10[10]+=popData[i].preResidentPopulation;
+            }
+      }
+    }
+    }
+    popData9[0]=parseFloat(((popData9[0]/sumMale4)*100).toFixed(2));
+    popData9[1]=parseFloat(((popData9[1]/sumMale4)*100).toFixed(2));
+    popData9[2]=parseFloat(((popData9[2]/sumMale4)*100).toFixed(2));
+    popData9[3]=parseFloat(((popData9[3]/sumMale4)*100).toFixed(2));
+    popData9[4]=parseFloat(((popData9[4]/sumMale4)*100).toFixed(2));
+    popData9[5]=parseFloat(((popData9[5]/sumMale4)*100).toFixed(2));
+    popData9[6]=parseFloat(((popData9[6]/sumMale4)*100).toFixed(2));
+    popData9[7]=parseFloat(((popData9[7]/sumMale4)*100).toFixed(2));
+    popData9[8]=parseFloat(((popData9[8]/sumMale4)*100).toFixed(2));
+    popData9[9]=parseFloat(((popData9[9]/sumMale4)*100).toFixed(2));
+    popData9[10]=parseFloat(((popData9[10]/sumMale4)*100).toFixed(2));
+
+    popData10[0]=parseFloat(((popData10[0]/sumFemale4)*100).toFixed(2));
+    popData10[1]=parseFloat(((popData10[1]/sumFemale4)*100).toFixed(2));
+    popData10[2]=parseFloat(((popData10[2]/sumFemale4)*100).toFixed(2));
+    popData10[3]=parseFloat(((popData10[3]/sumFemale4)*100).toFixed(2));
+    popData10[4]=parseFloat(((popData10[4]/sumFemale4)*100).toFixed(2));
+    popData10[5]=parseFloat(((popData10[5]/sumFemale4)*100).toFixed(2));
+    popData10[6]=parseFloat(((popData10[6]/sumFemale4)*100).toFixed(2));
+    popData10[7]=parseFloat(((popData10[7]/sumFemale4)*100).toFixed(2));
+    popData10[8]=parseFloat(((popData10[8]/sumFemale4)*100).toFixed(2));
+    popData10[9]=parseFloat(((popData10[9]/sumFemale4)*100).toFixed(2));
+    popData10[10]=parseFloat(((popData10[10]/sumFemale4)*100).toFixed(2));
+   console.log(popData9);
+   console.log(sumMale4);
+
+   console.log(popData10);
+   console.log(sumFemale4);
+
+   //2045年的数据
+    var popData11=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测男性数据
+    var popData12=[0,0,0,0,0,0,0,0,0,0,0];  //初始化预测女性数据
+    var sumMale5=0;//初始化男性总数
+    var sumFemale5=0;//初始化女性总数
+    
+    for(var i=0;i<popData.length;i++){
+      if(popData[i].preYear===2045){
+        if(popData[i].sexType_id===1){ //预测男性
+           sumMale5+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData11[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData11[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData11[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData11[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData11[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData11[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData11[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData11[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData11[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData11[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData11[10]+=popData[i].preResidentPopulation;
+            }
+      }
+      if(popData[i].sexType_id===2){  //预测女性
+           sumFemale5+=popData[i].preResidentPopulation;
+           if(popData[i].ageType_id<6&&popData[i].ageType_id>=0){
+                 popData12[0]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<12&&popData[i].ageType_id>=6){
+                 popData12[1]+=popData[i].preResidentPopulation;
+            }
+           if(popData[i].ageType_id<18&&popData[i].ageType_id>=12){
+                 popData12[2]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<24&&popData[i].ageType_id>=18){
+                 popData12[3]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<30&&popData[i].ageType_id>=24){
+                 popData12[4]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<36&&popData[i].ageType_id>=30){
+                 popData12[5]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<42&&popData[i].ageType_id>=36){
+                 popData12[6]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<48&&popData[i].ageType_id>=42){
+                 popData12[7]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<54&&popData[i].ageType_id>=48){
+                 popData12[8]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id<60&&popData[i].ageType_id>=54){
+                 popData12[9]+=popData[i].preResidentPopulation;
+            }
+          if(popData[i].ageType_id>=60){
+                 popData12[10]+=popData[i].preResidentPopulation;
+            }
+      }
+    }
+    }
+    popData11[0]=parseFloat(((popData11[0]/sumMale5)*100).toFixed(2));
+    popData11[1]=parseFloat(((popData11[1]/sumMale5)*100).toFixed(2));
+    popData11[2]=parseFloat(((popData11[2]/sumMale5)*100).toFixed(2));
+    popData11[3]=parseFloat(((popData11[3]/sumMale5)*100).toFixed(2));
+    popData11[4]=parseFloat(((popData11[4]/sumMale5)*100).toFixed(2));
+    popData11[5]=parseFloat(((popData11[5]/sumMale5)*100).toFixed(2));
+    popData11[6]=parseFloat(((popData11[6]/sumMale5)*100).toFixed(2));
+    popData11[7]=parseFloat(((popData11[7]/sumMale5)*100).toFixed(2));
+    popData11[8]=parseFloat(((popData11[8]/sumMale5)*100).toFixed(2));
+    popData11[9]=parseFloat(((popData11[9]/sumMale5)*100).toFixed(2));
+    popData11[10]=parseFloat(((popData11[10]/sumMale5)*100).toFixed(2));
+
+    popData12[0]=parseFloat(((popData12[0]/sumFemale5)*100).toFixed(2));
+    popData12[1]=parseFloat(((popData12[1]/sumFemale5)*100).toFixed(2));
+    popData12[2]=parseFloat(((popData12[2]/sumFemale5)*100).toFixed(2));
+    popData12[3]=parseFloat(((popData12[3]/sumFemale5)*100).toFixed(2));
+    popData12[4]=parseFloat(((popData12[4]/sumFemale5)*100).toFixed(2));
+    popData12[5]=parseFloat(((popData12[5]/sumFemale5)*100).toFixed(2));
+    popData12[6]=parseFloat(((popData12[6]/sumFemale5)*100).toFixed(2));
+    popData12[7]=parseFloat(((popData12[7]/sumFemale5)*100).toFixed(2));
+    popData12[8]=parseFloat(((popData12[8]/sumFemale5)*100).toFixed(2));
+    popData12[9]=parseFloat(((popData12[9]/sumFemale5)*100).toFixed(2));
+    popData12[10]=parseFloat(((popData12[10]/sumFemale5)*100).toFixed(2));
+   console.log(popData11);
+   console.log(sumMale5);
+
+   console.log(popData12);
+   console.log(sumFemale5);
+
+   
+
   var columnColors = new Array( '#87CEFA','#929bce','#0787C8', '#465296');
   var pieColors = new Array('#3795BC', '#FB9705');  //'#0787C8', '#1FC22B'
- // var lineColors = new Array('#0787C8', '#1FC22B');
-  //var compareColors = new Array('#3795BC', '#FB9705', '#195489', '#F26200')
-
-  //var population_prediction_year
-  //var current_age_distribution
-  //var prediction_age_distribution
- // var age_ration;
 
 
+  var promise1 = qService.tokenHttpGet(forecastFactory.query,{tableName:'birthrateData'});
+    promise1.then(function(rc1) {
 
-  //var divisor = 10000;
-
-  // set current Date; use fake date.
-  // var time = new Date();
-  // var year = time.getUTCFullYear();
-  //  to-do : year should be set
-
-
+    console.log(rc1.data);
+  
 
 var map = new AMap.Map('conMap');
 map.setZoom(12);
@@ -299,7 +1088,7 @@ var points =[
 
  */
 
-
+});
 
  
   $scope.buttonMap = [{
@@ -355,19 +1144,19 @@ var points =[
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2020年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
-            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            data: popData13,
             stack: 'male'
         },{
             name: '当前女性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            data: popData14,
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            data: popData1,
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            data: popData2,
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2020年常住人口结构图";
@@ -407,19 +1196,19 @@ var points =[
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2025年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
-            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            data: popData13,
             stack: 'male'
         },{
             name: '当前女性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            data: popData14,
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            data: popData3,
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,4],
+            data: popData4,
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2025年常住人口结构图";
@@ -459,19 +1248,19 @@ var points =[
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2030年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
-            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            data: popData13,
             stack: 'male'
         },{
             name: '当前女性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            data: popData14,
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,5],
+            data: popData5,
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,4],
+            data: popData6,
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2030年常住人口结构图";
@@ -512,19 +1301,19 @@ var points =[
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2040年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
-            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            data: popData13,
             stack: 'male'
         },{
             name: '当前女性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            data: popData14,
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,5],
+            data: popData9,
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,5],
+            data: popData10,
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2040年常住人口结构图";
@@ -563,19 +1352,19 @@ var points =[
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2035年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
-            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            data: popData13,
             stack: 'male'
         }, {
             name: '当前女性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            data: popData14,
             stack: 'male'
         }, {
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            data: popData7,
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [2, 3, 3, 4, 3,3, 3, 2, 4, 5,4],
+            data: popData8,
             stack: 'female'
         }];
          $scope.population_prediction_year.options.title.text="太仓市2035年常住人口结构图";
@@ -613,19 +1402,19 @@ var points =[
         $scope.age_ration.options.title.text="太仓市人口结构预测2015/2045年龄层比例图";
         $scope.age_ration.series=[{
             name: '当前男性比例',
-            data: [5, 3, 4, 7, 2,5,6,3,3,7,2],
+            data: popData13,
             stack: 'male'
         },{
             name: '当前女性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            data: popData14,
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,6],
+            data: popData11,
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 0, 4, 4, 3,3, 4, 4, 4, 5,5],
+            data: popData12,
             stack: 'female'
         }];
         $scope.population_prediction_year.options.title.text="太仓市2045年常住人口结构图";
@@ -801,19 +1590,19 @@ var points =[
 
         series: [{
             name: '当前男性比例',
-            data: [5, 3, 4, 7, 2,5,6,3,3,4,2],
+            data: popData13,
             stack: 'male'
         },{
             name: '当前女性比例',
-            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1,3],
+            data: popData14,
             stack: 'male'
         },{
             name: '预测男性比例',
-            data: [3, 4, 4, 2, 5,3, 4, 4, 2, 5,4],
+            data: popData1,
             stack: 'female'
         },{
             name: '预测女性比例',
-            data: [3, 2, 4, 4, 3,3, 2, 4, 4, 3,3],
+            data: popData2,
             stack: 'female'
         }]
 
@@ -900,36 +1689,10 @@ $scope.population_year={
 
             series: [{
                 name: '男性',
-                data: [-1508, -1483, -1573, -1624, -1674, -1792, -1670,
-                    -1548, -1840, -1594, -1498, -1398, -1363, -1352,
-
-
-
-                    -1478, -1820, -1628, -1748, -1890, -1850, -1892,-2029 -2099, -2257, -2456, -2750, -2897, -3232,
-                    -3781, -4072, -3657, -2018, -2403, -3882, -3958,
-                    -3597, -3472, -3540, -3528, -3855, -4249, -3809,-3513, -4052, -4710, -4479, -4685, -3446, -4128,
-                    -4217, -4052, -5754, -4833, -1926, -2929, -2780,
-                    -3390, -3505, -4026, -4082, -4884, -4566, -5168,-4223, -3249, -3431, -3419, -3413, -3242, -2764,
-                    -2690, -2207, -2243, -2563, -1854, -1629, -1860,
-                    -1646, -1787, -1569, -1576, -1824, -1485, -1221,-1275, -1089, -1108, -758, -649, -452, -379,
-                    -340, -272, -188, -140, -105, -64, -45,
-                    -27, -29, -18]
+                data: curMale
             }, {
                 name: '女性',
-                data: [
-                    1529, 1555, 1571, 1668, 1785, 1776, 1671, 1654,
-                    1892, 1591, 1571, 1419, 1312, 1467,
-
-                 1744,
-                    1671, 1826, 1937, 1940, 1846,2093, 2194, 2225, 2225, 2523, 2644, 2704, 3314,
-                    3565, 3149, 1554, 1878, 3414, 3463, 2290, 3222,
-                    3180, 3142, 3101, 3433, 3931,3647, 3213, 3839, 4577, 4303, 4670, 3466, 4210,
-                    4192, 4161, 5678, 4734, 2003, 3032, 2918, 3598,
-                    3739, 4081, 4200, 5074, 4500,5149, 4084, 3188, 3217, 3044, 3152, 3139, 2671,
-                    2498, 2092, 2097, 2355, 1630, 1537, 1755, 1483,
-                    1352, 1257, 1189, 1278, 1064,790, 789, 630, 603, 396, 309, 225, 162,
-                    128, 89, 71, 46, 37, 17, 10, 7,
-                    1]
+                data: curMale1
             }]
     };
     $scope.population_prediction_year={
@@ -1108,4 +1871,6 @@ $scope.sumpopulation={
             }
         }]
       };
-});
+
+     });  
+}]);

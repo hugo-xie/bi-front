@@ -37,7 +37,7 @@
                 </div>
                 <div class="col dk padder-v r-r">
                   <span class="text-xs" style="color:white">本年税收预测值:</span>
-                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;color:white;text-shadow:1px 2px 3px #000000">96.52亿元</span></div>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;color:white;text-shadow:1px 2px 3px #000000">{{thisyearforecastvalue}}亿元</span></div>
                   <span class="text-xs"style="margin-left:45%;color:white">预测误差范围<span class="text-primary" style="color:white">2.7%</span></span>
                 </div>
               </div>
@@ -71,7 +71,6 @@
           <table class="table table-bordered" style="font-size:90%">
             <tr>
               <th class="active" style="text-align:center;">年份(年)</th>
-              <th class="active" style="text-align:center;">2005</th>
               <th class="active" style="text-align:center;">2006</th>
               <th class="active" style="text-align:center;">2007</th>
               <th class="active" style="text-align:center;">2008</th>
@@ -84,38 +83,39 @@
               <th class="active" style="text-align:center;">2015</th>
               <th class="active" style="text-align:center;">2016</th>
               <th class="active" style="text-align:center;">2017</th>
+              <th class="active" style="text-align:center;">2018</th>
             </tr>
             <tr>
               <td class="info" style="text-align:center;">税收真实值(亿元)</td>
-              <td class="info" style="text-align:center;">18.9</td>
-              <td class="info" style="text-align:center;">27.5</td>
-              <td class="info" style="text-align:center;">36.2</td>
-              <td class="info" style="text-align:center;">48.1</td>
-              <td class="info" style="text-align:center;">58.8</td>
-              <td class="info" style="text-align:center;">62.0</td>
-              <td class="info" style="text-align:center;">68.4</td>
-              <td class="info" style="text-align:center;">75.5</td>
-              <td class="info" style="text-align:center;">82.3</td>
-              <td class="info" style="text-align:center;">90.7</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[0]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[1]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[2]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[3]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[4]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[5]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[6]}}</td>
+             <td class="info" style="text-align:center;">{{taxthisyearrealvalue[7]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[8]}}</td>
+              <td class="info" style="text-align:center;">{{taxthisyearrealvalue[9]}}</td>
               <td class="info" style="text-align:center;">--</td>
               <td class="info" style="text-align:center;">--</td>
               <td class="info" style="text-align:center;">--</td>
             </tr>
             <tr>
               <td class="info" style="text-align:center;">税收预测值(亿元)</td>
-              <td class="info" style="text-align:center;">19.3</td>
-              <td class="info" style="text-align:center;">29.5</td>
-              <td class="info" style="text-align:center;">39.6</td>
-              <td class="info" style="text-align:center;">51.6</td>
-              <td class="info" style="text-align:center;">62.21</td>
-              <td class="info" style="text-align:center;">65.14</td>
-              <td class="info" style="text-align:center;">71.83</td>
-              <td class="info" style="text-align:center;">77.34</td>
-              <td class="info" style="text-align:center;">83.34</td>
-              <td class="info" style="text-align:center;">90.24</td>
-              <td class="info" style="text-align:center;">96.52</td>
-              <td class="info" style="text-align:center;">103.43</td>
-              <td class="info" style="text-align:center;">110.02</td>
+              <td class="info" style="text-align:center;">{{date[0]}}</td>
+              <td class="info" style="text-align:center;">{{date[1]}}</td>
+              <td class="info" style="text-align:center;">{{date[2]}}</td>
+              <td class="info" style="text-align:center;">{{date[3]}}</td>
+              <td class="info" style="text-align:center;">{{date[4]}}</td>
+              <td class="info" style="text-align:center;">{{date[5]}}</td>
+              <td class="info" style="text-align:center;">{{date[6]}}</td>
+              <td class="info" style="text-align:center;">{{date[7]}}</td>
+              <td class="info" style="text-align:center;">{{date[8]}}</td>
+              <td class="info" style="text-align:center;">{{date[9]}}</td>
+               <td class="info" style="text-align:center;">{{date[10]}}</td>
+               <td class="info" style="text-align:center;">{{date[11]}}</td>
+               <td class="info" style="text-align:center;">{{date[12]}}</td>            
             </tr>
           </table>
         </div>
@@ -123,7 +123,7 @@
           <table class="table table-bordered" style="font-size:90%">
             <tr>
               <th class="active" style="text-align:center;">年份(年)</th>
-              <th class="active" style="text-align:center;">2005</th>
+             
               <th class="active" style="text-align:center;">2006</th>
               <th class="active" style="text-align:center;">2007</th>
               <th class="active" style="text-align:center;">2008</th>
@@ -136,6 +136,7 @@
               <th class="active" style="text-align:center;">2015</th>
               <th class="active" style="text-align:center;">2016</th>
               <th class="active" style="text-align:center;">2017</th>
+               <th class="active" style="text-align:center;">2018</th>
             </tr>
             <tr>
               <td class="info" style="text-align:center;">预测误差</td>
@@ -276,7 +277,7 @@
                 </div>
                 <div class="col dk padder-v r-r" >
                   <span class="text-xs" style="color:white">下月税收预测值:</span>
-                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;text-shadow:1px 2px 3px #000000;color:white">96.52亿元</span></div>
+                  <div class="text-primary-dk font-thin h2"><span style="margin-left:15%;text-shadow:1px 2px 3px #000000;color:white">19.48亿元</span></div>
                   <span class="text-xs"style="margin-left:45%;color:white">预测误差范围<span class="text-primary"style="color:white">3.0%</span></span>
                 </div>
               </div>
@@ -324,31 +325,31 @@
             </tr>
             <tr>
               <td class="info" style="text-align:center;">税收真实值(亿元)</td>
-              <td class="info" style="text-align:center;">18.12</td>
-              <td class="info" style="text-align:center;">23.30</td>
-              <td class="info" style="text-align:center;">33.39</td>
-              <td class="info" style="text-align:center;">40.48</td>
-              <td class="info" style="text-align:center;">49.10</td>
-              <td class="info" style="text-align:center;">60.20</td>
-              <td class="info" style="text-align:center;">65.11</td>
-              <td class="info" style="text-align:center;">71.06</td>
-              <td class="info" style="text-align:center;">81.84</td>
-              <td class="info" style="text-align:center;">88.82</td>
-              <td class="info" style="text-align:center;">--</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[0]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[1]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[2]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[3]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[4]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[5]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[6]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[7]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[8]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[9]}}</td>
+              <td class="info" style="text-align:center;">{{taxrealvalue[10]}}</td>
             </tr>
             <tr>
               <td class="info" style="text-align:center;">税收预测值(亿元)</td>
-              <td class="info" style="text-align:center;">19.32</td>
-              <td class="info" style="text-align:center;">23.00</td>
-              <td class="info" style="text-align:center;">33.66</td>
-              <td class="info" style="text-align:center;">41.62</td>
-              <td class="info" style="text-align:center;">52.36</td>
-              <td class="info" style="text-align:center;">62.53</td>
-              <td class="info" style="text-align:center;">68.87</td>
-              <td class="info" style="text-align:center;">74.32</td>
-              <td class="info" style="text-align:center;">81.36</td>
-              <td class="info" style="text-align:center;">89.23</td>
-              <td class="info" style="text-align:center;">96.52</td>
+               <td class="info" style="text-align:center;">{{date2[0]}}</td>
+              <td class="info" style="text-align:center;">{{date2[1]}}</td>
+              <td class="info" style="text-align:center;">{{date2[2]}}</td>
+              <td class="info" style="text-align:center;">{{date2[3]}}</td>
+              <td class="info" style="text-align:center;">{{date2[4]}}</td>
+              <td class="info" style="text-align:center;">{{date2[5]}}</td>
+              <td class="info" style="text-align:center;">{{date2[6]}}</td>
+              <td class="info" style="text-align:center;">{{date2[7]}}</td>
+              <td class="info" style="text-align:center;">{{date2[8]}}</td>
+              <td class="info" style="text-align:center;">{{date2[9]}}</td>
+              <td class="info" style="text-align:center;">{{date2[10]}}</td>
             </tr>
           </table>
         </div>
@@ -380,7 +381,7 @@
               <td class="info" style="text-align:center;">2.7%</td>
               <td class="info" style="text-align:center;">2.6%</td>
               <td class="info" style="text-align:center;">2.8%</td>
-              <td class="info" style="text-align:center;">--</td>
+              <td class="info" style="text-align:center;">3.0%</td>
             </tr>
           </table>
         </div>

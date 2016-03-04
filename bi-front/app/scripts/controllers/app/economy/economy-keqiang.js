@@ -75,6 +75,9 @@ $scope.range2=function(){
             type:'spline'
         },
     },
+    credits:{
+        enabled:false,
+     },
     title: 
     {
         text: '本年度“克强指数”走势',
@@ -146,6 +149,9 @@ $scope.keqiangChart={
             type:'spline'
         },
     },
+    credits:{
+        enabled:false,
+     },
     title: 
     {
         text: '“克强指数”拟合GDP增长率',
@@ -210,6 +216,9 @@ $scope.loanChart = {
             type: 'column'
         }
     },
+    credits:{
+        enabled:false,
+     },
     series: [{
         name: '真实值',
         data: [7.9, 8.1, 7.5, 7.7,7.2,7.4,7.6,7.1,7.9,8.2,8.3,null]
@@ -241,6 +250,9 @@ $scope.transChart = {
             type: 'column'
         }
     },
+    credits:{
+        enabled:false,
+     },
     series: [{
         name: '真实值',
         data: [7.9, 8.1, 7.5, 7.7,7.2,7.4,7.6,7.1,7.9,8.2,8.3,null]
@@ -269,6 +281,9 @@ $scope.elecChart = {
             type: 'column'
         }
     },
+    credits:{
+        enabled:false,
+     },
     series: [{
         name: '真实值',
         data: [7.9, 8.1, 7.5, 7.7,7.2,7.4,7.6,7.1,7.9,8.2,8.3,null]

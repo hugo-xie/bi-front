@@ -75,10 +75,14 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams','qService','forecastFa
     $scope.selectedRange4=0;
   };
   $scope.selectedRange=0;
-  $scope.date =[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
-  $scope.date2=[19.32,23.00,33.66,41.62,52.36,62.53,68.87,74.32,81.36,89.23,96.52];
-  $scope.ratedate1=[6.4, 7.2, 7.5, 7.1, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2];
-  $scope.ratedate=[7.4, 7.2, 7.5, 7.4, 7.3, 7.5, 7.4, 7.4, 7.1, 7.3, 7.2, 7.0,7.2];
+  
+  $scope.taxthisyearrealvalue=rc.data[0];
+  $scope.date=rc.data[1];
+  $scope.ratedate=rc.data[2];
+  $scope.taxrealvalue=rc.data[3]
+  $scope.date2=rc.data[4];
+  $scope.ratedate1=rc.data[5];
+  $scope.thisyearforecastvalue=rc.data[1][10];
 $scope.range = function() {
         return $scope.selectedRange;
       };
@@ -173,13 +177,16 @@ $scope.$watch($scope.monthrange2,changemonthdetail2);
 $scope.$watch($scope.monthrange3,changemonthdetail3);
 $scope.$watch($scope.monthrange4,changemonthdetail4);
   $scope.monthArray = ['2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-  $scope.yearArray = ['2005年','2006年','2007年','2008年','2009年','2010年','2011年','2012年','2013年','2014年','2015年','2016年','2017年'];
+  $scope.yearArray = ['2006年','2007年','2008年','2009年','2010年','2011年','2012年','2013年','2014年','2015年','2016年','2017年','2018年'];
   $scope.monthTaxChart = {
     options: {
       chart: {
         type:'column'
       },
     },
+    credits:{
+        enabled:false,
+     },
     title: {
       text:'2015年月度税收收入预测',
       style:{
@@ -252,7 +259,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     series: [{
             name: '真实值',
-            data: [18.12, 23.30, 33.39, 40.48, 49.10, 60.20, 65.11, 71.06, 81.84,88.82]
+            data: $scope.taxrealvalue
 
         }, {
             name: '预测值',
@@ -273,6 +280,9 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
         type:'column'
       },
     },
+    credits:{
+        enabled:false,
+     },
     title: {
       text:'年度税收收入预测',
       style:{
@@ -350,7 +360,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     series: [{
             name: '真实值',
-            data: [18.92 ,27.59,36.26,48.18,58.80,62.00,68.41,75.15,82.12,90.97]
+            data: $scope.taxthisyearrealvalue
 
         }, {
             name: '预测值',

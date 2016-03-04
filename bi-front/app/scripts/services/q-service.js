@@ -5,12 +5,12 @@ angular.module('nevermore').service('qService',
 		tokenFactory, $q, ToasterTool) {
 
 
-		function successHandler(deferred, data){
+		function successHandler(defer, data){
 			if (data.errorCode == "NO_ERROR") {
-				deferred.resolve(JSOG.parse(JSOG.stringify(data)));
+				defer.resolve(JSOG.parse(JSOG.stringify(data)));
 			}else {
 				//$('.modal-backdrop').remove();
-				deferred.resolve(JSOG.parse(JSOG.stringify(data)));
+				defer.resolve(JSOG.parse(JSOG.stringify(data)));
 				//modalService.signleConfirmInform("服务器开了小差","访问出现错误",'warning',function(){});
 			};
 		};
