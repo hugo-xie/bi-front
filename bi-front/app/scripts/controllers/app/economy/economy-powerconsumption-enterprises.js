@@ -1,6 +1,12 @@
 'use strict';
-app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', 
+    ['$scope','$stateParams','qService','forecastFactory_Power', function($scope, $stateParams,qService,forecastFactory_Power) {
 
+var promise = qService.tokenHttpGet(forecastFactory_Power.query,{tableName:'powerGdpCorrelationData'});
+
+promise.then(function(result) {
+
+  $scope.getData = result.data;
   	$scope.title = $stateParams.title;
 
     //new地图对象
@@ -19,7 +25,7 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
   	    $scope.map.addControl(toolBar);
   	    $scope.map.addControl(scale);
   	});
-    
+  
   $scope.industriesdata = {
     total:{
         years:[2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018],
@@ -3705,5 +3711,5 @@ app.controller('EconomyPowerConsumptionOfEnterprisesCtrl', ['$scope','$statePara
       }
 
     }
-  	
+});	
 }]);
