@@ -40,8 +40,8 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams','qService','forecastFa
     $scope.monthselectedRange2 = 0;
     $scope.monthselectedRange3 = 0;
     $scope.monthselectedRange4 = 0;
-    $scope.monthPredictData[10]=96.52;
-    $scope.monthRateDate[10]=7.2;
+    $scope.date2[10]=96.52;
+    $scope.ratedate1[10]=7.2;
   }
 
   $scope.deviationYear=false;
@@ -63,30 +63,22 @@ app.controller('EconomyTaxCtrl', ['$scope','$stateParams','qService','forecastFa
     $scope.forecastYear=!$scope.forecastYear;
   };
   $scope.adjustParameterYear=function(){
-    $scope.yearPredictData[10] = 96.52;
-    $scope.yearRateDate[10] = 7.2;
-    $scope.yearPredictData[11] = 103.43;
-    $scope.yearRateDate[11] = 7.0;
-    $scope.yearPredictData[12] = 110.02;
-    $scope.yearRateDate[12] = 7.2;
+    $scope.date[10] = 96.52;
+    $scope.ratedate[10] = 7.2;
+    $scope.date[11] = 103.43;
+    $scope.ratedate[11] = 7.0;
+    $scope.date[12] = 110.02;
+    $scope.ratedate[12] = 7.2;
     $scope.selectedRange=0;
     $scope.selectedRange2=0;
     $scope.selectedRange3=0;
     $scope.selectedRange4=0;
   };
-
-  $scope.taxData = 96.52;
-
   $scope.selectedRange=0;
-  $scope.yearPredictData =[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
-  $scope.yearRealDate = [18.92 ,27.59,36.26,48.18,58.80,62.00,68.41,75.15,82.12,90.97];
-  $scope.monthPredictData=[19.32,23.00,33.66,41.62,52.36,62.53,68.87,74.32,81.36,89.23,96.52];
-  $scope.monthRealData = [18.12, 23.30, 33.39, 40.48, 49.10, 60.20, 65.11, 71.06, 81.84,88.82];
-  $scope.monthRateDate=[6.4, 7.2, 7.5, 7.1, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2];
-  $scope.yearRateDate=[7.4, 7.2, 7.5, 7.4, 7.3, 7.5, 7.4, 7.4, 7.1, 7.3, 7.2, 7.0,7.2];
-
-
-
+  $scope.date =[19.32,29.50,39.65,51.64,62.21,65.14,71.83,77.34,83.34,90.24,96.52,103.43,110.02];
+  $scope.date2=[19.32,23.00,33.66,41.62,52.36,62.53,68.87,74.32,81.36,89.23,96.52];
+  $scope.ratedate1=[6.4, 7.2, 7.5, 7.1, 7.6, 7.5, 7.4, 7.4, 7.1, 7.5, 7.2];
+  $scope.ratedate=[7.4, 7.2, 7.5, 7.4, 7.3, 7.5, 7.4, 7.4, 7.1, 7.3, 7.2, 7.0,7.2];
 $scope.range = function() {
         return $scope.selectedRange;
       };
@@ -113,63 +105,63 @@ $scope.range = function() {
       };
 var changedetail=function(newValue,oldValue,scope){
 
-  $scope.yearPredictData[10]=Math.round($scope.yearPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[11]=Math.round($scope.yearPredictData[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[12]=Math.round($scope.yearPredictData[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[10]=Math.round($scope.yearRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[11]=Math.round($scope.yearRateDate[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[12]=Math.round($scope.yearRateDate[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[10]=Math.round($scope.date[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[11]=Math.round($scope.date[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[12]=Math.round($scope.date[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
  
 };
 var changedetail2=function(newValue,oldValue,scope){
-  $scope.yearPredictData[10]=Math.round($scope.yearPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[11]=Math.round($scope.yearPredictData[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[12]=Math.round($scope.yearPredictData[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[10]=Math.round($scope.yearRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[11]=Math.round($scope.yearRateDate[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[12]=Math.round($scope.yearRateDate[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[10]=Math.round($scope.date[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[11]=Math.round($scope.date[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[12]=Math.round($scope.date[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
   
 };
 var changedetail3=function(newValue,oldValue,scope){
-  $scope.yearPredictData[10]=Math.round($scope.yearPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[11]=Math.round($scope.yearPredictData[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[12]=Math.round($scope.yearPredictData[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[10]=Math.round($scope.yearRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[11]=Math.round($scope.yearRateDate[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[12]=Math.round($scope.yearRateDate[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[10]=Math.round($scope.date[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[11]=Math.round($scope.date[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[12]=Math.round($scope.date[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
  
 
 };
 var changedetail4=function(newValue,oldValue,scope){
-  $scope.yearPredictData[10]=Math.round($scope.yearPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[11]=Math.round($scope.yearPredictData[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearPredictData[12]=Math.round($scope.yearPredictData[12]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[10]=Math.round($scope.yearRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[11]=Math.round($scope.yearRateDate[11]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.yearRateDate[12]=Math.round($scope.yearRateDate[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[10]=Math.round($scope.date[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[11]=Math.round($scope.date[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date[12]=Math.round($scope.date[12]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[10]=Math.round($scope.ratedate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[11]=Math.round($scope.ratedate[11]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate[12]=Math.round($scope.ratedate[12]*(1+(newValue-oldValue)/200)*100)/100;
  
 };
 var changemonthdetail=function(newValue,oldValue,scope){
-  $scope.monthPredictData[10]=Math.round($scope.monthPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.monthRateDate[10]=Math.round($scope.monthRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
  
 
 };
 var changemonthdetail2=function(newValue,oldValue,scope){
-  $scope.monthPredictData[10]=Math.round($scope.monthPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.monthRateDate[10]=Math.round($scope.monthRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
 
   
 
 };
 var changemonthdetail3=function(newValue,oldValue,scope){
-  $scope.monthPredictData[10]=Math.round($scope.monthPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.monthRateDate[10]=Math.round($scope.monthRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
  
 };
 var changemonthdetail4=function(newValue,oldValue,scope){
-  $scope.monthPredictData[10]=Math.round($scope.monthPredictData[10]*(1+(newValue-oldValue)/200)*100)/100;
-  $scope.monthRateDate[10]=Math.round($scope.monthRateDate[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.date2[10]=Math.round($scope.date2[10]*(1+(newValue-oldValue)/200)*100)/100;
+  $scope.ratedate1[10]=Math.round($scope.ratedate1[10]*(1+(newValue-oldValue)/200)*100)/100;
  
 };
 $scope.$watch($scope.range,changedetail);
@@ -181,7 +173,7 @@ $scope.$watch($scope.monthrange2,changemonthdetail2);
 $scope.$watch($scope.monthrange3,changemonthdetail3);
 $scope.$watch($scope.monthrange4,changemonthdetail4);
   $scope.monthArray = ['2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-  $scope.yearArray = ['2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017'];
+  $scope.yearArray = ['2005年','2006年','2007年','2008年','2009年','2010年','2011年','2012年','2013年','2014年','2015年','2016年','2017年'];
   $scope.monthTaxChart = {
     options: {
       chart: {
@@ -219,7 +211,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
        plotLines:[{
             color:'red',
             dashStyle:'DashDot',
-            value:$scope.taxData,
+            value:95.62,
             width:2,
             label:{
                 text:'本年度税收目标',
@@ -260,18 +252,18 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     series: [{
             name: '真实值',
-            data: $scope.monthRealData
+            data: [18.12, 23.30, 33.39, 40.48, 49.10, 60.20, 65.11, 71.06, 81.84,88.82]
 
         }, {
             name: '预测值',
-            data: $scope.monthPredictData
+            data: $scope.date2
 
         },
         {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: $scope.monthRateDate
+            data: $scope.ratedate1
         }]   
   };
 
@@ -315,7 +307,7 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
        plotLines:[{
             color:'red',
             dashStyle:'DashDot',
-            value:$scope.taxData,
+            value:95.62,
             width:2,
             label:{
                 text:'本年度税收目标',
@@ -358,18 +350,18 @@ $scope.$watch($scope.monthrange4,changemonthdetail4);
     },
     series: [{
             name: '真实值',
-            data: $scope.yearRealDate
+            data: [18.92 ,27.59,36.26,48.18,58.80,62.00,68.41,75.15,82.12,90.97]
 
         }, {
             name: '预测值',
-            data: $scope.yearPredictData
+            data: $scope.date
 
         },
          {   
             yAxis: 1,
             type:'spline',
             name: '同比增长率',
-            data: $scope.yearRateDate
+            data: $scope.ratedate
         }]   
   };
 
