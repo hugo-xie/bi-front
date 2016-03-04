@@ -250,7 +250,7 @@
                         </button>
                         <br/>
                         <span class="glyphicon  glyphicon-leaf m-r-xs" ng-if="istownairquality">
-                            <span class="fc-button-font">未来24小时太仓城区空气质量会有轻度污染</span>                        
+                            <span class="fc-button-font">未来24小时太仓城区空气质量</span>                        
                         </span>
                     </div>
                     <div ng-show="mapTableStatus.airQuality"style="margin-top:5px;">
@@ -269,10 +269,10 @@
                                 <tr >
                                     <td style="width:29%">太仓市监测站</td>
                                     <td style="width:15%">
-                                        <span>93</span>
+                                        <span>{{aqi[6]}}</span>
                                     </td>
                                     <td style="width:20%">
-                                        <span>PM2.5</span>
+                                        <span>{{firstElement[6]}}</span>
                                     </td>
                                     <td style="width:18%">
                                         <span>72</span>
@@ -592,7 +592,7 @@
                                     <i class="fa fa-chevron-up" ng-if="updown21"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown22"></i>
                                 </span>
-                                  <div class="badge fc-nobg">PM2.5</div>
+                                  <div class="badge fc-nobg">{{firstElement[6]}}</div>
                                   <i class="ic icon-bell fa-fw m-r-xs" style="color: #e10602"></i> 首要污染物
                                 </a>
                                 <li class="list-group-item" ng-if="ismainpollution1open">
@@ -606,7 +606,7 @@
                                     <i class="fa fa-chevron-up"  ng-if="updown31"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown32"></i>
                                   </span>
-                                  <span class="badge fc-nobg" >64</span>
+                                  <span class="badge fc-nobg" >{{pm25[6]}}</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM2.5
                                 </a>
                                 <li class="list-group-item" ng-if="isPM251open">
@@ -619,7 +619,7 @@
                                     <i class="fa fa-chevron-up" ng-if="updown41"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown42"></i>
                                   </span>
-                                  <span class="badge fc-nobg" >70</span>
+                                  <span class="badge fc-nobg" >{{pm10[6]}}</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> PM10
                                 </a>
                                 <li class="list-group-item" ng-if="isPM101open">
@@ -632,7 +632,7 @@
                                     <i class="fa fa-chevron-up" ng-if="updown51"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown52"></i>
                                   </span>
-                                  <span class="badge fc-nobg">54</span>
+                                  <span class="badge fc-nobg">{{so2[6]}}</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 二氧化硫
                                 </a>
                                 <li class="list-group-item" ng-if="isSO21open">
@@ -645,7 +645,7 @@
                                     <i class="fa fa-chevron-up" ng-if="updown61"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown62"></i>
                                   </span>
-                                  <span class="badge fc-nobg">44</span>
+                                  <span class="badge fc-nobg">{{no2[6]}}</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 二氧化氮
                                 </a>
                                 <li class="list-group-item" ng-if="isNO21open">
@@ -658,7 +658,7 @@
                                     <i class="fa fa-chevron-up" ng-if="updown71"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown72"></i>
                                   </span>
-                                  <span class="badge fc-nobg">1</span>
+                                  <span class="badge fc-nobg">{{co[6]}}</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 一氧化碳
                                 </a>
                                 <li class="list-group-item" ng-if="isCO1open">
@@ -671,7 +671,7 @@
                                     <i class="fa fa-chevron-up" ng-if="updown81"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown82"></i>
                                   </span>
-                                  <span class="badge fc-nobg">7</span>
+                                  <span class="badge fc-nobg">{{o3[6]}}</span>
                                   <i class="fa  fa-warning  fa-fw m-r-xs" style="color: #f7b500"></i> 臭氧
                                 </a>
                                 <li class="list-group-item" ng-if="isO31open">

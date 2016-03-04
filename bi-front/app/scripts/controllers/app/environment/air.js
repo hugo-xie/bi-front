@@ -6,33 +6,33 @@ app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFac
   $scope.data = null;
   $scope.time1 = "2016年1月8日";
 
-  var promise1 = qService.tokenHttpGet(rawFactory.query,{tableName:'airPollutionData'});
-  promise1.then(function(rc1) {
+  // var promise1 = qService.tokenHttpGet(rawFactory.query,{tableName:'airPollutionData'});
+  // promise1.then(function(rc1) {
 
-    console.log(rc1.data);
+  //   console.log(rc1.data);
 
-  });
+  // });
 
-  var promise2 = qService.tokenHttpGet(rawFactory.query,{tableName:'airConditionData'});
-  promise2.then(function(rc2) {
+  // var promise2 = qService.tokenHttpGet(rawFactory.query,{tableName:'airConditionData'});
+  // promise2.then(function(rc2) {
 
-    console.log(rc2.data);
+  //   console.log(rc2.data);
 
-  });
+  // });
 
-  var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'aqiScopeData'});
-  promise3.then(function(rc3) {
+  // var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'aqiScopeData'});
+  // promise3.then(function(rc3) {
 
-    console.log(rc3.data);
+  //   console.log(rc3.data);
 
-  });
+  // });
 
-  var promise4 = qService.tokenHttpGet(forecastFactory.query,{tableName:'airQualityPredictData'});
-  promise4.then(function(rc4) {
+  // var promise4 = qService.tokenHttpGet(forecastFactory.query,{tableName:'airQualityPredictData'});
+  // promise4.then(function(rc4) {
 
-    console.log(rc4.data);
+  //   console.log(rc4.data);
 
-  });
+  // });
 
 
 
@@ -811,7 +811,13 @@ $scope.openorclose='↓展开';
           $scope.aqi=rc.data[0];
           $scope.predictaqi=rc.data[1];
           $scope.date=rc.data[2];
-
+          $scope.firstElement=rc.data[3];
+          $scope.pm25=rc.data[4];
+          $scope.pm10=rc.data[5];
+          $scope.so2=rc.data[6];
+          $scope.no2=rc.data[7];
+          $scope.co=rc.data[8];
+          $scope.o3=rc.data[9];
           //盒子2
           $scope.aqilinechart={
               options:{
