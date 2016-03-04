@@ -7,314 +7,45 @@
 app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qService','rawFactory' ,function($scope, $timeout,$http,qService,rawFactory) {
     $scope.data = null;
     var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'waterConditionData'});
-    promise.then(function(rc) {
+    promise.then(function(rc1) {
 
-        console.log(rc.data);
+        console.log(rc1.data);
 
     });
 
     var promise1 = qService.tokenHttpGet(rawFactory.query,{tableName:'waterIndustryData'});
-    promise1.then(function(rc) {
+    promise1.then(function(rc2) {
 
-        console.log(rc.data);
-
-    });
-
-    var promise2 = qService.tokenHttpGet(rawFactory.query,{tableName:'waterPollutionData'});
-    promise2.then(function(rc) {
-
-        console.log(rc.data);
+        console.log(rc2.data);
 
     });
 
     var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'waterQualityData'});
-    promise3.then(function(rc) {
+    promise3.then(function(rc4) {
 
-        console.log(rc.data);
+        console.log(rc4.data);
 
     });
 
-    //第一个框highcharts工业污水分析部分
-    $scope.pollution={
-         options:{
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
-            },
-            title: {
-                text: '2015年重点行业废水排放情况'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                    }
-                }
-            }},
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['其他产业',   49.7],
-                    ['电力、热力生产和供应业',   7.5],
-                    {
-                        name: '造纸和纸制品业',
-                        y: 18.0,
-                        sliced: true,
-                        selected: true
-                    },
-                    ['化学原料和化学制品制造业',    13.5],
-                    ['纺织业',     11.3]
-                ]
-            }]
-        };  
-    //行业废水排放情况
-    $scope.industryPollution1 = !$scope.industryPollution1
-
-    $scope.industryPollution1=function(){   
-        $scope.pollution={
-         options:{
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
-            },
-            title: {
-                text: '2015年重点行业废水排放情况'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                    }
-                }
-            }},
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['其他产业',   49.7],
-                    ['电力、热力生产和供应业',   7.5],
-                    {
-                        name: '造纸和纸制品业',
-                        y: 18.0,
-                        sliced: true,
-                        selected: true
-                    },
-                    ['化学原料和化学制品制造业',    13.5],
-                    ['纺织业',     11.3]
-                ]
-            }]
-        }; 
-        }; 
-    //行业化学需氧量排放情况
-    $scope.industryPollution2 = !$scope.industryPollution2
-
-    $scope.industryPollution2=function(){   
-        $scope.pollution={
-         options:{
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
-            },
-            title: {
-                text: '2015年重点行业化学需氧量排放情况'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                    }
-                }
-            }},
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['其他产业',   40.5],
-                    ['纺织业',   9.1],
-                    {
-                        name: '造纸和纸制品业',
-                        y: 23.0,
-                        sliced: true,
-                        selected: true
-                    },
-                    ['化学原料和化学制品制造业',    10.2],
-                    ['农副食品加工',     17.2]
-                ]
-            }]
-        }; 
-        };  
-
-    // 行业氨氮排放情况 
-    $scope.industryPollution3 = !$scope.industryPollution3
-
-    $scope.industryPollution3=function(){   
-        $scope.pollution={
-         options:{
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
-            },
-            title: {
-                text: '2015年工业行业氨氮排放情况'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                    }
-                }
-            }},
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['其他产业',   39.4],
-                    ['纺织业',   7.7],
-                    {
-                        name: '化学原料和化学制品制造业',
-                        y: 35.3,
-                        sliced: true,
-                        selected: true
-                    },
-                    ['造纸和纸制品种',    9.5],
-                    ['农副食品加工',     8.0]
-                ]
-            }]
-        }; 
-        };
-    //行业重金属等污染物排放情况
-    $scope.industryPollution4 = !$scope.industryPollution4
-
-    $scope.industryPollution4=function(){   
-        $scope.pollution={
-         options:{
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
-            },
-            title: {
-                text: '2015年工业行业重金属排放情况'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                    }
-                }
-            }},
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['其他产业',   21.4],
-                    ['有色金属矿采选业',   14.0],
-                    {
-                        name: '有色金属冶炼和压延加工业',
-                        y: 27.5,
-                        sliced: true,
-                        selected: true
-                    },
-                    ['金属制品业',    17.7],
-                    ['皮革、毛皮、羽毛及其制品和制鞋业',     19.4]
-                ]
-            }]
-        }; 
-        };
-        //行业石油类排放情况
-    $scope.industryPollution5 = !$scope.industryPollution5
-
-    $scope.industryPollution5=function(){   
-        $scope.pollution={
-         options:{
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
-            },
-            title: {
-                text: '2015年工业行业石油类污染物排放情况'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                    }
-                }
-            }},
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['其他产业',  42.8],
-                    ['化学原料和化学制品制造业',   11.9],
-                    {
-                        name: '煤炭开采和洗选业',
-                        y: 17.1,
-                        sliced: true,
-                        selected: true
-                    },
-                    ['石油加工、炼焦和核燃料加工业',    12.0],
-                    ['黑色金属冶炼和压延加工业',     19.4]
-                ]
-            }]
-        }; 
-        };
+    
     //第二个框highcharts废水排放分析部分
-    $scope.changePollutionType1 = !$scope.changePollutionType1
+
+    var promise2 = qService.tokenHttpGet(rawFactory.query,{tableName:'waterPollutionData'});
+    promise2.then(function(rc3) {
+
+      console.log(rc3.data);
+      $scope.list1=rc3.data[0];
+      $scope.list2=rc3.data[1];
+      $scope.list3=rc3.data[2];
+      $scope.list4=rc3.data[3];
+      $scope.list5=rc3.data[4];
+      $scope.list6=rc3.data[5];
+      $scope.list7=rc3.data[6];
+      $scope.list8=rc3.data[7];
+      $scope.list9=rc3.data[8];
+      $scope.list10=rc3.data[9];
+      $scope.date=rc3.data[0];
+      $scope.changePollutionType1 = !$scope.changePollutionType1
 
     $scope.changePollutionType1=function(){
         //区域图  
@@ -327,7 +58,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                 text: '太仓市主要污水处理厂废水排放分析'
             },
             xAxis: {
-                categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日','1月7日']
+                categories: $scope.date
             },
             yAxis: {
                 min: 0,
@@ -374,23 +105,23 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
             series: [{
                 name: '太仓市城区污水处理厂',
                 color:'#69afcd',
-                data: [37289.93, 38061.91, 37985.65, 36860.89, 36602.62, 37506.78]
+                data: $scope.list2
             }, {
                 name: '太仓江城城市污水处理有限公司',
                 color:'#57d160',
-                data: [15285.77, 13806.99, 17708, 16371.03, 16052.72, 15899.75]
+                data: $scope.list5
             }, {
                 name: '浏河镇污水处理厂',
                 color:'#c7e74f',
-                data: [8325.73, 8570.56, 7456.46, 7884.56, 7973.25, 8653.28]
+                data: $scope.list3
             }, {
                 name: '港城组团污水处理厂',
                 color:'#f8d940',
-                data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
+                data: $scope.list4
             }, {
-                name: '其他污水处理厂',
+                name: '玖龙纸业有限公司',
                 color:'#ffb143',
-                data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
+                data: $scope.list1
             }]
         };
         };
@@ -429,7 +160,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污水处理厂'
+                        '玖龙纸业有限公司'
                     ]
                     
                 },
@@ -458,7 +189,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                 series: [{
                     name: '溶解氧浓度',
                     color: "#7cb5ec",
-                    data: [22.79, 21.08, 32.09, 14.5, 43.68]
+                    data: [$scope.list6[0], $scope.list7[0], $scope.list8[0], $scope.list9[0], $scope.list10[0]]
 
                 }]
         };
@@ -498,7 +229,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污水处理厂'
+                        '玖龙纸业有限公司'
                     ]
                 },
                 yAxis: {
@@ -565,7 +296,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污水处理厂'
+                        '玖龙纸业有限公司'
                     ]
                    
                 },
@@ -634,7 +365,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                         '太仓江城城市污水处理有限公司',
                         '浏河镇污水处理厂',
                         '港城组团污水处理厂',
-                        '其他污水处理厂'
+                        '玖龙纸业有限公司'
                     ]
                 },
                 yAxis: {
@@ -666,8 +397,6 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                 }]
         };
     }; 
-     
-    
     $scope.discharge={
         options:{
             chart: {
@@ -677,7 +406,7 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
                 text: '太仓市主要污水处理厂废水排放分析'
             },
             xAxis: {
-                categories: ['1月2日', '1月3日', '1月4日', '1月5日', '1月6日','1月7日']
+                categories: $scope.date
             },
             yAxis: {
                 min: 0,
@@ -724,25 +453,29 @@ app.controller('WaterEnvironmentBICtrl', ['$scope', '$timeout','$http', 'qServic
             series: [{
                 name: '太仓市城区污水处理厂',
                 color:'#69afcd',
-                data: [37289.93, 38061.91, 37985.65, 36860.89, 36602.62, 37506.78]
+                data: $scope.list2
             }, {
                 name: '太仓江城城市污水处理有限公司',
                 color:'#57d160',
-                data: [15285.77, 13806.99, 17708, 16371.03, 16052.72, 15899.75]
+                data: $scope.list5
             }, {
                 name: '浏河镇污水处理厂',
                 color:'#c7e74f',
-                data: [8325.73, 8570.56, 7456.46, 7884.56, 7973.25, 8653.28]
+                data: $scope.list3
             }, {
                 name: '港城组团污水处理厂',
                 color:'#f8d940',
-                data: [7552.3, 7330.08, 8035.25, 7975.93, 6838.2, 6913.24]
+                data: $scope.list4
             }, {
-                name: '其他污水处理厂',
+                name: '玖龙纸业有限公司',
                 color:'#ffb143',
-                data: [12310.43, 26955.8, 25617.17, 23507.36, 23373.65, 19090.84]
+                data: $scope.list1
             }]
         };
+    });
+     
+    
+    
     //第三个框highchart
 
 $scope.factory={
