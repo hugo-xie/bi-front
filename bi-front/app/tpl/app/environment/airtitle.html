@@ -571,7 +571,7 @@
                             <div class="list-group panel panel-primary" style="border-top:solid white">
                                 <a href="" class="list-group-item">
                                   <i class="fa fa-calendar fa-fw m-r-xs"style="color: #009f95"></i> 日期
-                                   <span class="badge fc-nobg" style=" width:40%">2016年1月8日9时</span>
+                                   <span class="badge fc-nobg" style=" width:40%">2016年{{date[6]}}</span>
                                 </a>
 
                                 <a href="" class="list-group-item" ng-click = "openAQI1List()">
@@ -579,7 +579,7 @@
                                     <i class="fa fa-chevron-up" ng-if="updown11"></i>
                                     <i class="fa fa-chevron-down" ng-if="updown12"></i>
                                 </span>
-                                  <span class="badge fc-nobg ">118</span>      
+                                  <span class="badge fc-nobg ">{{aqi[6]}}</span>      
                                   <i class="glyphicon  glyphicon-leaf m-r-xs" style="color: #3eae1d"></i>&nbsp;空气质量(AQI)
                                 </a>
                                 <li class="list-group-item" ng-if="isAQI1open">

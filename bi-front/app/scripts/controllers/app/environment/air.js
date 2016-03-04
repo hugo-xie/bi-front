@@ -4,7 +4,7 @@
 app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFactory','forecastFactory',function($scope,$stateParams,$timeout,qService,rawFactory,forecastFactory) {
 
   $scope.data = null;
-
+  $scope.time1 = "2016年1月8日";
 
   var promise1 = qService.tokenHttpGet(rawFactory.query,{tableName:'airPollutionData'});
   promise1.then(function(rc1) {
@@ -804,15 +804,15 @@ $scope.openorclose='↓展开';
 	var wasteAirCurrentArr;
 	var wasteAirCurrentTimeList;
 
-
+  //盒子2, 盒子4
   var promise = qService.tokenHttpGet(rawFactory.query,{tableName:'airQualityData'});
   promise.then(function(rc) {
 
-          console.log(rc.data);
           $scope.aqi=rc.data[0];
           $scope.predictaqi=rc.data[1];
           $scope.date=rc.data[2];
 
+          //盒子2
           $scope.aqilinechart={
               options:{
                 title: {
@@ -821,6 +821,9 @@ $scope.openorclose='↓展开';
                       	fontWeight:'bold',
                       },
                       x:20
+                  },
+                  credits: {
+                      enabled:false
                   },
                   xAxis: {
                       categories: $scope.date
@@ -849,11 +852,11 @@ $scope.openorclose='↓展开';
                       data: $scope.predictaqi
                   }]
           };
+
+          //盒子4
     });
 
 
-//空气质量 highcharts options
-//AQI
     $scope.airQualityOptions = {
 
     	aqiOption:{
@@ -2175,7 +2178,6 @@ $scope.openorclose='↓展开';
 
         }
 
-
     };
  	//button状态改变标签
 	$scope.getButtonStatus = function(status) {
@@ -2189,7 +2191,7 @@ $scope.openorclose='↓展开';
 			return "";
 	};
 
- 
+ //盒子1
  $scope.temperature={
 	 	options:{
 	 	chart: {
@@ -2239,14 +2241,6 @@ $scope.openorclose='↓展开';
             data: [2, 5, 5, 8, -1, -1, 0]
         }]
     };
-
-   
-
-
-
-
- 
-
 
    
 }]);
