@@ -119,15 +119,15 @@
                       <div class="panel b-a">
                         <div class="panel-heading text-center bg-info no-border">
                           <h4 class="text-u-c m-b-none" style="font-size:20px;">实时空气质量状况</h4>
-                          <span style="font-size:65%">当前时间:1月8日9时</span>
+                          <span style="font-size:65%">当前时间:{{datetime[6]}}</span>
                           <h2 class="m-t-none">
-                            <span class="text-2x text-lt">118</span>
-                            <span class="text-xs" > 轻度污染</span>
+                            <span class="text-2x text-lt">{{aqi[6]}}</span>
+                            <span class="text-xs" > {{airQualityLevel[6]}}</span>
                           </h2>
                         </div>
                         <ul class="list-group">
                           <li class="list-group-item">
-                            <span class="badge bg-danger">PM2.5</span>
+                            <span class="badge bg-danger">{{firstElement[6]}}</span>
                             <i class="glyphicon glyphicon-certificate m-r-xs" style="color:#88cb26"></i> 首要污染物
                           </li>
                           <li class="list-group-item" ng-click = "openHealthList()">
@@ -136,7 +136,7 @@
                           </li>
                           <li class="list-group-item" ng-if="ishealthopen">
                             <i class="text-success m-r-xs"></i>
-                            <span class="fc-list-content">&nbsp;&nbsp;轻度污染会进一步加剧易感人群症状，可能对健康人群心脏、呼吸系统有影响。</span>
+                            <span class="fc-list-content">&nbsp;&nbsp;{{healthEffect[6]}}</span>
                           </li>
                           <li class="list-group-item" ng-click = "openSuggestionList()">
                             <span class="badge bg-fail" style="cursor:pointer">{{openorclose1}}</span>
@@ -144,7 +144,7 @@
                           </li>
                           <li class="list-group-item" ng-if="issuggestionopen">
                             <i class="text-success m-r-xs"></i>&nbsp;&nbsp;
-                            <span class="fc-list-content">儿童、老年人及心脏病、呼吸系统疾病患者避免长时间、高强度的户外锻炼，一般人群适量减少户外运动。</span>
+                            <span class="fc-list-content">{{proposedMeasure[6]}}</span>
                           </li>
                         </ul>
                       </div>
@@ -169,31 +169,31 @@
                               <tbody>
                                 <tr>                    
                                   <td>
-                                    <div class="sparkline inline">8日夜间</div>
+                                    <div class="sparkline inline">今日夜间</div>
                                   </td>
-                                  <td>轻度污染(118)</td>
+                                  <td>{{airQualityLevel[5]}}({{aqi[5]}})</td>
                                   <td style="color:#f05050">
-                                    <i></i> PM2.5
+                                    <i></i> {{firstElement[5]}}
                                   </td>
                                 </tr>
 
                                 <tr>
                                   <td>
-                                    <div class="sparkline inline">9日上午</div>
+                                    <div class="sparkline inline">明日上午</div>
                                   </td>
-                                  <td>良(63)</td>
+                                  <td>{{airQualityLevel[4]}}({{aqi[4]}})</td>
                                   <td style="color:#f05050">
-                                    <i></i> PM2.5
+                                    <i></i> {{firstElement[4]}}
                                   </td>
                                 </tr>
 
                                 <tr>                    
                                   <td>
-                                    <div class="sparkline inline">9日下午</div>
+                                    <div class="sparkline inline">明日下午</div>
                                   </td>
-                                  <td>良(85)</td>
+                                  <td>{{airQualityLevel[3]}}({{aqi[3]}})</td>
                                   <td style="color:#f05050">
-                                    <i></i> PM2.5
+                                    <i></i> {{firstElement[3]}}
                                   </td>
                                 </tr>
                               </tbody>
@@ -269,31 +269,31 @@
                                 <tr >
                                     <td style="width:29%">太仓市监测站</td>
                                     <td style="width:15%">
-                                        <span>{{aqi[6]}}</span>
+                                        <span>{{predictaqi[6]}}</span>
                                     </td>
                                     <td style="width:20%">
                                         <span>{{firstElement[6]}}</span>
                                     </td>
                                     <td style="width:18%">
-                                        <span>72</span>
+                                        <span>{{pm25[6]}}</span>
                                     </td>
                                     <td style="width:18%">
-                                        <span>54</span>
+                                        <span>{{so2[6]}}</span>
                                     </td>
                                 </tr>
                                 <tr >
                                     <td style="width:29%">科教新城监测站</td>
                                     <td style="width:15%">
-                                        <span>110</span>
+                                        <span>{{predictaqi[5]}}</span>
                                     </td>
                                     <td style="width:20%">
-                                        <span>PM2.5</span>
+                                        <span>{{firstElement[5]}}</span>
                                     </td>
                                     <td style="width:18%">
-                                        <span>83</span>
+                                        <span>{{pm25[5]}}</span>
                                     </td>
                                     <td style="width:18%">
-                                        <span>54</span>
+                                        <span>{{so2[5]}}</span>
                                     </td>
                                 </tr>
                             </table>

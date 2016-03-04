@@ -20,17 +20,10 @@ app.controller('AirCtrl', ['$scope','$stateParams','$timeout','qService','rawFac
 
   // });
 
-  // var promise3 = qService.tokenHttpGet(rawFactory.query,{tableName:'aqiScopeData'});
+  // var promise3 = qService.tokenHttpGet(forecastFactory.query,{tableName:'airQualityPredictData'});
   // promise3.then(function(rc3) {
 
   //   console.log(rc3.data);
-
-  // });
-
-  // var promise4 = qService.tokenHttpGet(forecastFactory.query,{tableName:'airQualityPredictData'});
-  // promise4.then(function(rc4) {
-
-  //   console.log(rc4.data);
 
   // });
 
@@ -818,6 +811,10 @@ $scope.openorclose='↓展开';
           $scope.no2=rc.data[7];
           $scope.co=rc.data[8];
           $scope.o3=rc.data[9];
+          $scope.datetime=rc.data[10];
+          $scope.airQualityLevel=rc.data[11];
+          $scope.healthEffect=rc.data[12];
+          $scope.proposedMeasure=rc.data[13];
           //盒子2
           $scope.aqilinechart={
               options:{
